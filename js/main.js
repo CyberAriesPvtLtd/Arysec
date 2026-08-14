@@ -6,29 +6,42 @@
 
   /* ---------- Sticky header state ---------- */
   var header = document.getElementById("siteHeader");
-  function onScrollHeader() {
-    header.classList.toggle("scrolled", window.scrollY > 24);
+  if (header) {
+    var onScrollHeader = function () {
+      header.classList.toggle("scrolled", window.scrollY > 24);
+    };
+    window.addEventListener("scroll", onScrollHeader, { passive: true });
+    onScrollHeader();
   }
-  window.addEventListener("scroll", onScrollHeader, { passive: true });
-  onScrollHeader();
 
   /* ---------- Mobile navigation ---------- */
   var navToggle = document.getElementById("navToggle");
   var mainNav = document.getElementById("mainNav");
 
-  navToggle.addEventListener("click", function () {
-    var open = mainNav.classList.toggle("open");
-    navToggle.classList.toggle("open", open);
-    navToggle.setAttribute("aria-expanded", String(open));
-  });
+  if (navToggle && mainNav) {
+    navToggle.addEventListener("click", function () {
+      var open = mainNav.classList.toggle("open");
+      navToggle.classList.toggle("open", open);
+      navToggle.setAttribute("aria-expanded", String(open));
+    });
 
-  mainNav.addEventListener("click", function (e) {
-    if (e.target.closest("a")) {
-      mainNav.classList.remove("open");
-      navToggle.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-    }
-  });
+    mainNav.addEventListener("click", function (e) {
+      if (e.target.closest("a")) {
+        mainNav.classList.remove("open");
+        navToggle.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && mainNav.classList.contains("open")) {
+        mainNav.classList.remove("open");
+        navToggle.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.focus();
+      }
+    });
+  }
 
   /* ---------- Scroll reveal ---------- */
   var revealEls = document.querySelectorAll(".reveal");
@@ -48,6 +61,7 @@
 
   /* ---------- Animated counters ---------- */
   var counters = document.querySelectorAll(".stat-number");
+
   function animateCounter(el) {
     var target = parseInt(el.getAttribute("data-count"), 10);
     if (prefersReducedMotion) { el.textContent = target; return; }
@@ -63,51 +77,66 @@
     requestAnimationFrame(step);
   }
 
-  if ("IntersectionObserver" in window) {
-    var counterObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          counterObserver.unobserve(entry.target);
-        }
+  if (counters.length) {
+    if ("IntersectionObserver" in window) {
+      var counterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(function (el) { counterObserver.observe(el); });
+    } else {
+      counters.forEach(function (el) { el.textContent = el.getAttribute("data-count"); });
+    }
+  }
+
+  /* ---------- FAQ accordion ---------- */
+  var faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach(function (item) {
+    var button = item.querySelector(".faq-question");
+    var answer = item.querySelector(".faq-answer");
+    if (!button || !answer) return;
+
+    button.addEventListener("click", function () {
+      var isOpen = item.classList.contains("open");
+
+      faqItems.forEach(function (other) {
+        other.classList.remove("open");
+        var otherBtn = other.querySelector(".faq-question");
+        var otherAns = other.querySelector(".faq-answer");
+        if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+        if (otherAns) otherAns.style.maxHeight = null;
       });
-    }, { threshold: 0.5 });
-    counters.forEach(function (el) { counterObserver.observe(el); });
-  } else {
-    counters.forEach(function (el) { el.textContent = el.getAttribute("data-count"); });
-  }
 
-  /* ---------- Active nav link on scroll ---------- */
-  var sections = document.querySelectorAll("section[id]");
-  var navLinks = document.querySelectorAll(".main-nav .nav-link");
-
-  function setActiveLink() {
-    var pos = window.scrollY + 120;
-    var currentId = "home";
-    sections.forEach(function (section) {
-      if (section.offsetTop <= pos) currentId = section.id;
+      if (!isOpen) {
+        item.classList.add("open");
+        button.setAttribute("aria-expanded", "true");
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
     });
-    navLinks.forEach(function (link) {
-      link.classList.toggle("active", link.getAttribute("href") === "#" + currentId);
-    });
-  }
-  window.addEventListener("scroll", setActiveLink, { passive: true });
-  setActiveLink();
+  });
 
   /* ---------- Contact form (client-side demo handler) ---------- */
   var form = document.getElementById("contactForm");
   var status = document.getElementById("formStatus");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-    status.textContent = "Thank you — your message has been received. We'll get back to you within one business day.";
-    form.reset();
-  });
+  if (form && status) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      status.textContent =
+        "Thank you — your enquiry has been received. Our team will respond within one business day.";
+      form.reset();
+    });
+  }
 
   /* ---------- Footer year ---------- */
-  document.getElementById("year").textContent = new Date().getFullYear();
+  var yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 })();
