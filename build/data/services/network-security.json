@@ -22,7 +22,7 @@
     ]
   },
   "capabilities": {
-    "heading": "What the Service Covers",
+    "heading": "How We Run Detection",
     "items": [
       {
         "title": "SIEM Deployment and Tuning",
@@ -52,7 +52,7 @@
   },
   "deliverables": {
     "heading": "What You Actually Receive",
-    "intro": "Monitoring is easy to buy and hard to inspect. These are the artefacts that let you check what the service is doing every month.",
+    "intro": "Monitoring is easy to buy and hard to inspect. Each item below exists so you can check, month by month, what the service is actually doing.",
     "items": [
       "Log source inventory with coverage gaps identified",
       "Documented detection use cases mapped to MITRE ATT&CK",
@@ -66,7 +66,7 @@
   },
   "process": [
     {
-      "title": "Assess",
+      "title": "Map Coverage",
       "description": "We review your current tooling, log coverage, alert volumes and existing rules, then interview the people who handle alerts today. The output is an honest picture of what is monitored and what is not."
     },
     {
@@ -89,7 +89,7 @@
     },
     {
       "title": "Nights and Weekends Covered",
-      "description": "You get continuous watch without recruiting for a three-shift rota. Night-shift analyst roles are among the hardest to hire for and the hardest to keep filled once you have."
+      "description": "You get continuous watch without recruiting for a three-shift rota. Night-shift analyst posts are among the hardest security roles to fill, and among the hardest to keep filled once hired."
     },
     {
       "title": "Coverage You Can See",
@@ -103,7 +103,7 @@
   "whoItsFor": [
     "Organisations with security tooling already bought but nobody watching it after 6pm",
     "Lean internal security teams needing overnight, weekend and holiday cover without new headcount",
-    "Regulated firms in banking, insurance and payments with continuous monitoring and log retention obligations",
+    "Banks, insurers and payment firms carrying continuous monitoring and log retention obligations",
     "Growing companies whose flat network now carries data they cannot afford to lose"
   ],
   "faqs": [
@@ -125,7 +125,7 @@
     },
     {
       "question": "How long before this is genuinely useful, and how disruptive is the network work?",
-      "answer": "Onboarding a first set of high-value log sources and standing up the watch typically takes a few weeks, so you have monitoring running before detection coverage is complete. Depth arrives over the first quarter as use cases are engineered and tuned. Network changes move separately and slowly on purpose: firewall rule removal and segmentation are proposed with traffic analysis behind each change, staged in monitor-only mode first, and applied in your change window with a documented rollback."
+      "answer": "Onboarding a first set of high-value log sources and standing up the watch typically takes a few weeks, so you have monitoring running before detection coverage is complete. Depth arrives over the first quarter as use cases are engineered and tuned. Network changes move separately and slowly on purpose: firewall rule removal and segmentation are proposed with traffic analysis behind each one, run first in monitor-only mode, then scheduled through your own change control with a tested back-out step."
     }
   ],
   "related": ["incident-response", "vapt", "cloud-security"]

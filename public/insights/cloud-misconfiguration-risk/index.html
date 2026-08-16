@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Misconfiguration: Why Most Cloud Breaches Happen | Arysec Technologies LLP</title>
+  <meta name="description" content="Most cloud incidents come from misconfiguration, not exploits. Arysec on the defect classes that recur, why they persist, and the controls that stop them.">
+  <link rel="canonical" href="https://www.arysec.in/insights/cloud-misconfiguration-risk/">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Arysec Technologies LLP">
+  <meta property="og:title" content="Cloud Misconfiguration: Why Most Cloud Breaches Happen | Arysec Technologies LLP">
+  <meta property="og:description" content="Most cloud incidents come from misconfiguration, not exploits. Arysec on the defect classes that recur, why they persist, and the controls that stop them.">
+  <meta property="og:url" content="https://www.arysec.in/insights/cloud-misconfiguration-risk/">
+  <meta property="og:image" content="https://www.arysec.in/assets/og-image.svg">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloud Misconfiguration: Why Most Cloud Breaches Happen | Arysec Technologies LLP">
+  <meta name="twitter:description" content="Most cloud incidents come from misconfiguration, not exploits. Arysec on the defect classes that recur, why they persist, and the controls that stop them.">
+  <meta name="twitter:image" content="https://www.arysec.in/assets/og-image.svg">
+
+  <meta name="theme-color" content="#0a1628">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Arysec Technologies LLP","alternateName":"Arysec","url":"https://www.arysec.in/","email":"info@arysec.in","telephone":"+91 90048 57727","description":"IT and information security firm providing vCISO, DPO as a Service, internal audit, VAPT, ISO 27001 support, managed IT and cloud security.","address":{"@type":"PostalAddress","addressLocality":"Mumbai","addressRegion":"Maharashtra","addressCountry":"IN"},"founder":{"@type":"Person","name":"Unnati Shinde","jobTitle":"Founder \u0026 Managing Partner"},"areaServed":[{"@type":"Country","name":"India"},"Worldwide"],"knowsAbout":["Information security","ISO/IEC 27001","Penetration testing","Data protection","Internal audit","Managed IT services"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.arysec.in/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://www.arysec.in/insights/"},{"@type":"ListItem","position":3,"name":"Cloud Misconfiguration: The Breaches Nobody Talks About","item":"https://www.arysec.in/insights/cloud-misconfiguration-risk/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Cloud Misconfiguration: The Breaches Nobody Talks About","description":"Most cloud incidents come from misconfiguration, not exploits. Arysec on the defect classes that recur, why they persist, and the controls that stop them.","articleSection":"Cloud Security","url":"https://www.arysec.in/insights/cloud-misconfiguration-risk/","author":{"@type":"Organization","name":"Arysec Technologies LLP"},"publisher":{"@type":"Organization","name":"Arysec Technologies LLP","logo":{"@type":"ImageObject","url":"https://www.arysec.in/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.arysec.in/insights/cloud-misconfiguration-risk/"}}</script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="/" class="brand" aria-label="Arysec Technologies LLP — Home">
+        <svg class="brand-mark" viewBox="0 0 56 60" width="38" height="41" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradNav" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#00e5a0"/>
+            </linearGradient>
+          </defs>
+          <path d="M28 2 L52 11 V32 C52 46 42 54.5 28 58 C14 54.5 4 46 4 32 V11 Z" fill="none" stroke="url(#brandGradNav)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M28 14 L16 42 M28 14 L40 42 M20.5 32 H35.5" fill="none" stroke="url(#brandGradNav)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="42" r="3" fill="#00d4ff"/><circle cx="40" cy="42" r="3" fill="#00e5a0"/><circle cx="28" cy="14" r="3" fill="#00d4ff"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">ARYSEC</span>
+          <span class="brand-tagline">TECHNOLOGIES LLP</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <ul class="nav-list">
+<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+<li class="nav-item has-panel has-mega">
+        <button class="nav-link nav-trigger" aria-expanded="false" aria-controls="mega-services" data-href="/services/">Services<svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        
+      <div class="mega-panel" id="mega-services" hidden>
+        <div class="container mega-inner">
+          <div class="mega-cols">
+          <div class="mega-col">
+            <h4 class="mega-heading">Governance &amp; Advisory</h4>
+            <a class="mega-link" href="/services/vciso/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 11.5l2 2 4-4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">vCISO as a Service</span>
+                <span class="mega-link-desc">vCISO</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/dpo/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="9" width="16" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 9V6.5a4 4 0 018 0V9" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="14.5" r="1.6" fill="currentColor"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">DPO as a Service</span>
+                <span class="mega-link-desc">DPO</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/internal-audit/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6l1 3h4v15H4V6h4l1-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 13l2.5 2.5L16 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Internal Audit &amp; Assurance</span>
+                <span class="mega-link-desc">Internal Audit</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Audit, Testing &amp; Compliance</h4>
+            <a class="mega-link" href="/services/security-audit-compliance/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 7.5h8M8 11h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9 16v5l3-1.8 3 1.8v-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Security Audits &amp; Compliance</span>
+                <span class="mega-link-desc">Audit &amp; Compliance</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/iso-27001/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.5l2.4 1.8 3-.2.6 2.9 2.4 1.8-1.3 2.7 1.3 2.7-2.4 1.8-.6 2.9-3-.2L12 20.5l-2.4-1.8-3 .2-.6-2.9L3.6 14.2 4.9 11.5 3.6 8.8l2.4-1.8.6-2.9 3 .2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 11.6l2.1 2.1L15.2 9.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">ISO 27001 Implementation &amp; Certification Support</span>
+                <span class="mega-link-desc">ISO 27001</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/vapt/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="8" height="11" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9.5 8V6.8a2.5 2.5 0 015 0V8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 11.5H4.5M16 11.5H19.5M8 15.5H4.5M16 15.5H19.5M9 8.5L6.5 6M15 8.5L17.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Vulnerability Assessment &amp; Penetration Testing</span>
+                <span class="mega-link-desc">VAPT</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Cybersecurity Services</h4>
+            <a class="mega-link" href="/services/cybersecurity-consulting/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11.3" cy="10.6" r="2.7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13.4 12.8L15.6 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Cybersecurity Consulting &amp; Risk Assessment</span>
+                <span class="mega-link-desc">Security Consulting</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/network-security/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="19" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 11l10-5M7 13l10 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Network Security &amp; Monitoring</span>
+                <span class="mega-link-desc">Network Security</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/cloud-security/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18a4.5 4.5 0 01-.6-8.96A6 6 0 0118 8.5 4 4 0 0117.5 18H7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 14.5h4M12 12.8v-1.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Cloud Security Solutions</span>
+                <span class="mega-link-desc">Cloud Security</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/data-protection/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5.5" rx="7" ry="2.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 5.5v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 11.5v6c0 1.5 2.4 2.6 5.6 2.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="13" y="16" width="7" height="5.4" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M14.8 16v-1.4a1.7 1.7 0 013.4 0V16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Data Protection &amp; Encryption</span>
+                <span class="mega-link-desc">Data Protection</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/incident-response/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3.5M12 3l-2 2M12 3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20a7 7 0 0114 0z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3 20h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 10.5a4 4 0 00-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Incident Response &amp; Recovery</span>
+                <span class="mega-link-desc">Incident Response</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/security-awareness-training/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 19c.6-3 2.8-5 5.5-5s4.9 2 5.5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="16.5" cy="5.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 9.5c1.8.4 3.4 2 3.9 4.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Security Awareness &amp; Training</span>
+                <span class="mega-link-desc">Security Awareness</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">IT Services</h4>
+            <a class="mega-link" href="/services/managed-it/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M7 9l2.5 2.5L7 14M12.5 13.5H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Managed IT Services</span>
+                <span class="mega-link-desc">Managed IT</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/software-development/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 4l-3 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Software Development &amp; Integration</span>
+                <span class="mega-link-desc">Software Development</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/it-infrastructure/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="5.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14.5" width="18" height="5.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="6.5" cy="6.75" r="0.9" fill="currentColor"/><circle cx="6.5" cy="17.25" r="0.9" fill="currentColor"/><path d="M12 9.5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">IT Infrastructure Management</span>
+                <span class="mega-link-desc">IT Infrastructure</span>
+              </span>
+            </a>
+          </div>
+          </div>
+          <div class="mega-footer">
+            <a class="text-link" href="/services/">View all services <span aria-hidden="true">&rarr;</span></a>
+            <a class="text-link" href="/solutions/">Packaged solutions <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+      </li>
+<li class="nav-item"><a class="nav-link" href="/solutions/">Solutions</a></li>
+<li class="nav-item"><a class="nav-link" href="/industries/">Industries</a></li>
+<li class="nav-item has-panel has-dropdown">
+        <button class="nav-link nav-trigger" aria-expanded="false" aria-controls="dropdown-4" data-href="/about/">Company<svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dropdown-panel" id="dropdown-4" hidden>
+          <a class="dropdown-link" href="/about/">
+            <span class="dropdown-link-title">About Us</span>
+            <span class="dropdown-link-desc">Who we are and how we work</span>
+          </a>
+<a class="dropdown-link" href="/case-studies/">
+            <span class="dropdown-link-title">Case Studies</span>
+            <span class="dropdown-link-desc">Anonymised engagement examples</span>
+          </a>
+<a class="dropdown-link" href="/insights/">
+            <span class="dropdown-link-title">Insights</span>
+            <span class="dropdown-link-desc">Articles from our practitioners</span>
+          </a>
+<a class="dropdown-link" href="/resources/">
+            <span class="dropdown-link-title">Resources</span>
+            <span class="dropdown-link-desc">Guides, checklists and FAQs</span>
+          </a>
+<a class="dropdown-link" href="/careers/">
+            <span class="dropdown-link-title">Careers</span>
+            <span class="dropdown-link-desc">Open roles and how we hire</span>
+          </a>
+        </div>
+      </li>
+<li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+        </ul>
+        <a href="/contact/" class="btn btn-primary btn-nav">Get a Consultation</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero page-hero-article">
+      <div class="container-narrow">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <a href="/insights/">Insights</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <span aria-current="page">Cloud Misconfiguration: The Breaches Nobody Talks About</span></nav>
+        <span class="article-meta">
+          <span class="resource-type">Cloud Security</span>
+          <span class="article-time">7 min read</span>
+        </span>
+        <h1>Cloud Misconfiguration: The Breaches Nobody Talks About</h1>
+        <p class="page-hero-sub">The ordinary cloud incident has no exploit in it at all. A practitioner&#39;s view of the misconfiguration classes that keep recurring, why capable teams keep producing them, and the controls that prevent them.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-narrow">
+        <div class="takeaways reveal">
+          <h2>Key takeaways</h2>
+          <ul class="service-list"><li>The ordinary cloud incident involves no exploitation at all. Someone granted access, and the interface then honoured it exactly as designed.</li><li>The shared responsibility line moves service by service, and managed rarely means secured in the sense teams assume.</li><li>Identity turns a small mistake into a large one, and long-lived keys remove the natural time limit on it.</li><li>Preventive guardrails beat pipeline checks, which beat posture scanning. Build downwards from the strongest layer you can enforce.</li></ul>
+        </div>
+        <nav class="doc-toc reveal" aria-label="On this page">
+      <h2 class="doc-toc-title">On this page</h2>
+      <ol><li><a href="#section-1">The breaches that make poor stories</a></li><li><a href="#section-2">Where the shared responsibility model gets misread</a></li><li><a href="#section-3">The configuration classes that keep recurring</a></li><li><a href="#section-4">Identity is where a small mistake becomes a large one</a></li><li><a href="#section-5">Exposure that outlives the resource</a></li><li><a href="#section-6">Why capable teams keep producing them</a></li><li><a href="#section-7">Controls that actually prevent, ranked by strength</a></li><li><a href="#section-8">A sequence that survives contact with delivery teams</a></li><li><a href="#section-9">Where we help</a></li></ol>
+    </nav>
+        <div class="doc-body"><section class="doc-section reveal" id="section-1">
+      <h2>The breaches that make poor stories</h2>
+      <p>Public discussion of cloud security gravitates towards the unusual: a container escape, a cross-tenant flaw in a managed service, a compromise several hops upstream in a software supply chain. Those are real and worth reading about. They are also not what empties storage buckets week after week.</p>
+<p>The ordinary cloud incident contains no exploitation at all. A bucket was readable by anyone who guessed its name. A build pipeline assumed a role carrying administrative rights because narrowing them was fiddly on a deadline. A database port was opened during a migration and never closed. Nobody defeated a control; they used the interface as designed, with permissions a person had granted.</p>
+<p>That distinction decides where defensive effort belongs. If exotic exploitation dominated, detection engineering would be the first investment. Since configuration dominates, the highest-yield work is stopping bad states from being created and finding those already sitting there.</p>
+      
+    </section>
+<section class="doc-section reveal" id="section-2">
+      <h2>Where the shared responsibility model gets misread</h2>
+      <p>The model itself is simple and rarely disputed. Your provider secures the infrastructure the cloud runs on; you secure what you put into it. The difficulty is that the line moves service by service, and few teams re-derive where it sits.</p>
+<p>On a virtual machine you own the guest operating system, its patching, its network exposure and every credential on it. With a managed database, engine patching moves to the provider while access control, network placement, encryption choice, backup retention and audit logging remain yours. Managed object storage guarantees durability and promises nothing about whether you wrote the policy correctly.</p>
+<p>Four misreadings recur across reviews.</p>
+      <ul class="doc-list"><li>Treating managed as secured, when a provider patching the engine says nothing about who can reach it or read from it</li><li>Assuming encryption at rest resolves confidentiality, when it addresses physical media and does nothing against a permissive policy or a stolen credential</li><li>Believing replication is backup, when a faithful copy reproduces a deletion or a ransomware encryption event just as faithfully</li><li>Expecting audit logging, retention and alerting to be present by default at the depth an investigation later demands</li></ul>
+    </section>
+<section class="doc-section reveal" id="section-3">
+      <h2>The configuration classes that keep recurring</h2>
+      <p>The same defects appear at organisations of every size, on every provider, under different product names. A competent review tests for them explicitly rather than waiting for a scanner to volunteer them.</p>
+<p>None of the classes below requires skill to exploit, and several require nothing beyond an internet-wide scan. The interval between a mistake and its discovery by a stranger can be measured in hours.</p>
+      <ul class="doc-list"><li>Object storage readable by anonymous principals, often through legacy access control lists rather than the bucket policy people inspect</li><li>Identity policies carrying wildcard actions and resources, granted once to make a deployment work and never narrowed</li><li>Long-lived access keys held by people and pipelines, then copied into CI variables, laptops and environment files</li><li>Network rules allowing 0.0.0.0/0 to administrative and database ports: SSH, RDP, PostgreSQL, MySQL, Redis, Elasticsearch, MongoDB</li><li>Audit trails switched off in some accounts or regions, or delivered somewhere nobody reads, with retention shorter than detection time</li><li>Snapshots, machine images and database backups marked public, or shared with an account that stopped being yours</li><li>Management interfaces published straight to the internet: Kubernetes API servers, container registries, CI servers, dashboard consoles</li><li>Data stores created without encryption, or reachable over plaintext because no policy condition requires transport security</li><li>DNS records pointing at deprovisioned resources, leaving a name you control answerable by whoever claims the target</li></ul>
+    </section>
+<section class="doc-section reveal" id="section-4">
+      <h2>Identity is where a small mistake becomes a large one</h2>
+      <p>Network exposure gives an intruder reach. Identity gives them everything reachable by the credential they obtain, and cloud identity compounds in ways on-premises directories did not.</p>
+<p>A pipeline role permitted to pass any role to a compute service can usually reach administrator, because it can hand a privileged role to something it already controls. Permission to attach policies to your own principal gets there faster. Cross-account trust written without an external identifier lets a supplier&#39;s compromise become yours.</p>
+<p>Long-lived keys remove the time limit. A key committed to a repository three years ago still works unless somebody rotated it, and the harvesters watching public repositories and exposed environment files are automated and quick. Short-lived federated credentials fail closed: a stolen session expires by itself.</p>
+<p>The instance metadata service belongs here too. Where the older request-only version stays enabled, an ordinary server-side request forgery flaw becomes a route to that instance&#39;s role credentials. The session-oriented version with a restricted hop limit closes that path and can be required at launch.</p>
+      
+    </section>
+<section class="doc-section reveal" id="section-5">
+      <h2>Exposure that outlives the resource</h2>
+      <p>Configuration reviews usually examine what is running. A meaningful share of cloud exposure sits in what is not.</p>
+<p>Snapshots and machine images carry a copy of the data, and frequently the secrets that were on disk, with sharing settings independent of the volume they came from. An image shared publicly for a vendor demonstration stays public long after the instance is destroyed. Database backups behave identically.</p>
+<p>Dangling DNS is the other durable one. Point a subdomain at a platform-hosted resource, delete the resource, leave the record, and whoever claims that target next serves content on your domain. The consequence is not merely embarrassment: cookies scoped to the parent domain, single sign-on redirect allowances and content security policy entries commonly treat subdomains as trusted, so a takeover converts into session theft or a credible phishing page. Records outlive the teams that created them, so the check belongs in decommissioning.</p>
+      
+    </section>
+<section class="doc-section reveal" id="section-6">
+      <h2>Why capable teams keep producing them</h2>
+      <p>These are not knowledge failures. Almost every engineer who opens a database port to the internet knows they should not.</p>
+<p>Asymmetry of effort comes first. Creating a resource takes seconds; creating it correctly takes an afternoon of documentation. Under a delivery date the permissive version ships with a note to tighten it later, and later has no owner.</p>
+<p>Inherited infrastructure code comes next. Modules get copied from a blog post, a vendor quickstart or another team&#39;s repository, and permissive defaults travel with them. Copied code is rarely re-read, so one loose module reproduces the same defect in every account it touches.</p>
+<p>Drift undoes much of the rest. Somebody edits a rule in the console during a two in the morning incident and nothing reconciles it afterwards. Without drift detection your infrastructure code states intent rather than describing reality, and reviewing it tells you little about the environment.</p>
+<p>Ownership is the quiet one. Accounts multiply faster than the register listing who owns them, and a resource without an owner has nobody to answer for its configuration.</p>
+      
+    </section>
+<section class="doc-section reveal" id="section-7">
+      <h2>Controls that actually prevent, ranked by strength</h2>
+      <p>Controls are not equal, and the useful ordering is by how early they act. A guardrail making the bad state impossible beats a check that blocks it at merge, which beats a scanner reporting it once it exists in production.</p>
+<p>Two details decide whether the ordering below holds in practice. Every deny needs a documented exception route, or engineers will find an unwatched path around it. Posture findings, meanwhile, need exposure context before triage, because a public bucket holding a marketing brochure and one holding claims data raise identical alerts while deserving different responses.</p>
+      <ul class="doc-list"><li>Preventive guardrails at organisation level: service control policies that deny disabling audit logging, deny public storage, restrict usable regions and forbid static keys for service identities</li><li>Landing zone separation, so blast radius is bounded by account and production identities cannot reach development data</li><li>Infrastructure as code scanning in the pipeline, using policy-as-code rules that fail the pull request rather than annotate it</li><li>Least privilege with short-lived credentials: single sign-on for workforce access, workload identity federation instead of stored keys, and pruning of unused permissions against real call history</li><li>Centralised, tamper-resistant logging into an archive most administrators cannot write to, with integrity validation enabled</li><li>Cloud security posture management to catch whatever escaped the earlier layers, triaged by reachability rather than finding count</li><li>CIS Benchmarks as the written baseline, so that secure has a definition you can hand to an auditor and test repeatedly</li></ul>
+    </section>
+<section class="doc-section reveal" id="section-8">
+      <h2>A sequence that survives contact with delivery teams</h2>
+      <p>Attempting all of that at once fails. The ordering below puts the fastest risk reduction at the front and leaves the structural work for a programme.</p>
+<p>Only the first three steps below need to happen quickly. Rushing the rest produces resentment, and guardrails installed against resistance get switched off two months later by someone with a deadline and a good argument.</p>
+      <ul class="doc-list"><li>Inventory the estate: every account, subscription and project, including those opened in a hurry on a personal card, each with a named owner</li><li>Enable audit logging everywhere and ship it to a separate archive, because you cannot investigate a period you never recorded</li><li>Sweep the exposed classes and fix them before anything structural: public storage, public snapshots and images, open administrative ports, dangling DNS</li><li>Retire standing static keys for people and pipelines in favour of federation, rotating whatever cannot move yet</li><li>Apply the small set of preventive guardrails you are confident about, announced in advance, then widen it as objections get answered</li><li>Move infrastructure code checks into CI and let them block, once the rule set is calibrated against your repositories</li><li>Adopt a benchmark baseline, measure against it monthly, and record exceptions as risks with owners and review dates</li></ul>
+    </section>
+<section class="doc-section reveal" id="section-9">
+      <h2>Where we help</h2>
+      <p>Arysec runs cloud configuration reviews against CIS Benchmarks, traces the identity paths that turn a minor compromise into a serious one, and helps you put guardrails, pipeline checks and centralised logging in place afterwards. What lands on your desk is a prioritised finding set with the exposure context that makes triage possible, plus the configuration changes written for your environment rather than a generic checklist.</p>
+      
+    </section></div>
+        <div class="article-foot reveal">
+          <p>
+            Written by the Arysec Technologies LLP team. If this raised a question about your own environment,
+            <a href="/contact/">get in touch</a> — we are happy to talk it through.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">More Insights</p>
+      <h2>Related Reading</h2>
+      
+    </div>
+        <div class="grid-3">
+          <article class="article-card reveal">
+            <a href="/insights/first-hour-of-a-ransomware-incident/">
+              <span class="article-meta">
+                <span class="resource-type">Incident Response</span>
+                <span class="article-time">7 min read</span>
+              </span>
+              <h3>The First Hour of a Ransomware Incident</h3>
+              <p>A calm operational guide to the worst hour: why you isolate rather than power down, which evidence expires first, who to call and in what order, protecting backups, the notification clock, and the ransom question.</p>
+              <span class="text-link">Read article <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          </article>
+<article class="article-card reveal delay-1">
+            <a href="/insights/dpdp-act-in-practice/">
+              <span class="article-meta">
+                <span class="resource-type">Privacy</span>
+                <span class="article-time">7 min read</span>
+              </span>
+              <h3>The DPDP Act in Practice: What Indian Businesses Must Do Now</h3>
+              <p>India&#39;s DPDP Act 2023 is now backed by notified Rules and a commencement timetable. A practitioner&#39;s read on notice, consent, data principal rights, breach intimation, Significant Data Fiduciary duties and the readiness work that has to happen first.</p>
+              <span class="text-link">Read article <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          </article>
+<article class="article-card reveal delay-2">
+            <a href="/insights/what-happens-during-a-penetration-test/">
+              <span class="article-meta">
+                <span class="resource-type">Security Testing</span>
+                <span class="article-time">7 min read</span>
+              </span>
+              <h3>What Actually Happens During a Penetration Test</h3>
+              <p>A plain account of what testers actually do, from scoping and written authorisation through reconnaissance, exploitation and evidence, to CVSS severity, the report, the retest cycle, and what a penetration test cannot tell you.</p>
+              <span class="text-link">Read article <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="cta-banner">
+      <div class="container reveal">
+        <h2>Need Help Applying This?</h2>
+        <p>Our consultants work through exactly these problems with clients every week.</p>
+        <div class="cta-actions"><a href="/contact/" class="btn btn-light">Book a Free Consultation</a><a href="/services/" class="btn btn-outline">Browse Services</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand" aria-label="Arysec Technologies LLP — Home">
+        <svg class="brand-mark" viewBox="0 0 56 60" width="38" height="41" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradFoot" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#00e5a0"/>
+            </linearGradient>
+          </defs>
+          <path d="M28 2 L52 11 V32 C52 46 42 54.5 28 58 C14 54.5 4 46 4 32 V11 Z" fill="none" stroke="url(#brandGradFoot)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M28 14 L16 42 M28 14 L40 42 M20.5 32 H35.5" fill="none" stroke="url(#brandGradFoot)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="42" r="3" fill="#00d4ff"/><circle cx="40" cy="42" r="3" fill="#00e5a0"/><circle cx="28" cy="14" r="3" fill="#00d4ff"/>
+        </svg>
+            <span class="brand-text">
+              <span class="brand-name">ARYSEC</span>
+              <span class="brand-tagline">TECHNOLOGIES LLP</span>
+            </span>
+          </a>
+          <p class="footer-blurb">Reliable IT. Resilient security. Expert support. Headquartered in Mumbai, delivering across India and worldwide.</p>
+          <div class="footer-contact">
+            <a href="tel:+919004857727"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h4l1.5 5-2.5 2a13 13 0 005 5l2-2.5 5 1.5v4a2 2 0 01-2 2A17 17 0 014 5a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>+91 90048 57727</span></a>
+            <a href="mailto:info@arysec.in"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>info@arysec.in</span></a>
+            <span class="footer-contact-static"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span>Mumbai, Maharashtra, India</span></span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="/services/vciso/">vCISO as a Service</a>
+<a href="/services/dpo/">DPO as a Service</a>
+<a href="/services/internal-audit/">Internal Audit</a>
+<a href="/services/vapt/">VAPT</a>
+<a href="/services/iso-27001/">ISO 27001</a>
+<a href="/services/">All Services</a>
+        </div>
+<div class="footer-col">
+          <h4>Company</h4>
+          <a href="/about/">About Us</a>
+<a href="/solutions/">Solutions</a>
+<a href="/industries/">Industries</a>
+<a href="/case-studies/">Case Studies</a>
+<a href="/careers/">Careers</a>
+        </div>
+<div class="footer-col">
+          <h4>Resources</h4>
+          <a href="/insights/">Insights</a>
+<a href="/resources/">Guides &amp; Checklists</a>
+<a href="/resources/#faq">FAQs</a>
+<a href="/responsible-disclosure/">Responsible Disclosure</a>
+<a href="/contact/">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Arysec Technologies LLP. All rights reserved.</p>
+        <p class="footer-legal"><a href="/privacy-policy/">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="/terms-of-service/">Terms of Service</a> <span aria-hidden="true">&middot;</span> <a href="/cookie-policy/">Cookie Policy</a> <span aria-hidden="true">&middot;</span> <a href="/responsible-disclosure/">Responsible Disclosure</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie preferences" aria-live="polite" hidden>
+    <div class="cookie-inner">
+      <p>
+        We use strictly necessary cookies to run this site, and optional analytics cookies to understand
+        how it is used. We do not use advertising or cross-site tracking cookies.
+        <a href="/cookie-policy/">Read our Cookie Policy</a>.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-outline btn-sm" data-cookie-choice="necessary">Necessary only</button>
+        <button type="button" class="btn btn-primary btn-sm" data-cookie-choice="all">Accept analytics</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infrastructure Design, Build &amp; Lifecycle Management | Arysec Technologies LLP</title>
+  <meta name="description" content="Arysec designs, builds and refreshes server, network, storage and virtualisation infrastructure, hardened to CIS Benchmarks with resilience and runbooks.">
+  <link rel="canonical" href="https://www.arysec.in/services/it-infrastructure/">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Arysec Technologies LLP">
+  <meta property="og:title" content="Infrastructure Design, Build &amp; Lifecycle Management | Arysec Technologies LLP">
+  <meta property="og:description" content="Arysec designs, builds and refreshes server, network, storage and virtualisation infrastructure, hardened to CIS Benchmarks with resilience and runbooks.">
+  <meta property="og:url" content="https://www.arysec.in/services/it-infrastructure/">
+  <meta property="og:image" content="https://www.arysec.in/assets/og-image.svg">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Infrastructure Design, Build &amp; Lifecycle Management | Arysec Technologies LLP">
+  <meta name="twitter:description" content="Arysec designs, builds and refreshes server, network, storage and virtualisation infrastructure, hardened to CIS Benchmarks with resilience and runbooks.">
+  <meta name="twitter:image" content="https://www.arysec.in/assets/og-image.svg">
+
+  <meta name="theme-color" content="#0a1628">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Arysec Technologies LLP","alternateName":"Arysec","url":"https://www.arysec.in/","email":"info@arysec.in","telephone":"+91 90048 57727","description":"IT and information security firm providing vCISO, DPO as a Service, internal audit, VAPT, ISO 27001 support, managed IT and cloud security.","address":{"@type":"PostalAddress","addressLocality":"Mumbai","addressRegion":"Maharashtra","addressCountry":"IN"},"founder":{"@type":"Person","name":"Unnati Shinde","jobTitle":"Founder \u0026 Managing Partner"},"areaServed":[{"@type":"Country","name":"India"},"Worldwide"],"knowsAbout":["Information security","ISO/IEC 27001","Penetration testing","Data protection","Internal audit","Managed IT services"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"IT Infrastructure Management","serviceType":"IT Services","description":"Arysec designs, builds and refreshes server, network, storage and virtualisation infrastructure, hardened to CIS Benchmarks with resilience and runbooks.","url":"https://www.arysec.in/services/it-infrastructure/","provider":{"@type":"Organization","name":"Arysec Technologies LLP","url":"https://www.arysec.in/"},"areaServed":[{"@type":"Country","name":"India"},"Worldwide"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.arysec.in/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.arysec.in/services/"},{"@type":"ListItem","position":3,"name":"IT Infrastructure","item":"https://www.arysec.in/services/it-infrastructure/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"We already have a systems administrator. Where does your work stop and theirs start?","acceptedAnswer":{"@type":"Answer","text":"Design and build work is project-shaped, and much of it is knowledge an administrator does not use often enough to keep sharp: sizing a cluster, laying out a directory forest, choosing between replication topologies. We agree a responsibility matrix before starting, your administrator sits in the design reviews, and the handover includes the reasoning and the written procedures, not just credentials. On many engagements the administrator runs the platform afterwards while we stay available for changes and the annual refresh review."}},{"@type":"Question","name":"Everything is moving to public cloud. Why invest in on-premises infrastructure at all?","acceptedAnswer":{"@type":"Answer","text":"Some workloads belong in public cloud and we will say so. Others do not. Steady, predictable compute that runs continuously is frequently cheaper on owned hardware over a five-year term, and data residency, latency to plant or shop floor systems, and licence terms tied to physical cores all pull the same way. The useful question is per workload, not per organisation. We model the options, including colocation and private cloud, then set out the costs, the risks and what you give up in each direction."}},{"@type":"Question","name":"How much downtime does a migration on this scale actually cause?","acceptedAnswer":{"@type":"Answer","text":"Less than most people expect, because the plan is built to avoid it. Workloads move in waves, the new platform runs alongside the old, and each wave has a tested rollback and an acceptance check before the next begins. Real outage is usually confined to short agreed windows for cutover of shared services such as directory or storage paths. Where a system cannot tolerate interruption, we design for live migration or replication at the design stage."}},{"@type":"Question","name":"What stops this becoming a design document that goes stale within a year?","acceptedAnswer":{"@type":"Answer","text":"Two things. Documentation is written to be maintained: diagrams generated from live configuration where tooling allows, an IP address management register rather than a spreadsheet nobody owns, and configuration held as versioned templates so a change to the estate and a change to the record happen together. Second is a review commitment. Where we retain a relationship, capacity, support expiry and configuration drift are reviewed quarterly. Where we hand over entirely, the runbooks name the update procedure and its owner."}},{"@type":"Question","name":"How do you choose vendors? Are you tied to particular manufacturers?","acceptedAnswer":{"@type":"Answer","text":"Vendor choice follows the design, not a sales target we have to hit. Selection runs against stated requirements: throughput and port density, support and replacement terms, expected supported life, availability of spares and engineers in India, and how licensing behaves at renewal rather than at first purchase. We shortlist across manufacturers, separate genuine engineering preference from familiarity, and support you through evaluation and procurement. Where you already hold a standard or a supplier agreement, we design within it and state where that constrains the result."}}]}</script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="/" class="brand" aria-label="Arysec Technologies LLP — Home">
+        <svg class="brand-mark" viewBox="0 0 56 60" width="38" height="41" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradNav" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#00e5a0"/>
+            </linearGradient>
+          </defs>
+          <path d="M28 2 L52 11 V32 C52 46 42 54.5 28 58 C14 54.5 4 46 4 32 V11 Z" fill="none" stroke="url(#brandGradNav)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M28 14 L16 42 M28 14 L40 42 M20.5 32 H35.5" fill="none" stroke="url(#brandGradNav)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="42" r="3" fill="#00d4ff"/><circle cx="40" cy="42" r="3" fill="#00e5a0"/><circle cx="28" cy="14" r="3" fill="#00d4ff"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">ARYSEC</span>
+          <span class="brand-tagline">TECHNOLOGIES LLP</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <ul class="nav-list">
+<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+<li class="nav-item has-panel has-mega">
+        <button class="nav-link nav-trigger active" aria-expanded="false" aria-controls="mega-services" data-href="/services/">Services<svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        
+      <div class="mega-panel" id="mega-services" hidden>
+        <div class="container mega-inner">
+          <div class="mega-cols">
+          <div class="mega-col">
+            <h4 class="mega-heading">Governance &amp; Advisory</h4>
+            <a class="mega-link" href="/services/vciso/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 11.5l2 2 4-4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">vCISO as a Service</span>
+                <span class="mega-link-desc">vCISO</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/dpo/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="9" width="16" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 9V6.5a4 4 0 018 0V9" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="14.5" r="1.6" fill="currentColor"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">DPO as a Service</span>
+                <span class="mega-link-desc">DPO</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/internal-audit/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6l1 3h4v15H4V6h4l1-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 13l2.5 2.5L16 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Internal Audit &amp; Assurance</span>
+                <span class="mega-link-desc">Internal Audit</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Audit, Testing &amp; Compliance</h4>
+            <a class="mega-link" href="/services/security-audit-compliance/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 7.5h8M8 11h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9 16v5l3-1.8 3 1.8v-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Security Audits &amp; Compliance</span>
+                <span class="mega-link-desc">Audit &amp; Compliance</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/iso-27001/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.5l2.4 1.8 3-.2.6 2.9 2.4 1.8-1.3 2.7 1.3 2.7-2.4 1.8-.6 2.9-3-.2L12 20.5l-2.4-1.8-3 .2-.6-2.9L3.6 14.2 4.9 11.5 3.6 8.8l2.4-1.8.6-2.9 3 .2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 11.6l2.1 2.1L15.2 9.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">ISO 27001 Implementation &amp; Certification Support</span>
+                <span class="mega-link-desc">ISO 27001</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/vapt/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="8" height="11" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9.5 8V6.8a2.5 2.5 0 015 0V8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 11.5H4.5M16 11.5H19.5M8 15.5H4.5M16 15.5H19.5M9 8.5L6.5 6M15 8.5L17.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Vulnerability Assessment &amp; Penetration Testing</span>
+                <span class="mega-link-desc">VAPT</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Cybersecurity Services</h4>
+            <a class="mega-link" href="/services/cybersecurity-consulting/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11.3" cy="10.6" r="2.7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13.4 12.8L15.6 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Cybersecurity Consulting &amp; Risk Assessment</span>
+                <span class="mega-link-desc">Security Consulting</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/network-security/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="19" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 11l10-5M7 13l10 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Network Security &amp; Monitoring</span>
+                <span class="mega-link-desc">Network Security</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/cloud-security/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18a4.5 4.5 0 01-.6-8.96A6 6 0 0118 8.5 4 4 0 0117.5 18H7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 14.5h4M12 12.8v-1.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Cloud Security Solutions</span>
+                <span class="mega-link-desc">Cloud Security</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/data-protection/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5.5" rx="7" ry="2.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 5.5v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 11.5v6c0 1.5 2.4 2.6 5.6 2.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="13" y="16" width="7" height="5.4" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M14.8 16v-1.4a1.7 1.7 0 013.4 0V16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Data Protection &amp; Encryption</span>
+                <span class="mega-link-desc">Data Protection</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/incident-response/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3.5M12 3l-2 2M12 3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20a7 7 0 0114 0z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3 20h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 10.5a4 4 0 00-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Incident Response &amp; Recovery</span>
+                <span class="mega-link-desc">Incident Response</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/security-awareness-training/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 19c.6-3 2.8-5 5.5-5s4.9 2 5.5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="16.5" cy="5.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 9.5c1.8.4 3.4 2 3.9 4.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Security Awareness &amp; Training</span>
+                <span class="mega-link-desc">Security Awareness</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">IT Services</h4>
+            <a class="mega-link" href="/services/managed-it/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M7 9l2.5 2.5L7 14M12.5 13.5H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Managed IT Services</span>
+                <span class="mega-link-desc">Managed IT</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/software-development/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 4l-3 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Software Development &amp; Integration</span>
+                <span class="mega-link-desc">Software Development</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/it-infrastructure/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="5.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14.5" width="18" height="5.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="6.5" cy="6.75" r="0.9" fill="currentColor"/><circle cx="6.5" cy="17.25" r="0.9" fill="currentColor"/><path d="M12 9.5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">IT Infrastructure Management</span>
+                <span class="mega-link-desc">IT Infrastructure</span>
+              </span>
+            </a>
+          </div>
+          </div>
+          <div class="mega-footer">
+            <a class="text-link" href="/services/">View all services <span aria-hidden="true">&rarr;</span></a>
+            <a class="text-link" href="/solutions/">Packaged solutions <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+      </li>
+<li class="nav-item"><a class="nav-link" href="/solutions/">Solutions</a></li>
+<li class="nav-item"><a class="nav-link" href="/industries/">Industries</a></li>
+<li class="nav-item has-panel has-dropdown">
+        <button class="nav-link nav-trigger" aria-expanded="false" aria-controls="dropdown-4" data-href="/about/">Company<svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dropdown-panel" id="dropdown-4" hidden>
+          <a class="dropdown-link" href="/about/">
+            <span class="dropdown-link-title">About Us</span>
+            <span class="dropdown-link-desc">Who we are and how we work</span>
+          </a>
+<a class="dropdown-link" href="/case-studies/">
+            <span class="dropdown-link-title">Case Studies</span>
+            <span class="dropdown-link-desc">Anonymised engagement examples</span>
+          </a>
+<a class="dropdown-link" href="/insights/">
+            <span class="dropdown-link-title">Insights</span>
+            <span class="dropdown-link-desc">Articles from our practitioners</span>
+          </a>
+<a class="dropdown-link" href="/resources/">
+            <span class="dropdown-link-title">Resources</span>
+            <span class="dropdown-link-desc">Guides, checklists and FAQs</span>
+          </a>
+<a class="dropdown-link" href="/careers/">
+            <span class="dropdown-link-title">Careers</span>
+            <span class="dropdown-link-desc">Open roles and how we hire</span>
+          </a>
+        </div>
+      </li>
+<li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+        </ul>
+        <a href="/contact/" class="btn btn-primary btn-nav">Get a Consultation</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <a href="/services/">Services</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <span aria-current="page">IT Infrastructure</span></nav>
+        <p class="hero-eyebrow">IT Services</p>
+        <h1>Infrastructure Designed for the Next Five Years</h1>
+        <p class="page-hero-sub">We design, build and refresh the servers, networks, storage and virtualisation your applications sit on, harden it to published benchmarks, and hand over documentation and runbooks so the design does not live in one engineer&#39;s memory.</p>
+        <div class="hero-actions"><a href="/contact/" class="btn btn-primary">Request a Consultation</a><a href="tel:+919004857727" class="btn btn-outline">+91 90048 57727</a></div>
+        <div class="highlight-row"><div class="highlight">
+      <span class="highlight-value">CIS</span>
+      <span class="highlight-label">Hardened baseline builds</span>
+    </div>
+<div class="highlight">
+      <span class="highlight-value">N+1</span>
+      <span class="highlight-label">Redundancy where it counts</span>
+    </div>
+<div class="highlight">
+      <span class="highlight-value">Five-Year</span>
+      <span class="highlight-label">Refresh and capacity roadmap</span>
+    </div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="split-grid">
+          <div class="split-main reveal">
+            <span class="service-icon service-icon-lg"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="5.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14.5" width="18" height="5.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="6.5" cy="6.75" r="0.9" fill="currentColor"/><circle cx="6.5" cy="17.25" r="0.9" fill="currentColor"/><path d="M12 9.5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <h2>Design Decisions You Live With</h2>
+            <p>Most infrastructure is not designed. It accretes. A hypervisor host bought for one project, a switch stack extended twice because a port ran out, a storage array sized for the data volumes of four years ago, a domain controller nobody has rebooted since the last power cut because nobody is quite sure what still authenticates against it. Each decision was reasonable on the day it was made. The compound result is an estate where no one can say which workloads survive the loss of a single rack, where a firmware upgrade is deferred indefinitely because the maintenance window was never agreed, and where the recovery plan assumes a restore that has not been tested end to end. The failure, when it comes, is rarely exotic. A power supply dies in a host that has only one. A certificate expires on a service nobody documented. Virtual machine sprawl quietly consumes the headroom you were relying on for failover.</p>
+            <p>We design infrastructure to a written set of requirements and then build it. That starts with what the platform has to do: user counts, transaction volumes, which applications are genuinely critical, what recovery time and recovery point objectives the organisation can accept, and the growth curve over three to five years. From there the work is specific. Compute and virtualisation on VMware vSphere, Microsoft Hyper-V or KVM, sized against measured workload rather than a vendor rule of thumb. Storage architecture across tiers, with the choice between SAN, NAS and hyperconverged made on access patterns and recovery targets. Network architecture covering LAN switching, routing, VLAN segmentation, WAN circuits and SD-WAN overlays where multiple sites and cloud egress justify them. Directory services and DNS treated as the foundation they are, whether that is Active Directory Domain Services on premises, Entra ID, or the hybrid identity most organisations actually run. Where private or hybrid cloud fits, workloads are placed deliberately, with data residency, latency and licence implications set out before anything moves.</p>
+            <p>A build is only as good as the state it stays in. Every host, hypervisor, switch and directory service we deploy is hardened against CIS Benchmarks and the relevant vendor security baselines, with deviations recorded and justified rather than quietly applied. Configuration is held as code or as versioned templates where the platform allows, so a rebuild reproduces the standard instead of an engineer&#39;s recollection. Patch and firmware management runs to a schedule with agreed maintenance windows, staged rings and a tested rollback. Capacity is measured against thresholds that start a conversation months before a volume fills. And the estate is documented: physical and logical diagrams, IP address management, an accurate configuration record, and runbooks covering failover, restore and the routine tasks somebody performs at three in the morning. Refresh planning turns hardware end of life and vendor support expiry into a funded timeline instead of an emergency purchase order.</p>
+            <a href="/contact/" class="text-link">Talk to our team about IT Infrastructure <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <aside class="split-aside">
+            <div class="checklist-panel reveal">
+      <h3>Drawings, Baselines and Runbooks</h3>
+      <p class="checklist-intro">A rack full of correctly configured equipment is worth little if nobody can explain it. These documents carry the reasoning, the topology and the operating detail.</p>
+      <ul class="service-list"><li>High-level and low-level infrastructure design documents</li><li>Physical and logical network diagrams, kept current</li><li>Hardened build standards for servers, switches and hypervisors</li><li>IP address management and VLAN allocation register</li><li>Capacity model with growth thresholds and trigger points</li><li>Failover, restore and maintenance runbooks for operations staff</li><li>Configuration baseline records with recorded deviations and justifications</li><li>Asset lifecycle register with support expiry and refresh dates</li></ul>
+    </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">Capabilities</p>
+      <h2>What We Design and Build</h2>
+      
+    </div>
+        <div class="capability-grid"><div class="capability reveal">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Compute and Virtualisation</h3>
+        <p>Host sizing and hypervisor design on VMware vSphere, Hyper-V or KVM, with cluster layout, resource pools, affinity rules and failover capacity calculated from the peaks your own monitoring recorded.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-1">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Network Architecture</h3>
+        <p>Campus and data centre switching, routing, VLAN segmentation, wireless coverage, WAN circuits and SD-WAN overlays, designed for resilience, quality of service and clear separation between user, server and management traffic.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-2">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Storage and Data Services</h3>
+        <p>Tiered storage design across SAN, NAS and hyperconverged platforms, with capacity modelling, snapshot and replication policy, and backup architecture written to the recovery time and recovery point targets you signed off.</p>
+      </div>
+    </div>
+<div class="capability reveal">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Directory and Identity Services</h3>
+        <p>Active Directory, Entra ID and hybrid identity design covering forest and domain structure, group policy, DNS and DHCP, certificate services, privileged account separation and replication topology across your sites.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-1">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Hybrid and Private Cloud</h3>
+        <p>Workload placement between on-premises platforms, colocation and public cloud, with connectivity design, data residency assessment, licence implications and a frank view of what should not move at all.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-2">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Resilience and Continuity</h3>
+        <p>High availability at each tier, clustering and replication between sites, rehearsed failover procedures, and a disaster recovery design mapped to the business impact analysis rather than assumed from the hardware.</p>
+      </div>
+    </div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">How It Works</p>
+      <h2>Our Engagement Process</h2>
+      <p class="section-sub">How a IT Infrastructure engagement runs from first conversation to steady state.</p>
+    </div>
+        <div class="process-grid"><div class="process-step reveal">
+      <div class="process-num">01</div>
+      <h3>Assess</h3>
+      <p>We document what exists: hosts, hypervisors, switches, storage, circuits, directory services, backups and support contracts. Workload and utilisation data is collected over a period long enough to show real peaks, not a quiet Tuesday.</p>
+    </div>
+<div class="process-step reveal delay-1">
+      <div class="process-num">02</div>
+      <h3>Design</h3>
+      <p>Requirements become a written design: topology, sizing, resilience targets, hardening standard, migration approach and a bill of materials. You review and approve it before anything is ordered or racked.</p>
+    </div>
+<div class="process-step reveal delay-2">
+      <div class="process-num">03</div>
+      <h3>Build and Migrate</h3>
+      <p>Kit is staged and configured to the agreed baseline, then workloads move in waves with a tested rollback at each step. Cutovers run in agreed windows, and the old platform is held until acceptance.</p>
+    </div>
+<div class="process-step reveal delay-3">
+      <div class="process-num">04</div>
+      <h3>Operate and Refresh</h3>
+      <p>Documentation and operating procedures are handed over, monitoring thresholds set, and the refresh calendar published. Capacity and support expiry are reviewed each quarter so the next investment is planned, not forced.</p>
+    </div></div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="split-grid split-grid-even">
+          <div>
+            <div class="section-head left reveal">
+      <p class="section-eyebrow">Benefits</p>
+      <h2>What You Get Out of It</h2>
+      
+    </div>
+            <div class="benefit-stack"><div class="benefit-item reveal">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Failure Modes You Know</h3><p>Single points of failure are identified during design and either removed or accepted in writing, so an outage becomes a known scenario with a rehearsed response.</p></div>
+              </div>
+<div class="benefit-item reveal delay-1">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Spend That Is Planned</h3><p>Capacity thresholds and support expiry dates drive a refresh calendar, so hardware investment lands in next year&#39;s capital plan instead of an emergency order after something fails.</p></div>
+              </div>
+<div class="benefit-item reveal delay-2">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Hardening You Can Show</h3><p>Builds follow CIS Benchmarks with every deviation recorded, so a PCI DSS 4.0 or ISO/IEC 27001:2022 assessor reads the configuration record instead of taking your word for it.</p></div>
+              </div>
+<div class="benefit-item reveal delay-3">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Documented Design Rationale</h3><p>Every sizing calculation, topology choice and accepted deviation is written down with the reason behind it, so the next change starts from evidence and not from guesswork.</p></div>
+              </div></div>
+          </div>
+          <div class="who-panel reveal delay-1">
+            <h3>Who This Is For</h3>
+            <ul class="service-list"><li>Organisations whose infrastructure grew by accretion and now has no current design document</li><li>Companies facing a hardware refresh, data centre move or colocation exit</li><li>Firms with recovery targets on paper that have never been tested end to end</li><li>Teams adding sites, users or workloads faster than the current platform allows</li></ul>
+            <a href="/contact/" class="btn btn-primary btn-block">Check if this fits your business</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-narrow">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">FAQ</p>
+      <h2>IT Infrastructure — Common Questions</h2>
+      
+    </div>
+        <div class="faq-list"><div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="svc-q-0" aria-expanded="false" aria-controls="svc-a-0">
+          <span>We already have a systems administrator. Where does your work stop and theirs start?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="svc-a-0" role="region" aria-labelledby="svc-q-0">
+        <p>Design and build work is project-shaped, and much of it is knowledge an administrator does not use often enough to keep sharp: sizing a cluster, laying out a directory forest, choosing between replication topologies. We agree a responsibility matrix before starting, your administrator sits in the design reviews, and the handover includes the reasoning and the written procedures, not just credentials. On many engagements the administrator runs the platform afterwards while we stay available for changes and the annual refresh review.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="svc-q-1" aria-expanded="false" aria-controls="svc-a-1">
+          <span>Everything is moving to public cloud. Why invest in on-premises infrastructure at all?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="svc-a-1" role="region" aria-labelledby="svc-q-1">
+        <p>Some workloads belong in public cloud and we will say so. Others do not. Steady, predictable compute that runs continuously is frequently cheaper on owned hardware over a five-year term, and data residency, latency to plant or shop floor systems, and licence terms tied to physical cores all pull the same way. The useful question is per workload, not per organisation. We model the options, including colocation and private cloud, then set out the costs, the risks and what you give up in each direction.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="svc-q-2" aria-expanded="false" aria-controls="svc-a-2">
+          <span>How much downtime does a migration on this scale actually cause?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="svc-a-2" role="region" aria-labelledby="svc-q-2">
+        <p>Less than most people expect, because the plan is built to avoid it. Workloads move in waves, the new platform runs alongside the old, and each wave has a tested rollback and an acceptance check before the next begins. Real outage is usually confined to short agreed windows for cutover of shared services such as directory or storage paths. Where a system cannot tolerate interruption, we design for live migration or replication at the design stage.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="svc-q-3" aria-expanded="false" aria-controls="svc-a-3">
+          <span>What stops this becoming a design document that goes stale within a year?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="svc-a-3" role="region" aria-labelledby="svc-q-3">
+        <p>Two things. Documentation is written to be maintained: diagrams generated from live configuration where tooling allows, an IP address management register rather than a spreadsheet nobody owns, and configuration held as versioned templates so a change to the estate and a change to the record happen together. Second is a review commitment. Where we retain a relationship, capacity, support expiry and configuration drift are reviewed quarterly. Where we hand over entirely, the runbooks name the update procedure and its owner.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="svc-q-4" aria-expanded="false" aria-controls="svc-a-4">
+          <span>How do you choose vendors? Are you tied to particular manufacturers?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="svc-a-4" role="region" aria-labelledby="svc-q-4">
+        <p>Vendor choice follows the design, not a sales target we have to hit. Selection runs against stated requirements: throughput and port density, support and replacement terms, expected supported life, availability of spares and engineers in India, and how licensing behaves at renewal rather than at first purchase. We shortlist across manufacturers, separate genuine engineering preference from familiarity, and support you through evaluation and procurement. Where you already hold a standard or a supplier agreement, we design within it and state where that constrains the result.</p>
+      </div>
+    </div></div>
+      </div>
+    </section>
+
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">Related</p>
+      <h2>Services That Work Alongside This One</h2>
+      
+    </div>
+        <div class="services-grid"><article class="service-card reveal">
+      <a class="service-card-link" href="/services/managed-it/">
+        <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M7 9l2.5 2.5L7 14M12.5 13.5H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Managed IT Services</h3>
+        <p>A managed IT function covering tiered service desk, endpoint and patch management, device provisioning, Microsoft 365 and Google Workspace administration, identity lifecycle and service level reporting.</p>
+        <span class="text-link">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+    </article>
+<article class="service-card reveal delay-1">
+      <a class="service-card-link" href="/services/network-security/">
+        <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="19" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 11l10-5M7 13l10 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <h3>Network Security &amp; Monitoring</h3>
+        <p>Round-the-clock monitoring with a tuned SIEM and EDR/XDR, analyst-led triage, threat hunting mapped to MITRE ATT&amp;CK, plus firewall, segmentation and zero-trust design.</p>
+        <span class="text-link">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+    </article>
+<article class="service-card reveal delay-2">
+      <a class="service-card-link" href="/services/cloud-security/">
+        <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18a4.5 4.5 0 01-.6-8.96A6 6 0 0118 8.5 4 4 0 0117.5 18H7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 14.5h4M12 12.8v-1.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <h3>Cloud Security Solutions</h3>
+        <p>Configuration review and hardening across AWS, Azure and Google Cloud, covering identity, landing zones, key management, container workloads and infrastructure as code, mapped to CIS Benchmarks.</p>
+        <span class="text-link">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+    </article></div>
+      </div>
+    </section>
+
+
+    <section class="cta-banner">
+      <div class="container reveal">
+        <h2>Ready to Discuss IT Infrastructure?</h2>
+        <p>Tell us where you are today. We will tell you honestly what the engagement would involve.</p>
+        <div class="cta-actions"><a href="/contact/" class="btn btn-light">Book a Free Consultation</a><a href="mailto:info@arysec.in" class="btn btn-outline">info@arysec.in</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand" aria-label="Arysec Technologies LLP — Home">
+        <svg class="brand-mark" viewBox="0 0 56 60" width="38" height="41" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradFoot" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#00e5a0"/>
+            </linearGradient>
+          </defs>
+          <path d="M28 2 L52 11 V32 C52 46 42 54.5 28 58 C14 54.5 4 46 4 32 V11 Z" fill="none" stroke="url(#brandGradFoot)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M28 14 L16 42 M28 14 L40 42 M20.5 32 H35.5" fill="none" stroke="url(#brandGradFoot)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="42" r="3" fill="#00d4ff"/><circle cx="40" cy="42" r="3" fill="#00e5a0"/><circle cx="28" cy="14" r="3" fill="#00d4ff"/>
+        </svg>
+            <span class="brand-text">
+              <span class="brand-name">ARYSEC</span>
+              <span class="brand-tagline">TECHNOLOGIES LLP</span>
+            </span>
+          </a>
+          <p class="footer-blurb">Reliable IT. Resilient security. Expert support. Headquartered in Mumbai, delivering across India and worldwide.</p>
+          <div class="footer-contact">
+            <a href="tel:+919004857727"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h4l1.5 5-2.5 2a13 13 0 005 5l2-2.5 5 1.5v4a2 2 0 01-2 2A17 17 0 014 5a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>+91 90048 57727</span></a>
+            <a href="mailto:info@arysec.in"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>info@arysec.in</span></a>
+            <span class="footer-contact-static"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span>Mumbai, Maharashtra, India</span></span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="/services/vciso/">vCISO as a Service</a>
+<a href="/services/dpo/">DPO as a Service</a>
+<a href="/services/internal-audit/">Internal Audit</a>
+<a href="/services/vapt/">VAPT</a>
+<a href="/services/iso-27001/">ISO 27001</a>
+<a href="/services/">All Services</a>
+        </div>
+<div class="footer-col">
+          <h4>Company</h4>
+          <a href="/about/">About Us</a>
+<a href="/solutions/">Solutions</a>
+<a href="/industries/">Industries</a>
+<a href="/case-studies/">Case Studies</a>
+<a href="/careers/">Careers</a>
+        </div>
+<div class="footer-col">
+          <h4>Resources</h4>
+          <a href="/insights/">Insights</a>
+<a href="/resources/">Guides &amp; Checklists</a>
+<a href="/resources/#faq">FAQs</a>
+<a href="/responsible-disclosure/">Responsible Disclosure</a>
+<a href="/contact/">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Arysec Technologies LLP. All rights reserved.</p>
+        <p class="footer-legal"><a href="/privacy-policy/">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="/terms-of-service/">Terms of Service</a> <span aria-hidden="true">&middot;</span> <a href="/cookie-policy/">Cookie Policy</a> <span aria-hidden="true">&middot;</span> <a href="/responsible-disclosure/">Responsible Disclosure</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie preferences" aria-live="polite" hidden>
+    <div class="cookie-inner">
+      <p>
+        We use strictly necessary cookies to run this site, and optional analytics cookies to understand
+        how it is used. We do not use advertising or cross-site tracking cookies.
+        <a href="/cookie-policy/">Read our Cookie Policy</a>.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-outline btn-sm" data-cookie-choice="necessary">Necessary only</button>
+        <button type="button" class="btn btn-primary btn-sm" data-cookie-choice="all">Accept analytics</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

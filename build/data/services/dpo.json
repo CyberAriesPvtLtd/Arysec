@@ -7,7 +7,7 @@
   "metaDescription": "Arysec provides an outsourced Data Protection Officer for DPDP Act 2023 and EU GDPR duties: RoPA, DPIAs, consent, rights requests and breach notification.",
   "cardSummary": "An appointed Data Protection Officer, delivered as a service: privacy governance, records of processing, impact assessments, rights requests and breach notification under the DPDP Act and GDPR.",
   "heroHeadline": "A Named DPO Who Owns Your Privacy Obligations",
-  "heroSub": "We take on the Data Protection Officer role for your organisation, covering DPDP Act 2023 and EU GDPR duties. You get a qualified, independent point of contact for regulators, data principals and your own board.",
+  "heroSub": "We fill the Data Protection Officer role for your organisation under both Indian and European privacy law. You get a qualified, independent point of contact for regulators, data principals and your own board.",
   "highlights": [
     { "value": "Appointed", "label": "Named officer of record" },
     { "value": "Independent", "label": "No conflict of interest" },
@@ -51,11 +51,11 @@
     ]
   },
   "deliverables": {
-    "heading": "What Lands On Your Desk",
+    "heading": "The Privacy Record Set",
     "intro": "Documents you can hand to a regulator, an auditor or an enterprise customer's privacy team, kept current rather than written once and filed.",
     "items": [
       "Record of processing activities, maintained per business function",
-      "Data flow maps covering systems, vendors and jurisdictions",
+      "Data flow maps tracing each transfer route end to end",
       "Privacy notices, consent artefacts and withdrawal journeys",
       "DPIA reports with residual risk and treatment decisions",
       "Cross-border transfer inventory with safeguard mechanisms",
@@ -112,11 +112,11 @@
       "answer": "It depends on facts we can establish quickly. Under the DPDP Act 2023 the appointment obligation attaches to organisations the Central Government notifies as Significant Data Fiduciaries. Under the GDPR, Article 37 triggers on public authority status, large-scale regular and systematic monitoring, or large-scale special category processing. Many organisations appoint voluntarily because enterprise customers ask. We assess your position and tell you plainly, and we recommend you confirm the conclusion with your legal counsel."
     },
     {
-      "question": "Can an outsourced DPO really be independent and accountable?",
+      "question": "Does a contracted officer carry real independence and accountability?",
       "answer": "Article 37(6) of the GDPR permits the tasks to be performed under a service contract. The DPDP Act requires a Significant Data Fiduciary's officer to be based in India and answerable to its governing body, and we structure the engagement to meet that, though we recommend confirming it with counsel. Accountability comes from the terms: a named individual, a defined reporting line, response commitments, and employee-equivalent confidentiality duties. Independence is easier to show externally, since we do not own the systems or budgets the role scrutinises."
     },
     {
-      "question": "How does this overlap with our existing legal or security team?",
+      "question": "Our general counsel and security lead already split privacy between them. What changes?",
       "answer": "It should not duplicate them. Your counsel owns legal risk and contracts; your security team owns controls and incident response. The DPO role sits across both, deciding whether processing is lawful, whether a DPIA is needed, and whether an incident crosses a notification threshold. We take the recurring privacy workload off both teams and escalate when a decision needs their authority. Everything we produce stays in your systems, so bringing the role in-house later is a handover, not a rebuild."
     },
     {

@@ -9,15 +9,24 @@
   "heroHeadline": "Attacks Recognised Early and Reported Fast",
   "heroSub": "Awareness only counts when it changes what people do under pressure. We build role-based programmes, run phishing simulations that grow harder as teams improve, and measure how fast an attack gets reported rather than how many courses were finished.",
   "highlights": [
-    { "value": "Role-Based", "label": "Training matched to the job" },
-    { "value": "Progressive", "label": "Phishing difficulty that escalates" },
-    { "value": "No Blame", "label": "Reporting culture, not punishment" }
+    {
+      "value": "Role-Based",
+      "label": "Training matched to the job"
+    },
+    {
+      "value": "Progressive",
+      "label": "Phishing difficulty that escalates"
+    },
+    {
+      "value": "No Blame",
+      "label": "Reporting culture, not punishment"
+    }
   ],
   "intro": {
     "heading": "Habits, Not Slide Decks",
     "paragraphs": [
       "Attackers go through people because it is cheaper than going through your controls. That does not make your staff the weak link; it makes them the part of the estate that gets targeted hardest and supported least. Current tradecraft is a long way from a badly spelled bank email. Adversary-in-the-middle kits proxy a genuine login page and steal the session cookie, so a correct password and a one-time code still hand over the account. Push bombing wears down an approver until they tap accept. Callback lures avoid links entirely and route the reader to a phone number staffed by the attacker. QR codes move the click onto a personal device outside your controls. Business email compromise skips malware and simply asks a finance team to update supplier bank details, and service desk agents are talked into resetting an authenticator for someone who sounds legitimate. MITRE ATT&CK groups most of this under initial access, and none of it is defeated by telling people to look for typos.",
-      "Programme design starts from what each group actually touches. Finance and procurement need payment verification habits: out-of-band confirmation on any change of bank details, dual approval thresholds, and a script for the call. Developers need secure coding grounded in the OWASP Top 10, the OWASP API Security Top 10 and OWASP ASVS, taught through hands-on exploitation and repair in deliberately vulnerable applications rather than as a slide review, alongside secrets handling, dependency and build pipeline risk, and the OWASP Top 10 for Large Language Model Applications where you ship features built on models. Service desk and support staff need identity verification procedure, since an agent under pressure is now a documented route to account takeover. Privileged administrators need credential handling and jump host discipline. Directors need briefings pitched at decisions rather than technology: disclosure, notification, ransom, spokesperson, and the personal exposure that comes with being named on a company website. Privacy runs across all of it, with practical DPDP Act 2023 content on notice and consent, purpose limitation, retention and breach intimation, plus GDPR material where you handle European personal data. Delivery matters as much as content. Induction inside the first week, an annual refresher for the record and short reinforcement in between works better than one long session, and teams without corporate mailboxes get toolbox talks, floor posters and messaging in the language they read rather than an e-learning link they will never open.",
+      "Programme design starts from what each group actually touches. Finance and procurement learn payment verification habits: out-of-band confirmation on any change of bank details, dual approval thresholds, and a script for the call. Developers get secure coding grounded in the OWASP Top 10, the OWASP API Security Top 10 and OWASP ASVS, taught by exploiting and then repairing deliberately vulnerable applications, alongside secrets handling, dependency and build pipeline risk, and the OWASP Top 10 for Large Language Model Applications where you ship features built on models. Service desk agents work through identity verification procedure, since an agent under pressure is now a documented route to account takeover. Privileged administrators cover credential handling and jump host discipline. Directors are briefed on decisions, not technology: disclosure, notification, ransom, spokesperson, and the personal exposure that comes with being named on a company website. Privacy runs across all of it, with practical DPDP Act 2023 content on notice and consent, purpose limitation, retention and breach intimation, plus GDPR material where you handle European personal data. Delivery matters as much as content. Induction inside the first week, an annual refresher for the record and short reinforcement in between beats one long session, and teams without corporate mailboxes get toolbox talks, floor posters and messaging in the language they read instead of an e-learning link nobody opens.",
       "Measurement is where most awareness spending loses its argument. Completion percentage is an input; it says a module was opened, not that anything changed. The numbers worth reporting are the report rate, the ratio of reports to clicks, the median time from delivery to first report, credential submission counted separately from clicking, and how the repeat-exposure group moves over successive campaigns. Those figures only mean something if the baseline is honest, so we run a first simulation before any training, hold difficulty steady long enough to see a trend, then raise it deliberately so that improvement is not simply easier lures. The reporting route gets tested as well: a report button that files into an unmonitored mailbox is worse than no button, because it teaches people that reporting achieves nothing. On the compliance side, this work carries ISO/IEC 27001:2022 Clause 7.2, Clause 7.3 and Annex A control 6.3, the SOC 2 criteria covering competence and internal communication, PCI DSS 4.0 Requirements 12.6 and 6.2.2 where card data is in scope, and the Awareness and Training outcomes in NIST CSF 2.0. We produce the records and the mapping; the certificate itself remains a matter for your auditor or certification body."
     ]
   },
@@ -101,7 +110,7 @@
     }
   ],
   "whoItsFor": [
-    "Organisations preparing for ISO 27001 or SOC 2 with no evidence of training",
+    "Companies whose ISO 27001 or SOC 2 auditor has asked for training records that do not exist",
     "Banks, insurers and fintechs whose finance teams approve payments and supplier bank changes",
     "Product companies whose developers keep reintroducing the same OWASP categories in test reports",
     "Enterprises with deskless or multilingual workforces that annual e-learning has never reached"
@@ -128,5 +137,9 @@
       "answer": "For ISO/IEC 27001:2022, an auditor looks at Clause 7.2 competence, Clause 7.3 awareness and Annex A control 6.3, and wants records: who was trained, on what, when, and evidence that content reflects your actual policies and risks. SOC 2 examiners test the criteria covering competence and internal communication, usually by sampling attestations. We build the register and the mapping. Confirm your specific scope with your certification body or auditor, since we support readiness rather than issue any certificate."
     }
   ],
-  "related": ["iso-27001", "incident-response", "dpo"]
+  "related": [
+    "iso-27001",
+    "incident-response",
+    "dpo"
+  ]
 }

@@ -1,0 +1,145 @@
+{
+  "slug": "software-development",
+  "name": "Software Development & Integration",
+  "shortName": "Software Development",
+  "category": "IT Services",
+  "metaTitle": "Secure Custom Software Development & API Integration",
+  "metaDescription": "Arysec builds custom web applications, APIs and integrations with threat modelling, SAST, DAST and SCA in the pipeline, and security testing before release.",
+  "cardSummary": "Custom applications, APIs and integrations built with threat modelling at design time, security scanning in the pipeline, penetration testing before release, and source code handed to you.",
+  "heroHeadline": "Software Built to Survive a Penetration Test",
+  "heroSub": "We build web applications, internal systems, APIs and integrations, and we treat security as a design decision rather than a pre-launch scramble. Threat models before code, scanning in every pipeline run, and an independent test before you go live.",
+  "highlights": [
+    {
+      "value": "Secure SDLC",
+      "label": "Threat modelling from design"
+    },
+    {
+      "value": "Every commit",
+      "label": "SAST, DAST and SCA"
+    },
+    {
+      "value": "OWASP ASVS",
+      "label": "Verified before you launch"
+    }
+  ],
+  "intro": {
+    "heading": "Security Is a Design Decision",
+    "paragraphs": [
+      "Most of what we build is unglamorous and load-bearing: the customer portal that carries your revenue, the internal system your operations team lives in for eight hours a day, the API a partner integrates against, the integration layer keeping a twelve-year-old ERP talking to everything bought since. We work in mainstream stacks, not fashionable ones, because you have to hire for this codebase after we leave. In practice that usually means TypeScript and React on the front end, Node.js, Python, Java or .NET services behind it, PostgreSQL or SQL Server where the data matters, and deployment onto AWS, Azure or your own servers depending on where your obligations sit.",
+      "The difference between us and a general development firm is where security enters the project. In most builds it arrives at the end, as a penetration test three weeks before launch producing findings nobody has time to fix properly. We put it at the start. Before implementation we build a threat model: data flow diagrams for the system, STRIDE analysis on each trust boundary, abuse cases written alongside user stories, and security requirements drawn from OWASP ASVS at the verification level the system's risk justifies. Authentication, session handling, authorisation logic, input validation, output encoding, cryptography and logging get designed rather than retrofitted. Credentials never live in source: secrets sit in a managed vault such as HashiCorp Vault, AWS Secrets Manager or Azure Key Vault, are injected at runtime, and repository history is scanned so a key committed by accident is caught in minutes, not months later by somebody outside the company. Our pipeline practice follows the NIST Secure Software Development Framework in SP 800-218, and we assess wider engineering maturity against OWASP SAMM where you want that view.",
+      "You own everything at the end. Code lives in your source control from the first commit, not ours. Infrastructure is defined as code in the same repository, so environments are reproducible instead of remembered. Handover includes architecture decision records explaining why choices were made, an OpenAPI specification for every service interface, runbooks for the operational tasks, and a working session with whoever inherits the system. We do not embed proprietary components only we can maintain, and we will tell you plainly when a requirement is better met by an existing product than by code we write for you."
+    ]
+  },
+  "capabilities": {
+    "heading": "What We Build and Secure",
+    "items": [
+      {
+        "title": "Custom Web Applications",
+        "description": "Customer portals, dashboards and line-of-business systems built to your workflow, not configured around a product's assumptions. Access control, audit trails and tenancy separation are designed in from the first sprint."
+      },
+      {
+        "title": "API Design and Integration",
+        "description": "Interfaces specified in OpenAPI before implementation, secured with OAuth 2.0 and OpenID Connect, rate limited and versioned. Integration work covers message queues, webhooks, file transfers and the retry logic that keeps them honest."
+      },
+      {
+        "title": "Legacy Modernisation",
+        "description": "Ageing systems are replaced incrementally using the strangler fig pattern: new functionality moves behind a facade while the old system keeps running, so you avoid the rewrite that never ships."
+      },
+      {
+        "title": "Threat Modelling and Design Review",
+        "description": "Data flow diagrams, trust boundary analysis and STRIDE sessions run before code, producing security requirements traceable to OWASP ASVS controls and a record of the risks you knowingly accepted."
+      },
+      {
+        "title": "DevSecOps Pipelines",
+        "description": "Build pipelines run static analysis, dependency scanning, secret detection, container image checks and infrastructure-as-code review on every merge request, with thresholds that fail the build rather than filing a ticket nobody reads."
+      },
+      {
+        "title": "Support and Maintenance",
+        "description": "Warranty on delivered work, then an optional retainer covering dependency patching, security advisories affecting your stack, small enhancements and a named engineer who already knows the codebase."
+      }
+    ]
+  },
+  "deliverables": {
+    "heading": "What You Take Away",
+    "intro": "Delivery is not just working software. You get the artefacts that let another team maintain, audit and extend the system without calling us.",
+    "items": [
+      "Working software in your own source repositories",
+      "Threat model with data flow diagrams and mitigations",
+      "Architecture decision records explaining the choices made",
+      "OpenAPI specification for every service interface",
+      "Software bill of materials in CycloneDX or SPDX format",
+      "CI/CD pipeline configuration with security gates enabled",
+      "Pre-release application security test report and fixes",
+      "Runbooks, deployment guide and handover walkthrough"
+    ]
+  },
+  "process": [
+    {
+      "title": "Discover and Model",
+      "description": "We work through requirements, data classification and integration points, then build the threat model and agree the security requirements. Scope, architecture and acceptance criteria are written down before anyone opens an editor."
+    },
+    {
+      "title": "Build in Sprints",
+      "description": "Development runs in two-week iterations with a demonstrable increment at the end of each. Every merge request gets peer review, a security-focused check against the ASVS requirements, and an automated scan set."
+    },
+    {
+      "title": "Test and Harden",
+      "description": "Functional and integration tests run continuously. Before release the application goes through dynamic testing and an independent assessment by a tester who did not write the code, with findings fixed before launch."
+    },
+    {
+      "title": "Release and Support",
+      "description": "Deployment follows a rehearsed runbook with a rollback path. Documentation and credentials transfer to your team, warranty covers defects for an agreed period, and you choose whether we stay on retainer."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Fewer Findings at Launch",
+      "description": "Security requirements written at design time cost hours. The same defects found in a pre-launch test cost redesign, and the ones found after launch cost disclosure."
+    },
+    {
+      "title": "Audit Evidence Comes Free",
+      "description": "Change records, code review history, scan results and the software bill of materials satisfy the secure development controls in ISO/IEC 27001:2022 and SOC 2 without a separate exercise."
+    },
+    {
+      "title": "No Vendor Lock-In",
+      "description": "Your repositories, your cloud accounts, mainstream frameworks and documented decisions. Another team can pick the system up, and we would rather earn the renewal than trap you into it."
+    },
+    {
+      "title": "One Team, Both Disciplines",
+      "description": "The engineers writing the code sit alongside people who test systems for a living, so security advice arrives during design reviews, not in a report written after the fact."
+    }
+  ],
+  "whoItsFor": [
+    "Regulated organisations whose applications handle personal or financial data under the DPDP Act 2023",
+    "Product teams whose enterprise customers now audit their software supply chain and development practices",
+    "Companies running critical business logic on unsupported platforms that no longer receive security patches",
+    "Engineering leaders inheriting an outsourced codebase with no documentation, tests or security gates"
+  ],
+  "faqs": [
+    {
+      "question": "We already have a development team. Why bring in an outside firm?",
+      "answer": "Usually you should not, for core product work. We are useful in three situations: your team is at capacity and a dated commitment is slipping, the work needs a skill they do not have and will not need again, or you want secure development practice established and then handed over. In the third case the deliverable is partly the pipeline, the threat modelling habit and the review standard, not just the software. We are happy to work inside your process, not beside it."
+    },
+    {
+      "question": "Does all this security work make the project slower and more expensive?",
+      "answer": "The design stage is longer and the delivery stage is shorter. A threat modelling workshop takes a day or two; retrofitting authorisation logic after a test finds tenant data leaking takes weeks and often forces a schema change. Automated scanning adds minutes to a build, not days. The real extra cost is on the first project, because we are also setting up pipelines and standards that later work reuses. At scoping we will say which controls are proportionate to the system's risk."
+    },
+    {
+      "question": "Who owns the code, and what stops us being locked in?",
+      "answer": "You own it. Work is committed to repositories you control from day one, with intellectual property assigned in the contract, and we use mainstream open source frameworks rather than an internal platform of our own. Handover includes architecture decision records, an OpenAPI specification, infrastructure as code and a working session with your team or your next supplier. If you end the relationship, the practical test is whether another firm can take over without calling us, and that is what the documentation is written for."
+    },
+    {
+      "question": "How do you handle open source dependencies and supply chain risk?",
+      "answer": "Every build produces a software bill of materials in CycloneDX or SPDX format, so you know what sits in the artefact you deployed. Composition analysis checks each dependency against known vulnerability data and against its licence terms, and the pipeline fails on severities you set rather than warning quietly. Dependencies are pinned by lockfile, build artefacts are signed, and new packages go through a check on maintenance activity and provenance before anyone adds them. Under a retainer we monitor advisories affecting your specific bill of materials."
+    },
+    {
+      "question": "What happens after go-live? We have been left with unsupported software before.",
+      "answer": "Delivery includes a warranty period during which defects against the agreed specification are fixed at no charge. After that you choose. Some clients take a maintenance retainer covering dependency patching, security advisories, minor enhancements and a response commitment; others take the documentation and run it themselves, which is a reasonable outcome if you have the people. We will also run a paid handover to an internal team or another supplier, including pairing sessions, and we will not make departure difficult."
+    }
+  ],
+  "related": [
+    "vapt",
+    "cloud-security",
+    "data-protection"
+  ]
+}

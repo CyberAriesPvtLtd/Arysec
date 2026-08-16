@@ -1,0 +1,127 @@
+{
+  "slug": "do-you-need-a-vciso",
+  "title": "Do You Need a vCISO? A Decision Framework",
+  "category": "Leadership",
+  "metaTitle": "Do You Need a vCISO? A Decision Framework",
+  "metaDescription": "When does ad-hoc security ownership stop working? Arysec on the signals, fractional versus full-time versus project work, and structuring a vCISO engagement.",
+  "excerpt": "Ad-hoc security ownership works until it does not. A framework for founders: the signals you have outgrown it, how fractional, full-time and project work differ, what a vCISO cannot do, and how to structure the engagement.",
+  "readingTime": "7 min read",
+  "keyTakeaways": [
+    "Two or three signals arriving together, rather than headcount alone, usually mean security decisions have outgrown whoever is currently making them.",
+    "An IT manager is accountable for systems working; a security leader is accountable for risk being understood, decided and evidenced.",
+    "A vCISO is not engineering capacity. If nobody can execute the roadmap, you need hands before you need fractional leadership.",
+    "Write decision rights, reporting line and exit terms before day one, then measure sales friction, register health and remediation time."
+  ],
+  "sections": [
+    {
+      "heading": "The signals that ad-hoc ownership has run out",
+      "paragraphs": [
+        "Most organisations do not decide to have a security programme. They accumulate one. Someone technical answers the first customer questionnaire, then writes a policy because an auditor asked, and a year later that arrangement is load-bearing without anyone having agreed to it.",
+        "Headcount is the weakest signal and the one founders ask about most. What matters is the sensitivity of your data, the demands of your customers, and how much of your architecture nobody can describe from memory.",
+        "A handful of signals recur. One alone rarely justifies a change; two or three together usually mean the decisions have outgrown the person making them."
+      ],
+      "list": [
+        "Enterprise security reviews are stalling deals, and the same questionnaire gets answered differently each time",
+        "A dated obligation has landed: ISO/IEC 27001:2022 certification, a SOC 2 Type II window, PCI DSS 4.0 scope or DPDP Act 2023 readiness",
+        "Your board wants risk reporting, and no register exists that was not written the night before",
+        "Something happened: business email compromise, a ransomware attempt, an exposed bucket, credentials in a public repository",
+        "A regulated client has signed, and their vendor governance expectations now flow into your contract",
+        "Insurance renewal asks for attestations on multi-factor authentication, endpoint detection and backup testing that nobody can evidence"
+      ]
+    },
+    {
+      "heading": "What a CISO does that an IT manager does not",
+      "paragraphs": [
+        "Both roles involve technology, which is why they get conflated. The distinction is accountability. An IT manager is accountable for systems working: uptime, delivery, cost, vendors, the service desk. A security leader is accountable for risk being understood, decided upon and evidenced, which sometimes means arguing for work that makes the IT manager's quarter harder.",
+        "A separation of duties problem hides inside the merged role. Asking the person who built and runs your environment to assess its risk independently puts them somewhere no competent auditor accepts. The work only a security leader does looks like this."
+      ],
+      "list": [
+        "Translating technical exposure into business consequence, so a director can fund, defer or formally accept a risk",
+        "Choosing and mapping a control framework, then keeping policies, the Statement of Applicability and evidence in a state an auditor can follow",
+        "Representing security to auditors, insurers, regulators and your customers' security teams, in the language each expects",
+        "Arbitrating between engineering velocity, legal exposure and commercial pressure, with standing to lose that argument occasionally and still be heard",
+        "Owning third-party risk: tiering suppliers by data and access, reviewing assurance evidence, putting security schedules into contracts",
+        "Taking command in an incident: when to disconnect, when to engage counsel, what is said to customers and regulators"
+      ]
+    },
+    {
+      "heading": "Fractional, full-time or project work",
+      "paragraphs": [
+        "Three shapes compete for the same problem, and each is right somewhere.",
+        "A full-time CISO gives you continuity, internal standing and context no visitor accumulates. Experienced security leaders are scarce in India, recruitment runs to months, and the package sits at executive level. The subtler failure is hiring one into an organisation with no security team, no budget line and no mandate: they tend not to stay, and you restart the search having learned little.",
+        "Fractional leadership buys that seniority immediately at a fixed monthly commitment, with pattern recognition from other organisations facing the same audit. What you give up is presence. A vCISO is not in the room when an architecture decision gets made informally, and their output depends on your capacity to execute between visits.",
+        "Project consultancy suits bounded outcomes: a gap assessment, an ISO/IEC 27001 implementation, a test and remediation cycle. It suits continuous accountability badly, because when the project closes the register has no owner. Managed detection and response is often mistaken for the same choice; it is operations, and your provider will not sign a risk acceptance."
+      ]
+    },
+    {
+      "heading": "What a vCISO cannot do",
+      "paragraphs": [
+        "A vCISO is not engineering capacity. They will not patch servers, write Terraform, tune SIEM correlation rules or close the findings from your last test. With nobody to execute, you buy a well-argued roadmap and watch it age. Engaging fractional leadership when the real shortage is hands is an expensive mistake, and a common one. Four other limits are worth stating plainly."
+      ],
+      "list": [
+        "Accountability does not transfer: regulators and most standards expect a named accountable person inside your organisation, and directors retain their duty",
+        "Certificates come from an accredited certification body, not from an adviser. We prepare you for the audit and support you through it",
+        "Statutory roles may need a specific appointment. Under the DPDP Act 2023 a Significant Data Fiduciary must appoint a Data Protection Officer based in India, so confirm your position with counsel",
+        "Calendar time cannot be compressed. SOC 2 Type II needs an observation period, and ISO/IEC 27001 needs the management system to have actually operated"
+      ]
+    },
+    {
+      "heading": "Structuring the engagement",
+      "paragraphs": [
+        "Engagements that fail usually failed at the contract, not in delivery. Decision rights come first: for policy approval, risk acceptance, exceptions, tooling and incident declaration, record who decides, who recommends and who is consulted. Ambiguity here produces a vCISO who is consulted after the decision.",
+        "The reporting line comes second. A security leader reporting to the head of IT they are meant to assess has been neutralised by the org chart, so chief executive, chief operating officer or audit committee are the workable options. Access comes third: ticketing, read-only cloud, joiner and leaver data, contracts and incident history, or they work from hearsay.",
+        "Time settles into recognisable shapes. The first four to eight weeks run heavier while a baseline is built from documents, interviews and system access. Most engagements then sit between two and six days a month, often a fixed day each week. Certification pushes and the weeks after an incident spike above that; steady-state governance sits below it. Name an individual rather than a pool, keep everything produced inside your own systems, and write the exit at the start."
+      ]
+    },
+    {
+      "heading": "What to measure",
+      "paragraphs": [
+        "Security leadership is easy to assess badly. Counting policies written or vulnerabilities discovered measures activity and rewards the wrong behaviour. Pick a few measures a sceptical board would accept, baseline them in month one, and report the same ones each quarter.",
+        "The last of the measures below sounds the softest and is the most diagnostic. If your directors cannot answer it, the reporting is not landing."
+      ],
+      "list": [
+        "Sales friction: days from questionnaire received to returned, the share answered from a maintained library, and deals where security review was the blocking item",
+        "Register health: open risks carrying a named owner and a target date, the count overdue, acceptances taken at the right level",
+        "Median time to close critical and high findings, tracked by source, because test findings and scanner findings behave differently",
+        "Coverage you can evidence rather than assert: multi-factor authentication on privileged access, endpoint detection deployment, restore tests performed, leaver access removed on time",
+        "Audit results across cycles: the number and severity of nonconformities, and whether findings repeat",
+        "Board comprehension: whether directors can state the top three risks and the decisions they took on them"
+      ]
+    },
+    {
+      "heading": "When to move to a full-time hire",
+      "paragraphs": [
+        "The transition point is rarely a revenue figure. One sequencing error is worth naming before anything else: when a fractional leader spends most days on execution rather than direction, the shortage is hands, not leadership, and the right next hire is often a security engineer or governance analyst with fractional leadership kept above them.",
+        "Whichever route you take, use the outgoing arrangement to write the job brief, sit on the interview panel and run the handover. Four conditions signal that a full-time hire is genuinely due."
+      ],
+      "list": [
+        "Security work has become continuous rather than cyclical, and the calendar fills without the fractional leader creating the demand",
+        "There are people to manage, and two or more security staff need line management and daily availability a part-time leader provides poorly",
+        "Regulation or a major contract requires a named, resident, full-time officer, and your legal advice confirms that reading",
+        "Scrutiny is continuous, with board and investor questions arriving between meetings rather than in the quarterly pack"
+      ]
+    },
+    {
+      "heading": "A short self-assessment",
+      "paragraphs": [
+        "Interpretation is simple. Where the ownership questions below have no clear answer, you need leadership, fractional or otherwise. Where answers exist but the people holding them are out of time, you need capacity first. If neither is true and a single customer raised the subject, a scoped gap assessment may be proportionate.",
+        "Answer them out loud, with whoever currently owns security in the room."
+      ],
+      "list": [
+        "If a customer asks today who owns information security, can you give a name and a title?",
+        "How long did your last enterprise security review take, and who wrote the answers?",
+        "Could you produce a current risk register with owners and dates without preparing one first?",
+        "Who may accept a risk on the organisation's behalf, and is that written down anywhere?",
+        "When did someone last test a restore from backup, and is there a record of it?",
+        "Does anyone have the standing to challenge an engineering decision without owning delivery themselves?",
+        "On discovering a breach late on a Friday, who decides notification, and against which reporting clocks?"
+      ]
+    },
+    {
+      "heading": "Where we help",
+      "paragraphs": [
+        "Arysec provides fractional security leadership as a named senior practitioner for an agreed number of days each month, with the mandate, decision rights and reporting line documented before we start. The register, policies, third-party process and board reporting are built inside your systems, and the handover is designed from the first month. Where a scoped gap assessment is what you actually need instead, we will say so."
+      ]
+    }
+  ]
+}

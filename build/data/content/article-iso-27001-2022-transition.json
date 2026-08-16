@@ -9,7 +9,7 @@
   "keyTakeaways": [
     "The 2022 revision restructures Annex A into 93 controls across four themes; the requirements in clauses 4 to 10 barely moved.",
     "Fewer controls does not mean less work: 57 old controls merged into 24, each carrying combined expectations plus new guidance.",
-    "Eleven new controls cover threat intelligence, cloud services, secure coding, data masking, deletion, leakage prevention, monitoring, web filtering and configuration management.",
+    "Eleven new controls cover threat intelligence, cloud service use, ICT readiness for continuity, physical security monitoring, configuration management, information deletion, data masking, leakage prevention, monitoring activities, web filtering and secure coding.",
     "Rebuild the risk assessment and treatment plan first, then regenerate the Statement of Applicability from it, never the reverse."
   ],
   "sections": [
@@ -24,7 +24,7 @@
       "heading": "Annex A: four themes instead of fourteen domains",
       "paragraphs": [
         "The 2013 Annex A ran from A.5 to A.18 across 14 domains. The 2022 Annex A has four themes: organisational controls at A.5 with 37 entries, people controls at A.6 with 8, physical controls at A.7 with 14, and technological controls at A.8 with 34.",
-        "The arithmetic behind the reduction matters more than the total. Eleven controls are new, 24 were formed by merging 57 of the old ones, and the rest carried across with revised titles or tightened wording. Duplication was removed rather than obligations dropped, and a merged control usually carries the combined expectations of its predecessors plus fresh guidance in ISO/IEC 27002:2022, so a control you consider settled may now ask for more than it did.",
+        "What sits behind the reduction matters more than the total. Eleven controls are new, 24 were formed by merging 57 of the old ones, and the rest carried across with revised titles or tightened wording. Duplication was removed rather than obligations dropped, and a merged control usually carries the combined expectations of its predecessors plus fresh guidance in ISO/IEC 27002:2022, so a control you consider settled may now ask for more than it did.",
         "One change of principle sits underneath the renumbering. Clause 6.1.3 asks you to compare your determined controls against Annex A so nothing necessary is omitted, but the 2022 text is explicit that the annex is not exhaustive and that controls may be drawn from any source. The risk assessment determines the control set; the annex is a completeness check rather than a shopping list."
       ]
     },
@@ -50,7 +50,7 @@
     {
       "heading": "Attributes, and whether they are worth your time",
       "paragraphs": [
-        "Every control in the 2022 Annex A carries five attribute types, each written as a hashtag value: control type (preventive, detective, corrective), information security properties (confidentiality, integrity, availability), cybersecurity concepts following the identify, protect, detect, respond and recover structure of the NIST Cybersecurity Framework, fifteen operational capabilities such as governance and identity and access management, and four security domains including protection, defence and resilience.",
+        "Every control in the 2022 Annex A carries five attribute types, each written as a hashtag value: control type (preventive, detective, corrective), information security properties (confidentiality, integrity, availability), cybersecurity concepts following the identify, protect, detect, respond and recover structure of the NIST Cybersecurity Framework, fifteen operational capabilities such as governance and identity and access management, and four security domains: governance and ecosystem, protection, defence and resilience.",
         "Attributes are informative, not normative. No auditor will raise a nonconformity because you ignored them, and you may define your own. Where they earn their place is reporting: filtering by cybersecurity concept shows leadership where coverage is thin, and many organisations find they are heavy on protect and light on detect and recover. Filtering by operational capability is often a faster route to accountable owners than the old domain structure."
       ]
     },
@@ -103,7 +103,7 @@
     {
       "heading": "Where we help",
       "paragraphs": [
-        "Arysec provides ISO 27001 readiness support: gap assessment against the 2022 structure, risk assessment facilitation, rebuilding the Statement of Applicability and risk treatment plan, policy consolidation, and internal audit support. We prepare you for the certification audit and work alongside your team through it. The certificate is issued by your certification body, which stays independent of us. A scoped gap assessment is the usual starting point. Reach us at info@arysec.in or +91 90048 57727."
+        "Arysec provides ISO 27001 readiness support: gap assessment against the 2022 structure, risk assessment facilitation, rebuilding the Statement of Applicability and risk treatment plan, policy consolidation, and internal audit support. We prepare you for the certification audit and work alongside your team through it. The certificate is issued by your certification body, which stays independent of us. A scoped gap assessment is the usual starting point, and reaching us at info@arysec.in or +91 90048 57727 is enough to begin one."
       ]
     }
   ]

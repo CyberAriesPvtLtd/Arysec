@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsible Disclosure Policy for Security Researchers | Arysec Technologies LLP</title>
+  <meta name="description" content="How to report a security vulnerability in an Arysec system: scope, what to include, the timelines we commit to, safe harbour and coordinated disclosure.">
+  <link rel="canonical" href="https://www.arysec.in/responsible-disclosure/">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Arysec Technologies LLP">
+  <meta property="og:title" content="Responsible Disclosure Policy for Security Researchers | Arysec Technologies LLP">
+  <meta property="og:description" content="How to report a security vulnerability in an Arysec system: scope, what to include, the timelines we commit to, safe harbour and coordinated disclosure.">
+  <meta property="og:url" content="https://www.arysec.in/responsible-disclosure/">
+  <meta property="og:image" content="https://www.arysec.in/assets/og-image.svg">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Responsible Disclosure Policy for Security Researchers | Arysec Technologies LLP">
+  <meta name="twitter:description" content="How to report a security vulnerability in an Arysec system: scope, what to include, the timelines we commit to, safe harbour and coordinated disclosure.">
+  <meta name="twitter:image" content="https://www.arysec.in/assets/og-image.svg">
+
+  <meta name="theme-color" content="#0a1628">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Arysec Technologies LLP","alternateName":"Arysec","url":"https://www.arysec.in/","email":"info@arysec.in","telephone":"+91 90048 57727","description":"IT and information security firm providing vCISO, DPO as a Service, internal audit, VAPT, ISO 27001 support, managed IT and cloud security.","address":{"@type":"PostalAddress","addressLocality":"Mumbai","addressRegion":"Maharashtra","addressCountry":"IN"},"founder":{"@type":"Person","name":"Unnati Shinde","jobTitle":"Founder \u0026 Managing Partner"},"areaServed":[{"@type":"Country","name":"India"},"Worldwide"],"knowsAbout":["Information security","ISO/IEC 27001","Penetration testing","Data protection","Internal audit","Managed IT services"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.arysec.in/"},{"@type":"ListItem","position":2,"name":"Responsible Disclosure Policy","item":"https://www.arysec.in/responsible-disclosure/"}]}</script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="/" class="brand" aria-label="Arysec Technologies LLP — Home">
+        <svg class="brand-mark" viewBox="0 0 56 60" width="38" height="41" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradNav" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#00e5a0"/>
+            </linearGradient>
+          </defs>
+          <path d="M28 2 L52 11 V32 C52 46 42 54.5 28 58 C14 54.5 4 46 4 32 V11 Z" fill="none" stroke="url(#brandGradNav)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M28 14 L16 42 M28 14 L40 42 M20.5 32 H35.5" fill="none" stroke="url(#brandGradNav)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="42" r="3" fill="#00d4ff"/><circle cx="40" cy="42" r="3" fill="#00e5a0"/><circle cx="28" cy="14" r="3" fill="#00d4ff"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">ARYSEC</span>
+          <span class="brand-tagline">TECHNOLOGIES LLP</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <ul class="nav-list">
+<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+<li class="nav-item has-panel has-mega">
+        <button class="nav-link nav-trigger" aria-expanded="false" aria-controls="mega-services" data-href="/services/">Services<svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        
+      <div class="mega-panel" id="mega-services" hidden>
+        <div class="container mega-inner">
+          <div class="mega-cols">
+          <div class="mega-col">
+            <h4 class="mega-heading">Governance &amp; Advisory</h4>
+            <a class="mega-link" href="/services/vciso/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 11.5l2 2 4-4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">vCISO as a Service</span>
+                <span class="mega-link-desc">vCISO</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/dpo/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="9" width="16" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 9V6.5a4 4 0 018 0V9" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="14.5" r="1.6" fill="currentColor"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">DPO as a Service</span>
+                <span class="mega-link-desc">DPO</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/internal-audit/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6l1 3h4v15H4V6h4l1-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 13l2.5 2.5L16 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Internal Audit &amp; Assurance</span>
+                <span class="mega-link-desc">Internal Audit</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Audit, Testing &amp; Compliance</h4>
+            <a class="mega-link" href="/services/security-audit-compliance/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 7.5h8M8 11h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9 16v5l3-1.8 3 1.8v-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Security Audits &amp; Compliance</span>
+                <span class="mega-link-desc">Audit &amp; Compliance</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/iso-27001/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.5l2.4 1.8 3-.2.6 2.9 2.4 1.8-1.3 2.7 1.3 2.7-2.4 1.8-.6 2.9-3-.2L12 20.5l-2.4-1.8-3 .2-.6-2.9L3.6 14.2 4.9 11.5 3.6 8.8l2.4-1.8.6-2.9 3 .2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 11.6l2.1 2.1L15.2 9.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">ISO 27001 Implementation &amp; Certification Support</span>
+                <span class="mega-link-desc">ISO 27001</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/vapt/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="8" height="11" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9.5 8V6.8a2.5 2.5 0 015 0V8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 11.5H4.5M16 11.5H19.5M8 15.5H4.5M16 15.5H19.5M9 8.5L6.5 6M15 8.5L17.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Vulnerability Assessment &amp; Penetration Testing</span>
+                <span class="mega-link-desc">VAPT</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Cybersecurity Services</h4>
+            <a class="mega-link" href="/services/cybersecurity-consulting/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11.3" cy="10.6" r="2.7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13.4 12.8L15.6 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Cybersecurity Consulting &amp; Risk Assessment</span>
+                <span class="mega-link-desc">Security Consulting</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/network-security/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="19" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 11l10-5M7 13l10 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Network Security &amp; Monitoring</span>
+                <span class="mega-link-desc">Network Security</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/cloud-security/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18a4.5 4.5 0 01-.6-8.96A6 6 0 0118 8.5 4 4 0 0117.5 18H7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 14.5h4M12 12.8v-1.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Cloud Security Solutions</span>
+                <span class="mega-link-desc">Cloud Security</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/data-protection/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5.5" rx="7" ry="2.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 5.5v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 11.5v6c0 1.5 2.4 2.6 5.6 2.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="13" y="16" width="7" height="5.4" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M14.8 16v-1.4a1.7 1.7 0 013.4 0V16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Data Protection &amp; Encryption</span>
+                <span class="mega-link-desc">Data Protection</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/incident-response/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3.5M12 3l-2 2M12 3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20a7 7 0 0114 0z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3 20h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 10.5a4 4 0 00-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Incident Response &amp; Recovery</span>
+                <span class="mega-link-desc">Incident Response</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/security-awareness-training/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 19c.6-3 2.8-5 5.5-5s4.9 2 5.5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="16.5" cy="5.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 9.5c1.8.4 3.4 2 3.9 4.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Security Awareness &amp; Training</span>
+                <span class="mega-link-desc">Security Awareness</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">IT Services</h4>
+            <a class="mega-link" href="/services/managed-it/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M7 9l2.5 2.5L7 14M12.5 13.5H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Managed IT Services</span>
+                <span class="mega-link-desc">Managed IT</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/software-development/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 4l-3 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Software Development &amp; Integration</span>
+                <span class="mega-link-desc">Software Development</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/it-infrastructure/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="5.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14.5" width="18" height="5.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="6.5" cy="6.75" r="0.9" fill="currentColor"/><circle cx="6.5" cy="17.25" r="0.9" fill="currentColor"/><path d="M12 9.5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">IT Infrastructure Management</span>
+                <span class="mega-link-desc">IT Infrastructure</span>
+              </span>
+            </a>
+          </div>
+          </div>
+          <div class="mega-footer">
+            <a class="text-link" href="/services/">View all services <span aria-hidden="true">&rarr;</span></a>
+            <a class="text-link" href="/solutions/">Packaged solutions <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+      </li>
+<li class="nav-item"><a class="nav-link" href="/solutions/">Solutions</a></li>
+<li class="nav-item"><a class="nav-link" href="/industries/">Industries</a></li>
+<li class="nav-item has-panel has-dropdown">
+        <button class="nav-link nav-trigger" aria-expanded="false" aria-controls="dropdown-4" data-href="/about/">Company<svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dropdown-panel" id="dropdown-4" hidden>
+          <a class="dropdown-link" href="/about/">
+            <span class="dropdown-link-title">About Us</span>
+            <span class="dropdown-link-desc">Who we are and how we work</span>
+          </a>
+<a class="dropdown-link" href="/case-studies/">
+            <span class="dropdown-link-title">Case Studies</span>
+            <span class="dropdown-link-desc">Anonymised engagement examples</span>
+          </a>
+<a class="dropdown-link" href="/insights/">
+            <span class="dropdown-link-title">Insights</span>
+            <span class="dropdown-link-desc">Articles from our practitioners</span>
+          </a>
+<a class="dropdown-link" href="/resources/">
+            <span class="dropdown-link-title">Resources</span>
+            <span class="dropdown-link-desc">Guides, checklists and FAQs</span>
+          </a>
+<a class="dropdown-link" href="/careers/">
+            <span class="dropdown-link-title">Careers</span>
+            <span class="dropdown-link-desc">Open roles and how we hire</span>
+          </a>
+        </div>
+      </li>
+<li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+        </ul>
+        <a href="/contact/" class="btn btn-primary btn-nav">Get a Consultation</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero page-hero-doc">
+      <div class="container-narrow">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <span aria-current="page">Responsible Disclosure Policy</span></nav>
+        <h1>Responsible Disclosure Policy</h1>
+        <p class="page-hero-sub">This policy sets out how to report a security vulnerability you have found in an Arysec system. It covers what is in scope and what is not, how to reach our security team, the timelines we commit to, the safe harbour we offer good-faith researchers, and how we coordinate disclosure.</p>
+        <p class="doc-updated">Last updated: <time datetime="2026-08-16">16 August 2026</time></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-narrow">
+        <nav class="doc-toc reveal" aria-label="On this page">
+      <h2 class="doc-toc-title">On this page</h2>
+      <ol><li><a href="#section-1">Our Commitment to Researchers</a></li><li><a href="#section-2">Systems Covered by This Policy</a></li><li><a href="#section-3">What Is Never in Scope</a></li><li><a href="#section-4">How to Report a Vulnerability</a></li><li><a href="#section-5">What to Include in a Report</a></li><li><a href="#section-6">Our Acknowledgement and Triage Commitments</a></li><li><a href="#section-7">Safe Harbour for Good-Faith Research</a></li><li><a href="#section-8">What Good-Faith Testing Looks Like</a></li><li><a href="#section-9">Testing That Is Never Permitted</a></li><li><a href="#section-10">Reports We Are Unlikely to Action</a></li><li><a href="#section-11">Coordinated Disclosure and Public Discussion</a></li><li><a href="#section-12">Recognition and Our Position on Paid Bounties</a></li><li><a href="#section-13">Legal Position, Contact and Changes to This Policy</a></li></ol>
+    </nav>
+        <div class="doc-body"><section class="doc-section reveal" id="section-1">
+      <h2>Our Commitment to Researchers</h2>
+      <p>Arysec Technologies LLP is an information security firm. We spend our working days finding weaknesses in other organisations&#39; systems, and we would be poor practitioners if we pretended our own were flawless. Software has defects, configurations drift, and dependencies age. When someone outside the company finds one of ours and takes the trouble to tell us, that is a service, and we treat it as one.</p>
+<p>This policy is our side of that exchange. It tells you what you may test, how to reach a person who will actually read your report, how quickly we will respond, and what protection you have if you follow the rules set out here. We would rather publish clear boundaries than rely on goodwill and hope that both sides guess the same ones.</p>
+<p>We ask one thing in return. Work within the scope below, avoid harm to our clients and to anyone else using our systems, and give us a fair chance to fix what you find before you discuss it publicly. Reports handled that way get our full attention and our cooperation.</p>
+      
+    </section>
+<section class="doc-section reveal" id="section-2">
+      <h2>Systems Covered by This Policy</h2>
+      <p>This policy applies to systems that Arysec owns or operates. In practice that means our website at arysec.in and its subdomains, the mail and messaging infrastructure serving those domains, and any internet-facing application or service we run for our own business that clearly identifies itself as ours.</p>
+<p>Our public site is a marketing and information site. It describes what we do, hosts a small number of enquiry forms, and runs no customer accounts, logged-in areas or payment flows. Weaknesses there tend to be configuration issues, ageing dependencies, or flaws in how form submissions are handled and stored. Those are exactly the reports we want.</p>
+<p>If you are unsure whether something belongs to us, ask before you test. Write to security@arysec.in describing the asset and what you propose to do, then wait for our written reply. An asset carrying our name or branding is not proof that we control it, and guessing wrong can put you outside this policy and outside the safe harbour it offers.</p>
+      
+    </section>
+<section class="doc-section reveal" id="section-3">
+      <h2>What Is Never in Scope</h2>
+      <p>Some exclusions here are absolute rather than a matter of preference. The most important one concerns our clients.</p>
+<p>Client systems and client data are never in scope. When we test a client environment we do so under a signed contract and a specific rules-of-engagement document, and that authorisation comes from the client, not from us. No permission we could give you would be valid there. If your research touches a client system, you are acting without authorisation from the party that owns it, and this policy offers you nothing at all.</p>
+<p>Finding a weakness in a third-party service does not bring it into scope simply because we happen to use that service. Report it to the provider under its own policy. Where the issue also affects information we hold, tell us as well so that we can act on our side of it.</p>
+<p>The following sit outside the scope of this policy:</p>
+      <ul class="doc-list"><li>Any system, network, application or data belonging to an Arysec client, prospective client or partner</li><li>Client information held in our care, including engagement reports, evidence and findings</li><li>Third-party services we use but do not control, such as our hosting provider, email platform or code repositories</li><li>Physical attempts to enter our premises, reach our equipment, or interfere with hardware</li><li>Social engineering of our employees, contractors or partners, including phishing, vishing and pretexting</li><li>Attacks on the personal accounts, devices or property of anyone who works with us</li><li>Denial of service, resource exhaustion, and any other testing whose effect is to degrade availability</li></ul>
+    </section>
+<section class="doc-section reveal" id="section-4">
+      <h2>How to Report a Vulnerability</h2>
+      <p>Send your report to security@arysec.in. That address reaches our security team, and it is the channel we monitor for vulnerability reports. Please do not use social media, our general contact form, a sales enquiry or an individual&#39;s personal address, because a report that arrives in the wrong place can sit unread while the weakness stays open.</p>
+<p>Write in English, keep the subject line specific enough to convey the nature of the issue, and put the detail in the body of the message or in an attachment. If you would prefer to encrypt the report, say so in your first message and we will agree a secure channel with you before you send anything sensitive.</p>
+<p>One issue per report, please. Separate reports are easier to triage, track and close than a single message covering several unrelated problems. Where you have found a set of issues that share a single root cause, keep them together and tell us that is what they are.</p>
+<p>Anonymous and pseudonymous reports are accepted. You do not have to tell us who you are for us to act on what you send, though giving us some way to reply makes it much easier to ask questions and to keep you informed as we work.</p>
+      
+    </section>
+<section class="doc-section reveal" id="section-5">
+      <h2>What to Include in a Report</h2>
+      <p>Proof of concept code is welcome. Keep it minimal and non-destructive, and do not include data belonging to anyone else, even as an illustration. If you believe the only way to demonstrate the problem is to show us data that is not yours, stop and describe what you found instead. We will take your word for it and reproduce it ourselves under controlled conditions.</p>
+<p>A good report lets an engineer reproduce the issue without guessing. The more of the following you can give us, the faster it moves through triage.</p>
+      <ul class="doc-list"><li>The affected asset: the exact URL, host, endpoint or parameter involved</li><li>A clear description of the weakness and the security effect you believe it has</li><li>Step-by-step instructions to reproduce it, including any request or payload used</li><li>Evidence such as a screenshot, a request and response pair, or a short video</li><li>Your view of the severity and of who or what is exposed, with your reasoning</li><li>Tooling, browser or client version where that matters to reproduction</li><li>Anything suggesting the issue is already known to others or being exploited</li><li>Whether you have reported the same issue elsewhere, or intend to publish</li></ul>
+    </section>
+<section class="doc-section reveal" id="section-6">
+      <h2>Our Acknowledgement and Triage Commitments</h2>
+      <p>Timelines matter to a researcher, and silence is the most common complaint made about disclosure programmes. We state ours as commitments rather than intentions, counted in business days at our Mumbai office.</p>
+<p>We triage by severity and by real exposure rather than by score alone. A moderate weakness that is trivially reachable from the internet will usually be fixed ahead of a theoretically severe one that depends on conditions we do not have. Where our assessment differs from yours, we will explain the reasoning instead of quietly closing the report.</p>
+<p>Complicated issues sometimes take longer to resolve than we would like. When that happens we will say so plainly, give you our reasoning, and keep the updates coming until the matter is closed. An honest date is more useful to you than a comfortable one. These are the commitments we make:</p>
+      <ul class="doc-list"><li>Acknowledgement that your report has reached a human within three business days</li><li>An initial triage decision, covering validity and our severity assessment, within ten business days</li><li>Progress updates at least every fifteen business days while the issue remains open</li><li>A remediation target shared with you once triage is complete, set according to severity</li><li>Notice when the fix is deployed, and an invitation to verify it if you are willing</li><li>An explanation, with reasoning, in any case where we decide not to act on a report</li></ul>
+    </section>
+<section class="doc-section reveal" id="section-7">
+      <h2>Safe Harbour for Good-Faith Research</h2>
+      <p>If you follow this policy, we will treat your research as authorised conduct and as a contribution to our security rather than as an attack on it. That undertaking is specific, and we would rather write it down than leave you to infer it.</p>
+<p>For research that stays within scope and within the rules below, we will not bring a civil claim against you arising from it, we will not make a complaint under the Information Technology Act, 2000 or a comparable law in another jurisdiction, and we will not pursue you for breach of our website terms of use. Should a third party bring an action against you arising from research we authorised under this policy, we will make our authorisation clear to that party and, where appropriate, to a court.</p>
+<p>This protection has limits, and it would be misleading to suggest otherwise. It covers research on in-scope assets, carried out in good faith, kept inside the prohibited-testing rules, and reported to us promptly. Research on client systems falls outside it, because that authorisation was never ours to give. Nor does it extend to anything done for extortion, for commercial advantage at our expense, or after we have asked you to stop.</p>
+<p>We also cannot bind anyone else. A safe harbour granted by us does not release you from obligations owed to third parties, from the terms of any service you used to conduct the research, or from duties imposed on you by law. The position is described here in general terms and is not legal advice. If you have a concern about where you stand in your own jurisdiction, take your own advice before you begin.</p>
+<p>When in doubt during your research, stop and ask. A short message to security@arysec.in describing what you have found and what you propose to do next will always get a better answer than pressing on and hoping.</p>
+      
+    </section>
+<section class="doc-section reveal" id="section-8">
+      <h2>What Good-Faith Testing Looks Like</h2>
+      <p>Good faith is easier to demonstrate than to define. We consider testing to be in good faith when it is proportionate, minimal, and aimed at establishing that a weakness exists rather than at finding out how far it can be taken.</p>
+<p>Stop as soon as you have established that a weakness exists. The moment a proof of concept works, you have what you need and so do we. Continuing in order to see how much access is available turns research into intrusion, and it is the single most common way a well-intentioned researcher loses the protection of this policy. Within scope, you may do the following:</p>
+      <ul class="doc-list"><li>Interact with our public services as an ordinary visitor would, and observe how they respond</li><li>Probe for common weakness classes, including those described in the OWASP Top 10, using manual techniques</li><li>Inspect client-side code, HTTP responses, headers and publicly reachable configuration</li><li>Use low-rate automated tooling that has no measurable effect on the service for anyone else</li><li>Create your own test submissions where a form allows it, clearly marked as testing</li><li>Demonstrate an issue with the smallest proof of concept that establishes it</li><li>Retest once we have told you a fix is deployed, on the same terms as the original research</li></ul>
+    </section>
+<section class="doc-section reveal" id="section-9">
+      <h2>Testing That Is Never Permitted</h2>
+      <p>The activities in this section are prohibited under this policy without exception, whether or not the asset is otherwise in scope. Carrying out any of them places you outside the safe harbour, and we will then treat the activity on its own merits.</p>
+<p>If you access data belonging to another person by accident, which does happen, stop immediately. Do not save it, share it or work with it further. Tell us in your report exactly what you saw and how you came to see it, and delete every copy once we confirm we have what we need. Handled that way, an accidental exposure costs you nothing. Concealing one costs you the safe harbour. The prohibited activities are these:</p>
+      <ul class="doc-list"><li>Denial of service, load testing, stress testing, or anything else that degrades availability</li><li>Automated scanning at a rate or volume that affects performance for other users</li><li>Accessing, downloading, altering, retaining or exfiltrating data belonging to anyone but yourself</li><li>Continuing to explore an environment after you have confirmed that the weakness exists</li><li>Social engineering of our staff, contractors, partners or suppliers, in any form</li><li>Physical intrusion, tailgating, or interference with our premises, equipment or documents</li><li>Attacks against personal accounts, devices or property belonging to people who work with us</li><li>Installing malware, backdoors, web shells or any other form of persistence on our systems</li><li>Modifying, deleting or corrupting data, or otherwise degrading the integrity of a service</li><li>Testing that ignores this policy, including research on assets you have not confirmed are in scope</li><li>Demanding payment as a condition of disclosure, or threatening publication in order to obtain it</li></ul>
+    </section>
+<section class="doc-section reveal" id="section-10">
+      <h2>Reports We Are Unlikely to Action</h2>
+      <p>Some findings arrive often and rarely reflect a real risk to us or to anyone using our systems. We will still read and answer a report of this kind, but it will usually be closed as informational or as an accepted risk. Saying so in advance seems fairer than taking your time and then declining.</p>
+<p>None of this is a reason to stay quiet if you think we have judged it wrongly. Where you can show a chain that turns one of these into something genuinely exploitable, the chain itself is the finding, and we want to hear about it. The reports we usually close without action are these:</p>
+      <ul class="doc-list"><li>Missing security headers on a static page with no session, account or sensitive content</li><li>Email configuration observations that do not enable a practical spoofing or interception attack</li><li>Self-XSS, or any issue requiring the victim to paste code into their own browser console</li><li>Clickjacking on a page that carries no state-changing action</li><li>Output from an automated scanner submitted without validation or a demonstrated effect</li><li>Version and banner disclosure unaccompanied by an exploitable weakness</li><li>Weaknesses that presuppose a compromised device or an already established interception position</li><li>Reports concerning a third-party service that we use but do not control</li><li>Recommendations drawn from a hardening guide with no security effect we can reproduce</li></ul>
+    </section>
+<section class="doc-section reveal" id="section-11">
+      <h2>Coordinated Disclosure and Public Discussion</h2>
+      <p>We work to coordinated disclosure. That means we ask you not to publish, present or otherwise discuss a finding publicly until we have had the opportunity to fix it and have agreed timing with you. Until then, please keep the detail between you and us.</p>
+<p>Our default window is ninety days from the date we acknowledge your report. We aim to fix well inside that, and where a fix lands early we are glad to agree publication as soon as it is deployed and verified. Where the issue is complex, or where remediation depends on a third party, we may ask you for more time and we will explain exactly why.</p>
+<p>If a weakness affects a system that a client depends on, we will notify the affected client as part of our own incident handling and communication obligations. That notification will describe the issue and our remediation, and it will not identify you unless you have asked us to name you.</p>
+<p>Where you intend to publish, we would like to see the draft first. Not to edit your conclusions, but to check for detail that would expose a client, a third party or an unfixed system. We will not ask you to remove anything that is accurate and safe to publish, and we will not use the review as a way to delay you.</p>
+<p>Should we fail to reach agreement on timing, tell us what you plan to do and when you plan to do it. A disagreement in the open, with a date that both sides know about, is far better than a surprise.</p>
+      
+    </section>
+<section class="doc-section reveal" id="section-12">
+      <h2>Recognition and Our Position on Paid Bounties</h2>
+      <p>We do not currently operate a paid bug bounty programme, and we have no interest in implying otherwise. There is no reward pool, no severity payout table and no promise of money for a valid report. If that position changes, we will say so on this page.</p>
+<p>What we do offer is recognition and a straight answer. With your consent, we will credit you by the name or handle you choose in whatever we publish about the fix, and we will agree the wording with you before it goes out. Preferring to stay anonymous is equally fine, and it makes no difference to how your report is handled.</p>
+<p>Confirmation in writing is available if it is useful to you. Researchers often need evidence of their work for a curriculum vitae, a conference submission or a coordination process, and we will provide a factual letter setting out what you reported, when you reported it, and how we resolved it. Where a finding warrants a CVE identifier, we will cooperate with the relevant coordination body.</p>
+<p>The absence of payment does not mean we value your report less. A valid finding is triaged, prioritised, fixed and closed on its merits, whether it comes from a full-time researcher, a curious student or an engineer at one of our clients.</p>
+      
+    </section>
+<section class="doc-section reveal" id="section-13">
+      <h2>Legal Position, Contact and Changes to This Policy</h2>
+      <p>Nothing in this policy limits an obligation that either of us may have under applicable law, including reporting duties attaching to certain categories of incident. The legal position is described here in general terms only and is not legal advice. If your research or your report raises a question about your own position, confirm it with your own adviser.</p>
+<p>Where this policy and our website terms of use appear to conflict on the subject of security testing, this policy governs research conducted within its scope and in line with its rules, and the terms of use apply as written to everything outside that. This policy is governed by the laws of India, and the courts at Mumbai, Maharashtra have jurisdiction over any dispute arising from it.</p>
+<p>Send vulnerability reports, and any question about scope before you begin, to security@arysec.in. For anything else, including a question about the policy itself, write to info@arysec.in or call +91 90048 57727 between 09:00 and 18:00 IST, Monday to Friday. Requests about your personal data, and complaints about how we have handled it, go to our Grievance Officer at info@arysec.in.</p>
+<p>We review this policy as our systems and our obligations change, and we publish updates here rather than issuing a separate notice. The version on this page is the one in force. If we change it materially while your report is still open, the version that applied when you submitted continues to govern your research.</p>
+      
+    </section></div>
+        <div class="article-foot reveal">
+          <p>
+            Questions about this document? Contact us at
+            <a href="mailto:info@arysec.in">info@arysec.in</a> or
+            <a href="tel:+919004857727">+91 90048 57727</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand" aria-label="Arysec Technologies LLP — Home">
+        <svg class="brand-mark" viewBox="0 0 56 60" width="38" height="41" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradFoot" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#00e5a0"/>
+            </linearGradient>
+          </defs>
+          <path d="M28 2 L52 11 V32 C52 46 42 54.5 28 58 C14 54.5 4 46 4 32 V11 Z" fill="none" stroke="url(#brandGradFoot)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M28 14 L16 42 M28 14 L40 42 M20.5 32 H35.5" fill="none" stroke="url(#brandGradFoot)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="42" r="3" fill="#00d4ff"/><circle cx="40" cy="42" r="3" fill="#00e5a0"/><circle cx="28" cy="14" r="3" fill="#00d4ff"/>
+        </svg>
+            <span class="brand-text">
+              <span class="brand-name">ARYSEC</span>
+              <span class="brand-tagline">TECHNOLOGIES LLP</span>
+            </span>
+          </a>
+          <p class="footer-blurb">Reliable IT. Resilient security. Expert support. Headquartered in Mumbai, delivering across India and worldwide.</p>
+          <div class="footer-contact">
+            <a href="tel:+919004857727"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h4l1.5 5-2.5 2a13 13 0 005 5l2-2.5 5 1.5v4a2 2 0 01-2 2A17 17 0 014 5a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>+91 90048 57727</span></a>
+            <a href="mailto:info@arysec.in"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>info@arysec.in</span></a>
+            <span class="footer-contact-static"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span>Mumbai, Maharashtra, India</span></span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="/services/vciso/">vCISO as a Service</a>
+<a href="/services/dpo/">DPO as a Service</a>
+<a href="/services/internal-audit/">Internal Audit</a>
+<a href="/services/vapt/">VAPT</a>
+<a href="/services/iso-27001/">ISO 27001</a>
+<a href="/services/">All Services</a>
+        </div>
+<div class="footer-col">
+          <h4>Company</h4>
+          <a href="/about/">About Us</a>
+<a href="/solutions/">Solutions</a>
+<a href="/industries/">Industries</a>
+<a href="/case-studies/">Case Studies</a>
+<a href="/careers/">Careers</a>
+        </div>
+<div class="footer-col">
+          <h4>Resources</h4>
+          <a href="/insights/">Insights</a>
+<a href="/resources/">Guides &amp; Checklists</a>
+<a href="/resources/#faq">FAQs</a>
+<a href="/responsible-disclosure/">Responsible Disclosure</a>
+<a href="/contact/">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Arysec Technologies LLP. All rights reserved.</p>
+        <p class="footer-legal"><a href="/privacy-policy/">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="/terms-of-service/">Terms of Service</a> <span aria-hidden="true">&middot;</span> <a href="/cookie-policy/">Cookie Policy</a> <span aria-hidden="true">&middot;</span> <a href="/responsible-disclosure/">Responsible Disclosure</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie preferences" aria-live="polite" hidden>
+    <div class="cookie-inner">
+      <p>
+        We use strictly necessary cookies to run this site, and optional analytics cookies to understand
+        how it is used. We do not use advertising or cross-site tracking cookies.
+        <a href="/cookie-policy/">Read our Cookie Policy</a>.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-outline btn-sm" data-cookie-choice="necessary">Necessary only</button>
+        <button type="button" class="btn btn-primary btn-sm" data-cookie-choice="all">Accept analytics</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

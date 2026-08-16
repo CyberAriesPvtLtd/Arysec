@@ -175,22 +175,26 @@ function checklistPanel(heading, intro, items) {
     </div>`;
 }
 
-/** Contact strip: phone / email / office. */
+/**
+ * Contact strip: phone / email / office.
+ * Headings are h2 because this block sits directly under the page h1 on the
+ * contact page — an h3 there would skip a heading level.
+ */
 function contactStrip(company) {
   return `<div class="contact-strip">
       <div class="contact-strip-item reveal">
         <span class="contact-icon">${icon('phone')}</span>
-        <h3>Call Us</h3>
+        <h2>Call Us</h2>
         <a href="${esc(company.phoneHref)}">${esc(company.phoneDisplay)}</a>
       </div>
       <div class="contact-strip-item reveal delay-1">
         <span class="contact-icon">${icon('mail')}</span>
-        <h3>Email Us</h3>
+        <h2>Email Us</h2>
         <a href="mailto:${esc(company.email)}">${esc(company.email)}</a>
       </div>
       <div class="contact-strip-item reveal delay-2">
         <span class="contact-icon">${icon('pin')}</span>
-        <h3>Headquarters</h3>
+        <h2>Headquarters</h2>
         <p>${esc(company.city)}, ${esc(company.region)}</p>
       </div>
     </div>`;

@@ -70,6 +70,16 @@ for (const file of files) {
   const h1Count = (html.match(/<h1[ >]/g) || []).length;
   if (h1Count > 1) problems.push(`${rel}: ${h1Count} <h1> elements (expected exactly 1)`);
 
+  // Heading levels must not skip (h1 -> h3), which breaks screen-reader navigation.
+  const main = html.slice(html.indexOf('<main'), html.indexOf('</main>'));
+  const levels = (main.match(/<h([1-6])[ >]/g) || []).map((t) => Number(t.match(/\d/)[0]));
+  for (let i = 1; i < levels.length; i++) {
+    if (levels[i] - levels[i - 1] > 1) {
+      problems.push(`${rel}: heading level skips h${levels[i - 1]} -> h${levels[i]}`);
+      break;
+    }
+  }
+
   // --- CSP hygiene: no inline scripts or style attributes ---
   const inlineScript = /<script(?![^>]*\ssrc=)(?![^>]*type="application\/ld\+json")[^>]*>[\s\S]*?<\/script>/i;
   if (inlineScript.test(html)) problems.push(`${rel}: contains an inline <script> (blocked by CSP)`);

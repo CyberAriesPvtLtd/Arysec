@@ -22,7 +22,7 @@
     ]
   },
   "capabilities": {
-    "heading": "What the Assessment Covers",
+    "heading": "Inside the Risk Assessment",
     "items": [
       {
         "title": "Asset and Crown-Jewel Mapping",
@@ -38,7 +38,7 @@
       },
       {
         "title": "Security Architecture Review",
-        "description": "Network segmentation, identity and access management, logging coverage, endpoint controls and cloud configuration are reviewed as a connected design, not as separate products, to find the gaps between them."
+        "description": "Segmentation, privileged access paths, log coverage, endpoint controls and cloud configuration are examined as one connected design rather than as separate purchases, because the gaps usually sit between the products."
       },
       {
         "title": "Zero-Trust Strategy",
@@ -51,7 +51,7 @@
     ]
   },
   "deliverables": {
-    "heading": "Documents You Take Away",
+    "heading": "The Document Set You Keep",
     "intro": "Every engagement closes with a document set written for two audiences: the engineers who will do the work, and the directors who must fund it.",
     "items": [
       "Enterprise risk register with scored and owned scenarios",
@@ -108,7 +108,7 @@
   ],
   "faqs": [
     {
-      "question": "How is this different from a vCISO engagement or a compliance audit?",
+      "question": "Where does this sit relative to a vCISO engagement or a compliance audit?",
       "answer": "An audit tests whether you meet a defined standard and produces findings against clauses. This engagement asks a broader question: given your business, what could realistically go wrong, how badly, and in what order should you spend to prevent it. A vCISO then owns and runs the resulting programme month to month. Many clients take the assessment first, use it to size the problem, and decide afterwards whether they need standing leadership or a certification push."
     },
     {

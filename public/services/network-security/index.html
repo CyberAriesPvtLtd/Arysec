@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>24/7 SOC Monitoring, SIEM Tuning &amp; Network Defence | Arysec Technologies LLP</title>
+  <meta name="description" content="Arysec runs 24/7 security monitoring: SIEM tuning, EDR and XDR, analyst-led triage, threat hunting mapped to MITRE ATT&amp;CK and firewall policy review.">
+  <link rel="canonical" href="https://www.arysec.in/services/network-security/">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Arysec Technologies LLP">
+  <meta property="og:title" content="24/7 SOC Monitoring, SIEM Tuning &amp; Network Defence | Arysec Technologies LLP">
+  <meta property="og:description" content="Arysec runs 24/7 security monitoring: SIEM tuning, EDR and XDR, analyst-led triage, threat hunting mapped to MITRE ATT&amp;CK and firewall policy review.">
+  <meta property="og:url" content="https://www.arysec.in/services/network-security/">
+  <meta property="og:image" content="https://www.arysec.in/assets/og-image.svg">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="24/7 SOC Monitoring, SIEM Tuning &amp; Network Defence | Arysec Technologies LLP">
+  <meta name="twitter:description" content="Arysec runs 24/7 security monitoring: SIEM tuning, EDR and XDR, analyst-led triage, threat hunting mapped to MITRE ATT&amp;CK and firewall policy review.">
+  <meta name="twitter:image" content="https://www.arysec.in/assets/og-image.svg">
+
+  <meta name="theme-color" content="#0a1628">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Arysec Technologies LLP","alternateName":"Arysec","url":"https://www.arysec.in/","email":"info@arysec.in","telephone":"+91 90048 57727","description":"IT and information security firm providing vCISO, DPO as a Service, internal audit, VAPT, ISO 27001 support, managed IT and cloud security.","address":{"@type":"PostalAddress","addressLocality":"Mumbai","addressRegion":"Maharashtra","addressCountry":"IN"},"founder":{"@type":"Person","name":"Unnati Shinde","jobTitle":"Founder \u0026 Managing Partner"},"areaServed":[{"@type":"Country","name":"India"},"Worldwide"],"knowsAbout":["Information security","ISO/IEC 27001","Penetration testing","Data protection","Internal audit","Managed IT services"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Network Security \u0026 Monitoring","serviceType":"Cybersecurity Services","description":"Arysec runs 24/7 security monitoring: SIEM tuning, EDR and XDR, analyst-led triage, threat hunting mapped to MITRE ATT\u0026CK and firewall policy review.","url":"https://www.arysec.in/services/network-security/","provider":{"@type":"Organization","name":"Arysec Technologies LLP","url":"https://www.arysec.in/"},"areaServed":[{"@type":"Country","name":"India"},"Worldwide"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.arysec.in/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.arysec.in/services/"},{"@type":"ListItem","position":3,"name":"Network Security","item":"https://www.arysec.in/services/network-security/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"We already have a security team. Will an outside monitoring service just duplicate what they do?","acceptedAnswer":{"@type":"Answer","text":"Not if the split is written down. The co-sourced model most of our clients use gives us the parts that scale badly in-house: the 24/7 watch, tier one and tier two triage, detection engineering and the tuning backlog. Your team keeps the context we cannot have, meaning asset ownership, change approval, business impact judgement and the final call on a major incident. We agree that boundary in the escalation runbook before go-live, including who we wake and at what severity, so nobody works the same alert twice."}},{"@type":"Question","name":"Our current SIEM generates thousands of alerts a day and nobody trusts it. How do you fix that?","acceptedAnswer":{"@type":"Answer","text":"By treating tuning as engineering rather than deletion. We baseline two to four weeks of alert data, identify the small number of rules producing most of the volume, and trace each one to its cause: a backup job that looks like data staging, a vulnerability scanner tripping intrusion signatures, a service account behaving oddly by design. Suppressions are narrow, documented and reviewed, never blanket rule disabling. We track precision per rule, so you can see which detections earn their place and which are being rewritten."}},{"@type":"Question","name":"What actually happens when you find something at 2am, and what response times do you commit to?","acceptedAnswer":{"@type":"Answer","text":"Severity decides the path. Every alert class has a runbook naming the investigation steps, the response time we commit to and the containment actions we are pre-authorised to take, such as isolating a host or disabling a session. For the highest severity we investigate immediately and telephone your named contact rather than sending mail into an unwatched inbox. Response times are agreed during onboarding and written into the contract, measured from alert to acknowledgement and from acknowledgement to escalation, then reported every month."}},{"@type":"Question","name":"Do we have to replace our tools, and who owns the licences and the log data?","acceptedAnswer":{"@type":"Answer","text":"You keep both. We work with the platform you already own, whether that is Microsoft Sentinel, Splunk, Elastic, Wazuh or QRadar, and we will say plainly if it cannot meet your retention or ingestion needs before you spend more on it. Licences stay in your name, the tenant stays yours, and the detection content, parsers and runbooks we write are documented as your property. If you end the contract, that material and the log history remain with you, along with a documented handover."}},{"@type":"Question","name":"How long before this is genuinely useful, and how disruptive is the network work?","acceptedAnswer":{"@type":"Answer","text":"Onboarding a first set of high-value log sources and standing up the watch typically takes a few weeks, so you have monitoring running before detection coverage is complete. Depth arrives over the first quarter as use cases are engineered and tuned. Network changes move separately and slowly on purpose: firewall rule removal and segmentation are proposed with traffic analysis behind each one, run first in monitor-only mode, then scheduled through your own change control with a tested back-out step."}}]}</script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="/" class="brand" aria-label="Arysec Technologies LLP — Home">
+        <svg class="brand-mark" viewBox="0 0 56 60" width="38" height="41" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradNav" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#00e5a0"/>
+            </linearGradient>
+          </defs>
+          <path d="M28 2 L52 11 V32 C52 46 42 54.5 28 58 C14 54.5 4 46 4 32 V11 Z" fill="none" stroke="url(#brandGradNav)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M28 14 L16 42 M28 14 L40 42 M20.5 32 H35.5" fill="none" stroke="url(#brandGradNav)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="42" r="3" fill="#00d4ff"/><circle cx="40" cy="42" r="3" fill="#00e5a0"/><circle cx="28" cy="14" r="3" fill="#00d4ff"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">ARYSEC</span>
+          <span class="brand-tagline">TECHNOLOGIES LLP</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <ul class="nav-list">
+<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+<li class="nav-item has-panel has-mega">
+        <button class="nav-link nav-trigger active" aria-expanded="false" aria-controls="mega-services" data-href="/services/">Services<svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        
+      <div class="mega-panel" id="mega-services" hidden>
+        <div class="container mega-inner">
+          <div class="mega-cols">
+          <div class="mega-col">
+            <h4 class="mega-heading">Governance &amp; Advisory</h4>
+            <a class="mega-link" href="/services/vciso/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 11.5l2 2 4-4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">vCISO as a Service</span>
+                <span class="mega-link-desc">vCISO</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/dpo/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="9" width="16" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 9V6.5a4 4 0 018 0V9" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="14.5" r="1.6" fill="currentColor"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">DPO as a Service</span>
+                <span class="mega-link-desc">DPO</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/internal-audit/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6l1 3h4v15H4V6h4l1-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 13l2.5 2.5L16 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Internal Audit &amp; Assurance</span>
+                <span class="mega-link-desc">Internal Audit</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Audit, Testing &amp; Compliance</h4>
+            <a class="mega-link" href="/services/security-audit-compliance/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 7.5h8M8 11h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9 16v5l3-1.8 3 1.8v-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Security Audits &amp; Compliance</span>
+                <span class="mega-link-desc">Audit &amp; Compliance</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/iso-27001/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.5l2.4 1.8 3-.2.6 2.9 2.4 1.8-1.3 2.7 1.3 2.7-2.4 1.8-.6 2.9-3-.2L12 20.5l-2.4-1.8-3 .2-.6-2.9L3.6 14.2 4.9 11.5 3.6 8.8l2.4-1.8.6-2.9 3 .2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 11.6l2.1 2.1L15.2 9.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">ISO 27001 Implementation &amp; Certification Support</span>
+                <span class="mega-link-desc">ISO 27001</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/vapt/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="8" height="11" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9.5 8V6.8a2.5 2.5 0 015 0V8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 11.5H4.5M16 11.5H19.5M8 15.5H4.5M16 15.5H19.5M9 8.5L6.5 6M15 8.5L17.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Vulnerability Assessment &amp; Penetration Testing</span>
+                <span class="mega-link-desc">VAPT</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Cybersecurity Services</h4>
+            <a class="mega-link" href="/services/cybersecurity-consulting/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11.3" cy="10.6" r="2.7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13.4 12.8L15.6 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Cybersecurity Consulting &amp; Risk Assessment</span>
+                <span class="mega-link-desc">Security Consulting</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/network-security/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="19" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 11l10-5M7 13l10 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Network Security &amp; Monitoring</span>
+                <span class="mega-link-desc">Network Security</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/cloud-security/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18a4.5 4.5 0 01-.6-8.96A6 6 0 0118 8.5 4 4 0 0117.5 18H7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 14.5h4M12 12.8v-1.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Cloud Security Solutions</span>
+                <span class="mega-link-desc">Cloud Security</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/data-protection/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5.5" rx="7" ry="2.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 5.5v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 11.5v6c0 1.5 2.4 2.6 5.6 2.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="13" y="16" width="7" height="5.4" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M14.8 16v-1.4a1.7 1.7 0 013.4 0V16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Data Protection &amp; Encryption</span>
+                <span class="mega-link-desc">Data Protection</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/incident-response/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3.5M12 3l-2 2M12 3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20a7 7 0 0114 0z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3 20h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 10.5a4 4 0 00-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Incident Response &amp; Recovery</span>
+                <span class="mega-link-desc">Incident Response</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/security-awareness-training/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 19c.6-3 2.8-5 5.5-5s4.9 2 5.5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="16.5" cy="5.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 9.5c1.8.4 3.4 2 3.9 4.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Security Awareness &amp; Training</span>
+                <span class="mega-link-desc">Security Awareness</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">IT Services</h4>
+            <a class="mega-link" href="/services/managed-it/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M7 9l2.5 2.5L7 14M12.5 13.5H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Managed IT Services</span>
+                <span class="mega-link-desc">Managed IT</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/software-development/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 4l-3 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Software Development &amp; Integration</span>
+                <span class="mega-link-desc">Software Development</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/it-infrastructure/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="5.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14.5" width="18" height="5.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="6.5" cy="6.75" r="0.9" fill="currentColor"/><circle cx="6.5" cy="17.25" r="0.9" fill="currentColor"/><path d="M12 9.5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">IT Infrastructure Management</span>
+                <span class="mega-link-desc">IT Infrastructure</span>
+              </span>
+            </a>
+          </div>
+          </div>
+          <div class="mega-footer">
+            <a class="text-link" href="/services/">View all services <span aria-hidden="true">&rarr;</span></a>
+            <a class="text-link" href="/solutions/">Packaged solutions <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+      </li>
+<li class="nav-item"><a class="nav-link" href="/solutions/">Solutions</a></li>
+<li class="nav-item"><a class="nav-link" href="/industries/">Industries</a></li>
+<li class="nav-item has-panel has-dropdown">
+        <button class="nav-link nav-trigger" aria-expanded="false" aria-controls="dropdown-4" data-href="/about/">Company<svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dropdown-panel" id="dropdown-4" hidden>
+          <a class="dropdown-link" href="/about/">
+            <span class="dropdown-link-title">About Us</span>
+            <span class="dropdown-link-desc">Who we are and how we work</span>
+          </a>
+<a class="dropdown-link" href="/case-studies/">
+            <span class="dropdown-link-title">Case Studies</span>
+            <span class="dropdown-link-desc">Anonymised engagement examples</span>
+          </a>
+<a class="dropdown-link" href="/insights/">
+            <span class="dropdown-link-title">Insights</span>
+            <span class="dropdown-link-desc">Articles from our practitioners</span>
+          </a>
+<a class="dropdown-link" href="/resources/">
+            <span class="dropdown-link-title">Resources</span>
+            <span class="dropdown-link-desc">Guides, checklists and FAQs</span>
+          </a>
+<a class="dropdown-link" href="/careers/">
+            <span class="dropdown-link-title">Careers</span>
+            <span class="dropdown-link-desc">Open roles and how we hire</span>
+          </a>
+        </div>
+      </li>
+<li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+        </ul>
+        <a href="/contact/" class="btn btn-primary btn-nav">Get a Consultation</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <a href="/services/">Services</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <span aria-current="page">Network Security</span></nav>
+        <p class="hero-eyebrow">Cybersecurity Services</p>
+        <h1>Alerts That Get Answered, Not Just Logged</h1>
+        <p class="page-hero-sub">We run detection and response around the clock alongside your team: a tuned SIEM, endpoint agents that see process activity, named analysts on every escalation, and agreed response times you can hold us to.</p>
+        <div class="hero-actions"><a href="/contact/" class="btn btn-primary">Request a Consultation</a><a href="tel:+919004857727" class="btn btn-outline">+91 90048 57727</a></div>
+        <div class="highlight-row"><div class="highlight">
+      <span class="highlight-value">24/7</span>
+      <span class="highlight-label">Monitoring and alert triage</span>
+    </div>
+<div class="highlight">
+      <span class="highlight-value">MITRE ATT&amp;CK</span>
+      <span class="highlight-label">Detection coverage mapped</span>
+    </div>
+<div class="highlight">
+      <span class="highlight-value">Co-sourced</span>
+      <span class="highlight-label">Works with your team</span>
+    </div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="split-grid">
+          <div class="split-main reveal">
+            <span class="service-icon service-icon-lg"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="19" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 11l10-5M7 13l10 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <h2>From Raw Logs to Answered Alerts</h2>
+            <p>Most organisations that buy monitoring already own the tools. The gap is rarely the platform; it is the operating discipline around it. A security operations centre is people, use cases, runbooks and shift handovers as much as it is a console. Where that discipline is missing, the queue fills with thousands of events a day, the same benign pattern fires dozens of times a week, and analysts learn to close alerts quickly rather than read them. That is alert fatigue, and it is how a genuine intrusion gets dismissed as noise. Our first job on any monitoring engagement is to make the queue small enough that every item in it deserves a human.</p>
+            <p>Detection begins with what we can actually see. We inventory log sources against the events that matter: authentication, endpoint process execution, DNS, proxy and firewall traffic, cloud control plane activity, identity provider records and the applications holding your sensitive data. Gaps are closed before a single rule is written. Ingestion is normalised to a common schema so that a username means the same thing whether it arrived from Active Directory, Entra ID or a Linux host. Detection content is then engineered use case by use case and mapped to MITRE ATT&amp;CK techniques, which gives you a coverage picture instead of a rule count. You can see that credential access is well covered, that lateral movement is thin, and decide where the next month of engineering effort should go.</p>
+            <p>Monitoring only pays off if the network underneath it is arranged to contain an intruder. We review firewall and next-generation firewall policy for the rules nobody is willing to remove, test whether your segmentation actually holds, and design zones and micro-segmentation around the systems that would hurt most: payment environments, core banking interfaces, operational technology, build infrastructure and the jump hosts administrators log in from. Zero-trust network access replaces flat VPN reachability with per-application authorisation tied to user identity and device posture. Intrusion detection and prevention sensors go where east-west traffic is visible, not only at the perimeter. None of this replaces your staff. Most of our clients run a co-sourced model in which we hold the overnight watch, the detection engineering and the tuning backlog, while their internal team keeps ownership of the estate and the final call on major incidents.</p>
+            <a href="/contact/" class="text-link">Talk to our team about Network Security <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <aside class="split-aside">
+            <div class="checklist-panel reveal">
+      <h3>What You Actually Receive</h3>
+      <p class="checklist-intro">Monitoring is easy to buy and hard to inspect. Each item below exists so you can check, month by month, what the service is actually doing.</p>
+      <ul class="service-list"><li>Log source inventory with coverage gaps identified</li><li>Documented detection use cases mapped to MITRE ATT&amp;CK</li><li>Tuning log recording every rule change and suppression</li><li>Escalation runbooks with severity definitions and response times</li><li>Named contacts and a tested out-of-hours call tree</li><li>Firewall rule base review with prioritised change list</li><li>Network segmentation design and validation test results</li><li>Monthly report covering alerts, incidents, trends and tuning</li></ul>
+    </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">Capabilities</p>
+      <h2>How We Run Detection</h2>
+      
+    </div>
+        <div class="capability-grid"><div class="capability reveal">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>SIEM Deployment and Tuning</h3>
+        <p>We deploy or take over your SIEM, whether that is Microsoft Sentinel, Splunk, Elastic, Wazuh or QRadar, then spend the first weeks suppressing known-benign patterns and rewriting rules that fire without cause.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-1">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Log Ingestion and Use Cases</h3>
+        <p>Sources are onboarded, parsed and normalised, then detection use cases are written for the threats relevant to your sector and estate, each documented with its logic, data dependency and expected analyst action.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-2">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Endpoint Detection and Response</h3>
+        <p>EDR and XDR agents are deployed, policy-tuned and monitored so that process, registry and memory activity is visible. Containment actions such as host isolation are pre-agreed, so nobody waits for permission at 3am.</p>
+      </div>
+    </div>
+<div class="capability reveal">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Analyst-Led Alert Triage</h3>
+        <p>Every alert reaching the queue is investigated by an analyst against a documented runbook, enriched with asset and identity context, then closed with a recorded reason or escalated to your named contact.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-1">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Threat Hunting</h3>
+        <p>Hypothesis-led hunts run on a scheduled cadence against MITRE ATT&amp;CK techniques your detections do not yet cover, using current threat intelligence and behaviours seen in your own environment rather than indicator lists alone.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-2">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Firewall and Segmentation Review</h3>
+        <p>Rule bases are audited for shadowed, permissive and unused entries, then segmentation is designed and tested: VLAN and zone boundaries, micro-segmentation for critical workloads, and zero-trust access replacing broad VPN reachability.</p>
+      </div>
+    </div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">How It Works</p>
+      <h2>Our Engagement Process</h2>
+      <p class="section-sub">How a Network Security engagement runs from first conversation to steady state.</p>
+    </div>
+        <div class="process-grid"><div class="process-step reveal">
+      <div class="process-num">01</div>
+      <h3>Map Coverage</h3>
+      <p>We review your current tooling, log coverage, alert volumes and existing rules, then interview the people who handle alerts today. The output is an honest picture of what is monitored and what is not.</p>
+    </div>
+<div class="process-step reveal delay-1">
+      <div class="process-num">02</div>
+      <h3>Onboard</h3>
+      <p>Sources are connected and normalised, agents deployed, and detection content built against agreed use cases. Runbooks, severity definitions and escalation paths are written and signed off before we take the watch.</p>
+    </div>
+<div class="process-step reveal delay-2">
+      <div class="process-num">03</div>
+      <h3>Operate</h3>
+      <p>Analysts work the queue continuously, triaging, enriching and escalating against the agreed response times. Hunts run on cadence, and every noisy rule goes onto a tuning backlog that is worked weekly, not annually.</p>
+    </div>
+<div class="process-step reveal delay-3">
+      <div class="process-num">04</div>
+      <h3>Report and Improve</h3>
+      <p>Each month you get a written report and a review call covering what fired, what was escalated, what was tuned and where detection coverage still has holes, with the next quarter&#39;s priorities agreed.</p>
+    </div></div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="split-grid split-grid-even">
+          <div>
+            <div class="section-head left reveal">
+      <p class="section-eyebrow">Benefits</p>
+      <h2>What You Get Out of It</h2>
+      
+    </div>
+            <div class="benefit-stack"><div class="benefit-item reveal">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Fewer Alerts, Better Ones</h3><p>Tuning is treated as continuous work rather than a one-off project, so the queue shrinks towards alerts that genuinely warrant investigation and your analysts stop skimming.</p></div>
+              </div>
+<div class="benefit-item reveal delay-1">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Nights and Weekends Covered</h3><p>You get continuous watch without recruiting for a three-shift rota. Night-shift analyst posts are among the hardest security roles to fill, and among the hardest to keep filled once hired.</p></div>
+              </div>
+<div class="benefit-item reveal delay-2">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Coverage You Can See</h3><p>Detections mapped to MITRE ATT&amp;CK turn a vague sense of readiness into a grid your board and your auditors can read, showing which techniques you would notice.</p></div>
+              </div>
+<div class="benefit-item reveal delay-3">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Contained, Not Just Detected</h3><p>Segmentation, zero-trust access and pre-agreed containment actions mean an intrusion stops at one zone instead of moving freely across a flat network while everyone hunts for approval.</p></div>
+              </div></div>
+          </div>
+          <div class="who-panel reveal delay-1">
+            <h3>Who This Is For</h3>
+            <ul class="service-list"><li>Organisations with security tooling already bought but nobody watching it after 6pm</li><li>Lean internal security teams needing overnight, weekend and holiday cover without new headcount</li><li>Banks, insurers and payment firms carrying continuous monitoring and log retention obligations</li><li>Growing companies whose flat network now carries data they cannot afford to lose</li></ul>
+            <a href="/contact/" class="btn btn-primary btn-block">Check if this fits your business</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-narrow">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">FAQ</p>
+      <h2>Network Security — Common Questions</h2>
+      
+    </div>
+        <div class="faq-list"><div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="svc-q-0" aria-expanded="false" aria-controls="svc-a-0">
+          <span>We already have a security team. Will an outside monitoring service just duplicate what they do?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="svc-a-0" role="region" aria-labelledby="svc-q-0">
+        <p>Not if the split is written down. The co-sourced model most of our clients use gives us the parts that scale badly in-house: the 24/7 watch, tier one and tier two triage, detection engineering and the tuning backlog. Your team keeps the context we cannot have, meaning asset ownership, change approval, business impact judgement and the final call on a major incident. We agree that boundary in the escalation runbook before go-live, including who we wake and at what severity, so nobody works the same alert twice.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="svc-q-1" aria-expanded="false" aria-controls="svc-a-1">
+          <span>Our current SIEM generates thousands of alerts a day and nobody trusts it. How do you fix that?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="svc-a-1" role="region" aria-labelledby="svc-q-1">
+        <p>By treating tuning as engineering rather than deletion. We baseline two to four weeks of alert data, identify the small number of rules producing most of the volume, and trace each one to its cause: a backup job that looks like data staging, a vulnerability scanner tripping intrusion signatures, a service account behaving oddly by design. Suppressions are narrow, documented and reviewed, never blanket rule disabling. We track precision per rule, so you can see which detections earn their place and which are being rewritten.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="svc-q-2" aria-expanded="false" aria-controls="svc-a-2">
+          <span>What actually happens when you find something at 2am, and what response times do you commit to?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="svc-a-2" role="region" aria-labelledby="svc-q-2">
+        <p>Severity decides the path. Every alert class has a runbook naming the investigation steps, the response time we commit to and the containment actions we are pre-authorised to take, such as isolating a host or disabling a session. For the highest severity we investigate immediately and telephone your named contact rather than sending mail into an unwatched inbox. Response times are agreed during onboarding and written into the contract, measured from alert to acknowledgement and from acknowledgement to escalation, then reported every month.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="svc-q-3" aria-expanded="false" aria-controls="svc-a-3">
+          <span>Do we have to replace our tools, and who owns the licences and the log data?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="svc-a-3" role="region" aria-labelledby="svc-q-3">
+        <p>You keep both. We work with the platform you already own, whether that is Microsoft Sentinel, Splunk, Elastic, Wazuh or QRadar, and we will say plainly if it cannot meet your retention or ingestion needs before you spend more on it. Licences stay in your name, the tenant stays yours, and the detection content, parsers and runbooks we write are documented as your property. If you end the contract, that material and the log history remain with you, along with a documented handover.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="svc-q-4" aria-expanded="false" aria-controls="svc-a-4">
+          <span>How long before this is genuinely useful, and how disruptive is the network work?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="svc-a-4" role="region" aria-labelledby="svc-q-4">
+        <p>Onboarding a first set of high-value log sources and standing up the watch typically takes a few weeks, so you have monitoring running before detection coverage is complete. Depth arrives over the first quarter as use cases are engineered and tuned. Network changes move separately and slowly on purpose: firewall rule removal and segmentation are proposed with traffic analysis behind each one, run first in monitor-only mode, then scheduled through your own change control with a tested back-out step.</p>
+      </div>
+    </div></div>
+      </div>
+    </section>
+
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">Related</p>
+      <h2>Services That Work Alongside This One</h2>
+      
+    </div>
+        <div class="services-grid"><article class="service-card reveal">
+      <a class="service-card-link" href="/services/incident-response/">
+        <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3.5M12 3l-2 2M12 3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20a7 7 0 0114 0z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3 20h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 10.5a4 4 0 00-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <h3>Incident Response &amp; Recovery</h3>
+        <p>An incident response retainer with a committed response time, a named lead responder, digital forensics, ransomware and business email compromise containment, and breach notification support.</p>
+        <span class="text-link">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+    </article>
+<article class="service-card reveal delay-1">
+      <a class="service-card-link" href="/services/vapt/">
+        <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="8" height="11" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9.5 8V6.8a2.5 2.5 0 015 0V8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 11.5H4.5M16 11.5H19.5M8 15.5H4.5M16 15.5H19.5M9 8.5L6.5 6M15 8.5L17.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <h3>Vulnerability Assessment &amp; Penetration Testing</h3>
+        <p>Authorised testing of networks, web applications, APIs, mobile apps and cloud, with CVSS-rated findings, reproducible proof of concept, remediation guidance and a free retest.</p>
+        <span class="text-link">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+    </article>
+<article class="service-card reveal delay-2">
+      <a class="service-card-link" href="/services/cloud-security/">
+        <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18a4.5 4.5 0 01-.6-8.96A6 6 0 0118 8.5 4 4 0 0117.5 18H7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 14.5h4M12 12.8v-1.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <h3>Cloud Security Solutions</h3>
+        <p>Configuration review and hardening across AWS, Azure and Google Cloud, covering identity, landing zones, key management, container workloads and infrastructure as code, mapped to CIS Benchmarks.</p>
+        <span class="text-link">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+    </article></div>
+      </div>
+    </section>
+
+
+    <section class="cta-banner">
+      <div class="container reveal">
+        <h2>Ready to Discuss Network Security?</h2>
+        <p>Tell us where you are today. We will tell you honestly what the engagement would involve.</p>
+        <div class="cta-actions"><a href="/contact/" class="btn btn-light">Book a Free Consultation</a><a href="mailto:info@arysec.in" class="btn btn-outline">info@arysec.in</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand" aria-label="Arysec Technologies LLP — Home">
+        <svg class="brand-mark" viewBox="0 0 56 60" width="38" height="41" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradFoot" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#00e5a0"/>
+            </linearGradient>
+          </defs>
+          <path d="M28 2 L52 11 V32 C52 46 42 54.5 28 58 C14 54.5 4 46 4 32 V11 Z" fill="none" stroke="url(#brandGradFoot)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M28 14 L16 42 M28 14 L40 42 M20.5 32 H35.5" fill="none" stroke="url(#brandGradFoot)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="42" r="3" fill="#00d4ff"/><circle cx="40" cy="42" r="3" fill="#00e5a0"/><circle cx="28" cy="14" r="3" fill="#00d4ff"/>
+        </svg>
+            <span class="brand-text">
+              <span class="brand-name">ARYSEC</span>
+              <span class="brand-tagline">TECHNOLOGIES LLP</span>
+            </span>
+          </a>
+          <p class="footer-blurb">Reliable IT. Resilient security. Expert support. Headquartered in Mumbai, delivering across India and worldwide.</p>
+          <div class="footer-contact">
+            <a href="tel:+919004857727"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h4l1.5 5-2.5 2a13 13 0 005 5l2-2.5 5 1.5v4a2 2 0 01-2 2A17 17 0 014 5a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>+91 90048 57727</span></a>
+            <a href="mailto:info@arysec.in"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>info@arysec.in</span></a>
+            <span class="footer-contact-static"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span>Mumbai, Maharashtra, India</span></span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="/services/vciso/">vCISO as a Service</a>
+<a href="/services/dpo/">DPO as a Service</a>
+<a href="/services/internal-audit/">Internal Audit</a>
+<a href="/services/vapt/">VAPT</a>
+<a href="/services/iso-27001/">ISO 27001</a>
+<a href="/services/">All Services</a>
+        </div>
+<div class="footer-col">
+          <h4>Company</h4>
+          <a href="/about/">About Us</a>
+<a href="/solutions/">Solutions</a>
+<a href="/industries/">Industries</a>
+<a href="/case-studies/">Case Studies</a>
+<a href="/careers/">Careers</a>
+        </div>
+<div class="footer-col">
+          <h4>Resources</h4>
+          <a href="/insights/">Insights</a>
+<a href="/resources/">Guides &amp; Checklists</a>
+<a href="/resources/#faq">FAQs</a>
+<a href="/responsible-disclosure/">Responsible Disclosure</a>
+<a href="/contact/">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Arysec Technologies LLP. All rights reserved.</p>
+        <p class="footer-legal"><a href="/privacy-policy/">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="/terms-of-service/">Terms of Service</a> <span aria-hidden="true">&middot;</span> <a href="/cookie-policy/">Cookie Policy</a> <span aria-hidden="true">&middot;</span> <a href="/responsible-disclosure/">Responsible Disclosure</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie preferences" aria-live="polite" hidden>
+    <div class="cookie-inner">
+      <p>
+        We use strictly necessary cookies to run this site, and optional analytics cookies to understand
+        how it is used. We do not use advertising or cross-site tracking cookies.
+        <a href="/cookie-policy/">Read our Cookie Policy</a>.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-outline btn-sm" data-cookie-choice="necessary">Necessary only</button>
+        <button type="button" class="btn btn-primary btn-sm" data-cookie-choice="all">Accept analytics</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

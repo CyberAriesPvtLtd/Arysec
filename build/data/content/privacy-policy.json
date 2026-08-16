@@ -30,18 +30,18 @@
         "Enquiry form submissions: your name, work email address, phone number, organisation name, and whatever you choose to write in the message field.",
         "Resource requests: the name, email address and organisation you give us when you ask for a whitepaper, checklist or similar document.",
         "Careers applications: your CV, contact details, work history, qualifications, and any covering note or portfolio link you send.",
-        "Newsletter sign-ups: your email address, and your name if you choose to give it.",
+        "Newsletter sign-ups: your email address, which is the only field the sign-up form has.",
         "Correspondence: the content of emails, call notes and meeting notes created when you contact us directly.",
         "Server logs: your IP address, browser type and version, operating system, referring page, the pages you viewed, and the date and time of each request.",
-        "Cookies and analytics data: identifiers stored in your browser, and aggregated information about how the site is used."
+        "Cookies and similar storage: the record of the cookie choice you made, and, where analytics is running and you have agreed to it, aggregated information about how the site is used."
       ]
     },
     {
       "heading": "Why We Use Personal Data and Our Lawful Basis",
       "paragraphs": [
         "Every use we make of personal data has a stated purpose and a lawful basis behind it. Under the DPDP Act 2023 we rely on your consent, and on the certain legitimate uses the Act recognises, such as responding to a request you have voluntarily made to us. Under the GDPR we rely on consent, on the performance of a contract, on our legitimate interests in running and marketing a business, and on compliance with legal obligations.",
-        "These are the purposes for which we process personal data.",
-        "We do not sell personal data. We do not use it to build advertising profiles, and we do not make decisions about you by automated means that would produce a legal or similarly significant effect on you."
+        "We do not sell personal data. We do not use it to build advertising profiles, and we do not make decisions about you by automated means that would produce a legal or similarly significant effect on you.",
+        "These are the purposes for which we process personal data."
       ],
       "list": [
         "Responding to enquiries and preparing proposals, so that we can answer your question and scope the work you asked about.",
@@ -56,9 +56,9 @@
     {
       "heading": "Cookies, Analytics and Server Logs",
       "paragraphs": [
-        "Our website sets a small number of cookies. Some are strictly necessary: they keep the site working, remember your cookie preferences and help protect against common attacks. Others support analytics, and those are set only where you have agreed to them or where the law that applies to you permits them without consent.",
-        "Analytics tells us aggregate things, such as which pages hold attention and where visitors leave. We configure analytics processing to minimise what is collected about individuals, and we do not attempt to identify you from it or to match it against your enquiry records.",
-        "You can clear or block cookies through your browser settings at any time, and you can change any consent you gave through our cookie notice. Blocking strictly necessary cookies may stop parts of the site from working. Server logs are separate from analytics: they are generated automatically for security and diagnostics, and they are kept apart from marketing data."
+        "Our website uses a small amount of browser storage, in two categories. The strictly necessary category keeps the site working, holds the record of the cookie choice you made, and supports the protection sitting in front of the site and its forms. The analytics category is optional, and anything in it is set only where you have agreed through our consent control, or where the law that applies to you permits measurement without consent. Our cookie policy describes both categories in detail.",
+        "We do not currently run an analytics provider on this site. If we add one, it will sit behind the consent control, we will configure it to gather as little as the purpose needs, and we will not attempt to identify you from it or match it against your enquiry records.",
+        "You can clear or block cookies and other browser storage through your browser settings at any time. Clearing this site's stored data also clears the answer you gave to our consent control, so you will be asked again on your next visit. Blocking strictly necessary storage may stop parts of the site from working. Server logs are separate: they are generated automatically for security and diagnostics, and they are kept apart from marketing data."
       ]
     },
     {
@@ -73,8 +73,8 @@
       "heading": "How Long We Keep Personal Data",
       "paragraphs": [
         "We keep personal data for as long as the purpose it was collected for still applies, and then for any further period the law requires. Because the correct period depends on the type of record and the obligation attached to it, we set retention periods internally by category rather than applying one figure across everything.",
-        "The general pattern we follow is set out below.",
-        "Under the DPDP Act 2023 we must erase personal data once you withdraw consent, or once the purpose it was collected for has ended, unless a law requires us to keep it. We apply that rule as a matter of routine and not only when someone asks."
+        "Under the DPDP Act 2023 we must erase personal data once you withdraw consent, or once the purpose it was collected for has ended, unless a law requires us to keep it. We apply that rule as a matter of routine and not only when someone asks.",
+        "The general pattern we follow is set out below."
       ],
       "list": [
         "Enquiry and proposal records stay with us while a commercial conversation is live, and for a limited period afterwards so that we can pick the discussion back up.",
@@ -89,12 +89,12 @@
       "heading": "Who We Share Personal Data With",
       "paragraphs": [
         "We do not sell or rent personal data, and we do not share it for anyone else's marketing. A limited set of service providers processes data on our behalf so that the website and the business can function. They are described here by category, because the specific suppliers change over time and a named list would quickly become inaccurate.",
-        "Every processor we use is bound by a written agreement that limits them to our instructions, imposes confidentiality, and requires security measures appropriate to the data. If the ownership of our business ever changes, personal data may transfer to the acquiring entity, and we will tell you if that happens and what it means for you."
+        "Every processor we use is bound by a written agreement that limits them to our instructions, imposes confidentiality, and requires security measures appropriate to the data. If the ownership of our business ever changes, personal data may transfer to the acquiring entity, and we will tell you if that happens and what it means for you. The categories of recipient are these:"
       ],
       "list": [
         "Hosting and infrastructure providers, who run the servers and content delivery network behind this website.",
         "Email delivery and communication providers, who transmit our replies, resource downloads and newsletter.",
-        "Analytics providers, who process website usage data on our instructions and nothing more.",
+        "Analytics providers, where analytics is running, who process website usage data on our instructions and nothing more.",
         "Recruitment and applicant tracking tools, where those are used to manage job applications.",
         "Professional advisers such as accountants, auditors and lawyers, where they need the data in order to advise us.",
         "Government bodies, regulators, courts and law enforcement agencies, where a legal obligation requires disclosure."
@@ -111,9 +111,9 @@
     {
       "heading": "How We Protect Personal Data",
       "paragraphs": [
-        "Security is the work we do for our clients, and we hold our own environment to the same standard. Our controls follow recognised practice, including ISO/IEC 27001:2022 for the management system and CIS Benchmarks for system hardening, and we review them as our systems and our risks change.",
-        "The measures below apply to the personal data covered by this policy.",
-        "No control set removes risk entirely. If a personal data breach occurs that is likely to affect you, we will notify the relevant authority and the affected individuals within the timeframes the applicable law sets, and we will tell you what happened, what data was involved, and what we are doing about it."
+        "Security is the work we do for our clients, and we hold our own environment to the same standard. We align our own controls with recognised practice, including the control set in ISO/IEC 27001:2022 and CIS Benchmarks for system hardening, and we review them as our systems and our risks change.",
+        "No control set removes risk entirely. If a personal data breach occurs that is likely to affect you, we will notify the relevant authority and the affected individuals within the timeframes the applicable law sets, and we will tell you what happened, what data was involved, and what we are doing about it.",
+        "The measures below apply to the personal data covered by this policy."
       ],
       "list": [
         "Encryption in transit using TLS across the website and our mail systems, with encryption at rest for stored data wherever the platform supports it.",
@@ -128,8 +128,8 @@
     {
       "heading": "Your Rights Under India's DPDP Act 2023",
       "paragraphs": [
-        "If you are a Data Principal under the DPDP Act 2023, the Act gives you the rights listed below over personal data we process on the basis of your consent or of a legitimate use.",
-        "The Act also asks Data Principals to provide authentic information and to avoid raising false or frivolous complaints. Where we cannot satisfy ourselves about your identity, we may ask for further information before we act on a request."
+        "If you are a Data Principal under the DPDP Act 2023, the Act gives you a set of rights over personal data we process on the basis of your consent or of a legitimate use.",
+        "The Act also asks Data Principals to provide authentic information and to avoid raising false or frivolous complaints. Where we cannot satisfy ourselves about your identity, we may ask for further information before we act on a request. The rights are these:"
       ],
       "list": [
         "Access: a summary of the personal data we process about you, the processing activities involved, and the identities of other Data Fiduciaries with whom we have shared it.",
@@ -144,7 +144,7 @@
       "heading": "Rights Available Under the EU GDPR",
       "paragraphs": [
         "If you are in the European Economic Area or the United Kingdom and the GDPR or UK GDPR applies to our processing of your data, you have a further set of rights.",
-        "Where these overlap with rights under the DPDP Act 2023, we apply whichever gives you the stronger protection. None of these rights is absolute. If we have to decline a request in whole or in part, we will say so in writing and explain the reasoning behind the decision."
+        "Where these overlap with rights under the DPDP Act 2023, we apply whichever gives you the stronger protection. None of these rights is absolute. If we have to decline a request in whole or in part, we will say so in writing and explain the reasoning behind the decision. The rights are these:"
       ],
       "list": [
         "Access to a copy of your personal data, along with information about how and why it is used.",

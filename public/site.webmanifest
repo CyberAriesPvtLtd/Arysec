@@ -1,0 +1,17 @@
+{
+  "name": "Arysec Technologies LLP",
+  "short_name": "Arysec",
+  "description": "IT and information security services",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1628",
+  "theme_color": "#0a1628",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -25,8 +25,8 @@
       "paragraphs": [
         "Some exclusions here are absolute rather than a matter of preference. The most important one concerns our clients.",
         "Client systems and client data are never in scope. When we test a client environment we do so under a signed contract and a specific rules-of-engagement document, and that authorisation comes from the client, not from us. No permission we could give you would be valid there. If your research touches a client system, you are acting without authorisation from the party that owns it, and this policy offers you nothing at all.",
-        "The following sit outside the scope of this policy:",
-        "Finding a weakness in a third-party service does not bring it into scope simply because we happen to use that service. Report it to the provider under its own policy. Where the issue also affects information we hold, tell us as well so that we can act on our side of it."
+        "Finding a weakness in a third-party service does not bring it into scope simply because we happen to use that service. Report it to the provider under its own policy. Where the issue also affects information we hold, tell us as well so that we can act on our side of it.",
+        "The following sit outside the scope of this policy:"
       ],
       "list": [
         "Any system, network, application or data belonging to an Arysec client, prospective client or partner",
@@ -50,8 +50,8 @@
     {
       "heading": "What to Include in a Report",
       "paragraphs": [
-        "A good report lets an engineer reproduce the issue without guessing. The more of the following you can give us, the faster it moves through triage.",
-        "Proof of concept code is welcome. Keep it minimal and non-destructive, and do not include data belonging to anyone else, even as an illustration. If you believe the only way to demonstrate the problem is to show us data that is not yours, stop and describe what you found instead. We will take your word for it and reproduce it ourselves under controlled conditions."
+        "Proof of concept code is welcome. Keep it minimal and non-destructive, and do not include data belonging to anyone else, even as an illustration. If you believe the only way to demonstrate the problem is to show us data that is not yours, stop and describe what you found instead. We will take your word for it and reproduce it ourselves under controlled conditions.",
+        "A good report lets an engineer reproduce the issue without guessing. The more of the following you can give us, the faster it moves through triage."
       ],
       "list": [
         "The affected asset: the exact URL, host, endpoint or parameter involved",
@@ -69,7 +69,7 @@
       "paragraphs": [
         "Timelines matter to a researcher, and silence is the most common complaint made about disclosure programmes. We state ours as commitments rather than intentions, counted in business days at our Mumbai office.",
         "We triage by severity and by real exposure rather than by score alone. A moderate weakness that is trivially reachable from the internet will usually be fixed ahead of a theoretically severe one that depends on conditions we do not have. Where our assessment differs from yours, we will explain the reasoning instead of quietly closing the report.",
-        "Complicated issues sometimes take longer to resolve than we would like. When that happens we will say so plainly, give you our reasoning, and keep the updates coming until the matter is closed. An honest date is more useful to you than a comfortable one."
+        "Complicated issues sometimes take longer to resolve than we would like. When that happens we will say so plainly, give you our reasoning, and keep the updates coming until the matter is closed. An honest date is more useful to you than a comfortable one. These are the commitments we make:"
       ],
       "list": [
         "Acknowledgement that your report has reached a human within three business days",
@@ -93,8 +93,8 @@
     {
       "heading": "What Good-Faith Testing Looks Like",
       "paragraphs": [
-        "Good faith is easier to demonstrate than to define. We consider testing to be in good faith when it is proportionate, minimal, and aimed at establishing that a weakness exists rather than at finding out how far it can be taken. Within scope, you may do the following:",
-        "Stop as soon as you have established that a weakness exists. The moment a proof of concept works, you have what you need and so do we. Continuing in order to see how much access is available turns research into intrusion, and it is the single most common way a well-intentioned researcher loses the protection of this policy."
+        "Good faith is easier to demonstrate than to define. We consider testing to be in good faith when it is proportionate, minimal, and aimed at establishing that a weakness exists rather than at finding out how far it can be taken.",
+        "Stop as soon as you have established that a weakness exists. The moment a proof of concept works, you have what you need and so do we. Continuing in order to see how much access is available turns research into intrusion, and it is the single most common way a well-intentioned researcher loses the protection of this policy. Within scope, you may do the following:"
       ],
       "list": [
         "Interact with our public services as an ordinary visitor would, and observe how they respond",
@@ -109,8 +109,8 @@
     {
       "heading": "Testing That Is Never Permitted",
       "paragraphs": [
-        "The activities below are prohibited under this policy without exception, whether or not the asset is otherwise in scope. Carrying out any of them places you outside the safe harbour, and we will then treat the activity on its own merits.",
-        "If you access data belonging to another person by accident, which does happen, stop immediately. Do not save it, share it or work with it further. Tell us in your report exactly what you saw and how you came to see it, and delete every copy once we confirm we have what we need. Handled that way, an accidental exposure costs you nothing. Concealing one costs you the safe harbour."
+        "The activities in this section are prohibited under this policy without exception, whether or not the asset is otherwise in scope. Carrying out any of them places you outside the safe harbour, and we will then treat the activity on its own merits.",
+        "If you access data belonging to another person by accident, which does happen, stop immediately. Do not save it, share it or work with it further. Tell us in your report exactly what you saw and how you came to see it, and delete every copy once we confirm we have what we need. Handled that way, an accidental exposure costs you nothing. Concealing one costs you the safe harbour. The prohibited activities are these:"
       ],
       "list": [
         "Denial of service, load testing, stress testing, or anything else that degrades availability",
@@ -130,7 +130,7 @@
       "heading": "Reports We Are Unlikely to Action",
       "paragraphs": [
         "Some findings arrive often and rarely reflect a real risk to us or to anyone using our systems. We will still read and answer a report of this kind, but it will usually be closed as informational or as an accepted risk. Saying so in advance seems fairer than taking your time and then declining.",
-        "None of this is a reason to stay quiet if you think we have judged it wrongly. Where you can show a chain that turns one of these into something genuinely exploitable, the chain itself is the finding, and we want to hear about it."
+        "None of this is a reason to stay quiet if you think we have judged it wrongly. Where you can show a chain that turns one of these into something genuinely exploitable, the chain itself is the finding, and we want to hear about it. The reports we usually close without action are these:"
       ],
       "list": [
         "Missing security headers on a static page with no session, account or sensitive content",
@@ -158,7 +158,7 @@
       "heading": "Recognition and Our Position on Paid Bounties",
       "paragraphs": [
         "We do not currently operate a paid bug bounty programme, and we have no interest in implying otherwise. There is no reward pool, no severity payout table and no promise of money for a valid report. If that position changes, we will say so on this page.",
-        "What we do offer is recognition and a straight answer. With your consent, we will credit you by the name or handle you choose in the advisory or release note that accompanies the fix, and we are glad to keep a public list of thanks for researchers who want to be named. Preferring to stay anonymous is equally fine, and it makes no difference to how your report is handled.",
+        "What we do offer is recognition and a straight answer. With your consent, we will credit you by the name or handle you choose in whatever we publish about the fix, and we will agree the wording with you before it goes out. Preferring to stay anonymous is equally fine, and it makes no difference to how your report is handled.",
         "Confirmation in writing is available if it is useful to you. Researchers often need evidence of their work for a curriculum vitae, a conference submission or a coordination process, and we will provide a factual letter setting out what you reported, when you reported it, and how we resolved it. Where a finding warrants a CVE identifier, we will cooperate with the relevant coordination body.",
         "The absence of payment does not mean we value your report less. A valid finding is triaged, prioritised, fixed and closed on its merits, whether it comes from a full-time researcher, a curious student or an engineer at one of our clients."
       ]

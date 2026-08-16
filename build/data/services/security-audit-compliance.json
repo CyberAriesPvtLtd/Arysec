@@ -5,7 +5,7 @@
   "category": "Audit, Testing & Compliance",
   "metaTitle": "Security Audits & Compliance: SOC 2, PCI DSS, NIST",
   "metaDescription": "Arysec runs gap analysis, control design and evidence readiness for SOC 2, PCI DSS 4.0, NIST CSF 2.0 and HIPAA, then supports you through the audit.",
-  "cardSummary": "Gap analysis, control design and evidence readiness for SOC 2, PCI DSS 4.0, NIST CSF 2.0 and sectoral Indian requirements, with support through the external audit.",
+  "cardSummary": "One mapped control set covering every framework you are asked for, tested internally before your assessor sees it, with the evidence trail kept current between cycles.",
   "heroHeadline": "Compliance Evidence That Survives External Scrutiny",
   "heroSub": "We map your controls against the frameworks that apply to you, close the gaps that would fail an audit, and build the evidence trail your assessor will ask for. The certificate or attestation comes from an accredited body; the readiness comes from us.",
   "highlights": [
@@ -18,7 +18,7 @@
     "paragraphs": [
       "Compliance rarely arrives one framework at a time. A payments partner asks for PCI DSS 4.0, a US enterprise buyer wants a SOC 2 Type II report, your regulator expects controls aligned to its cyber security directions, and somewhere in the middle a healthcare client raises HIPAA. Treated as four separate projects, each one repeats the same work: the same access reviews, the same change records, the same vendor assessments, collected four times by four different people.",
       "We run compliance as a single programme. Your obligations are mapped onto one control set, so a documented quarterly access review satisfies the SOC 2 logical access criteria, the PCI DSS requirement for least privilege and the corresponding NIST CSF 2.0 outcome at the same time. Where frameworks genuinely diverge, and they do, we scope the difference explicitly rather than pretending a generic policy covers it.",
-      "One boundary matters from the outset. Arysec prepares and supports; we do not certify. A SOC 2 attestation is issued by an independent licensed CPA firm, a PCI DSS Report on Compliance by a qualified assessor, and an ISO/IEC 27001:2022 certificate by an accredited certification body. Our work is the readiness: scoping, control design, internal testing, evidence assembly and sitting beside you through fieldwork. Obligations for entities supervised by the Reserve Bank of India, SEBI or IRDAI are revised periodically and differ by licence class, so confirm your specific position with your compliance counsel."
+      "Be clear about what we are and are not. Arysec does the readiness work: scoping, control design, internal testing, evidence assembly and sitting beside you through fieldwork. The opinion itself always comes from an independent firm, because the rules that give an attestation its value stop whoever designed your controls from also testing them for the report. We treat that split as a discipline rather than a limitation, since it forces our internal testing to be harder than the assessor's. Obligations for entities supervised by the Reserve Bank of India, SEBI or IRDAI are revised periodically and differ by licence class, so your compliance counsel should confirm where yours leaves you."
     ]
   },
   "capabilities": {
@@ -57,7 +57,7 @@
       "Gap assessment report with control-by-control findings",
       "Framework mapping matrix across every applicable standard",
       "Scope boundary document and system description narrative",
-      "Prioritised remediation plan with owners and target dates",
+      "Remediation backlog sequenced so one fix serves several requirements",
       "Control matrix covering design and operating effectiveness",
       "Evidence repository structured to assessor sample requests",
       "Policy and procedure set mapped to control requirements",
@@ -66,19 +66,19 @@
   },
   "process": [
     {
-      "title": "Scope",
+      "title": "Boundary",
       "description": "We establish which frameworks genuinely apply, then draw the boundary: which entities, systems, data flows and third parties are in. Getting this wrong is the most common cause of audit overruns."
     },
     {
-      "title": "Assess",
+      "title": "Gap Register",
       "description": "Interviews, configuration review, document inspection and sample testing produce a rated gap register. You learn early which findings are quick policy fixes and which need engineering time or budget approval."
     },
     {
-      "title": "Remediate",
+      "title": "Close Out",
       "description": "Your team closes findings with our support: control design, policy drafting, tooling configuration and evidence workflows. We retest each item and hold a formal readiness review before you engage the external assessor."
     },
     {
-      "title": "Support",
+      "title": "Fieldwork",
       "description": "We sit alongside you through fieldwork, managing sample requests and walkthroughs, then set the recurring calendar of access reviews, risk assessments and vendor checks that keeps the next cycle shorter."
     }
   ],
@@ -101,7 +101,7 @@
     }
   ],
   "whoItsFor": [
-    "SaaS providers whose enterprise buyers require a SOC 2 Type II report",
+    "Software vendors blocked in procurement until they can produce a SOC 2 Type II report",
     "Payment aggregators, fintechs and merchants carrying PCI DSS 4.0 obligations across multiple environments",
     "Banks, NBFCs, brokers and insurers preparing for supervisory inspection or a regulator-directed audit",
     "Healthcare and health technology firms handling protected health information for United States partners"
@@ -112,11 +112,11 @@
       "answer": "We do not, and no consultancy honestly can. A SOC 2 attestation is issued by an independent licensed CPA firm, a PCI DSS Report on Compliance by a qualified assessor, and an ISO/IEC 27001:2022 certificate by an accredited certification body. Independence rules prevent the same firm from building your controls and then attesting to them. We do the readiness work, run internal testing and support you through fieldwork; you appoint the assessor directly."
     },
     {
-      "question": "How long does SOC 2 Type II actually take from a standing start?",
+      "question": "What is a realistic timeline for a first SOC 2 Type II?",
       "answer": "Plan for six to twelve months. Readiness and remediation typically run three to six months depending on how much control design already exists, then the Type II observation window needs a minimum of three months of operating evidence, and most buyers expect six or twelve. Type I can be reached sooner and is a reasonable interim answer for a prospect, but few enterprise procurement teams accept it as a permanent substitute."
     },
     {
-      "question": "We already have an internal audit function and a GRC tool. What do you add?",
+      "question": "Between our internal audit function and our GRC tool, what is left for you to add?",
       "answer": "Usually scope interpretation and testing depth. Internal audit knows your business; it rarely knows how a particular assessor reads PCI DSS requirement 11, or which SOC 2 samples get rejected. A GRC tool stores evidence, it does not decide whether that evidence proves operating effectiveness. We work alongside both, configure the tool against the mapped control set, and train your team to run the cycle without us."
     },
     {

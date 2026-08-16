@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Security for AWS, Azure &amp; Google Cloud | Arysec Technologies LLP</title>
+  <meta name="description" content="Arysec secures AWS, Azure and Google Cloud: CSPM, least-privilege IAM, landing zones, Kubernetes hardening and CIS Benchmark remediation for your estate.">
+  <link rel="canonical" href="https://www.arysec.in/services/cloud-security/">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Arysec Technologies LLP">
+  <meta property="og:title" content="Cloud Security for AWS, Azure &amp; Google Cloud | Arysec Technologies LLP">
+  <meta property="og:description" content="Arysec secures AWS, Azure and Google Cloud: CSPM, least-privilege IAM, landing zones, Kubernetes hardening and CIS Benchmark remediation for your estate.">
+  <meta property="og:url" content="https://www.arysec.in/services/cloud-security/">
+  <meta property="og:image" content="https://www.arysec.in/assets/og-image.svg">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloud Security for AWS, Azure &amp; Google Cloud | Arysec Technologies LLP">
+  <meta name="twitter:description" content="Arysec secures AWS, Azure and Google Cloud: CSPM, least-privilege IAM, landing zones, Kubernetes hardening and CIS Benchmark remediation for your estate.">
+  <meta name="twitter:image" content="https://www.arysec.in/assets/og-image.svg">
+
+  <meta name="theme-color" content="#0a1628">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Arysec Technologies LLP","alternateName":"Arysec","url":"https://www.arysec.in/","email":"info@arysec.in","telephone":"+91 90048 57727","description":"IT and information security firm providing vCISO, DPO as a Service, internal audit, VAPT, ISO 27001 support, managed IT and cloud security.","address":{"@type":"PostalAddress","addressLocality":"Mumbai","addressRegion":"Maharashtra","addressCountry":"IN"},"founder":{"@type":"Person","name":"Unnati Shinde","jobTitle":"Founder \u0026 Managing Partner"},"areaServed":[{"@type":"Country","name":"India"},"Worldwide"],"knowsAbout":["Information security","ISO/IEC 27001","Penetration testing","Data protection","Internal audit","Managed IT services"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Cloud Security Solutions","serviceType":"Cybersecurity Services","description":"Arysec secures AWS, Azure and Google Cloud: CSPM, least-privilege IAM, landing zones, Kubernetes hardening and CIS Benchmark remediation for your estate.","url":"https://www.arysec.in/services/cloud-security/","provider":{"@type":"Organization","name":"Arysec Technologies LLP","url":"https://www.arysec.in/"},"areaServed":[{"@type":"Country","name":"India"},"Worldwide"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.arysec.in/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.arysec.in/services/"},{"@type":"ListItem","position":3,"name":"Cloud Security","item":"https://www.arysec.in/services/cloud-security/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Our cloud provider says security is built in. Why do we need a separate assessment?","acceptedAnswer":{"@type":"Answer","text":"Because the provider secures the platform, not your use of it. AWS, Azure and Google Cloud all publish a shared responsibility model, and every one of them puts identity configuration, network exposure, data classification and access control on your side of the line. The platform will happily serve a storage bucket you have opened to the world. Native tools report the condition; they do not decide what your data is worth or who should have been able to reach it."}},{"@type":"Question","name":"We already run Security Hub and Defender for Cloud. Is a CSPM engagement not duplicating that?","acceptedAnswer":{"@type":"Answer","text":"Those tools generate findings well. What they do not do is decide which of several thousand findings matters in your environment, work out why the same fault keeps reappearing, or write the guardrail that prevents it returning. We tune the native tooling you already pay for, suppress what is genuinely not applicable with a recorded reason, and prioritise the rest by reachability and blast radius. If your team already does that consistently, we will say so and scope the work smaller."}},{"@type":"Question","name":"Will hardening break our production workloads or slow our release cycle?","acceptedAnswer":{"@type":"Answer","text":"It can, if changes are applied blindly, so we do not work that way. Every permission removal follows analysis of what the principal actually called over a recorded period, using access advisor data and control plane logs. Network and policy changes go into audit or monitor mode first, so you see what would have been blocked before anything is. Changes then reach production through your own pipeline and change window, each with a documented rollback."}},{"@type":"Question","name":"We run AWS and Azure plus some on-premises kit. Does the assessment differ per cloud?","acceptedAnswer":{"@type":"Answer","text":"Each platform is tested against its own benchmark, because the controls are not equivalent. An Azure network security group and an AWS security group are different objects, and Google Cloud organisation policy has no direct AWS counterpart. Results are then normalised into one risk register rather than three unrelated reports you have to reconcile yourself. On-premises components are included where they share identity or network paths with cloud workloads, since that is usually where lateral movement begins."}},{"@type":"Question","name":"What happens after the engagement ends, and does anything we build stay with us?","acceptedAnswer":{"@type":"Answer","text":"Everything stays in your tenant and your name. Policy-as-code, IaC scanning rules, admission policies, landing zone templates and remediation runbooks are written into your repositories rather than ours, and licences for any tooling remain yours. Where clients want ongoing cover we move to a monitoring retainer scoped per engagement, with periodic re-testing and drift review. Where they do not, we hand over through a working session and documentation your team can maintain alone."}}]}</script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="/" class="brand" aria-label="Arysec Technologies LLP — Home">
+        <svg class="brand-mark" viewBox="0 0 56 60" width="38" height="41" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradNav" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#00e5a0"/>
+            </linearGradient>
+          </defs>
+          <path d="M28 2 L52 11 V32 C52 46 42 54.5 28 58 C14 54.5 4 46 4 32 V11 Z" fill="none" stroke="url(#brandGradNav)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M28 14 L16 42 M28 14 L40 42 M20.5 32 H35.5" fill="none" stroke="url(#brandGradNav)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="42" r="3" fill="#00d4ff"/><circle cx="40" cy="42" r="3" fill="#00e5a0"/><circle cx="28" cy="14" r="3" fill="#00d4ff"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">ARYSEC</span>
+          <span class="brand-tagline">TECHNOLOGIES LLP</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <ul class="nav-list">
+<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+<li class="nav-item has-panel has-mega">
+        <button class="nav-link nav-trigger active" aria-expanded="false" aria-controls="mega-services" data-href="/services/">Services<svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        
+      <div class="mega-panel" id="mega-services" hidden>
+        <div class="container mega-inner">
+          <div class="mega-cols">
+          <div class="mega-col">
+            <h4 class="mega-heading">Governance &amp; Advisory</h4>
+            <a class="mega-link" href="/services/vciso/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 11.5l2 2 4-4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">vCISO as a Service</span>
+                <span class="mega-link-desc">vCISO</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/dpo/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="9" width="16" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 9V6.5a4 4 0 018 0V9" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="14.5" r="1.6" fill="currentColor"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">DPO as a Service</span>
+                <span class="mega-link-desc">DPO</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/internal-audit/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6l1 3h4v15H4V6h4l1-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 13l2.5 2.5L16 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Internal Audit &amp; Assurance</span>
+                <span class="mega-link-desc">Internal Audit</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Audit, Testing &amp; Compliance</h4>
+            <a class="mega-link" href="/services/security-audit-compliance/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 7.5h8M8 11h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9 16v5l3-1.8 3 1.8v-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Security Audits &amp; Compliance</span>
+                <span class="mega-link-desc">Audit &amp; Compliance</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/iso-27001/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.5l2.4 1.8 3-.2.6 2.9 2.4 1.8-1.3 2.7 1.3 2.7-2.4 1.8-.6 2.9-3-.2L12 20.5l-2.4-1.8-3 .2-.6-2.9L3.6 14.2 4.9 11.5 3.6 8.8l2.4-1.8.6-2.9 3 .2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 11.6l2.1 2.1L15.2 9.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">ISO 27001 Implementation &amp; Certification Support</span>
+                <span class="mega-link-desc">ISO 27001</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/vapt/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="8" height="11" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9.5 8V6.8a2.5 2.5 0 015 0V8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 11.5H4.5M16 11.5H19.5M8 15.5H4.5M16 15.5H19.5M9 8.5L6.5 6M15 8.5L17.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Vulnerability Assessment &amp; Penetration Testing</span>
+                <span class="mega-link-desc">VAPT</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Cybersecurity Services</h4>
+            <a class="mega-link" href="/services/cybersecurity-consulting/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11.3" cy="10.6" r="2.7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13.4 12.8L15.6 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Cybersecurity Consulting &amp; Risk Assessment</span>
+                <span class="mega-link-desc">Security Consulting</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/network-security/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="19" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 11l10-5M7 13l10 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Network Security &amp; Monitoring</span>
+                <span class="mega-link-desc">Network Security</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/cloud-security/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18a4.5 4.5 0 01-.6-8.96A6 6 0 0118 8.5 4 4 0 0117.5 18H7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 14.5h4M12 12.8v-1.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Cloud Security Solutions</span>
+                <span class="mega-link-desc">Cloud Security</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/data-protection/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5.5" rx="7" ry="2.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 5.5v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 11.5v6c0 1.5 2.4 2.6 5.6 2.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="13" y="16" width="7" height="5.4" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M14.8 16v-1.4a1.7 1.7 0 013.4 0V16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Data Protection &amp; Encryption</span>
+                <span class="mega-link-desc">Data Protection</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/incident-response/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3.5M12 3l-2 2M12 3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20a7 7 0 0114 0z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3 20h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 10.5a4 4 0 00-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Incident Response &amp; Recovery</span>
+                <span class="mega-link-desc">Incident Response</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/security-awareness-training/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 19c.6-3 2.8-5 5.5-5s4.9 2 5.5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="16.5" cy="5.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 9.5c1.8.4 3.4 2 3.9 4.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Security Awareness &amp; Training</span>
+                <span class="mega-link-desc">Security Awareness</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">IT Services</h4>
+            <a class="mega-link" href="/services/managed-it/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M7 9l2.5 2.5L7 14M12.5 13.5H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Managed IT Services</span>
+                <span class="mega-link-desc">Managed IT</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/software-development/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 4l-3 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Software Development &amp; Integration</span>
+                <span class="mega-link-desc">Software Development</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/it-infrastructure/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="5.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14.5" width="18" height="5.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="6.5" cy="6.75" r="0.9" fill="currentColor"/><circle cx="6.5" cy="17.25" r="0.9" fill="currentColor"/><path d="M12 9.5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">IT Infrastructure Management</span>
+                <span class="mega-link-desc">IT Infrastructure</span>
+              </span>
+            </a>
+          </div>
+          </div>
+          <div class="mega-footer">
+            <a class="text-link" href="/services/">View all services <span aria-hidden="true">&rarr;</span></a>
+            <a class="text-link" href="/solutions/">Packaged solutions <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+      </li>
+<li class="nav-item"><a class="nav-link" href="/solutions/">Solutions</a></li>
+<li class="nav-item"><a class="nav-link" href="/industries/">Industries</a></li>
+<li class="nav-item has-panel has-dropdown">
+        <button class="nav-link nav-trigger" aria-expanded="false" aria-controls="dropdown-4" data-href="/about/">Company<svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dropdown-panel" id="dropdown-4" hidden>
+          <a class="dropdown-link" href="/about/">
+            <span class="dropdown-link-title">About Us</span>
+            <span class="dropdown-link-desc">Who we are and how we work</span>
+          </a>
+<a class="dropdown-link" href="/case-studies/">
+            <span class="dropdown-link-title">Case Studies</span>
+            <span class="dropdown-link-desc">Anonymised engagement examples</span>
+          </a>
+<a class="dropdown-link" href="/insights/">
+            <span class="dropdown-link-title">Insights</span>
+            <span class="dropdown-link-desc">Articles from our practitioners</span>
+          </a>
+<a class="dropdown-link" href="/resources/">
+            <span class="dropdown-link-title">Resources</span>
+            <span class="dropdown-link-desc">Guides, checklists and FAQs</span>
+          </a>
+<a class="dropdown-link" href="/careers/">
+            <span class="dropdown-link-title">Careers</span>
+            <span class="dropdown-link-desc">Open roles and how we hire</span>
+          </a>
+        </div>
+      </li>
+<li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+        </ul>
+        <a href="/contact/" class="btn btn-primary btn-nav">Get a Consultation</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <a href="/services/">Services</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <span aria-current="page">Cloud Security</span></nav>
+        <p class="hero-eyebrow">Cybersecurity Services</p>
+        <h1>Close the Gaps Your Cloud Provider Leaves You</h1>
+        <p class="page-hero-sub">Your provider secures the data centres and the hypervisor. Everything above that line is yours. We find the misconfigurations, over-privileged roles and unwatched accounts across your AWS, Azure and Google Cloud estates, then fix them with your engineers.</p>
+        <div class="hero-actions"><a href="/contact/" class="btn btn-primary">Request a Consultation</a><a href="tel:+919004857727" class="btn btn-outline">+91 90048 57727</a></div>
+        <div class="highlight-row"><div class="highlight">
+      <span class="highlight-value">AWS, Azure, GCP</span>
+      <span class="highlight-label">Assessed against each baseline</span>
+    </div>
+<div class="highlight">
+      <span class="highlight-value">CIS Benchmarks</span>
+      <span class="highlight-label">Every finding mapped to control</span>
+    </div>
+<div class="highlight">
+      <span class="highlight-value">Continuous</span>
+      <span class="highlight-label">Posture monitoring, not annual snapshots</span>
+    </div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="split-grid">
+          <div class="split-main reveal">
+            <span class="service-icon service-icon-lg"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18a4.5 4.5 0 01-.6-8.96A6 6 0 0118 8.5 4 4 0 0117.5 18H7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 14.5h4M12 12.8v-1.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <h2>Where Cloud Breaches Actually Come From</h2>
+            <p>Almost nothing that goes wrong in public cloud is a failure of the provider&#39;s infrastructure. AWS, Microsoft Azure and Google Cloud each publish a shared responsibility model that draws a line: they secure the physical facilities, the hardware and the virtualisation layer, and you secure everything you place on top. That line moves with what you buy. Run a virtual machine and the guest operating system, its patching and its network exposure are yours. Use a managed database and the provider patches the engine while you still own access control, encryption keys and who is allowed to read the data. Adopt managed Kubernetes and the control plane is theirs, while node configuration, workload permissions and admission policy stay with you. Nearly every cloud incident we are called into traces back to something on your side of that line that nobody realised was there, and the cost is rarely confined to a cloud bill: exposed personal data carries notification duties under the DPDP Act 2023, contractual consequences with enterprise customers, and awkward questions from every prospect running a security review.</p>
+            <p>The same handful of mistakes recurs across estates of every size. Storage ends up open to anonymous access, whether that is an S3 bucket with a public policy, an Azure storage account permitting public blob access, or a Cloud Storage bucket bound to allUsers. Security groups allow 0.0.0.0/0 on SSH and RDP because a rule added during a migration was never withdrawn. Identity policies carry wildcard actions on wildcard resources because working out the specific permission took longer than anyone had. Long-lived access keys sit in repositories and on laptops for years without rotation. Root and global administrator accounts run without multi-factor authentication. Audit logging is disabled, or enabled in one region only, so CloudTrail, Azure Activity Log or Cloud Audit Logs cannot answer the question you will eventually need to ask. Snapshots and machine images get shared publicly by accident. Instance metadata stays reachable over the first version of the service, which turns an ordinary server-side request forgery bug into stolen role credentials. Kubernetes clusters run privileged containers on default service accounts with no network policy between namespaces. None of this is exotic, and none of it requires an attack to find: it is visible by reading configuration.</p>
+            <p>Finding the problems is the easy half. Configuration drifts back the moment an engineer needs to ship against a deadline, so the work has to change how environments are created rather than only what they contain today. Preventive guardrails go in at the organisation level: service control policies in AWS, Azure Policy assignments, and organisation policy constraints in Google Cloud, so an unwanted configuration is refused rather than reported a week later. New environments come from a landing zone in which account structure, logging, network topology, identity federation and baseline controls are already decided. Infrastructure as code is scanned before it merges, because a Terraform module that opens a port will open it in every environment that uses it. Detective controls sit behind the preventive ones: posture management for the control plane, workload protection for what runs inside the instances and containers, and entitlement management for permissions nobody has used in ninety days. Where you are still migrating, we agree the target design before workloads move, since retrofitting account structure and identity afterwards costs far more than deciding them up front. Results are mapped to whatever control set you report against, whether that is ISO/IEC 27001:2022 with ISO/IEC 27017 guidance, the CSA Cloud Controls Matrix, NIST CSF 2.0 or PCI DSS 4.0.</p>
+            <a href="/contact/" class="text-link">Talk to our team about Cloud Security <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <aside class="split-aside">
+            <div class="checklist-panel reveal">
+      <h3>Findings, Designs and Guardrails</h3>
+      <p class="checklist-intro">Cloud work produces a great deal of dashboard output. What follows is the written record that outlives it, and what your auditors and engineers will actually open.</p>
+      <ul class="service-list"><li>Full asset and account inventory across every cloud</li><li>Configuration findings mapped to CIS Benchmark control numbers</li><li>Identity and entitlement report naming over-privileged principals</li><li>Remediation plan sequenced by exploitability and business impact</li><li>Landing zone design with account structure and guardrails</li><li>Policy-as-code and IaC scanning rules for your pipeline</li><li>Kubernetes hardening checklist with admission policy manifests</li><li>Board-ready summary of cloud risk and remediation progress</li></ul>
+    </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">Capabilities</p>
+      <h2>What We Assess and Fix</h2>
+      
+    </div>
+        <div class="capability-grid"><div class="capability reveal">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Posture Assessment and CSPM</h3>
+        <p>We assess every subscription, project and account against CIS Benchmarks and provider baselines, then stand up continuous posture management so new drift is caught within hours rather than at the next audit.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-1">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Identity and Least Privilege</h3>
+        <p>Roles, policies and trust relationships are rebuilt around what workloads actually call. We remove wildcard permissions, replace static keys with federated short-lived credentials, and apply permissions boundaries, conditional access and just-in-time elevation.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-2">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Landing Zones and Guardrails</h3>
+        <p>Account and subscription hierarchies are designed with logging, network topology and baseline policy built in, using Control Tower, Azure landing zones or Google Cloud folder structures so environments start compliant.</p>
+      </div>
+    </div>
+<div class="capability reveal">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Container and Kubernetes Security</h3>
+        <p>Cluster configuration is reviewed against the CIS Kubernetes Benchmark and NIST SP 800-190: pod security standards, admission control with OPA Gatekeeper or Kyverno, network policy, image signing and registry scanning.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-1">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Workload and Pipeline Scanning</h3>
+        <p>Virtual machines, containers and serverless functions are scanned for vulnerabilities and runtime drift, while Terraform and CloudFormation are checked before merge so a faulty module never reaches production.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-2">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Encryption and Key Management</h3>
+        <p>Data at rest and in transit is mapped to keys you control, using customer-managed keys in KMS, Key Vault or Cloud KMS, with rotation, separation of duties and secrets moved out of code.</p>
+      </div>
+    </div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">How It Works</p>
+      <h2>Our Engagement Process</h2>
+      <p class="section-sub">How a Cloud Security engagement runs from first conversation to steady state.</p>
+    </div>
+        <div class="process-grid"><div class="process-step reveal">
+      <div class="process-num">01</div>
+      <h3>Inventory</h3>
+      <p>We enumerate every account, subscription and project, including the ones outside central billing, then map data flows, internet exposure and who holds administrative access. Nothing is assessed until the estate is known.</p>
+    </div>
+<div class="process-step reveal delay-1">
+      <div class="process-num">02</div>
+      <h3>Benchmark</h3>
+      <p>Configuration is measured against CIS Benchmarks, provider baselines and your own policy, covering identity, network, storage, logging, keys and workloads. Each finding records the evidence, the affected resources and the exploitation path.</p>
+    </div>
+<div class="process-step reveal delay-2">
+      <div class="process-num">03</div>
+      <h3>Remediate</h3>
+      <p>We fix alongside your engineers rather than handing over a list. Changes are staged, tested outside production first and applied in your change window, with guardrails added so the same fault cannot return.</p>
+    </div>
+<div class="process-step reveal delay-3">
+      <div class="process-num">04</div>
+      <h3>Monitor</h3>
+      <p>Posture management runs continuously against an agreed baseline, with drift alerted to a named owner. Quarterly reviews cover new provider services, changed benchmarks and whether the guardrails are being bypassed.</p>
+    </div></div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="split-grid split-grid-even">
+          <div>
+            <div class="section-head left reveal">
+      <p class="section-eyebrow">Benefits</p>
+      <h2>What You Get Out of It</h2>
+      
+    </div>
+            <div class="benefit-stack"><div class="benefit-item reveal">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Misconfiguration Caught Early</h3><p>Public storage, open management ports and wildcard permissions are found by reading configuration, long before anyone has to find them by responding to an incident.</p></div>
+              </div>
+<div class="benefit-item reveal delay-1">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Speed Without Sprawl</h3><p>Guardrails and a designed landing zone let teams build quickly inside safe boundaries, so security stops being the step everyone routes around near a release date.</p></div>
+              </div>
+<div class="benefit-item reveal delay-2">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Ready for the Assessor</h3><p>Findings mapped to CIS Benchmarks, ISO/IEC 27001:2022 and PCI DSS 4.0 give you configuration evidence in the form assessors ask for, rather than screenshots gathered late.</p></div>
+              </div>
+<div class="benefit-item reveal delay-3">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>One View Across Clouds</h3><p>Multi-cloud and hybrid estates are assessed against a single control set, so you compare AWS, Azure and Google Cloud risk on the same terms.</p></div>
+              </div></div>
+          </div>
+          <div class="who-panel reveal delay-1">
+            <h3>Who This Is For</h3>
+            <ul class="service-list"><li>Engineering teams who moved to cloud fast and never went back to harden it</li><li>Healthcare, lending and insurance platforms running regulated workloads across more than one provider</li><li>SaaS providers answering customer security questionnaires about cloud configuration and tenant isolation</li><li>Organisations planning a data centre migration who want the target environment built correctly</li></ul>
+            <a href="/contact/" class="btn btn-primary btn-block">Check if this fits your business</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-narrow">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">FAQ</p>
+      <h2>Cloud Security — Common Questions</h2>
+      
+    </div>
+        <div class="faq-list"><div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="svc-q-0" aria-expanded="false" aria-controls="svc-a-0">
+          <span>Our cloud provider says security is built in. Why do we need a separate assessment?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="svc-a-0" role="region" aria-labelledby="svc-q-0">
+        <p>Because the provider secures the platform, not your use of it. AWS, Azure and Google Cloud all publish a shared responsibility model, and every one of them puts identity configuration, network exposure, data classification and access control on your side of the line. The platform will happily serve a storage bucket you have opened to the world. Native tools report the condition; they do not decide what your data is worth or who should have been able to reach it.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="svc-q-1" aria-expanded="false" aria-controls="svc-a-1">
+          <span>We already run Security Hub and Defender for Cloud. Is a CSPM engagement not duplicating that?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="svc-a-1" role="region" aria-labelledby="svc-q-1">
+        <p>Those tools generate findings well. What they do not do is decide which of several thousand findings matters in your environment, work out why the same fault keeps reappearing, or write the guardrail that prevents it returning. We tune the native tooling you already pay for, suppress what is genuinely not applicable with a recorded reason, and prioritise the rest by reachability and blast radius. If your team already does that consistently, we will say so and scope the work smaller.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="svc-q-2" aria-expanded="false" aria-controls="svc-a-2">
+          <span>Will hardening break our production workloads or slow our release cycle?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="svc-a-2" role="region" aria-labelledby="svc-q-2">
+        <p>It can, if changes are applied blindly, so we do not work that way. Every permission removal follows analysis of what the principal actually called over a recorded period, using access advisor data and control plane logs. Network and policy changes go into audit or monitor mode first, so you see what would have been blocked before anything is. Changes then reach production through your own pipeline and change window, each with a documented rollback.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="svc-q-3" aria-expanded="false" aria-controls="svc-a-3">
+          <span>We run AWS and Azure plus some on-premises kit. Does the assessment differ per cloud?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="svc-a-3" role="region" aria-labelledby="svc-q-3">
+        <p>Each platform is tested against its own benchmark, because the controls are not equivalent. An Azure network security group and an AWS security group are different objects, and Google Cloud organisation policy has no direct AWS counterpart. Results are then normalised into one risk register rather than three unrelated reports you have to reconcile yourself. On-premises components are included where they share identity or network paths with cloud workloads, since that is usually where lateral movement begins.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="svc-q-4" aria-expanded="false" aria-controls="svc-a-4">
+          <span>What happens after the engagement ends, and does anything we build stay with us?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="svc-a-4" role="region" aria-labelledby="svc-q-4">
+        <p>Everything stays in your tenant and your name. Policy-as-code, IaC scanning rules, admission policies, landing zone templates and remediation runbooks are written into your repositories rather than ours, and licences for any tooling remain yours. Where clients want ongoing cover we move to a monitoring retainer scoped per engagement, with periodic re-testing and drift review. Where they do not, we hand over through a working session and documentation your team can maintain alone.</p>
+      </div>
+    </div></div>
+      </div>
+    </section>
+
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">Related</p>
+      <h2>Services That Work Alongside This One</h2>
+      
+    </div>
+        <div class="services-grid"><article class="service-card reveal">
+      <a class="service-card-link" href="/services/vapt/">
+        <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="8" height="11" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9.5 8V6.8a2.5 2.5 0 015 0V8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 11.5H4.5M16 11.5H19.5M8 15.5H4.5M16 15.5H19.5M9 8.5L6.5 6M15 8.5L17.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <h3>Vulnerability Assessment &amp; Penetration Testing</h3>
+        <p>Authorised testing of networks, web applications, APIs, mobile apps and cloud, with CVSS-rated findings, reproducible proof of concept, remediation guidance and a free retest.</p>
+        <span class="text-link">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+    </article>
+<article class="service-card reveal delay-1">
+      <a class="service-card-link" href="/services/network-security/">
+        <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="19" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 11l10-5M7 13l10 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <h3>Network Security &amp; Monitoring</h3>
+        <p>Round-the-clock monitoring with a tuned SIEM and EDR/XDR, analyst-led triage, threat hunting mapped to MITRE ATT&amp;CK, plus firewall, segmentation and zero-trust design.</p>
+        <span class="text-link">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+    </article>
+<article class="service-card reveal delay-2">
+      <a class="service-card-link" href="/services/data-protection/">
+        <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5.5" rx="7" ry="2.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 5.5v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 11.5v6c0 1.5 2.4 2.6 5.6 2.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="13" y="16" width="7" height="5.4" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M14.8 16v-1.4a1.7 1.7 0 013.4 0V16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+        <h3>Data Protection &amp; Encryption</h3>
+        <p>Discovery and classification, encryption with managed keys, tokenisation, DLP across endpoint, network and cloud, plus immutable backup and recovery tested against agreed RPO and RTO.</p>
+        <span class="text-link">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+    </article></div>
+      </div>
+    </section>
+
+
+    <section class="cta-banner">
+      <div class="container reveal">
+        <h2>Ready to Discuss Cloud Security?</h2>
+        <p>Tell us where you are today. We will tell you honestly what the engagement would involve.</p>
+        <div class="cta-actions"><a href="/contact/" class="btn btn-light">Book a Free Consultation</a><a href="mailto:info@arysec.in" class="btn btn-outline">info@arysec.in</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand" aria-label="Arysec Technologies LLP — Home">
+        <svg class="brand-mark" viewBox="0 0 56 60" width="38" height="41" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradFoot" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#00e5a0"/>
+            </linearGradient>
+          </defs>
+          <path d="M28 2 L52 11 V32 C52 46 42 54.5 28 58 C14 54.5 4 46 4 32 V11 Z" fill="none" stroke="url(#brandGradFoot)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M28 14 L16 42 M28 14 L40 42 M20.5 32 H35.5" fill="none" stroke="url(#brandGradFoot)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="42" r="3" fill="#00d4ff"/><circle cx="40" cy="42" r="3" fill="#00e5a0"/><circle cx="28" cy="14" r="3" fill="#00d4ff"/>
+        </svg>
+            <span class="brand-text">
+              <span class="brand-name">ARYSEC</span>
+              <span class="brand-tagline">TECHNOLOGIES LLP</span>
+            </span>
+          </a>
+          <p class="footer-blurb">Reliable IT. Resilient security. Expert support. Headquartered in Mumbai, delivering across India and worldwide.</p>
+          <div class="footer-contact">
+            <a href="tel:+919004857727"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h4l1.5 5-2.5 2a13 13 0 005 5l2-2.5 5 1.5v4a2 2 0 01-2 2A17 17 0 014 5a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>+91 90048 57727</span></a>
+            <a href="mailto:info@arysec.in"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>info@arysec.in</span></a>
+            <span class="footer-contact-static"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span>Mumbai, Maharashtra, India</span></span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="/services/vciso/">vCISO as a Service</a>
+<a href="/services/dpo/">DPO as a Service</a>
+<a href="/services/internal-audit/">Internal Audit</a>
+<a href="/services/vapt/">VAPT</a>
+<a href="/services/iso-27001/">ISO 27001</a>
+<a href="/services/">All Services</a>
+        </div>
+<div class="footer-col">
+          <h4>Company</h4>
+          <a href="/about/">About Us</a>
+<a href="/solutions/">Solutions</a>
+<a href="/industries/">Industries</a>
+<a href="/case-studies/">Case Studies</a>
+<a href="/careers/">Careers</a>
+        </div>
+<div class="footer-col">
+          <h4>Resources</h4>
+          <a href="/insights/">Insights</a>
+<a href="/resources/">Guides &amp; Checklists</a>
+<a href="/resources/#faq">FAQs</a>
+<a href="/responsible-disclosure/">Responsible Disclosure</a>
+<a href="/contact/">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Arysec Technologies LLP. All rights reserved.</p>
+        <p class="footer-legal"><a href="/privacy-policy/">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="/terms-of-service/">Terms of Service</a> <span aria-hidden="true">&middot;</span> <a href="/cookie-policy/">Cookie Policy</a> <span aria-hidden="true">&middot;</span> <a href="/responsible-disclosure/">Responsible Disclosure</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie preferences" aria-live="polite" hidden>
+    <div class="cookie-inner">
+      <p>
+        We use strictly necessary cookies to run this site, and optional analytics cookies to understand
+        how it is used. We do not use advertising or cross-site tracking cookies.
+        <a href="/cookie-policy/">Read our Cookie Policy</a>.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-outline btn-sm" data-cookie-choice="necessary">Necessary only</button>
+        <button type="button" class="btn btn-primary btn-sm" data-cookie-choice="all">Accept analytics</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

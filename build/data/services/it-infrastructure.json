@@ -1,0 +1,145 @@
+{
+  "slug": "it-infrastructure",
+  "name": "IT Infrastructure Management",
+  "shortName": "IT Infrastructure",
+  "category": "IT Services",
+  "metaTitle": "Infrastructure Design, Build & Lifecycle Management",
+  "metaDescription": "Arysec designs, builds and refreshes server, network, storage and virtualisation infrastructure, hardened to CIS Benchmarks with resilience and runbooks.",
+  "cardSummary": "Design, build and lifecycle management for server, network, storage and virtualisation estates, including hybrid cloud, high availability architecture, CIS hardening and documented failover procedures.",
+  "heroHeadline": "Infrastructure Designed for the Next Five Years",
+  "heroSub": "We design, build and refresh the servers, networks, storage and virtualisation your applications sit on, harden it to published benchmarks, and hand over documentation and runbooks so the design does not live in one engineer's memory.",
+  "highlights": [
+    {
+      "value": "CIS",
+      "label": "Hardened baseline builds"
+    },
+    {
+      "value": "N+1",
+      "label": "Redundancy where it counts"
+    },
+    {
+      "value": "Five-Year",
+      "label": "Refresh and capacity roadmap"
+    }
+  ],
+  "intro": {
+    "heading": "Design Decisions You Live With",
+    "paragraphs": [
+      "Most infrastructure is not designed. It accretes. A hypervisor host bought for one project, a switch stack extended twice because a port ran out, a storage array sized for the data volumes of four years ago, a domain controller nobody has rebooted since the last power cut because nobody is quite sure what still authenticates against it. Each decision was reasonable on the day it was made. The compound result is an estate where no one can say which workloads survive the loss of a single rack, where a firmware upgrade is deferred indefinitely because the maintenance window was never agreed, and where the recovery plan assumes a restore that has not been tested end to end. The failure, when it comes, is rarely exotic. A power supply dies in a host that has only one. A certificate expires on a service nobody documented. Virtual machine sprawl quietly consumes the headroom you were relying on for failover.",
+      "We design infrastructure to a written set of requirements and then build it. That starts with what the platform has to do: user counts, transaction volumes, which applications are genuinely critical, what recovery time and recovery point objectives the organisation can accept, and the growth curve over three to five years. From there the work is specific. Compute and virtualisation on VMware vSphere, Microsoft Hyper-V or KVM, sized against measured workload rather than a vendor rule of thumb. Storage architecture across tiers, with the choice between SAN, NAS and hyperconverged made on access patterns and recovery targets. Network architecture covering LAN switching, routing, VLAN segmentation, WAN circuits and SD-WAN overlays where multiple sites and cloud egress justify them. Directory services and DNS treated as the foundation they are, whether that is Active Directory Domain Services on premises, Entra ID, or the hybrid identity most organisations actually run. Where private or hybrid cloud fits, workloads are placed deliberately, with data residency, latency and licence implications set out before anything moves.",
+      "A build is only as good as the state it stays in. Every host, hypervisor, switch and directory service we deploy is hardened against CIS Benchmarks and the relevant vendor security baselines, with deviations recorded and justified rather than quietly applied. Configuration is held as code or as versioned templates where the platform allows, so a rebuild reproduces the standard instead of an engineer's recollection. Patch and firmware management runs to a schedule with agreed maintenance windows, staged rings and a tested rollback. Capacity is measured against thresholds that start a conversation months before a volume fills. And the estate is documented: physical and logical diagrams, IP address management, an accurate configuration record, and runbooks covering failover, restore and the routine tasks somebody performs at three in the morning. Refresh planning turns hardware end of life and vendor support expiry into a funded timeline instead of an emergency purchase order."
+    ]
+  },
+  "capabilities": {
+    "heading": "What We Design and Build",
+    "items": [
+      {
+        "title": "Compute and Virtualisation",
+        "description": "Host sizing and hypervisor design on VMware vSphere, Hyper-V or KVM, with cluster layout, resource pools, affinity rules and failover capacity calculated from the peaks your own monitoring recorded."
+      },
+      {
+        "title": "Network Architecture",
+        "description": "Campus and data centre switching, routing, VLAN segmentation, wireless coverage, WAN circuits and SD-WAN overlays, designed for resilience, quality of service and clear separation between user, server and management traffic."
+      },
+      {
+        "title": "Storage and Data Services",
+        "description": "Tiered storage design across SAN, NAS and hyperconverged platforms, with capacity modelling, snapshot and replication policy, and backup architecture written to the recovery time and recovery point targets you signed off."
+      },
+      {
+        "title": "Directory and Identity Services",
+        "description": "Active Directory, Entra ID and hybrid identity design covering forest and domain structure, group policy, DNS and DHCP, certificate services, privileged account separation and replication topology across your sites."
+      },
+      {
+        "title": "Hybrid and Private Cloud",
+        "description": "Workload placement between on-premises platforms, colocation and public cloud, with connectivity design, data residency assessment, licence implications and a frank view of what should not move at all."
+      },
+      {
+        "title": "Resilience and Continuity",
+        "description": "High availability at each tier, clustering and replication between sites, rehearsed failover procedures, and a disaster recovery design mapped to the business impact analysis rather than assumed from the hardware."
+      }
+    ]
+  },
+  "deliverables": {
+    "heading": "Drawings, Baselines and Runbooks",
+    "intro": "A rack full of correctly configured equipment is worth little if nobody can explain it. These documents carry the reasoning, the topology and the operating detail.",
+    "items": [
+      "High-level and low-level infrastructure design documents",
+      "Physical and logical network diagrams, kept current",
+      "Hardened build standards for servers, switches and hypervisors",
+      "IP address management and VLAN allocation register",
+      "Capacity model with growth thresholds and trigger points",
+      "Failover, restore and maintenance runbooks for operations staff",
+      "Configuration baseline records with recorded deviations and justifications",
+      "Asset lifecycle register with support expiry and refresh dates"
+    ]
+  },
+  "process": [
+    {
+      "title": "Assess",
+      "description": "We document what exists: hosts, hypervisors, switches, storage, circuits, directory services, backups and support contracts. Workload and utilisation data is collected over a period long enough to show real peaks, not a quiet Tuesday."
+    },
+    {
+      "title": "Design",
+      "description": "Requirements become a written design: topology, sizing, resilience targets, hardening standard, migration approach and a bill of materials. You review and approve it before anything is ordered or racked."
+    },
+    {
+      "title": "Build and Migrate",
+      "description": "Kit is staged and configured to the agreed baseline, then workloads move in waves with a tested rollback at each step. Cutovers run in agreed windows, and the old platform is held until acceptance."
+    },
+    {
+      "title": "Operate and Refresh",
+      "description": "Documentation and operating procedures are handed over, monitoring thresholds set, and the refresh calendar published. Capacity and support expiry are reviewed each quarter so the next investment is planned, not forced."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Failure Modes You Know",
+      "description": "Single points of failure are identified during design and either removed or accepted in writing, so an outage becomes a known scenario with a rehearsed response."
+    },
+    {
+      "title": "Spend That Is Planned",
+      "description": "Capacity thresholds and support expiry dates drive a refresh calendar, so hardware investment lands in next year's capital plan instead of an emergency order after something fails."
+    },
+    {
+      "title": "Hardening You Can Show",
+      "description": "Builds follow CIS Benchmarks with every deviation recorded, so a PCI DSS 4.0 or ISO/IEC 27001:2022 assessor reads the configuration record instead of taking your word for it."
+    },
+    {
+      "title": "Documented Design Rationale",
+      "description": "Every sizing calculation, topology choice and accepted deviation is written down with the reason behind it, so the next change starts from evidence and not from guesswork."
+    }
+  ],
+  "whoItsFor": [
+    "Organisations whose infrastructure grew by accretion and now has no current design document",
+    "Companies facing a hardware refresh, data centre move or colocation exit",
+    "Firms with recovery targets on paper that have never been tested end to end",
+    "Teams adding sites, users or workloads faster than the current platform allows"
+  ],
+  "faqs": [
+    {
+      "question": "We already have a systems administrator. Where does your work stop and theirs start?",
+      "answer": "Design and build work is project-shaped, and much of it is knowledge an administrator does not use often enough to keep sharp: sizing a cluster, laying out a directory forest, choosing between replication topologies. We agree a responsibility matrix before starting, your administrator sits in the design reviews, and the handover includes the reasoning and the written procedures, not just credentials. On many engagements the administrator runs the platform afterwards while we stay available for changes and the annual refresh review."
+    },
+    {
+      "question": "Everything is moving to public cloud. Why invest in on-premises infrastructure at all?",
+      "answer": "Some workloads belong in public cloud and we will say so. Others do not. Steady, predictable compute that runs continuously is frequently cheaper on owned hardware over a five-year term, and data residency, latency to plant or shop floor systems, and licence terms tied to physical cores all pull the same way. The useful question is per workload, not per organisation. We model the options, including colocation and private cloud, then set out the costs, the risks and what you give up in each direction."
+    },
+    {
+      "question": "How much downtime does a migration on this scale actually cause?",
+      "answer": "Less than most people expect, because the plan is built to avoid it. Workloads move in waves, the new platform runs alongside the old, and each wave has a tested rollback and an acceptance check before the next begins. Real outage is usually confined to short agreed windows for cutover of shared services such as directory or storage paths. Where a system cannot tolerate interruption, we design for live migration or replication at the design stage."
+    },
+    {
+      "question": "What stops this becoming a design document that goes stale within a year?",
+      "answer": "Two things. Documentation is written to be maintained: diagrams generated from live configuration where tooling allows, an IP address management register rather than a spreadsheet nobody owns, and configuration held as versioned templates so a change to the estate and a change to the record happen together. Second is a review commitment. Where we retain a relationship, capacity, support expiry and configuration drift are reviewed quarterly. Where we hand over entirely, the runbooks name the update procedure and its owner."
+    },
+    {
+      "question": "How do you choose vendors? Are you tied to particular manufacturers?",
+      "answer": "Vendor choice follows the design, not a sales target we have to hit. Selection runs against stated requirements: throughput and port density, support and replacement terms, expected supported life, availability of spares and engineers in India, and how licensing behaves at renewal rather than at first purchase. We shortlist across manufacturers, separate genuine engineering preference from familiarity, and support you through evaluation and procurement. Where you already hold a standard or a supplier agreement, we design within it and state where that constrains the result."
+    }
+  ],
+  "related": [
+    "managed-it",
+    "network-security",
+    "cloud-security"
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "slug": "what-happens-during-a-penetration-test",
+  "title": "What Actually Happens During a Penetration Test",
+  "category": "Security Testing",
+  "metaTitle": "What Actually Happens During a Penetration Test",
+  "metaDescription": "What really happens in a penetration test: scoping, rules of engagement, the testing phases, evidence, CVSS severity, the report and the retest cycle.",
+  "excerpt": "A plain account of what testers actually do, from scoping and written authorisation through reconnaissance, exploitation and evidence, to CVSS severity, the report, the retest cycle, and what a penetration test cannot tell you.",
+  "readingTime": "7 min read",
+  "keyTakeaways": [
+    "A vulnerability assessment lists weaknesses; a penetration test demonstrates what an attacker could reach by combining them.",
+    "Scope and written rules of engagement decide the value of the test long before any tool is run.",
+    "CVSS scores severity in isolation, so business context, exposure and exploit availability should set your actual remediation order.",
+    "Retest belongs inside the engagement, and a clean report deserves scrutiny of the scope rather than celebration."
+  ],
+  "sections": [
+    {
+      "heading": "A vulnerability assessment is not a penetration test",
+      "paragraphs": [
+        "The two travel together in the acronym VAPT, and buyers often assume they are one activity sold at two levels of effort. They answer different questions. A vulnerability assessment asks what weaknesses are present: broad, largely tool-driven, producing a validated list across everything in range. A penetration test asks what someone could do with them, and ends with a demonstrated path to something your business cares about.",
+        "Both are worth buying. Scanning suits patch hygiene and configuration drift, and is cheap enough to repeat monthly. Testing finds what no scanner reports: authorisation that breaks between tenants, workflows completed out of order, chains where three low-severity findings combine into administrative access. If a proposal offers a penetration test and delivers a scanner export with a cover page, you paid for judgement and received automation."
+      ]
+    },
+    {
+      "heading": "How much the tester is told",
+      "paragraphs": [
+        "How much you hand over is a scoping decision, not a measure of rigour. It changes where the days go."
+      ],
+      "list": [
+        "Black box: little more than a company name or address range. Realistic in shape, but much of the effort goes on rediscovering facts you already hold.",
+        "Grey box: credentials for each role, an architecture summary, a list of in-scope hosts. Most engagements sit here, because it tests what an attacker reaches after the first credential.",
+        "White box: documentation, configuration, source code and administrative access. Deepest coverage, and the right choice before a major release or wherever a missed flaw would be severe.",
+        "Blind variants describe how much your own staff know. Hiding the test from your operations team measures detection too, but someone must confirm it is authorised when an analyst escalates at midnight."
+      ]
+    },
+    {
+      "heading": "Scope, authorisation and the rules of engagement",
+      "paragraphs": [
+        "Scope decides the value of the test before anyone types a command. It names targets and what may be done to each: hostnames, address ranges, application URLs, API paths, mobile builds, cloud accounts. Scope too tightly and the exercise becomes theatre, with the marketing site tested while the portal holding real customer data sits out of range. Widen it too far against fixed days and everything is sampled shallowly.",
+        "A better opening is to say what you are afraid of: one tenant's customer reading another tenant's records, or a stolen VPN credential reaching the payment host. Fears stated that plainly convert into test objectives, and let the tester say whether the days on the table are enough.",
+        "The rules of engagement then turn intent into permission. Testing without written authorisation from someone with authority over the assets is hard to distinguish from unauthorised access, which is an offence under the Information Technology Act 2000 in India and under comparable statutes elsewhere."
+      ],
+      "list": [
+        "Signed authorisation naming targets, dates and the people permitted to test.",
+        "Testing window agreed with change management, including freeze periods such as month-end close.",
+        "Source addresses the testers will use, so your logs and defenders can separate the exercise from real traffic.",
+        "Excluded techniques stated explicitly: denial of service, social engineering, physical entry, password spraying above lockout thresholds.",
+        "Data handling rules covering what may be accessed or retained, how evidence is encrypted, and how personal data is masked.",
+        "Third-party permissions for anything you do not own. Cloud providers allow testing of your own resources under published policies; a SaaS platform is not yours to authorise.",
+        "Two named contacts on each side, reachable out of hours, and a signal that pauses activity immediately.",
+        "Critical findings disclosed by phone within hours, not held for the final report."
+      ]
+    },
+    {
+      "heading": "Inside the test: the phases",
+      "paragraphs": [
+        "Testing follows a recognised structure so coverage is repeatable. The OWASP Web Security Testing Guide, OWASP ASVS, NIST SP 800-115 and the Penetration Testing Execution Standard describe the same broad progression."
+      ],
+      "list": [
+        "Reconnaissance: passive collection before the target is touched. DNS records, certificate transparency logs, public code repositories, credentials from historical breaches. It generates no traffic you would notice, and routinely surfaces forgotten subdomains.",
+        "Enumeration: active mapping. Port and service discovery, version fingerprinting, virtual host and directory discovery, API endpoints, directory service enumeration internally. The inventory produced is commonly larger than your asset register.",
+        "Vulnerability identification: scanning sets a baseline, then manual analysis takes over. Access control tested role by role and tenant by tenant, injection and deserialisation paths, session handling, file upload, race conditions, and the business logic no tool can reason about.",
+        "Exploitation: proving a finding by using it, inside the agreed constraints. The purpose is confirmation, not damage. A tester who reports SQL injection without confirming a table can be read has reported a suspicion.",
+        "Post-exploitation and lateral movement: credential harvesting, privilege escalation, pivoting between segments, mapping directory trust, reaching cloud control planes through instance metadata or over-permissive roles. Techniques map to MITRE ATT&CK for comparison against your detection coverage.",
+        "Cleanup: removal of accounts, files, shells, scheduled tasks and configuration changes, plus a written artefact register with timestamps. A test that leaves a forgotten shell behind has made you less secure."
+      ]
+    },
+    {
+      "heading": "Evidence, proof of concept and severity",
+      "paragraphs": [
+        "A finding without evidence is an opinion. Each should carry the affected host, URL or parameter, the exact request and response, screenshots or transcripts with timestamps, and reproduction steps a developer can follow unaided. Proof of concept means demonstrating impact at minimum depth: a record count and a masked sample, not a copy of the database. Good testers stop once impact is proven.",
+        "Severity is usually expressed with CVSS. Base metrics describe the vulnerability in isolation, covering attack vector, complexity, privileges required, user interaction and the effect on confidentiality, integrity and availability. CVSS v4.0, published by FIRST in 2023, reorganised these into base, threat, environmental and supplemental groups. The base score deliberately ignores where the affected system sits in your estate.",
+        "Business context therefore reorders the queue. A critical-scoring flaw on an isolated lab host holding no data is not your first job, while a medium-scoring authorisation failure on your product's tenant boundary very likely is. Environmental metrics exist for that adjustment. Exploit availability matters too, which is what EPSS scores and the CISA Known Exploited Vulnerabilities catalogue are for."
+      ]
+    },
+    {
+      "heading": "What a good report contains",
+      "paragraphs": [
+        "The report is the product you are buying. Ask for a redacted sample before appointing anyone."
+      ],
+      "list": [
+        "Executive summary in plain language: what was tested, what the tester achieved, what it means commercially, on one page.",
+        "Scope and methodology statement recording targets, dates, credentials used, standards followed, and what was excluded and why.",
+        "Attack narrative describing the chain from first contact to greatest access, showing how minor findings combined.",
+        "Findings written one per issue, each with severity, the CVSS vector string, affected assets, evidence, business impact and remediation.",
+        "Remediation guidance that names the fix. Enforce object-level authorisation in the order service handler is useful; implement access control is not.",
+        "Strategic observations on the patterns behind individual issues: an absent secure baseline, unmanaged dependencies, no security gate in development.",
+        "Appendices holding tool output, the artefact register, and a list of areas tested and found clean, so you know what coverage you paid for."
+      ]
+    },
+    {
+      "heading": "Remediation, retest and how often to test",
+      "paragraphs": [
+        "Delivery of the report is the middle of the engagement, not the end. Book a walkthrough with the engineers who will do the work; a written finding rarely carries enough context for the person holding the code. Fix the class rather than the instance: an insecure direct object reference on one endpoint usually means the authorisation pattern is wrong across the controller.",
+        "Retest confirms the fixes work and have introduced nothing new. Ask before signing whether it is included and how long the window runs; thirty to ninety days is typical. What you want back is an addendum recording each finding as fixed, partially fixed, risk accepted or outstanding. That document, not the original report, is what an auditor or a customer's due diligence team asks for.",
+        "On frequency, at least annually and after significant change is the common baseline. PCI DSS 4.0 sets that expectation for in-scope environments, with internal, external and segmentation testing at defined intervals. ISO/IEC 27001:2022 names no frequency, but controls A.8.8 and A.8.29 expect a defined approach to vulnerability management and security testing that you follow and evidence. Where you ship continuously, tie testing to major releases and scan in between."
+      ]
+    },
+    {
+      "heading": "What a penetration test does not tell you",
+      "paragraphs": [
+        "Being clear about the limits separates a useful engagement from a comfortable one. These are the boundaries of the method."
+      ],
+      "list": [
+        "It is not proof that you are secure. The report describes what one team found in an agreed scope, within the days booked, and excluded systems were not examined at all.",
+        "Validity decays from the day of issue, since a deployment next week can reintroduce anything closed.",
+        "Detection goes unmeasured unless you asked for it. Most engagements notify the defenders, so commission a purple team exercise to test your SIEM and EDR.",
+        "Root causes stay unexplained. A test lists symptoms; the reasons sit in development practice, change management and ownership gaps.",
+        "No penetration test certifies compliance. It produces evidence you present to an auditor, and the judgement stays theirs.",
+        "Certain Indian sector regulations require security audits by a CERT-In empanelled auditor. Check whether the obligation applying to you names that, and confirm your position with your own advisers.",
+        "A clean report deserves scrutiny rather than celebration. Ask whether the scope was too narrow, the credentials too limited, or the time too short."
+      ]
+    },
+    {
+      "heading": "Where we help",
+      "paragraphs": [
+        "Arysec runs vulnerability assessment and penetration testing for web and mobile applications, APIs, networks and cloud environments. Every engagement opens with a scoping session that turns your concerns into test objectives, and includes written rules of engagement, evidence-backed reporting, a walkthrough with your engineers, and a retest. We do not issue certificates; we give you the evidence and the remediation detail. Where a regulation or contract requires the audit to be signed off by a CERT-In empanelled auditor, that is a separate appointment and we will tell you so rather than let the scope blur. Reach us at info@arysec.in or +91 90048 57727."
+      ]
+    }
+  ]
+}

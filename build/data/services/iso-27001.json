@@ -5,7 +5,7 @@
   "category": "Audit, Testing & Compliance",
   "metaTitle": "ISO 27001:2022 Implementation & Certification Support",
   "metaDescription": "Arysec builds your ISO/IEC 27001:2022 ISMS: scope, risk treatment, Statement of Applicability, Annex A controls and support through Stage 1 and Stage 2.",
-  "cardSummary": "A dedicated ISO/IEC 27001:2022 ISMS build: scope, risk methodology, Statement of Applicability, the 93 Annex A controls, internal audit and support through Stage 1 and Stage 2.",
+  "cardSummary": "We build the management system clauses 4 to 10 require, run your first internal audit and management review, then sit with you through both certification audit stages.",
   "heroHeadline": "An ISMS Built to Pass Stage 2",
   "heroSub": "We build the management system ISO/IEC 27001:2022 actually asks for: a defensible scope, a risk method your auditor can follow, a justified Statement of Applicability and operating records. Your accredited certification body issues the certificate; we get you ready for it.",
   "highlights": [
@@ -18,7 +18,7 @@
     "paragraphs": [
       "ISO/IEC 27001:2022 certifies a management system, not a level of security. The requirements sit in clauses 4 to 10, covering context, leadership, planning, support, operation, performance evaluation and improvement, and they describe a cycle you run continuously rather than a project you finish. Annex A is a reference set of 93 controls you select from, not a list to implement in full. Most nonconformities raised at certification are written against the clauses rather than the controls: a scope that cannot be justified, a risk assessment nobody repeated, an internal audit programme that never covered the whole standard.",
       "We build the system in the order the standard depends on. Scope comes first, drawn around the services, locations, people and information systems that carry the risk your customers care about, with interfaces and dependencies stated so an auditor can see what sits outside the boundary and why. Then the risk method: criteria for acceptance and for performing assessments, identification of risks to confidentiality, integrity and availability, named risk owners, and treatment decisions recorded as modify, retain, avoid or share. The Statement of Applicability falls out of that work. It is not a spreadsheet written at the end to satisfy clause 6.1.3; it is the record of which controls you judged necessary, why the rest are excluded, and what status each one is in.",
-      "One boundary is fixed from the start. Arysec implements, prepares and supports; we do not certify. Your certificate is issued by a certification body accredited by a member of the International Accreditation Forum, such as NABCB in India, UKAS or ANAB, and that body's own rules prevent it from consulting on a system it audits. We help you brief and compare certification bodies, prepare the scope and headcount details their quotation depends on, and sit with you through both audit stages. Where a sector obligation interacts with certification, confirm your specific position with your legal or compliance adviser."
+      "Your certificate comes from a certification body accredited by a member of the International Accreditation Forum, such as NABCB in India, UKAS or ANAB. Accreditation rules bar that body from consulting on a system it later audits, which is exactly why the implementer and the auditor have to be separate firms. Arysec is the implementer. We help you brief and compare certification bodies, prepare the scope and headcount details their quotation depends on, and sit with you through both audit stages. Where a sector obligation interacts with certification, your legal or compliance adviser should confirm what applies to you."
     ]
   },
   "capabilities": {
@@ -101,7 +101,7 @@
     }
   ],
   "whoItsFor": [
-    "SaaS and technology firms whose enterprise buyers make certification a condition of contract",
+    "Technology firms whose largest contracts now list certification as a precondition",
     "IT and business process outsourcing providers serving European or Japanese clients that expect an ISMS",
     "Organisations whose ISO/IEC 27001:2013 certificate lapsed and now need a fresh 2022 certification",
     "Banks, NBFCs and insurers aligning information security governance to a recognised international standard"

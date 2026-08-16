@@ -1,0 +1,122 @@
+{
+  "slug": "cloud-misconfiguration-risk",
+  "title": "Cloud Misconfiguration: The Breaches Nobody Talks About",
+  "category": "Cloud Security",
+  "metaTitle": "Cloud Misconfiguration: Why Most Cloud Breaches Happen",
+  "metaDescription": "Most cloud incidents come from misconfiguration, not exploits. Arysec on the defect classes that recur, why they persist, and the controls that stop them.",
+  "excerpt": "The ordinary cloud incident has no exploit in it at all. A practitioner's view of the misconfiguration classes that keep recurring, why capable teams keep producing them, and the controls that prevent them.",
+  "readingTime": "7 min read",
+  "keyTakeaways": [
+    "The ordinary cloud incident involves no exploitation at all. Someone granted access, and the interface then honoured it exactly as designed.",
+    "The shared responsibility line moves service by service, and managed rarely means secured in the sense teams assume.",
+    "Identity turns a small mistake into a large one, and long-lived keys remove the natural time limit on it.",
+    "Preventive guardrails beat pipeline checks, which beat posture scanning. Build downwards from the strongest layer you can enforce."
+  ],
+  "sections": [
+    {
+      "heading": "The breaches that make poor stories",
+      "paragraphs": [
+        "Public discussion of cloud security gravitates towards the unusual: a container escape, a cross-tenant flaw in a managed service, a compromise several hops upstream in a software supply chain. Those are real and worth reading about. They are also not what empties storage buckets week after week.",
+        "The ordinary cloud incident contains no exploitation at all. A bucket was readable by anyone who guessed its name. A build pipeline assumed a role carrying administrative rights because narrowing them was fiddly on a deadline. A database port was opened during a migration and never closed. Nobody defeated a control; they used the interface as designed, with permissions a person had granted.",
+        "That distinction decides where defensive effort belongs. If exotic exploitation dominated, detection engineering would be the first investment. Since configuration dominates, the highest-yield work is stopping bad states from being created and finding those already sitting there."
+      ]
+    },
+    {
+      "heading": "Where the shared responsibility model gets misread",
+      "paragraphs": [
+        "The model itself is simple and rarely disputed. Your provider secures the infrastructure the cloud runs on; you secure what you put into it. The difficulty is that the line moves service by service, and few teams re-derive where it sits.",
+        "On a virtual machine you own the guest operating system, its patching, its network exposure and every credential on it. With a managed database, engine patching moves to the provider while access control, network placement, encryption choice, backup retention and audit logging remain yours. Managed object storage guarantees durability and promises nothing about whether you wrote the policy correctly.",
+        "Four misreadings recur across reviews."
+      ],
+      "list": [
+        "Treating managed as secured, when a provider patching the engine says nothing about who can reach it or read from it",
+        "Assuming encryption at rest resolves confidentiality, when it addresses physical media and does nothing against a permissive policy or a stolen credential",
+        "Believing replication is backup, when a faithful copy reproduces a deletion or a ransomware encryption event just as faithfully",
+        "Expecting audit logging, retention and alerting to be present by default at the depth an investigation later demands"
+      ]
+    },
+    {
+      "heading": "The configuration classes that keep recurring",
+      "paragraphs": [
+        "The same defects appear at organisations of every size, on every provider, under different product names. A competent review tests for them explicitly rather than waiting for a scanner to volunteer them.",
+        "None of the classes below requires skill to exploit, and several require nothing beyond an internet-wide scan. The interval between a mistake and its discovery by a stranger can be measured in hours."
+      ],
+      "list": [
+        "Object storage readable by anonymous principals, often through legacy access control lists rather than the bucket policy people inspect",
+        "Identity policies carrying wildcard actions and resources, granted once to make a deployment work and never narrowed",
+        "Long-lived access keys held by people and pipelines, then copied into CI variables, laptops and environment files",
+        "Network rules allowing 0.0.0.0/0 to administrative and database ports: SSH, RDP, PostgreSQL, MySQL, Redis, Elasticsearch, MongoDB",
+        "Audit trails switched off in some accounts or regions, or delivered somewhere nobody reads, with retention shorter than detection time",
+        "Snapshots, machine images and database backups marked public, or shared with an account that stopped being yours",
+        "Management interfaces published straight to the internet: Kubernetes API servers, container registries, CI servers, dashboard consoles",
+        "Data stores created without encryption, or reachable over plaintext because no policy condition requires transport security",
+        "DNS records pointing at deprovisioned resources, leaving a name you control answerable by whoever claims the target"
+      ]
+    },
+    {
+      "heading": "Identity is where a small mistake becomes a large one",
+      "paragraphs": [
+        "Network exposure gives an intruder reach. Identity gives them everything reachable by the credential they obtain, and cloud identity compounds in ways on-premises directories did not.",
+        "A pipeline role permitted to pass any role to a compute service can usually reach administrator, because it can hand a privileged role to something it already controls. Permission to attach policies to your own principal gets there faster. Cross-account trust written without an external identifier lets a supplier's compromise become yours.",
+        "Long-lived keys remove the time limit. A key committed to a repository three years ago still works unless somebody rotated it, and the harvesters watching public repositories and exposed environment files are automated and quick. Short-lived federated credentials fail closed: a stolen session expires by itself.",
+        "The instance metadata service belongs here too. Where the older request-only version stays enabled, an ordinary server-side request forgery flaw becomes a route to that instance's role credentials. The session-oriented version with a restricted hop limit closes that path and can be required at launch."
+      ]
+    },
+    {
+      "heading": "Exposure that outlives the resource",
+      "paragraphs": [
+        "Configuration reviews usually examine what is running. A meaningful share of cloud exposure sits in what is not.",
+        "Snapshots and machine images carry a copy of the data, and frequently the secrets that were on disk, with sharing settings independent of the volume they came from. An image shared publicly for a vendor demonstration stays public long after the instance is destroyed. Database backups behave identically.",
+        "Dangling DNS is the other durable one. Point a subdomain at a platform-hosted resource, delete the resource, leave the record, and whoever claims that target next serves content on your domain. The consequence is not merely embarrassment: cookies scoped to the parent domain, single sign-on redirect allowances and content security policy entries commonly treat subdomains as trusted, so a takeover converts into session theft or a credible phishing page. Records outlive the teams that created them, so the check belongs in decommissioning."
+      ]
+    },
+    {
+      "heading": "Why capable teams keep producing them",
+      "paragraphs": [
+        "These are not knowledge failures. Almost every engineer who opens a database port to the internet knows they should not.",
+        "Asymmetry of effort comes first. Creating a resource takes seconds; creating it correctly takes an afternoon of documentation. Under a delivery date the permissive version ships with a note to tighten it later, and later has no owner.",
+        "Inherited infrastructure code comes next. Modules get copied from a blog post, a vendor quickstart or another team's repository, and permissive defaults travel with them. Copied code is rarely re-read, so one loose module reproduces the same defect in every account it touches.",
+        "Drift undoes much of the rest. Somebody edits a rule in the console during a two in the morning incident and nothing reconciles it afterwards. Without drift detection your infrastructure code states intent rather than describing reality, and reviewing it tells you little about the environment.",
+        "Ownership is the quiet one. Accounts multiply faster than the register listing who owns them, and a resource without an owner has nobody to answer for its configuration."
+      ]
+    },
+    {
+      "heading": "Controls that actually prevent, ranked by strength",
+      "paragraphs": [
+        "Controls are not equal, and the useful ordering is by how early they act. A guardrail making the bad state impossible beats a check that blocks it at merge, which beats a scanner reporting it once it exists in production.",
+        "Two details decide whether the ordering below holds in practice. Every deny needs a documented exception route, or engineers will find an unwatched path around it. Posture findings, meanwhile, need exposure context before triage, because a public bucket holding a marketing brochure and one holding claims data raise identical alerts while deserving different responses."
+      ],
+      "list": [
+        "Preventive guardrails at organisation level: service control policies that deny disabling audit logging, deny public storage, restrict usable regions and forbid static keys for service identities",
+        "Landing zone separation, so blast radius is bounded by account and production identities cannot reach development data",
+        "Infrastructure as code scanning in the pipeline, using policy-as-code rules that fail the pull request rather than annotate it",
+        "Least privilege with short-lived credentials: single sign-on for workforce access, workload identity federation instead of stored keys, and pruning of unused permissions against real call history",
+        "Centralised, tamper-resistant logging into an archive most administrators cannot write to, with integrity validation enabled",
+        "Cloud security posture management to catch whatever escaped the earlier layers, triaged by reachability rather than finding count",
+        "CIS Benchmarks as the written baseline, so that secure has a definition you can hand to an auditor and test repeatedly"
+      ]
+    },
+    {
+      "heading": "A sequence that survives contact with delivery teams",
+      "paragraphs": [
+        "Attempting all of that at once fails. The ordering below puts the fastest risk reduction at the front and leaves the structural work for a programme.",
+        "Only the first three steps below need to happen quickly. Rushing the rest produces resentment, and guardrails installed against resistance get switched off two months later by someone with a deadline and a good argument."
+      ],
+      "list": [
+        "Inventory the estate: every account, subscription and project, including those opened in a hurry on a personal card, each with a named owner",
+        "Enable audit logging everywhere and ship it to a separate archive, because you cannot investigate a period you never recorded",
+        "Sweep the exposed classes and fix them before anything structural: public storage, public snapshots and images, open administrative ports, dangling DNS",
+        "Retire standing static keys for people and pipelines in favour of federation, rotating whatever cannot move yet",
+        "Apply the small set of preventive guardrails you are confident about, announced in advance, then widen it as objections get answered",
+        "Move infrastructure code checks into CI and let them block, once the rule set is calibrated against your repositories",
+        "Adopt a benchmark baseline, measure against it monthly, and record exceptions as risks with owners and review dates"
+      ]
+    },
+    {
+      "heading": "Where we help",
+      "paragraphs": [
+        "Arysec runs cloud configuration reviews against CIS Benchmarks, traces the identity paths that turn a minor compromise into a serious one, and helps you put guardrails, pipeline checks and centralised logging in place afterwards. What lands on your desk is a prioritised finding set with the exposure context that makes triage possible, plus the configuration changes written for your environment rather than a generic checklist."
+      ]
+    }
+  ]
+}

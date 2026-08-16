@@ -76,15 +76,15 @@
     {
       "heading": "Security Testing and Responsible Disclosure",
       "paragraphs": [
-        "We are a security firm, so we understand the instinct to test what we publish. Please resist it. You must not carry out any form of security testing against arysec.in, our email and messaging systems, our supporting infrastructure or our people without our prior written consent. Authorisation for client testing is given in the rules of engagement of a signed contract, and it never extends to our own systems.",
-        "Testing without authorisation breaches these terms and may be an offence under the Information Technology Act, 2000, whatever your intention. Good motives do not create consent.",
-        "If you come across a possible security weakness in one of our systems, report it to us privately rather than testing it further. Write to info@arysec.in with enough detail for us to reproduce the issue, and mark your message for the attention of our security team.",
+        "We are a security firm, so we understand the instinct to test what we publish. Please do not act on it here. Security testing against arysec.in, our email and messaging systems, our supporting infrastructure or our people is not permitted, except within the limits our responsible disclosure policy sets out for good-faith research on the assets it lists. Authorisation for client testing is given in the rules of engagement of a signed contract, and it never extends to our own systems.",
+        "Testing outside those limits breaches these terms and may be an offence under the Information Technology Act, 2000, whatever your intention. Good motives do not create consent.",
+        "If you come across a possible security weakness in one of our systems, report it to us privately rather than testing it further. Write to security@arysec.in with enough detail for us to reproduce the issue.",
         "Please avoid accessing, altering or copying any data beyond the minimum needed to demonstrate the problem, avoid anything that degrades the service for other users, and give us a reasonable opportunity to fix the issue before you discuss it publicly. Reports made in good faith and in line with our responsible disclosure policy are welcome, and we handle them as that policy describes.",
-        "Activity of the following kind is never authorised against our systems, and anything you notice while using the site normally should go through the disclosure route above instead:"
+        "Activity of the following kind is never authorised against our systems, whatever else this section or that policy allows, and anything you notice while using the site normally should go through the disclosure route above instead:"
       ],
       "list": [
-        "Vulnerability scanning, port scanning or automated enumeration of our sites and mail infrastructure",
-        "Penetration testing, fuzzing or attempts to exploit a weakness you believe you have found",
+        "Vulnerability scanning, port scanning or automated enumeration of our sites and mail infrastructure at a rate or volume that affects the service",
+        "Exploitation that goes beyond the minimal proof of concept our responsible disclosure policy allows, including fuzzing and sustained penetration testing",
         "Brute-force, password-spraying or credential-stuffing attempts against any authentication endpoint",
         "Phishing, pretexting or other social engineering aimed at our partners, employees or contractors",
         "Load testing, stress testing or anything else intended to exhaust our capacity",
@@ -145,7 +145,7 @@
       "heading": "Privacy and Personal Data",
       "paragraphs": [
         "How we handle personal data collected through this website is set out in our privacy policy, which applies to your use of the site alongside these terms. It explains the categories of information we collect, why we collect them, the basis on which we process them, the categories of service provider who process data on our behalf, such as our hosting and email providers, how long we retain information, and the rights you can exercise.",
-        "We process personal data in line with India's Digital Personal Data Protection Act, 2023 and, where it applies to a particular set of processing, the EU GDPR. Where the site uses cookies or similar technologies, the privacy policy and any cookie notice describe what is set and how you can control it.",
+        "We process personal data in line with India's Digital Personal Data Protection Act, 2023 and, where it applies to a particular set of processing, the EU GDPR. Our privacy policy and our cookie policy describe the browser storage this site uses, the consent control that governs the optional category, and how to change the answer you gave it.",
         "Questions or complaints about how we handle your personal data, and requests to exercise a right such as access, correction or erasure, should go to our Grievance Officer at info@arysec.in. We will acknowledge your request and respond within the period the applicable law requires."
       ]
     },
@@ -163,7 +163,7 @@
         "These terms, their subject matter and their formation, and any dispute or claim arising out of or in connection with them or with your use of this website, including a non-contractual dispute or claim, are governed by and construed in accordance with the laws of India.",
         "The courts at Mumbai, Maharashtra have exclusive jurisdiction over any such dispute or claim, and you and we submit to that jurisdiction. Where you reach the site from outside India, you do so on your own initiative, and any mandatory protection you hold under the law of your country of residence is unaffected to the extent that law says it cannot be excluded by agreement.",
         "If a court or other competent authority finds a provision of these terms invalid or unenforceable, that provision is severed and the remainder stays in force. Our failure to enforce a provision is not a waiver of it, and a waiver given on one occasion does not waive the provision on another.",
-        "Together with our privacy policy and any additional terms published on the site, these terms are the whole of what is agreed between you and us about your use of this website. They create no partnership, agency, employment or joint venture between us, and a person who is not a party to them may not enforce them."
+        "Together with our privacy policy, our cookie policy and any additional terms published on the site, these terms are the whole of what is agreed between you and us about your use of this website. They create no partnership, agency, employment or joint venture between us, and a person who is not a party to them may not enforce them."
       ]
     },
     {
@@ -175,7 +175,7 @@
       ],
       "list": [
         "Questions about these terms or about the content of this site: info@arysec.in",
-        "Possible security weakness in arysec.in or another Arysec system: info@arysec.in, marked for the attention of our security team, under our responsible disclosure policy",
+        "Possible security weakness in arysec.in or another Arysec system: security@arysec.in, under our responsible disclosure policy",
         "Personal data requests and privacy complaints: our Grievance Officer at info@arysec.in",
         "Service enquiries, scoping conversations and proposals: info@arysec.in or +91 90048 57727"
       ]

@@ -1,0 +1,145 @@
+{
+  "slug": "managed-it",
+  "name": "Managed IT Services",
+  "shortName": "Managed IT",
+  "category": "IT Services",
+  "metaTitle": "Managed IT Services, Service Desk & Endpoint Support",
+  "metaDescription": "Arysec runs your IT as a managed service: tiered service desk, patching, device management, Microsoft 365 administration and monthly SLA reporting.",
+  "cardSummary": "A managed IT function covering tiered service desk, endpoint and patch management, device provisioning, Microsoft 365 and Google Workspace administration, identity lifecycle and service level reporting.",
+  "heroHeadline": "Everyday IT, Run to an Agreed Standard",
+  "heroSub": "We take operational ownership of your endpoints, identities, cloud tenants and vendors, run them against agreed service levels, and report on what actually happened each month. Security controls are part of the daily routine, not a separate project.",
+  "highlights": [
+    {
+      "value": "Tiered",
+      "label": "Service desk, L1 to L3"
+    },
+    {
+      "value": "24/7",
+      "label": "Monitoring for managed clients"
+    },
+    {
+      "value": "Fixed Monthly",
+      "label": "Predictable commercial terms"
+    }
+  ],
+  "intro": {
+    "heading": "What Managed Means Here",
+    "paragraphs": [
+      "Working IT is invisible, which is why it is usually under-resourced until it fails. The common pattern in a growing organisation is one or two capable generalists, a folder of passwords, an asset list that stopped being accurate two hires ago, and a patching routine that depends on somebody remembering. Nothing looks wrong from the outside. Then a laptop goes missing with no record of whether it was encrypted, a leaver's mailbox is still forwarding six weeks after the exit interview, a renewal invoice arrives for forty seats when thirty-one people work here, and a firewall turns out to be running firmware three years old because the engineer who owned it moved on. None of these is dramatic on its own. Together they are how most avoidable incidents and most audit findings begin.",
+      "A managed service means we take operational ownership of a defined estate and run it to a written standard. That covers a service desk with tiered first, second and third line support and a priority matrix your staff can predict; managed agents pushing patches to operating systems and third-party software in staged rings; device provisioning through Windows Autopilot, Apple Business Manager or Android zero-touch enrolment, so a new joiner receives a machine already built, encrypted and enrolled in mobile device management; Microsoft 365 and Google Workspace tenant administration; and identity lifecycle work driven from an agreed HR trigger rather than an email to whoever is free. Endpoint baselines follow CIS Benchmarks, and the controls we operate map to CIS Controls v8 and NIST CSF 2.0, so the standard has a public reference point instead of resting on our judgement alone.",
+      "Two things decide whether an arrangement like this survives years rather than months. The first is that security is not sold back to you later as an upgrade. Patch latency, local administrator rights, multi-factor coverage, backup restore testing and how quickly a leaver loses access are ordinary IT tasks, and they are also the controls an ISO/IEC 27001:2022 or SOC 2 assessor asks about first, so we run them as scheduled work and evidence them every month. The second is commercial. A fixed monthly fee against a scope written into the agreement removes any incentive to bill hours and lets you plan a budget, and what falls outside that scope is stated at the start rather than discovered in an invoice. Monthly service reporting shows performance against the agreed targets, and a quarterly business review turns recurring faults, ageing hardware and your licence position into a plan you can fund."
+    ]
+  },
+  "capabilities": {
+    "heading": "What We Run for You",
+    "items": [
+      {
+        "title": "Service Desk and Service Levels",
+        "description": "A single intake channel with tiered first, second and third line support, a documented priority matrix, committed response targets, defined escalation, and a named account lead who owns the relationship."
+      },
+      {
+        "title": "Patching and Monitoring",
+        "description": "Managed agents on servers and endpoints drive staged patch rings for operating systems and third-party software, while alerting covers disk, backup jobs, certificate expiry and service health ahead of failure."
+      },
+      {
+        "title": "Provisioning and Device Management",
+        "description": "New machines arrive enrolled through Windows Autopilot or Apple Business Manager, built to a documented standard, encrypted, hardened against CIS Benchmarks, and carrying your endpoint agents before the user logs in."
+      },
+      {
+        "title": "Microsoft 365 and Workspace",
+        "description": "Tenant administration across licence assignment, mail flow, anti-phishing and sharing policy, conditional access rules, mailbox and drive backup, plus review of the security posture scores both platforms publish."
+      },
+      {
+        "title": "Identity and Access Lifecycle",
+        "description": "Joiner, mover and leaver requests run from an agreed HR trigger: group-based entitlements, multi-factor enrolment, separated administrative accounts, same-day revocation on exit, and periodic access reviews you can hand to an auditor."
+      },
+      {
+        "title": "Assets, Licences and Vendors",
+        "description": "One register holds every device, warranty date, software licence and subscription renewal. We reconcile assigned licences against active staff, and take vendor tickets with your ISP, hardware suppliers and software providers."
+      }
+    ]
+  },
+  "deliverables": {
+    "heading": "Registers, Reports and Runbooks",
+    "intro": "Ask any provider what you would be left holding if the contract ended tomorrow. This is our answer, and it stays current the whole time we run the service.",
+    "items": [
+      "Signed service agreement with priority and response matrix",
+      "Live asset register for devices, users and licences",
+      "Documented standard build and endpoint hardening baseline",
+      "Patch compliance reporting by device and severity",
+      "Joiner, mover and leaver runbook agreed with HR",
+      "Monthly service report covering tickets and service levels",
+      "Quarterly business review pack with a twelve-month roadmap",
+      "Estate documentation and credentials held in a managed vault"
+    ]
+  },
+  "process": [
+    {
+      "title": "Discover",
+      "description": "We audit what you actually have: devices, users, tenants, licences, network kit, backups, contracts and administrator accounts. The output is a documented estate and a list of risks worth fixing before anything else."
+    },
+    {
+      "title": "Transition",
+      "description": "Tooling and agents are deployed in waves, credentials reset into your own tenants, and runbooks written. Cutover from the incumbent is staged with a defined date and followed by a hypercare period."
+    },
+    {
+      "title": "Operate",
+      "description": "Day to day the service desk takes tickets, patch rings run on schedule, monitoring raises problems before users do, and joiner and leaver requests are actioned against the agreed timetable."
+    },
+    {
+      "title": "Improve",
+      "description": "Monthly reporting shows performance against service levels. Each quarter we sit down with the numbers, the recurring faults worth engineering out, the hardware nearing end of life, and next year's plan."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Predictable Monthly Cost",
+      "description": "A fixed monthly fee against a defined scope means your IT spend is a budget line rather than a series of surprises, and we gain nothing from slow fixes."
+    },
+    {
+      "title": "Security in the Routine",
+      "description": "Multi-factor coverage, patch latency and same-day leaver revocation get done on a schedule and evidenced monthly, so an assessment finds records waiting instead of gaps to explain."
+    },
+    {
+      "title": "Knowledge Outside One Head",
+      "description": "Your estate is documented, your assets are registered and your credentials sit in a vault you control, so a resignation or a provider change is inconvenient rather than dangerous."
+    },
+    {
+      "title": "One Accountable Party",
+      "description": "When the internet drops, the laptop fails and the software vendor blames both, we hold the ticket end to end instead of returning you to the switchboard."
+    }
+  ],
+  "whoItsFor": [
+    "Growing companies without an internal IT team, or with one overloaded generalist",
+    "Organisations preparing for ISO 27001 or SOC 2 whose IT evidence does not exist yet",
+    "Regulated firms needing auditable access reviews, patch records and asset registers",
+    "Businesses leaving a provider who holds their documentation and administrator credentials"
+  ],
+  "faqs": [
+    {
+      "question": "We have one internal IT manager already. Does this mean replacing them?",
+      "answer": "Usually not. Most engagements are co-managed: we take the repeatable, tooling-heavy work such as patching, monitoring, provisioning, tenant administration and first-line tickets, while your manager keeps what needs business context, including application decisions, supplier relationships, budget and internal projects. We agree a responsibility matrix at the start so nothing falls into the gap between us. Where an organisation has no internal IT at all, we provide the whole function and a named account lead."
+    },
+    {
+      "question": "Your SLA quotes four hours. Is that response or resolution, and what happens when you miss it?",
+      "answer": "Response is committed; resolution is targeted. A four-hour figure that promises resolution is not credible when the cause is a dead motherboard or an upstream ISP fault, so the agreement separates the two and sets resolution targets per priority. It also defines what qualifies as a priority one, the covered hours, when the clock pauses awaiting your input or a third party, and the remedy if we miss. Performance is reported from raw ticket data each month, not from a summary we assemble by hand."
+    },
+    {
+      "question": "How is this charged, and what falls outside the monthly fee?",
+      "answer": "A fixed monthly fee against a written scope, usually banded by supported users and devices, so the number is predictable and we have no reason to prefer slow fixes. What sits outside is named in the agreement rather than found in an invoice: hardware and third-party licence costs, project work such as an office move or a platform migration, cover beyond agreed hours, and any system you asked us to exclude. Scope changes are handled at review."
+    },
+    {
+      "question": "Our incumbent provider holds the documentation and the administrator credentials. How disruptive is switching?",
+      "answer": "Plan for weeks, not a weekend. We begin with a discovery audit and rebuild the picture independently, covering tenants, devices, network kit, backups, licences and contracts, so the transition does not depend on a handover that may never arrive. Administrative credentials are reset into tenants you own and stored in a vault you control. Agent rollout and cutover run in waves, followed by hypercare. The same terms apply in reverse: if you leave us, the documentation and the keys are yours."
+    },
+    {
+      "question": "You sell security audits. Is it a conflict for you to run our IT and then assess it?",
+      "answer": "It is a fair challenge, and we keep the two apart. The team operating your estate is not the team that gives an independent opinion on it, and where you need assurance for a certification body, a customer or your board, we will say plainly that an assessor outside the delivery relationship carries more weight. What managed IT contributes is evidence: patch records, access reviews, joiner and leaver logs, backup restore tests and configuration baselines that any auditor can examine."
+    }
+  ],
+  "related": [
+    "it-infrastructure",
+    "network-security",
+    "security-awareness-training"
+  ]
+}

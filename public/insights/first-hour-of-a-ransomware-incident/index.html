@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The First Hour of a Ransomware Incident | Arysec Technologies LLP</title>
+  <meta name="description" content="A calm operational guide to the first hour of a ransomware incident: isolate without powering down, preserve evidence and logs, protect backups, who to call.">
+  <link rel="canonical" href="https://www.arysec.in/insights/first-hour-of-a-ransomware-incident/">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Arysec Technologies LLP">
+  <meta property="og:title" content="The First Hour of a Ransomware Incident | Arysec Technologies LLP">
+  <meta property="og:description" content="A calm operational guide to the first hour of a ransomware incident: isolate without powering down, preserve evidence and logs, protect backups, who to call.">
+  <meta property="og:url" content="https://www.arysec.in/insights/first-hour-of-a-ransomware-incident/">
+  <meta property="og:image" content="https://www.arysec.in/assets/og-image.svg">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The First Hour of a Ransomware Incident | Arysec Technologies LLP">
+  <meta name="twitter:description" content="A calm operational guide to the first hour of a ransomware incident: isolate without powering down, preserve evidence and logs, protect backups, who to call.">
+  <meta name="twitter:image" content="https://www.arysec.in/assets/og-image.svg">
+
+  <meta name="theme-color" content="#0a1628">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Arysec Technologies LLP","alternateName":"Arysec","url":"https://www.arysec.in/","email":"info@arysec.in","telephone":"+91 90048 57727","description":"IT and information security firm providing vCISO, DPO as a Service, internal audit, VAPT, ISO 27001 support, managed IT and cloud security.","address":{"@type":"PostalAddress","addressLocality":"Mumbai","addressRegion":"Maharashtra","addressCountry":"IN"},"founder":{"@type":"Person","name":"Unnati Shinde","jobTitle":"Founder \u0026 Managing Partner"},"areaServed":[{"@type":"Country","name":"India"},"Worldwide"],"knowsAbout":["Information security","ISO/IEC 27001","Penetration testing","Data protection","Internal audit","Managed IT services"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.arysec.in/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://www.arysec.in/insights/"},{"@type":"ListItem","position":3,"name":"The First Hour of a Ransomware Incident","item":"https://www.arysec.in/insights/first-hour-of-a-ransomware-incident/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The First Hour of a Ransomware Incident","description":"A calm operational guide to the first hour of a ransomware incident: isolate without powering down, preserve evidence and logs, protect backups, who to call.","articleSection":"Incident Response","url":"https://www.arysec.in/insights/first-hour-of-a-ransomware-incident/","author":{"@type":"Organization","name":"Arysec Technologies LLP"},"publisher":{"@type":"Organization","name":"Arysec Technologies LLP","logo":{"@type":"ImageObject","url":"https://www.arysec.in/assets/logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.arysec.in/insights/first-hour-of-a-ransomware-incident/"}}</script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="/" class="brand" aria-label="Arysec Technologies LLP — Home">
+        <svg class="brand-mark" viewBox="0 0 56 60" width="38" height="41" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradNav" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#00e5a0"/>
+            </linearGradient>
+          </defs>
+          <path d="M28 2 L52 11 V32 C52 46 42 54.5 28 58 C14 54.5 4 46 4 32 V11 Z" fill="none" stroke="url(#brandGradNav)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M28 14 L16 42 M28 14 L40 42 M20.5 32 H35.5" fill="none" stroke="url(#brandGradNav)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="42" r="3" fill="#00d4ff"/><circle cx="40" cy="42" r="3" fill="#00e5a0"/><circle cx="28" cy="14" r="3" fill="#00d4ff"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">ARYSEC</span>
+          <span class="brand-tagline">TECHNOLOGIES LLP</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <ul class="nav-list">
+<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+<li class="nav-item has-panel has-mega">
+        <button class="nav-link nav-trigger" aria-expanded="false" aria-controls="mega-services" data-href="/services/">Services<svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        
+      <div class="mega-panel" id="mega-services" hidden>
+        <div class="container mega-inner">
+          <div class="mega-cols">
+          <div class="mega-col">
+            <h4 class="mega-heading">Governance &amp; Advisory</h4>
+            <a class="mega-link" href="/services/vciso/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 11.5l2 2 4-4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">vCISO as a Service</span>
+                <span class="mega-link-desc">vCISO</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/dpo/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="9" width="16" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 9V6.5a4 4 0 018 0V9" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="14.5" r="1.6" fill="currentColor"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">DPO as a Service</span>
+                <span class="mega-link-desc">DPO</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/internal-audit/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6l1 3h4v15H4V6h4l1-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 13l2.5 2.5L16 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Internal Audit &amp; Assurance</span>
+                <span class="mega-link-desc">Internal Audit</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Audit, Testing &amp; Compliance</h4>
+            <a class="mega-link" href="/services/security-audit-compliance/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 7.5h8M8 11h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9 16v5l3-1.8 3 1.8v-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Security Audits &amp; Compliance</span>
+                <span class="mega-link-desc">Audit &amp; Compliance</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/iso-27001/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.5l2.4 1.8 3-.2.6 2.9 2.4 1.8-1.3 2.7 1.3 2.7-2.4 1.8-.6 2.9-3-.2L12 20.5l-2.4-1.8-3 .2-.6-2.9L3.6 14.2 4.9 11.5 3.6 8.8l2.4-1.8.6-2.9 3 .2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 11.6l2.1 2.1L15.2 9.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">ISO 27001 Implementation &amp; Certification Support</span>
+                <span class="mega-link-desc">ISO 27001</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/vapt/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="8" height="11" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9.5 8V6.8a2.5 2.5 0 015 0V8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 11.5H4.5M16 11.5H19.5M8 15.5H4.5M16 15.5H19.5M9 8.5L6.5 6M15 8.5L17.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Vulnerability Assessment &amp; Penetration Testing</span>
+                <span class="mega-link-desc">VAPT</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Cybersecurity Services</h4>
+            <a class="mega-link" href="/services/cybersecurity-consulting/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11.3" cy="10.6" r="2.7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13.4 12.8L15.6 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Cybersecurity Consulting &amp; Risk Assessment</span>
+                <span class="mega-link-desc">Security Consulting</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/network-security/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="19" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 11l10-5M7 13l10 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Network Security &amp; Monitoring</span>
+                <span class="mega-link-desc">Network Security</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/cloud-security/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18a4.5 4.5 0 01-.6-8.96A6 6 0 0118 8.5 4 4 0 0117.5 18H7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 14.5h4M12 12.8v-1.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Cloud Security Solutions</span>
+                <span class="mega-link-desc">Cloud Security</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/data-protection/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5.5" rx="7" ry="2.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 5.5v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 11.5v6c0 1.5 2.4 2.6 5.6 2.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="13" y="16" width="7" height="5.4" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M14.8 16v-1.4a1.7 1.7 0 013.4 0V16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Data Protection &amp; Encryption</span>
+                <span class="mega-link-desc">Data Protection</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/incident-response/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3.5M12 3l-2 2M12 3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20a7 7 0 0114 0z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3 20h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 10.5a4 4 0 00-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Incident Response &amp; Recovery</span>
+                <span class="mega-link-desc">Incident Response</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/security-awareness-training/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 19c.6-3 2.8-5 5.5-5s4.9 2 5.5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="16.5" cy="5.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 9.5c1.8.4 3.4 2 3.9 4.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Security Awareness &amp; Training</span>
+                <span class="mega-link-desc">Security Awareness</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">IT Services</h4>
+            <a class="mega-link" href="/services/managed-it/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M7 9l2.5 2.5L7 14M12.5 13.5H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Managed IT Services</span>
+                <span class="mega-link-desc">Managed IT</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/software-development/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 4l-3 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Software Development &amp; Integration</span>
+                <span class="mega-link-desc">Software Development</span>
+              </span>
+            </a>
+<a class="mega-link" href="/services/it-infrastructure/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="5.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14.5" width="18" height="5.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="6.5" cy="6.75" r="0.9" fill="currentColor"/><circle cx="6.5" cy="17.25" r="0.9" fill="currentColor"/><path d="M12 9.5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">IT Infrastructure Management</span>
+                <span class="mega-link-desc">IT Infrastructure</span>
+              </span>
+            </a>
+          </div>
+          </div>
+          <div class="mega-footer">
+            <a class="text-link" href="/services/">View all services <span aria-hidden="true">&rarr;</span></a>
+            <a class="text-link" href="/solutions/">Packaged solutions <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+      </li>
+<li class="nav-item"><a class="nav-link" href="/solutions/">Solutions</a></li>
+<li class="nav-item"><a class="nav-link" href="/industries/">Industries</a></li>
+<li class="nav-item has-panel has-dropdown">
+        <button class="nav-link nav-trigger" aria-expanded="false" aria-controls="dropdown-4" data-href="/about/">Company<svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dropdown-panel" id="dropdown-4" hidden>
+          <a class="dropdown-link" href="/about/">
+            <span class="dropdown-link-title">About Us</span>
+            <span class="dropdown-link-desc">Who we are and how we work</span>
+          </a>
+<a class="dropdown-link" href="/case-studies/">
+            <span class="dropdown-link-title">Case Studies</span>
+            <span class="dropdown-link-desc">Anonymised engagement examples</span>
+          </a>
+<a class="dropdown-link" href="/insights/">
+            <span class="dropdown-link-title">Insights</span>
+            <span class="dropdown-link-desc">Articles from our practitioners</span>
+          </a>
+<a class="dropdown-link" href="/resources/">
+            <span class="dropdown-link-title">Resources</span>
+            <span class="dropdown-link-desc">Guides, checklists and FAQs</span>
+          </a>
+<a class="dropdown-link" href="/careers/">
+            <span class="dropdown-link-title">Careers</span>
+            <span class="dropdown-link-desc">Open roles and how we hire</span>
+          </a>
+        </div>
+      </li>
+<li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+        </ul>
+        <a href="/contact/" class="btn btn-primary btn-nav">Get a Consultation</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero page-hero-article">
+      <div class="container-narrow">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <a href="/insights/">Insights</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <span aria-current="page">The First Hour of a Ransomware Incident</span></nav>
+        <span class="article-meta">
+          <span class="resource-type">Incident Response</span>
+          <span class="article-time">7 min read</span>
+        </span>
+        <h1>The First Hour of a Ransomware Incident</h1>
+        <p class="page-hero-sub">A calm operational guide to the worst hour: why you isolate rather than power down, which evidence expires first, who to call and in what order, protecting backups, the notification clock, and the ransom question.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-narrow">
+        <div class="takeaways reveal">
+          <h2>Key takeaways</h2>
+          <ul class="service-list"><li>Isolate affected systems from the network but leave them running, because memory holds evidence that no disk image can recover later.</li><li>Assume mailboxes and chat are readable by the intruder, and run the response on a channel outside the affected environment.</li><li>Backups are attacked first, so isolate them, verify they are offline and intact, and choose a restore point predating the intrusion.</li><li>Notification clocks start when you become aware, so record that moment precisely and read your contracts and obligations early.</li></ul>
+        </div>
+        <nav class="doc-toc reveal" aria-label="On this page">
+      <h2 class="doc-toc-title">On this page</h2>
+      <ol><li><a href="#section-1">What the first hour is for</a></li><li><a href="#section-2">Isolate, do not power down</a></li><li><a href="#section-3">Assume your email is being read</a></li><li><a href="#section-4">Scope, patient zero and what left the network</a></li><li><a href="#section-5">Protect the backups, then prove them</a></li><li><a href="#section-6">The notification clock started before you did</a></li><li><a href="#section-7">The ransom question, handled soberly</a></li><li><a href="#section-8">What makes this hour survivable</a></li><li><a href="#section-9">Where we help</a></li></ol>
+    </nav>
+        <div class="doc-body"><section class="doc-section reveal" id="section-1">
+      <h2>What the first hour is for</h2>
+      <p>The call arrives in a recognisable shape: a file server throwing errors, a shared drive that will not open, the same text file on every desktop. Behind it sits an intruder who has been in your network for days or weeks, and who picked this hour deliberately.</p>
+<p>That hour will not fix anything. Its job is narrower: stop the spread, keep the evidence, preserve your options. Much of the difficulty organisations face in the following weeks is manufactured here, by quick and reasonable decisions taken by people never trained for this. Work in order, because later steps depend on earlier ones.</p>
+      <ul class="doc-list"><li>Declare an incident and name one person in charge.</li><li>Contain the spread by isolating affected systems, not powering them off.</li><li>Protect the backups before anything is restored or rebuilt.</li><li>Preserve volatile evidence and the logs already rolling over.</li><li>Open a communication channel independent of the compromised environment.</li><li>Make the calls: executive authority, insurer, counsel, response provider.</li><li>Establish rough scope, including whether data left, not only what was encrypted.</li><li>Start the clock by recording when you became aware, and how.</li></ul>
+    </section>
+<section class="doc-section reveal" id="section-2">
+      <h2>Isolate, do not power down</h2>
+      <p>Containment is the first technical action, and it is not the same as switching things off. Disconnect affected machines and leave them running: pull the cable, disable the switch port, or use the network containment function in your endpoint platform, which cuts traffic while keeping the agent reachable. Work outwards from affected hosts to identity infrastructure, then hypervisors, then backups and remote access.</p>
+<p>Keep them running because memory holds evidence found nowhere else: running processes, live connections to attacker infrastructure, cached credentials, and malware executed in memory and deleted from disk. Power off and that record cannot be rebuilt from the disk. Some families also complete destructive work at boot, and a machine caught part way through encryption may be partly recoverable if frozen rather than restarted. Hibernation and sleep are not substitutes for a capture either: live connections and process state are gone, and what a hibernation file holds is compressed, partial and awkward to work with. For virtual machines, snapshot with memory state.</p>
+<p>Evidence outside memory is expiring too. Security logs on a busy domain controller can roll over within hours at default sizes, endpoint telemetry ages out on a window shorter than many dwell times, and some cloud audit trails stay queryable for ninety days without configured export. Copy the sources below out of reach of the affected environment, hash them, and note who took them and when.</p>
+      <ul class="doc-list"><li>Memory images from a sample of affected hosts, before anything is rebuilt.</li><li>The ransom note and encrypted file samples, extensions intact.</li><li>Endpoint telemetry, exported rather than left to age out.</li><li>Domain controller logs: account creation, group changes, authentication.</li><li>VPN, remote desktop gateway and firewall logs, which usually carry the initial access.</li><li>Cloud and identity audit trails, plus backup catalogues showing any deletion.</li></ul>
+    </section>
+<section class="doc-section reveal" id="section-3">
+      <h2>Assume your email is being read</h2>
+      <p>If the intruder held administrative access, they may also have had your mailboxes and chat. Groups have been documented reading a victim&#39;s incident correspondence and sitting on the response bridge. Discuss nothing about the response on systems in scope.</p>
+<p>Stand up an out-of-band channel in the first minutes: a conference bridge and a messaging group on personal devices, or accounts in a separate tenant with no trust relationship to the affected one. Keep an offline copy of the call tree. Run one incident log, with times, decisions and named owners, recording facts rather than theories. Then make the calls, in this order.</p>
+      <ul class="doc-list"><li>The executive who can authorise spending and halt business operations.</li><li>Your cyber insurer or broker, since cover often depends on prompt notice and on approved response firms.</li><li>External counsel, for the notification analysis, privilege and anything touching payment.</li><li>Your response provider, ideally under retainer so this is a call, not a procurement exercise.</li><li>Infrastructure, identity and backup owners, who hold the access responders need next.</li><li>Law enforcement, through the cybercrime channels that apply to you.</li><li>Regulators, customers and staff, on the timetable your obligations and counsel set.</li></ul>
+    </section>
+<section class="doc-section reveal" id="section-4">
+      <h2>Scope, patient zero and what left the network</h2>
+      <p>Two questions shape everything after: how far does this reach, and how did they get in. Scope is more than a count of encrypted machines. Establish whether identity infrastructure was compromised, because if the attacker held domain administrator rights then every account and host in that domain is suspect, and recovery becomes a rebuild of trust. Check the hypervisors, since encryption at host level removes every virtual machine at once.</p>
+<p>Patient zero is usually less exotic than expected: valid credentials on remote access without multi-factor authentication, an unpatched internet-facing appliance, credentials taken by an information stealer and sold on, or a route in through a supplier. Identifying the ransomware family from the note narrows the search. Hunt for accounts recently added to privileged groups, remote management tools outside your standard build, and deleted shadow copies.</p>
+<p>Ask early whether data left. Extortion is generally double now, and exfiltration drives your notification obligations far more than encryption does. If the logs that would show it were never collected, say so plainly rather than concluding nothing was taken.</p>
+      
+    </section>
+<section class="doc-section reveal" id="section-5">
+      <h2>Protect the backups, then prove them</h2>
+      <p>Intrusions attack backups deliberately and early, on the sound commercial logic that a victim who can restore does not pay. Consoles are a priority target, catalogues get deleted, retention gets quietly shortened, and cloud backup accounts are removed using the administrator&#39;s own credentials.</p>
+<p>Isolate the backup infrastructure now, and change its credentials from a host you trust rather than one inside the affected environment. Then verify in sequence: that a backup exists, that it is recent enough to be useful, that it is genuinely offline or immutable, and that it restores. A catalogue entry is a claim; a test restore into an isolated environment is proof. Your restore point must also predate the intruder&#39;s arrival, or you restore their access along with your data. Rebuilding into a network that has not been cleaned is the commonest route to a second encryption.</p>
+      
+    </section>
+<section class="doc-section reveal" id="section-6">
+      <h2>The notification clock started before you did</h2>
+      <p>Several clocks begin at the moment you became aware, which is why the incident log should capture that moment precisely and record who noticed it. Reconstructing awareness later, from memory, is a poor position to defend.</p>
+<p>In India, the CERT-In directions of April 2022 require specified categories of cyber incident to be reported within six hours of noticing them, and set expectations for log retention. The Digital Personal Data Protection Act 2023 will require a Data Fiduciary to inform the Data Protection Board of India and every affected Data Principal of a personal data breach, in the manner and timing set out in the Rules notified under it; those obligations commence in May 2027, so check where the date sits relative to your incident. Sector regulators in banking, securities and insurance impose their own shorter windows, and the GDPR may apply where you handle data of people in the EU. Positions move and turn on facts only you hold, so confirm yours with your own advisers.</p>
+<p>Contracts add more clocks. Customer agreements and data processing addenda commonly require notice within twenty-four or forty-eight hours, insurance policies carry their own conditions, and a listed entity has disclosure duties for material events. Read those documents in the first hour, not on day four.</p>
+      
+    </section>
+<section class="doc-section reveal" id="section-7">
+      <h2>The ransom question, handled soberly</h2>
+      <p>It will be raised in the first hour, usually by someone senior asking what it would cost to make this stop. The answer for now is that the decision is not due yet, and your job is to preserve the option either way. Countdown timers are a pressure device, and deadlines are frequently extended.</p>
+<p>When it is due, the decision belongs to the board, with counsel and the insurer at the table, and it turns on verifiable facts rather than instinct. Payment does not guarantee decryption, and supplied tools are often slow or partial, so restoring from good backups is frequently faster. Payment does not guarantee that stolen data is deleted either, because deletion cannot be verified and repeat demands are documented. Where backups are gone or the recovery timeline is untenable, the commercial picture looks different, which is precisely why the option is preserved rather than closed off in the first hour. Payment can also be constrained by law, since sanctions and financial crime rules may make a transfer unlawful, and most policies require the insurer&#39;s consent beforehand.</p>
+<p>Law enforcement agencies discourage payment, on the ground that it funds the next campaign. We take no position on your behalf, and nothing here is legal advice. The point is that this is a legal and commercial judgement made with specialist advice, not an operational one taken overnight by whoever is on the call.</p>
+      
+    </section>
+<section class="doc-section reveal" id="section-8">
+      <h2>What makes this hour survivable</h2>
+      <p>The mistakes that hurt most are ordinary ones made under pressure. Powering machines down and losing memory. Reimaging the first infected host before it is captured, destroying patient zero. Logging into infected machines with domain administrator credentials, handing the attacker what they were waiting for. Running an antivirus clean-up that deletes the samples investigators needed. Restoring into a network still occupied. Downloading a decryption tool of unknown origin, when the No More Ransom project is the place to check for a legitimate one.</p>
+<p>Each of those is a preparation problem rather than a judgement problem, and preparation cannot be built during the incident. Engage professional responders too: handling ransomware with your own team alone is defensible only if that team has done it before.</p>
+      <ul class="doc-list"><li>An incident response plan that has been exercised, with a printed copy stored offline.</li><li>Backups that are immutable or offline, on separate credentials, with restore tests you have timed.</li><li>Centralised logging with retention that outlasts a realistic dwell time, meaning months not weeks.</li><li>Multi-factor authentication on remote and privileged access, with tiered administration.</li><li>Network segmentation and a current asset inventory, so isolating a segment is a known action.</li><li>Decision authority agreed in advance: who declares an incident, and who takes production offline.</li><li>Exercises that include the executive team, because the hardest choices here are commercial.</li></ul>
+    </section>
+<section class="doc-section reveal" id="section-9">
+      <h2>Where we help</h2>
+      <p>Arysec supports organisations in India and international markets through incident response: retainers with agreed response times, containment, forensic investigation and recovery planning. We also do the quieter work that decides how this hour goes, including response plan development, tabletop exercises, and backup and logging reviews. If you are in an incident now, call +91 90048 57727.</p>
+      
+    </section></div>
+        <div class="article-foot reveal">
+          <p>
+            Written by the Arysec Technologies LLP team. If this raised a question about your own environment,
+            <a href="/contact/">get in touch</a> — we are happy to talk it through.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">More Insights</p>
+      <h2>Related Reading</h2>
+      
+    </div>
+        <div class="grid-3">
+          <article class="article-card reveal">
+            <a href="/insights/cloud-misconfiguration-risk/">
+              <span class="article-meta">
+                <span class="resource-type">Cloud Security</span>
+                <span class="article-time">7 min read</span>
+              </span>
+              <h3>Cloud Misconfiguration: The Breaches Nobody Talks About</h3>
+              <p>The ordinary cloud incident has no exploit in it at all. A practitioner&#39;s view of the misconfiguration classes that keep recurring, why capable teams keep producing them, and the controls that prevent them.</p>
+              <span class="text-link">Read article <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          </article>
+<article class="article-card reveal delay-1">
+            <a href="/insights/dpdp-act-in-practice/">
+              <span class="article-meta">
+                <span class="resource-type">Privacy</span>
+                <span class="article-time">7 min read</span>
+              </span>
+              <h3>The DPDP Act in Practice: What Indian Businesses Must Do Now</h3>
+              <p>India&#39;s DPDP Act 2023 is now backed by notified Rules and a commencement timetable. A practitioner&#39;s read on notice, consent, data principal rights, breach intimation, Significant Data Fiduciary duties and the readiness work that has to happen first.</p>
+              <span class="text-link">Read article <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          </article>
+<article class="article-card reveal delay-2">
+            <a href="/insights/what-happens-during-a-penetration-test/">
+              <span class="article-meta">
+                <span class="resource-type">Security Testing</span>
+                <span class="article-time">7 min read</span>
+              </span>
+              <h3>What Actually Happens During a Penetration Test</h3>
+              <p>A plain account of what testers actually do, from scoping and written authorisation through reconnaissance, exploitation and evidence, to CVSS severity, the report, the retest cycle, and what a penetration test cannot tell you.</p>
+              <span class="text-link">Read article <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="cta-banner">
+      <div class="container reveal">
+        <h2>Need Help Applying This?</h2>
+        <p>Our consultants work through exactly these problems with clients every week.</p>
+        <div class="cta-actions"><a href="/contact/" class="btn btn-light">Book a Free Consultation</a><a href="/services/" class="btn btn-outline">Browse Services</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand" aria-label="Arysec Technologies LLP — Home">
+        <svg class="brand-mark" viewBox="0 0 56 60" width="38" height="41" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradFoot" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#00e5a0"/>
+            </linearGradient>
+          </defs>
+          <path d="M28 2 L52 11 V32 C52 46 42 54.5 28 58 C14 54.5 4 46 4 32 V11 Z" fill="none" stroke="url(#brandGradFoot)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M28 14 L16 42 M28 14 L40 42 M20.5 32 H35.5" fill="none" stroke="url(#brandGradFoot)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="42" r="3" fill="#00d4ff"/><circle cx="40" cy="42" r="3" fill="#00e5a0"/><circle cx="28" cy="14" r="3" fill="#00d4ff"/>
+        </svg>
+            <span class="brand-text">
+              <span class="brand-name">ARYSEC</span>
+              <span class="brand-tagline">TECHNOLOGIES LLP</span>
+            </span>
+          </a>
+          <p class="footer-blurb">Reliable IT. Resilient security. Expert support. Headquartered in Mumbai, delivering across India and worldwide.</p>
+          <div class="footer-contact">
+            <a href="tel:+919004857727"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h4l1.5 5-2.5 2a13 13 0 005 5l2-2.5 5 1.5v4a2 2 0 01-2 2A17 17 0 014 5a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>+91 90048 57727</span></a>
+            <a href="mailto:info@arysec.in"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>info@arysec.in</span></a>
+            <span class="footer-contact-static"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span>Mumbai, Maharashtra, India</span></span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="/services/vciso/">vCISO as a Service</a>
+<a href="/services/dpo/">DPO as a Service</a>
+<a href="/services/internal-audit/">Internal Audit</a>
+<a href="/services/vapt/">VAPT</a>
+<a href="/services/iso-27001/">ISO 27001</a>
+<a href="/services/">All Services</a>
+        </div>
+<div class="footer-col">
+          <h4>Company</h4>
+          <a href="/about/">About Us</a>
+<a href="/solutions/">Solutions</a>
+<a href="/industries/">Industries</a>
+<a href="/case-studies/">Case Studies</a>
+<a href="/careers/">Careers</a>
+        </div>
+<div class="footer-col">
+          <h4>Resources</h4>
+          <a href="/insights/">Insights</a>
+<a href="/resources/">Guides &amp; Checklists</a>
+<a href="/resources/#faq">FAQs</a>
+<a href="/responsible-disclosure/">Responsible Disclosure</a>
+<a href="/contact/">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Arysec Technologies LLP. All rights reserved.</p>
+        <p class="footer-legal"><a href="/privacy-policy/">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="/terms-of-service/">Terms of Service</a> <span aria-hidden="true">&middot;</span> <a href="/cookie-policy/">Cookie Policy</a> <span aria-hidden="true">&middot;</span> <a href="/responsible-disclosure/">Responsible Disclosure</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie preferences" aria-live="polite" hidden>
+    <div class="cookie-inner">
+      <p>
+        We use strictly necessary cookies to run this site, and optional analytics cookies to understand
+        how it is used. We do not use advertising or cross-site tracking cookies.
+        <a href="/cookie-policy/">Read our Cookie Policy</a>.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-outline btn-sm" data-cookie-choice="necessary">Necessary only</button>
+        <button type="button" class="btn btn-primary btn-sm" data-cookie-choice="all">Accept analytics</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

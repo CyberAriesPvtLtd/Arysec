@@ -35,7 +35,7 @@
     "items": [
       {
         "title": "Retainer and Activation",
-        "description": "A signed contract, fixed commercial terms, a named lead responder and a committed response window. Onboarding captures your architecture, tooling and escalation contacts, so activation begins with containment instead of introductions."
+        "description": "A signed contract, fixed commercial terms, a named lead responder and a committed response window. Onboarding captures your architecture, tooling and escalation contacts, so nobody spends the first hour learning your network."
       },
       {
         "title": "Forensics and Malware Analysis",
@@ -94,7 +94,7 @@
   "benefits": [
     {
       "title": "No Procurement Mid-Crisis",
-      "description": "The contract, the commercial terms and the access are settled in advance. Activation is a phone call, so the first hour goes to containment instead of legal review."
+      "description": "Terms, indemnities and access rights are agreed while nothing is on fire. On the day it matters, your first decision is technical, not legal or commercial."
     },
     {
       "title": "Evidence That Holds Up",
@@ -122,7 +122,7 @@
     },
     {
       "question": "Why pay for a retainer when we could just call a response firm on the day it happens?",
-      "answer": "You can, and firms do, at the worst possible moment. Emergency engagements start with procurement: scoping, contracts, indemnities, purchase orders and access provisioning, which routinely costs a day while the attacker is still working. Emergency rates are higher, and availability is not guaranteed when a widespread exploit has every responder busy. A retainer fixes the terms in advance, gives you a responder who already knows your architecture, and converts unused hours into readiness work."
+      "answer": "You can, and firms do, at the worst possible moment. Emergency engagements start with procurement: scoping, contracts, indemnities, purchase orders and access provisioning, which routinely costs a day while the attacker is still working. Emergency rates are higher, and availability is not guaranteed when a widespread exploit has every responder busy. A retainer fixes the terms while there is time to read them, gives you a responder who already knows your architecture, and converts unused hours into readiness work."
     },
     {
       "question": "If we are hit by ransomware, will you negotiate with the attackers or advise us to pay?",

@@ -1,0 +1,119 @@
+{
+  "slug": "first-hour-of-a-ransomware-incident",
+  "title": "The First Hour of a Ransomware Incident",
+  "category": "Incident Response",
+  "metaTitle": "The First Hour of a Ransomware Incident",
+  "metaDescription": "A calm operational guide to the first hour of a ransomware incident: isolate without powering down, preserve evidence and logs, protect backups, who to call.",
+  "excerpt": "A calm operational guide to the worst hour: why you isolate rather than power down, which evidence expires first, who to call and in what order, protecting backups, the notification clock, and the ransom question.",
+  "readingTime": "7 min read",
+  "keyTakeaways": [
+    "Isolate affected systems from the network but leave them running, because memory holds evidence that no disk image can recover later.",
+    "Assume mailboxes and chat are readable by the intruder, and run the response on a channel outside the affected environment.",
+    "Backups are attacked first, so isolate them, verify they are offline and intact, and choose a restore point predating the intrusion.",
+    "Notification clocks start when you become aware, so record that moment precisely and read your contracts and obligations early."
+  ],
+  "sections": [
+    {
+      "heading": "What the first hour is for",
+      "paragraphs": [
+        "The call arrives in a recognisable shape: a file server throwing errors, a shared drive that will not open, the same text file on every desktop. Behind it sits an intruder who has been in your network for days or weeks, and who picked this hour deliberately.",
+        "That hour will not fix anything. Its job is narrower: stop the spread, keep the evidence, preserve your options. Much of the difficulty organisations face in the following weeks is manufactured here, by quick and reasonable decisions taken by people never trained for this. Work in order, because later steps depend on earlier ones."
+      ],
+      "list": [
+        "Declare an incident and name one person in charge.",
+        "Contain the spread by isolating affected systems, not powering them off.",
+        "Protect the backups before anything is restored or rebuilt.",
+        "Preserve volatile evidence and the logs already rolling over.",
+        "Open a communication channel independent of the compromised environment.",
+        "Make the calls: executive authority, insurer, counsel, response provider.",
+        "Establish rough scope, including whether data left, not only what was encrypted.",
+        "Start the clock by recording when you became aware, and how."
+      ]
+    },
+    {
+      "heading": "Isolate, do not power down",
+      "paragraphs": [
+        "Containment is the first technical action, and it is not the same as switching things off. Disconnect affected machines and leave them running: pull the cable, disable the switch port, or use the network containment function in your endpoint platform, which cuts traffic while keeping the agent reachable. Work outwards from affected hosts to identity infrastructure, then hypervisors, then backups and remote access.",
+        "Keep them running because memory holds evidence found nowhere else: running processes, live connections to attacker infrastructure, cached credentials, and malware executed in memory and deleted from disk. Power off and that record cannot be rebuilt from the disk. Some families also complete destructive work at boot, and a machine caught part way through encryption may be partly recoverable if frozen rather than restarted. Hibernation and sleep are not substitutes for a capture either: live connections and process state are gone, and what a hibernation file holds is compressed, partial and awkward to work with. For virtual machines, snapshot with memory state.",
+        "Evidence outside memory is expiring too. Security logs on a busy domain controller can roll over within hours at default sizes, endpoint telemetry ages out on a window shorter than many dwell times, and some cloud audit trails stay queryable for ninety days without configured export. Copy the sources below out of reach of the affected environment, hash them, and note who took them and when."
+      ],
+      "list": [
+        "Memory images from a sample of affected hosts, before anything is rebuilt.",
+        "The ransom note and encrypted file samples, extensions intact.",
+        "Endpoint telemetry, exported rather than left to age out.",
+        "Domain controller logs: account creation, group changes, authentication.",
+        "VPN, remote desktop gateway and firewall logs, which usually carry the initial access.",
+        "Cloud and identity audit trails, plus backup catalogues showing any deletion."
+      ]
+    },
+    {
+      "heading": "Assume your email is being read",
+      "paragraphs": [
+        "If the intruder held administrative access, they may also have had your mailboxes and chat. Groups have been documented reading a victim's incident correspondence and sitting on the response bridge. Discuss nothing about the response on systems in scope.",
+        "Stand up an out-of-band channel in the first minutes: a conference bridge and a messaging group on personal devices, or accounts in a separate tenant with no trust relationship to the affected one. Keep an offline copy of the call tree. Run one incident log, with times, decisions and named owners, recording facts rather than theories. Then make the calls, in this order."
+      ],
+      "list": [
+        "The executive who can authorise spending and halt business operations.",
+        "Your cyber insurer or broker, since cover often depends on prompt notice and on approved response firms.",
+        "External counsel, for the notification analysis, privilege and anything touching payment.",
+        "Your response provider, ideally under retainer so this is a call, not a procurement exercise.",
+        "Infrastructure, identity and backup owners, who hold the access responders need next.",
+        "Law enforcement, through the cybercrime channels that apply to you.",
+        "Regulators, customers and staff, on the timetable your obligations and counsel set."
+      ]
+    },
+    {
+      "heading": "Scope, patient zero and what left the network",
+      "paragraphs": [
+        "Two questions shape everything after: how far does this reach, and how did they get in. Scope is more than a count of encrypted machines. Establish whether identity infrastructure was compromised, because if the attacker held domain administrator rights then every account and host in that domain is suspect, and recovery becomes a rebuild of trust. Check the hypervisors, since encryption at host level removes every virtual machine at once.",
+        "Patient zero is usually less exotic than expected: valid credentials on remote access without multi-factor authentication, an unpatched internet-facing appliance, credentials taken by an information stealer and sold on, or a route in through a supplier. Identifying the ransomware family from the note narrows the search. Hunt for accounts recently added to privileged groups, remote management tools outside your standard build, and deleted shadow copies.",
+        "Ask early whether data left. Extortion is generally double now, and exfiltration drives your notification obligations far more than encryption does. If the logs that would show it were never collected, say so plainly rather than concluding nothing was taken."
+      ]
+    },
+    {
+      "heading": "Protect the backups, then prove them",
+      "paragraphs": [
+        "Intrusions attack backups deliberately and early, on the sound commercial logic that a victim who can restore does not pay. Consoles are a priority target, catalogues get deleted, retention gets quietly shortened, and cloud backup accounts are removed using the administrator's own credentials.",
+        "Isolate the backup infrastructure now, and change its credentials from a host you trust rather than one inside the affected environment. Then verify in sequence: that a backup exists, that it is recent enough to be useful, that it is genuinely offline or immutable, and that it restores. A catalogue entry is a claim; a test restore into an isolated environment is proof. Your restore point must also predate the intruder's arrival, or you restore their access along with your data. Rebuilding into a network that has not been cleaned is the commonest route to a second encryption."
+      ]
+    },
+    {
+      "heading": "The notification clock started before you did",
+      "paragraphs": [
+        "Several clocks begin at the moment you became aware, which is why the incident log should capture that moment precisely and record who noticed it. Reconstructing awareness later, from memory, is a poor position to defend.",
+        "In India, the CERT-In directions of April 2022 require specified categories of cyber incident to be reported within six hours of noticing them, and set expectations for log retention. The Digital Personal Data Protection Act 2023 will require a Data Fiduciary to inform the Data Protection Board of India and every affected Data Principal of a personal data breach, in the manner and timing set out in the Rules notified under it; those obligations commence in May 2027, so check where the date sits relative to your incident. Sector regulators in banking, securities and insurance impose their own shorter windows, and the GDPR may apply where you handle data of people in the EU. Positions move and turn on facts only you hold, so confirm yours with your own advisers.",
+        "Contracts add more clocks. Customer agreements and data processing addenda commonly require notice within twenty-four or forty-eight hours, insurance policies carry their own conditions, and a listed entity has disclosure duties for material events. Read those documents in the first hour, not on day four."
+      ]
+    },
+    {
+      "heading": "The ransom question, handled soberly",
+      "paragraphs": [
+        "It will be raised in the first hour, usually by someone senior asking what it would cost to make this stop. The answer for now is that the decision is not due yet, and your job is to preserve the option either way. Countdown timers are a pressure device, and deadlines are frequently extended.",
+        "When it is due, the decision belongs to the board, with counsel and the insurer at the table, and it turns on verifiable facts rather than instinct. Payment does not guarantee decryption, and supplied tools are often slow or partial, so restoring from good backups is frequently faster. Payment does not guarantee that stolen data is deleted either, because deletion cannot be verified and repeat demands are documented. Where backups are gone or the recovery timeline is untenable, the commercial picture looks different, which is precisely why the option is preserved rather than closed off in the first hour. Payment can also be constrained by law, since sanctions and financial crime rules may make a transfer unlawful, and most policies require the insurer's consent beforehand.",
+        "Law enforcement agencies discourage payment, on the ground that it funds the next campaign. We take no position on your behalf, and nothing here is legal advice. The point is that this is a legal and commercial judgement made with specialist advice, not an operational one taken overnight by whoever is on the call."
+      ]
+    },
+    {
+      "heading": "What makes this hour survivable",
+      "paragraphs": [
+        "The mistakes that hurt most are ordinary ones made under pressure. Powering machines down and losing memory. Reimaging the first infected host before it is captured, destroying patient zero. Logging into infected machines with domain administrator credentials, handing the attacker what they were waiting for. Running an antivirus clean-up that deletes the samples investigators needed. Restoring into a network still occupied. Downloading a decryption tool of unknown origin, when the No More Ransom project is the place to check for a legitimate one.",
+        "Each of those is a preparation problem rather than a judgement problem, and preparation cannot be built during the incident. Engage professional responders too: handling ransomware with your own team alone is defensible only if that team has done it before."
+      ],
+      "list": [
+        "An incident response plan that has been exercised, with a printed copy stored offline.",
+        "Backups that are immutable or offline, on separate credentials, with restore tests you have timed.",
+        "Centralised logging with retention that outlasts a realistic dwell time, meaning months not weeks.",
+        "Multi-factor authentication on remote and privileged access, with tiered administration.",
+        "Network segmentation and a current asset inventory, so isolating a segment is a known action.",
+        "Decision authority agreed in advance: who declares an incident, and who takes production offline.",
+        "Exercises that include the executive team, because the hardest choices here are commercial."
+      ]
+    },
+    {
+      "heading": "Where we help",
+      "paragraphs": [
+        "Arysec supports organisations in India and international markets through incident response: retainers with agreed response times, containment, forensic investigation and recovery planning. We also do the quieter work that decides how this hour goes, including response plan development, tabletop exercises, and backup and logging reviews. If you are in an incident now, call +91 90048 57727."
+      ]
+    }
+  ]
+}

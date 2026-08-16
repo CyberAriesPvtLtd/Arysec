@@ -17,7 +17,7 @@
     "heading": "Assessment, Penetration Test, Red Team",
     "paragraphs": [
       "The two halves of VAPT answer different questions, and buying one when you needed the other is the most common waste in this market. A vulnerability assessment is breadth: authenticated and unauthenticated scanning across the estate, tuned to remove noise, producing a ranked inventory of weaknesses that exist. A penetration test is depth: a tester chains those weaknesses together to establish what an attacker could actually reach, which is almost never the same list. A scanner reports that a host runs an outdated library. A tester tells you the library gave shell access, that the service account behind it was over-permissioned, and that the customer database was two steps further on.",
-      "Our testing follows published methodology rather than a tool's default profile. Network work follows the Penetration Testing Execution Standard and the NIST SP 800-115 technical guide. Web applications are tested against the OWASP Testing Guide and OWASP Top 10, and against OWASP ASVS at the verification level you select where you need provable depth of coverage. APIs are assessed against the OWASP API Security Top 10, mobile builds against the OWASP Mobile Application Security Verification Standard. Attack behaviour is described using MITRE ATT&CK technique identifiers, so your detection team can check whether anything we did was seen.",
+      "Our testing follows published methodology rather than a tool's default profile. Network work is run to the Penetration Testing Execution Standard and the NIST SP 800-115 technical guide. Web applications are tested against the OWASP Testing Guide and OWASP Top 10, with coverage measured against an agreed OWASP ASVS level wherever you need depth you can prove rather than depth you were promised. APIs are assessed against the OWASP API Security Top 10, mobile builds against the OWASP Mobile Application Security Verification Standard. Every action we take is labelled with its MITRE ATT&CK technique identifier, which lets you replay the whole engagement against your own alert history afterwards.",
       "Testing happens only with written authorisation. Before anything is sent to a live system we agree rules of engagement naming the in-scope addresses and hosts, the excluded systems, the test windows, the permitted techniques, the escalation contacts on both sides, and the point at which we stop. Production is treated as production: no denial of service against live traffic unless you specifically commission it in a controlled window, no destructive payloads, no mass password guessing that locks out your users, and no exploitation of anything that could affect availability without clearing it with your named contact first. Critical findings reach you the day we confirm them, not three weeks later in a report."
     ]
   },
@@ -51,7 +51,7 @@
     ]
   },
   "deliverables": {
-    "heading": "What Lands on Your Desk",
+    "heading": "The Report and the Evidence",
     "intro": "Two audiences read a penetration test report: a board that needs the risk position and an engineer who needs to reproduce the finding. We write for both.",
     "items": [
       "Signed rules of engagement and authorisation letter",
@@ -70,8 +70,8 @@
       "description": "We agree targets, exclusions, test windows, permitted techniques and escalation contacts, then take written authorisation from someone able to give it. Third-party hosted systems need their provider's consent, which we help you obtain."
     },
     {
-      "title": "Discover",
-      "description": "Reconnaissance and enumeration map what is actually exposed: hosts, services, versions, subdomains, endpoints and roles. Automated scanning runs here, then every result is verified by hand so false positives never reach your report."
+      "title": "Map the Surface",
+      "description": "Reconnaissance and enumeration establish what is actually exposed: hosts, services, versions, subdomains, endpoints and roles. Automated scanning runs here, then every result is verified by hand so false positives never reach your report."
     },
     {
       "title": "Exploit",
@@ -85,19 +85,19 @@
   "benefits": [
     {
       "title": "Proof, Not Probability",
-      "description": "A tester who reached your customer records ends the argument about whether a finding matters. Evidence moves remediation budget faster than a scanner's severity label."
+      "description": "A tester who reached your customer records settles the question of whether a finding matters. Proof moves remediation budget faster than a scanner's severity label ever does."
     },
     {
       "title": "Fixes Verified, Not Assumed",
       "description": "The retest is included, so you close the engagement knowing which issues are genuinely resolved and which reappeared, rather than trusting a ticket marked done."
     },
     {
-      "title": "Evidence for Third Parties",
-      "description": "Enterprise procurement, insurers and certification auditors ask for a current test report. You get one written to be shared, plus a summary letter without exploitable detail."
+      "title": "A Report You Can Share",
+      "description": "Enterprise procurement, insurers and certification auditors all ask for a current test report. Ours is written to be handed over, with a summary letter that omits exploitable detail."
     },
     {
       "title": "Your Detection Gets Tested",
-      "description": "Every action is mapped to MITRE ATT&CK techniques, so your security team can compare what we did against what their tooling recorded and alerted on."
+      "description": "Because every action carries its ATT&CK technique identifier, your security team can lay the engagement timeline beside their own alert history and see exactly what went unnoticed."
     }
   ],
   "whoItsFor": [
@@ -121,11 +121,11 @@
     },
     {
       "question": "Our regulator or customer asks for a report from a specific category of tester. Does yours qualify?",
-      "answer": "Ask us at scoping and we will tell you plainly. Most contractual and framework requirements, including ISO/IEC 27001:2022, PCI DSS 4.0 and SOC 2, name testing that is competent and independent of the team that built the system, which our reports satisfy. Some Indian filings instead name a specific empanelment status held by the testing organisation, and that is not something any report can substitute for. We check your actual requirement before you commit, rather than after you have paid for the wrong thing."
+      "answer": "Ask at scoping and you will get a direct answer. Most contractual and framework requirements, including ISO/IEC 27001:2022, PCI DSS 4.0 and SOC 2, call for testing that is technically competent and independent of the team that built the system, which our reports satisfy. Certain Indian filings instead require a tester holding a specific government empanelment. Arysec does not hold that status, and no report can substitute for it, so we check your real requirement before you commit rather than after you have paid for the wrong thing."
     },
     {
       "question": "How often should we test, and what stops the report being out of date the week after we get it?",
-      "answer": "Annually is the common floor, driven by ISO/IEC 27001:2022 and PCI DSS 4.0 expectations, but the honest trigger is change: a major release, a new external service, a cloud migration, a merger. A report describes a point in time and starts ageing immediately, which is why we recommend pairing an annual deep test with continuous scanning and a shorter targeted test on significant releases. The included retest keeps the current report accurate once fixes land, and we will tell you if a change makes a retest insufficient."
+      "answer": "Annually is the common floor, driven by ISO/IEC 27001:2022 and PCI DSS 4.0 expectations, but the honest trigger is change: a major release, a new external service, a cloud migration, a merger. A report describes a point in time and starts ageing immediately, which is why we recommend pairing an annual deep test with continuous scanning and a shorter targeted test on significant releases. The included retest keeps the current report accurate once fixes land, and where a change is large enough that a retest will not cover it, we say so."
     }
   ],
   "related": ["security-audit-compliance", "cloud-security", "network-security"]

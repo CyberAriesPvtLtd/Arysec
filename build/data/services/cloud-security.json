@@ -22,7 +22,7 @@
     ]
   },
   "capabilities": {
-    "heading": "What the Engagement Covers",
+    "heading": "What We Assess and Fix",
     "items": [
       {
         "title": "Posture Assessment and CSPM",
@@ -51,8 +51,8 @@
     ]
   },
   "deliverables": {
-    "heading": "What Lands on Your Desk",
-    "intro": "Cloud work produces a great deal of dashboard output. These are the written artefacts you keep, and the ones your auditors and engineers will actually use.",
+    "heading": "Findings, Designs and Guardrails",
+    "intro": "Cloud work produces a great deal of dashboard output. What follows is the written record that outlives it, and what your auditors and engineers will actually open.",
     "items": [
       "Full asset and account inventory across every cloud",
       "Configuration findings mapped to CIS Benchmark control numbers",
@@ -66,12 +66,12 @@
   },
   "process": [
     {
-      "title": "Discover",
+      "title": "Inventory",
       "description": "We enumerate every account, subscription and project, including the ones outside central billing, then map data flows, internet exposure and who holds administrative access. Nothing is assessed until the estate is known."
     },
     {
-      "title": "Assess",
-      "description": "Configuration is tested against CIS Benchmarks, provider baselines and your own policy, covering identity, network, storage, logging, keys and workloads. Each finding records the evidence, the affected resources and the exploitation path."
+      "title": "Benchmark",
+      "description": "Configuration is measured against CIS Benchmarks, provider baselines and your own policy, covering identity, network, storage, logging, keys and workloads. Each finding records the evidence, the affected resources and the exploitation path."
     },
     {
       "title": "Remediate",
@@ -92,7 +92,7 @@
       "description": "Guardrails and a designed landing zone let teams build quickly inside safe boundaries, so security stops being the step everyone routes around near a release date."
     },
     {
-      "title": "Evidence for Auditors",
+      "title": "Ready for the Assessor",
       "description": "Findings mapped to CIS Benchmarks, ISO/IEC 27001:2022 and PCI DSS 4.0 give you configuration evidence in the form assessors ask for, rather than screenshots gathered late."
     },
     {
@@ -102,7 +102,7 @@
   ],
   "whoItsFor": [
     "Engineering teams who moved to cloud fast and never went back to harden it",
-    "Regulated firms in banking, insurance and healthcare running workloads across more than one provider",
+    "Healthcare, lending and insurance platforms running regulated workloads across more than one provider",
     "SaaS providers answering customer security questionnaires about cloud configuration and tenant isolation",
     "Organisations planning a data centre migration who want the target environment built correctly"
   ],

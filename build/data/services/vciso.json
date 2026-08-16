@@ -26,7 +26,7 @@
     "items": [
       {
         "title": "Strategy and Roadmap",
-        "description": "We assess your current security posture against NIST CSF 2.0 or ISO/IEC 27001:2022, agree a target state with you, and turn the gap into a costed, sequenced roadmap with named owners."
+        "description": "We assess your current security posture using NIST CSF 2.0 as the reference, agree a target state with you, and turn the gap into a costed, sequenced roadmap with named owners."
       },
       {
         "title": "Governance and Policy Framework",
@@ -51,11 +51,11 @@
     ]
   },
   "deliverables": {
-    "heading": "What Lands on Your Desk",
-    "intro": "Every engagement produces documents your auditors, insurers and customers can read. These are the artefacts you own, and they stay with you afterwards.",
+    "heading": "The Governance Paper Trail",
+    "intro": "Board members, insurers and enterprise procurement teams all ask for paperwork. This is the set your vCISO builds and maintains under your name.",
     "items": [
       "Security strategy and multi-year roadmap with named owners",
-      "Gap assessment against ISO/IEC 27001:2022 or NIST CSF 2.0",
+      "Posture gap assessment scored against NIST CSF 2.0",
       "Approved policy and standards set under version control",
       "Risk register with scoring methodology and treatment plans",
       "Quarterly board pack and audit committee briefing",
@@ -66,7 +66,7 @@
   },
   "process": [
     {
-      "title": "Baseline",
+      "title": "Read In",
       "description": "We spend the first weeks reading what exists: policies, contracts, audit findings, architecture and incident history. Interviews with IT, engineering, legal and finance tell us where the real exposure and the real constraints sit."
     },
     {
@@ -74,12 +74,12 @@
       "description": "Scope, reporting line, decision rights and monthly time commitment are agreed in writing with your leadership. Everyone learns what the vCISO decides, what they recommend, and what stays with your existing IT owner."
     },
     {
-      "title": "Operate",
+      "title": "Cadence",
       "description": "A monthly rhythm takes hold: risk review, roadmap tracking, policy sign-offs, supplier assessments and questionnaire responses. Your vCISO joins the meetings that matter and is reachable when a decision cannot wait."
     },
     {
       "title": "Handover",
-      "description": "Before the engagement ends we transfer everything: documented processes, register access, tooling configuration notes and open items with context. If you are hiring a permanent CISO, we help you write the brief and interview."
+      "description": "Before the engagement ends we transfer everything: documented processes, register access, tooling configuration notes and open items with context. Nothing critical should live only in your vCISO's head by the time they step away."
     }
   ],
   "benefits": [
@@ -108,7 +108,7 @@
   ],
   "faqs": [
     {
-      "question": "We already have a head of IT. Does a vCISO not overlap with that role?",
+      "question": "Our head of IT already covers security. Where does a vCISO fit?",
       "answer": "They do different jobs. Your IT head is accountable for systems working — uptime, delivery, cost, the team. A vCISO is accountable for risk being understood, decided on and evidenced, which sometimes means arguing for work that makes IT's life harder. We define the split in writing at the start: who decides, who is consulted, who signs. In practice the IT head usually gains an ally in budget conversations rather than a competitor."
     },
     {
@@ -121,11 +121,11 @@
     },
     {
       "question": "Can a vCISO sign off our compliance or act as our named officer to a regulator?",
-      "answer": "Accountability cannot be outsourced. Indian regulators and most standards expect a named accountable person inside your organisation, and directors retain the duty. Our vCISO prepares the position, drafts the submissions, sits in the meeting and answers technical questions, but the sign-off stays with your officer. We also do not certify anything — we prepare you for the certification audit and support you through it, while the certificate comes from your registrar. Confirm your specific obligations with your legal counsel."
+      "answer": "Accountability cannot be outsourced. Indian regulators and most standards expect a named accountable person inside your organisation, and directors retain the duty. Our vCISO prepares the position, drafts the submissions, sits in the meeting and answers technical questions, but the sign-off stays with your officer. We also do not certify anything — we prepare you for the certification audit and support you through it, while the certificate comes from your registrar. Your legal counsel should confirm what your particular regime demands of you."
     },
     {
-      "question": "What happens when the engagement ends? Are we left with nothing?",
-      "answer": "Handover is designed in from the first month, not improvised at the end. Everything we produce lives in your systems under your ownership: policies, the risk register, supplier records, the questionnaire answer library, roadmap status and open decisions with their history. At close we run a formal transfer session with whoever takes over, leave written runbooks for the recurring tasks, and stay available for a defined period. If you are recruiting a permanent CISO, we will help scope the role and sit on interviews."
+      "question": "If we stop the retainer, how much of this survives?",
+      "answer": "Handover is designed in from the first month, not improvised at the end. Policies, the risk register, supplier records, the questionnaire answer library, roadmap status and open decisions with their history all sit in your systems under your ownership. At close we run a formal transfer session with whoever takes over, leave written runbooks for the recurring tasks, and stay available for a defined period. If you are recruiting a permanent CISO, we will help scope the role and sit on interviews."
     }
   ],
   "related": ["iso-27001", "dpo", "security-audit-compliance"]

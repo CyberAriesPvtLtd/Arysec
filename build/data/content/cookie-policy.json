@@ -1,7 +1,7 @@
 {
   "title": "Cookie Policy",
   "metaTitle": "Cookie Policy: What We Set and How to Control It",
-  "metaDescription": "How the Arysec website uses cookies: the strictly necessary, preference and analytics categories we set, how long they last, and how to change or clear them.",
+  "metaDescription": "How the Arysec website uses cookies: the strictly necessary and optional analytics categories, how long storage lasts, and how to change or clear your choice.",
   "intro": "This policy explains how the Arysec website uses cookies and similar storage technologies. It sets out the categories we rely on, what each one does, how long they stay on your device, what we deliberately do not do, and the ways you can review, change or clear your choices at any time.",
   "sections": [
     {
@@ -23,13 +23,12 @@
     {
       "heading": "The Categories We Use",
       "paragraphs": [
-        "We group storage into three categories, and the consent control on our site uses the same three names. Only the first is set before you make a choice.",
-        "Analytics is set only after you agree to it through the consent control, or where the law that applies to you permits a measurement cookie without consent. We configure analytics to gather as little as the purpose needs, we do not try to identify individuals from it, and we do not match it against the enquiry records described in our Privacy Policy."
+        "We group storage into two categories, and the consent control on our site offers the same two choices. Only the first is set before you answer.",
+        "We do not currently run an analytics provider on this site. The optional category exists because we may add measurement later, and the consent control is in place so that nothing in it is set before you agree. Where analytics is running, we configure it to gather as little as the purpose needs, we do not try to identify individuals from it, and we do not match it against the enquiry records described in our Privacy Policy. The categories are these:"
       ],
       "list": [
-        "Strictly necessary: storage the site cannot sensibly work without. It carries the record of your cookie choices, supports the security measures sitting in front of the site, helps protect our forms against automated abuse, and keeps a visit coherent as you move between pages.",
-        "Preference: storage that remembers a setting you chose, so the site does not ask you twice. A display option or a dismissed notice is the usual example. Nothing in this category identifies you or follows you anywhere else.",
-        "Analytics and performance: storage that lets us count visits and understand which pages hold attention, which routes people take through the site, and where they give up. We use it to decide what to publish next and to find pages that load slowly or break."
+        "Strictly necessary: storage the site cannot sensibly work without. It carries the record of the cookie choice you made and supports the protection sitting in front of the site and its forms.",
+        "Analytics and performance: optional storage that would let us count visits and understand which pages hold attention, which routes people take through the site, and where they give up. We would use it to decide what to publish next and to find pages that load slowly or break."
       ]
     },
     {
@@ -53,23 +52,23 @@
       "heading": "How Long Cookies Stay on Your Device",
       "paragraphs": [
         "Cookies fall into two groups by lifetime. Session cookies exist only while your browser is open and vanish when you close it. Persistent cookies carry an expiry date and survive until that date passes or until you delete them yourself.",
-        "We keep each lifetime as short as the purpose allows. Security and session storage is generally short-lived. The record of your cookie choices has to persist, or we would have to ask you again on every page, but it is given a finite expiry so that your decision is revisited periodically rather than treated as permanent. Analytics identifiers, where present, are the longest-lived items we set, and they still expire.",
+        "We keep each lifetime as short as the purpose allows. Security storage is generally short-lived. The record of your cookie choice is held in your browser's local storage rather than in a cookie, so it carries no expiry of its own: it stays until you clear this site's stored data, because otherwise we would have to ask you again on every page. Analytics identifiers, where analytics is running, would be the longest-lived items we set, and they would still expire.",
         "Rather than print a table of durations that would drift out of date, we suggest you check directly. Every modern browser has a storage inspector that lists the name, origin and exact expiry of every cookie currently set for a site. That view is always accurate, and it covers anything a page has stored, not only what we anticipated when writing this."
       ]
     },
     {
       "heading": "Changing Your Choices on Our Site",
       "paragraphs": [
-        "The consent control appears when you first visit, and it lets you accept or decline the optional categories before anything in them is set. Declining takes a single action, and it is presented as plainly as accepting. We do not hide refusal behind extra steps or pre-tick the optional boxes.",
-        "Your first answer is not final. Reopen the control from the cookie settings link in our site footer, change any category, and the change takes effect immediately; if you cannot find it, write to info@arysec.in and we will point you to it. Withdrawing consent stops further collection in that category. Where a cookie was already set under your earlier choice, reopening the control clears what we can clear from our side, and your browser settings will remove the rest.",
-        "Strictly necessary storage is not offered as a toggle, because the site cannot function without it and consent is not required for it. That is not a way of smuggling anything past you. The category holds your consent record, the security and anti-abuse measures, and nothing that describes you."
+        "The consent control appears when you first visit, and it lets you accept or decline the optional category before anything in it is set. Declining takes a single action, and it is presented as plainly as accepting. We do not hide refusal behind extra steps, and we do not pre-select the optional category.",
+        "Your first answer is not final. The answer is saved in your browser, so clearing this site's stored data through your browser settings removes both the saved answer and anything set under it, and the control appears again on your next visit for you to answer differently. Withdrawing consent stops further collection in the optional category. If you would rather not work it out yourself, write to info@arysec.in and we will tell you exactly what to clear.",
+        "Strictly necessary storage is not offered as a toggle, because the site cannot function without it and consent is not required for it. That is not a way of smuggling anything past you. The category holds your consent record and the protection sitting in front of the site, and nothing that describes you."
       ]
     },
     {
       "heading": "Managing Cookies in Your Browser",
       "paragraphs": [
         "Your browser is the stronger control, because it applies to every site rather than only to ours. All major browsers let you view stored cookies, delete them individually or in bulk, block third-party cookies, block all cookies for a chosen site, and clear everything automatically when you close the window.",
-        "Menu names move between versions, so treat the pointers below as a direction rather than as exact steps. Private or incognito windows discard cookies when the window closes, which is a quick way to browse without leaving anything behind, though storage still operates while the window is open."
+        "Private or incognito windows discard cookies when the window closes, which is a quick way to browse without leaving anything behind, though storage still operates while the window is open. Menu names move between versions, so treat the pointers below as a direction rather than as exact steps:"
       ],
       "list": [
         "Chrome and other Chromium browsers: Settings, then Privacy and security, then Third-party cookies and Site settings.",
@@ -80,14 +79,13 @@
       ]
     },
     {
-      "heading": "What Happens If You Turn a Category Off",
+      "heading": "What Happens If You Turn Storage Off",
       "paragraphs": [
-        "Switching categories off has consequences, and they are worth stating rather than implying.",
-        "None of our content sits behind a consent wall. Declining everything optional still gives you the whole site, at the same speed and with the same material."
+        "None of our content sits behind a consent wall. Declining the optional category still gives you the whole site, at the same speed and with the same material.",
+        "Switching storage off does have consequences, and they are worth stating rather than implying:"
       ],
       "list": [
-        "Blocking strictly necessary storage, which you can only do through your browser, will break parts of the site. Forms may fail to submit, the security layer in front of the site may treat you as suspicious, and the consent control will reappear on every page because your answer cannot be saved.",
-        "Declining preference storage costs you convenience and nothing more. Settings you choose will not be remembered between visits, so a dismissed notice may return and any display option resets to its default.",
+        "Blocking strictly necessary storage, which you can only do through your browser, will break parts of the site. Forms may fail to submit, the protection in front of the site may treat you as suspicious, and the consent control will reappear on every visit because your answer cannot be saved.",
         "Refusing analytics has no effect on you at all. Every page behaves exactly as it otherwise would. The cost falls on us: we see less about which material is useful, and we decide what to publish next with less information to go on."
       ]
     },
@@ -96,7 +94,7 @@
       "paragraphs": [
         "Do Not Track is a header a browser can send to say that the person using it does not wish to be tracked. It was never finished as a standard, and no common agreement exists on what a site must do when it receives one, so most sites ignore it and several browsers have removed the setting.",
         "Our position is simple. We do not carry out the cross-site tracking that Do Not Track was designed to stop, so on our site the signal asks us to stop something we were not doing. Where analytics is in use, your answer in our consent control is what governs it, and that answer is the one we act on.",
-        "Newer signals, such as Global Privacy Control, are recognised as binding opt-out requests in some jurisdictions. We treat such a signal as a decline for the optional categories where our systems receive it, and an explicit choice you make in the consent control always takes precedence over an inferred one."
+        "Newer signals, such as Global Privacy Control, are recognised as binding opt-out requests in some jurisdictions. We run no optional storage at present, so there is nothing here for such a signal to switch off; if we add measurement, we will treat a signal of that kind as a decline for the optional category. An explicit choice you make in the consent control always takes precedence over an inferred one."
       ]
     },
     {

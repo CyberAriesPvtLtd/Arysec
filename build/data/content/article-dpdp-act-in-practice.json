@@ -14,55 +14,55 @@
   ],
   "sections": [
     {
-      "heading": "Where The Law Stands And Who It Reaches",
+      "heading": "Where the law stands and who it reaches",
       "paragraphs": [
-        "The Digital Personal Data Protection Act 2023 received assent in August 2023, then waited two years for the machinery that makes it operable. The Digital Personal Data Protection Rules 2025 were notified on 13 November 2025, with staged commencement. Provisions constituting the Data Protection Board took effect at once. Consent Manager registration follows on 13 November 2026. The obligations most people think of as the law itself, covering notice, consent, security safeguards, breach intimation, retention, rights and the Significant Data Fiduciary regime, commence on 13 May 2027.",
-        "A Data Fiduciary determines the purpose and means of processing personal data. A Data Principal is the individual the data relates to. A Data Processor processes on a fiduciary's behalf. The asymmetry matters: nearly every duty sits with the Fiduciary, which stays answerable for processing done on its behalf, while processors carry almost no direct statutory obligation. Contract is the only instrument you hold over a processor.",
-        "The Act covers digital personal data collected digitally, or digitised later, and reaches processing outside India that relates to offering goods or services to Data Principals in India. Purely domestic processing, and data an individual has made public themselves, fall outside it. There is no special category tier: health records and biometrics attract the same treatment as a delivery address, which pushes risk towards volume and context rather than data type. Confirm your own scope position before planning against it."
+        "The Digital Personal Data Protection Act 2023 received assent in August 2023 but waited two years for its operating machinery. The Digital Personal Data Protection Rules 2025 were notified on 13 November 2025, with staged commencement: Board provisions at once, Consent Manager registration from 13 November 2026, and the substantive obligations covering notice, consent, security safeguards, breach intimation, retention, rights and the Significant Data Fiduciary regime from 13 May 2027.",
+        "A Data Fiduciary determines the purpose and means of processing personal data. A Data Principal is the individual it relates to. A Data Processor processes on a fiduciary's behalf. Nearly every duty sits with the Fiduciary, which stays answerable for processing done for it, while processors carry almost no direct statutory obligation. Contract is your only instrument over a processor.",
+        "The Act covers digital personal data collected digitally or digitised later, and reaches processing abroad tied to offering goods or services to Data Principals in India. Processing by an individual for a purely personal or domestic purpose sits outside it, as does personal data the Data Principal has made publicly available themselves. There is no special category tier: health records and biometrics attract the same treatment as a delivery address, which pushes risk towards volume and context rather than data type."
       ]
     },
     {
-      "heading": "Notice And Consent Carry The Weight",
+      "heading": "Notice and consent carry the weight",
       "paragraphs": [
-        "Processing rests on consent or on a defined set of legitimate uses, among them voluntary provision by the individual, employment purposes, compliance with law, medical emergency and specified State functions. There is no balancing test equivalent to legitimate interests under the EU GDPR. Anything outside that list needs consent that is free, specific, informed, unconditional and unambiguous, given by clear affirmative action. Bundled consent and pre-ticked boxes do not survive that wording.",
-        "Each consent request must be accompanied or preceded by a notice, and the Rules prescribe its contents. It has to stand alone, understandable without your other documents, and be available in English or any language in the Eighth Schedule to the Constitution at the Data Principal's option. That requirement by itself defeats most privacy notices published in India today.",
-        "The Act also creates the Consent Manager: an entity registered with the Board through which a Data Principal gives, reviews and withdraws consent across multiple fiduciaries from one interface. Conditions are demanding, including incorporation in India, net worth of at least two crore rupees, a fiduciary duty owed to the Data Principal, and keeping routed personal data unreadable to itself. Decide early whether you will integrate with consent managers or run your own consent ledger."
+        "Processing rests on consent or on defined legitimate uses such as employment purposes, legal compliance and medical emergency. There is no balancing test equivalent to legitimate interests under the EU GDPR, so anything outside that list needs consent: free, specific, informed, unconditional, unambiguous, and given by clear affirmative action. Bundled consent and pre-ticked boxes fail that test.",
+        "Each consent request must be preceded or accompanied by a notice whose contents the Rules prescribe. It must stand alone and be available in English or any Eighth Schedule language at the Data Principal's option, which alone defeats most privacy notices published in India.",
+        "The Consent Manager is a further creation of the Act: an entity registered with the Board through which a Data Principal gives, reviews and withdraws consent across several fiduciaries. Registration conditions are demanding, including incorporation in India, net worth of at least two crore rupees, and keeping routed personal data unreadable to itself."
       ],
       "list": [
         "An itemised description of the personal data collected, not a category label",
-        "The specified purpose, with the goods or services that processing enables",
-        "How to withdraw consent, made as easy as giving it was",
-        "The route for exercising rights and raising a grievance with you",
+        "The specified purpose and the services it enables",
+        "How to withdraw consent, made as easy as giving it",
+        "Where to exercise rights and raise a grievance with you",
         "A means of complaining to the Data Protection Board of India",
-        "Working contact points or links for each of those actions"
+        "Working links or contacts for each of those actions"
       ]
     },
     {
-      "heading": "The Rights You Have To Be Able To Service",
+      "heading": "The rights you have to be able to service",
       "paragraphs": [
-        "Rights under the Act are fewer than under the GDPR, and each is an operational commitment rather than a policy line. There is no portability right and no general right to object. What exists has to work on demand, at whatever volume your user base generates.",
-        "Two of these catch organisations out. Access requires you to name downstream recipients, so an accurate vendor and integration inventory stops being optional. Nomination has no analogue in most privacy programmes: no field to store a nominee, no verification path for an incapacity claim, no runbook for the person who arrives holding one. The Act also places duties on Data Principals, including not impersonating others and not filing frivolous grievances, which is useful language for response templates but not a screen you can rely on."
+        "Rights are fewer than under the GDPR, and each is an operational commitment rather than a policy line. There is no portability right and no general right to object. What exists has to work on demand, at whatever volume your users generate.",
+        "Two catch organisations out. Access requires you to name downstream recipients, so an accurate vendor and integration inventory stops being optional. Nomination has no analogue in most privacy programmes: no field for a nominee, no verification path for an incapacity claim, no runbook for the person who arrives holding one."
       ],
       "list": [
-        "Access: a summary of personal data processed and processing activities, plus the other fiduciaries and processors it was shared with, and what was shared",
-        "Correction, completion and updating of data that is inaccurate, incomplete or misleading",
-        "Erasure on request, unless retention is necessary for the specified purpose or required by law",
+        "Access: a summary of personal data processed and of processing activities, plus who it was shared with and what was shared",
+        "Correction, completion and updating of inaccurate, incomplete or misleading data",
+        "Erasure on request, unless retention is necessary for the purpose or required by law",
         "Grievance redressal through a readily available mechanism, capped by the Rules at ninety days",
         "Nomination of another individual to exercise the rights on death or incapacity"
       ]
     },
     {
-      "heading": "Children's Data And Verifiable Parental Consent",
+      "heading": "Children's data and verifiable parental consent",
       "paragraphs": [
-        "A child is anyone who has not completed eighteen years. Before processing a child's personal data, or that of a person with a disability who has a lawful guardian, you must obtain verifiable parental or guardian consent, and the verification has to be real rather than a self-declared checkbox. The Rules point towards due diligence against reliable identity details you already hold, or a virtual token mapped to a verified identity issued by an entity entrusted by law or a digital locker service provider.",
-        "Two prohibitions sit alongside it: no processing likely to cause a detrimental effect on a child's well-being, and no tracking, behavioural monitoring or targeted advertising directed at children. Certain classes of fiduciary and certain purposes, including some healthcare and education activity, are exempted from parts of this. If children can plausibly reach your product, treat age assurance as a design problem now."
+        "A child is anyone under eighteen. Processing a child's personal data, or that of a person with a disability who has a lawful guardian, requires verifiable parental or guardian consent. The Rules point towards due diligence against reliable identity details you already hold, or a virtual token mapped to a verified identity issued by an entity entrusted by law or a digital locker provider.",
+        "Two prohibitions sit alongside it: no processing likely to harm a child's well-being, and no tracking, behavioural monitoring or targeted advertising directed at children. Certain classes of fiduciary and purpose, including some healthcare and education, are exempted from parts of this. If children can plausibly reach your product, treat age assurance as a design problem now."
       ]
     },
     {
-      "heading": "The Significant Data Fiduciary Tier",
+      "heading": "The Significant Data Fiduciary tier",
       "paragraphs": [
-        "You do not self-designate as a Significant Data Fiduciary. The Central Government notifies an organisation or a class, weighing volume and sensitivity of data processed, risk to Data Principals, potential impact on the sovereignty and integrity of India, risk to electoral democracy, security of the State and public order. Because the trigger is a notification rather than a threshold you can calculate, you cannot rule the tier out through your own analysis.",
-        "The Data Protection Officer requirement rewards close reading. It calls for a named individual based in India, with a reporting line to the board and published contact details, not a shared inbox and not a group privacy officer abroad with an Indian number."
+        "You do not self-designate as a Significant Data Fiduciary. The Central Government notifies an organisation or a class, weighing volume and sensitivity of data processed, risk to Data Principals, impact on India's sovereignty and integrity, electoral democracy, security of the State and public order. Because the trigger is a notification rather than a threshold you can calculate, you cannot rule the tier out yourself.",
+        "The Data Protection Officer requirement rewards close reading: a named individual based in India, with a reporting line to the board and published contact details, not a shared inbox and not a group privacy officer abroad."
       ],
       "list": [
         "Appoint a Data Protection Officer based in India, answerable to the governing body and named for grievance redressal",
@@ -73,40 +73,40 @@
       ]
     },
     {
-      "heading": "Breach Intimation Without A Harm Threshold",
+      "heading": "Breach intimation without a harm threshold",
       "paragraphs": [
-        "A personal data breach means any unauthorised processing, or accidental disclosure, acquisition, sharing, use, alteration, destruction or loss of access, compromising confidentiality, integrity or availability. Note what is absent. There is no risk threshold of the kind Article 33 of the GDPR provides, so the duty to intimate the Board and every affected Data Principal is not filtered by a likelihood-of-harm test. A misconfigured storage bucket holding a thousand email addresses is reportable on the face of it.",
-        "The Rules set a two-stage clock. Intimate the Board without delay with the nature, extent, timing, location and likely impact, then file a detailed report within seventy-two hours, or longer if the Board permits, covering circumstances, mitigation, findings on who caused it and remedial steps. Affected individuals get a plain description, the likely consequences, what you have done, what they should do and who to contact. That clock starts on awareness, not on conclusion of the investigation.",
-        "This runs in parallel with the CERT-In directions of April 2022, requiring certain cyber incidents to be reported within six hours of noticing, and with sectoral duties from the Reserve Bank of India and SEBI. One incident, several clocks, different formats. Your runbook needs one severity assessment that fires all of them, since the six-hour window is usually the binding constraint."
+        "A personal data breach means any unauthorised processing of personal data, or accidental disclosure, acquisition, sharing, use, alteration, destruction or loss of access, that compromises its confidentiality, integrity or availability. There is no risk threshold of the kind Article 33 of the GDPR provides, so the duty to intimate the Board and every affected Data Principal is not filtered by a likelihood-of-harm test. A misconfigured storage bucket holding a thousand email addresses is reportable on the face of it.",
+        "The Rules set a two-stage clock. Intimate the Board without delay with the nature, extent, timing, location and likely impact, then file a detailed report within seventy-two hours covering circumstances, mitigation, who caused it and remedial steps. Affected individuals get a plain description, the likely consequences, what you have done and who to contact. The clock starts on awareness, not on conclusion of the investigation.",
+        "This runs in parallel with the CERT-In directions of April 2022, requiring certain cyber incidents to be reported within six hours of noticing, and with sectoral duties from the Reserve Bank of India and SEBI. Your runbook needs one severity assessment that fires all of them, since the six-hour window is usually the binding constraint."
       ]
     },
     {
-      "heading": "Transfers, Retention And What Failure Costs",
+      "heading": "Transfers, retention and what failure costs",
       "paragraphs": [
-        "The Act takes a permissive default on cross-border transfer. Section 16 allows processing outside India except in countries the Central Government restricts by notification, a negative list rather than an adequacy regime. The qualification matters more than the rule: nothing there displaces another law providing higher protection, so Reserve Bank of India payment data localisation and insurance and securities market requirements still bind you independently.",
-        "Retention is purpose-bound for most organisations. Erase when consent is withdrawn or as soon as it is reasonable to assume the purpose is no longer served, whichever is earlier, unless law requires otherwise, and make your processors erase too. Three classes of large platform get a fixed cap instead: e-commerce and social media intermediaries above two crore registered users, and online gaming intermediaries above fifty lakh, must erase three years after last engagement, with advance notice before it runs. That is a scheduled job and a notification pipeline, not a policy paragraph.",
-        "Penalties are financial rather than criminal, and graded by failure. Inadequate security safeguards carry the highest ceiling, running to hundreds of crores of rupees, followed by failure to intimate a breach and by children's data breaches, with a lower ceiling for Significant Data Fiduciary duties and a residuary category for everything else. The Board sets quantum by reference to gravity, duration, type of data affected, repetition, gain or loss, mitigation and proportionality. Those last factors are the practical argument for documenting your effort even where you fall short."
+        "The Act takes a permissive default on cross-border transfer. Section 16 allows processing outside India except in countries the Central Government restricts by notification, a negative list rather than an adequacy regime. The qualification matters more than the rule: nothing there displaces a law providing higher protection, so Reserve Bank of India payment data localisation and sectoral requirements still bind you.",
+        "Retention is purpose-bound for most organisations. Erase when consent is withdrawn or as soon as it is reasonable to assume the purpose is no longer served, whichever is earlier, and make your processors erase too. Three classes of large platform get a fixed cap instead: e-commerce and social media intermediaries above two crore users, and online gaming intermediaries above fifty lakh, must erase three years after last engagement, with advance notice.",
+        "Penalties are financial rather than criminal, and graded by failure. Inadequate security safeguards carry the highest ceiling, running to hundreds of crores of rupees, followed by failure to intimate a breach and by children's data breaches, with a lower ceiling for Significant Data Fiduciary duties and a residuary category for everything else. The Board sets quantum by gravity, duration, repetition, mitigation and proportionality, which is why documenting your effort matters even where you fall short."
       ]
     },
     {
-      "heading": "A Readiness Sequence That Survives Contact",
+      "heading": "A readiness sequence that survives contact",
       "paragraphs": [
-        "The sequence below is ordered by dependency, not ease. Rewriting notices before you know what you hold is the most common way these programmes stall, because you cannot describe processing you cannot enumerate.",
-        "Two habits separate programmes that hold up from those that only look finished. Test the rights process with real requests against real accounts before commencement, timing each step. Keep evidence as you go, because when the Board weighs proportionality your contemporaneous records are the only version of events that carries weight."
+        "The sequence below is ordered by dependency, not ease. Rewriting notices before you know what you hold is how these programmes stall, because you cannot describe processing you cannot enumerate.",
+        "Test the rights process with real requests against real accounts before commencement, timing each step. Keep evidence as you go, because when the Board weighs proportionality your contemporaneous records are the only version of events that carries weight."
       ],
       "list": [
-        "Data discovery across production systems, warehouses, analytics tools, SaaS platforms, shared drives, ticketing and backups. Scanning gets most of the way; interviews with process owners close the gap",
-        "Records of processing, which the Act does not mandate as GDPR Article 30 does, but purpose, ground, categories, retention, recipients and transfer route per activity is what everything else rests on",
-        "Notice and consent redesign: rebuild capture journeys against the itemised requirement, add language options, make withdrawal as easy as giving, and store timestamps, versions and the exact notice shown",
-        "Rights handling: identity verification, search across systems, exemption analysis, templates, a case log and a published response period you can meet under load",
-        "Vendor contracts, since processors owe you nothing directly: safeguards, breach timelines that fit inside yours, deletion on instruction, sub-processor control and audit rights",
-        "Breach runbook with one severity assessment triggering DPDP, CERT-In and sectoral notifications together, pre-approved drafts, a named decision maker and a register recording your reasoning"
+        "Data discovery across production systems, warehouses, analytics tools, SaaS platforms, shared drives and backups, with owner interviews closing what scanning misses",
+        "Records of processing: purpose, ground, categories, retention, recipients and transfer route per activity, the artefact everything downstream rests on",
+        "Notice and consent redesign against the itemised requirement, with language options, easy withdrawal, and consent records carrying timestamps and versions",
+        "Rights handling: identity verification, cross-system search, exemption analysis, templates, a case log and a published response period you can meet",
+        "Vendor contracts, since processors owe you nothing directly: safeguards, breach timelines inside yours, deletion on instruction and audit rights",
+        "Breach runbook with one severity assessment triggering DPDP, CERT-In and sectoral notifications together, plus pre-approved drafts and a named decision maker"
       ]
     },
     {
-      "heading": "Where We Fit",
+      "heading": "Where we fit",
       "paragraphs": [
-        "Arysec runs DPDP readiness and standing privacy work for organisations in India and for international firms processing Indian personal data: discovery and mapping, notice and consent redesign, rights and grievance workflows, vendor contract review, breach runbooks tested against the parallel clocks, and an appointed Data Protection Officer where you need one. Obligations turn on facts specific to your processing and your sector, so confirm your own position with legal counsel."
+        "Arysec runs DPDP readiness and standing privacy work for organisations in India and international firms processing Indian personal data: discovery and mapping, notice and consent redesign, rights and grievance workflows, vendor contract review, breach runbooks tested against the parallel clocks, and a Data Protection Officer where you need one. Obligations turn on your specific processing and sector, so confirm your position with legal counsel."
       ]
     }
   ]
