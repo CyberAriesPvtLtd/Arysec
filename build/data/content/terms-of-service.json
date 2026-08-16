@@ -1,0 +1,184 @@
+{
+  "title": "Terms of Service",
+  "metaTitle": "Terms of Service | Website Terms of Use",
+  "metaDescription": "Website terms of use for arysec.in from Arysec: acceptable use, intellectual property, security testing, disclaimers, liability and governing law in India.",
+  "intro": "These terms set out the basis on which you may use arysec.in. They cover who the site is for, what you may do with our content, conduct we do not permit, the limits of the information we publish, our liability, how we handle enquiries, and the law that applies.",
+  "sections": [
+    {
+      "heading": "Acceptance of These Terms",
+      "paragraphs": [
+        "Arysec Technologies LLP operates this website at arysec.in. In these terms, \"Arysec\", \"we\", \"us\" and \"our\" mean Arysec Technologies LLP, a limited liability partnership registered in India and headquartered in Mumbai, Maharashtra. \"You\" means anyone who accesses or uses the site.",
+        "By accessing, browsing or otherwise using this website, you accept these terms and agree to be bound by them. If you do not accept them, please stop using the site. We suggest you read them in full and keep a copy for your records.",
+        "These terms apply alongside our privacy policy and any notice published on a particular page or form. Where a page carries its own additional terms, those additional terms apply to that page as well as these."
+      ]
+    },
+    {
+      "heading": "Who May Use This Website",
+      "paragraphs": [
+        "This site is intended for business use. It is written for people evaluating information security and IT services on behalf of an organisation: security leaders, technology and finance decision-makers, compliance teams, and founders. It is not directed at children.",
+        "You may use the site only if you are legally capable of entering into a binding contract under the Indian Contract Act, 1872, or the equivalent law of your own country. If you are using the site on behalf of an organisation, you confirm that you are authorised to accept these terms for that organisation, and references to \"you\" include it.",
+        "We operate the site from India. Access from other countries is at your own initiative, and you are responsible for complying with the laws that apply where you are. We make no representation that the content is appropriate or available for use in every jurisdiction."
+      ]
+    },
+    {
+      "heading": "What These Terms Cover, and What They Do Not",
+      "paragraphs": [
+        "These terms govern your use of this website and the content published on it. They do not govern the services we deliver to clients. Every client engagement is set out in a separate written contract signed by both parties, which may include a master services agreement, a statement of work, a non-disclosure agreement and, where personal data is involved, a data processing agreement.",
+        "Where anything in these terms conflicts with a signed engagement contract, the engagement contract prevails for that engagement. Nothing published on this website varies, extends or replaces what has been agreed there.",
+        "Descriptions of our services on this site are indicative. They are an invitation to discuss, not an offer capable of acceptance, and no client relationship is created by browsing the site or sending an enquiry. The following are settled in writing for each engagement, not here:"
+      ],
+      "list": [
+        "Scope of work, deliverables and acceptance criteria",
+        "Timelines, milestones and any service level commitments",
+        "Fees, invoicing and payment terms",
+        "Confidentiality, data handling and security obligations on both sides",
+        "Ownership of, and rights in, the deliverables we produce for you",
+        "Warranties, liability caps and insurance",
+        "Rules of engagement and written authorisation for any testing we carry out",
+        "Termination, exit assistance and what happens to your data afterwards"
+      ]
+    },
+    {
+      "heading": "Intellectual Property and Permitted Use",
+      "paragraphs": [
+        "All material published on this website belongs to us or to our licensors. That includes the text, graphics, page design and layout, illustrations, downloadable documents, and the underlying code. It is protected by copyright under the Copyright Act, 1957 and by equivalent law in other countries. The Arysec name and logo are our marks and may not be used without our written permission.",
+        "Third-party names we mention, including standards such as ISO/IEC 27001:2022 and the SOC 2 Trust Services Criteria, frameworks such as NIST CSF 2.0, MITRE ATT&CK and the OWASP Top 10, and the names of software products, belong to their respective owners. We refer to them to identify what we work with. A reference of that kind does not imply any partnership, endorsement, accreditation or empanelment.",
+        "You may view the site, and you may print or download extracts for your own internal reference or for evaluating whether to work with us. When you do, keep any attribution and copyright notices intact and do not alter the material. This permission is a limited licence rather than a transfer of ownership, and we may withdraw it. Without our prior written permission, you may not:"
+      ],
+      "list": [
+        "Republish, redistribute or sell our content, in whole or in part",
+        "Remove, obscure or alter any attribution, copyright or trade mark notice",
+        "Reproduce our material inside a proposal, tender response or marketing document in a way that suggests we endorse it",
+        "Frame, mirror or present the site as though it were your own",
+        "Systematically scrape, harvest or copy the site, including for building a data set or training a model",
+        "Adapt our material to build or market a competing service"
+      ]
+    },
+    {
+      "heading": "Acceptable Use and Prohibited Conduct",
+      "paragraphs": [
+        "Use this website lawfully, and in a way that does not interfere with anyone else's use of it or with its normal operation.",
+        "If we believe you have breached this section, we may restrict or block your access, remove material you have submitted, and preserve and disclose relevant records to law enforcement or a regulator where we are required or permitted to do so. Some of the conduct listed below is also an offence under the Information Technology Act, 2000.",
+        "The list that follows is not exhaustive, and it covers the conduct we most often have to address. You must not:"
+      ],
+      "list": [
+        "Attempt to gain unauthorised access to the site, its servers, or any network or system connected to it",
+        "Introduce malware, ransomware, logic bombs or any other harmful code",
+        "Launch a denial-of-service attack, or send automated traffic at a volume that degrades the site for others",
+        "Circumvent access controls, rate limits, authentication or any directive we publish for automated agents",
+        "Impersonate Arysec, our people or another user, or misrepresent your identity or affiliation",
+        "Submit material through our forms that is unlawful, defamatory, obscene, infringing or otherwise objectionable",
+        "Use our contact channels to send unsolicited marketing, bulk email or chain messages",
+        "Collect names, email addresses or telephone numbers from the site for marketing or resale",
+        "Probe, scan or test the security of the site or our infrastructure, except as described in the next section"
+      ]
+    },
+    {
+      "heading": "Security Testing and Responsible Disclosure",
+      "paragraphs": [
+        "We are a security firm, so we understand the instinct to test what we publish. Please resist it. You must not carry out any form of security testing against arysec.in, our email and messaging systems, our supporting infrastructure or our people without our prior written consent. Authorisation for client testing is given in the rules of engagement of a signed contract, and it never extends to our own systems.",
+        "Testing without authorisation breaches these terms and may be an offence under the Information Technology Act, 2000, whatever your intention. Good motives do not create consent.",
+        "If you come across a possible security weakness in one of our systems, report it to us privately rather than testing it further. Write to info@arysec.in with enough detail for us to reproduce the issue, and mark your message for the attention of our security team.",
+        "Please avoid accessing, altering or copying any data beyond the minimum needed to demonstrate the problem, avoid anything that degrades the service for other users, and give us a reasonable opportunity to fix the issue before you discuss it publicly. Reports made in good faith and in line with our responsible disclosure policy are welcome, and we handle them as that policy describes.",
+        "Activity of the following kind is never authorised against our systems, and anything you notice while using the site normally should go through the disclosure route above instead:"
+      ],
+      "list": [
+        "Vulnerability scanning, port scanning or automated enumeration of our sites and mail infrastructure",
+        "Penetration testing, fuzzing or attempts to exploit a weakness you believe you have found",
+        "Brute-force, password-spraying or credential-stuffing attempts against any authentication endpoint",
+        "Phishing, pretexting or other social engineering aimed at our partners, employees or contractors",
+        "Load testing, stress testing or anything else intended to exhaust our capacity",
+        "Physical or in-person attempts to reach our premises, staff or equipment"
+      ]
+    },
+    {
+      "heading": "Informational Content, No Advice and No Warranty",
+      "paragraphs": [
+        "We publish service descriptions, articles and reference material about security and privacy frameworks, including ISO/IEC 27001:2022, the SOC 2 Trust Services Criteria, NIST CSF 2.0, PCI DSS 4.0, the OWASP Top 10, India's Digital Personal Data Protection Act, 2023 and the EU GDPR. All of it is general information.",
+        "General information is not professional, legal or regulatory advice, and it is no substitute for advice on your own situation. What applies to you depends on your sector, the data you hold, where you and your customers are, the contracts you have signed, and the position your regulator takes. Standards and law also change, and a page may not reflect the most recent amendment. Before acting on anything here, confirm your position with qualified legal counsel and, where relevant, with your regulator or your auditor.",
+        "Reading this site, downloading a document or sending an enquiry does not create an advisory, professional or client relationship. Advice tailored to your organisation is something we provide under a signed engagement, once we understand your environment.",
+        "The site and everything on it are provided \"as is\" and \"as available\", to the fullest extent permitted by law. We take reasonable care in preparing what we publish, and we still make no warranty, express or implied, that the content is accurate, complete or current, that the site will be uninterrupted or error-free, or that the site and its server are free of viruses or other harmful components.",
+        "Any reliance you place on the content of this website is at your own risk, and you are responsible for the security of the device and network you use to reach the site, for your own anti-malware controls, and for backing up your own data. Nothing in this section excludes a warranty or condition that the law does not permit us to exclude."
+      ]
+    },
+    {
+      "heading": "Third-Party Links and Referenced Material",
+      "paragraphs": [
+        "This site links to material published by others: standards bodies, regulators, tool vendors, research groups and news sources. We include those links because they are useful, not because we control what sits on the other side of them.",
+        "Endorsement is not implied by a link, and we are not responsible for the content, accuracy, availability, security or privacy practices of any third-party site. Once you follow a link away from arysec.in, the terms and privacy notice of that site apply and you visit it at your own risk. If you find a link that is broken or that points somewhere it should not, tell us at info@arysec.in and we will look at it.",
+        "Naming a product, vendor, standard or certification scheme on this site does not indicate a partnership, reseller arrangement, endorsement, accreditation or empanelment, and it does not indicate that the owner of that scheme has reviewed or approved anything we have written."
+      ]
+    },
+    {
+      "heading": "Limitation of Liability",
+      "paragraphs": [
+        "Nothing in these terms limits or excludes any liability that cannot be limited or excluded under the applicable law, including liability for death or personal injury caused by our negligence, and liability for fraud or fraudulent misrepresentation.",
+        "Subject to that, and to the fullest extent permitted by law, we are not liable to you for any indirect, incidental, special, consequential or punitive loss, or for any loss of profit, revenue, business, contracts, goodwill, anticipated savings or data, arising out of or in connection with your use of this website, your inability to use it, or your reliance on anything published on it.",
+        "Access to this website is provided free of charge, and our total liability to you in connection with it is limited to the fullest extent the law allows. This section does not affect our liability under a signed engagement contract, which is governed by the liability provisions of that contract.",
+        "If you are dealing with us as a consumer, these limits do not affect rights you hold under consumer protection law that cannot be excluded by agreement."
+      ]
+    },
+    {
+      "heading": "Indemnity",
+      "paragraphs": [
+        "You agree to indemnify us, and to keep us indemnified, against any claim, loss, liability, damage, cost or reasonable legal expense we incur in connection with your use of this website.",
+        "We will tell you promptly about any claim covered by this section. We may take conduct of the defence of that claim at your cost, and you agree to give us reasonable cooperation. Settling a claim in a way that admits liability on our behalf requires our written agreement.",
+        "The indemnity applies to claims and costs that arise from:"
+      ],
+      "list": [
+        "Your breach of these terms, or of any additional terms published on the site",
+        "Misuse of the site, or use of it for a purpose these terms do not permit",
+        "Unauthorised access attempts or security testing carried out against our systems",
+        "Material you submit through the site that is unlawful or that infringes the rights of another party",
+        "Any breach by you of a law or regulation that applies to your use of the site"
+      ]
+    },
+    {
+      "heading": "Enquiries, Submissions and Confidentiality",
+      "paragraphs": [
+        "When you send us an enquiry through a form on this site, by email or by telephone, we treat what you tell us as confidential business information. We use it to respond, to work out whether we are the right firm for the problem, and to prepare a proposal if you ask for one. We do not publish it and we do not sell it.",
+        "Keep sensitive material out of a first enquiry. Credentials, network diagrams, live vulnerability details, penetration test reports, audit findings and personal data belonging to other people should not travel through a web form or ordinary email. If you need to share material of that kind before an engagement starts, ask us and we will put a non-disclosure agreement and a suitable channel in place first.",
+        "Ideas, suggestions or feedback you send us about our services or this website, where they are not covered by a signed non-disclosure agreement, may be used by us without any obligation of confidentiality, attribution or payment. That does not apply to information you share under an executed non-disclosure agreement or engagement contract, which we handle strictly on the terms of that agreement."
+      ]
+    },
+    {
+      "heading": "Privacy and Personal Data",
+      "paragraphs": [
+        "How we handle personal data collected through this website is set out in our privacy policy, which applies to your use of the site alongside these terms. It explains the categories of information we collect, why we collect them, the basis on which we process them, the categories of service provider who process data on our behalf, such as our hosting and email providers, how long we retain information, and the rights you can exercise.",
+        "We process personal data in line with India's Digital Personal Data Protection Act, 2023 and, where it applies to a particular set of processing, the EU GDPR. Where the site uses cookies or similar technologies, the privacy policy and any cookie notice describe what is set and how you can control it.",
+        "Questions or complaints about how we handle your personal data, and requests to exercise a right such as access, correction or erasure, should go to our Grievance Officer at info@arysec.in. We will acknowledge your request and respond within the period the applicable law requires."
+      ]
+    },
+    {
+      "heading": "Changes to These Terms and to the Site",
+      "paragraphs": [
+        "We may update these terms as the site changes, as our services change, or as the law changes. The version published on this page is the version in force, and it replaces every earlier version. Where a change is material, we will take reasonable steps to bring it to your attention on the site.",
+        "Check this page from time to time. Continuing to use the site after we publish a change means you accept the updated terms, and if you do not accept them the remedy is to stop using the site.",
+        "Parts of the site may also be changed, suspended, restricted or withdrawn without notice, including for maintenance. We are not obliged to keep any particular page, document or feature available, and we are not liable to you for making it unavailable."
+      ]
+    },
+    {
+      "heading": "Governing Law, Jurisdiction and General Terms",
+      "paragraphs": [
+        "These terms, their subject matter and their formation, and any dispute or claim arising out of or in connection with them or with your use of this website, including a non-contractual dispute or claim, are governed by and construed in accordance with the laws of India.",
+        "The courts at Mumbai, Maharashtra have exclusive jurisdiction over any such dispute or claim, and you and we submit to that jurisdiction. Where you reach the site from outside India, you do so on your own initiative, and any mandatory protection you hold under the law of your country of residence is unaffected to the extent that law says it cannot be excluded by agreement.",
+        "If a court or other competent authority finds a provision of these terms invalid or unenforceable, that provision is severed and the remainder stays in force. Our failure to enforce a provision is not a waiver of it, and a waiver given on one occasion does not waive the provision on another.",
+        "Together with our privacy policy and any additional terms published on the site, these terms are the whole of what is agreed between you and us about your use of this website. They create no partnership, agency, employment or joint venture between us, and a person who is not a party to them may not enforce them."
+      ]
+    },
+    {
+      "heading": "How to Contact Us",
+      "paragraphs": [
+        "Arysec Technologies LLP is headquartered in Mumbai, Maharashtra, India, and full registered office details are available on request. If something in these terms is unclear, or you have a question about anything published on this site, we would rather hear from you than have you guess.",
+        "Our general enquiry line is open Monday to Friday, 09:00 to 18:00 IST. Retainer and managed service clients reach us at any hour through the channels set out in their engagement contract.",
+        "Use whichever route fits your question:"
+      ],
+      "list": [
+        "Questions about these terms or about the content of this site: info@arysec.in",
+        "Possible security weakness in arysec.in or another Arysec system: info@arysec.in, marked for the attention of our security team, under our responsible disclosure policy",
+        "Personal data requests and privacy complaints: our Grievance Officer at info@arysec.in",
+        "Service enquiries, scoping conversations and proposals: info@arysec.in or +91 90048 57727"
+      ]
+    }
+  ]
+}

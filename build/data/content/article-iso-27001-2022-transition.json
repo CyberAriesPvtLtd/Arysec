@@ -1,0 +1,110 @@
+{
+  "slug": "iso-27001-2022-transition",
+  "title": "ISO 27001:2022 — What Changed and What It Means for Your ISMS",
+  "category": "Compliance",
+  "metaTitle": "ISO 27001:2022: What Changed for Your ISMS",
+  "metaDescription": "ISO 27001:2022 restructured Annex A into 93 controls across four themes and added 11 new ones. What changed in clauses 4 to 10, and how to update your ISMS.",
+  "excerpt": "ISO 27001:2022 reorganised Annex A into 93 controls across four themes and added eleven new ones. A practitioner's guide to what genuinely changed, what it means for your Statement of Applicability, and how to sequence the work.",
+  "readingTime": "7 min read",
+  "keyTakeaways": [
+    "The 2022 revision restructures Annex A into 93 controls across four themes; the requirements in clauses 4 to 10 barely moved.",
+    "Fewer controls does not mean less work: 57 old controls merged into 24, each carrying combined expectations plus new guidance.",
+    "Eleven new controls cover threat intelligence, cloud services, secure coding, data masking, deletion, leakage prevention, monitoring, web filtering and configuration management.",
+    "Rebuild the risk assessment and treatment plan first, then regenerate the Statement of Applicability from it, never the reverse."
+  ],
+  "sections": [
+    {
+      "heading": "What the 2022 revision actually changed",
+      "paragraphs": [
+        "ISO/IEC 27001:2022 was published in October 2022, eight months after ISO/IEC 27002:2022 reworked the control guidance it depends on. The headline everyone repeats is that 114 controls became 93. That count is also the least interesting part of the revision, because almost nothing moved in the requirements that decide whether your management system passes an audit.",
+        "You still scope the ISMS, run a repeatable risk assessment, decide treatments, produce a Statement of Applicability, set objectives, audit yourself and act on nonconformities. An organisation with a working 2013 ISMS is renumbering and reconciling, not rebuilding. The risk is misjudging that scale in either direction: treat it as a documentation refresh and the new controls catch you out, treat it as a fresh implementation and you spend months re-proving what already worked."
+      ]
+    },
+    {
+      "heading": "Annex A: four themes instead of fourteen domains",
+      "paragraphs": [
+        "The 2013 Annex A ran from A.5 to A.18 across 14 domains. The 2022 Annex A has four themes: organisational controls at A.5 with 37 entries, people controls at A.6 with 8, physical controls at A.7 with 14, and technological controls at A.8 with 34.",
+        "The arithmetic behind the reduction matters more than the total. Eleven controls are new, 24 were formed by merging 57 of the old ones, and the rest carried across with revised titles or tightened wording. Duplication was removed rather than obligations dropped, and a merged control usually carries the combined expectations of its predecessors plus fresh guidance in ISO/IEC 27002:2022, so a control you consider settled may now ask for more than it did.",
+        "One change of principle sits underneath the renumbering. Clause 6.1.3 asks you to compare your determined controls against Annex A so nothing necessary is omitted, but the 2022 text is explicit that the annex is not exhaustive and that controls may be drawn from any source. The risk assessment determines the control set; the annex is a completeness check rather than a shopping list."
+      ]
+    },
+    {
+      "heading": "The eleven new controls",
+      "paragraphs": [
+        "These are the only places where the 2022 standard asks for something the 2013 version did not. Most organisations already do several informally; the requirement is to make them deliberate and evidenced."
+      ],
+      "list": [
+        "A.5.7 Threat intelligence: analyse threat information relevant to your sector and act on it, rather than subscribing to a feed nobody reads.",
+        "A.5.23 Information security for use of cloud services: define how cloud services are acquired, used, managed and exited, including where shared responsibility falls.",
+        "A.5.30 ICT readiness for business continuity: derive ICT recovery objectives from a business impact analysis, then test whether you can meet them.",
+        "A.7.4 Physical security monitoring: monitor premises for unauthorised access using alarms, guards or cameras, and review what they record.",
+        "A.8.9 Configuration management: define, apply and review secure baselines for hardware, software, services and networks, and detect drift from them.",
+        "A.8.10 Information deletion: remove data no longer required from systems, devices and cloud services, recording method and evidence.",
+        "A.8.11 Data masking: mask, pseudonymise or anonymise sensitive data where full values are not needed, starting with test environments.",
+        "A.8.12 Data leakage prevention: detect and prevent unauthorised disclosure across endpoints, email, collaboration platforms, cloud storage and removable media.",
+        "A.8.16 Monitoring activities: watch networks, systems and applications for anomalous behaviour, and define in advance what counts as an incident.",
+        "A.8.23 Web filtering: restrict access to sites known to distribute malicious content or conflicting with your acceptable use position.",
+        "A.8.28 Secure coding: apply secure coding principles across the development lifecycle, including code review, dependency management and third-party components."
+      ]
+    },
+    {
+      "heading": "Attributes, and whether they are worth your time",
+      "paragraphs": [
+        "Every control in the 2022 Annex A carries five attribute types, each written as a hashtag value: control type (preventive, detective, corrective), information security properties (confidentiality, integrity, availability), cybersecurity concepts following the identify, protect, detect, respond and recover structure of the NIST Cybersecurity Framework, fifteen operational capabilities such as governance and identity and access management, and four security domains including protection, defence and resilience.",
+        "Attributes are informative, not normative. No auditor will raise a nonconformity because you ignored them, and you may define your own. Where they earn their place is reporting: filtering by cybersecurity concept shows leadership where coverage is thin, and many organisations find they are heavy on protect and light on detect and recover. Filtering by operational capability is often a faster route to accountable owners than the old domain structure."
+      ]
+    },
+    {
+      "heading": "Changes in clauses 4 to 10",
+      "paragraphs": [
+        "The clause changes are modest, but an auditor checks them first, and several need a documented artefact rather than a statement of intent. The last item below arrived later, as an amendment to the harmonised text shared across management system standards."
+      ],
+      "list": [
+        "Clause 4.2 now asks which interested party requirements will be addressed through the ISMS, not simply that you have identified them.",
+        "Determining the processes needed for the ISMS and their interactions is added to clause 4.4.",
+        "Planning of changes arrives as a new clause 6.3, requiring changes to the ISMS to be made in a planned manner.",
+        "Objectives under clause 6.2 must be monitored and available as documented information.",
+        "Operational planning in clause 8.1 requires criteria for the processes, control of those processes against the criteria, and control of externally provided processes.",
+        "Internal audit splits into 9.2.1 and 9.2.2, and management review into 9.3.1, 9.3.2 and 9.3.3, with changes in interested party needs added as a review input.",
+        "Improvement is reordered so continual improvement becomes 10.1 and nonconformity and corrective action becomes 10.2.",
+        "Amendment 1, issued in 2024, adds a requirement in clause 4.1 to determine whether climate change is a relevant issue, and a note in 4.2 on climate-related requirements from interested parties. A recorded conclusion that it is not material is acceptable; silence is not."
+      ]
+    },
+    {
+      "heading": "If you are still on the 2013 structure",
+      "paragraphs": [
+        "The transition window closed on 31 October 2025 under the accreditation rules certification bodies work to. Certificates issued against ISO/IEC 27001:2013 ceased to be valid on that date whatever expiry was printed on them. Organisations that moved in time did so through a transition audit added to a scheduled surveillance or recertification visit.",
+        "If your certificate lapsed, you are no longer transitioning. You are certifying, which means a stage 1 and stage 2 audit against the 2022 standard, and an ISMS that can show a completed cycle of operation: risk assessment, internal audit, management review and corrective action. Confirm your exact position with your certification body before committing to dates, because arrangements differ between bodies and accreditation regimes. There is a commercial dimension too, since due diligence questionnaires now ask for the certificate number, the standard version and the scope statement."
+      ]
+    },
+    {
+      "heading": "Rebuilding the Statement of Applicability and risk treatment",
+      "paragraphs": [
+        "The Statement of Applicability is where transitions succeed or stall. It has to cover all 93 controls under their 2022 identifiers and record, for each one, whether it applies, the justification for inclusion or exclusion, its implementation status and where the supporting evidence sits. A document carrying 2022 numbers over 2013 content is the most common defect we see.",
+        "Work from the mapping tables in the annexes of ISO/IEC 27002:2022, which cross-reference the 2022 controls to their 2013 predecessors and back again. Build that mapping as a working sheet before touching the live document, and keep an old-reference column in the finished version.",
+        "Risk treatment is the part teams forget. Every control claimed in the Statement of Applicability should trace to a risk in the register and a decision in the treatment plan, and when 57 controls collapsed into 24 many of those links broke unnoticed. Re-run the risk assessment rather than patching references. With the eleven new controls in front of you, it tends to surface risks that were never articulated, particularly around cloud administration, data retention and deletion, and detection coverage."
+      ]
+    },
+    {
+      "heading": "A sensible sequence",
+      "paragraphs": [
+        "The order of work decides how much rework you do; this sequence keeps the risk assessment upstream of everything it should drive."
+      ],
+      "list": [
+        "Read clauses 4 to 10 against your existing management system first and note the documented information changes. A short exercise here prevents a long one later.",
+        "Map current controls to the 2022 identifiers using the ISO/IEC 27002:2022 annex tables, recording merges explicitly instead of forcing one-to-one matches.",
+        "Assess the eleven new controls as risks before deciding they are gaps, because applicability is a risk decision, not a checklist entry.",
+        "Update the risk assessment and treatment plan, then regenerate the Statement of Applicability from them.",
+        "Renumber control references across policies, procedures, supplier contracts, awareness material, the internal audit programme and any GRC tooling, which is the largest hidden effort in most transitions.",
+        "Run one internal audit against the 2022 structure and take the results, with the transition decision, to a management review.",
+        "Close the nonconformities that audit raises before the external visit, and keep the corrective action records as evidence that improvement is working."
+      ]
+    },
+    {
+      "heading": "Where we help",
+      "paragraphs": [
+        "Arysec provides ISO 27001 readiness support: gap assessment against the 2022 structure, risk assessment facilitation, rebuilding the Statement of Applicability and risk treatment plan, policy consolidation, and internal audit support. We prepare you for the certification audit and work alongside your team through it. The certificate is issued by your certification body, which stays independent of us. A scoped gap assessment is the usual starting point. Reach us at info@arysec.in or +91 90048 57727."
+      ]
+    }
+  ]
+}

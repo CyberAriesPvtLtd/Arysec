@@ -1,0 +1,132 @@
+{
+  "slug": "dpo",
+  "name": "DPO as a Service",
+  "shortName": "DPO",
+  "category": "Governance & Advisory",
+  "metaTitle": "Outsourced DPO as a Service | DPDP Act 2023 & GDPR",
+  "metaDescription": "Arysec provides an outsourced Data Protection Officer for DPDP Act 2023 and EU GDPR duties: RoPA, DPIAs, consent, rights requests and breach notification.",
+  "cardSummary": "An appointed Data Protection Officer, delivered as a service: privacy governance, records of processing, impact assessments, rights requests and breach notification under the DPDP Act and GDPR.",
+  "heroHeadline": "A Named DPO Who Owns Your Privacy Obligations",
+  "heroSub": "We take on the Data Protection Officer role for your organisation, covering DPDP Act 2023 and EU GDPR duties. You get a qualified, independent point of contact for regulators, data principals and your own board.",
+  "highlights": [
+    { "value": "Appointed", "label": "Named officer of record" },
+    { "value": "Independent", "label": "No conflict of interest" },
+    { "value": "Two regimes", "label": "DPDP Act and GDPR" }
+  ],
+  "intro": {
+    "heading": "The Role, Filled Properly",
+    "paragraphs": [
+      "The DPDP Act 2023 places duties on every Data Fiduciary, and organisations the Central Government notifies as Significant Data Fiduciaries must appoint a Data Protection Officer based in India, answerable to the board or an equivalent governing body, who acts as the contact point for grievance redressal. Under the EU GDPR, Article 37 requires a designation where an organisation is a public body, where core activities involve regular and systematic monitoring of individuals on a large scale, or where they involve large-scale processing of special category or criminal conviction data. Whether either trigger applies to you is a question of fact, and we recommend you confirm your position with counsel.",
+      "The work is continuous rather than occasional. Someone has to keep the record of processing activities current, decide when a data protection impact assessment is required, test the lawful basis behind each purpose, answer access and erasure requests inside statutory deadlines, judge whether an incident meets a notification threshold, and stay across cross-border transfer arrangements as products and vendors change. Article 39 of the GDPR sets out those tasks in list form; the DPDP Act reaches similar ground through fiduciary duties and the additional obligations placed on Significant Data Fiduciaries.",
+      "Article 37(6) of the GDPR allows the role to be filled on the basis of a service contract, and there is a structural reason to do so. Article 38(6) bars other duties that create a conflict of interests, which makes a head of IT, marketing or human resources awkward to appoint: each of them decides how personal data gets used. An appointed external officer does not set purposes or means, so the independence the law expects is easier to evidence. Our reporting line is to your board, not to the function under review."
+    ]
+  },
+  "capabilities": {
+    "heading": "What The Role Covers",
+    "items": [
+      {
+        "title": "Appointment And Contact Point",
+        "description": "We name a qualified officer, publish the contact details your privacy notice must carry, and act as the point of contact for regulators, data principals and grievance escalations."
+      },
+      {
+        "title": "Data Mapping And RoPA",
+        "description": "Interviews with process owners, system inventories and discovery tooling produce a record of processing activities per Article 30: purposes, categories, recipients, retention periods, transfers and safeguards, maintained as a living register."
+      },
+      {
+        "title": "Consent And Lawful Basis",
+        "description": "Every processing purpose gets a documented basis. We review notice wording, consent capture and withdrawal journeys, children's data handling, and the record you would need to show an adjudicating authority."
+      },
+      {
+        "title": "Impact Assessments",
+        "description": "Screening criteria decide which projects need a DPIA. We run the assessment against ISO/IEC 29134 structure, document residual risk, and advise when prior consultation with a supervisory authority is warranted."
+      },
+      {
+        "title": "Rights And Grievance Handling",
+        "description": "A workflow for access, correction, erasure, portability and objection: identity verification, search across systems, exemption analysis, redaction of third-party data, and a defensible response inside the statutory clock."
+      },
+      {
+        "title": "Breach Assessment And Notification",
+        "description": "When an incident touches personal data we assess severity, decide whether thresholds are met, draft the regulator filing and the notice to affected individuals, and keep the internal breach register."
+      }
+    ]
+  },
+  "deliverables": {
+    "heading": "What Lands On Your Desk",
+    "intro": "Documents you can hand to a regulator, an auditor or an enterprise customer's privacy team, kept current rather than written once and filed.",
+    "items": [
+      "Record of processing activities, maintained per business function",
+      "Data flow maps covering systems, vendors and jurisdictions",
+      "Privacy notices, consent artefacts and withdrawal journeys",
+      "DPIA reports with residual risk and treatment decisions",
+      "Cross-border transfer inventory with safeguard mechanisms",
+      "Rights request procedure, response templates and case log",
+      "Breach assessment playbook and statutory notification drafts",
+      "Role-based privacy training material and completion records"
+    ]
+  },
+  "process": [
+    {
+      "title": "Scoping",
+      "description": "We establish which regimes apply, whether a designation is mandatory or voluntary, and where your processing sits today. The output is a scope note and a prioritised gap list."
+    },
+    {
+      "title": "Mapping",
+      "description": "Workshops with product, engineering, marketing, human resources and finance produce the processing inventory. We trace each data set to its purpose, lawful basis, retention period, processors and transfer route."
+    },
+    {
+      "title": "Remediation",
+      "description": "Gaps get owners and dates. Typical work includes rewriting notices, fixing consent capture, tightening processor contracts, building the rights request workflow, and running the first round of privacy training."
+    },
+    {
+      "title": "Standing Duty",
+      "description": "From then on the officer is on call: DPIAs for new projects, rights requests, incident assessment, vendor reviews, regulator correspondence, and a quarterly report to your board or audit committee."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Independence You Can Show",
+      "description": "An external officer does not set the purposes and means of processing, so the conflict of interests bar in Article 38(6) is straightforward to satisfy and evidence."
+    },
+    {
+      "title": "Depth Without A Headcount",
+      "description": "You get privacy law, security and engineering perspectives from a team rather than one hire, at a fixed monthly fee scoped to your processing footprint."
+    },
+    {
+      "title": "Faster Enterprise Deals",
+      "description": "Procurement and vendor security questionnaires ask who your DPO is and to see your RoPA. Having named answers and current documents shortens the review cycle."
+    },
+    {
+      "title": "Continuity Through Change",
+      "description": "Cover does not lapse when an individual resigns or goes on leave. A backup officer knows your estate, and the documentation stays with you either way."
+    }
+  ],
+  "whoItsFor": [
+    "Organisations notified or likely to be notified as Significant Data Fiduciaries under the DPDP Act",
+    "Indian firms serving EU customers who need a GDPR designation and a documented privacy programme",
+    "Fintech, health and edtech platforms processing sensitive or children's data at volume",
+    "Companies whose head of IT or legal currently holds the role in name only"
+  ],
+  "faqs": [
+    {
+      "question": "Do we actually need a DPO, or is this optional for us?",
+      "answer": "It depends on facts we can establish quickly. Under the DPDP Act 2023 the appointment obligation attaches to organisations the Central Government notifies as Significant Data Fiduciaries. Under the GDPR, Article 37 triggers on public authority status, large-scale regular and systematic monitoring, or large-scale special category processing. Many organisations appoint voluntarily because enterprise customers ask. We assess your position and tell you plainly, and we recommend you confirm the conclusion with your legal counsel."
+    },
+    {
+      "question": "Can an outsourced DPO really be independent and accountable?",
+      "answer": "Article 37(6) of the GDPR permits the tasks to be performed under a service contract. The DPDP Act requires a Significant Data Fiduciary's officer to be based in India and answerable to its governing body, and we structure the engagement to meet that, though we recommend confirming it with counsel. Accountability comes from the terms: a named individual, a defined reporting line, response commitments, and employee-equivalent confidentiality duties. Independence is easier to show externally, since we do not own the systems or budgets the role scrutinises."
+    },
+    {
+      "question": "How does this overlap with our existing legal or security team?",
+      "answer": "It should not duplicate them. Your counsel owns legal risk and contracts; your security team owns controls and incident response. The DPO role sits across both, deciding whether processing is lawful, whether a DPIA is needed, and whether an incident crosses a notification threshold. We take the recurring privacy workload off both teams and escalate when a decision needs their authority. Everything we produce stays in your systems, so bringing the role in-house later is a handover, not a rebuild."
+    },
+    {
+      "question": "What happens during a breach, and how fast can you move?",
+      "answer": "Your incident team contains and investigates; the DPO runs the regulatory track in parallel. We assess whether personal data was affected, the categories and volume involved, and the likely harm to individuals. That determines whether notification duties apply. The GDPR sets 72 hours from awareness for the supervisory authority, and Indian requirements including the DPDP Act and the CERT-In directions have their own clocks. We keep pre-approved drafts so the filing is a review, not a writing exercise."
+    },
+    {
+      "question": "Can we move personal data out of India, or out of the EU?",
+      "answer": "Usually yes, with the right mechanism and evidence. The DPDP Act allows transfers except to territories the Central Government restricts, and sector rules such as the Reserve Bank of India's payment data requirements may still bind you. Under the GDPR you need an adequacy decision, standard contractual clauses, binding corporate rules or a derogation, plus a transfer impact assessment where the destination warrants it. We inventory every route, attach the mechanism, and flag the ones that will not survive scrutiny."
+    }
+  ],
+  "related": ["data-protection", "iso-27001", "vciso"]
+}

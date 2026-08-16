@@ -1,0 +1,132 @@
+{
+  "slug": "iso-27001",
+  "name": "ISO 27001 Implementation & Certification Support",
+  "shortName": "ISO 27001",
+  "category": "Audit, Testing & Compliance",
+  "metaTitle": "ISO 27001:2022 Implementation & Certification Support",
+  "metaDescription": "Arysec builds your ISO/IEC 27001:2022 ISMS: scope, risk treatment, Statement of Applicability, Annex A controls and support through Stage 1 and Stage 2.",
+  "cardSummary": "A dedicated ISO/IEC 27001:2022 ISMS build: scope, risk methodology, Statement of Applicability, the 93 Annex A controls, internal audit and support through Stage 1 and Stage 2.",
+  "heroHeadline": "An ISMS Built to Pass Stage 2",
+  "heroSub": "We build the management system ISO/IEC 27001:2022 actually asks for: a defensible scope, a risk method your auditor can follow, a justified Statement of Applicability and operating records. Your accredited certification body issues the certificate; we get you ready for it.",
+  "highlights": [
+    { "value": "27001:2022", "label": "Current standard and Amendment 1" },
+    { "value": "93 Controls", "label": "Annex A, four themes" },
+    { "value": "Audit Support", "label": "Stage 1 through recertification" }
+  ],
+  "intro": {
+    "heading": "What Certification Actually Requires",
+    "paragraphs": [
+      "ISO/IEC 27001:2022 certifies a management system, not a level of security. The requirements sit in clauses 4 to 10, covering context, leadership, planning, support, operation, performance evaluation and improvement, and they describe a cycle you run continuously rather than a project you finish. Annex A is a reference set of 93 controls you select from, not a list to implement in full. Most nonconformities raised at certification are written against the clauses rather than the controls: a scope that cannot be justified, a risk assessment nobody repeated, an internal audit programme that never covered the whole standard.",
+      "We build the system in the order the standard depends on. Scope comes first, drawn around the services, locations, people and information systems that carry the risk your customers care about, with interfaces and dependencies stated so an auditor can see what sits outside the boundary and why. Then the risk method: criteria for acceptance and for performing assessments, identification of risks to confidentiality, integrity and availability, named risk owners, and treatment decisions recorded as modify, retain, avoid or share. The Statement of Applicability falls out of that work. It is not a spreadsheet written at the end to satisfy clause 6.1.3; it is the record of which controls you judged necessary, why the rest are excluded, and what status each one is in.",
+      "One boundary is fixed from the start. Arysec implements, prepares and supports; we do not certify. Your certificate is issued by a certification body accredited by a member of the International Accreditation Forum, such as NABCB in India, UKAS or ANAB, and that body's own rules prevent it from consulting on a system it audits. We help you brief and compare certification bodies, prepare the scope and headcount details their quotation depends on, and sit with you through both audit stages. Where a sector obligation interacts with certification, confirm your specific position with your legal or compliance adviser."
+    ]
+  },
+  "capabilities": {
+    "heading": "How We Build the ISMS",
+    "items": [
+      {
+        "title": "Scope and Context",
+        "description": "We define the ISMS boundary against your services, sites, cloud tenancies and people, then document internal and external issues, interested parties and their requirements, including the climate change considerations added by Amendment 1:2024."
+      },
+      {
+        "title": "Risk Assessment Method",
+        "description": "Your methodology is written to be repeatable: acceptance criteria, an asset or scenario based identification approach informed by ISO/IEC 27005, consistent likelihood and impact scales, named risk owners and a treatment plan they approve."
+      },
+      {
+        "title": "Annex A Controls",
+        "description": "Controls are implemented across the four themes, 37 organisational, 8 people, 14 physical and 34 technological, using ISO/IEC 27002:2022 guidance for the newer ones such as threat intelligence, cloud services and data leakage prevention."
+      },
+      {
+        "title": "Statement of Applicability",
+        "description": "Every one of the 93 controls carries a decision: necessary or excluded, the justification for that decision, the implementation status and the link back to the risks and legal obligations that made it necessary."
+      },
+      {
+        "title": "Documented Information",
+        "description": "Policies, procedures and records are drafted to fit how your teams already work, version controlled, and kept to what clause 7.5 and the selected controls require rather than padding the system with unread documents."
+      },
+      {
+        "title": "Internal Audit and Review",
+        "description": "We run the first internal audit against the full standard, raise findings with corrective actions, then prepare and facilitate a management review covering every input that clause 9.3 lists."
+      }
+    ]
+  },
+  "deliverables": {
+    "heading": "The ISMS You Own",
+    "intro": "Certification is the visible outcome, but what you keep is the management system itself. These are the documents and records handed over, maintained in your own repository.",
+    "items": [
+      "ISMS scope statement with boundaries, interfaces and exclusions",
+      "Information security policy and supporting topic-specific policies",
+      "Risk assessment methodology and populated risk register",
+      "Statement of Applicability covering all 93 Annex A controls",
+      "Treatment plan with named owners and residual risk acceptances",
+      "Procedures and records mapped to the selected controls",
+      "Internal audit programme, checklists and first audit report",
+      "Management review pack, minutes and corrective action register"
+    ]
+  },
+  "process": [
+    {
+      "title": "Scope and Assess",
+      "description": "We fix the ISMS boundary, document context and interested parties, then run the first risk assessment and a gap review against clauses 4 to 10 and the 93 controls."
+    },
+    {
+      "title": "Build",
+      "description": "Policies, procedures and controls are implemented against the treatment plan. We draft what can be drafted, configure alongside your engineers where tooling is involved, and train the control owners who will run each one."
+    },
+    {
+      "title": "Operate and Audit",
+      "description": "The system runs for a period so records accumulate. Internal audit covers the whole standard, corrective actions close, and top management holds a documented review before we declare you ready for certification."
+    },
+    {
+      "title": "Certify and Sustain",
+      "description": "We support Stage 1 and Stage 2 on site, respond to findings, and then hand you an annual calendar for risk reviews, internal audits and the surveillance visits that keep the certificate live."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "A Scope You Can Defend",
+      "description": "Scope decisions are documented against risk and customer expectation, so you neither certify the whole company unnecessarily nor draw a boundary a buyer will dismiss as meaningless."
+    },
+    {
+      "title": "Fewer Findings at Stage 2",
+      "description": "Our internal audit is run to the same depth a certification auditor uses, so the issues that would become nonconformities surface while you still have time to correct them."
+    },
+    {
+      "title": "Reusable Control Evidence",
+      "description": "Annex A controls map directly onto SOC 2 criteria, DPDP Act 2023 obligations and customer security questionnaires, so the same evidence answers several demands instead of being rebuilt each time."
+    },
+    {
+      "title": "A System Your Team Runs",
+      "description": "Control owners are trained and the recurring calendar is set during the build, so the second year does not need a consultant to survive the surveillance audit."
+    }
+  ],
+  "whoItsFor": [
+    "SaaS and technology firms whose enterprise buyers make certification a condition of contract",
+    "IT and business process outsourcing providers serving European or Japanese clients that expect an ISMS",
+    "Organisations whose ISO/IEC 27001:2013 certificate lapsed and now need a fresh 2022 certification",
+    "Banks, NBFCs and insurers aligning information security governance to a recognised international standard"
+  ],
+  "faqs": [
+    {
+      "question": "How long does certification realistically take from a standing start?",
+      "answer": "For a first certification with a focused scope, six to nine months is realistic; a multi-site or multi-entity scope runs nine to fifteen. The constraint is rarely documentation. It is the operating record: your certification body needs to see the risk assessment, internal audit, management review and at least two to three months of controls actually running. Stage 1 usually sits four to eight weeks before Stage 2, and certification bodies book out, so the audit dates are worth reserving early."
+    },
+    {
+      "question": "Do we have to implement all 93 Annex A controls?",
+      "answer": "No. Clause 6.1.3 requires you to determine the controls necessary to implement your chosen risk treatments, compare that set against Annex A to check nothing was missed, and then justify inclusions and exclusions in the Statement of Applicability. In practice, few controls are excludable. Secure development can be excluded by an organisation that writes no software, and some physical controls fall away for a fully remote team. Exclusions written to avoid work get challenged at Stage 1, so we test each one against evidence before it goes in."
+    },
+    {
+      "question": "We were certified to ISO/IEC 27001:2013. Where does that leave us?",
+      "answer": "The transition window set by the International Accreditation Forum closed on 31 October 2025, and certificates issued against the 2013 edition are no longer valid. If you transitioned in time, your existing cycle continues and the 2022 requirements are audited at surveillance. If you did not, you are starting a new certification rather than an upgrade, though the existing controls, records and policies carry most of the work. We rebuild the Statement of Applicability against the 93 restructured controls and address the eleven that are new."
+    },
+    {
+      "question": "Can you write the documents and leave our team out of it?",
+      "answer": "We can write the documents, and a system built only from documents fails Stage 2. Certification auditors interview control owners, sample records and ask people to describe what they actually do. If your access review exists as a policy but nobody performed it, that is a nonconformity regardless of how the document reads. Expect two to four hours per control owner, a half day each for the risk workshop and management review, and engineering time wherever a control needs a configuration change rather than a procedure."
+    },
+    {
+      "question": "What does keeping the certificate cost us in effort after year one?",
+      "answer": "Certification runs on a three-year cycle. Surveillance audits follow in the next two years, narrower than Stage 2 but focused on whether the system still operates, and recertification falls due before the third anniversary. Between visits you owe a repeated risk assessment, an internal audit covering every clause and applicable control across the cycle, a management review, and closed corrective actions. We hand this over with a calendar and templates. Clients who retain us for the annual internal audit get a team that did not build the system."
+    }
+  ],
+  "related": ["vciso", "vapt", "security-audit-compliance"]
+}

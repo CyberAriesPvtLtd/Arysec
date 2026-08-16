@@ -1,0 +1,292 @@
+{
+  "metaTitle": "Industries We Serve: Sector-Specific Security",
+  "metaDescription": "Arysec brings sector context to security and compliance for banking, insurance, healthcare, SaaS, manufacturing, retail, logistics and professional services.",
+  "heroHeadline": "Security Built Around Your Sector",
+  "heroSub": "Threats, regulators and operating constraints differ by industry. We bring the sector context to the engagement rather than learning it on your time, and we recommend you confirm your own regulatory position with counsel.",
+  "industries": [
+    {
+      "slug": "banking-financial-services",
+      "name": "Banking & Financial Services",
+      "summary": "Banks, NBFCs, cooperative banks, payment aggregators and fintech lenders operate under close supervisory attention, handle money movement in real time, and carry outsourcing chains that regulators expect you to govern as carefully as your own systems.",
+      "challenges": [
+        "Account takeover and mule networks driven by credential stuffing, SIM swap and social engineering.",
+        "Third-party and API risk across lending service providers, co-lending partners and core banking vendors.",
+        "Incident reporting timelines that leave little room for slow detection or unclear escalation paths.",
+        "Legacy core systems and branch networks that resist patching, segmentation and modern authentication."
+      ],
+      "howWeHelp": [
+        {
+          "title": "Supervisory Readiness Reviews",
+          "description": "We map your controls against the RBI expectations that apply to your entity class, ISO/IEC 27001:2022 and internal audit scope, then hand you a gap register with owners and dates."
+        },
+        {
+          "title": "Payment Stack Testing",
+          "description": "Application, API and network testing across net banking, UPI and card flows, run against OWASP ASVS and PCI DSS 4.0 requirements, with retesting included after your fixes land."
+        },
+        {
+          "title": "Fraud Detection Engineering",
+          "description": "Detection content tuned for financial abuse patterns in your SIEM, mapped to MITRE ATT&CK, so account takeover and unusual payment behaviour raise an alert someone actually owns."
+        },
+        {
+          "title": "Outsourcing Governance",
+          "description": "Vendor risk tiering, security clauses for service provider contracts, and periodic assessment of the partners handling your customer data, so oversight of the chain is documented."
+        }
+      ],
+      "regulations": [
+        "RBI cyber security directions",
+        "SEBI cyber resilience framework",
+        "PCI DSS 4.0",
+        "DPDP Act 2023",
+        "ISO/IEC 27001:2022"
+      ]
+    },
+    {
+      "slug": "insurance",
+      "name": "Insurance",
+      "summary": "Insurers, brokers and third-party administrators hold health records, financial detail and claims history in one place. That concentration, plus long-lived policy data and a wide intermediary network, shapes every security decision you make.",
+      "challenges": [
+        "Claims fraud and identity misuse enabled by weak verification at intermediary and agent portals.",
+        "Sensitive health and financial data retained for decades across policy administration and legacy archives.",
+        "Large intermediary networks with shared logins, personal devices and uneven security awareness.",
+        "Digital claims journeys and partner integrations that expose APIs to unauthenticated data access."
+      ],
+      "howWeHelp": [
+        {
+          "title": "Data Discovery and Classification",
+          "description": "We locate policyholder and health data across core systems, shared drives and archives, classify it, and set retention and access rules you can defend to a regulator."
+        },
+        {
+          "title": "Intermediary Access Control",
+          "description": "Identity and access management for agents, brokers and administrators: unique accounts, multi-factor authentication, least privilege on policy data, and periodic recertification with an audit trail."
+        },
+        {
+          "title": "Claims Platform Testing",
+          "description": "Security testing of claims portals, customer apps and partner APIs, covering authorisation flaws that let one policyholder reach another's records, with fixes verified on retest."
+        },
+        {
+          "title": "Breach Response Planning",
+          "description": "Playbooks, a tested escalation path and rehearsed notification steps for the IRDAI and DPDP timelines your legal team confirms, so the first hour is not improvised."
+        }
+      ],
+      "regulations": [
+        "IRDAI cyber security guidelines",
+        "DPDP Act 2023",
+        "ISO/IEC 27001:2022",
+        "SOC 2"
+      ]
+    },
+    {
+      "slug": "healthcare-life-sciences",
+      "name": "Healthcare & Life Sciences",
+      "summary": "Hospitals, diagnostic chains, digital health platforms and pharmaceutical firms combine clinical uptime pressure with some of the most sensitive personal data there is, alongside connected medical devices nobody wants taken offline for patching.",
+      "challenges": [
+        "Ransomware against hospital information systems, where downtime becomes a clinical safety problem within hours.",
+        "Medical devices and imaging equipment running unsupported operating systems on flat clinical networks.",
+        "Research and trial data shared with sponsors, CROs and academic partners across borders.",
+        "Patient portals and health apps handling records that carry lifelong consequences if exposed."
+      ],
+      "howWeHelp": [
+        {
+          "title": "Clinical Network Segmentation",
+          "description": "We separate medical devices, clinical workstations and administrative IT so an infected billing machine cannot reach an imaging modality, using compensating controls where patching is not permitted."
+        },
+        {
+          "title": "Ransomware Recovery Testing",
+          "description": "Backup design, immutability checks and a restore exercise against your hospital information system, so recovery time is a measured figure rather than a vendor's promise."
+        },
+        {
+          "title": "Privacy Programme Build",
+          "description": "Consent, purpose limitation, retention and data subject request handling built for clinical reality, aligned to the DPDP Act 2023 and, where you serve overseas patients, HIPAA or GDPR expectations."
+        },
+        {
+          "title": "Third-Party Clinical Vendors",
+          "description": "Assessment of labs, billing partners, teleradiology providers and cloud EMR vendors, with security terms in contracts and a review cycle proportionate to the data each one touches."
+        }
+      ],
+      "regulations": [
+        "DPDP Act 2023",
+        "HIPAA",
+        "EU GDPR",
+        "ISO/IEC 27001:2022",
+        "SOC 2"
+      ]
+    },
+    {
+      "slug": "technology-saas",
+      "name": "Technology & SaaS",
+      "summary": "Software companies sell to buyers whose procurement teams audit them. Your security posture is a revenue dependency, tested by questionnaires, penetration test reports and certification evidence long before a contract is signed.",
+      "challenges": [
+        "Enterprise security questionnaires and vendor reviews stalling deals late in the sales cycle.",
+        "Multi-tenant architecture where a single authorisation flaw exposes one customer's data to another.",
+        "Cloud misconfiguration and over-permissive IAM roles accumulating faster than anyone reviews them.",
+        "Supply chain exposure through open-source dependencies, build pipelines and third-party integrations."
+      ],
+      "howWeHelp": [
+        {
+          "title": "Certification Readiness",
+          "description": "We prepare you for ISO/IEC 27001:2022 or SOC 2 audits: scope, gap analysis, control implementation, evidence collection and auditor liaison, so the assessment holds no surprises."
+        },
+        {
+          "title": "Questionnaire and Diligence Support",
+          "description": "Your sales team gets a maintained answer library, a trust summary and a security lead who joins prospect calls, so procurement reviews stop landing on engineering."
+        },
+        {
+          "title": "Application and API Testing",
+          "description": "Grey-box testing against OWASP Top 10 and ASVS, with tenant isolation and authorisation logic treated as first-class test cases, plus SAST and DAST wired into your pipeline."
+        },
+        {
+          "title": "Cloud Posture Management",
+          "description": "Configuration review of AWS, Azure or GCP against CIS Benchmarks, identity permissions trimmed to what workloads use, and CSPM tuned so alerts reflect real risk."
+        }
+      ],
+      "regulations": [
+        "SOC 2",
+        "ISO/IEC 27001:2022",
+        "DPDP Act 2023",
+        "EU GDPR",
+        "PCI DSS 4.0"
+      ]
+    },
+    {
+      "slug": "manufacturing",
+      "name": "Manufacturing",
+      "summary": "Plants run equipment older than the security tools meant to protect it. Production lines cannot pause for patching, engineering data is worth stealing, and IT and OT networks are often more connected than the drawings suggest.",
+      "challenges": [
+        "Legacy PLCs, SCADA and HMI systems that cannot be patched without a production window.",
+        "Flat plant networks where an office phishing email reaches shop floor controllers.",
+        "Intellectual property theft targeting designs, formulations, tooling data and process know-how.",
+        "Remote access for equipment vendors, often through shared credentials and unmanaged tools."
+      ],
+      "howWeHelp": [
+        {
+          "title": "OT Asset Visibility",
+          "description": "Passive discovery of what is actually on the plant network, including controllers and engineering workstations nobody documented, producing an asset inventory that survives the next audit."
+        },
+        {
+          "title": "IT and OT Segmentation",
+          "description": "Zone and conduit design informed by IEC 62443 thinking, with a controlled boundary between business systems and production, planned around shutdown windows rather than against them."
+        },
+        {
+          "title": "Vendor Remote Access",
+          "description": "Brokered, time-bound and recorded access for equipment suppliers replaces standing VPN accounts and shared passwords, so you know who touched which machine and when."
+        },
+        {
+          "title": "Continuity and Recovery",
+          "description": "Backups for engineering configurations and controller logic, plus a recovery plan rehearsed with plant staff, because restoring a line matters more than restoring a file server."
+        }
+      ],
+      "regulations": [
+        "ISO/IEC 27001:2022",
+        "IEC 62443",
+        "NIST CSF 2.0",
+        "DPDP Act 2023"
+      ]
+    },
+    {
+      "slug": "retail-e-commerce",
+      "name": "Retail & E-Commerce",
+      "summary": "Card data, loyalty balances and buying histories sit behind storefronts built for speed. Peak season concentrates risk, payment rules apply whether you store card data or not, and a checkout outage is visible to everyone.",
+      "challenges": [
+        "Payment page skimming and malicious scripts injected through third-party tags and plugins.",
+        "Credential stuffing against customer accounts, loyalty points and stored payment instruments.",
+        "Bot traffic, scalping and fraud spikes that arrive with sale events and festive peaks.",
+        "Point of sale terminals, store networks and franchise sites managed by non-technical staff."
+      ],
+      "howWeHelp": [
+        {
+          "title": "PCI DSS 4.0 Readiness",
+          "description": "Scoping, gap assessment and control work across the cardholder data environment, including the client-side script controls that catch many merchants out, ahead of your assessor's visit."
+        },
+        {
+          "title": "Storefront Security Testing",
+          "description": "Testing of web and mobile commerce flows: checkout, coupon and refund logic, account recovery, and the APIs your apps and marketplace integrations depend on."
+        },
+        {
+          "title": "Peak Season Monitoring",
+          "description": "Extra monitoring cover and an agreed escalation path across your sale periods, with detection tuned for fraud and availability abuse rather than generic alerting."
+        },
+        {
+          "title": "Store and Franchise Hardening",
+          "description": "Standard builds for point of sale devices, network separation between till systems and guest Wi-Fi, and a checklist store managers can follow without a technical background."
+        }
+      ],
+      "regulations": [
+        "PCI DSS 4.0",
+        "DPDP Act 2023",
+        "ISO/IEC 27001:2022",
+        "EU GDPR"
+      ]
+    },
+    {
+      "slug": "logistics-supply-chain",
+      "name": "Logistics & Supply Chain",
+      "summary": "Freight forwarders, 3PL operators and warehouse networks run systems that customers plan around. Downtime stops trucks, partner integrations multiply the attack surface, and invoice fraud follows the money moving through your bookings.",
+      "challenges": [
+        "Uptime sensitivity where an hour of system downtime becomes missed pickups and penalty clauses.",
+        "EDI and API links to shippers, carriers and customs brokers, each a trust boundary.",
+        "Business email compromise redirecting freight payments through altered invoice and bank details.",
+        "Warehouse and yard technology, handheld scanners and telematics sitting outside standard IT management."
+      ],
+      "howWeHelp": [
+        {
+          "title": "Resilience and Availability",
+          "description": "We design for degraded operation: redundancy where it counts, tested failover for booking and warehouse management systems, and recovery objectives agreed with operations rather than assumed by IT."
+        },
+        {
+          "title": "Partner Integration Security",
+          "description": "Authentication, authorisation and monitoring for EDI feeds, carrier APIs and customer portals, so a compromised partner account does not become free movement across your platform."
+        },
+        {
+          "title": "Payment Fraud Controls",
+          "description": "Email authentication, mailbox rule monitoring and a verification step for bank detail changes, backed by training for the finance and operations staff who approve payments."
+        },
+        {
+          "title": "Customer Assurance Support",
+          "description": "Large shippers audit their logistics providers. We prepare the evidence, close the gaps and support you through ISO/IEC 27001:2022 certification audits and customer security reviews."
+        }
+      ],
+      "regulations": [
+        "ISO/IEC 27001:2022",
+        "DPDP Act 2023",
+        "SOC 2",
+        "EU GDPR"
+      ]
+    },
+    {
+      "slug": "professional-services",
+      "name": "Professional Services",
+      "summary": "Law firms, accountancy practices, consultancies and agencies hold client material they did not create and cannot afford to lose. Client confidentiality clauses, not statute alone, often set the security bar you must meet.",
+      "challenges": [
+        "Client confidentiality obligations and engagement terms that impose security duties beyond regulation.",
+        "Partner and consultant devices moving between client sites, home networks and travel.",
+        "Email as the primary channel for sensitive documents, with attachments forwarded widely.",
+        "Small internal IT teams supporting fee earners who resist anything that slows work."
+      ],
+      "howWeHelp": [
+        {
+          "title": "Client Data Segregation",
+          "description": "Matter-based or client-based access boundaries in your document systems, so information walls are enforced by permissions and logging instead of professional habit alone."
+        },
+        {
+          "title": "Device and Identity Controls",
+          "description": "Managed endpoints, full disk encryption, conditional access and phishing-resistant authentication configured to interfere as little as possible with how partners and consultants actually work."
+        },
+        {
+          "title": "Assurance for Client Audits",
+          "description": "Completed security questionnaires, a summarised control position and ISO/IEC 27001:2022 readiness work, so enterprise clients and their procurement teams get answers without pulling partners off billable work."
+        },
+        {
+          "title": "Targeted Awareness Training",
+          "description": "Short, role-relevant sessions and simulated phishing aimed at the people who handle client funds and documents, with reporting your management committee can read in minutes."
+        }
+      ],
+      "regulations": [
+        "DPDP Act 2023",
+        "ISO/IEC 27001:2022",
+        "SOC 2",
+        "EU GDPR",
+        "Client contractual security terms"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "metaTitle": "Careers: Security & IT Roles in Mumbai",
+  "metaDescription": "Open roles at Arysec Technologies LLP in Mumbai: SOC analyst, penetration tester, ISO 27001 lead implementer, privacy consultant, cloud and IT engineer.",
+  "heroHeadline": "Security Work With Real Ownership",
+  "heroSub": "We are a Mumbai based IT and information security firm of more than fifty certified professionals. Roles here come with your own scope, direct client contact, and hybrid or remote working where the work allows it.",
+  "intro": {
+    "heading": "What Working Here Looks Like",
+    "paragraphs": [
+      "Arysec Technologies LLP is an IT and information security firm based in Mumbai, with a team of more than fifty certified professionals serving clients across India and international markets. We run security audits, governance programmes, security operations and IT services, which means the person sitting next to you may be closing an ISO/IEC 27001:2022 gap register while you finish a web application test.",
+      "We hire for judgement and curiosity ahead of a specific tool list. Certifications matter to us and we support people through them, but we care more about whether you can explain a finding to the client who has to fund the fix. New joiners are paired with a senior consultant, given real scope early, and reviewed honestly rather than politely.",
+      "Six roles are open at the moment, across security operations, offensive security, governance, privacy, cloud and managed IT. Some are on site in Mumbai, some hybrid, one fully remote within India. If none of them fits and you still think you would be useful here, write to careers@arysec.in and tell us what you would want to work on."
+    ]
+  },
+  "culture": [
+    {
+      "title": "Ownership Of Engagements",
+      "description": "You are named on the work you deliver. Consultants run their own scopes, write their own reports and present findings to the client rather than handing them upward."
+    },
+    {
+      "title": "Evidence Over Opinion",
+      "description": "Findings need proof. We expect reproducible steps, screenshots and clear risk ratings, and we push back internally on anything a client could reasonably dispute in a review meeting."
+    },
+    {
+      "title": "Learning As Routine",
+      "description": "Time is set aside for research, lab work and certification study. Senior consultants review juniors' reports line by line, which is slower than fixing them quietly and works better."
+    },
+    {
+      "title": "Straight Talk",
+      "description": "Bad news travels fast here. If a test slips or a control will not pass, we tell the client early and we say the same thing internally."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Certification Support",
+      "description": "We sponsor role-relevant certifications such as CEH, OSCP, CISA, ISO 27001 Lead Auditor and cloud credentials, with study time agreed before you book the exam."
+    },
+    {
+      "title": "Hybrid Working",
+      "description": "Consulting and engineering roles work hybrid from our Mumbai office, with fully remote arrangements for some positions. Operations roles that need the SOC floor stay on site."
+    },
+    {
+      "title": "Lab And Licences",
+      "description": "You get a testing lab, cloud sandbox accounts and licences for the tooling your role needs, not a first look at it mid-engagement."
+    },
+    {
+      "title": "Mentoring And Review",
+      "description": "Every new joiner is paired with a senior consultant for the first engagements, and review conversations happen on a set cycle rather than only at appraisal time."
+    },
+    {
+      "title": "Cross-Practice Exposure",
+      "description": "Analysts move into testing, testers move into cloud work and consultants pick up audit scope. Internal moves are discussed openly rather than treated as a resignation risk."
+    },
+    {
+      "title": "Client Exposure Early",
+      "description": "You sit in client meetings from your first months, present your own findings and learn how a CISO or a finance head actually hears risk."
+    }
+  ],
+  "openRoles": [
+    {
+      "slug": "security-analyst-soc",
+      "title": "Security Analyst (SOC)",
+      "team": "Security Operations",
+      "location": "Mumbai (On-site)",
+      "type": "Full-time",
+      "experience": "1-3 years",
+      "summary": "You work on our security operations floor, triaging alerts from client SIEM and EDR platforms across banking, SaaS and manufacturing environments. The role runs on a rotating shift pattern, including nights, and suits an analyst who wants depth in detection rather than ticket volume.",
+      "responsibilities": [
+        "Triage and investigate SIEM and EDR alerts, escalating confirmed incidents with a clear timeline and impact assessment.",
+        "Tune detection rules and suppress noisy signatures, mapping coverage to MITRE ATT&CK techniques relevant to each client.",
+        "Run threat hunts against endpoint, identity and network telemetry using hypotheses drawn from current intelligence reporting.",
+        "Maintain shift handover notes, incident records and monthly reporting packs that client stakeholders read without translation.",
+        "Support incident response engagements with containment steps, evidence collection and post-incident review input."
+      ],
+      "requirements": [
+        "One to three years in a SOC, NOC or IT operations role with security exposure.",
+        "Working knowledge of at least one SIEM platform and one EDR agent in production.",
+        "Comfort reading Windows event logs, Linux auth logs, firewall logs and DNS query records.",
+        "Willingness to work rotating shifts, including nights and weekends, from our Mumbai operations centre.",
+        "CompTIA Security+, CySA+, Microsoft SC-200 or a similar certification, or clear progress towards one."
+      ]
+    },
+    {
+      "slug": "penetration-tester-vapt-consultant",
+      "title": "Penetration Tester (VAPT Consultant)",
+      "team": "Offensive Security",
+      "location": "Mumbai (Hybrid)",
+      "type": "Full-time",
+      "experience": "2-5 years",
+      "summary": "You test web applications, APIs, mobile apps, internal networks and cloud environments for clients in financial services, SaaS and healthcare. Scopes are yours end to end: planning, testing, reporting and the retest after fixes land. Some engagements require travel to client sites within India.",
+      "responsibilities": [
+        "Scope and run web, API, mobile, network and cloud configuration tests against OWASP ASVS and internal methodology.",
+        "Write findings with reproducible steps, business impact, CVSS ratings and remediation guidance a developer can use.",
+        "Walk clients through results in a debrief call, defending severity ratings and agreeing realistic fix timelines.",
+        "Retest remediated issues and issue a closure statement clients can show to auditors and customers.",
+        "Build and maintain internal tooling, payload libraries and lab targets used across the testing practice."
+      ],
+      "requirements": [
+        "Two to five years of hands-on penetration testing across applications, networks or cloud platforms.",
+        "Practical command of Burp Suite, Nmap, Metasploit, and at least one scripting language such as Python.",
+        "Working understanding of OWASP Top 10, ASVS, API security risks and mobile testing methodology.",
+        "Clear report writing for both a non-technical stakeholder and the engineer doing the fix.",
+        "OSCP, CRTP, CEH or an equivalent certification, or a public research and disclosure record."
+      ]
+    },
+    {
+      "slug": "iso-27001-lead-implementer",
+      "title": "ISO 27001 Lead Implementer (GRC Consultant)",
+      "team": "Governance & Risk",
+      "location": "Mumbai (Hybrid)",
+      "type": "Full-time",
+      "experience": "3-6 years",
+      "summary": "You take clients from a gap assessment to a certification audit they pass. The work covers ISO/IEC 27001:2022 implementation, SOC 2 readiness and internal audit programmes for NBFCs, SaaS providers and manufacturers. We prepare organisations for certification; we do not issue certificates.",
+      "responsibilities": [
+        "Run gap assessments against ISO/IEC 27001:2022 Annex A controls and produce a prioritised treatment plan.",
+        "Draft policies, risk registers, Statements of Applicability and procedures that fit how the client actually operates.",
+        "Facilitate risk assessments and management reviews with client leadership, recording decisions and named owners.",
+        "Conduct internal audits, log nonconformities and track corrective actions through to closure before the external audit.",
+        "Support clients during certification body visits, preparing evidence packs and briefing control owners beforehand."
+      ],
+      "requirements": [
+        "Three to six years implementing or auditing information security management systems in client-facing roles.",
+        "ISO/IEC 27001:2022 Lead Implementer or Lead Auditor certification, with CISA or CISM an advantage.",
+        "Familiarity with SOC 2 Trust Services Criteria, NIST CSF 2.0 and the DPDP Act 2023.",
+        "Writing that stands up in an audit room: precise, evidenced and free of copied template language.",
+        "Confidence holding a position with a client executive who would prefer a softer finding."
+      ]
+    },
+    {
+      "slug": "privacy-consultant-dpo",
+      "title": "Privacy Consultant (DPO Practice)",
+      "team": "Privacy",
+      "location": "Mumbai (Hybrid)",
+      "type": "Full-time",
+      "experience": "3-6 years",
+      "summary": "You advise clients on the DPDP Act 2023 and EU GDPR as part of our data protection officer practice. Work includes data mapping, consent and notice design, breach procedures, and standing in as an outsourced privacy contact for client teams.",
+      "responsibilities": [
+        "Map personal data flows across client systems, vendors and cross-border transfers, then record the basis relied on.",
+        "Draft privacy notices, consent flows, retention schedules and data principal request procedures for client review.",
+        "Carry out data protection impact assessments on new products, integrations and analytics deployments.",
+        "Act as the day to day privacy contact for retained clients, handling queries, complaints and breach notification timelines.",
+        "Train client teams on handling personal data, and review vendor contracts for processing terms."
+      ],
+      "requirements": [
+        "Three to six years in privacy, compliance or legal roles with hands-on data protection work.",
+        "Working knowledge of the DPDP Act 2023, EU GDPR and the sector rules that overlay them.",
+        "CIPP/E, CIPM, DCPP or an equivalent privacy certification, or a law background with privacy practice.",
+        "Judgement to describe obligations in general terms and refer clients to counsel for definitive positions.",
+        "Ability to translate legal text into engineering and process changes a product team can implement."
+      ]
+    },
+    {
+      "slug": "cloud-security-engineer",
+      "title": "Cloud Security Engineer",
+      "team": "Cloud Security",
+      "location": "Remote (India)",
+      "type": "Full-time",
+      "experience": "3-6 years",
+      "summary": "You harden client environments on AWS, Azure and Google Cloud, and build the guardrails that keep them hardened after we leave. Expect a mix of assessment work against CIS Benchmarks, CSPM tuning, identity redesign and pipeline security for engineering teams.",
+      "responsibilities": [
+        "Assess cloud accounts against CIS Benchmarks and provider baselines, then fix what the assessment finds.",
+        "Design IAM structures, least privilege policies and workload identity for client accounts and subscriptions.",
+        "Deploy and tune CSPM tooling, routing real findings to owners and closing off the noise.",
+        "Add security gates to CI/CD pipelines, including SAST, dependency scanning and infrastructure as code checks.",
+        "Write Terraform modules and runbooks so client engineers can maintain the controls we put in."
+      ],
+      "requirements": [
+        "Three to six years in cloud engineering, DevOps or cloud security with production responsibility.",
+        "Depth in at least one of AWS, Azure or Google Cloud, and familiarity with a second.",
+        "Hands-on Terraform, container security and Kubernetes exposure in environments you were accountable for.",
+        "AWS Security Specialty, Azure AZ-500, or a comparable cloud security certification.",
+        "Scripting in Python or Go for automation, evidence collection and one-off investigation work."
+      ]
+    },
+    {
+      "slug": "it-support-engineer",
+      "title": "IT Support Engineer",
+      "team": "Managed IT",
+      "location": "Mumbai (On-site)",
+      "type": "Full-time",
+      "experience": "1-3 years",
+      "summary": "You keep client offices running: endpoints, Microsoft 365 tenants, networks, backups and the ticket queue behind them. The role mixes remote support with visits to client sites around Mumbai, and it is where several of our security engineers started.",
+      "responsibilities": [
+        "Resolve endpoint, network and application tickets within agreed response times, escalating what needs deeper hands.",
+        "Administer Microsoft 365 and Google Workspace tenants, including identity, licensing, mailflow and device policy.",
+        "Maintain patching, endpoint protection and backup jobs, and verify restores rather than assuming they work.",
+        "Set up firewalls, switches, wireless and VPN access at client sites, documenting the configuration afterwards.",
+        "Keep asset registers, network diagrams and runbooks current so audits do not become archaeology."
+      ],
+      "requirements": [
+        "Between one and three years in IT support, managed services or infrastructure administration.",
+        "Practical Windows and Linux administration, Active Directory, DNS, DHCP and basic networking troubleshooting.",
+        "Patience with non-technical users, and the habit of explaining a fix without condescension.",
+        "CompTIA A+, Network+, Microsoft MD-102 or a similar certification, or equivalent practical experience.",
+        "Willingness to travel to client offices across Mumbai and to join an on-call rota."
+      ]
+    }
+  ],
+  "process": [
+    {
+      "title": "Application Review",
+      "description": "Send your CV to careers@arysec.in with the role title in the subject line. We read every application ourselves and reply either way, usually within a week."
+    },
+    {
+      "title": "First Conversation",
+      "description": "A call with the practice lead covering your experience, the role scope and what you want next. Ask your questions here; we would rather you did."
+    },
+    {
+      "title": "Practical Exercise",
+      "description": "We set a task drawn from real work: a short test scope, an alert triage, a control gap or a support scenario. Reasoning matters more than polish."
+    },
+    {
+      "title": "Offer And Onboarding",
+      "description": "Final discussion on scope, expectations and terms, then a structured first month with a named mentor, shadowed engagements and your own scope by the end of it."
+    }
+  ]
+}

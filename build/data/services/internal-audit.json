@@ -1,0 +1,132 @@
+{
+  "slug": "internal-audit",
+  "name": "Internal Audit & Assurance",
+  "shortName": "Internal Audit",
+  "category": "Governance & Advisory",
+  "metaTitle": "Internal Audit & Assurance: Outsourced or Co-Sourced",
+  "metaDescription": "Arysec runs internal audit outsourced or co-sourced: a risk-based annual plan, ITGC and process control testing, findings tracked to verified closure.",
+  "cardSummary": "An outsourced or co-sourced internal audit function: a risk-based annual plan, ITGC and process testing, and a findings register tracked to closure with the audit committee.",
+  "heroHeadline": "Assurance Your Audit Committee Can Rely On",
+  "heroSub": "We run or supplement your internal audit function: a risk-based plan agreed with your audit committee, controls tested against evidence rather than assertions, and every finding tracked to a documented closure.",
+  "highlights": [
+    { "value": "Risk-Based", "label": "Annual audit plan" },
+    { "value": "ITGC", "label": "Access, change and operations" },
+    { "value": "Tracked to closure", "label": "Findings closed on evidence" }
+  ],
+  "intro": {
+    "heading": "What Internal Audit Actually Owes You",
+    "paragraphs": [
+      "Internal audit sits in a different place from the two things it is most often confused with. Your statutory auditor forms an opinion on the financial statements for shareholders and works to a scope set by law. A penetration test asks whether a particular system can be broken into on a particular day. Internal audit answers a broader question for your board: are the controls management says exist actually designed correctly and operating over a period, across finance, operations, technology and compliance.",
+      "We provide that function on an outsourced basis, where we are your internal audit team, or co-sourced, where we work alongside your in-house auditors and bring the technology and analytics skills that are hardest to recruit. Either way the work is planned against risk rather than habit. The annual plan is built from your risk register, your regulatory obligations, prior findings and the places where the organisation has recently changed — a new ERP, an acquisition, a move to cloud hosting, a large outsourcing arrangement.",
+      "Our methodology follows the Institute of Internal Auditors' Global Internal Audit Standards and tests controls against the COSO Internal Control Integrated Framework, with COBIT 2019 and ISO/IEC 27001:2022 Annex A applied where the subject matter is technology. Evidence discipline separates a useful audit from a comfortable one. Inquiry alone proves nothing, so we inspect, reperform and sample, we test the completeness of the populations we sample from, and every conclusion in the report traces back to a working paper a reviewer can follow."
+    ]
+  },
+  "capabilities": {
+    "heading": "What the Function Covers",
+    "items": [
+      {
+        "title": "Risk-Based Annual Plan",
+        "description": "We map your audit universe, score each entity by inherent risk and control maturity, and agree a plan the audit committee approves, with capacity reserved for management requests and unplanned reviews."
+      },
+      {
+        "title": "ITGC Testing",
+        "description": "Access, change and operations controls get tested across your ERP, operating systems and databases: joiner and leaver processing, privileged accounts, segregation of duties conflicts, change approval and migration, job scheduling, and backup restoration."
+      },
+      {
+        "title": "Information Security Controls",
+        "description": "Security controls are assessed against ISO/IEC 27001:2022 Annex A or NIST CSF 2.0: identity and access management, logging and monitoring, vulnerability management, cloud configuration, third-party assurance and incident handling."
+      },
+      {
+        "title": "Business Process Reviews",
+        "description": "Procure to pay, order to cash, payroll and inventory are walked end to end. We test authorisation limits, three-way matching, master data changes and manual journals, then report control gaps alongside process inefficiency."
+      },
+      {
+        "title": "Data Analytics Testing",
+        "description": "Where the data supports it we test whole populations rather than samples: duplicate payments, vendor and employee bank account matches, journals posted outside working hours, and access combinations that breach segregation rules."
+      },
+      {
+        "title": "Findings and Follow-Up",
+        "description": "Each issue is written with root cause, risk rating and a management action agreed with a named owner and a date. Follow-up testing verifies the fix before anything is marked closed."
+      }
+    ]
+  },
+  "deliverables": {
+    "heading": "Reports, Papers and Registers",
+    "intro": "Every review produces a documented trail your audit committee, your statutory auditor and your regulator can follow without asking us to explain it.",
+    "items": [
+      "Internal audit charter and approved annual audit plan",
+      "Risk and control matrix for each process in scope",
+      "Detailed audit programme with test steps and sample rationale",
+      "Indexed working papers with evidence retained per test",
+      "Report per review with ratings and management responses",
+      "Findings register with owners, dates and ageing analysis",
+      "Quarterly audit committee pack and progress summary",
+      "Follow-up testing memo confirming closure of prior findings"
+    ]
+  },
+  "process": [
+    {
+      "title": "Plan",
+      "description": "We build the audit universe from your entity structure, systems, processes and regulatory obligations, score it for risk, and take a proposed plan and audit charter to your audit committee for approval."
+    },
+    {
+      "title": "Scope",
+      "description": "Each review opens with a terms of reference: objectives, processes, systems, locations, period covered and the controls to be tested. Walkthroughs with process owners confirm how the control actually runs before testing begins."
+    },
+    {
+      "title": "Test",
+      "description": "Design is assessed first, then operating effectiveness over the period, using inspection, reperformance and sampling sized to control frequency. Observations are discussed with owners as we go, so nothing in the draft report surprises anyone."
+    },
+    {
+      "title": "Report",
+      "description": "Findings go to management with ratings, root cause and agreed actions, then to the audit committee in a pack that shows plan progress, thematic issues and overdue items. Follow-up testing closes them."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "A Smoother External Audit",
+      "description": "Statutory auditors can consider internal audit work when it meets the standards for objectivity and evidence quality. Well-documented testing reduces duplicated requests on your finance and IT teams."
+    },
+    {
+      "title": "Findings That Actually Close",
+      "description": "Issues stop reappearing in successive reports because each one carries a root cause, an owner and a date, and closure requires evidence that we retest rather than a status update."
+    },
+    {
+      "title": "Specialist Skills On Demand",
+      "description": "Cloud, ERP, application security and data analytics testing come from practitioners who do this work continuously, rather than from staff who touch it for two weeks a year."
+    },
+    {
+      "title": "Board-Level Visibility",
+      "description": "Directors see the same picture every quarter: what was planned, what was tested, what was found, what is overdue and which risks remain open with management's rationale."
+    }
+  ],
+  "whoItsFor": [
+    "Companies required to appoint an internal auditor under the Companies Act 2013",
+    "Listed entities and audit committees needing independent testing beyond the statutory audit scope",
+    "Banks, NBFCs and insurers whose regulators expect a periodic information systems audit",
+    "In-house audit teams that need co-sourced technology, cloud and data analytics capability"
+  ],
+  "faqs": [
+    {
+      "question": "How is this different from the statutory audit our chartered accountants already do?",
+      "answer": "Different objective, different audience. Your statutory auditor forms an opinion on whether the financial statements give a true and fair view, works to a scope set by law and reports to shareholders. Internal audit reports to your audit committee on whether controls across operations, technology and compliance work, including areas that never touch the financial statements — access management, cloud configuration and vendor governance. The two are complementary, and under the standards on using the work of internal auditors, good internal audit evidence can reduce your statutory auditor's testing."
+    },
+    {
+      "question": "We have already done a penetration test. Is an IT audit not the same thing?",
+      "answer": "No. A penetration test tries to break into a system and reports what an attacker could reach on the day it ran. An IT audit asks whether the controls meant to prevent that were designed properly and operated across the whole period: whether every leaver lost access within the stated timeframe, whether changes reached production with approval, whether alerts were reviewed. The pen test finds the unpatched server. The audit explains why patching failed and who owns the fix. We use pen test results as evidence within an audit."
+    },
+    {
+      "question": "We already have an internal audit team. What would you add, and how much of our people's time does it take?",
+      "answer": "Co-sourcing is the usual answer. Your team keeps the plan and the audit committee relationship; we take reviews needing skills that are expensive to hold in-house — ERP segregation of duties, cloud platform controls, application security, analytics over full populations. On effort, expect an hour or two of walkthrough per process owner, an evidence request list issued in advance, and read-only access so we pull our own system reports. Most testing happens without your team in the room."
+    },
+    {
+      "question": "Can an outsourced provider be genuinely independent of our management?",
+      "answer": "Independence comes from the reporting line, not the payroll. We work to an internal audit charter under which the audit committee approves the plan, receives our reports directly and decides whether we continue, so management cannot narrow a scope or bury a finding. We decline work that would compromise that: if we designed a control or implemented a system for you, we do not audit it in the same period. Where a regulation names who must sign an audit, we tell you at scoping rather than take the work."
+    },
+    {
+      "question": "Our last internal audit produced a long report and nothing changed. Why would this be different?",
+      "answer": "Usually because the findings had no owner, no date, and no verification step. We agree management actions in the closing meeting with the person who controls the resource, not with whoever attends. The findings register ages every open item, and the quarterly audit committee pack shows overdue actions by owner, which changes behaviour faster than any report wording. Closure requires evidence we retest. If management accepts a risk instead of fixing it, that is a legitimate answer, but it gets recorded as an acceptance with a name against it."
+    }
+  ],
+  "related": ["security-audit-compliance", "iso-27001", "vciso"]
+}

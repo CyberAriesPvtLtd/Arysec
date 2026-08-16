@@ -1,0 +1,176 @@
+{
+  "title": "Responsible Disclosure Policy",
+  "metaTitle": "Responsible Disclosure Policy for Security Researchers",
+  "metaDescription": "How to report a security vulnerability in an Arysec system: scope, what to include, the timelines we commit to, safe harbour and coordinated disclosure.",
+  "intro": "This policy sets out how to report a security vulnerability you have found in an Arysec system. It covers what is in scope and what is not, how to reach our security team, the timelines we commit to, the safe harbour we offer good-faith researchers, and how we coordinate disclosure.",
+  "sections": [
+    {
+      "heading": "Our Commitment to Researchers",
+      "paragraphs": [
+        "Arysec Technologies LLP is an information security firm. We spend our working days finding weaknesses in other organisations' systems, and we would be poor practitioners if we pretended our own were flawless. Software has defects, configurations drift, and dependencies age. When someone outside the company finds one of ours and takes the trouble to tell us, that is a service, and we treat it as one.",
+        "This policy is our side of that exchange. It tells you what you may test, how to reach a person who will actually read your report, how quickly we will respond, and what protection you have if you follow the rules set out here. We would rather publish clear boundaries than rely on goodwill and hope that both sides guess the same ones.",
+        "We ask one thing in return. Work within the scope below, avoid harm to our clients and to anyone else using our systems, and give us a fair chance to fix what you find before you discuss it publicly. Reports handled that way get our full attention and our cooperation."
+      ]
+    },
+    {
+      "heading": "Systems Covered by This Policy",
+      "paragraphs": [
+        "This policy applies to systems that Arysec owns or operates. In practice that means our website at arysec.in and its subdomains, the mail and messaging infrastructure serving those domains, and any internet-facing application or service we run for our own business that clearly identifies itself as ours.",
+        "Our public site is a marketing and information site. It describes what we do, hosts a small number of enquiry forms, and runs no customer accounts, logged-in areas or payment flows. Weaknesses there tend to be configuration issues, ageing dependencies, or flaws in how form submissions are handled and stored. Those are exactly the reports we want.",
+        "If you are unsure whether something belongs to us, ask before you test. Write to security@arysec.in describing the asset and what you propose to do, then wait for our written reply. An asset carrying our name or branding is not proof that we control it, and guessing wrong can put you outside this policy and outside the safe harbour it offers."
+      ]
+    },
+    {
+      "heading": "What Is Never in Scope",
+      "paragraphs": [
+        "Some exclusions here are absolute rather than a matter of preference. The most important one concerns our clients.",
+        "Client systems and client data are never in scope. When we test a client environment we do so under a signed contract and a specific rules-of-engagement document, and that authorisation comes from the client, not from us. No permission we could give you would be valid there. If your research touches a client system, you are acting without authorisation from the party that owns it, and this policy offers you nothing at all.",
+        "The following sit outside the scope of this policy:",
+        "Finding a weakness in a third-party service does not bring it into scope simply because we happen to use that service. Report it to the provider under its own policy. Where the issue also affects information we hold, tell us as well so that we can act on our side of it."
+      ],
+      "list": [
+        "Any system, network, application or data belonging to an Arysec client, prospective client or partner",
+        "Client information held in our care, including engagement reports, evidence and findings",
+        "Third-party services we use but do not control, such as our hosting provider, email platform or code repositories",
+        "Physical attempts to enter our premises, reach our equipment, or interfere with hardware",
+        "Social engineering of our employees, contractors or partners, including phishing, vishing and pretexting",
+        "Attacks on the personal accounts, devices or property of anyone who works with us",
+        "Denial of service, resource exhaustion, and any other testing whose effect is to degrade availability"
+      ]
+    },
+    {
+      "heading": "How to Report a Vulnerability",
+      "paragraphs": [
+        "Send your report to security@arysec.in. That address reaches our security team, and it is the channel we monitor for vulnerability reports. Please do not use social media, our general contact form, a sales enquiry or an individual's personal address, because a report that arrives in the wrong place can sit unread while the weakness stays open.",
+        "Write in English, keep the subject line specific enough to convey the nature of the issue, and put the detail in the body of the message or in an attachment. If you would prefer to encrypt the report, say so in your first message and we will agree a secure channel with you before you send anything sensitive.",
+        "One issue per report, please. Separate reports are easier to triage, track and close than a single message covering several unrelated problems. Where you have found a set of issues that share a single root cause, keep them together and tell us that is what they are.",
+        "Anonymous and pseudonymous reports are accepted. You do not have to tell us who you are for us to act on what you send, though giving us some way to reply makes it much easier to ask questions and to keep you informed as we work."
+      ]
+    },
+    {
+      "heading": "What to Include in a Report",
+      "paragraphs": [
+        "A good report lets an engineer reproduce the issue without guessing. The more of the following you can give us, the faster it moves through triage.",
+        "Proof of concept code is welcome. Keep it minimal and non-destructive, and do not include data belonging to anyone else, even as an illustration. If you believe the only way to demonstrate the problem is to show us data that is not yours, stop and describe what you found instead. We will take your word for it and reproduce it ourselves under controlled conditions."
+      ],
+      "list": [
+        "The affected asset: the exact URL, host, endpoint or parameter involved",
+        "A clear description of the weakness and the security effect you believe it has",
+        "Step-by-step instructions to reproduce it, including any request or payload used",
+        "Evidence such as a screenshot, a request and response pair, or a short video",
+        "Your view of the severity and of who or what is exposed, with your reasoning",
+        "Tooling, browser or client version where that matters to reproduction",
+        "Anything suggesting the issue is already known to others or being exploited",
+        "Whether you have reported the same issue elsewhere, or intend to publish"
+      ]
+    },
+    {
+      "heading": "Our Acknowledgement and Triage Commitments",
+      "paragraphs": [
+        "Timelines matter to a researcher, and silence is the most common complaint made about disclosure programmes. We state ours as commitments rather than intentions, counted in business days at our Mumbai office.",
+        "We triage by severity and by real exposure rather than by score alone. A moderate weakness that is trivially reachable from the internet will usually be fixed ahead of a theoretically severe one that depends on conditions we do not have. Where our assessment differs from yours, we will explain the reasoning instead of quietly closing the report.",
+        "Complicated issues sometimes take longer to resolve than we would like. When that happens we will say so plainly, give you our reasoning, and keep the updates coming until the matter is closed. An honest date is more useful to you than a comfortable one."
+      ],
+      "list": [
+        "Acknowledgement that your report has reached a human within three business days",
+        "An initial triage decision, covering validity and our severity assessment, within ten business days",
+        "Progress updates at least every fifteen business days while the issue remains open",
+        "A remediation target shared with you once triage is complete, set according to severity",
+        "Notice when the fix is deployed, and an invitation to verify it if you are willing",
+        "An explanation, with reasoning, in any case where we decide not to act on a report"
+      ]
+    },
+    {
+      "heading": "Safe Harbour for Good-Faith Research",
+      "paragraphs": [
+        "If you follow this policy, we will treat your research as authorised conduct and as a contribution to our security rather than as an attack on it. That undertaking is specific, and we would rather write it down than leave you to infer it.",
+        "For research that stays within scope and within the rules below, we will not bring a civil claim against you arising from it, we will not make a complaint under the Information Technology Act, 2000 or a comparable law in another jurisdiction, and we will not pursue you for breach of our website terms of use. Should a third party bring an action against you arising from research we authorised under this policy, we will make our authorisation clear to that party and, where appropriate, to a court.",
+        "This protection has limits, and it would be misleading to suggest otherwise. It covers research on in-scope assets, carried out in good faith, kept inside the prohibited-testing rules, and reported to us promptly. Research on client systems falls outside it, because that authorisation was never ours to give. Nor does it extend to anything done for extortion, for commercial advantage at our expense, or after we have asked you to stop.",
+        "We also cannot bind anyone else. A safe harbour granted by us does not release you from obligations owed to third parties, from the terms of any service you used to conduct the research, or from duties imposed on you by law. The position is described here in general terms and is not legal advice. If you have a concern about where you stand in your own jurisdiction, take your own advice before you begin.",
+        "When in doubt during your research, stop and ask. A short message to security@arysec.in describing what you have found and what you propose to do next will always get a better answer than pressing on and hoping."
+      ]
+    },
+    {
+      "heading": "What Good-Faith Testing Looks Like",
+      "paragraphs": [
+        "Good faith is easier to demonstrate than to define. We consider testing to be in good faith when it is proportionate, minimal, and aimed at establishing that a weakness exists rather than at finding out how far it can be taken. Within scope, you may do the following:",
+        "Stop as soon as you have established that a weakness exists. The moment a proof of concept works, you have what you need and so do we. Continuing in order to see how much access is available turns research into intrusion, and it is the single most common way a well-intentioned researcher loses the protection of this policy."
+      ],
+      "list": [
+        "Interact with our public services as an ordinary visitor would, and observe how they respond",
+        "Probe for common weakness classes, including those described in the OWASP Top 10, using manual techniques",
+        "Inspect client-side code, HTTP responses, headers and publicly reachable configuration",
+        "Use low-rate automated tooling that has no measurable effect on the service for anyone else",
+        "Create your own test submissions where a form allows it, clearly marked as testing",
+        "Demonstrate an issue with the smallest proof of concept that establishes it",
+        "Retest once we have told you a fix is deployed, on the same terms as the original research"
+      ]
+    },
+    {
+      "heading": "Testing That Is Never Permitted",
+      "paragraphs": [
+        "The activities below are prohibited under this policy without exception, whether or not the asset is otherwise in scope. Carrying out any of them places you outside the safe harbour, and we will then treat the activity on its own merits.",
+        "If you access data belonging to another person by accident, which does happen, stop immediately. Do not save it, share it or work with it further. Tell us in your report exactly what you saw and how you came to see it, and delete every copy once we confirm we have what we need. Handled that way, an accidental exposure costs you nothing. Concealing one costs you the safe harbour."
+      ],
+      "list": [
+        "Denial of service, load testing, stress testing, or anything else that degrades availability",
+        "Automated scanning at a rate or volume that affects performance for other users",
+        "Accessing, downloading, altering, retaining or exfiltrating data belonging to anyone but yourself",
+        "Continuing to explore an environment after you have confirmed that the weakness exists",
+        "Social engineering of our staff, contractors, partners or suppliers, in any form",
+        "Physical intrusion, tailgating, or interference with our premises, equipment or documents",
+        "Attacks against personal accounts, devices or property belonging to people who work with us",
+        "Installing malware, backdoors, web shells or any other form of persistence on our systems",
+        "Modifying, deleting or corrupting data, or otherwise degrading the integrity of a service",
+        "Testing that ignores this policy, including research on assets you have not confirmed are in scope",
+        "Demanding payment as a condition of disclosure, or threatening publication in order to obtain it"
+      ]
+    },
+    {
+      "heading": "Reports We Are Unlikely to Action",
+      "paragraphs": [
+        "Some findings arrive often and rarely reflect a real risk to us or to anyone using our systems. We will still read and answer a report of this kind, but it will usually be closed as informational or as an accepted risk. Saying so in advance seems fairer than taking your time and then declining.",
+        "None of this is a reason to stay quiet if you think we have judged it wrongly. Where you can show a chain that turns one of these into something genuinely exploitable, the chain itself is the finding, and we want to hear about it."
+      ],
+      "list": [
+        "Missing security headers on a static page with no session, account or sensitive content",
+        "Email configuration observations that do not enable a practical spoofing or interception attack",
+        "Self-XSS, or any issue requiring the victim to paste code into their own browser console",
+        "Clickjacking on a page that carries no state-changing action",
+        "Output from an automated scanner submitted without validation or a demonstrated effect",
+        "Version and banner disclosure unaccompanied by an exploitable weakness",
+        "Weaknesses that presuppose a compromised device or an already established interception position",
+        "Reports concerning a third-party service that we use but do not control",
+        "Recommendations drawn from a hardening guide with no security effect we can reproduce"
+      ]
+    },
+    {
+      "heading": "Coordinated Disclosure and Public Discussion",
+      "paragraphs": [
+        "We work to coordinated disclosure. That means we ask you not to publish, present or otherwise discuss a finding publicly until we have had the opportunity to fix it and have agreed timing with you. Until then, please keep the detail between you and us.",
+        "Our default window is ninety days from the date we acknowledge your report. We aim to fix well inside that, and where a fix lands early we are glad to agree publication as soon as it is deployed and verified. Where the issue is complex, or where remediation depends on a third party, we may ask you for more time and we will explain exactly why.",
+        "If a weakness affects a system that a client depends on, we will notify the affected client as part of our own incident handling and communication obligations. That notification will describe the issue and our remediation, and it will not identify you unless you have asked us to name you.",
+        "Where you intend to publish, we would like to see the draft first. Not to edit your conclusions, but to check for detail that would expose a client, a third party or an unfixed system. We will not ask you to remove anything that is accurate and safe to publish, and we will not use the review as a way to delay you.",
+        "Should we fail to reach agreement on timing, tell us what you plan to do and when you plan to do it. A disagreement in the open, with a date that both sides know about, is far better than a surprise."
+      ]
+    },
+    {
+      "heading": "Recognition and Our Position on Paid Bounties",
+      "paragraphs": [
+        "We do not currently operate a paid bug bounty programme, and we have no interest in implying otherwise. There is no reward pool, no severity payout table and no promise of money for a valid report. If that position changes, we will say so on this page.",
+        "What we do offer is recognition and a straight answer. With your consent, we will credit you by the name or handle you choose in the advisory or release note that accompanies the fix, and we are glad to keep a public list of thanks for researchers who want to be named. Preferring to stay anonymous is equally fine, and it makes no difference to how your report is handled.",
+        "Confirmation in writing is available if it is useful to you. Researchers often need evidence of their work for a curriculum vitae, a conference submission or a coordination process, and we will provide a factual letter setting out what you reported, when you reported it, and how we resolved it. Where a finding warrants a CVE identifier, we will cooperate with the relevant coordination body.",
+        "The absence of payment does not mean we value your report less. A valid finding is triaged, prioritised, fixed and closed on its merits, whether it comes from a full-time researcher, a curious student or an engineer at one of our clients."
+      ]
+    },
+    {
+      "heading": "Legal Position, Contact and Changes to This Policy",
+      "paragraphs": [
+        "Nothing in this policy limits an obligation that either of us may have under applicable law, including reporting duties attaching to certain categories of incident. The legal position is described here in general terms only and is not legal advice. If your research or your report raises a question about your own position, confirm it with your own adviser.",
+        "Where this policy and our website terms of use appear to conflict on the subject of security testing, this policy governs research conducted within its scope and in line with its rules, and the terms of use apply as written to everything outside that. This policy is governed by the laws of India, and the courts at Mumbai, Maharashtra have jurisdiction over any dispute arising from it.",
+        "Send vulnerability reports, and any question about scope before you begin, to security@arysec.in. For anything else, including a question about the policy itself, write to info@arysec.in or call +91 90048 57727 between 09:00 and 18:00 IST, Monday to Friday. Requests about your personal data, and complaints about how we have handled it, go to our Grievance Officer at info@arysec.in.",
+        "We review this policy as our systems and our obligations change, and we publish updates here rather than issuing a separate notice. The version on this page is the one in force. If we change it materially while your report is still open, the version that applied when you submitted continues to govern your research."
+      ]
+    }
+  ]
+}

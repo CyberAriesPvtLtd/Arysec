@@ -1,0 +1,145 @@
+{
+  "slug": "incident-response",
+  "name": "Incident Response & Recovery",
+  "shortName": "Incident Response",
+  "category": "Cybersecurity Services",
+  "metaTitle": "Incident Response Retainer, Forensics & Ransomware",
+  "metaDescription": "Arysec provides incident response retainers with a committed response time and named responder, plus digital forensics, ransomware containment and recovery.",
+  "cardSummary": "An incident response retainer with a committed response time, a named lead responder, digital forensics, ransomware and business email compromise containment, and breach notification support.",
+  "heroHeadline": "Contain the Incident Before It Becomes a Breach",
+  "heroSub": "When something is already happening you do not have time to select a vendor, sign a contract and explain your network. A retainer settles all three in advance, so the call starts with containment rather than paperwork.",
+  "highlights": [
+    {
+      "value": "24/7",
+      "label": "Retainer activation, any hour"
+    },
+    {
+      "value": "Named Responder",
+      "label": "Assigned before the incident"
+    },
+    {
+      "value": "Forensic Evidence",
+      "label": "Preserved to survive scrutiny"
+    }
+  ],
+  "intro": {
+    "heading": "Preparation, Response, Evidence",
+    "paragraphs": [
+      "An organisation calling an incident response firm for the first time mid-incident loses its first day to procurement. Scope has to be agreed, a contract signed, indemnities negotiated, access provisioned, and an outsider brought up to speed on a network nobody has documented since the last audit. Meanwhile the attacker keeps working. A retainer moves that work to a quiet week: the contract is signed, the commercial terms are fixed, and your named lead responder already holds your architecture diagram, asset inventory, escalation tree and out-of-band contact list. The authority to isolate a production system is agreed with your legal and operations leads before anyone needs to use it. Activation becomes a phone call rather than a procurement cycle.",
+      "We work the lifecycle set out in NIST SP 800-61 and ISO/IEC 27035: preparation, detection and analysis, containment, eradication and recovery, and post-incident learning. Those phases overlap in practice, because an attacker holding domain administrator rights does not wait for your investigation to conclude. What holds constant is the discipline underneath them. Establish scope before you eradicate, since a partial cleanup invites the same intruder straight back in through the persistence you missed. Preserve evidence before you rebuild, since a reimaged server cannot tell you how it was reached. Map observed behaviour to MITRE ATT&CK techniques, so your detection team can compare what happened against what their tooling actually recorded.",
+      "Two clocks run alongside the technical work, and they are the ones that hurt later. The first is evidentiary: memory, volatile network state and cloud audit logs age out within hours, and once a host is reimaged the answer to how the attacker got in usually goes with it. The second is regulatory. The CERT-In directions of April 2022 require specified classes of incident to be reported within six hours of noticing them, sector regulators set their own windows, GDPR Article 33 allows 72 hours for personal data breaches, and the DPDP Act 2023 framework requires intimation to the Data Protection Board and to affected individuals. Your precise obligations depend on your sector, your contracts and where your affected individuals sit, so we work them out with your counsel rather than assume them, and we supply the technical facts in the form a filing actually requires."
+    ]
+  },
+  "capabilities": {
+    "heading": "What the Retainer Covers",
+    "items": [
+      {
+        "title": "Retainer and Activation",
+        "description": "A signed contract, fixed commercial terms, a named lead responder and a committed response window. Onboarding captures your architecture, tooling and escalation contacts, so activation begins with containment instead of introductions."
+      },
+      {
+        "title": "Forensics and Malware Analysis",
+        "description": "Memory is captured before shutdown, disks imaged with write blockers, and chain of custody maintained. Samples are detonated to establish persistence, credential theft and command and control, then converted into indicators we hunt estate-wide."
+      },
+      {
+        "title": "Ransomware Containment and Recovery",
+        "description": "Isolation without destroying evidence, strain identification, exfiltration assessment, backup integrity checks and a sequenced restore. Domain credentials are reset in an order that stops the attacker returning through the rebuild."
+      },
+      {
+        "title": "Business Email Compromise",
+        "description": "Microsoft 365 and Google Workspace investigations: unified audit log review, mailbox access records, hidden inbox rules, forwarding, rogue OAuth grants and attacker-registered MFA methods. Sessions are revoked and payment diversion traced."
+      },
+      {
+        "title": "Notification and Regulatory Support",
+        "description": "We assemble the incident facts a regulator, insurer or enterprise customer actually asks for, and support your counsel on CERT-In reporting, DPDP intimation, GDPR Article 33 filings and contractual notice windows."
+      },
+      {
+        "title": "Plans, Playbooks and Exercises",
+        "description": "Playbooks per incident type, a severity matrix, decision authority and communications templates, tested through tabletop exercises run separately for your executive group and your technical responders."
+      }
+    ]
+  },
+  "deliverables": {
+    "heading": "Reports, Evidence and Playbooks",
+    "intro": "Some of these arrive during the incident, when decisions cannot wait. The rest arrive afterwards, written for the boardroom, the engineers and the regulator in turn.",
+    "items": [
+      "Signed retainer with named responder and response window",
+      "Incident response plan and per-scenario playbooks",
+      "Situation reports issued at an agreed cadence",
+      "Forensic timeline with chain of custody records",
+      "Root cause analysis naming the initial access vector",
+      "Indicators of compromise and MITRE ATT&CK technique mapping",
+      "Regulator-ready incident summary and notification support pack",
+      "Prioritised hardening plan with owners and target dates"
+    ]
+  },
+  "process": [
+    {
+      "title": "Prepare",
+      "description": "Before anything happens we onboard: architecture, critical systems, logging and EDR coverage, escalation contacts, out-of-band communications and the authority to isolate. Gaps that would slow a real response are fixed now, not later."
+    },
+    {
+      "title": "Contain",
+      "description": "On activation we triage the scope, preserve volatile evidence, then isolate affected hosts and identities without tipping off the attacker. Credential resets and session revocations follow a planned sequence rather than a panicked one."
+    },
+    {
+      "title": "Investigate",
+      "description": "Forensic analysis establishes the initial access vector, dwell time, what the attacker touched and whether data left. Findings drive eradication, so persistence is removed everywhere it exists rather than only where it was noticed."
+    },
+    {
+      "title": "Recover and Learn",
+      "description": "Systems return to service in a controlled order with monitoring raised. Afterwards we run a review, deliver the root cause analysis, and turn each finding into a hardening action with a named owner."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "No Procurement Mid-Crisis",
+      "description": "The contract, the commercial terms and the access are settled in advance. Activation is a phone call, so the first hour goes to containment instead of legal review."
+    },
+    {
+      "title": "Evidence That Holds Up",
+      "description": "Forensic images, hashes and custody records are produced from the outset, which keeps insurance claims, regulatory filings and any later legal action open to you."
+    },
+    {
+      "title": "A Cause, Not a Guess",
+      "description": "Rebuilding without knowing the entry point invites a second incident. Root cause analysis names the vector, the dwell time and the control that failed."
+    },
+    {
+      "title": "Retainer Hours Are Not Wasted",
+      "description": "Where your contract allows it, hours you never call on convert into tabletop exercises, playbook development and threat hunting, so quiet years still improve your position."
+    }
+  ],
+  "whoItsFor": [
+    "Regulated firms with statutory reporting windows they cannot afford to discover mid-incident",
+    "Organisations whose cyber insurance policy requires a nominated response provider",
+    "Lean IT teams without in-house forensics, malware analysis or crisis communications",
+    "Boards that have approved an incident response plan nobody has ever exercised"
+  ],
+  "faqs": [
+    {
+      "question": "We think an attack is under way right now. What should we do in the first hour, before anyone signs anything?",
+      "answer": "Isolate, do not power off: pulling the plug destroys memory evidence, so disconnect the network or use your EDR's containment function instead. Stop log rotation and snapshot cloud audit logs before they age out. Assume the attacker reads your email, and move coordination to a phone bridge or a separate messaging channel. Do not restore from backup or rebuild patient zero yet. Appoint one decision maker, start a written timeline, and call your insurer and counsel. Then call us."
+    },
+    {
+      "question": "Why pay for a retainer when we could just call a response firm on the day it happens?",
+      "answer": "You can, and firms do, at the worst possible moment. Emergency engagements start with procurement: scoping, contracts, indemnities, purchase orders and access provisioning, which routinely costs a day while the attacker is still working. Emergency rates are higher, and availability is not guaranteed when a widespread exploit has every responder busy. A retainer fixes the terms in advance, gives you a responder who already knows your architecture, and converts unused hours into readiness work."
+    },
+    {
+      "question": "If we are hit by ransomware, will you negotiate with the attackers or advise us to pay?",
+      "answer": "Our default position is recovery without payment, and we start by testing whether that is achievable: backup integrity, realistic restore times, and whether a public decryptor exists for the strain. Payment is a legal and commercial decision for your board with counsel and your insurer, not a technical one, and sanctions exposure is a genuine constraint. We do not act as a payment intermediary. What we provide is the technical picture that decision needs: what was encrypted, what was taken, and what a decryptor would realistically restore."
+    },
+    {
+      "question": "We already have an internal security team and an MSSP. Where does an incident response retainer fit?",
+      "answer": "Detection and response are different disciplines. Your SOC finds and triages; incident response takes the confirmed intrusion, establishes scope forensically, and runs containment and eradication across the whole estate. Most internal teams and MSSPs are not staffed for memory forensics, malware reverse engineering, chain of custody or regulatory notification, and they are also the team whose controls are under examination. We work under your incident commander, not around them, and hand back the estate with detection rules built from what we found."
+    },
+    {
+      "question": "Who handles the regulatory notifications, and can a six-hour reporting window realistically be met?",
+      "answer": "Your organisation files; we supply the facts and the timeline that make a filing defensible. The CERT-In directions of April 2022 require specified incident types to be reported within six hours of noticing, and that window is survivable only if the template, the contacts and the decision to file are agreed during onboarding rather than debated on the night. Other regimes run in parallel, including sector regulators, GDPR Article 33 and DPDP obligations. Confirm your precise position with your counsel; we build the plan around it."
+    }
+  ],
+  "related": [
+    "network-security",
+    "data-protection",
+    "security-awareness-training"
+  ]
+}

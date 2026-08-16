@@ -1,0 +1,132 @@
+{
+  "slug": "security-audit-compliance",
+  "name": "Security Audits & Compliance",
+  "shortName": "Audit & Compliance",
+  "category": "Audit, Testing & Compliance",
+  "metaTitle": "Security Audits & Compliance: SOC 2, PCI DSS, NIST",
+  "metaDescription": "Arysec runs gap analysis, control design and evidence readiness for SOC 2, PCI DSS 4.0, NIST CSF 2.0 and HIPAA, then supports you through the audit.",
+  "cardSummary": "Gap analysis, control design and evidence readiness for SOC 2, PCI DSS 4.0, NIST CSF 2.0 and sectoral Indian requirements, with support through the external audit.",
+  "heroHeadline": "Compliance Evidence That Survives External Scrutiny",
+  "heroSub": "We map your controls against the frameworks that apply to you, close the gaps that would fail an audit, and build the evidence trail your assessor will ask for. The certificate or attestation comes from an accredited body; the readiness comes from us.",
+  "highlights": [
+    { "value": "Multi-framework", "label": "SOC 2, PCI DSS, NIST" },
+    { "value": "Type II", "label": "Operating effectiveness readiness" },
+    { "value": "Evidence-led", "label": "Artefacts your assessor accepts" }
+  ],
+  "intro": {
+    "heading": "One Control Set, Many Frameworks",
+    "paragraphs": [
+      "Compliance rarely arrives one framework at a time. A payments partner asks for PCI DSS 4.0, a US enterprise buyer wants a SOC 2 Type II report, your regulator expects controls aligned to its cyber security directions, and somewhere in the middle a healthcare client raises HIPAA. Treated as four separate projects, each one repeats the same work: the same access reviews, the same change records, the same vendor assessments, collected four times by four different people.",
+      "We run compliance as a single programme. Your obligations are mapped onto one control set, so a documented quarterly access review satisfies the SOC 2 logical access criteria, the PCI DSS requirement for least privilege and the corresponding NIST CSF 2.0 outcome at the same time. Where frameworks genuinely diverge, and they do, we scope the difference explicitly rather than pretending a generic policy covers it.",
+      "One boundary matters from the outset. Arysec prepares and supports; we do not certify. A SOC 2 attestation is issued by an independent licensed CPA firm, a PCI DSS Report on Compliance by a qualified assessor, and an ISO/IEC 27001:2022 certificate by an accredited certification body. Our work is the readiness: scoping, control design, internal testing, evidence assembly and sitting beside you through fieldwork. Obligations for entities supervised by the Reserve Bank of India, SEBI or IRDAI are revised periodically and differ by licence class, so confirm your specific position with your compliance counsel."
+    ]
+  },
+  "capabilities": {
+    "heading": "Frameworks and Assessment Work",
+    "items": [
+      {
+        "title": "SOC 2 Readiness",
+        "description": "We scope the Trust Services Criteria that apply, design controls for Type I, then run the observation window with monitored evidence collection so your Type II period does not fail on a missed sample."
+      },
+      {
+        "title": "PCI DSS 4.0 Scoping",
+        "description": "Cardholder data flows are traced end to end, assessment scope is reduced where segmentation or tokenisation allows, and each requirement is tested against the defined approach or a documented customised implementation."
+      },
+      {
+        "title": "NIST CSF 2.0 Maturity",
+        "description": "Current and target profiles are scored across all six functions, including Govern, giving your board a maturity view that is comparable year on year and maps cleanly onto other frameworks."
+      },
+      {
+        "title": "Indian Regulatory Alignment",
+        "description": "Regulated entities under the Reserve Bank of India, SEBI or IRDAI face sector-specific cyber security and outsourcing expectations. We read the directions that apply to your licence class and align controls, reporting and testing accordingly."
+      },
+      {
+        "title": "Gap Analysis and Remediation",
+        "description": "Every control is assessed twice: is it designed to meet the requirement, and is it operating as designed. Findings are rated by audit risk and issued with owners, effort estimates and target dates."
+      },
+      {
+        "title": "Evidence and Auditor Liaison",
+        "description": "Evidence requests are answered from a maintained repository rather than assembled under pressure. We manage the assessor's sample requests, walkthrough scheduling and follow-up questions, and we push back where a request exceeds agreed scope."
+      }
+    ]
+  },
+  "deliverables": {
+    "heading": "Artefacts You Keep",
+    "intro": "Readiness work is only useful if it leaves something behind. These are the artefacts we produce, written so your assessor, your board and your customers can all read them.",
+    "items": [
+      "Gap assessment report with control-by-control findings",
+      "Framework mapping matrix across every applicable standard",
+      "Scope boundary document and system description narrative",
+      "Prioritised remediation plan with owners and target dates",
+      "Control matrix covering design and operating effectiveness",
+      "Evidence repository structured to assessor sample requests",
+      "Policy and procedure set mapped to control requirements",
+      "Readiness report and residual risk position for management"
+    ]
+  },
+  "process": [
+    {
+      "title": "Scope",
+      "description": "We establish which frameworks genuinely apply, then draw the boundary: which entities, systems, data flows and third parties are in. Getting this wrong is the most common cause of audit overruns."
+    },
+    {
+      "title": "Assess",
+      "description": "Interviews, configuration review, document inspection and sample testing produce a rated gap register. You learn early which findings are quick policy fixes and which need engineering time or budget approval."
+    },
+    {
+      "title": "Remediate",
+      "description": "Your team closes findings with our support: control design, policy drafting, tooling configuration and evidence workflows. We retest each item and hold a formal readiness review before you engage the external assessor."
+    },
+    {
+      "title": "Support",
+      "description": "We sit alongside you through fieldwork, managing sample requests and walkthroughs, then set the recurring calendar of access reviews, risk assessments and vendor checks that keeps the next cycle shorter."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "One Programme, Several Frameworks",
+      "description": "Overlapping requirements are tested once and mapped to each standard, so adding SOC 2 to an existing PCI DSS programme costs a fraction of starting again."
+    },
+    {
+      "title": "No Surprises at Fieldwork",
+      "description": "Findings surface during our internal testing, when you can still fix them, rather than in the assessor's report where they become qualifications or a delayed certificate."
+    },
+    {
+      "title": "Sales Cycles Move Faster",
+      "description": "Enterprise procurement teams stop blocking deals once you can produce a current report, a scoped system description and answers that match your actual controls."
+    },
+    {
+      "title": "Evidence That Keeps Itself",
+      "description": "Recurring controls are wired into calendars, ticketing and system exports, so the year-two audit draws on records already collected instead of a scramble for screenshots."
+    }
+  ],
+  "whoItsFor": [
+    "SaaS providers whose enterprise buyers require a SOC 2 Type II report",
+    "Payment aggregators, fintechs and merchants carrying PCI DSS 4.0 obligations across multiple environments",
+    "Banks, NBFCs, brokers and insurers preparing for supervisory inspection or a regulator-directed audit",
+    "Healthcare and health technology firms handling protected health information for United States partners"
+  ],
+  "faqs": [
+    {
+      "question": "Can Arysec issue our SOC 2 report or PCI DSS certificate?",
+      "answer": "We do not, and no consultancy honestly can. A SOC 2 attestation is issued by an independent licensed CPA firm, a PCI DSS Report on Compliance by a qualified assessor, and an ISO/IEC 27001:2022 certificate by an accredited certification body. Independence rules prevent the same firm from building your controls and then attesting to them. We do the readiness work, run internal testing and support you through fieldwork; you appoint the assessor directly."
+    },
+    {
+      "question": "How long does SOC 2 Type II actually take from a standing start?",
+      "answer": "Plan for six to twelve months. Readiness and remediation typically run three to six months depending on how much control design already exists, then the Type II observation window needs a minimum of three months of operating evidence, and most buyers expect six or twelve. Type I can be reached sooner and is a reasonable interim answer for a prospect, but few enterprise procurement teams accept it as a permanent substitute."
+    },
+    {
+      "question": "We already have an internal audit function and a GRC tool. What do you add?",
+      "answer": "Usually scope interpretation and testing depth. Internal audit knows your business; it rarely knows how a particular assessor reads PCI DSS requirement 11, or which SOC 2 samples get rejected. A GRC tool stores evidence, it does not decide whether that evidence proves operating effectiveness. We work alongside both, configure the tool against the mapped control set, and train your team to run the cycle without us."
+    },
+    {
+      "question": "How much of this lands on our engineering team?",
+      "answer": "More than vendors like to admit, and we would rather say so up front. Policy drafting, control mapping, testing and evidence structuring are ours. Changing an access model, enabling log retention, segmenting a network or fixing a deployment pipeline is engineering work only your team can do. We reduce the load by sequencing findings so one change satisfies several requirements, and by writing tickets with enough technical detail to be picked up without a meeting."
+    },
+    {
+      "question": "Does being compliant with these frameworks mean we are secure?",
+      "answer": "No. A framework is a floor agreed by committee, and an assessor tests a sample at a point in time. PCI DSS will not stop a phishing-led account takeover, and clean attestation reports have been issued to organisations that were later breached. We use the compliance programme as the vehicle for controls that also reduce real risk, and we tell you plainly where a requirement is a paperwork obligation rather than a security improvement."
+    }
+  ],
+  "related": ["iso-27001", "internal-audit", "vapt"]
+}

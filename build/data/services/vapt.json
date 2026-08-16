@@ -1,0 +1,132 @@
+{
+  "slug": "vapt",
+  "name": "Vulnerability Assessment & Penetration Testing",
+  "shortName": "VAPT",
+  "category": "Audit, Testing & Compliance",
+  "metaTitle": "VAPT: Network, Web, API and Mobile Penetration Testing",
+  "metaDescription": "Arysec runs authorised penetration testing across network, web, API, mobile and cloud, with CVSS-rated findings, proof-of-concept evidence and a free retest.",
+  "cardSummary": "Authorised testing of networks, web applications, APIs, mobile apps and cloud, with CVSS-rated findings, reproducible proof of concept, remediation guidance and a free retest.",
+  "heroHeadline": "Findings Your Engineers Can Reproduce and Fix",
+  "heroSub": "We test the systems you authorise us to test, within agreed windows, and report what we actually proved rather than what a scanner suspected. Every finding carries evidence, a CVSS rating, a fix, and a retest at no extra cost.",
+  "highlights": [
+    { "value": "Authorised only", "label": "Signed rules of engagement" },
+    { "value": "CVSS v4.0", "label": "Severity rated and evidenced" },
+    { "value": "Free retest", "label": "Fixes verified after remediation" }
+  ],
+  "intro": {
+    "heading": "Assessment, Penetration Test, Red Team",
+    "paragraphs": [
+      "The two halves of VAPT answer different questions, and buying one when you needed the other is the most common waste in this market. A vulnerability assessment is breadth: authenticated and unauthenticated scanning across the estate, tuned to remove noise, producing a ranked inventory of weaknesses that exist. A penetration test is depth: a tester chains those weaknesses together to establish what an attacker could actually reach, which is almost never the same list. A scanner reports that a host runs an outdated library. A tester tells you the library gave shell access, that the service account behind it was over-permissioned, and that the customer database was two steps further on.",
+      "Our testing follows published methodology rather than a tool's default profile. Network work follows the Penetration Testing Execution Standard and the NIST SP 800-115 technical guide. Web applications are tested against the OWASP Testing Guide and OWASP Top 10, and against OWASP ASVS at the verification level you select where you need provable depth of coverage. APIs are assessed against the OWASP API Security Top 10, mobile builds against the OWASP Mobile Application Security Verification Standard. Attack behaviour is described using MITRE ATT&CK technique identifiers, so your detection team can check whether anything we did was seen.",
+      "Testing happens only with written authorisation. Before anything is sent to a live system we agree rules of engagement naming the in-scope addresses and hosts, the excluded systems, the test windows, the permitted techniques, the escalation contacts on both sides, and the point at which we stop. Production is treated as production: no denial of service against live traffic unless you specifically commission it in a controlled window, no destructive payloads, no mass password guessing that locks out your users, and no exploitation of anything that could affect availability without clearing it with your named contact first. Critical findings reach you the day we confirm them, not three weeks later in a report."
+    ]
+  },
+  "capabilities": {
+    "heading": "What We Test",
+    "items": [
+      {
+        "title": "External and Internal Network",
+        "description": "External testing works from the internet against your perimeter: exposed services, remote access and mail. Internal testing starts from a network foothold and pursues privilege escalation and lateral movement toward domain compromise."
+      },
+      {
+        "title": "Web Application Testing",
+        "description": "Manual testing against the OWASP Top 10 and ASVS: broken access control, injection, authentication flaws, server-side request forgery and business logic abuse. Authenticated roles are tested against each other for horizontal and vertical escalation."
+      },
+      {
+        "title": "API Security Testing",
+        "description": "REST, GraphQL and SOAP endpoints are tested from their specification: object and function level authorisation, mass assignment, rate limiting, token handling and undocumented methods the front end never calls but the gateway still exposes."
+      },
+      {
+        "title": "Mobile Application Testing",
+        "description": "Android and iOS builds are examined statically and at runtime: local data storage, keychain and keystore use, certificate pinning, hardcoded secrets, tampering and root or jailbreak controls, plus the backend the app talks to."
+      },
+      {
+        "title": "Cloud Configuration Review",
+        "description": "AWS, Azure and Google Cloud tenants are reviewed against CIS Benchmarks and provider guidance: identity and access policies, public storage, network exposure, key management, logging coverage and the privilege paths connecting them."
+      },
+      {
+        "title": "Wireless, Phishing and Red Team",
+        "description": "Corporate wireless and guest segregation, phishing and voice pretext campaigns run under agreed rules, and objective-led red team exercises that test whether your detection and response functions notice a quiet intruder."
+      }
+    ]
+  },
+  "deliverables": {
+    "heading": "What Lands on Your Desk",
+    "intro": "Two audiences read a penetration test report: a board that needs the risk position and an engineer who needs to reproduce the finding. We write for both.",
+    "items": [
+      "Signed rules of engagement and authorisation letter",
+      "Executive summary with business risk and overall posture",
+      "Technical findings rated with CVSS v4.0 vectors",
+      "Reproduction steps and proof-of-concept evidence per finding",
+      "Remediation guidance written for the team owning the fix",
+      "Attack narrative showing how findings were chained together",
+      "Retest report confirming which issues are genuinely closed",
+      "Clean summary letter suitable for customers and auditors"
+    ]
+  },
+  "process": [
+    {
+      "title": "Scope and Authorise",
+      "description": "We agree targets, exclusions, test windows, permitted techniques and escalation contacts, then take written authorisation from someone able to give it. Third-party hosted systems need their provider's consent, which we help you obtain."
+    },
+    {
+      "title": "Discover",
+      "description": "Reconnaissance and enumeration map what is actually exposed: hosts, services, versions, subdomains, endpoints and roles. Automated scanning runs here, then every result is verified by hand so false positives never reach your report."
+    },
+    {
+      "title": "Exploit",
+      "description": "Confirmed weaknesses are exploited within the agreed limits to prove impact, then chained: credentials reused, privileges escalated, segmentation tested, reachable data identified. Anything that risks availability is cleared with you first."
+    },
+    {
+      "title": "Report and Retest",
+      "description": "Findings are rated, evidenced and walked through with your team, with critical issues raised as we find them. After you remediate, we retest the affected findings and reissue the report at no extra cost."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Proof, Not Probability",
+      "description": "A tester who reached your customer records ends the argument about whether a finding matters. Evidence moves remediation budget faster than a scanner's severity label."
+    },
+    {
+      "title": "Fixes Verified, Not Assumed",
+      "description": "The retest is included, so you close the engagement knowing which issues are genuinely resolved and which reappeared, rather than trusting a ticket marked done."
+    },
+    {
+      "title": "Evidence for Third Parties",
+      "description": "Enterprise procurement, insurers and certification auditors ask for a current test report. You get one written to be shared, plus a summary letter without exploitable detail."
+    },
+    {
+      "title": "Your Detection Gets Tested",
+      "description": "Every action is mapped to MITRE ATT&CK techniques, so your security team can compare what we did against what their tooling recorded and alerted on."
+    }
+  ],
+  "whoItsFor": [
+    "SaaS and fintech products whose enterprise buyers demand a current penetration test report",
+    "Organisations with an annual testing obligation under ISO/IEC 27001:2022, PCI DSS 4.0 or SOC 2",
+    "Engineering teams shipping a major release, a new API or a cloud migration",
+    "Security functions wanting an independent check on detection, response and internal segmentation"
+  ],
+  "faqs": [
+    {
+      "question": "We already run automated vulnerability scanning. Why pay for a penetration test?",
+      "answer": "Because a scanner reports conditions and a tester reports consequences. Scanners find the missing patch; they cannot tell you that the patch matters because that host holds a service account with domain rights, or that three medium findings combine into full compromise. They also miss the whole class of business logic flaws that look like normal application use, such as price manipulation, workflow bypass and access to another tenant's records. Keep the scanner for coverage and cadence. Use testing to establish what an attacker actually achieves."
+    },
+    {
+      "question": "Will testing take our production systems down?",
+      "answer": "That is the risk we design the engagement around. Denial of service testing is excluded by default and runs only if you commission it in a controlled window. We throttle traffic, avoid mass authentication attempts that would lock out accounts, and confirm with your named contact before exploiting anything that could affect availability. Test accounts and any files we upload are recorded and removed at the end, and the list goes in the report so your team can verify. If something behaves unexpectedly, we stop and call you."
+    },
+    {
+      "question": "Should we give you credentials and documentation, or is a black box test more realistic?",
+      "answer": "Grey box gets you more findings for the same money. A black box test spends a large share of its hours rediscovering things you could have told us in an hour, and real attackers have time we do not. Give us documented credentials for each user role, an API specification and an architecture diagram, and testing time goes into authorisation logic and privilege boundaries instead of enumeration. Where the point of the exercise is measuring detection rather than coverage, black box makes sense, and we scope it deliberately."
+    },
+    {
+      "question": "Our regulator or customer asks for a report from a specific category of tester. Does yours qualify?",
+      "answer": "Ask us at scoping and we will tell you plainly. Most contractual and framework requirements, including ISO/IEC 27001:2022, PCI DSS 4.0 and SOC 2, name testing that is competent and independent of the team that built the system, which our reports satisfy. Some Indian filings instead name a specific empanelment status held by the testing organisation, and that is not something any report can substitute for. We check your actual requirement before you commit, rather than after you have paid for the wrong thing."
+    },
+    {
+      "question": "How often should we test, and what stops the report being out of date the week after we get it?",
+      "answer": "Annually is the common floor, driven by ISO/IEC 27001:2022 and PCI DSS 4.0 expectations, but the honest trigger is change: a major release, a new external service, a cloud migration, a merger. A report describes a point in time and starts ageing immediately, which is why we recommend pairing an annual deep test with continuous scanning and a shorter targeted test on significant releases. The included retest keeps the current report accurate once fixes land, and we will tell you if a change makes a retest insufficient."
+    }
+  ],
+  "related": ["security-audit-compliance", "cloud-security", "network-security"]
+}

@@ -1,0 +1,111 @@
+{
+  "title": "Cookie Policy",
+  "metaTitle": "Cookie Policy: What We Set and How to Control It",
+  "metaDescription": "How the Arysec website uses cookies: the strictly necessary, preference and analytics categories we set, how long they last, and how to change or clear them.",
+  "intro": "This policy explains how the Arysec website uses cookies and similar storage technologies. It sets out the categories we rely on, what each one does, how long they stay on your device, what we deliberately do not do, and the ways you can review, change or clear your choices at any time.",
+  "sections": [
+    {
+      "heading": "What This Policy Covers",
+      "paragraphs": [
+        "Arysec Technologies LLP publishes this policy to explain the small amount of information our website stores on, or reads from, the device you are browsing with. It applies to the pages served from our website and to the consent control we present when you first arrive.",
+        "Our site is largely a static marketing site. It publishes information about our services, hosts a handful of forms, and runs no accounts, baskets or logged-in areas. A site of that shape needs very little storage, and this policy describes what it actually uses rather than every technology a cookie policy could theoretically mention.",
+        "Read this alongside our Privacy Policy, which covers personal data more broadly, including form submissions, server logs and the rights you can exercise over your own data. Where the two overlap, the Privacy Policy governs how we treat the underlying personal data, and this policy governs the storage mechanism itself."
+      ]
+    },
+    {
+      "heading": "What Cookies and Similar Technologies Are",
+      "paragraphs": [
+        "A cookie is a small text file that a website asks your browser to store, and that your browser sends back on later requests to the same site. Cookies exist because the web is otherwise stateless: without them a site cannot tell that two page requests came from the same visitor, so it cannot remember a preference you set a moment earlier.",
+        "Similar technologies do comparable jobs by other means. Local storage and session storage hold small values inside the browser without attaching them to every request. Pixels, sometimes called web beacons, are tiny images or scripts whose loading records that a page or message was opened. Fingerprinting methods infer a device from the combination of its settings rather than storing anything at all.",
+        "This policy uses the word cookies to cover all of these, because the label matters far less to you than the purpose behind it. Where we rely on something that is not strictly a cookie, we say so."
+      ]
+    },
+    {
+      "heading": "The Categories We Use",
+      "paragraphs": [
+        "We group storage into three categories, and the consent control on our site uses the same three names. Only the first is set before you make a choice.",
+        "Analytics is set only after you agree to it through the consent control, or where the law that applies to you permits a measurement cookie without consent. We configure analytics to gather as little as the purpose needs, we do not try to identify individuals from it, and we do not match it against the enquiry records described in our Privacy Policy."
+      ],
+      "list": [
+        "Strictly necessary: storage the site cannot sensibly work without. It carries the record of your cookie choices, supports the security measures sitting in front of the site, helps protect our forms against automated abuse, and keeps a visit coherent as you move between pages.",
+        "Preference: storage that remembers a setting you chose, so the site does not ask you twice. A display option or a dismissed notice is the usual example. Nothing in this category identifies you or follows you anywhere else.",
+        "Analytics and performance: storage that lets us count visits and understand which pages hold attention, which routes people take through the site, and where they give up. We use it to decide what to publish next and to find pages that load slowly or break."
+      ]
+    },
+    {
+      "heading": "What We Do Not Use",
+      "paragraphs": [
+        "We do not set advertising cookies. There are no ad network tags on this site, no remarketing or retargeting pixels, no conversion trackers placed on our behalf by an advertising platform, and nothing that follows you across other websites so that our name can be shown to you again.",
+        "The information our cookies produce is not sold, rented or shared with data brokers or advertising exchanges, and we do not build profiles of individual visitors. Analytics data is read in aggregate to improve what we publish, and for nothing else.",
+        "Device fingerprinting is not used to work around your cookie choices either. If a browser or a setting refuses storage, we take that as the answer instead of looking for another way to recognise the device.",
+        "Should any of this change, for example if we ever run a paid campaign that needs measurement, we would update this policy first and ask for your consent before the relevant storage was set."
+      ]
+    },
+    {
+      "heading": "First-Party and Third-Party Cookies",
+      "paragraphs": [
+        "A first-party cookie is set by the site you are visiting. A third-party cookie is set by another organisation whose code runs inside the page, such as an analytics provider, an embedded video player or a map. The distinction matters because a third party can, in principle, observe activity across every site that includes its code.",
+        "Most of what our site stores is first-party. Where a third party is involved it is because we use an external service for a defined job: our hosting and content delivery provider, which may set a cookie to route requests and filter malicious traffic, and our analytics provider where analytics is enabled. We describe them by role rather than by name, because suppliers change and a printed list goes stale quickly. Write to info@arysec.in and we will tell you which providers are in use at the time you ask.",
+        "Pages that embed material published elsewhere, such as a video or a document viewer, can carry that provider's own cookies. We keep embedded third-party content to a minimum for exactly that reason, and where something is embedded we prefer options that store nothing until you press play."
+      ]
+    },
+    {
+      "heading": "How Long Cookies Stay on Your Device",
+      "paragraphs": [
+        "Cookies fall into two groups by lifetime. Session cookies exist only while your browser is open and vanish when you close it. Persistent cookies carry an expiry date and survive until that date passes or until you delete them yourself.",
+        "We keep each lifetime as short as the purpose allows. Security and session storage is generally short-lived. The record of your cookie choices has to persist, or we would have to ask you again on every page, but it is given a finite expiry so that your decision is revisited periodically rather than treated as permanent. Analytics identifiers, where present, are the longest-lived items we set, and they still expire.",
+        "Rather than print a table of durations that would drift out of date, we suggest you check directly. Every modern browser has a storage inspector that lists the name, origin and exact expiry of every cookie currently set for a site. That view is always accurate, and it covers anything a page has stored, not only what we anticipated when writing this."
+      ]
+    },
+    {
+      "heading": "Changing Your Choices on Our Site",
+      "paragraphs": [
+        "The consent control appears when you first visit, and it lets you accept or decline the optional categories before anything in them is set. Declining takes a single action, and it is presented as plainly as accepting. We do not hide refusal behind extra steps or pre-tick the optional boxes.",
+        "Your first answer is not final. Reopen the control from the cookie settings link in our site footer, change any category, and the change takes effect immediately; if you cannot find it, write to info@arysec.in and we will point you to it. Withdrawing consent stops further collection in that category. Where a cookie was already set under your earlier choice, reopening the control clears what we can clear from our side, and your browser settings will remove the rest.",
+        "Strictly necessary storage is not offered as a toggle, because the site cannot function without it and consent is not required for it. That is not a way of smuggling anything past you. The category holds your consent record, the security and anti-abuse measures, and nothing that describes you."
+      ]
+    },
+    {
+      "heading": "Managing Cookies in Your Browser",
+      "paragraphs": [
+        "Your browser is the stronger control, because it applies to every site rather than only to ours. All major browsers let you view stored cookies, delete them individually or in bulk, block third-party cookies, block all cookies for a chosen site, and clear everything automatically when you close the window.",
+        "Menu names move between versions, so treat the pointers below as a direction rather than as exact steps. Private or incognito windows discard cookies when the window closes, which is a quick way to browse without leaving anything behind, though storage still operates while the window is open."
+      ],
+      "list": [
+        "Chrome and other Chromium browsers: Settings, then Privacy and security, then Third-party cookies and Site settings.",
+        "Firefox: Settings, then Privacy & Security, where Enhanced Tracking Protection and cookie exceptions are managed.",
+        "Safari: Settings or Preferences, then Privacy, with per-site data listed under Manage Website Data.",
+        "Edge: Settings, then Cookies and site permissions.",
+        "Mobile browsers: the equivalent options sit inside the browser's own settings rather than the operating system privacy menu."
+      ]
+    },
+    {
+      "heading": "What Happens If You Turn a Category Off",
+      "paragraphs": [
+        "Switching categories off has consequences, and they are worth stating rather than implying.",
+        "None of our content sits behind a consent wall. Declining everything optional still gives you the whole site, at the same speed and with the same material."
+      ],
+      "list": [
+        "Blocking strictly necessary storage, which you can only do through your browser, will break parts of the site. Forms may fail to submit, the security layer in front of the site may treat you as suspicious, and the consent control will reappear on every page because your answer cannot be saved.",
+        "Declining preference storage costs you convenience and nothing more. Settings you choose will not be remembered between visits, so a dismissed notice may return and any display option resets to its default.",
+        "Refusing analytics has no effect on you at all. Every page behaves exactly as it otherwise would. The cost falls on us: we see less about which material is useful, and we decide what to publish next with less information to go on."
+      ]
+    },
+    {
+      "heading": "Do Not Track and Similar Browser Signals",
+      "paragraphs": [
+        "Do Not Track is a header a browser can send to say that the person using it does not wish to be tracked. It was never finished as a standard, and no common agreement exists on what a site must do when it receives one, so most sites ignore it and several browsers have removed the setting.",
+        "Our position is simple. We do not carry out the cross-site tracking that Do Not Track was designed to stop, so on our site the signal asks us to stop something we were not doing. Where analytics is in use, your answer in our consent control is what governs it, and that answer is the one we act on.",
+        "Newer signals, such as Global Privacy Control, are recognised as binding opt-out requests in some jurisdictions. We treat such a signal as a decline for the optional categories where our systems receive it, and an explicit choice you make in the consent control always takes precedence over an inferred one."
+      ]
+    },
+    {
+      "heading": "Questions and Changes to This Policy",
+      "paragraphs": [
+        "We review this policy when the site changes, when we adopt or drop a service that sets storage, and when the law that applies to us moves. The version published on this page is always the current one.",
+        "Small corrections take effect as soon as they appear here. Where a change introduces a new category of storage, or widens what an existing category does, we will reset the consent control so that you are asked again before the new storage is set. Notice of a material change is given on the website, and we would rather over-explain such a change than let it pass quietly.",
+        "For anything in this policy, or to ask which providers are in use at the moment, write to info@arysec.in or call +91 90048 57727 between 09:00 and 18:00 IST, Monday to Friday. Complaints about the way we have handled your data go to our Grievance Officer, contactable at the same address. Put the words Grievance Officer in the subject line so that the message is routed correctly."
+      ]
+    }
+  ]
+}

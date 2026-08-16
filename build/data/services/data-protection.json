@@ -1,0 +1,132 @@
+{
+  "slug": "data-protection",
+  "name": "Data Protection & Encryption",
+  "shortName": "Data Protection",
+  "category": "Cybersecurity Services",
+  "metaTitle": "Data Encryption, DLP, Key Management & Backup",
+  "metaDescription": "Arysec secures the data itself: discovery and classification, encryption and key management, DLP, immutable backup and tested recovery for DPDP and GDPR.",
+  "cardSummary": "Discovery and classification, encryption with managed keys, tokenisation, DLP across endpoint, network and cloud, plus immutable backup and recovery tested against agreed RPO and RTO.",
+  "heroHeadline": "Protection That Stays With the Data",
+  "heroSub": "Controls follow your sensitive data wherever it moves: classified at source, encrypted with keys you control, watched as it leaves, and recoverable from copies an attacker cannot reach or alter.",
+  "highlights": [
+    { "value": "Classified", "label": "Data found and labelled" },
+    { "value": "Keys You Hold", "label": "Customer-managed keys and HSM" },
+    { "value": "Immutable", "label": "Backups an attacker cannot alter" }
+  ],
+  "intro": {
+    "heading": "Find It, Then Protect It",
+    "paragraphs": [
+      "You cannot protect data you have not found. Many organisations discover during an audit that customer records also sit in a decade of exports, a reporting database nobody owns, several shadow spreadsheets and a support ticketing system that quietly stores identity documents as attachments. Discovery tooling scans structured stores, file shares, endpoints, mailboxes and cloud object storage, matching on pattern and context together, because an Aadhaar number, a PAN, a card primary account number or a health identifier only means something alongside the fields around it. What comes back is an inventory of where regulated data actually sits, who owns each store, and which copies have no business reason to exist. Classification then attaches a label to every set, and that label is what each later control reads. Retention schedules and disposal follow directly from it. Deleting data you were never required to keep remains the cheapest security control available.",
+      "Encryption is where most programmes stop too early. Storage-level encryption with provider-managed keys defends against a stolen disk and a decommissioned array; it does nothing when an attacker holds valid application credentials, because the platform decrypts on their behalf. We start from the threat you are trying to defeat, then choose the layer: transparent database encryption for the media, column or field-level encryption for the handful of attributes that would cause real harm, and TLS 1.2 or 1.3 with current cipher suites where the transport is the exposure. Key management carries the real weight. We design a key hierarchy using envelope encryption, root keys held in a hardware security module validated to FIPS 140-2 or 140-3, customer-managed keys where the platform supports them, documented rotation and revocation, and administrative separation so that nobody who can read the data can also read the keys. Where a value never needs reversing, tokenisation or format-preserving substitution takes it out of scope, and masked or synthetic data keeps production identities away from development and analytics environments.",
+      "Stopping egress and surviving a bad day are the other halves of the work. Data loss prevention runs where data leaves: endpoint agents covering removable media, print and clipboard, network inspection of mail and web upload, and API-based controls across sanctioned cloud services through a cloud access security broker, with information rights management for documents that must stay readable only to named recipients after they travel. Backups get the same scrutiny as production. We hold to three copies, two media types and one offsite, then add what ransomware made necessary: at least one immutable copy under object lock or a write-once policy, one copy genuinely offline or logically air-gapped, backup infrastructure on a separate identity plane so domain compromise does not become backup compromise, and credentials your production administrators do not hold. Recovery point and recovery time objectives are set per system with the business rather than assumed by IT, then tested by restoring, since an untested backup is only a hypothesis. Under the DPDP Act 2023 and the EU GDPR, controls of this kind are how a Data Fiduciary or controller evidences reasonable security safeguards; the governance and notification duties above them belong to the Data Protection Officer role rather than to this service."
+    ]
+  },
+  "capabilities": {
+    "heading": "What We Put in Place",
+    "items": [
+      {
+        "title": "Data Discovery and Classification",
+        "description": "Automated scanning across databases, file shares, endpoints, mailboxes and object storage finds regulated data, then a labelling scheme records sensitivity, owner and handling rules that every downstream control reads."
+      },
+      {
+        "title": "Encryption and Key Management",
+        "description": "Cryptographic standards set per data class: algorithms, key lengths, protocol versions and where each applies. Key hierarchies, hardware security modules, customer-managed keys, rotation schedules and separation of duties are designed and documented."
+      },
+      {
+        "title": "Tokenisation and Masking",
+        "description": "Card numbers, identifiers and account references are replaced with tokens so systems that never need the original value fall out of scope. Masking and synthetic data keep production records out of test environments."
+      },
+      {
+        "title": "Data Loss Prevention",
+        "description": "Policies enforced at the endpoint, on the network and inside sanctioned cloud services, tuned in monitor mode before anything blocks, with user coaching prompts and a documented exception route for legitimate business need."
+      },
+      {
+        "title": "Rights, Retention and Disposal",
+        "description": "Information rights management keeps sensitive documents controlled after they leave your estate. Retention schedules define how long each class is kept, and disposal procedures cover cryptographic erasure, media destruction and destruction certificates."
+      },
+      {
+        "title": "Backup and Recovery Assurance",
+        "description": "Backup architecture reviewed against the three-two-one rule, immutable and offline copies added, database and storage hardening applied, then restores run on schedule to prove recovery point and recovery time objectives are met."
+      }
+    ]
+  },
+  "deliverables": {
+    "heading": "What the Engagement Produces",
+    "intro": "Every item here is something you keep and can hand to an auditor, an enterprise customer's security team or your own board.",
+    "items": [
+      "Sensitive data inventory mapped to systems, owners and jurisdictions",
+      "Classification scheme with labels, handling rules and worked examples",
+      "Encryption standard covering algorithms, key lengths and protocol versions",
+      "Key management procedure with rotation, escrow and duty separation",
+      "DLP policy set, tuned rulebase and false-positive review log",
+      "Retention schedule and disposal procedure with destruction records",
+      "Backup architecture diagram showing immutable and offline copies",
+      "Restore test results against agreed RPO and RTO targets"
+    ]
+  },
+  "process": [
+    {
+      "title": "Discover",
+      "description": "Scanning and interviews establish where regulated data lives, who owns it, how it moves between systems and vendors, and which copies exist without a business reason. Findings are ranked by exposure."
+    },
+    {
+      "title": "Design",
+      "description": "A classification scheme, cryptographic standard, key hierarchy, DLP policy set, retention schedule and backup architecture are drafted against your risk appetite, then reviewed with legal, engineering and the affected business owners."
+    },
+    {
+      "title": "Implement",
+      "description": "Controls go in staged. Labels and DLP rules run in monitor mode first, keys migrate with rollback planned, databases and storage are hardened, and immutable copies are established before anything moves to enforcement."
+    },
+    {
+      "title": "Prove",
+      "description": "Restores are tested against agreed objectives, a ransomware scenario is walked through with the people who would run it, DLP false positives are worked down weekly, and results go into a written report."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Protection Sized to Risk",
+      "description": "Classification lets you spend heavy controls on the small share of data that warrants them, instead of applying the same expensive treatment to everything or to nothing."
+    },
+    {
+      "title": "Keys Beyond an Attacker's Reach",
+      "description": "Root keys held in a hardware security module, with administrative duties split, mean stolen application credentials return ciphertext rather than readable customer records."
+    },
+    {
+      "title": "Recovery You Have Proven",
+      "description": "Restore tests measured against stated recovery point and recovery time objectives replace the assumption that backups work with evidence that they do, before the day you need them."
+    },
+    {
+      "title": "Evidence Buyers Ask For",
+      "description": "Encryption standards, key custody records and restore results answer questions that appear in enterprise security questionnaires, ISO/IEC 27001 audits and regulator correspondence, without a scramble each time."
+    }
+  ],
+  "whoItsFor": [
+    "Financial services and insurance firms holding customer records under sectoral retention and localisation rules",
+    "Healthcare and diagnostics providers whose patient records move between clinical systems and third-party laboratories",
+    "SaaS companies asked by enterprise customers for customer-managed keys and data residency commitments",
+    "Manufacturers and professional firms recovering from ransomware or unable to prove a restore works"
+  ],
+  "faqs": [
+    {
+      "question": "Our cloud provider encrypts everything at rest already. What else is there to do?",
+      "answer": "Storage encryption with provider-managed keys defends against a stolen disk or a decommissioned array. It does not help when an attacker authenticates as your application, because the platform decrypts on their behalf. The question is which threat you are answering. Customer-managed keys move custody to you, a hardware security module keeps root keys out of the data plane, and field-level encryption or tokenisation protects the specific attributes that would cause harm if exposed. We map each control to the attack it stops."
+    },
+    {
+      "question": "Will data loss prevention stop our people from doing their jobs?",
+      "answer": "It will if it is deployed badly, which is why nothing blocks on day one. Policies run in monitor mode for several weeks while we measure what they would have caught and what they would have wrongly stopped. Rules are then narrowed against your real traffic rather than vendor templates. Enforcement begins with the highest-confidence patterns and a coaching prompt, so a user can record a business justification and carry on. Hard blocking without override is reserved for the few cases that warrant it."
+    },
+    {
+      "question": "We take backups every night. Why is ransomware still a risk for us?",
+      "answer": "Because backups are a target before they are a remedy. Operators now spend days inside an estate, find the backup console, use the same domain credentials your administrators use, delete snapshots and shorten retention, then encrypt what remains. Nightly copies on reachable storage under shared credentials do not survive that. What does: an immutable copy under object lock, one copy offline or logically separated, backup infrastructure on its own identity plane, and a restore you have timed. Most plans fail on recovery time, not on copies."
+    },
+    {
+      "question": "How does this overlap with your DPO service and with our own security team?",
+      "answer": "They meet without duplicating. The Data Protection Officer role owns lawful basis, records of processing, rights requests and breach notification decisions. This service builds the technical safeguards underneath: classification, encryption, key custody, DLP, retention and recovery. Either can be bought alone. Against your internal team, we take the design and the initial build, which is concentrated work that is awkward to staff permanently, then hand over running operations with documented policies, tuning history and runbooks."
+    },
+    {
+      "question": "Do we have to replace our tooling, and what do we keep at the end?",
+      "answer": "Mostly you keep your tools, and you keep everything we produce. Discovery, labelling, DLP and backup capability often sit unused inside licences you already own. We configure what is there and say plainly when a gap needs a purchase rather than a project. A first discovery pass usually returns findings within a few weeks. At close, the classification scheme, cryptographic standard, key management procedure, DLP rulebase and restore evidence are documented so your team or another supplier can continue."
+    }
+  ],
+  "related": ["incident-response", "dpo", "cloud-security"]
+}

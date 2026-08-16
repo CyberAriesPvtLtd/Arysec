@@ -1,0 +1,132 @@
+{
+  "slug": "cloud-security",
+  "name": "Cloud Security Solutions",
+  "shortName": "Cloud Security",
+  "category": "Cybersecurity Services",
+  "metaTitle": "Cloud Security for AWS, Azure & Google Cloud",
+  "metaDescription": "Arysec secures AWS, Azure and Google Cloud: CSPM, least-privilege IAM, landing zones, Kubernetes hardening and CIS Benchmark remediation for your estate.",
+  "cardSummary": "Configuration review and hardening across AWS, Azure and Google Cloud, covering identity, landing zones, key management, container workloads and infrastructure as code, mapped to CIS Benchmarks.",
+  "heroHeadline": "Close the Gaps Your Cloud Provider Leaves You",
+  "heroSub": "Your provider secures the data centres and the hypervisor. Everything above that line is yours. We find the misconfigurations, over-privileged roles and unwatched accounts across your AWS, Azure and Google Cloud estates, then fix them with your engineers.",
+  "highlights": [
+    { "value": "AWS, Azure, GCP", "label": "Assessed against each baseline" },
+    { "value": "CIS Benchmarks", "label": "Every finding mapped to control" },
+    { "value": "Continuous", "label": "Posture monitoring, not annual snapshots" }
+  ],
+  "intro": {
+    "heading": "Where Cloud Breaches Actually Come From",
+    "paragraphs": [
+      "Almost nothing that goes wrong in public cloud is a failure of the provider's infrastructure. AWS, Microsoft Azure and Google Cloud each publish a shared responsibility model that draws a line: they secure the physical facilities, the hardware and the virtualisation layer, and you secure everything you place on top. That line moves with what you buy. Run a virtual machine and the guest operating system, its patching and its network exposure are yours. Use a managed database and the provider patches the engine while you still own access control, encryption keys and who is allowed to read the data. Adopt managed Kubernetes and the control plane is theirs, while node configuration, workload permissions and admission policy stay with you. Nearly every cloud incident we are called into traces back to something on your side of that line that nobody realised was there, and the cost is rarely confined to a cloud bill: exposed personal data carries notification duties under the DPDP Act 2023, contractual consequences with enterprise customers, and awkward questions from every prospect running a security review.",
+      "The same handful of mistakes recurs across estates of every size. Storage ends up open to anonymous access, whether that is an S3 bucket with a public policy, an Azure storage account permitting public blob access, or a Cloud Storage bucket bound to allUsers. Security groups allow 0.0.0.0/0 on SSH and RDP because a rule added during a migration was never withdrawn. Identity policies carry wildcard actions on wildcard resources because working out the specific permission took longer than anyone had. Long-lived access keys sit in repositories and on laptops for years without rotation. Root and global administrator accounts run without multi-factor authentication. Audit logging is disabled, or enabled in one region only, so CloudTrail, Azure Activity Log or Cloud Audit Logs cannot answer the question you will eventually need to ask. Snapshots and machine images get shared publicly by accident. Instance metadata stays reachable over the first version of the service, which turns an ordinary server-side request forgery bug into stolen role credentials. Kubernetes clusters run privileged containers on default service accounts with no network policy between namespaces. None of this is exotic, and none of it requires an attack to find: it is visible by reading configuration.",
+      "Finding the problems is the easy half. Configuration drifts back the moment an engineer needs to ship against a deadline, so the work has to change how environments are created rather than only what they contain today. Preventive guardrails go in at the organisation level: service control policies in AWS, Azure Policy assignments, and organisation policy constraints in Google Cloud, so an unwanted configuration is refused rather than reported a week later. New environments come from a landing zone in which account structure, logging, network topology, identity federation and baseline controls are already decided. Infrastructure as code is scanned before it merges, because a Terraform module that opens a port will open it in every environment that uses it. Detective controls sit behind the preventive ones: posture management for the control plane, workload protection for what runs inside the instances and containers, and entitlement management for permissions nobody has used in ninety days. Where you are still migrating, we agree the target design before workloads move, since retrofitting account structure and identity afterwards costs far more than deciding them up front. Results are mapped to whatever control set you report against, whether that is ISO/IEC 27001:2022 with ISO/IEC 27017 guidance, the CSA Cloud Controls Matrix, NIST CSF 2.0 or PCI DSS 4.0."
+    ]
+  },
+  "capabilities": {
+    "heading": "What the Engagement Covers",
+    "items": [
+      {
+        "title": "Posture Assessment and CSPM",
+        "description": "We assess every subscription, project and account against CIS Benchmarks and provider baselines, then stand up continuous posture management so new drift is caught within hours rather than at the next audit."
+      },
+      {
+        "title": "Identity and Least Privilege",
+        "description": "Roles, policies and trust relationships are rebuilt around what workloads actually call. We remove wildcard permissions, replace static keys with federated short-lived credentials, and apply permissions boundaries, conditional access and just-in-time elevation."
+      },
+      {
+        "title": "Landing Zones and Guardrails",
+        "description": "Account and subscription hierarchies are designed with logging, network topology and baseline policy built in, using Control Tower, Azure landing zones or Google Cloud folder structures so environments start compliant."
+      },
+      {
+        "title": "Container and Kubernetes Security",
+        "description": "Cluster configuration is reviewed against the CIS Kubernetes Benchmark and NIST SP 800-190: pod security standards, admission control with OPA Gatekeeper or Kyverno, network policy, image signing and registry scanning."
+      },
+      {
+        "title": "Workload and Pipeline Scanning",
+        "description": "Virtual machines, containers and serverless functions are scanned for vulnerabilities and runtime drift, while Terraform and CloudFormation are checked before merge so a faulty module never reaches production."
+      },
+      {
+        "title": "Encryption and Key Management",
+        "description": "Data at rest and in transit is mapped to keys you control, using customer-managed keys in KMS, Key Vault or Cloud KMS, with rotation, separation of duties and secrets moved out of code."
+      }
+    ]
+  },
+  "deliverables": {
+    "heading": "What Lands on Your Desk",
+    "intro": "Cloud work produces a great deal of dashboard output. These are the written artefacts you keep, and the ones your auditors and engineers will actually use.",
+    "items": [
+      "Full asset and account inventory across every cloud",
+      "Configuration findings mapped to CIS Benchmark control numbers",
+      "Identity and entitlement report naming over-privileged principals",
+      "Remediation plan sequenced by exploitability and business impact",
+      "Landing zone design with account structure and guardrails",
+      "Policy-as-code and IaC scanning rules for your pipeline",
+      "Kubernetes hardening checklist with admission policy manifests",
+      "Board-ready summary of cloud risk and remediation progress"
+    ]
+  },
+  "process": [
+    {
+      "title": "Discover",
+      "description": "We enumerate every account, subscription and project, including the ones outside central billing, then map data flows, internet exposure and who holds administrative access. Nothing is assessed until the estate is known."
+    },
+    {
+      "title": "Assess",
+      "description": "Configuration is tested against CIS Benchmarks, provider baselines and your own policy, covering identity, network, storage, logging, keys and workloads. Each finding records the evidence, the affected resources and the exploitation path."
+    },
+    {
+      "title": "Remediate",
+      "description": "We fix alongside your engineers rather than handing over a list. Changes are staged, tested outside production first and applied in your change window, with guardrails added so the same fault cannot return."
+    },
+    {
+      "title": "Monitor",
+      "description": "Posture management runs continuously against an agreed baseline, with drift alerted to a named owner. Quarterly reviews cover new provider services, changed benchmarks and whether the guardrails are being bypassed."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Misconfiguration Caught Early",
+      "description": "Public storage, open management ports and wildcard permissions are found by reading configuration, long before anyone has to find them by responding to an incident."
+    },
+    {
+      "title": "Speed Without Sprawl",
+      "description": "Guardrails and a designed landing zone let teams build quickly inside safe boundaries, so security stops being the step everyone routes around near a release date."
+    },
+    {
+      "title": "Evidence for Auditors",
+      "description": "Findings mapped to CIS Benchmarks, ISO/IEC 27001:2022 and PCI DSS 4.0 give you configuration evidence in the form assessors ask for, rather than screenshots gathered late."
+    },
+    {
+      "title": "One View Across Clouds",
+      "description": "Multi-cloud and hybrid estates are assessed against a single control set, so you compare AWS, Azure and Google Cloud risk on the same terms."
+    }
+  ],
+  "whoItsFor": [
+    "Engineering teams who moved to cloud fast and never went back to harden it",
+    "Regulated firms in banking, insurance and healthcare running workloads across more than one provider",
+    "SaaS providers answering customer security questionnaires about cloud configuration and tenant isolation",
+    "Organisations planning a data centre migration who want the target environment built correctly"
+  ],
+  "faqs": [
+    {
+      "question": "Our cloud provider says security is built in. Why do we need a separate assessment?",
+      "answer": "Because the provider secures the platform, not your use of it. AWS, Azure and Google Cloud all publish a shared responsibility model, and every one of them puts identity configuration, network exposure, data classification and access control on your side of the line. The platform will happily serve a storage bucket you have opened to the world. Native tools report the condition; they do not decide what your data is worth or who should have been able to reach it."
+    },
+    {
+      "question": "We already run Security Hub and Defender for Cloud. Is a CSPM engagement not duplicating that?",
+      "answer": "Those tools generate findings well. What they do not do is decide which of several thousand findings matters in your environment, work out why the same fault keeps reappearing, or write the guardrail that prevents it returning. We tune the native tooling you already pay for, suppress what is genuinely not applicable with a recorded reason, and prioritise the rest by reachability and blast radius. If your team already does that consistently, we will say so and scope the work smaller."
+    },
+    {
+      "question": "Will hardening break our production workloads or slow our release cycle?",
+      "answer": "It can, if changes are applied blindly, so we do not work that way. Every permission removal follows analysis of what the principal actually called over a recorded period, using access advisor data and control plane logs. Network and policy changes go into audit or monitor mode first, so you see what would have been blocked before anything is. Changes then reach production through your own pipeline and change window, each with a documented rollback."
+    },
+    {
+      "question": "We run AWS and Azure plus some on-premises kit. Does the assessment differ per cloud?",
+      "answer": "Each platform is tested against its own benchmark, because the controls are not equivalent. An Azure network security group and an AWS security group are different objects, and Google Cloud organisation policy has no direct AWS counterpart. Results are then normalised into one risk register rather than three unrelated reports you have to reconcile yourself. On-premises components are included where they share identity or network paths with cloud workloads, since that is usually where lateral movement begins."
+    },
+    {
+      "question": "What happens after the engagement ends, and does anything we build stay with us?",
+      "answer": "Everything stays in your tenant and your name. Policy-as-code, IaC scanning rules, admission policies, landing zone templates and remediation runbooks are written into your repositories rather than ours, and licences for any tooling remain yours. Where clients want ongoing cover we move to a monitoring retainer scoped per engagement, with periodic re-testing and drift review. Where they do not, we hand over through a working session and documentation your team can maintain alone."
+    }
+  ],
+  "related": ["vapt", "network-security", "data-protection"]
+}

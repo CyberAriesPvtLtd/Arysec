@@ -1,0 +1,132 @@
+{
+  "slug": "cybersecurity-consulting",
+  "name": "Cybersecurity Consulting & Risk Assessment",
+  "shortName": "Security Consulting",
+  "category": "Cybersecurity Services",
+  "metaTitle": "Cybersecurity Consulting & Risk Assessment",
+  "metaDescription": "Arysec assesses enterprise cyber risk against NIST CSF 2.0 and CIS Controls, models your threats and delivers a prioritised, costed remediation roadmap.",
+  "cardSummary": "An independent assessment of your cyber risk, security maturity and architecture, ending in a prioritised remediation roadmap your board and finance team can act on.",
+  "heroHeadline": "Know Which Risks Deserve Your Budget",
+  "heroSub": "We measure your cyber risk against the frameworks your board already recognises, then hand you a sequenced remediation plan that says what to fix first, what it costs, and what happens if you defer it.",
+  "highlights": [
+    { "value": "NIST CSF 2.0", "label": "Independent maturity benchmark" },
+    { "value": "Quantified", "label": "Risk in financial terms" },
+    { "value": "Multi-year", "label": "Roadmap tied to budget" }
+  ],
+  "intro": {
+    "heading": "Decisions First, Tools Later",
+    "paragraphs": [
+      "Security spending in most organisations accumulates rather than gets decided. A tool arrives after an incident, another after an audit finding, a third because a vendor made a persuasive case to somebody in the room. Two years on, the leadership team can list what it owns but cannot say which risks are covered, which are being accepted by default, and whether the next increment of budget belongs in identity, detection or recovery.",
+      "This engagement answers that question with evidence rather than opinion. We identify the assets whose loss, alteration or exposure would genuinely hurt, model the routes an attacker would take to reach them, measure the controls you operate today against a published framework, and express the result as ranked risk instead of a list of findings. Each recommendation carries a cost, an owner and a stated consequence if it is deferred.",
+      "Assessment work is kept separate from implementation work for a reason. The honest answer is sometimes that you should consolidate tools you already own, change how a control is operated, or accept a risk formally and move on. Where new investment is justified we describe the capability required and the criteria to evaluate it against, and leave procurement with you. What you keep is a position you can defend to your board, your insurer and your regulator."
+    ]
+  },
+  "capabilities": {
+    "heading": "What the Assessment Covers",
+    "items": [
+      {
+        "title": "Asset and Crown-Jewel Mapping",
+        "description": "We work with business owners to identify the data, systems and processes whose loss would actually stop revenue or trigger regulatory notice, then trace the accounts, networks and suppliers that reach them."
+      },
+      {
+        "title": "Threat Modelling",
+        "description": "Threat scenarios are built around your sector and architecture using MITRE ATT&CK techniques and STRIDE analysis, so the risks discussed are ones plausibly reachable by adversaries who target organisations like yours."
+      },
+      {
+        "title": "Maturity Benchmarking",
+        "description": "Current practice is scored function by function against NIST CSF 2.0 or CIS Controls v8.1, with evidence behind each rating, giving you a baseline that can be re-measured in later years."
+      },
+      {
+        "title": "Security Architecture Review",
+        "description": "Network segmentation, identity and access management, logging coverage, endpoint controls and cloud configuration are reviewed as a connected design, not as separate products, to find the gaps between them."
+      },
+      {
+        "title": "Zero-Trust Strategy",
+        "description": "Where a zero-trust direction makes sense, we map your current state against NIST SP 800-207, sequence the identity, device and segmentation work realistically, and say plainly which parts your estate cannot yet support."
+      },
+      {
+        "title": "Risk Quantification and Appetite",
+        "description": "Findings are translated into loss exposure using a defined method such as FAIR or ISO/IEC 27005 scoring, and tested against a risk appetite statement agreed with your leadership team."
+      }
+    ]
+  },
+  "deliverables": {
+    "heading": "Documents You Take Away",
+    "intro": "Every engagement closes with a document set written for two audiences: the engineers who will do the work, and the directors who must fund it.",
+    "items": [
+      "Enterprise risk register with scored and owned scenarios",
+      "Crown-jewel asset inventory and supporting data flows",
+      "Maturity scorecard against NIST CSF 2.0 or CIS Controls",
+      "Threat model covering the priority attack paths",
+      "Security architecture review with annotated current-state diagrams",
+      "Draft risk appetite statement for leadership approval",
+      "Multi-year remediation roadmap with effort and budget estimates",
+      "Board pack, executive summary and technical appendix"
+    ]
+  },
+  "process": [
+    {
+      "title": "Frame",
+      "description": "We agree the scope, the business services in question and the decisions this assessment must inform, then interview executives to capture what the organisation already believes about its own exposure."
+    },
+    {
+      "title": "Assess",
+      "description": "Workshops, control testing, configuration review and document sampling run in parallel over an agreed window. Where evidence contradicts what we were told, we verify it before it reaches a report."
+    },
+    {
+      "title": "Quantify",
+      "description": "Gaps become risk scenarios with likelihood, impact and existing mitigations recorded. Each one is reviewed with the accountable business owner so the ranking reflects operational reality rather than our judgement alone."
+    },
+    {
+      "title": "Decide",
+      "description": "Findings are presented twice: once to the technical team for challenge and correction, once to leadership as a set of funding and sequencing choices. You leave that session with a signed-off roadmap."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Spend Tied to Risk",
+      "description": "Each proposed investment is linked to a named risk scenario and its estimated exposure, so finance can see what the money buys and what deferral leaves open."
+    },
+    {
+      "title": "An Independent View",
+      "description": "The assessment is run separately from any implementation work, so the recommendation can be to consolidate, reconfigure or retire what you already run rather than to add another tool."
+    },
+    {
+      "title": "One Ranked Priority List",
+      "description": "Technical teams, finance and the board work from the same ranked list, which ends the argument about whether security is asking for too much or too little."
+    },
+    {
+      "title": "A Baseline You Can Re-measure",
+      "description": "Scoring uses a published framework and a documented method, so a reassessment in twelve or eighteen months shows movement rather than a fresh set of opinions."
+    }
+  ],
+  "whoItsFor": [
+    "Boards and audit committees that need an independent read on cyber exposure",
+    "Enterprises whose security spend has grown faster than any agreed plan for it",
+    "Regulated firms preparing for supervisory review, cyber insurance renewal or investor diligence",
+    "Organisations planning a cloud migration, consolidation or zero-trust programme who need the sequence agreed first"
+  ],
+  "faqs": [
+    {
+      "question": "How is this different from a vCISO engagement or a compliance audit?",
+      "answer": "An audit tests whether you meet a defined standard and produces findings against clauses. This engagement asks a broader question: given your business, what could realistically go wrong, how badly, and in what order should you spend to prevent it. A vCISO then owns and runs the resulting programme month to month. Many clients take the assessment first, use it to size the problem, and decide afterwards whether they need standing leadership or a certification push."
+    },
+    {
+      "question": "You also deliver security implementation work. Does that not bias the recommendations?",
+      "answer": "It is a fair question. The assessment team is separate from our delivery teams, recommendations are written as capability requirements rather than product names, and every finding carries the evidence behind it so you can test the reasoning or hand it to a third party. You are under no obligation to use us for remediation, and many clients run competitive procurement against the roadmap we produce. If you would prefer we are excluded from bidding on that work, say so at contracting."
+    },
+    {
+      "question": "How much of our team's time does this take, and will it disrupt operations?",
+      "answer": "Most of the effort is ours. Expect one to two hours each from eight to fifteen people across IT, engineering, legal, finance and the business lines, plus read-only access for configuration review and a document request list served once. Nothing is exploited and no production change is made, so there is no outage risk. The heaviest demand falls on whoever curates your evidence, which is why we agree that person and their availability before work starts."
+    },
+    {
+      "question": "We already have penetration test reports and audit findings. Why pay for another assessment?",
+      "answer": "Those tell you what is broken in a defined scope. Neither tells you which broken thing matters most to the organisation, or what the next three years of investment should look like. We take existing test reports, audit observations and incident history as input rather than repeating them, which usually shortens the engagement. What we add is the business layer: which assets carry the value, which attack paths reach them, what the exposure is worth, and what sequence of work reduces it fastest per unit of spend."
+    },
+    {
+      "question": "What stops the report becoming another document nobody acts on?",
+      "answer": "Structure, mostly. Every roadmap line carries an owner inside your organisation, a target quarter, an effort estimate and the risk it closes, so it can be dropped straight into your existing planning cycle. We present to leadership rather than emailing a file, and the session ends with sequencing decisions recorded against names. If it helps, we return at agreed intervals to re-score progress against the same baseline, and that reassessment tends to keep attention on it after the initial urgency fades."
+    }
+  ],
+  "related": ["vciso", "vapt", "incident-response"]
+}

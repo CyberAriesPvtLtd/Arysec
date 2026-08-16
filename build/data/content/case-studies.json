@@ -1,0 +1,99 @@
+{
+  "metaTitle": "Case Studies: Anonymised Security Engagements",
+  "metaDescription": "Six anonymised Arysec engagements: ISO 27001 certification support, a DPDP Act DPO appointment, internal audit, VAPT, ransomware recovery and cloud security.",
+  "heroHeadline": "What Our Engagements Actually Look Like",
+  "heroSub": "Six representative engagements drawn from our audit, security and IT work across India. Client names, systems and figures are withheld, so what follows is the shape of the work: the problem, the approach we took, and where each engagement landed.",
+  "disclaimer": "These case studies are anonymised and representative of typical engagements rather than reports on any single named client. Client identities, and the details that would identify them, remain confidential under the terms we sign.",
+  "caseStudies": [
+    {
+      "slug": "saas-iso-27001-certification",
+      "title": "ISO 27001 Certification for a B2B SaaS Provider",
+      "sector": "B2B SaaS",
+      "profile": "A Pune-headquartered B2B SaaS provider with around 180 staff, selling to enterprise buyers in India, the United Kingdom and Singapore.",
+      "services": ["iso-27001", "internal-audit", "vciso"],
+      "challenge": "Enterprise deals were stalling in security review, and two prospects had made ISO/IEC 27001 certification a condition of signing. The company had scattered policies, no risk register anyone maintained, and a security questionnaire process that consumed engineering time every month. Leadership wanted certification within the financial year without pulling the product team off the roadmap.",
+      "approach": [
+        "We drew the scope around the production platform and the teams that support it, with exclusions justified in writing.",
+        "A risk assessment method was agreed with the leadership team, then applied to produce owned risks and treatment decisions.",
+        "Annex A controls were selected against that register, and the Statement of Applicability recorded a reason for every inclusion and exclusion.",
+        "Our internal audit covered the full standard before the certification body arrived, and we sat with the team through Stage 2."
+      ],
+      "outcome": "The organisation passed Stage 2 with no major nonconformities and a small number of minor observations, all closed within the agreed window. Sales now answers most security questionnaires from a maintained control set rather than a fresh drafting exercise. The risk register, management review and internal audit programme have carried on running since handover."
+    },
+    {
+      "slug": "diagnostics-dpo-dpdp-act",
+      "title": "A Named DPO for a Diagnostics Network",
+      "sector": "Healthcare & Diagnostics",
+      "profile": "A Bengaluru-based diagnostics chain running collection centres across four southern states, with a consumer app and roughly 900 employees.",
+      "services": ["dpo", "data-protection", "security-awareness-training"],
+      "challenge": "Health data moved between collection centres, a laboratory information system, a consumer app and several pathology partners, and nobody could describe the full picture in one document. The board had read enough about the DPDP Act 2023 to be uneasy about consent, retention and grievance handling, but there was no privacy owner and no process for answering a data principal who wrote in.",
+      "approach": [
+        "We took the appointed DPO role, reporting to the board, and built a record of processing activities from system interviews.",
+        "Consent notices and the app's collection flows were rewritten with the product team so purpose and withdrawal were plainly stated.",
+        "Data principal requests got a published channel, a triage runbook and defined timelines, with the grievance route tested before launch.",
+        "Retention schedules, processor contract clauses and a breach notification playbook followed, backed by training for centre staff who handle reports."
+      ],
+      "outcome": "The organisation now has a standing DPO, a maintained record of processing and an answer it can give a regulator or a customer about where health data sits and how long it is kept. Rights requests are logged and closed on a defined clock. We recommend they confirm their Significant Data Fiduciary position with counsel as the rules are notified."
+    },
+    {
+      "slug": "nbfc-internal-audit-programme",
+      "title": "Building an IT Internal Audit Programme at an NBFC",
+      "sector": "NBFC & Digital Lending",
+      "profile": "A Mumbai-headquartered NBFC with around 400 staff, lending through its own app and a set of sourcing partners across western India.",
+      "services": ["internal-audit", "security-audit-compliance", "vciso"],
+      "challenge": "Internal audit existed on paper but ran as an annual scramble ahead of the board meeting, with findings written broadly enough that nobody had to own them. IT and information security were barely covered. The audit committee wanted a programme with real coverage of access management, change control, outsourcing and the lending application, and evidence that issues actually closed.",
+      "approach": [
+        "We built a risk-based audit universe covering the lending stack, core systems, vendor chain and the controls behind regulatory reporting.",
+        "Each audit ran to a written programme with sampling stated up front, so findings rested on evidence rather than opinion.",
+        "Reports were written to a single format: condition, criteria, cause, effect, named owner and a date the fix is due.",
+        "Follow-up testing became part of the cycle, and the audit committee received a standing view of open and overdue items."
+      ],
+      "outcome": "The audit committee now sees IT and information security coverage spread across the year instead of a single pre-board push. Findings carry an owner and a due date, and closure is tested rather than asserted. Management stopped arguing about whether an issue was real and started arguing about how quickly it could be fixed."
+    },
+    {
+      "slug": "payments-vapt-critical-finding",
+      "title": "A VAPT That Found a Broken Authorisation Path",
+      "sector": "Payments & Fintech",
+      "profile": "A Gurugram-based payment aggregator with roughly 250 staff, serving online merchants across India and processing card and UPI transactions.",
+      "services": ["vapt", "cybersecurity-consulting", "network-security"],
+      "challenge": "An annual test was due, and the security team suspected the merchant onboarding APIs had outgrown their original design after two years of fast release cycles. Scope covered the merchant dashboard, the partner-facing APIs, the internal admin console and the network segments around them. The brief was to test properly rather than confirm that last year's report still held.",
+      "approach": [
+        "Testing followed OWASP ASVS and the OWASP Top 10 for the web tier, with authenticated runs from every merchant role.",
+        "Object-level authorisation was probed by hand across the onboarding APIs, replaying identifiers between two merchant accounts we controlled.",
+        "Our escalation path moved the critical finding to their security lead immediately, ahead of the report, with a temporary mitigation suggested.",
+        "Network testing then traced what the flaw could reach, checking segmentation between the merchant tier and the cardholder data environment."
+      ],
+      "outcome": "The broken object-level authorisation let one merchant read another merchant's settlement records through a predictable identifier. We reported it by phone before the day's testing finished, and a gateway rule blocked the pattern while engineering shipped the real fix. Segmentation testing showed the path stopped short of the cardholder data environment. Our retest confirmed the correction held."
+    },
+    {
+      "slug": "logistics-ransomware-response",
+      "title": "Ransomware Response at a Freight and Logistics Operator",
+      "sector": "Logistics & Freight",
+      "profile": "A Navi Mumbai freight and warehousing operator with about 600 staff, running branch offices and depots across six Indian states.",
+      "services": ["incident-response", "it-infrastructure", "network-security"],
+      "challenge": "A Saturday morning call: file shares were encrypted, the transport management system would not start, and a ransom note sat on several desktops. Depots had moved to paper. The operator had backups, but nobody had tested a restore in over a year, and the first instinct in the room was to wipe machines and get moving again.",
+      "approach": [
+        "Containment came first: we isolated affected segments, disabled the compromised service accounts and preserved disk and memory images before anything was rebuilt.",
+        "Investigation traced entry to an exposed remote access service and mapped the intruder's movement against MITRE ATT&CK techniques.",
+        "Recovery ran to a sequenced plan, restoring the transport management system into a clean network segment and validating data before reconnecting depots.",
+        "Hardening followed the restore: multi-factor authentication on remote access, tiered administrative accounts, EDR across the estate and immutable backup copies."
+      ],
+      "outcome": "No ransom was paid. Core dispatch came back on clean infrastructure, then the wider estate, in an order the business agreed rather than the order things happened to break. The forensic account of entry and movement gave the board something to act on, and the immutable backup and remote access changes closed the route the intruder had used."
+    },
+    {
+      "slug": "engineering-firm-managed-it-cloud",
+      "title": "Managed IT and a Move to Cloud Security",
+      "sector": "Engineering Consultancy",
+      "profile": "An Ahmedabad-headquartered engineering consultancy with close to 300 staff across four offices, plus site teams working from client locations.",
+      "services": ["managed-it", "cloud-security", "it-infrastructure"],
+      "challenge": "IT was one overloaded manager and a break-fix vendor. Ageing servers sat in a room behind reception, design files were copied to personal drives so site teams could work, and nobody could say who held administrative rights. A lost laptop had already caused an uncomfortable conversation with a client. The firm wanted to move to the cloud without a bad month.",
+      "approach": [
+        "We inventoried the estate first, then agreed what moved, what was retired and what stayed on site for licensing reasons.",
+        "Identity came before workloads: single sign-on, conditional access, multi-factor authentication and administrative roles separated from everyday accounts.",
+        "File and project data migrated in waves by office, each wave rehearsed on a Friday and cut over across the weekend.",
+        "Cloud posture management, device compliance policies and a service desk with defined response times took over once the migration settled."
+      ],
+      "outcome": "Site teams reach project data over managed identities instead of copying it to personal drives, and a lost device can now be wiped from the console. Administrative rights are named and reviewed. The firm runs on a single service desk with agreed response times, and CSPM findings on the cloud tenancy land with an owner rather than sitting unread."
+    }
+  ]
+}

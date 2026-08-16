@@ -1,0 +1,132 @@
+{
+  "slug": "vciso",
+  "name": "vCISO as a Service",
+  "shortName": "vCISO",
+  "category": "Governance & Advisory",
+  "metaTitle": "vCISO as a Service: Fractional Security Leadership",
+  "metaDescription": "Arysec's vCISO service gives you a named security leader owning strategy, governance, the risk register, board reporting and customer due diligence.",
+  "cardSummary": "Senior security leadership on a fractional basis: strategy, governance, risk ownership, board reporting and customer due diligence, without carrying a full-time executive on payroll.",
+  "heroHeadline": "Security Leadership Without a Full-Time Hire",
+  "heroSub": "You get a named security leader who owns your strategy, risk register and policy framework, sits in front of your board and auditors, and answers the security questionnaires that hold up your sales cycle.",
+  "highlights": [
+    { "value": "Fractional", "label": "Named senior security leader" },
+    { "value": "NIST CSF 2.0", "label": "Framework-anchored roadmap" },
+    { "value": "Full handover", "label": "Documentation you keep" }
+  ],
+  "intro": {
+    "heading": "Security Leadership, Without the Headcount",
+    "paragraphs": [
+      "Most growing organisations reach a point where security decisions outrun the people available to make them. Customers send long security questionnaires, an insurer asks to see a risk register, the board wants to know whether the spend is proportionate, and the IT manager is already fully committed to keeping systems running. A full-time chief information security officer is one answer. A fractional one is the other.",
+      "Our vCISO engagement places a senior practitioner inside your organisation for an agreed number of days each month. That person owns the security strategy and roadmap, maintains the risk register, drafts the policy framework and takes it through approval, and represents security to your board, your auditors and your customers. They are accountable for the programme, not merely available for advice.",
+      "We work to your context rather than a template. A regulated NBFC carries different obligations from a SaaS company selling into the European Union, so the roadmap is anchored to the standards that actually apply — ISO/IEC 27001:2022, the SOC 2 Trust Services Criteria, PCI DSS 4.0, the DPDP Act 2023, or the sectoral directions your regulator issues. What stays constant is the discipline: a documented risk position, decisions with owners and dates, and evidence that survives an audit."
+    ]
+  },
+  "capabilities": {
+    "heading": "Core Areas of Ownership",
+    "items": [
+      {
+        "title": "Strategy and Roadmap",
+        "description": "We assess your current security posture against NIST CSF 2.0 or ISO/IEC 27001:2022, agree a target state with you, and turn the gap into a costed, sequenced roadmap with named owners."
+      },
+      {
+        "title": "Governance and Policy Framework",
+        "description": "Policies, standards and procedures get written, mapped to control frameworks, taken through management approval and reviewed on a schedule. You end up with a document set that reads as though your organisation wrote it."
+      },
+      {
+        "title": "Risk Register Ownership",
+        "description": "Risks are identified, scored against an agreed methodology, assigned to accountable owners and tracked to treatment or formal acceptance. The register becomes a live management tool rather than a spreadsheet refreshed before audits."
+      },
+      {
+        "title": "Board and Audit Reporting",
+        "description": "Your vCISO prepares and presents the security section for board, audit committee and risk committee meetings: current risk position, incident summary, roadmap progress and the decisions you need from directors."
+      },
+      {
+        "title": "Budget and Tooling Decisions",
+        "description": "We size the security budget against the risks you have accepted, review the tools you already own for overlap, and give you a defensible case for what to buy, keep or retire."
+      },
+      {
+        "title": "Third-Party Risk Oversight",
+        "description": "Suppliers are tiered by the data and access they hold, their assurance evidence is reviewed, security schedules go into contracts, and you keep a register of who holds your data."
+      }
+    ]
+  },
+  "deliverables": {
+    "heading": "What Lands on Your Desk",
+    "intro": "Every engagement produces documents your auditors, insurers and customers can read. These are the artefacts you own, and they stay with you afterwards.",
+    "items": [
+      "Security strategy and multi-year roadmap with named owners",
+      "Gap assessment against ISO/IEC 27001:2022 or NIST CSF 2.0",
+      "Approved policy and standards set under version control",
+      "Risk register with scoring methodology and treatment plans",
+      "Quarterly board pack and audit committee briefing",
+      "Third-party register and supplier assessment process",
+      "Maintained answer library for customer security questionnaires",
+      "Handover pack and documented runbooks at engagement close"
+    ]
+  },
+  "process": [
+    {
+      "title": "Baseline",
+      "description": "We spend the first weeks reading what exists: policies, contracts, audit findings, architecture and incident history. Interviews with IT, engineering, legal and finance tell us where the real exposure and the real constraints sit."
+    },
+    {
+      "title": "Mandate",
+      "description": "Scope, reporting line, decision rights and monthly time commitment are agreed in writing with your leadership. Everyone learns what the vCISO decides, what they recommend, and what stays with your existing IT owner."
+    },
+    {
+      "title": "Operate",
+      "description": "A monthly rhythm takes hold: risk review, roadmap tracking, policy sign-offs, supplier assessments and questionnaire responses. Your vCISO joins the meetings that matter and is reachable when a decision cannot wait."
+    },
+    {
+      "title": "Handover",
+      "description": "Before the engagement ends we transfer everything: documented processes, register access, tooling configuration notes and open items with context. If you are hiring a permanent CISO, we help you write the brief and interview."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Faster Security Due Diligence",
+      "description": "Enterprise prospects get complete, consistent answers quickly, because someone owns the questionnaire process and keeps the underlying evidence current between requests rather than rebuilding it each time."
+    },
+    {
+      "title": "Command During a Crisis",
+      "description": "When something breaks, you have a senior person who has run breach responses before, talking to your board, your regulator, your insurer and your customers while the technical team works."
+    },
+    {
+      "title": "Spend You Can Defend",
+      "description": "Security investment gets tied to named risks and accepted obligations, so finance sees why a control is needed and what happens if it is deferred."
+    },
+    {
+      "title": "Capability That Remains",
+      "description": "The programme is built inside your organisation, documented as it goes, so your team can run it whether we continue, hand over to a permanent hire, or step back."
+    }
+  ],
+  "whoItsFor": [
+    "Growing companies whose enterprise customers now demand a named security owner",
+    "Regulated firms in banking, insurance or capital markets facing supervisory scrutiny without in-house security leadership",
+    "SaaS and technology businesses preparing for SOC 2 or ISO/IEC 27001 certification",
+    "Boards and investors who want independent assurance between full-time CISO appointments"
+  ],
+  "faqs": [
+    {
+      "question": "We already have a head of IT. Does a vCISO not overlap with that role?",
+      "answer": "They do different jobs. Your IT head is accountable for systems working — uptime, delivery, cost, the team. A vCISO is accountable for risk being understood, decided on and evidenced, which sometimes means arguing for work that makes IT's life harder. We define the split in writing at the start: who decides, who is consulted, who signs. In practice the IT head usually gains an ally in budget conversations rather than a competitor."
+    },
+    {
+      "question": "Why would we not simply hire a full-time CISO?",
+      "answer": "Hire one if you can justify the role and find the person. Experienced security leaders are scarce in India, take months to recruit and expect a package that mid-market organisations struggle to sustain. A vCISO gives you that seniority immediately, on a fixed monthly fee, with an experienced team behind the individual. Many clients use us as the bridge: we build the programme, prove what the role needs to cover, then help recruit the permanent hire and hand over to them."
+    },
+    {
+      "question": "How many days a month do we actually get, and is that enough?",
+      "answer": "Most engagements run between two and six days a month, set by your size, regulatory load and how much is being built at once. Certification pushes and post-incident periods need more; steady-state governance needs less. We agree the commitment up front and review it quarterly. What matters more than the day count is that the same person holds the mandate throughout, so context is not rebuilt every month."
+    },
+    {
+      "question": "Can a vCISO sign off our compliance or act as our named officer to a regulator?",
+      "answer": "Accountability cannot be outsourced. Indian regulators and most standards expect a named accountable person inside your organisation, and directors retain the duty. Our vCISO prepares the position, drafts the submissions, sits in the meeting and answers technical questions, but the sign-off stays with your officer. We also do not certify anything — we prepare you for the certification audit and support you through it, while the certificate comes from your registrar. Confirm your specific obligations with your legal counsel."
+    },
+    {
+      "question": "What happens when the engagement ends? Are we left with nothing?",
+      "answer": "Handover is designed in from the first month, not improvised at the end. Everything we produce lives in your systems under your ownership: policies, the risk register, supplier records, the questionnaire answer library, roadmap status and open decisions with their history. At close we run a formal transfer session with whoever takes over, leave written runbooks for the recurring tasks, and stay available for a defined period. If you are recruiting a permanent CISO, we will help scope the role and sit on interviews."
+    }
+  ],
+  "related": ["iso-27001", "dpo", "security-audit-compliance"]
+}

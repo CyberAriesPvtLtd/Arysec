@@ -1,0 +1,186 @@
+{
+  "title": "Privacy Policy",
+  "metaTitle": "Privacy Policy: Data Collection, Use and Your Rights",
+  "metaDescription": "How Arysec Technologies LLP collects, uses, shares and protects personal data, and the rights you hold under India's DPDP Act 2023 and the EU GDPR.",
+  "intro": "This policy explains how Arysec Technologies LLP collects, uses, stores and shares personal data through our website and in the course of providing our services. It also sets out how long we keep information, who we share it with, and the rights you can exercise over your own data.",
+  "sections": [
+    {
+      "heading": "Who We Are and How to Contact Us",
+      "paragraphs": [
+        "Arysec Technologies LLP is an IT and information security firm headquartered in Mumbai, Maharashtra, India. We provide security audits, governance and advisory work, security operations, and IT services to organisations in India and in international markets.",
+        "For anything relating to this policy, or to the personal data we hold about you, write to info@arysec.in or call +91 90048 57727. Our office hours are Monday to Friday, 09:00 to 18:00 IST, and messages that arrive outside those hours are picked up on the next working day.",
+        "Under India's Digital Personal Data Protection Act 2023 we act as a Data Fiduciary for the personal data described in this policy, and under the EU General Data Protection Regulation we act as a controller for the same data. Where we handle personal data on behalf of a client, we act instead as a Data Processor, and the terms of that client's contract govern what we may do with it."
+      ]
+    },
+    {
+      "heading": "What This Policy Covers",
+      "paragraphs": [
+        "This policy applies to the Arysec website, to the enquiries and applications you send us through it, and to the personal data we handle for our own purposes as a business. It covers visitors to the site, prospective and current clients, people who request our published resources, newsletter subscribers, and candidates who apply for a role with us.",
+        "It does not cover personal data that sits inside a client's own systems and that we access only to deliver a service under contract. That data stays under the client's control, and the client's own privacy notice governs it. A separate section below explains how we treat such data.",
+        "Our website sometimes links to material published by other organisations. We do not control how those organisations handle personal data, so read their own privacy notices before you share anything with them."
+      ]
+    },
+    {
+      "heading": "Personal Data We Collect",
+      "paragraphs": [
+        "We collect only what a defined purpose needs. Most of the personal data we hold comes directly from you, because you completed a form or wrote to us. A smaller amount is generated automatically when your browser requests a page from our servers.",
+        "The categories below describe everything we routinely collect through this website and through ordinary business contact."
+      ],
+      "list": [
+        "Enquiry form submissions: your name, work email address, phone number, organisation name, and whatever you choose to write in the message field.",
+        "Resource requests: the name, email address and organisation you give us when you ask for a whitepaper, checklist or similar document.",
+        "Careers applications: your CV, contact details, work history, qualifications, and any covering note or portfolio link you send.",
+        "Newsletter sign-ups: your email address, and your name if you choose to give it.",
+        "Correspondence: the content of emails, call notes and meeting notes created when you contact us directly.",
+        "Server logs: your IP address, browser type and version, operating system, referring page, the pages you viewed, and the date and time of each request.",
+        "Cookies and analytics data: identifiers stored in your browser, and aggregated information about how the site is used."
+      ]
+    },
+    {
+      "heading": "Why We Use Personal Data and Our Lawful Basis",
+      "paragraphs": [
+        "Every use we make of personal data has a stated purpose and a lawful basis behind it. Under the DPDP Act 2023 we rely on your consent, and on the certain legitimate uses the Act recognises, such as responding to a request you have voluntarily made to us. Under the GDPR we rely on consent, on the performance of a contract, on our legitimate interests in running and marketing a business, and on compliance with legal obligations.",
+        "These are the purposes for which we process personal data.",
+        "We do not sell personal data. We do not use it to build advertising profiles, and we do not make decisions about you by automated means that would produce a legal or similarly significant effect on you."
+      ],
+      "list": [
+        "Responding to enquiries and preparing proposals, so that we can answer your question and scope the work you asked about.",
+        "Delivering the resources you requested, and following up once to check whether the material was useful.",
+        "Assessing job applications, arranging interviews, and keeping a record of our hiring decisions.",
+        "Sending the newsletter and other marketing you have opted in to, until you tell us to stop.",
+        "Keeping the website available and secure, which includes detecting abuse, debugging faults and blocking automated attacks.",
+        "Understanding which pages people actually read, so that we can improve what we publish.",
+        "Meeting our legal, accounting, tax and contractual obligations."
+      ]
+    },
+    {
+      "heading": "Cookies, Analytics and Server Logs",
+      "paragraphs": [
+        "Our website sets a small number of cookies. Some are strictly necessary: they keep the site working, remember your cookie preferences and help protect against common attacks. Others support analytics, and those are set only where you have agreed to them or where the law that applies to you permits them without consent.",
+        "Analytics tells us aggregate things, such as which pages hold attention and where visitors leave. We configure analytics processing to minimise what is collected about individuals, and we do not attempt to identify you from it or to match it against your enquiry records.",
+        "You can clear or block cookies through your browser settings at any time, and you can change any consent you gave through our cookie notice. Blocking strictly necessary cookies may stop parts of the site from working. Server logs are separate from analytics: they are generated automatically for security and diagnostics, and they are kept apart from marketing data."
+      ]
+    },
+    {
+      "heading": "Data We Process on Behalf of Our Clients",
+      "paragraphs": [
+        "Our services often bring us into contact with personal data belonging to a client's employees, customers or users. Common examples include log data reviewed during a security assessment, user account records examined in an access review, and files recovered during an incident investigation.",
+        "In those situations the client decides why and how the data is processed, and we act on their documented instructions. Our engagement contracts set out the permitted scope, the confidentiality terms, the security controls we apply, the rules on sub-processing, and what happens to the data when the work ends. We do not use client data for our own purposes, and we do not keep it beyond what the contract allows.",
+        "If you are an individual whose data was handled during work we carried out for a client, that client is the right first point of contact for a rights request. Write to us in any case if you cannot identify them, and we will help route your request to the right organisation."
+      ]
+    },
+    {
+      "heading": "How Long We Keep Personal Data",
+      "paragraphs": [
+        "We keep personal data for as long as the purpose it was collected for still applies, and then for any further period the law requires. Because the correct period depends on the type of record and the obligation attached to it, we set retention periods internally by category rather than applying one figure across everything.",
+        "The general pattern we follow is set out below.",
+        "Under the DPDP Act 2023 we must erase personal data once you withdraw consent, or once the purpose it was collected for has ended, unless a law requires us to keep it. We apply that rule as a matter of routine and not only when someone asks."
+      ],
+      "list": [
+        "Enquiry and proposal records stay with us while a commercial conversation is live, and for a limited period afterwards so that we can pick the discussion back up.",
+        "Contract, invoicing and tax records are held for the minimum period Indian law requires for books of account and related documents.",
+        "Unsuccessful job applications are kept for a short window in case a suitable role opens, then deleted unless you have asked us to hold them longer.",
+        "Newsletter records last until you unsubscribe, together with the record of when and how you subscribed.",
+        "Server logs are rotated and deleted on a routine cycle, apart from entries preserved for an open security investigation.",
+        "Client engagement data is returned or destroyed at the end of the engagement, in line with the contract that governs it."
+      ]
+    },
+    {
+      "heading": "Who We Share Personal Data With",
+      "paragraphs": [
+        "We do not sell or rent personal data, and we do not share it for anyone else's marketing. A limited set of service providers processes data on our behalf so that the website and the business can function. They are described here by category, because the specific suppliers change over time and a named list would quickly become inaccurate.",
+        "Every processor we use is bound by a written agreement that limits them to our instructions, imposes confidentiality, and requires security measures appropriate to the data. If the ownership of our business ever changes, personal data may transfer to the acquiring entity, and we will tell you if that happens and what it means for you."
+      ],
+      "list": [
+        "Hosting and infrastructure providers, who run the servers and content delivery network behind this website.",
+        "Email delivery and communication providers, who transmit our replies, resource downloads and newsletter.",
+        "Analytics providers, who process website usage data on our instructions and nothing more.",
+        "Recruitment and applicant tracking tools, where those are used to manage job applications.",
+        "Professional advisers such as accountants, auditors and lawyers, where they need the data in order to advise us.",
+        "Government bodies, regulators, courts and law enforcement agencies, where a legal obligation requires disclosure."
+      ]
+    },
+    {
+      "heading": "International Transfers",
+      "paragraphs": [
+        "Some of the providers described above operate infrastructure outside India, so your personal data may be stored or processed in another country. We prefer providers that can host data in India, or in a jurisdiction with a recognised data protection framework, and we check where data will sit before we adopt a service.",
+        "The DPDP Act 2023 permits transfer of personal data outside India except to territories that the Central Government restricts by notification. We track those notifications and adjust our arrangements if a restriction affects a provider we use.",
+        "For personal data protected by the GDPR, transfers outside the European Economic Area are made under an adequacy decision where one exists, and otherwise under Standard Contractual Clauses together with any additional safeguards the particular transfer requires. Ask us and we will tell you which mechanism applies to a given transfer."
+      ]
+    },
+    {
+      "heading": "How We Protect Personal Data",
+      "paragraphs": [
+        "Security is the work we do for our clients, and we hold our own environment to the same standard. Our controls follow recognised practice, including ISO/IEC 27001:2022 for the management system and CIS Benchmarks for system hardening, and we review them as our systems and our risks change.",
+        "The measures below apply to the personal data covered by this policy.",
+        "No control set removes risk entirely. If a personal data breach occurs that is likely to affect you, we will notify the relevant authority and the affected individuals within the timeframes the applicable law sets, and we will tell you what happened, what data was involved, and what we are doing about it."
+      ],
+      "list": [
+        "Encryption in transit using TLS across the website and our mail systems, with encryption at rest for stored data wherever the platform supports it.",
+        "Access restricted to the people whose work requires it, using unique accounts, role-based permissions and multi-factor authentication on administrative access.",
+        "Logging and monitoring of administrative activity, with alerting on unusual behaviour.",
+        "Patching and hardening of servers, endpoints and applications on a defined cycle.",
+        "Backups taken regularly and tested by restoration, so that data survives failure or attack.",
+        "Vetting of suppliers before we adopt them, and periodic review of the ones we continue to use.",
+        "Training for our team on handling personal data, recognising phishing, and secure working practices."
+      ]
+    },
+    {
+      "heading": "Your Rights Under India's DPDP Act 2023",
+      "paragraphs": [
+        "If you are a Data Principal under the DPDP Act 2023, the Act gives you the rights listed below over personal data we process on the basis of your consent or of a legitimate use.",
+        "The Act also asks Data Principals to provide authentic information and to avoid raising false or frivolous complaints. Where we cannot satisfy ourselves about your identity, we may ask for further information before we act on a request."
+      ],
+      "list": [
+        "Access: a summary of the personal data we process about you, the processing activities involved, and the identities of other Data Fiduciaries with whom we have shared it.",
+        "Correction, completion and updating: inaccurate or misleading data corrected, incomplete data completed, and out-of-date data brought current.",
+        "Erasure: deletion of personal data once the purpose has been served, unless retention is required by law.",
+        "Grievance redressal: the ability to raise a complaint with us and receive a response within the period the Act prescribes.",
+        "Nomination: the ability to nominate another individual to exercise your rights on your behalf if you die or become incapable of doing so yourself.",
+        "Withdrawal of consent: consent can be withdrawn at any time, as easily as it was given, and we will stop the processing that depended on it."
+      ]
+    },
+    {
+      "heading": "Rights Available Under the EU GDPR",
+      "paragraphs": [
+        "If you are in the European Economic Area or the United Kingdom and the GDPR or UK GDPR applies to our processing of your data, you have a further set of rights.",
+        "Where these overlap with rights under the DPDP Act 2023, we apply whichever gives you the stronger protection. None of these rights is absolute. If we have to decline a request in whole or in part, we will say so in writing and explain the reasoning behind the decision."
+      ],
+      "list": [
+        "Access to a copy of your personal data, along with information about how and why it is used.",
+        "Rectification of personal data that is inaccurate or incomplete.",
+        "Erasure of personal data where no continuing lawful reason to hold it exists.",
+        "Restriction of processing while a dispute about accuracy or lawful basis is being resolved.",
+        "Portability of the data you gave us, in a structured, commonly used and machine-readable format.",
+        "Objection to processing based on legitimate interests, and an unqualified right to object to direct marketing.",
+        "Withdrawal of consent at any time, without affecting the lawfulness of processing carried out before the withdrawal.",
+        "Complaint to a supervisory authority in the country where you live, where you work, or where the issue arose."
+      ]
+    },
+    {
+      "heading": "How to Exercise Your Rights and Raise a Grievance",
+      "paragraphs": [
+        "Send your request to info@arysec.in with enough detail for us to find your records. Tell us what you would like done and, where it matters, which website form or engagement your data came from. You can also call +91 90048 57727 during office hours, and we will confirm the request in writing so that both sides have a record of it.",
+        "We acknowledge requests, verify identity by proportionate means, and respond within the period the applicable law allows. There is no charge for a reasonable request. Where a request is manifestly unfounded or excessive we may charge a reasonable fee or decline to act, and we will explain that decision to you.",
+        "Grievances about the way we have handled your personal data go to our Grievance Officer, contactable at info@arysec.in or on +91 90048 57727. Put the words Grievance Officer in the subject line, or state them at the start of the call, so that the message is routed correctly. Direct resolution is our preferred route, and we would rather fix a problem than have you escalate it.",
+        "If our response does not satisfy you, you can complain to the Data Protection Board of India under the DPDP Act 2023, or, where the GDPR applies to you, to the supervisory authority in your country. Coming to us first does not affect your right to approach a regulator at any stage."
+      ]
+    },
+    {
+      "heading": "Children's and Minors' Data",
+      "paragraphs": [
+        "Our website and our services are intended for organisations and working professionals. We do not knowingly collect personal data from children, and none of our forms are directed at them.",
+        "The DPDP Act 2023 treats anyone under the age of eighteen as a child and requires verifiable consent from a parent or lawful guardian before such data is processed. It also prohibits tracking, behavioural monitoring and targeted advertising directed at children. None of those activities take place on our website.",
+        "Should you believe that a child has given us personal data, write to info@arysec.in and we will delete it promptly."
+      ]
+    },
+    {
+      "heading": "Changes to This Policy",
+      "paragraphs": [
+        "We review this policy periodically, and we update it when our processing changes, when we adopt a new category of service provider, or when the law moves. The version published on this page is always the current one.",
+        "Minor edits, such as clarified wording, take effect as soon as they appear here. Where a change materially affects how we use your personal data or the rights you can exercise, we will give notice on the website and, where we hold your contact details and the change warrants it, by email. Where a change requires fresh consent, we will ask for it before we rely on the new processing.",
+        "If anything in this policy is unclear, or you think something here does not match what we actually do, tell us at info@arysec.in. We would rather correct it than leave it wrong."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "slug": "security-awareness-training",
+  "name": "Security Awareness & Training",
+  "shortName": "Security Awareness",
+  "category": "Cybersecurity Services",
+  "metaTitle": "Security Awareness Training & Phishing Simulation",
+  "metaDescription": "Arysec runs role-based security awareness programmes: phishing simulation, OWASP secure coding, DPDP privacy modules and behaviour measured beyond completion.",
+  "cardSummary": "Role-based awareness, phishing simulation with progressive difficulty, developer secure coding and board briefings, measured on reporting behaviour rather than course completion percentages.",
+  "heroHeadline": "Attacks Recognised Early and Reported Fast",
+  "heroSub": "Awareness only counts when it changes what people do under pressure. We build role-based programmes, run phishing simulations that grow harder as teams improve, and measure how fast an attack gets reported rather than how many courses were finished.",
+  "highlights": [
+    { "value": "Role-Based", "label": "Training matched to the job" },
+    { "value": "Progressive", "label": "Phishing difficulty that escalates" },
+    { "value": "No Blame", "label": "Reporting culture, not punishment" }
+  ],
+  "intro": {
+    "heading": "Habits, Not Slide Decks",
+    "paragraphs": [
+      "Attackers go through people because it is cheaper than going through your controls. That does not make your staff the weak link; it makes them the part of the estate that gets targeted hardest and supported least. Current tradecraft is a long way from a badly spelled bank email. Adversary-in-the-middle kits proxy a genuine login page and steal the session cookie, so a correct password and a one-time code still hand over the account. Push bombing wears down an approver until they tap accept. Callback lures avoid links entirely and route the reader to a phone number staffed by the attacker. QR codes move the click onto a personal device outside your controls. Business email compromise skips malware and simply asks a finance team to update supplier bank details, and service desk agents are talked into resetting an authenticator for someone who sounds legitimate. MITRE ATT&CK groups most of this under initial access, and none of it is defeated by telling people to look for typos.",
+      "Programme design starts from what each group actually touches. Finance and procurement need payment verification habits: out-of-band confirmation on any change of bank details, dual approval thresholds, and a script for the call. Developers need secure coding grounded in the OWASP Top 10, the OWASP API Security Top 10 and OWASP ASVS, taught through hands-on exploitation and repair in deliberately vulnerable applications rather than as a slide review, alongside secrets handling, dependency and build pipeline risk, and the OWASP Top 10 for Large Language Model Applications where you ship features built on models. Service desk and support staff need identity verification procedure, since an agent under pressure is now a documented route to account takeover. Privileged administrators need credential handling and jump host discipline. Directors need briefings pitched at decisions rather than technology: disclosure, notification, ransom, spokesperson, and the personal exposure that comes with being named on a company website. Privacy runs across all of it, with practical DPDP Act 2023 content on notice and consent, purpose limitation, retention and breach intimation, plus GDPR material where you handle European personal data. Delivery matters as much as content. Induction inside the first week, an annual refresher for the record and short reinforcement in between works better than one long session, and teams without corporate mailboxes get toolbox talks, floor posters and messaging in the language they read rather than an e-learning link they will never open.",
+      "Measurement is where most awareness spending loses its argument. Completion percentage is an input; it says a module was opened, not that anything changed. The numbers worth reporting are the report rate, the ratio of reports to clicks, the median time from delivery to first report, credential submission counted separately from clicking, and how the repeat-exposure group moves over successive campaigns. Those figures only mean something if the baseline is honest, so we run a first simulation before any training, hold difficulty steady long enough to see a trend, then raise it deliberately so that improvement is not simply easier lures. The reporting route gets tested as well: a report button that files into an unmonitored mailbox is worse than no button, because it teaches people that reporting achieves nothing. On the compliance side, this work carries ISO/IEC 27001:2022 Clause 7.2, Clause 7.3 and Annex A control 6.3, the SOC 2 criteria covering competence and internal communication, PCI DSS 4.0 Requirements 12.6 and 6.2.2 where card data is in scope, and the Awareness and Training outcomes in NIST CSF 2.0. We produce the records and the mapping; the certificate itself remains a matter for your auditor or certification body."
+    ]
+  },
+  "capabilities": {
+    "heading": "What the Programme Covers",
+    "items": [
+      {
+        "title": "Role-Based Awareness Programme",
+        "description": "Content mapped to what each group actually handles: finance approvals, developer code, service desk identity checks, executive exposure. Induction, annual refresher and short reinforcement between them, delivered in the languages your teams use."
+      },
+      {
+        "title": "Simulated Phishing Campaigns",
+        "description": "Lures modelled on live tradecraft: credential harvesting, adversary-in-the-middle pages, attachment payloads, QR codes and callback bait. Difficulty rises as reporting improves, and every simulation ends with short teaching rather than a reprimand."
+      },
+      {
+        "title": "Secure Coding for Developers",
+        "description": "Sessions built around the OWASP Top 10, the API Security Top 10 and ASVS, with hands-on exploitation and remediation in deliberately vulnerable applications, plus secrets handling, dependency risk and secure review practice."
+      },
+      {
+        "title": "Board and Executive Briefings",
+        "description": "Directors get threat context tied to their duties, budget trade-offs and disclosure decisions, then a facilitated tabletop where they make the calls a live incident would force on them."
+      },
+      {
+        "title": "Privacy and DPDP Awareness",
+        "description": "Practical modules on notice and consent, purpose limitation, retention and breach intimation under the DPDP Act 2023, with GDPR content where you process European personal data."
+      },
+      {
+        "title": "Attestation and Measurement",
+        "description": "Policy acknowledgement tracked to named individuals across acceptable use, clean desk and AI tool rules, alongside behaviour measures: report rates, response times and repeat exposure rather than completion percentages."
+      }
+    ]
+  },
+  "deliverables": {
+    "heading": "Evidence and Materials You Keep",
+    "intro": "Everything here stays with you: the content, the records, the measurement history and the audit evidence, whether or not we run the next cycle.",
+    "items": [
+      "Training needs analysis mapped to roles and risk",
+      "Role-based curriculum with module outlines and delivery schedule",
+      "Awareness materials in the languages your teams read",
+      "Phishing simulation plan with lure themes agreed in advance",
+      "Campaign results by cohort, with report rate and response time",
+      "Policy attestation register showing who acknowledged what, and when",
+      "Board briefing pack and executive tabletop write-up",
+      "Control evidence mapped to ISO 27001, SOC 2 and PCI DSS"
+    ]
+  },
+  "process": [
+    {
+      "title": "Baseline",
+      "description": "A first simulation and a short survey run before any training, so improvement is measured against your real starting point rather than a vendor benchmark. Findings are reported by cohort, never by individual."
+    },
+    {
+      "title": "Design",
+      "description": "Roles are grouped by what they actually touch: money, code, data, access, customers. Each group gets its own curriculum, cadence and success measure, agreed with HR, legal and the business before anything is published."
+    },
+    {
+      "title": "Deliver",
+      "description": "Induction, refresher and role modules go out on schedule, simulations run through the year at rising difficulty, and reporting routes are tested end to end so a reported message reaches someone who acts."
+    },
+    {
+      "title": "Review",
+      "description": "Quarterly review shows movement in report rate, response time and repeat exposure by team. Weak points feed the next cycle, and the evidence pack is refreshed ahead of your audit dates."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Attacks Reported, Not Ignored",
+      "description": "A workforce that reports quickly gives your responders early warning on campaigns no filter caught, which shortens the window between first delivery and containment."
+    },
+    {
+      "title": "Developers Who Prevent Findings",
+      "description": "Teams trained against OWASP categories introduce fewer of the defects your testers keep reporting, so penetration test budget goes on real depth instead of the same recurring issues."
+    },
+    {
+      "title": "Audit Evidence on Demand",
+      "description": "Attendance, attestation logs and campaign results sit in one place, so training questions in an ISO 27001 or SOC 2 audit are answered from a file, not from memory."
+    },
+    {
+      "title": "Culture People Buy Into",
+      "description": "Removing punishment from the response to a click raises the reporting rate, which matters more than the click rate, because a reported attack can be stopped mid-campaign."
+    }
+  ],
+  "whoItsFor": [
+    "Organisations preparing for ISO 27001 or SOC 2 with no evidence of training",
+    "Banks, insurers and fintechs whose finance teams approve payments and supplier bank changes",
+    "Product companies whose developers keep reintroducing the same OWASP categories in test reports",
+    "Enterprises with deskless or multilingual workforces that annual e-learning has never reached"
+  ],
+  "faqs": [
+    {
+      "question": "We already run annual e-learning and everyone completes it. Why is that not enough?",
+      "answer": "Completion tells you a video played. It does not tell you whether a finance manager will call back a supplier before changing bank details, or whether anyone reports the message that got through the filter. Annual delivery also sits badly against how attacks arrive, which is continuously. We keep the annual module for the compliance record, then add short reinforcement and simulations across the year, and measure report rate, response time and repeat exposure so you can see whether behaviour moved."
+    },
+    {
+      "question": "Do simulated phishing campaigns damage trust between staff and the security team?",
+      "answer": "They do when they are run as a trap. We agree a lure policy with HR and legal before the first campaign, and rule out themes that cause real distress: bonuses, redundancies, medical results and bereavement. Results go to managers as cohort trends, not as named lists, and there is no disciplinary consequence for a click. The landing page teaches in under a minute and thanks people who report. Where reporting rises, the programme is working."
+    },
+    {
+      "question": "We have phishing-resistant MFA. Does awareness training still matter?",
+      "answer": "It matters differently. FIDO2 and passkeys defeat credential replay and adversary-in-the-middle proxies, which removes a large class of attack, and we would recommend that rollout over any amount of training. What remains is everything that does not involve a password: supplier invoice fraud, executive impersonation by voice, callback lures that route people to a phone line, malicious OAuth consent grants, and service desk staff talked into resetting an authenticator. Those need procedure and recognition, not a stronger token."
+    },
+    {
+      "question": "How much time does this take from people who have day jobs?",
+      "answer": "Induction runs to about an hour once. After that, most staff see short modules of a few minutes each quarter plus simulations that cost nothing unless they interact. Developers need more: a half-day or full-day secure coding workshop with hands-on labs, then annual refreshers, which PCI DSS 4.0 requires anyway for organisations in scope. Board briefings are typically ninety minutes, once or twice a year. We schedule around your release cycles and financial close."
+    },
+    {
+      "question": "What exactly satisfies an ISO 27001 or SOC 2 auditor on training?",
+      "answer": "For ISO/IEC 27001:2022, an auditor looks at Clause 7.2 competence, Clause 7.3 awareness and Annex A control 6.3, and wants records: who was trained, on what, when, and evidence that content reflects your actual policies and risks. SOC 2 examiners test the criteria covering competence and internal communication, usually by sampling attestations. We build the register and the mapping. Confirm your specific scope with your certification body or auditor, since we support readiness rather than issue any certificate."
+    }
+  ],
+  "related": ["iso-27001", "incident-response", "dpo"]
+}

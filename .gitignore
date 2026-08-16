@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Secrets — never commit the real environment file
+.env
+.env.*
+!.env.example
+
+# Runtime data. Submissions and uploaded CVs contain personal data and must not
+# enter version control.
+server/data/
+server/uploads/
+*.db
+*.db-shm
+*.db-wal
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

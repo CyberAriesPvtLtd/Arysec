@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Arysec Technologies LLP — IT and Cybersecurity Services">
+  <defs>
+    <linearGradient id="ogAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#00e5a0"/>
+    </linearGradient>
+    <radialGradient id="ogGlow" cx="50%" cy="0%" r="75%">
+      <stop offset="0" stop-color="#00d4ff" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="ogGrid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="#00d4ff" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0a1628"/>
+  <rect width="1200" height="630" fill="url(#ogGrid)"/>
+  <rect width="1200" height="630" fill="url(#ogGlow)"/>
+
+  <g transform="translate(90 172)">
+    <path d="M56 0 L104 18 V60 C104 88 84 105 56 112 C28 105 8 88 8 60 V18 Z"
+          fill="none" stroke="url(#ogAccent)" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M56 24 L32 80 M56 24 L80 80 M41 60 H71"
+          fill="none" stroke="url(#ogAccent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="32" cy="80" r="6" fill="#00d4ff"/>
+    <circle cx="80" cy="80" r="6" fill="#00e5a0"/>
+    <circle cx="56" cy="24" r="6" fill="#00d4ff"/>
+  </g>
+
+  <text x="230" y="232" font-family="'Segoe UI', Inter, Arial, sans-serif" font-size="52" font-weight="800" fill="#eaf2fb" letter-spacing="6">ARYSEC</text>
+  <text x="232" y="272" font-family="'Segoe UI', Inter, Arial, sans-serif" font-size="20" font-weight="500" fill="#7f95ad" letter-spacing="9">TECHNOLOGIES LLP</text>
+
+  <text x="90" y="392" font-family="'Segoe UI', Inter, Arial, sans-serif" font-size="62" font-weight="800" fill="#eaf2fb">Secure Technology.</text>
+  <text x="90" y="466" font-family="'Segoe UI', Inter, Arial, sans-serif" font-size="62" font-weight="800" fill="url(#ogAccent)">Confident Business.</text>
+
+  <text x="90" y="530" font-family="'Segoe UI', Inter, Arial, sans-serif" font-size="24" font-weight="500" fill="#9fb2c8">IT &amp; Cybersecurity Services  ·  vCISO  ·  DPO  ·  Audit  ·  VAPT  ·  Managed IT</text>
+  <text x="90" y="572" font-family="'Segoe UI', Inter, Arial, sans-serif" font-size="22" font-weight="500" fill="#7f95ad">Mumbai, India  ·  Serving clients across India and worldwide</text>
+
+  <rect x="0" y="618" width="1200" height="12" fill="url(#ogAccent)"/>
+</svg>

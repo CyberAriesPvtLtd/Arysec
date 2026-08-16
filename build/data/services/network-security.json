@@ -1,0 +1,132 @@
+{
+  "slug": "network-security",
+  "name": "Network Security & Monitoring",
+  "shortName": "Network Security",
+  "category": "Cybersecurity Services",
+  "metaTitle": "24/7 SOC Monitoring, SIEM Tuning & Network Defence",
+  "metaDescription": "Arysec runs 24/7 security monitoring: SIEM tuning, EDR and XDR, analyst-led triage, threat hunting mapped to MITRE ATT&CK and firewall policy review.",
+  "cardSummary": "Round-the-clock monitoring with a tuned SIEM and EDR/XDR, analyst-led triage, threat hunting mapped to MITRE ATT&CK, plus firewall, segmentation and zero-trust design.",
+  "heroHeadline": "Alerts That Get Answered, Not Just Logged",
+  "heroSub": "We run detection and response around the clock alongside your team: a tuned SIEM, endpoint agents that see process activity, named analysts on every escalation, and agreed response times you can hold us to.",
+  "highlights": [
+    { "value": "24/7", "label": "Monitoring and alert triage" },
+    { "value": "MITRE ATT&CK", "label": "Detection coverage mapped" },
+    { "value": "Co-sourced", "label": "Works with your team" }
+  ],
+  "intro": {
+    "heading": "From Raw Logs to Answered Alerts",
+    "paragraphs": [
+      "Most organisations that buy monitoring already own the tools. The gap is rarely the platform; it is the operating discipline around it. A security operations centre is people, use cases, runbooks and shift handovers as much as it is a console. Where that discipline is missing, the queue fills with thousands of events a day, the same benign pattern fires dozens of times a week, and analysts learn to close alerts quickly rather than read them. That is alert fatigue, and it is how a genuine intrusion gets dismissed as noise. Our first job on any monitoring engagement is to make the queue small enough that every item in it deserves a human.",
+      "Detection begins with what we can actually see. We inventory log sources against the events that matter: authentication, endpoint process execution, DNS, proxy and firewall traffic, cloud control plane activity, identity provider records and the applications holding your sensitive data. Gaps are closed before a single rule is written. Ingestion is normalised to a common schema so that a username means the same thing whether it arrived from Active Directory, Entra ID or a Linux host. Detection content is then engineered use case by use case and mapped to MITRE ATT&CK techniques, which gives you a coverage picture instead of a rule count. You can see that credential access is well covered, that lateral movement is thin, and decide where the next month of engineering effort should go.",
+      "Monitoring only pays off if the network underneath it is arranged to contain an intruder. We review firewall and next-generation firewall policy for the rules nobody is willing to remove, test whether your segmentation actually holds, and design zones and micro-segmentation around the systems that would hurt most: payment environments, core banking interfaces, operational technology, build infrastructure and the jump hosts administrators log in from. Zero-trust network access replaces flat VPN reachability with per-application authorisation tied to user identity and device posture. Intrusion detection and prevention sensors go where east-west traffic is visible, not only at the perimeter. None of this replaces your staff. Most of our clients run a co-sourced model in which we hold the overnight watch, the detection engineering and the tuning backlog, while their internal team keeps ownership of the estate and the final call on major incidents."
+    ]
+  },
+  "capabilities": {
+    "heading": "What the Service Covers",
+    "items": [
+      {
+        "title": "SIEM Deployment and Tuning",
+        "description": "We deploy or take over your SIEM, whether that is Microsoft Sentinel, Splunk, Elastic, Wazuh or QRadar, then spend the first weeks suppressing known-benign patterns and rewriting rules that fire without cause."
+      },
+      {
+        "title": "Log Ingestion and Use Cases",
+        "description": "Sources are onboarded, parsed and normalised, then detection use cases are written for the threats relevant to your sector and estate, each documented with its logic, data dependency and expected analyst action."
+      },
+      {
+        "title": "Endpoint Detection and Response",
+        "description": "EDR and XDR agents are deployed, policy-tuned and monitored so that process, registry and memory activity is visible. Containment actions such as host isolation are pre-agreed, so nobody waits for permission at 3am."
+      },
+      {
+        "title": "Analyst-Led Alert Triage",
+        "description": "Every alert reaching the queue is investigated by an analyst against a documented runbook, enriched with asset and identity context, then closed with a recorded reason or escalated to your named contact."
+      },
+      {
+        "title": "Threat Hunting",
+        "description": "Hypothesis-led hunts run on a scheduled cadence against MITRE ATT&CK techniques your detections do not yet cover, using current threat intelligence and behaviours seen in your own environment rather than indicator lists alone."
+      },
+      {
+        "title": "Firewall and Segmentation Review",
+        "description": "Rule bases are audited for shadowed, permissive and unused entries, then segmentation is designed and tested: VLAN and zone boundaries, micro-segmentation for critical workloads, and zero-trust access replacing broad VPN reachability."
+      }
+    ]
+  },
+  "deliverables": {
+    "heading": "What You Actually Receive",
+    "intro": "Monitoring is easy to buy and hard to inspect. These are the artefacts that let you check what the service is doing every month.",
+    "items": [
+      "Log source inventory with coverage gaps identified",
+      "Documented detection use cases mapped to MITRE ATT&CK",
+      "Tuning log recording every rule change and suppression",
+      "Escalation runbooks with severity definitions and response times",
+      "Named contacts and a tested out-of-hours call tree",
+      "Firewall rule base review with prioritised change list",
+      "Network segmentation design and validation test results",
+      "Monthly report covering alerts, incidents, trends and tuning"
+    ]
+  },
+  "process": [
+    {
+      "title": "Assess",
+      "description": "We review your current tooling, log coverage, alert volumes and existing rules, then interview the people who handle alerts today. The output is an honest picture of what is monitored and what is not."
+    },
+    {
+      "title": "Onboard",
+      "description": "Sources are connected and normalised, agents deployed, and detection content built against agreed use cases. Runbooks, severity definitions and escalation paths are written and signed off before we take the watch."
+    },
+    {
+      "title": "Operate",
+      "description": "Analysts work the queue continuously, triaging, enriching and escalating against the agreed response times. Hunts run on cadence, and every noisy rule goes onto a tuning backlog that is worked weekly, not annually."
+    },
+    {
+      "title": "Report and Improve",
+      "description": "Each month you get a written report and a review call covering what fired, what was escalated, what was tuned and where detection coverage still has holes, with the next quarter's priorities agreed."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Fewer Alerts, Better Ones",
+      "description": "Tuning is treated as continuous work rather than a one-off project, so the queue shrinks towards alerts that genuinely warrant investigation and your analysts stop skimming."
+    },
+    {
+      "title": "Nights and Weekends Covered",
+      "description": "You get continuous watch without recruiting for a three-shift rota. Night-shift analyst roles are among the hardest to hire for and the hardest to keep filled once you have."
+    },
+    {
+      "title": "Coverage You Can See",
+      "description": "Detections mapped to MITRE ATT&CK turn a vague sense of readiness into a grid your board and your auditors can read, showing which techniques you would notice."
+    },
+    {
+      "title": "Contained, Not Just Detected",
+      "description": "Segmentation, zero-trust access and pre-agreed containment actions mean an intrusion stops at one zone instead of moving freely across a flat network while everyone hunts for approval."
+    }
+  ],
+  "whoItsFor": [
+    "Organisations with security tooling already bought but nobody watching it after 6pm",
+    "Lean internal security teams needing overnight, weekend and holiday cover without new headcount",
+    "Regulated firms in banking, insurance and payments with continuous monitoring and log retention obligations",
+    "Growing companies whose flat network now carries data they cannot afford to lose"
+  ],
+  "faqs": [
+    {
+      "question": "We already have a security team. Will an outside monitoring service just duplicate what they do?",
+      "answer": "Not if the split is written down. The co-sourced model most of our clients use gives us the parts that scale badly in-house: the 24/7 watch, tier one and tier two triage, detection engineering and the tuning backlog. Your team keeps the context we cannot have, meaning asset ownership, change approval, business impact judgement and the final call on a major incident. We agree that boundary in the escalation runbook before go-live, including who we wake and at what severity, so nobody works the same alert twice."
+    },
+    {
+      "question": "Our current SIEM generates thousands of alerts a day and nobody trusts it. How do you fix that?",
+      "answer": "By treating tuning as engineering rather than deletion. We baseline two to four weeks of alert data, identify the small number of rules producing most of the volume, and trace each one to its cause: a backup job that looks like data staging, a vulnerability scanner tripping intrusion signatures, a service account behaving oddly by design. Suppressions are narrow, documented and reviewed, never blanket rule disabling. We track precision per rule, so you can see which detections earn their place and which are being rewritten."
+    },
+    {
+      "question": "What actually happens when you find something at 2am, and what response times do you commit to?",
+      "answer": "Severity decides the path. Every alert class has a runbook naming the investigation steps, the response time we commit to and the containment actions we are pre-authorised to take, such as isolating a host or disabling a session. For the highest severity we investigate immediately and telephone your named contact rather than sending mail into an unwatched inbox. Response times are agreed during onboarding and written into the contract, measured from alert to acknowledgement and from acknowledgement to escalation, then reported every month."
+    },
+    {
+      "question": "Do we have to replace our tools, and who owns the licences and the log data?",
+      "answer": "You keep both. We work with the platform you already own, whether that is Microsoft Sentinel, Splunk, Elastic, Wazuh or QRadar, and we will say plainly if it cannot meet your retention or ingestion needs before you spend more on it. Licences stay in your name, the tenant stays yours, and the detection content, parsers and runbooks we write are documented as your property. If you end the contract, that material and the log history remain with you, along with a documented handover."
+    },
+    {
+      "question": "How long before this is genuinely useful, and how disruptive is the network work?",
+      "answer": "Onboarding a first set of high-value log sources and standing up the watch typically takes a few weeks, so you have monitoring running before detection coverage is complete. Depth arrives over the first quarter as use cases are engineered and tuned. Network changes move separately and slowly on purpose: firewall rule removal and segmentation are proposed with traffic analysis behind each change, staged in monitor-only mode first, and applied in your change window with a documented rollback."
+    }
+  ],
+  "related": ["incident-response", "vapt", "cloud-security"]
+}
