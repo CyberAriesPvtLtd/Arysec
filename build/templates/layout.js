@@ -174,6 +174,8 @@ function organisationJsonLd(ctx) {
     name: c.name,
     alternateName: c.shortName,
     url: c.domain + '/',
+    logo: c.domain + '/assets/logo-512.png',
+    image: c.domain + '/assets/og-image.png',
     email: c.email,
     telephone: c.phoneDisplay,
     description:
@@ -206,8 +208,11 @@ function organisationJsonLd(ctx) {
 function layout(ctx, page) {
   const c = ctx.config.company;
   const canonical = c.domain + page.path;
-  const title = page.title.includes(c.shortName) ? page.title : `${page.title} | ${c.name}`;
+  // Interior pages take the short brand suffix so the whole title survives the
+  // ~60-character SERP cut; the home page carries the full legal name.
+  const title = page.title.includes(c.shortName) ? page.title : `${page.title} | ${c.shortName}`;
   const jsonLdBlocks = [organisationJsonLd(ctx)].concat(page.jsonLd || []);
+  const ogImage = `${c.domain}/assets/og-image.png`;
 
   return `<!DOCTYPE html>
 <html lang="en-IN">
@@ -217,28 +222,41 @@ function layout(ctx, page) {
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(page.description)}">
   <link rel="canonical" href="${esc(canonical)}">
-  ${page.noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robots" content="index, follow">'}
+  ${
+    page.noindex
+      ? '<meta name="robots" content="noindex, follow">'
+      : '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">'
+  }
 
   <meta property="og:type" content="${esc(page.ogType || 'website')}">
   <meta property="og:site_name" content="${esc(c.name)}">
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(page.description)}">
   <meta property="og:url" content="${esc(canonical)}">
-  <meta property="og:image" content="${esc(c.domain)}/assets/og-image.svg">
+  <meta property="og:image" content="${esc(ogImage)}">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="${esc(c.name)} — IT &amp; Cybersecurity Services, Mumbai">
   <meta property="og:locale" content="en_IN">
+${
+  page.article
+    ? `  <meta property="article:published_time" content="${esc(page.article.published)}">
+  <meta property="article:modified_time" content="${esc(page.article.modified)}">
+  <meta property="article:section" content="${esc(page.article.section)}">`
+    : ''
+}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${esc(title)}">
   <meta name="twitter:description" content="${esc(page.description)}">
-  <meta name="twitter:image" content="${esc(c.domain)}/assets/og-image.svg">
+  <meta name="twitter:image" content="${esc(ogImage)}">
 
   <meta name="theme-color" content="#0a1628">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/favicon.svg">
   <link rel="manifest" href="/site.webmanifest">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/styles.css">
 
 ${jsonLdBlocks

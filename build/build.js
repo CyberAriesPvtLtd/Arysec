@@ -176,7 +176,7 @@ function writeSitemap(pages) {
     .filter((p) => !p.noindex && !p.path.endsWith('.html'))
     .map(
       (p) =>
-        `  <url>\n    <loc>${domain}${p.path}</loc>\n    <lastmod>${BUILD_DATE}</lastmod>\n` +
+        `  <url>\n    <loc>${domain}${p.path}</loc>\n    <lastmod>${(p.article && p.article.modified) || BUILD_DATE}</lastmod>\n` +
         `    <changefreq>${p.path.startsWith('/insights/') ? 'monthly' : 'weekly'}</changefreq>\n` +
         `    <priority>${priorityFor(p.path)}</priority>\n  </url>`
     )

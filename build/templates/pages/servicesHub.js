@@ -56,7 +56,7 @@ ${C.ctaBanner({
     path: '/services/',
     title: 'IT & Cybersecurity Services',
     description:
-      'All Arysec Technologies LLP services: vCISO, DPO as a Service, internal audit, VAPT, ISO 27001, cloud and network security, data protection, incident response, managed IT and development.',
+      'All 15 Arysec services: vCISO, DPO as a Service, internal audit, VAPT, ISO 27001, cloud and network security, incident response, managed IT and development.',
     content,
     jsonLd: [
       C.breadcrumbJsonLd(company.domain, trail),

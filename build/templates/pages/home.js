@@ -234,7 +234,7 @@ ${C.ctaBanner({
     path: '/',
     title: `${company.name} | IT & Cybersecurity Services, Mumbai`,
     description:
-      'Arysec Technologies LLP is a Mumbai-headquartered IT and cybersecurity firm delivering vCISO, DPO as a Service, internal audit, VAPT, ISO 27001 support, managed IT and cloud security across India and globally.',
+      'Mumbai-headquartered IT and cybersecurity firm delivering vCISO, DPO as a Service, internal audit, VAPT, ISO 27001 support and managed IT across India and globally.',
     content,
     jsonLd: [
       {

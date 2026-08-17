@@ -48,7 +48,10 @@ function createApp() {
     setHeaders(res, filePath) {
       if (filePath.endsWith('.html')) {
         res.setHeader('Cache-Control', 'no-cache');
-      } else if (/\.(css|js|svg|woff2?|png|jpe?g|webp|ico)$/.test(filePath)) {
+      } else if (/\.woff2?$/.test(filePath)) {
+        // Font files never change without a filename change.
+        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+      } else if (/\.(css|js|svg|png|jpe?g|webp|ico)$/.test(filePath)) {
         res.setHeader('Cache-Control', 'public, max-age=86400, must-revalidate');
       } else {
         res.setHeader('Cache-Control', 'public, max-age=3600');

@@ -141,12 +141,19 @@ ${C.ctaBanner({
   actions: C.btn('/contact/', 'Book a Free Consultation', 'btn-light') + C.btn('/services/', 'Browse Services', 'btn-outline'),
 })}`;
 
+  const dates = ctx.config.articleDates[slug] || {};
+
   return {
     path,
     title: a.metaTitle,
     description: a.metaDescription,
     content,
     ogType: 'article',
+    article: {
+      published: dates.published,
+      modified: dates.modified || dates.published,
+      section: a.category,
+    },
     jsonLd: [
       C.breadcrumbJsonLd(company.domain, trail),
       {
@@ -156,11 +163,14 @@ ${C.ctaBanner({
         description: a.metaDescription,
         articleSection: a.category,
         url: company.domain + path,
-        author: { '@type': 'Organization', name: company.name },
+        datePublished: dates.published,
+        dateModified: dates.modified || dates.published,
+        image: company.domain + '/assets/og-image.png',
+        author: { '@type': 'Organization', name: company.name, url: company.domain + '/' },
         publisher: {
           '@type': 'Organization',
           name: company.name,
-          logo: { '@type': 'ImageObject', url: company.domain + '/assets/logo.svg' },
+          logo: { '@type': 'ImageObject', url: company.domain + '/assets/logo-512.png' },
         },
         mainEntityOfPage: { '@type': 'WebPage', '@id': company.domain + path },
       },

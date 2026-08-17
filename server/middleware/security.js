@@ -10,15 +10,15 @@ const { log, hashIp } = require('../lib/logger');
  * Content Security Policy.
  *
  * The site ships no inline scripts and no inline style attributes, so both
- * script-src and style-src stay free of 'unsafe-inline'. Google Fonts needs an
- * exception on style-src (the stylesheet link) and font-src (the WOFF2 files).
+ * script-src and style-src stay free of 'unsafe-inline'. Fonts are self-hosted,
+ * so no third-party origin appears anywhere in the policy.
  */
 const CSP_DIRECTIVES = {
   defaultSrc: ["'self'"],
   baseUri: ["'self'"],
   scriptSrc: ["'self'"],
-  styleSrc: ["'self'", 'https://fonts.googleapis.com'],
-  fontSrc: ["'self'", 'https://fonts.gstatic.com', 'data:'],
+  styleSrc: ["'self'"],
+  fontSrc: ["'self'"],
   imgSrc: ["'self'", 'data:'],
   connectSrc: ["'self'"],
   formAction: ["'self'"],

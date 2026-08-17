@@ -82,6 +82,20 @@ const articles = [
   'do-you-need-a-vciso',
 ];
 
+/**
+ * Publication dates for Article structured data and article: meta tags.
+ * Fixed here (not stamped at build time) so a rebuild never silently
+ * "republishes" every article. Update an entry when its content changes.
+ */
+const articleDates = {
+  'cloud-misconfiguration-risk': { published: '2026-08-17', modified: '2026-08-17' },
+  'first-hour-of-a-ransomware-incident': { published: '2026-08-17', modified: '2026-08-17' },
+  'dpdp-act-in-practice': { published: '2026-08-17', modified: '2026-08-17' },
+  'what-happens-during-a-penetration-test': { published: '2026-08-17', modified: '2026-08-17' },
+  'iso-27001-2022-transition': { published: '2026-08-17', modified: '2026-08-17' },
+  'do-you-need-a-vciso': { published: '2026-08-17', modified: '2026-08-17' },
+};
+
 /** Primary navigation. `mega: 'services'` renders the grouped services panel. */
 const nav = [
   { label: 'Home', href: '/' },
@@ -159,6 +173,7 @@ module.exports = {
   serviceCategories,
   services,
   articles,
+  articleDates,
   nav,
   footerColumns,
   legalLinks,

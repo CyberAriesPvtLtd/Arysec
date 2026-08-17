@@ -60,12 +60,34 @@ for (const file of files) {
   stats.pages++;
 
   // --- required metadata ---
-  if (!/<title>[^<]{5,}<\/title>/.test(html)) problems.push(`${rel}: missing or empty <title>`);
-  if (!/<meta name="description" content="[^"]{50,}"/.test(html)) {
-    problems.push(`${rel}: missing or too-short meta description`);
+  const titleMatch = html.match(/<title>([^<]*)<\/title>/);
+  if (!titleMatch || titleMatch[1].length < 5) {
+    problems.push(`${rel}: missing or empty <title>`);
+  } else if (titleMatch[1].length > 70) {
+    problems.push(`${rel}: <title> is ${titleMatch[1].length} chars (max 70 — it will be cut in search results)`);
   }
-  if (!/<link rel="canonical"/.test(html)) problems.push(`${rel}: missing canonical link`);
+
+  const descMatch = html.match(/<meta name="description" content="([^"]*)"/);
+  if (!descMatch) {
+    problems.push(`${rel}: missing meta description`);
+  } else if (descMatch[1].length < 70 || descMatch[1].length > 175) {
+    problems.push(`${rel}: meta description is ${descMatch[1].length} chars (want 70-175)`);
+  }
+
+  const canonicals = (html.match(/<link rel="canonical"/g) || []).length;
+  if (canonicals !== 1) problems.push(`${rel}: ${canonicals} canonical links (expected exactly 1)`);
+  if (!/<html lang="/.test(html)) problems.push(`${rel}: missing lang attribute on <html>`);
+  if (!/<meta name="robots"/.test(html)) problems.push(`${rel}: missing robots meta`);
+  if (!/<meta property="og:image" content="[^"]+\.png"/.test(html)) {
+    problems.push(`${rel}: og:image missing or not a PNG (social platforms do not render SVG)`);
+  }
   if (!/<h1[ >]/.test(html)) problems.push(`${rel}: no <h1>`);
+
+  // Self-hosted assets only: a third-party font or CDN reference reintroduces a
+  // render-blocking origin and breaks the tightened CSP.
+  if (/fonts\.googleapis\.com|fonts\.gstatic\.com|cdn\./.test(html)) {
+    problems.push(`${rel}: references a third-party font/CDN origin`);
+  }
 
   const h1Count = (html.match(/<h1[ >]/g) || []).length;
   if (h1Count > 1) problems.push(`${rel}: ${h1Count} <h1> elements (expected exactly 1)`);

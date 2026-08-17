@@ -218,6 +218,8 @@ ${C.ctaBanner({
         '@type': 'JobPosting',
         title: r.title,
         description: r.summary,
+        // Fixed date, not build time, so a rebuild does not "repost" every role.
+        datePosted: '2026-08-17',
         employmentType: 'FULL_TIME',
         hiringOrganization: { '@type': 'Organization', name: company.name, sameAs: company.domain + '/' },
         jobLocation: {
