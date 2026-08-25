@@ -113,6 +113,14 @@ test('/academy/ on the academy host redirects to the equivalent root path', asyn
   assert.equal(res.headers.location, '/programmes/');
 });
 
+test('a preview host serves the academy in place instead of redirecting away', async () => {
+  // The subdomain does not resolve on a preview deployment or on localhost, so
+  // bouncing to it would make the academy unreviewable there.
+  const res = await get('/academy/programmes/', 'arysec-git-preview.vercel.app');
+  assert.equal(res.status, 200);
+  assert.match(res.body, /Arysec Academy/);
+});
+
 test('the academy host cannot reach the main site by path', async () => {
   const res = await get('/services/vciso/', 'academy.arysec.in');
   assert.equal(res.status, 404);

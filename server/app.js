@@ -74,8 +74,11 @@ function createApp() {
    * academy.arysec.in. Two middlewares keep those views consistent:
    *
    *   1. On an academy host, requests resolve inside public/academy/ first.
-   *   2. On any other host, /academy/... is redirected to the subdomain, so a
-   *      page is never reachable at two addresses and never splits its ranking.
+   *   2. On a canonical main-site host, /academy/... is redirected to the
+   *      subdomain, so a page is never reachable at two addresses and never
+   *      splits its ranking. Anywhere else — a preview deployment, a staging
+   *      host, localhost — the subdomain does not resolve, so the academy is
+   *      served in place under /academy/ and stays browsable.
    *
    * Both use the same path-resolution guard as the clean-URL handler below: the
    * candidate is resolved and confirmed to sit inside the served root before any
@@ -83,6 +86,7 @@ function createApp() {
    */
   const academyRoot = path.join(config.publicDir, config.academyDir);
   const isAcademyHost = (req) => config.academyHosts.includes(String(req.hostname || '').toLowerCase());
+  const isCanonicalSiteHost = (req) => config.siteHosts.includes(String(req.hostname || '').toLowerCase());
 
   app.use((req, res, next) => {
     if (req.path.startsWith('/api/')) return next();
@@ -96,7 +100,10 @@ function createApp() {
       return next();
     }
 
-    if (req.path === '/' + config.academyDir || req.path.startsWith('/' + config.academyDir + '/')) {
+    if (
+      isCanonicalSiteHost(req) &&
+      (req.path === '/' + config.academyDir || req.path.startsWith('/' + config.academyDir + '/'))
+    ) {
       const rest = req.path.slice(config.academyDir.length + 1) || '/';
       const query = req.originalUrl.slice(req.path.length);
       return res.redirect(301, config.academyOrigin + rest + query);

@@ -36,6 +36,7 @@ ALLOWED_ORIGINS=https://www.arysec.in,https://arysec.in,https://academy.arysec.i
 
 ACADEMY_HOSTS=academy.arysec.in                     # served from public/academy/
 ACADEMY_ORIGIN=https://academy.arysec.in
+SITE_HOSTS=www.arysec.in,arysec.in                  # these redirect /academy/ away
 
 SMTP_HOST=smtp.your-provider.com
 SMTP_PORT=587
@@ -236,7 +237,12 @@ no nginx in front:
 
 - `academy.arysec.in/*` is rewritten to `/academy/*`, so the subdomain serves the
   academy build from its own root.
-- `/academy/*` on any other host is redirected to `https://academy.arysec.in/*`.
+- `/academy/*` on `www.arysec.in` and `arysec.in` is redirected to
+  `https://academy.arysec.in/*`.
+
+The redirect is scoped to those two hosts on purpose. Preview deployments serve
+`/academy/...` in place, because the subdomain does not resolve there and
+bouncing to it would make the academy impossible to review.
 
 Two things have to be done in the Vercel dashboard once, because they are not
 expressible in `vercel.json`:

@@ -15,11 +15,25 @@
     },
     {
       "source": "/academy",
+      "has": [{ "type": "host", "value": "www.arysec.in" }],
       "destination": "https://academy.arysec.in/",
       "permanent": true
     },
     {
       "source": "/academy/:path*",
+      "has": [{ "type": "host", "value": "www.arysec.in" }],
+      "destination": "https://academy.arysec.in/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/academy",
+      "has": [{ "type": "host", "value": "arysec.in" }],
+      "destination": "https://academy.arysec.in/",
+      "permanent": true
+    },
+    {
+      "source": "/academy/:path*",
+      "has": [{ "type": "host", "value": "arysec.in" }],
       "destination": "https://academy.arysec.in/:path*",
       "permanent": true
     }

@@ -55,6 +55,16 @@ const config = {
     .filter(Boolean),
   /** Where /academy/... on the main domain is redirected, so no page has two addresses. */
   academyOrigin: process.env.ACADEMY_ORIGIN || 'https://academy.arysec.in',
+  /**
+   * Canonical hosts of the main site. Only these redirect /academy/... away to
+   * the subdomain: on a preview deployment, a staging host or localhost the
+   * subdomain does not resolve, so the academy is served in place instead and
+   * stays browsable.
+   */
+  siteHosts: (process.env.SITE_HOSTS || 'www.arysec.in,arysec.in')
+    .split(',')
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean),
   academyDir: 'academy',
   uploadDir: process.env.UPLOAD_DIR || path.join(__dirname, 'uploads'),
   dbFile: process.env.DB_FILE || path.join(__dirname, 'data', 'submissions.db'),
