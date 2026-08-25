@@ -8,16 +8,22 @@ const CHEVRON =
   '<path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
 const BRAND_MARK = (idSuffix) => `
-        <svg class="brand-mark" viewBox="0 0 56 60" width="38" height="41" aria-hidden="true" focusable="false">
+        <svg class="brand-mark" viewBox="5 8 110 97" width="42" height="37" aria-hidden="true" focusable="false">
           <defs>
             <linearGradient id="brandGrad${idSuffix}" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#00e5a0"/>
+              <stop offset="0" stop-color="#f8430c"/><stop offset="1" stop-color="#fb9218"/>
             </linearGradient>
           </defs>
-          <path d="M28 2 L52 11 V32 C52 46 42 54.5 28 58 C14 54.5 4 46 4 32 V11 Z" fill="none" stroke="url(#brandGrad${idSuffix})" stroke-width="3" stroke-linejoin="round"/>
-          <path d="M28 14 L16 42 M28 14 L40 42 M20.5 32 H35.5" fill="none" stroke="url(#brandGrad${idSuffix})" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="16" cy="42" r="3" fill="#00d4ff"/><circle cx="40" cy="42" r="3" fill="#00e5a0"/><circle cx="28" cy="14" r="3" fill="#00d4ff"/>
+          <path d="M69.03 24.57 L104.98 86.62 Q111 97 99 97 L21 97 Q9 97 15.02 86.62 L50.97 24.57 Q60 9 69.03 24.57 Z" fill="none" stroke="url(#brandGrad${idSuffix})" stroke-width="15" stroke-linejoin="round"/>
+          <path d="M87.96 86.5 L59.92 38.59 Q57.9 35.13 55.94 38.62 L40.14 66.84 L20.86 77.46 L24.14 84.54 L47.86 75.16 L58.1 56.87 L75.45 86.5 Z" fill="url(#brandGrad${idSuffix})"/>
         </svg>`;
+
+/** Wordmark and strapline, matching the logo lockup. */
+const BRAND_TEXT = `
+        <span class="brand-text">
+          <span class="brand-name">ARYSEC</span>
+          <span class="brand-tagline">Assess<span>.</span> Assure<span>.</span> Advance<span>.</span></span>
+        </span>`;
 
 /** True when `href` is the current page or an ancestor section of it. */
 function isActive(href, path) {
@@ -92,11 +98,7 @@ function renderHeader(ctx, path) {
   return `
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
-      <a href="/" class="brand" aria-label="${esc(c.name)} — Home">${BRAND_MARK('Nav')}
-        <span class="brand-text">
-          <span class="brand-name">ARYSEC</span>
-          <span class="brand-tagline">TECHNOLOGIES LLP</span>
-        </span>
+      <a href="/" class="brand" aria-label="${esc(c.name)} — Home">${BRAND_MARK('Nav')}${BRAND_TEXT}
       </a>
 
       <nav class="main-nav" id="mainNav" aria-label="Primary">
@@ -120,11 +122,7 @@ function renderFooter(ctx) {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="/" class="brand" aria-label="${esc(c.name)} — Home">${BRAND_MARK('Foot')}
-            <span class="brand-text">
-              <span class="brand-name">ARYSEC</span>
-              <span class="brand-tagline">TECHNOLOGIES LLP</span>
-            </span>
+          <a href="/" class="brand" aria-label="${esc(c.name)} — Home">${BRAND_MARK('Foot')}${BRAND_TEXT}
           </a>
           <p class="footer-blurb">${esc(c.tagline)} Headquartered in ${esc(c.city)}, delivering across ${esc(c.country)} and worldwide.</p>
           <div class="footer-contact">
@@ -251,7 +249,7 @@ ${
   <meta name="twitter:description" content="${esc(page.description)}">
   <meta name="twitter:image" content="${esc(ogImage)}">
 
-  <meta name="theme-color" content="#0a1628">
+  <meta name="theme-color" content="#12100e">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/favicon.svg">
   <link rel="manifest" href="/site.webmanifest">

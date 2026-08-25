@@ -1,16 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <defs>
-    <linearGradient id="fgrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#00d4ff"/>
-      <stop offset="1" stop-color="#00e5a0"/>
+    <linearGradient id="arysecFavGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F8430C"/>
+      <stop offset="1" stop-color="#FB9218"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="#0a1628"/>
-  <path d="M32 6 L54 14.5 V33 C54 46 45 53.8 32 57 C19 53.8 10 46 10 33 V14.5 Z"
-        fill="none" stroke="url(#fgrad)" stroke-width="3.5" stroke-linejoin="round"/>
-  <path d="M32 17 L21.5 42 M32 17 L42.5 42 M25.5 33.5 H38.5"
-        fill="none" stroke="url(#fgrad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="21.5" cy="42" r="2.8" fill="#00d4ff"/>
-  <circle cx="42.5" cy="42" r="2.8" fill="#00e5a0"/>
-  <circle cx="32" cy="17" r="2.8" fill="#00d4ff"/>
+  <rect width="64" height="64" rx="14" fill="#12100e"/>
+  <svg x="9" y="12.6" width="46" height="40.6" viewBox="5 8 110 97">
+    <path d="M69.03 24.57 L104.98 86.62 Q111 97 99 97 L21 97 Q9 97 15.02 86.62 L50.97 24.57 Q60 9 69.03 24.57 Z"
+          fill="none" stroke="url(#arysecFavGrad)" stroke-width="15" stroke-linejoin="round"/>
+    <path d="M87.96 86.5 L59.92 38.59 Q57.9 35.13 55.94 38.62 L40.14 66.84 L20.86 77.46 L24.14 84.54 L47.86 75.16 L58.1 56.87 L75.45 86.5 Z"
+          fill="url(#arysecFavGrad)"/>
+  </svg>
 </svg>
