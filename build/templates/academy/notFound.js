@@ -23,7 +23,7 @@ module.exports = function academyNotFound(ctx) {
         </p>
         <div class="hero-actions">
           ${C.btn('/', 'Academy Home', 'btn-primary')}
-          ${C.btn(`${company.parentSite}/`, 'arysec.in', 'btn-outline')}
+          ${C.btn(`${company.affiliateSite}/`, 'arysec.in', 'btn-outline')}
         </div>
       </div>
     </section>

@@ -206,11 +206,11 @@ function organisationJsonLd(ctx) {
     areaServed: [{ '@type': 'Country', name: 'India' }, 'Worldwide'],
     knowsAbout: org.knowsAbout,
   };
-  // A sub-brand names the trading entity it belongs to, so the two sites are
-  // linked for search engines rather than reading as unrelated organisations.
-  if (c.legalName && c.legalName !== c.name) {
-    block.parentOrganization = { '@type': 'Organization', name: c.legalName, url: c.parentSite + '/' };
-  }
+  // Sites may cross-link an affiliate (see company.affiliateSite where set), but
+  // never assert a parentOrganization — Arysec Technologies LLP and Arysec Academy
+  // are separate registered companies, confirmed by the site owner, and JSON-LD
+  // read by search engines and directories must not claim a corporate parent
+  // that does not exist.
   return block;
 }
 

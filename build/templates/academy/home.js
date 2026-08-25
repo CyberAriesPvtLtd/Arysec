@@ -182,7 +182,7 @@ ${C.ctaBanner({
         '@type': 'WebSite',
         name: company.name,
         url: company.domain + '/',
-        publisher: { '@type': 'Organization', name: company.legalName, url: company.parentSite + '/' },
+        publisher: { '@type': 'Organization', name: company.name, url: company.domain + '/' },
       },
       {
         '@context': 'https://schema.org',

@@ -9,7 +9,7 @@
  * site that otherwise has none. Reading submissions requires shell access to the box.
  *
  *   node scripts/export-submissions.js                    # 50 most recent, table
- *   node scripts/export-submissions.js --kind=contact     # filter by form
+ *   node scripts/export-submissions.js --kind=contact     # filter by form (contact, academy, resource, careers)
  *   node scripts/export-submissions.js --format=csv       # CSV to stdout
  *   node scripts/export-submissions.js --newsletter       # newsletter list
  */
@@ -23,7 +23,7 @@ const flag = (name, fallback) => {
 };
 const has = (name) => args.includes(`--${name}`);
 
-const KINDS = ['contact', 'resource', 'careers'];
+const KINDS = ['contact', 'academy', 'resource', 'careers'];
 
 /** RFC 4180 quoting, plus a leading apostrophe on anything a spreadsheet would treat
  *  as a formula — an exported CSV opened in Excel must not execute cell content. */
@@ -50,7 +50,7 @@ function main() {
       [
         'Usage: node scripts/export-submissions.js [options]',
         '',
-        '  --kind=<contact|resource|careers>  filter by form type',
+        '  --kind=<contact|academy|resource|careers>  filter by form type',
         '  --limit=<n>                        max rows (default 50)',
         '  --format=<table|csv|json>          output format (default table)',
         '  --newsletter                       list newsletter subscribers instead',

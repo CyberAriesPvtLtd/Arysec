@@ -44,7 +44,7 @@ ${C.pageHero({
             </div>
             <div class="contact-item">
               <span class="contact-icon">${icon('pin')}</span>
-              <div><h2>Delivered From</h2><p>${esc(company.legalName)}<br>${esc(company.addressLine)}</p></div>
+              <div><h2>Delivered From</h2><p>${esc(company.name)}<br>${esc(company.addressLine)}</p></div>
             </div>
             <div class="contact-item">
               <span class="contact-icon">${icon('globe')}</span>
@@ -52,9 +52,9 @@ ${C.pageHero({
             </div>
             <div class="contact-item">
               <span class="contact-icon">${icon('briefcase')}</span>
-              <div><h2>Consulting</h2><p>Need the control fixed rather than the training delivered? See <a href="${esc(
-                company.parentSite
-              )}/services/">Arysec services</a>.</p></div>
+              <div><h2>Consulting</h2><p>Need the control fixed rather than the training delivered? Our affiliate, Arysec Technologies, offers <a href="${esc(
+                company.affiliateSite
+              )}/services/">security consulting</a>.</p></div>
             </div>
           </div>
 
@@ -109,10 +109,10 @@ ${C.pageHero({
             <div class="form-field form-consent">
               <label class="checkbox-label">
                 <input type="checkbox" id="consent" name="consent" value="yes" required>
-                <span>I consent to ${esc(company.legalName)} storing and using these details to respond to my
+                <span>I consent to ${esc(company.name)} storing and using these details to respond to my
                 enquiry, as described in the <a href="${esc(
-                  company.parentSite
-                )}/privacy-policy/">Privacy Policy</a>. <span class="req" aria-hidden="true">*</span></span>
+                  company.cookiePolicyHref.replace('/cookie-policy/', '/privacy-policy/')
+                )}">Privacy Policy</a>. <span class="req" aria-hidden="true">*</span></span>
               </label>
               <span class="field-error" data-error-for="consent"></span>
             </div>
@@ -127,7 +127,7 @@ ${antiSpamFields()}
 ${C.ctaBanner({
   title: 'Not Sure Training Is the Answer?',
   text: 'If the problem is a missing control rather than a knowledge gap, we will say so — and the Arysec consulting practice can pick it up instead.',
-  actions: C.btn(`${company.parentSite}/contact/`, 'Arysec Consulting', 'btn-light'),
+  actions: C.btn(`${company.affiliateSite}/contact/`, 'Arysec Technologies (Consulting)', 'btn-light'),
 })}`;
 
   return {
