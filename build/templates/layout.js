@@ -273,7 +273,7 @@ ${
   <link rel="manifest" href="/site.webmanifest">
 
   <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="${esc(ctx.assets.css.href)}">
 
 ${jsonLdBlocks
   .map((block) => `  <script type="application/ld+json">${escJson(block)}</script>`)
@@ -289,7 +289,7 @@ ${page.content}
 ${renderFooter(ctx)}
 ${renderCookieBanner(ctx)}
 
-  <script src="/js/main.js" defer></script>
+  <script src="${esc(ctx.assets.js.href)}" defer></script>
 </body>
 </html>
 `;

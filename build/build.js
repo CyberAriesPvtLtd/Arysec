@@ -14,6 +14,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const config = require('./config');
 const academyConfig = require('./config.academy');
@@ -203,6 +204,41 @@ function loadAcademyData() {
 // Output helpers
 // ---------------------------------------------------------------------------
 
+/**
+ * Content-hash the stylesheet and script so a rebuild is visible immediately.
+ *
+ * These filenames used to be fixed, which meant a browser that had loaded the
+ * site kept serving the previous CSS from its own cache for hours — a redesign
+ * would land as new markup styled by the old stylesheet. Hashing the name makes
+ * every change a new URL, so the always-revalidated HTML points at it at once
+ * and the files themselves can be cached indefinitely.
+ */
+const FINGERPRINTED = [
+  { dir: 'css', file: 'styles.css', key: 'css' },
+  { dir: 'js', file: 'main.js', key: 'js' },
+];
+
+function fingerprintAssets() {
+  const assets = {};
+  for (const entry of FINGERPRINTED) {
+    const source = path.join(SRC_STATIC, entry.dir, entry.file);
+    const hash = crypto.createHash('sha256').update(fs.readFileSync(source)).digest('hex').slice(0, 8);
+    const ext = path.extname(entry.file);
+    const name = `${path.basename(entry.file, ext)}.${hash}${ext}`;
+    assets[entry.key] = { name, href: `/${entry.dir}/${name}`, dir: entry.dir, from: entry.file };
+  }
+  return assets;
+}
+
+/** Rename the copied assets in an output root to their fingerprinted names. */
+function applyFingerprints(root, assets) {
+  for (const key of Object.keys(assets)) {
+    const a = assets[key];
+    const from = path.join(root, a.dir, a.from);
+    if (fs.existsSync(from)) fs.renameSync(from, path.join(root, a.dir, a.name));
+  }
+}
+
 /** Map a site path to its file on disk: '/about/' -> <root>/about/index.html */
 function outputFileFor(root, pagePath) {
   if (pagePath === '/') return path.join(root, 'index.html');
@@ -343,6 +379,12 @@ function build() {
   const ctx = loadData();
   const academyCtx = loadAcademyData();
 
+  // Hashes are needed while rendering, so compute them from the source files
+  // before any page is written, then rename the copies in each output root.
+  const assets = fingerprintAssets();
+  ctx.assets = assets;
+  academyCtx.assets = assets;
+
   rimraf(OUT);
   fs.mkdirSync(OUT, { recursive: true });
 
@@ -379,6 +421,7 @@ function build() {
   pages.forEach((p) => writePage(OUT, ctx, p));
 
   const assetCount = copyDir(SRC_STATIC, OUT);
+  applyFingerprints(OUT, assets);
   writeSitemap(OUT, config, pages, mainPriority);
   // The academy lives under /academy/ so one deployment can serve both hosts.
   // Crawlers reaching it on the main domain are turned away here; visitors are
@@ -394,6 +437,7 @@ function build() {
   academyPages.forEach((p) => writePage(ACADEMY_OUT, academyCtx, p));
   const academyAssets =
     copyDir(SRC_STATIC, ACADEMY_OUT) + copyDir(SRC_STATIC_ACADEMY, ACADEMY_OUT);
+  applyFingerprints(ACADEMY_OUT, assets);
   writeSitemap(ACADEMY_OUT, academyConfig, academyPages, academyPriority);
   writeRobots(ACADEMY_OUT, academyConfig);
   writeManifest(ACADEMY_OUT, academyConfig);

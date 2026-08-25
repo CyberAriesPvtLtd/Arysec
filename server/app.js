@@ -61,6 +61,10 @@ function createApp() {
       } else if (/\.woff2?$/.test(filePath)) {
         // Font files never change without a filename change.
         res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+      } else if (/\.[0-9a-f]{8}\.(css|js)$/.test(filePath)) {
+        // Content-hashed by the build: the name changes whenever the bytes do,
+        // so this can be cached indefinitely and a rebuild is still immediate.
+        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
       } else if (/\.(css|js|svg|png|jpe?g|webp|ico)$/.test(filePath)) {
         res.setHeader('Cache-Control', 'public, max-age=86400, must-revalidate');
       } else {

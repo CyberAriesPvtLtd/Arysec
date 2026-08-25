@@ -244,6 +244,15 @@ The redirect is scoped to those two hosts on purpose. Preview deployments serve
 `/academy/...` in place, because the subdomain does not resolve there and
 bouncing to it would make the academy impossible to review.
 
+The sources are written as `/academy/(.*)` with a `$1` destination rather than
+`/academy/:path*`. The named form does not match a path ending in a slash, so it
+silently missed every real page URL on this site — every canonical URL here ends
+in a trailing slash. Verify after any change to these rules:
+
+```bash
+curl -sI https://www.arysec.in/academy/programmes/ | grep -i location   # 308 to the subdomain
+```
+
 Two things have to be done in the Vercel dashboard once, because they are not
 expressible in `vercel.json`:
 
@@ -252,6 +261,25 @@ expressible in `vercel.json`:
 
 Until the domain is attached, the rewrite has no host to match and the academy is
 only reachable through the redirect from the main domain.
+
+---
+
+## 5b. Asset caching
+
+`css/styles.css` and `js/main.js` are content-hashed at build time — the output
+is `styles.<hash>.css` and `main.<hash>.js`, referenced from the always-revalidated
+HTML. A rebuild therefore takes effect the moment the HTML is refetched, and the
+assets themselves are served `immutable` for a year.
+
+This matters: with fixed names, a visitor who had loaded the site kept serving
+the previous stylesheet from their own browser cache for hours after a deploy,
+so a redesign arrived as new markup styled by the old CSS. Do not reintroduce
+fixed names for these two files.
+
+```bash
+curl -s https://www.arysec.in/ | grep -o 'href="/css/[^"]*"'    # a hashed name
+curl -sI https://www.arysec.in/css/styles.<hash>.css | grep -i cache-control
+```
 
 ---
 
