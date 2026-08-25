@@ -167,16 +167,15 @@ function renderFooter(ctx) {
 function renderCookieBanner(ctx) {
   const cookiePolicy = ctx.config.company.cookiePolicyHref;
   return `
-  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie preferences" aria-live="polite" hidden>
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie notice" aria-live="polite" hidden>
     <div class="cookie-inner">
       <p>
-        We use strictly necessary cookies to run this site, and optional analytics cookies to understand
-        how it is used. We do not use advertising or cross-site tracking cookies.
+        We use strictly necessary cookies to run this site. Our visitor measurement is cookieless
+        and stores nothing on your device. We do not use advertising or cross-site tracking cookies.
         <a href="${esc(cookiePolicy)}">Read our Cookie Policy</a>.
       </p>
       <div class="cookie-actions">
-        <button type="button" class="btn btn-outline btn-sm" data-cookie-choice="necessary">Necessary only</button>
-        <button type="button" class="btn btn-primary btn-sm" data-cookie-choice="all">Accept analytics</button>
+        <button type="button" class="btn btn-primary btn-sm" data-cookie-dismiss>Got it</button>
       </div>
     </div>
   </div>`;

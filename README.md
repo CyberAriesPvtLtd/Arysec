@@ -137,6 +137,10 @@ The backend is written to the standard a security firm should hold itself to:
 - **File uploads** — allow-list of PDF/DOC/DOCX by MIME type, 5 MB cap, extension taken from the
   allow-list rather than user input, random filename, magic-byte verification after write, stored
   outside the served directory.
+- **Analytics** — Vercel Web Analytics, served from our own origin (`/_vercel/insights/script.js`) so
+  `script-src 'self'` still holds and no third-party CDN is introduced. It is cookieless: a visit is counted
+  from a hash of the incoming request, discarded after 24 hours, so it sets no device storage and is not
+  gated by the cookie notice. `build/data/content/cookie-policy.json` describes it.
 - **Spam** — honeypot field plus a minimum time-to-submit. Blocked submissions receive a normal
   success response so a bot cannot detect the filter.
 - **Rate limiting** — per-IP, per-endpoint, with the client IP resolved through a configured

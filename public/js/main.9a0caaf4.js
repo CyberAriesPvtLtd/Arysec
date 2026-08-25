@@ -431,44 +431,60 @@
   });
 
   // -------------------------------------------------------------------------
-  // Cookie consent
+  // Visitor measurement
   // -------------------------------------------------------------------------
-  var CONSENT_KEY = 'arysec.cookieConsent';
+  // Vercel Web Analytics, served from our own origin so it satisfies the
+  // script-src 'self' policy. It sets no cookie and no other browser storage:
+  // a visit is counted from a hash of the incoming request, discarded after
+  // 24 hours. Because nothing is stored on or read from the device, it is not
+  // gated by the cookie notice, which covers device storage. The endpoint only
+  // exists on Vercel; anywhere else the request is a harmless 404.
+  (function loadAnalytics() {
+    var script = document.createElement('script');
+    script.defer = true;
+    script.src = '/_vercel/insights/script.js';
+    document.head.appendChild(script);
+  })();
+
+  // -------------------------------------------------------------------------
+  // Cookie notice
+  // -------------------------------------------------------------------------
+  // There is no optional device storage to accept or decline, so this records
+  // only that the notice has been seen.
+  var NOTICE_KEY = 'arysec.cookieNotice';
   var banner = $('#cookieBanner');
 
-  function readConsent() {
+  function noticeSeen() {
     try {
-      return window.localStorage.getItem(CONSENT_KEY);
+      return window.localStorage.getItem(NOTICE_KEY);
     } catch (err) {
       return null;
     }
   }
 
-  function writeConsent(value) {
+  function rememberNotice() {
     try {
-      window.localStorage.setItem(CONSENT_KEY, value);
+      window.localStorage.setItem(NOTICE_KEY, 'seen');
     } catch (err) {
-      /* storage unavailable — the banner simply reappears next visit */
+      /* storage unavailable — the notice simply reappears next visit */
     }
   }
 
   if (banner) {
-    if (!readConsent()) {
+    if (!noticeSeen()) {
       banner.hidden = false;
       requestAnimationFrame(function () {
         banner.classList.add('visible');
       });
     }
 
-    $$('[data-cookie-choice]', banner).forEach(function (button) {
+    $$('[data-cookie-dismiss]', banner).forEach(function (button) {
       button.addEventListener('click', function () {
-        writeConsent(button.getAttribute('data-cookie-choice'));
+        rememberNotice();
         banner.classList.remove('visible');
         setTimeout(function () {
           banner.hidden = true;
         }, prefersReducedMotion ? 0 : 300);
-        // Analytics would be initialised here when consent is 'all'. The site ships
-        // with no analytics provider, so there is nothing to start.
       });
     });
   }

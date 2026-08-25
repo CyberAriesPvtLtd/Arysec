@@ -106,6 +106,22 @@ test('a fingerprinted asset is served immutable', async () => {
   assert.match(res.body, /--accent: #ff6a18/);
 });
 
+test('visitor measurement loads from our own origin, not a CDN', async () => {
+  // Vercel Web Analytics is cookieless — it is not gated by the cookie notice —
+  // but it must stay same-origin so script-src 'self' allows it.
+  const page = await get('/');
+  const href = page.body.match(/src="(\/js\/main\.[0-9a-f]{8}\.js)"/)[1];
+  const js = await get(href);
+  assert.equal(js.status, 200);
+  assert.match(js.body, /\/_vercel\/insights\/script\.js/);
+  assert.doesNotMatch(js.body, /cdn\.vercel-insights\.com/);
+});
+
+test('no page references a third-party script origin', async () => {
+  const res = await get('/');
+  assert.doesNotMatch(res.body, /<script[^>]+src="https?:\/\//);
+});
+
 test('the academy host serves the academy site at its root', async () => {
   const res = await get('/', 'academy.arysec.in');
   assert.equal(res.status, 200);

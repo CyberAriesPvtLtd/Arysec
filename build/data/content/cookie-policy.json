@@ -23,19 +23,19 @@
     {
       "heading": "The Categories We Use",
       "paragraphs": [
-        "We group storage into two categories, and the consent control on our site offers the same two choices. Only the first is set before you answer.",
-        "We do not currently run an analytics provider on this site. The optional category exists because we may add measurement later, and the consent control is in place so that nothing in it is set before you agree. Where analytics is running, we configure it to gather as little as the purpose needs, we do not try to identify individuals from it, and we do not match it against the enquiry records described in our Privacy Policy. The categories are these:"
+        "We group storage into two categories, and the consent control on our site offers the same two choices. Only the first is in use today, and it is the only one set on your device.",
+        "Separately from those categories we run visitor measurement, and it is worth being exact about how it works because it changes what the consent control is for. Our measurement is provided by our hosting provider, runs from our own domain rather than a third party, and sets no cookie and no other storage on your device. A visit is counted using a value derived from the request itself, which is discarded after twenty-four hours, and it is not combined with the enquiry records described in our Privacy Policy. Because nothing is stored on or read from your device, this measurement runs on every visit and is not something the consent control switches on or off. The categories below describe device storage, which is a different question. They are these:"
       ],
       "list": [
-        "Strictly necessary: storage the site cannot sensibly work without. It carries the record of the cookie choice you made and supports the protection sitting in front of the site and its forms.",
-        "Analytics and performance: optional storage that would let us count visits and understand which pages hold attention, which routes people take through the site, and where they give up. We would use it to decide what to publish next and to find pages that load slowly or break."
+        "Strictly necessary: storage the site cannot sensibly work without. It carries the record of the cookie notice you have seen and supports the protection sitting in front of the site and its forms.",
+        "Analytics and performance: optional storage that would let us recognise a returning device over time. We do not currently set anything in this category. Our visitor measurement does not need it, and if we ever adopt a tool that does, we will ask before it is set."
       ]
     },
     {
       "heading": "What We Do Not Use",
       "paragraphs": [
         "We do not set advertising cookies. There are no ad network tags on this site, no remarketing or retargeting pixels, no conversion trackers placed on our behalf by an advertising platform, and nothing that follows you across other websites so that our name can be shown to you again.",
-        "The information our cookies produce is not sold, rented or shared with data brokers or advertising exchanges, and we do not build profiles of individual visitors. Analytics data is read in aggregate to improve what we publish, and for nothing else.",
+        "The information our measurement produces is read in aggregate to improve what we publish, and for nothing else. It is not sold, rented or shared with data brokers or advertising exchanges, we do not build profiles of individual visitors, and it carries nothing that would let us reconstruct one person's path across other websites.",
         "Device fingerprinting is not used to work around your cookie choices either. If a browser or a setting refuses storage, we take that as the answer instead of looking for another way to recognise the device.",
         "Should any of this change, for example if we ever run a paid campaign that needs measurement, we would update this policy first and ask for your consent before the relevant storage was set."
       ]
@@ -57,11 +57,11 @@
       ]
     },
     {
-      "heading": "Changing Your Choices on Our Site",
+      "heading": "The Notice on Our Site, and What It Governs",
       "paragraphs": [
-        "The consent control appears when you first visit, and it lets you accept or decline the optional category before anything in it is set. Declining takes a single action, and it is presented as plainly as accepting. We do not hide refusal behind extra steps, and we do not pre-select the optional category.",
-        "Your first answer is not final. The answer is saved in your browser, so clearing this site's stored data through your browser settings removes both the saved answer and anything set under it, and the control appears again on your next visit for you to answer differently. Withdrawing consent stops further collection in the optional category. If you would rather not work it out yourself, write to info@arysec.in and we will tell you exactly what to clear.",
-        "Strictly necessary storage is not offered as a toggle, because the site cannot function without it and consent is not required for it. That is not a way of smuggling anything past you. The category holds your consent record and the protection sitting in front of the site, and nothing that describes you."
+        "A notice appears when you first visit, explaining what the site stores and pointing here. Dismissing it records that you have seen it, and that record is the storage the notice is describing. There is no optional category to accept or decline at present, so we do not present a choice that would decide nothing.",
+        "That record is saved in your browser, so clearing this site's stored data through your browser settings removes it, and the notice appears again on your next visit. If you would rather not work out what to clear, write to info@arysec.in and we will tell you exactly.",
+        "Strictly necessary storage is not offered as a toggle, because the site cannot function without it and consent is not required for it. That is not a way of smuggling anything past you: the category holds the record of the notice and the protection sitting in front of the site, and nothing that describes you. Our visitor measurement sits outside these categories entirely, because it places nothing on your device; it is described in the section above, and you can stop it at the browser level as set out below."
       ]
     },
     {
@@ -81,20 +81,20 @@
     {
       "heading": "What Happens If You Turn Storage Off",
       "paragraphs": [
-        "None of our content sits behind a consent wall. Declining the optional category still gives you the whole site, at the same speed and with the same material.",
+        "None of our content sits behind a consent wall. Dismissing or ignoring the notice still gives you the whole site, at the same speed and with the same material.",
         "Switching storage off does have consequences, and they are worth stating rather than implying:"
       ],
       "list": [
         "Blocking strictly necessary storage, which you can only do through your browser, will break parts of the site. Forms may fail to submit, the protection in front of the site may treat you as suspicious, and the consent control will reappear on every visit because your answer cannot be saved.",
-        "Refusing analytics has no effect on you at all. Every page behaves exactly as it otherwise would. The cost falls on us: we see less about which material is useful, and we decide what to publish next with less information to go on."
+        "Blocking our visitor measurement, which you can do with a browser setting or extension, has no effect on you at all. Every page behaves exactly as it otherwise would. The cost falls on us: we see less about which material is useful, and we decide what to publish next with less information to go on."
       ]
     },
     {
       "heading": "Do Not Track and Similar Browser Signals",
       "paragraphs": [
         "Do Not Track is a header a browser can send to say that the person using it does not wish to be tracked. It was never finished as a standard, and no common agreement exists on what a site must do when it receives one, so most sites ignore it and several browsers have removed the setting.",
-        "Our position is simple. We do not carry out the cross-site tracking that Do Not Track was designed to stop, so on our site the signal asks us to stop something we were not doing. Where analytics is in use, your answer in our consent control is what governs it, and that answer is the one we act on.",
-        "Newer signals, such as Global Privacy Control, are recognised as binding opt-out requests in some jurisdictions. We run no optional storage at present, so there is nothing here for such a signal to switch off; if we add measurement, we will treat a signal of that kind as a decline for the optional category. An explicit choice you make in the consent control always takes precedence over an inferred one."
+        "Our position is simple. We do not carry out the cross-site tracking that Do Not Track was designed to stop, so on our site the signal asks us to stop something we were not doing. Our visitor measurement counts visits from a value derived from the request and discards it after twenty-four hours; it cannot follow you to another site, because there is nothing persistent to follow you with.",
+        "Newer signals, such as Global Privacy Control, are recognised as binding opt-out requests in some jurisdictions. We set no optional storage, so there is nothing here for such a signal to switch off, and we do not sell or share personal information in the sense those laws use. If we later adopt a measurement tool that stores something on your device, we will treat a signal of that kind as a decline for the optional category and say so here first."
       ]
     },
     {
