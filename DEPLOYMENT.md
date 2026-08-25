@@ -244,6 +244,15 @@ The redirect is scoped to those two hosts on purpose. Preview deployments serve
 `/academy/...` in place, because the subdomain does not resolve there and
 bouncing to it would make the academy impossible to review.
 
+The sources are written as `/academy/(.*)` with a `$1` destination rather than
+`/academy/:path*`. The named form does not match a path ending in a slash, so it
+silently missed every real page URL on this site — every canonical URL here ends
+in a trailing slash. Verify after any change to these rules:
+
+```bash
+curl -sI https://www.arysec.in/academy/programmes/ | grep -i location   # 308 to the subdomain
+```
+
 Two things have to be done in the Vercel dashboard once, because they are not
 expressible in `vercel.json`:
 

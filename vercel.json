@@ -8,9 +8,9 @@
       "permanent": true
     },
     {
-      "source": "/academy/:path*",
+      "source": "/academy/(.*)",
       "has": [{ "type": "host", "value": "academy.arysec.in" }],
-      "destination": "/:path*",
+      "destination": "/$1",
       "permanent": true
     },
     {
@@ -20,9 +20,9 @@
       "permanent": true
     },
     {
-      "source": "/academy/:path*",
+      "source": "/academy/(.*)",
       "has": [{ "type": "host", "value": "www.arysec.in" }],
-      "destination": "https://academy.arysec.in/:path*",
+      "destination": "https://academy.arysec.in/$1",
       "permanent": true
     },
     {
@@ -32,17 +32,17 @@
       "permanent": true
     },
     {
-      "source": "/academy/:path*",
+      "source": "/academy/(.*)",
       "has": [{ "type": "host", "value": "arysec.in" }],
-      "destination": "https://academy.arysec.in/:path*",
+      "destination": "https://academy.arysec.in/$1",
       "permanent": true
     }
   ],
   "rewrites": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "academy.arysec.in" }],
-      "destination": "/academy/:path*"
+      "destination": "/academy/$1"
     }
   ]
 }
