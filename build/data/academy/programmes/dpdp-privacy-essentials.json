@@ -1,0 +1,143 @@
+{
+  "slug": "dpdp-privacy-essentials",
+  "name": "DPDP Act & Privacy Essentials",
+  "shortName": "DPDP & Privacy",
+  "category": "Certification Tracks",
+  "format": "Live online or on-site, cohort of up to 24",
+  "duration": "2 days, plus assessment",
+  "level": "Foundation to intermediate",
+  "metaTitle": "DPDP Act 2023 & Privacy Essentials Training",
+  "metaDescription": "Two-day training on the Digital Personal Data Protection Act, 2023: data fiduciary duties, consent and notice, data principal rights, and breach intimation.",
+  "cardSummary": "What the DPDP Act requires of your organisation in practice, and the operational work that follows from it.",
+  "heroHeadline": "DPDP, Translated Into Work Your Teams Can Actually Do",
+  "heroSub": "The Act is short. The operational consequences are not. Two days on what a data fiduciary owes, what consent has to look like, how rights requests get answered inside 30 days, and what breach intimation means when the clock is already running.",
+  "highlights": [
+    {
+      "value": "2 days",
+      "label": "Law, then the operational build"
+    },
+    {
+      "value": "Rules 2025",
+      "label": "Covers the notified Rules and staged dates"
+    },
+    {
+      "value": "Cross-functional",
+      "label": "Written for legal, product and engineering together"
+    }
+  ],
+  "intro": {
+    "heading": "The Gap Between the Text and the Build",
+    "paragraphs": [
+      "Reading the DPDP Act takes an afternoon. Working out that your signup flow needs an itemised notice, your CRM needs a lawful-basis field, your support team needs a rights-request workflow, and your vendor contracts need processing clauses takes considerably longer — and that is the part this course covers.",
+      "We work through the obligations in the order they hit an organisation: notice and consent at collection, purpose limitation as data moves between systems, retention and erasure, data principal rights with their deadlines, breach intimation, and the additional duties that land on a Significant Data Fiduciary.",
+      "The room is deliberately mixed. Privacy failures usually happen in the gap between what legal drafted and what engineering built, so legal, product, engineering and support learn the same material together and leave having agreed who owns which obligation."
+    ]
+  },
+  "outcomes": {
+    "heading": "What Your Organisation Leaves With",
+    "intro": "Applied exercises are done against your own processing wherever possible, so delegates go back with drafts rather than templates.",
+    "items": [
+      "A first-pass record of processing activities for your main systems",
+      "A drafted notice meeting the itemised, plain-language requirement",
+      "A consent design that survives a withdrawal without breaking the product",
+      "A rights-request workflow with owners and the 30-day clock built in",
+      "A breach intimation runbook covering assessment, notification and records",
+      "A vendor and processor clause checklist for contract review",
+      "An Arysec Academy certificate on passing the assessment"
+    ]
+  },
+  "modules": {
+    "heading": "Course Modules",
+    "items": [
+      {
+        "title": "Scope and Roles",
+        "description": "What counts as digital personal data, who is a Data Fiduciary and who is a Data Processor, extraterritorial reach, and the exemptions that are narrower than people hope."
+      },
+      {
+        "title": "Notice and Consent",
+        "description": "The itemised notice requirement, free, specific and informed consent, the deemed-consent grounds and their limits, and designing withdrawal that is as easy as giving consent."
+      },
+      {
+        "title": "Data Principal Rights",
+        "description": "Access, correction, erasure, grievance redressal and nomination — with the operational reality of finding a person's data across systems inside the deadline."
+      },
+      {
+        "title": "Children and Vulnerable Groups",
+        "description": "Verifiable parental consent, the prohibition on tracking and behavioural advertising directed at children, and how age assurance interacts with the rest of your product."
+      },
+      {
+        "title": "Security, Breaches and Intimation",
+        "description": "Reasonable security safeguards, what triggers intimation to the Board and to affected principals, what the notice must contain, and the records to keep from the first hour."
+      },
+      {
+        "title": "Significant Data Fiduciaries and Vendors",
+        "description": "The additional duties — DPO, independent audit, DPIA — plus processor contracts, cross-border transfer, retention schedules and the deletion obligations that follow."
+      }
+    ]
+  },
+  "delivery": [
+    {
+      "title": "Pre-Course Mapping",
+      "description": "We ask for a rough list of the systems holding personal data and the products in scope, so the exercises are grounded in your processing rather than a generic example."
+    },
+    {
+      "title": "Day One — Obligations",
+      "description": "The Act and the Rules, worked through in the order obligations arise, with the staged commencement dates and what has to be ready when."
+    },
+    {
+      "title": "Day Two — Operationalising",
+      "description": "Applied workshops on notice, consent, rights workflow and breach response, ending with a written allocation of who owns each obligation."
+    },
+    {
+      "title": "Assessment",
+      "description": "A written paper plus a short applied submission: a notice draft and a rights-request workflow, marked against a published rubric."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Compliance Work That Is Correctly Sequenced",
+      "description": "Most organisations start with a policy document. The useful order is knowing what data you hold, then notice and consent, then rights, then retention — and the course sets that order."
+    },
+    {
+      "title": "Fewer Product Rewrites",
+      "description": "Consent and retention decisions are cheap at design time and expensive after launch. Getting engineering into the room early avoids a rebuild later."
+    },
+    {
+      "title": "A Faster Answer to Customer Due Diligence",
+      "description": "Enterprise buyers and Indian regulators now ask directly how you handle DPDP obligations. Trained staff and drafted artefacts turn that into a short exchange."
+    },
+    {
+      "title": "Readiness Before Enforcement Matures",
+      "description": "Building a rights workflow calmly is a project. Building it after the first request arrives is an incident."
+    }
+  ],
+  "whoItsFor": [
+    "Legal, compliance and privacy teams taking on DPDP obligations",
+    "Product managers and engineers whose systems collect personal data",
+    "Support and operations leads who will answer data principal requests",
+    "Organisations assessing whether they fall into the Significant Data Fiduciary tier"
+  ],
+  "faqs": [
+    {
+      "question": "We already comply with GDPR. Is this still needed?",
+      "answer": "A GDPR programme gets you a long way, and the course maps the overlap explicitly. But the differences matter: consent grounds are structured differently, the deemed-consent categories have no direct GDPR analogue, breach intimation thresholds differ, and the children's provisions are stricter. Assuming equivalence is where GDPR-mature organisations get caught."
+    },
+    {
+      "question": "Does this make someone a qualified DPO?",
+      "answer": "It is strong grounding, not a DPO qualification. A Significant Data Fiduciary's DPO carries statutory responsibilities that need experience alongside training. We run a separate advisory engagement for organisations appointing one, and the course covers what the role involves."
+    },
+    {
+      "question": "Is the course current with the Rules?",
+      "answer": "Yes. The material covers the Digital Personal Data Protection Rules notified in November 2025 and the staged commencement dates, including the consent manager registration framework and the provisions that commence later."
+    },
+    {
+      "question": "Can this be shortened to a single day?",
+      "answer": "We run a one-day version covering obligations and rights without the applied workshops. It suits an audience that needs to understand the Act but will not be building the workflows. If your team has to implement, the applied day is the half that produces the output."
+    }
+  ],
+  "related": [
+    "iso-27001-lead-implementer",
+    "security-awareness",
+    "board-and-leadership"
+  ]
+}

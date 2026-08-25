@@ -14,7 +14,8 @@
     "dev": "npm run build && NODE_ENV=development node server/server.js",
     "check": "node build/build.js && node scripts/check-links.js",
     "submissions": "node scripts/export-submissions.js",
-    "test": "node --test tests/*.test.js"
+    "test": "node --test tests/*.test.js",
+    "brand": "node scripts/build-brand-assets.js"
   },
   "dependencies": {
     "better-sqlite3": "^11.7.0",

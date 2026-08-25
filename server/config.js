@@ -43,6 +43,19 @@ const config = {
     .filter(Boolean),
 
   publicDir: path.join(__dirname, '..', 'public'),
+
+  /**
+   * Hosts served from public/academy/ instead of the site root. The generator
+   * emits the academy inside the main output so a single deployment serves both
+   * domains; this list is what maps the subdomain onto that directory.
+   */
+  academyHosts: (process.env.ACADEMY_HOSTS || 'academy.arysec.in')
+    .split(',')
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean),
+  /** Where /academy/... on the main domain is redirected, so no page has two addresses. */
+  academyOrigin: process.env.ACADEMY_ORIGIN || 'https://academy.arysec.in',
+  academyDir: 'academy',
   uploadDir: process.env.UPLOAD_DIR || path.join(__dirname, 'uploads'),
   dbFile: process.env.DB_FILE || path.join(__dirname, 'data', 'submissions.db'),
 
@@ -70,6 +83,9 @@ const config = {
     from: process.env.MAIL_FROM || 'Arysec Website <no-reply@arysec.in>',
     to: process.env.MAIL_TO || 'info@arysec.in',
     careersTo: process.env.MAIL_CAREERS_TO || 'careers@arysec.in',
+    /** Academy enquiries. Falls back to the general mailbox until a
+     *  dedicated training address exists. */
+    academyTo: process.env.MAIL_ACADEMY_TO || process.env.MAIL_TO || 'info@arysec.in',
   },
 
   company: {

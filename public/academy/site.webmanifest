@@ -1,0 +1,17 @@
+{
+  "name": "Arysec Academy",
+  "short_name": "Arysec Academy",
+  "description": "Cybersecurity training and certification for organisations: security awareness, phishing simulation drills, secure coding, ISO/IEC 27001 and DPDP Act programmes, and incident response exercises, delivered in-person and online across India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#12100e",
+  "theme_color": "#12100e",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

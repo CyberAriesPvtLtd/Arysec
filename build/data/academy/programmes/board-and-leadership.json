@@ -1,0 +1,143 @@
+{
+  "slug": "board-and-leadership",
+  "name": "Cyber Risk for Boards & Leadership",
+  "shortName": "Board & Leadership",
+  "category": "Leadership & Response",
+  "format": "Briefing session, on-site or online",
+  "duration": "Half day, or two 90-minute sessions",
+  "level": "Board, executive and senior management",
+  "metaTitle": "Cyber Risk Briefing for Boards and Executives",
+  "metaDescription": "A half-day cyber risk briefing for boards and executives: oversight duties, reading a risk register, the questions to ask management, and regulatory exposure in India.",
+  "cardSummary": "What directors and executives are accountable for, the questions to ask management, and how to read what they answer.",
+  "heroHeadline": "Oversight You Can Exercise Without Being Technical",
+  "heroSub": "Boards are accountable for cyber risk and are usually briefed in a language designed to prevent follow-up questions. This session gives directors the small set of questions that reveal whether a security programme is real, and the judgement to read the answers.",
+  "highlights": [
+    {
+      "value": "Half day",
+      "label": "Or two 90-minute sessions"
+    },
+    {
+      "value": "No jargon",
+      "label": "Business risk framing throughout"
+    },
+    {
+      "value": "India-specific",
+      "label": "DPDP, CERT-In and sector regulators"
+    }
+  ],
+  "intro": {
+    "heading": "The Board's Job Is Oversight, Not Operation",
+    "paragraphs": [
+      "Directors are not expected to configure a firewall. They are expected to satisfy themselves that management has identified the risks that could materially damage the business, has a plan proportionate to those risks, and is reporting honestly on progress. Doing that requires a handful of good questions rather than technical fluency.",
+      "Most board security papers are written to reassure. A green dashboard, a patching percentage and a mention of an upcoming certification can all be true while the organisation remains one compromised mailbox away from a very bad quarter. We show what those reports leave out and what to ask instead.",
+      "The session is deliberately concrete: real incidents, what they cost, what the board knew beforehand, and the decision points that arrived faster than anyone expected. It ends with the decisions worth taking in advance, so they are not being made for the first time during an incident."
+    ]
+  },
+  "outcomes": {
+    "heading": "What the Board Leaves With",
+    "intro": "The intended result is a shorter, sharper security item on the agenda, with a reporting pack the board can actually interrogate.",
+    "items": [
+      "A standing question set for management on cyber risk",
+      "A view of what a useful board security report contains",
+      "Agreed risk appetite statements for the risks that could stop the business",
+      "Clarity on who declares an incident and who authorises emergency spend",
+      "A position taken in advance on ransom payment and disclosure",
+      "An understanding of DPDP, CERT-In and sector reporting obligations",
+      "A defined cadence for reporting, exercising and independent assurance"
+    ]
+  },
+  "modules": {
+    "heading": "Session Content",
+    "items": [
+      {
+        "title": "What Actually Causes Losses",
+        "description": "Business email compromise, ransomware and third-party failure, with real figures. Where the money goes: response, downtime, legal, remediation and lost contracts."
+      },
+      {
+        "title": "Reading a Risk Register",
+        "description": "Telling a live register from a decorative one. Ownership, treatment dates that keep moving, and the accepted risks that were never actually accepted by anyone with the authority."
+      },
+      {
+        "title": "Questions to Ask Management",
+        "description": "A short set that reliably distinguishes a real programme from a reported one: what would stop us trading, what did the last test find, when was the plan exercised, who is not doing what they said."
+      },
+      {
+        "title": "Regulatory and Legal Exposure",
+        "description": "DPDP duties and intimation, CERT-In directions and timelines, sector regulators, contractual notification obligations, and where director duties actually bite."
+      },
+      {
+        "title": "Decisions Before the Incident",
+        "description": "Ransom position, disclosure thresholds, delegated spend authority, and who speaks publicly — settled calmly rather than at two in the morning."
+      },
+      {
+        "title": "Assurance and Investment",
+        "description": "What certification does and does not prove, when independent testing is worth buying, and how to judge whether a security budget request is proportionate."
+      }
+    ]
+  },
+  "delivery": [
+    {
+      "title": "Pre-Session Review",
+      "description": "We read the last few board security papers and the risk register under NDA, so the session addresses your actual reporting rather than a generic example."
+    },
+    {
+      "title": "The Briefing",
+      "description": "Half a day, or two 90-minute sessions if diaries demand it. Discussion-led, with a short scenario walkthrough to surface where accountability is unclear."
+    },
+    {
+      "title": "Agreeing Positions",
+      "description": "The session ends by writing down the decisions taken — appetite, thresholds, authority — so they exist as a record rather than as a recollection."
+    },
+    {
+      "title": "Reporting Template",
+      "description": "A board reporting template that fits on two pages and can be challenged, handed over for management to adopt."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Better Questions, Better Answers",
+      "description": "Management responds to what it is asked. Boards that ask about exercised plans and open findings get programmes built around those things."
+    },
+    {
+      "title": "Faster Decisions Under Pressure",
+      "description": "Pre-agreed thresholds and spending authority remove hours from the response, and those hours are the expensive ones."
+    },
+    {
+      "title": "Demonstrable Oversight",
+      "description": "Regulators, insurers and acquirers all look for evidence that the board engaged. Minuted decisions and a reporting cadence are that evidence."
+    },
+    {
+      "title": "Proportionate Spending",
+      "description": "Directors who can read a risk register stop approving tools and start approving outcomes, which is usually both cheaper and more effective."
+    }
+  ],
+  "whoItsFor": [
+    "Boards and audit committees with cyber risk on the agenda",
+    "Executive teams at companies growing into enterprise or regulated markets",
+    "Founders and partners who are the de facto risk owners",
+    "Organisations preparing for due diligence, funding or acquisition"
+  ],
+  "faqs": [
+    {
+      "question": "Our directors are not technical. Is that a problem?",
+      "answer": "It is the assumption the session is built on. Nothing requires technical background, and any term that has to be used is explained in business terms. If a briefing needs directors to learn networking, the briefing is wrong."
+    },
+    {
+      "question": "Can this be delivered as part of a scheduled board meeting?",
+      "answer": "Yes. The two 90-minute format is designed for exactly that, usually across consecutive meetings. The full half day works better if you want the scenario walkthrough, which is where most of the useful discomfort comes from."
+    },
+    {
+      "question": "Will you tell us our current programme is inadequate?",
+      "answer": "We will tell you what we observed in the papers we reviewed, plainly and privately, including where reporting looks better than the underlying position. Delivering a comfortable session would waste everyone's morning."
+    },
+    {
+      "question": "Should management attend?",
+      "answer": "Usually not for the whole session. Directors ask more freely without the people they oversee in the room. We recommend management join for the final segment, when the agreed questions and reporting cadence are handed over."
+    }
+  ],
+  "related": [
+    "incident-response-tabletop",
+    "dpdp-privacy-essentials",
+    "security-awareness"
+  ]
+}

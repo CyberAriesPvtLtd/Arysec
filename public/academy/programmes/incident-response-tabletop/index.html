@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incident Response Tabletop Exercises | Arysec Academy</title>
+  <meta name="description" content="Facilitated cybersecurity tabletop exercises: ransomware, business email compromise and data breach scenarios run against your own plan, with a findings report.">
+  <link rel="canonical" href="https://academy.arysec.in/programmes/incident-response-tabletop/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Arysec Academy">
+  <meta property="og:title" content="Incident Response Tabletop Exercises | Arysec Academy">
+  <meta property="og:description" content="Facilitated cybersecurity tabletop exercises: ransomware, business email compromise and data breach scenarios run against your own plan, with a findings report.">
+  <meta property="og:url" content="https://academy.arysec.in/programmes/incident-response-tabletop/">
+  <meta property="og:image" content="https://academy.arysec.in/assets/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Arysec Academy — Cybersecurity Training &amp; Certification">
+  <meta property="og:locale" content="en_IN">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Incident Response Tabletop Exercises | Arysec Academy">
+  <meta name="twitter:description" content="Facilitated cybersecurity tabletop exercises: ransomware, business email compromise and data breach scenarios run against your own plan, with a findings report.">
+  <meta name="twitter:image" content="https://academy.arysec.in/assets/og-image.png">
+
+  <meta name="theme-color" content="#12100e">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Arysec Academy","alternateName":"Arysec Academy","url":"https://academy.arysec.in/","logo":"https://academy.arysec.in/assets/logo-512.png","image":"https://academy.arysec.in/assets/og-image.png","email":"info@arysec.in","telephone":"+91 90048 57727","description":"Cybersecurity training and certification for organisations: security awareness, phishing simulation drills, secure coding, ISO/IEC 27001 and DPDP Act programmes, and incident response exercises, delivered in-person and online across India.","address":{"@type":"PostalAddress","addressLocality":"Mumbai","addressRegion":"Maharashtra","addressCountry":"IN"},"founder":{"@type":"Person","name":"Unnati Shinde","jobTitle":"Founder \u0026 Managing Partner"},"areaServed":[{"@type":"Country","name":"India"},"Worldwide"],"knowsAbout":["Security awareness training","Phishing simulation","Secure coding","ISO/IEC 27001","Digital Personal Data Protection Act","Incident response exercises"],"parentOrganization":{"@type":"Organization","name":"Arysec Technologies LLP","url":"https://www.arysec.in/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://academy.arysec.in/"},{"@type":"ListItem","position":2,"name":"Programmes","item":"https://academy.arysec.in/programmes/"},{"@type":"ListItem","position":3,"name":"IR Tabletop","item":"https://academy.arysec.in/programmes/incident-response-tabletop/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Incident Response Tabletop Exercises","description":"Facilitated cybersecurity tabletop exercises: ransomware, business email compromise and data breach scenarios run against your own plan, with a findings report.","url":"https://academy.arysec.in/programmes/incident-response-tabletop/","provider":{"@type":"Organization","name":"Arysec Academy","url":"https://academy.arysec.in/"},"educationalLevel":"Response team, leadership and communications together","teaches":["Ransomware With Exfiltration","Business Email Compromise","Data Breach and DPDP Intimation","Cloud Account Compromise","Third-Party and Supply Chain","Insider Data Removal"],"hasCourseInstance":[{"@type":"CourseInstance","courseMode":["onsite","online"],"courseWorkload":"Half day per scenario","location":{"@type":"Place","address":"Mumbai, Maharashtra, India"}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"We do not have an incident response plan yet. Can we still do this?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it is often the better starting point. Running a scenario with no plan shows exactly which decisions and contacts the plan needs to contain, and the resulting document is grounded in something the team has lived through rather than copied from a template."}},{"@type":"Question","name":"Who needs to attend?","acceptedAnswer":{"@type":"Answer","text":"Technical responders, whoever can declare an incident, legal or compliance, communications, and at least one executive who can authorise spend. Leaving leadership out produces a technically interesting exercise that misses the decisions that actually cost money."}},{"@type":"Question","name":"Is this a live simulation against our systems?","acceptedAnswer":{"@type":"Answer","text":"No. A tabletop is discussion-based, so nothing touches production and nobody is on call. If you want a technical exercise against live systems, that is a red team or purple team engagement and is scoped through the main Arysec practice."}},{"@type":"Question","name":"How often should we run one?","acceptedAnswer":{"@type":"Answer","text":"Twice a year is a reasonable rhythm: a full scenario and a shorter retest. Annually is the minimum worth doing. More often than quarterly and the same people start recognising the pattern rather than the problem."}}]}</script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="/" class="brand" aria-label="Arysec Academy — Home">
+        <svg class="brand-mark" viewBox="5 8 110 97" width="42" height="37" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradNav" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f8430c"/><stop offset="1" stop-color="#fb9218"/>
+            </linearGradient>
+          </defs>
+          <path d="M69.03 24.57 L104.98 86.62 Q111 97 99 97 L21 97 Q9 97 15.02 86.62 L50.97 24.57 Q60 9 69.03 24.57 Z" fill="none" stroke="url(#brandGradNav)" stroke-width="15" stroke-linejoin="round"/>
+          <path d="M87.96 86.5 L59.92 38.59 Q57.9 35.13 55.94 38.62 L40.14 66.84 L20.86 77.46 L24.14 84.54 L47.86 75.16 L58.1 56.87 L75.45 86.5 Z" fill="url(#brandGradNav)"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-wordmark-row">
+            <svg class="brand-wordmark" viewBox="0 0 544 100" width="98" height="18" aria-hidden="true" focusable="false"><path d="M0 100 L38 0 L56 0 L94 100 L73 100 L64.6 78 L29.4 78 L21 100 ZM47 31.6 L57.8 60 L36.2 60 Z" fill="currentColor" fill-rule="evenodd"/><path transform="translate(108 0)" d="M0 0 L62 0 L78 16 L78 40 L64 56 L78 100 L56 100 L44 56 L20 56 L20 100 L0 100 ZM20 20 L58 20 L58 36 L20 36 Z" fill="currentColor" fill-rule="evenodd"/><path transform="translate(200 0)" d="M0 0 L22 0 L39 36 L56 0 L78 0 L50 58 L50 100 L28 100 L28 58 Z" fill="currentColor"/><path transform="translate(292 0)" d="M14 0 L76 0 L76 20 L20 20 L20 48 L76 48 L76 86 L62 100 L0 100 L0 80 L56 80 L56 68 L0 68 L0 14 Z" fill="currentColor"/><path transform="translate(382 0)" d="M0 0 L58 0 L72 14 L72 20 L0 20 Z" class="wm-accent" fill="currentColor"/><path transform="translate(382 0)" d="M0 20 L20 20 L20 40 L56 40 L56 58 L20 58 L20 80 L72 80 L72 86 L58 100 L0 100 Z" fill="currentColor"/><path transform="translate(468 0)" d="M14 0 L62 0 L76 14 L76 20 L20 20 L20 80 L76 80 L76 86 L62 100 L14 100 L0 86 L0 14 Z" fill="currentColor"/></svg><span class="brand-sub">Academy</span>
+          </span>
+          <span class="brand-tagline">Assess<span>.</span> Assure<span>.</span> Advance<span>.</span></span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <ul class="nav-list">
+<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+<li class="nav-item has-panel has-mega">
+        <button class="nav-link nav-trigger active" aria-expanded="false" aria-controls="mega-programmes" data-href="/programmes/">Programmes<svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        
+      <div class="mega-panel" id="mega-programmes" hidden>
+        <div class="container mega-inner">
+          <div class="mega-cols">
+          <div class="mega-col">
+            <h4 class="mega-heading">Workforce Awareness</h4>
+            <a class="mega-link" href="/programmes/security-awareness/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 19c.6-3 2.8-5 5.5-5s4.9 2 5.5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="16.5" cy="5.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 9.5c1.8.4 3.4 2 3.9 4.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Security Awareness Training</span>
+                <span class="mega-link-desc">Security Awareness</span>
+              </span>
+            </a>
+<a class="mega-link" href="/programmes/phishing-drills/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11.3" cy="10.6" r="2.7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13.4 12.8L15.6 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Phishing Simulation &amp; Drills</span>
+                <span class="mega-link-desc">Phishing Drills</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Certification Tracks</h4>
+            <a class="mega-link" href="/programmes/iso-27001-lead-implementer/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.5l2.4 1.8 3-.2.6 2.9 2.4 1.8-1.3 2.7 1.3 2.7-2.4 1.8-.6 2.9-3-.2L12 20.5l-2.4-1.8-3 .2-.6-2.9L3.6 14.2 4.9 11.5 3.6 8.8l2.4-1.8.6-2.9 3 .2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 11.6l2.1 2.1L15.2 9.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">ISO/IEC 27001 Lead Implementer</span>
+                <span class="mega-link-desc">ISO 27001 Lead Implementer</span>
+              </span>
+            </a>
+<a class="mega-link" href="/programmes/iso-27001-internal-auditor/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6l1 3h4v15H4V6h4l1-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 13l2.5 2.5L16 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">ISO/IEC 27001 Internal Auditor</span>
+                <span class="mega-link-desc">ISO 27001 Internal Auditor</span>
+              </span>
+            </a>
+<a class="mega-link" href="/programmes/dpdp-privacy-essentials/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="9" width="16" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 9V6.5a4 4 0 018 0V9" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="14.5" r="1.6" fill="currentColor"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">DPDP Act &amp; Privacy Essentials</span>
+                <span class="mega-link-desc">DPDP &amp; Privacy</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Technical Skills</h4>
+            <a class="mega-link" href="/programmes/secure-coding/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 4l-3 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Secure Coding for Developers</span>
+                <span class="mega-link-desc">Secure Coding</span>
+              </span>
+            </a>
+<a class="mega-link" href="/programmes/cloud-security-essentials/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18a4.5 4.5 0 01-.6-8.96A6 6 0 0118 8.5 4 4 0 0117.5 18H7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 14.5h4M12 12.8v-1.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Cloud Security Essentials</span>
+                <span class="mega-link-desc">Cloud Security</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Leadership &amp; Response</h4>
+            <a class="mega-link" href="/programmes/incident-response-tabletop/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3.5M12 3l-2 2M12 3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20a7 7 0 0114 0z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3 20h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 10.5a4 4 0 00-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Incident Response Tabletop Exercises</span>
+                <span class="mega-link-desc">IR Tabletop</span>
+              </span>
+            </a>
+<a class="mega-link" href="/programmes/board-and-leadership/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 7V5.5A1.5 1.5 0 0110.5 4h3A1.5 1.5 0 0115 5.5V7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18" stroke="currentColor" stroke-width="1.6"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Cyber Risk for Boards &amp; Leadership</span>
+                <span class="mega-link-desc">Board &amp; Leadership</span>
+              </span>
+            </a>
+          </div>
+          </div>
+          <div class="mega-footer">
+            <a class="text-link" href="/programmes/">View all programmes <span aria-hidden="true">&rarr;</span></a>
+<a class="text-link" href="/for-organisations/">How we deliver <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+      </li>
+<li class="nav-item"><a class="nav-link" href="/certification/">Certification</a></li>
+<li class="nav-item"><a class="nav-link" href="/for-organisations/">For Organisations</a></li>
+<li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+        </ul>
+        <a href="/contact/" class="btn btn-primary btn-nav">Discuss Training</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <a href="/programmes/">Programmes</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <span aria-current="page">IR Tabletop</span></nav>
+        <p class="hero-eyebrow">Leadership &amp; Response</p>
+        <h1>Discover the Gaps in the Plan Before the Plan Matters</h1>
+        <p class="page-hero-sub">A half-day facilitated exercise against your own plan and your own systems. Timed injects, real decision points, and an honest findings report on what worked, what stalled and who nobody could reach at nine on a Saturday night.</p>
+        <div class="hero-actions"><a href="/contact/" class="btn btn-primary">Enquire About This Programme</a><a href="/for-organisations/" class="btn btn-outline">How Delivery Works</a></div>
+        <div class="highlight-row"><div class="highlight">
+      <span class="highlight-value">Half day</span>
+      <span class="highlight-label">Per scenario, run against your plan</span>
+    </div>
+<div class="highlight">
+      <span class="highlight-value">Timed injects</span>
+      <span class="highlight-label">Pressure, decisions and consequences</span>
+    </div>
+<div class="highlight">
+      <span class="highlight-value">Findings report</span>
+      <span class="highlight-label">Owners and dates, not observations</span>
+    </div></div>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container">
+        <div class="chip-row">
+          <span class="chip">Format: Facilitated exercise, on-site or online</span>
+          <span class="chip">Duration: Half day per scenario</span>
+          <span class="chip">Audience: Response team, leadership and communications together</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight-top">
+      <div class="container">
+        <div class="split-grid">
+          <div class="split-main reveal">
+            <span class="service-icon service-icon-lg"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3.5M12 3l-2 2M12 3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20a7 7 0 0114 0z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3 20h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 10.5a4 4 0 00-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <h2>Plans Fail on Decisions, Not on Documents</h2>
+            <p>Almost every organisation has an incident response plan. Very few have found out what happens when the person named in it is on leave, when the contact list lives on the file server that is now encrypted, or when legal and communications disagree about what to tell customers while the clock is running.</p>
+            <p>A tabletop exercise puts your actual team in a room with a scenario that unfolds over time. Injects arrive on a schedule — a journalist calls, the backup restore fails, a regulator&#39;s deadline appears — and the group has to decide, out loud, with the information they actually have.</p>
+            <p>The output is not a certificate. It is a findings report listing what broke, ordered by how much it would have cost, with an owner and a date against each item. Organisations that run these twice a year respond measurably faster, because the first thirty minutes have already been rehearsed.</p>
+            <a href="/contact/" class="text-link">Talk to us about IR Tabletop <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <aside class="split-aside">
+            <div class="checklist-panel reveal">
+      <h3>What the Exercise Produces</h3>
+      <p class="checklist-intro">Everything is written down as it happens, so the report reflects what the room actually did rather than what people remember doing.</p>
+      <ul class="service-list"><li>A timeline of decisions, delays and the points where the plan stalled</li><li>Gaps in the plan, the contact tree and the escalation thresholds</li><li>Findings ranked by impact, each with a named owner and a target date</li><li>A tested view of who declares an incident and who can authorise spend</li><li>Communications drafts stress-tested against a hostile timeline</li><li>A record of the exercise for auditors, insurers and the board</li><li>A retest scope, so the next exercise measures whether it was fixed</li></ul>
+    </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">Content</p>
+      <h2>Scenarios We Run</h2>
+      
+    </div>
+        <div class="capability-grid"><div class="capability reveal">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Ransomware With Exfiltration</h3>
+        <p>Encryption across file servers and a backup estate, plus a double-extortion demand. Isolation, restore decisions, the ransom conversation, regulator notification and customer messaging.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-1">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Business Email Compromise</h3>
+        <p>A finance mailbox is compromised and a supplier payment has already left. Recovery, forensics, insurer and bank contact, and the awkward call to the supplier.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-2">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Data Breach and DPDP Intimation</h3>
+        <p>Personal data confirmed exposed. Assessment, the intimation clock, what the notice must contain, and coordinating legal, communications and support under a deadline.</p>
+      </div>
+    </div>
+<div class="capability reveal">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Cloud Account Compromise</h3>
+        <p>A privileged identity is abused in your cloud estate. Containment without destroying evidence, blast radius assessment, and rebuilding trust in the environment.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-1">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Third-Party and Supply Chain</h3>
+        <p>A supplier is breached and your data is in scope. Contractual levers, what you can and cannot compel, and communicating about an incident you do not control.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-2">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Insider Data Removal</h3>
+        <p>A departing employee takes customer data. Evidence handling, HR and legal coordination, and the difference between a technical response and an employment process.</p>
+      </div>
+    </div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">How It Runs</p>
+      <h2>From Scoping to Delivery</h2>
+      <p class="section-sub">How a IR Tabletop engagement runs, start to finish.</p>
+    </div>
+        <div class="process-grid"><div class="process-step reveal">
+      <div class="process-num">01</div>
+      <h3>Read the Plan</h3>
+      <p>We read your incident response plan, contact tree and any prior incident reports before designing the scenario, so the injects hit the assumptions you have actually made.</p>
+    </div>
+<div class="process-step reveal delay-1">
+      <div class="process-num">02</div>
+      <h3>Design the Scenario</h3>
+      <p>Injects are built around your systems, suppliers and regulatory position. A generic scenario produces generic findings that nobody acts on.</p>
+    </div>
+<div class="process-step reveal delay-2">
+      <div class="process-num">03</div>
+      <h3>Run the Exercise</h3>
+      <p>Half a day, facilitated, with a scribe recording decisions and timings. Leadership, technical responders, legal and communications all in the same room.</p>
+    </div>
+<div class="process-step reveal delay-3">
+      <div class="process-num">04</div>
+      <h3>Report and Retest</h3>
+      <p>A findings report inside a week, then a shorter follow-up exercise later in the year that specifically retests what was supposed to have been fixed.</p>
+    </div></div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="split-grid split-grid-even">
+          <div>
+            <div class="section-head left reveal">
+      <p class="section-eyebrow">Benefits</p>
+      <h2>What Changes Afterwards</h2>
+      
+    </div>
+            <div class="benefit-stack"><div class="benefit-item reveal">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>A Faster First Hour</h3><p>The first hour sets the cost of the whole incident. Rehearsing it converts hesitation into a sequence people have already been through once.</p></div>
+              </div>
+<div class="benefit-item reveal delay-1">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Decisions Made in Advance</h3><p>Whether you would ever pay, who can authorise emergency spend, and when customers get told are all much better decided on a Tuesday afternoon than at midnight.</p></div>
+              </div>
+<div class="benefit-item reveal delay-2">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Insurer and Board Assurance</h3><p>Cyber insurers increasingly ask whether the plan has been exercised and when. A dated report with tracked findings is a straight answer.</p></div>
+              </div>
+<div class="benefit-item reveal delay-3">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Cross-Team Familiarity</h3><p>Much of the delay in real incidents comes from people who have never worked together. The exercise is often the first time they meet.</p></div>
+              </div></div>
+          </div>
+          <div class="who-panel reveal delay-1">
+            <h3>Who This Is For</h3>
+            <ul class="service-list"><li>Organisations with an incident response plan that has never been exercised</li><li>Leadership teams who would have to make the call on disclosure or ransom</li><li>Companies whose insurer or enterprise customers ask about exercising</li><li>Security teams preparing for ISO 27001 certification or surveillance</li></ul>
+            <a href="/contact/" class="btn btn-primary btn-block">Check if this fits your team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-narrow">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">FAQ</p>
+      <h2>IR Tabletop — Common Questions</h2>
+      
+    </div>
+        <div class="faq-list"><div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="prog-q-0" aria-expanded="false" aria-controls="prog-a-0">
+          <span>We do not have an incident response plan yet. Can we still do this?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="prog-a-0" role="region" aria-labelledby="prog-q-0">
+        <p>Yes, and it is often the better starting point. Running a scenario with no plan shows exactly which decisions and contacts the plan needs to contain, and the resulting document is grounded in something the team has lived through rather than copied from a template.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="prog-q-1" aria-expanded="false" aria-controls="prog-a-1">
+          <span>Who needs to attend?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="prog-a-1" role="region" aria-labelledby="prog-q-1">
+        <p>Technical responders, whoever can declare an incident, legal or compliance, communications, and at least one executive who can authorise spend. Leaving leadership out produces a technically interesting exercise that misses the decisions that actually cost money.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="prog-q-2" aria-expanded="false" aria-controls="prog-a-2">
+          <span>Is this a live simulation against our systems?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="prog-a-2" role="region" aria-labelledby="prog-q-2">
+        <p>No. A tabletop is discussion-based, so nothing touches production and nobody is on call. If you want a technical exercise against live systems, that is a red team or purple team engagement and is scoped through the main Arysec practice.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="prog-q-3" aria-expanded="false" aria-controls="prog-a-3">
+          <span>How often should we run one?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="prog-a-3" role="region" aria-labelledby="prog-q-3">
+        <p>Twice a year is a reasonable rhythm: a full scenario and a shorter retest. Annually is the minimum worth doing. More often than quarterly and the same people start recognising the pattern rather than the problem.</p>
+      </div>
+    </div></div>
+      </div>
+    </section>
+
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">Related</p>
+      <h2>Often Run Alongside This</h2>
+      
+    </div>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <a class="service-card-link" href="/programmes/board-and-leadership/">
+              <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 7V5.5A1.5 1.5 0 0110.5 4h3A1.5 1.5 0 0115 5.5V7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18" stroke="currentColor" stroke-width="1.6"/></svg></span>
+              <h3>Cyber Risk for Boards &amp; Leadership</h3>
+              <p>What directors and executives are accountable for, the questions to ask management, and how to read what they answer.</p>
+              <span class="text-link">Programme detail <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          </article>
+<article class="service-card reveal delay-1">
+            <a class="service-card-link" href="/programmes/phishing-drills/">
+              <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11.3" cy="10.6" r="2.7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13.4 12.8L15.6 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <h3>Phishing Simulation &amp; Drills</h3>
+              <p>Realistic, safe phishing drills that measure both click rate and report rate, with a teachable moment instead of a telling-off.</p>
+              <span class="text-link">Programme detail <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          </article>
+<article class="service-card reveal delay-2">
+            <a class="service-card-link" href="/programmes/cloud-security-essentials/">
+              <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18a4.5 4.5 0 01-.6-8.96A6 6 0 0118 8.5 4 4 0 0117.5 18H7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 14.5h4M12 12.8v-1.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <h3>Cloud Security Essentials</h3>
+              <p>The identity, storage and logging mistakes behind most cloud incidents, found and fixed in a live sandbox account.</p>
+              <span class="text-link">Programme detail <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="cta-banner">
+      <div class="container reveal">
+        <h2>Ready to Schedule IR Tabletop?</h2>
+        <p>Tell us the audience, the timescale and what prompted the question. We will come back with a scoped cohort or an honest reason not to run one.</p>
+        <div class="cta-actions"><a href="/contact/" class="btn btn-light">Enquire Now</a><a href="mailto:info@arysec.in" class="btn btn-outline">info@arysec.in</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand" aria-label="Arysec Academy — Home">
+        <svg class="brand-mark" viewBox="5 8 110 97" width="42" height="37" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradFoot" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f8430c"/><stop offset="1" stop-color="#fb9218"/>
+            </linearGradient>
+          </defs>
+          <path d="M69.03 24.57 L104.98 86.62 Q111 97 99 97 L21 97 Q9 97 15.02 86.62 L50.97 24.57 Q60 9 69.03 24.57 Z" fill="none" stroke="url(#brandGradFoot)" stroke-width="15" stroke-linejoin="round"/>
+          <path d="M87.96 86.5 L59.92 38.59 Q57.9 35.13 55.94 38.62 L40.14 66.84 L20.86 77.46 L24.14 84.54 L47.86 75.16 L58.1 56.87 L75.45 86.5 Z" fill="url(#brandGradFoot)"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-wordmark-row">
+            <svg class="brand-wordmark" viewBox="0 0 544 100" width="98" height="18" aria-hidden="true" focusable="false"><path d="M0 100 L38 0 L56 0 L94 100 L73 100 L64.6 78 L29.4 78 L21 100 ZM47 31.6 L57.8 60 L36.2 60 Z" fill="currentColor" fill-rule="evenodd"/><path transform="translate(108 0)" d="M0 0 L62 0 L78 16 L78 40 L64 56 L78 100 L56 100 L44 56 L20 56 L20 100 L0 100 ZM20 20 L58 20 L58 36 L20 36 Z" fill="currentColor" fill-rule="evenodd"/><path transform="translate(200 0)" d="M0 0 L22 0 L39 36 L56 0 L78 0 L50 58 L50 100 L28 100 L28 58 Z" fill="currentColor"/><path transform="translate(292 0)" d="M14 0 L76 0 L76 20 L20 20 L20 48 L76 48 L76 86 L62 100 L0 100 L0 80 L56 80 L56 68 L0 68 L0 14 Z" fill="currentColor"/><path transform="translate(382 0)" d="M0 0 L58 0 L72 14 L72 20 L0 20 Z" class="wm-accent" fill="currentColor"/><path transform="translate(382 0)" d="M0 20 L20 20 L20 40 L56 40 L56 58 L20 58 L20 80 L72 80 L72 86 L58 100 L0 100 Z" fill="currentColor"/><path transform="translate(468 0)" d="M14 0 L62 0 L76 14 L76 20 L20 20 L20 80 L76 80 L76 86 L62 100 L14 100 L0 86 L0 14 Z" fill="currentColor"/></svg><span class="brand-sub">Academy</span>
+          </span>
+          <span class="brand-tagline">Assess<span>.</span> Assure<span>.</span> Advance<span>.</span></span>
+        </span>
+          </a>
+          <p class="footer-blurb">Security training that changes what people actually do. Headquartered in Mumbai, delivering across India and worldwide.</p>
+          <div class="footer-contact">
+            <a href="tel:+919004857727"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h4l1.5 5-2.5 2a13 13 0 005 5l2-2.5 5 1.5v4a2 2 0 01-2 2A17 17 0 014 5a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>+91 90048 57727</span></a>
+            <a href="mailto:info@arysec.in"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>info@arysec.in</span></a>
+            <span class="footer-contact-static"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span>Mumbai, Maharashtra, India</span></span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Programmes</h4>
+          <a href="/programmes/security-awareness/">Security Awareness</a>
+<a href="/programmes/phishing-drills/">Phishing Drills</a>
+<a href="/programmes/secure-coding/">Secure Coding</a>
+<a href="/programmes/iso-27001-lead-implementer/">ISO 27001 Lead Implementer</a>
+<a href="/programmes/">All Programmes</a>
+        </div>
+<div class="footer-col">
+          <h4>Academy</h4>
+          <a href="/certification/">Certification</a>
+<a href="/for-organisations/">For Organisations</a>
+<a href="/programmes/incident-response-tabletop/">Incident Response Drills</a>
+<a href="/programmes/dpdp-privacy-essentials/">DPDP &amp; Privacy</a>
+<a href="/contact/">Contact</a>
+        </div>
+<div class="footer-col">
+          <h4>Arysec</h4>
+          <a href="https://www.arysec.in/services/">Consulting &amp; Services</a>
+<a href="https://www.arysec.in/about/">About Arysec</a>
+<a href="https://www.arysec.in/insights/">Insights</a>
+<a href="https://www.arysec.in/careers/">Careers</a>
+<a href="https://www.arysec.in/">arysec.in</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Arysec Academy. All rights reserved.</p>
+        <p class="footer-legal"><a href="https://www.arysec.in/privacy-policy/">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="https://www.arysec.in/terms-of-service/">Terms of Service</a> <span aria-hidden="true">&middot;</span> <a href="https://www.arysec.in/cookie-policy/">Cookie Policy</a> <span aria-hidden="true">&middot;</span> <a href="https://www.arysec.in/responsible-disclosure/">Responsible Disclosure</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie preferences" aria-live="polite" hidden>
+    <div class="cookie-inner">
+      <p>
+        We use strictly necessary cookies to run this site, and optional analytics cookies to understand
+        how it is used. We do not use advertising or cross-site tracking cookies.
+        <a href="https://www.arysec.in/cookie-policy/">Read our Cookie Policy</a>.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-outline btn-sm" data-cookie-choice="necessary">Necessary only</button>
+        <button type="button" class="btn btn-primary btn-sm" data-cookie-choice="all">Accept analytics</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

@@ -10,7 +10,7 @@ with a domain pointing at the server.
 - Node.js 18 or newer (20 LTS recommended)
 - A reverse proxy for TLS — nginx below, but Caddy or a cloud load balancer work equally well
 - SMTP credentials for sending notification email
-- DNS `A`/`AAAA` records for `arysec.in` and `www.arysec.in`
+- DNS `A`/`AAAA` records for `arysec.in`, `www.arysec.in` and `academy.arysec.in`
 
 ---
 
@@ -32,7 +32,10 @@ Edit `.env`. The values that matter most:
 NODE_ENV=production
 PORT=3000
 TRUST_PROXY=1                                       # 1 behind a single nginx
-ALLOWED_ORIGINS=https://www.arysec.in,https://arysec.in
+ALLOWED_ORIGINS=https://www.arysec.in,https://arysec.in,https://academy.arysec.in
+
+ACADEMY_HOSTS=academy.arysec.in                     # served from public/academy/
+ACADEMY_ORIGIN=https://academy.arysec.in
 
 SMTP_HOST=smtp.your-provider.com
 SMTP_PORT=587
@@ -40,6 +43,7 @@ SMTP_USER=...
 SMTP_PASS=...
 MAIL_TO=info@arysec.in
 MAIL_CAREERS_TO=careers@arysec.in
+MAIL_ACADEMY_TO=                                    # falls back to MAIL_TO
 
 IP_HASH_SALT=<output of: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))">
 ```
@@ -155,10 +159,42 @@ The application sets its own security headers (CSP, HSTS, `nosniff`, `frame-ance
 does not need to add them. If you add them anyway, do not duplicate the CSP — two policies intersect
 and will likely break the site.
 
+The academy subdomain proxies to the same application. The app picks the site by
+`Host`, so nothing changes here except the certificate and the name:
+
+```nginx
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name academy.arysec.in;
+
+    ssl_certificate     /etc/letsencrypt/live/arysec.in/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/arysec.in/privkey.pem;
+    ssl_protocols       TLSv1.2 TLSv1.3;
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Host              $host;   # the app routes on this
+        proxy_set_header X-Real-IP         $remote_addr;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 30s;
+    }
+}
+```
+
+`proxy_set_header Host $host` matters: the application reads the Host header to
+decide which site to serve. Rewriting it to a fixed value would serve the main
+site on the subdomain.
+
+Add `academy.arysec.in` to the port 80 block's `server_name` as well, so ACME
+challenges reach the same webroot.
+
 ```bash
 sudo ln -s /etc/nginx/sites-available/arysec /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
-sudo certbot --nginx -d arysec.in -d www.arysec.in
+sudo certbot --nginx -d arysec.in -d www.arysec.in -d academy.arysec.in
 ```
 
 ---
@@ -172,6 +208,14 @@ curl -sI https://www.arysec.in/about | grep -i location # 301 to /about/
 curl -s  https://www.arysec.in/does-not-exist -o /dev/null -w '%{http_code}\n'   # 404
 curl -s  https://www.arysec.in/sitemap.xml | head -5
 curl -s  https://www.arysec.in/.well-known/security.txt
+
+# Academy subdomain
+curl -sI https://academy.arysec.in/ | head -20                       # 200
+curl -s  https://academy.arysec.in/ | grep -o 'canonical[^>]*'       # academy.arysec.in
+curl -sI https://www.arysec.in/academy/ | grep -i location           # 301 to the subdomain
+curl -s  https://academy.arysec.in/robots.txt                        # its own sitemap line
+curl -s  https://academy.arysec.in/programmes/ -o /dev/null -w '%{http_code}\n'   # 200
+curl -s  https://www.arysec.in/programmes/  -o /dev/null -w '%{http_code}\n'      # 404
 ```
 
 Then submit the contact form once and confirm the email arrives and the row is stored:
@@ -182,6 +226,26 @@ sudo -u arysec npm run submissions
 
 Worth running against the live site: [Mozilla Observatory](https://observatory.mozilla.org/),
 [SSL Labs](https://www.ssllabs.com/ssltest/), and Lighthouse.
+
+---
+
+## 5a. Vercel
+
+`vercel.json` carries the same routing for the Vercel deployment, where there is
+no nginx in front:
+
+- `academy.arysec.in/*` is rewritten to `/academy/*`, so the subdomain serves the
+  academy build from its own root.
+- `/academy/*` on any other host is redirected to `https://academy.arysec.in/*`.
+
+Two things have to be done in the Vercel dashboard once, because they are not
+expressible in `vercel.json`:
+
+1. Add `academy.arysec.in` as a domain on the project.
+2. Point the DNS record for it at Vercel as the dashboard instructs.
+
+Until the domain is attached, the rewrite has no host to match and the academy is
+only reachable through the redirect from the main domain.
 
 ---
 

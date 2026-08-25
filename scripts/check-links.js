@@ -17,26 +17,41 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const PUBLIC = path.join(ROOT, 'public');
 
+/**
+ * Both generated sites are checked. The academy is emitted inside the main
+ * output but is served from the root of its own subdomain, so its links resolve
+ * against public/academy/ rather than public/ — checking them against the wrong
+ * root would report every academy link as broken.
+ */
+const SITES = [
+  { label: 'main', root: PUBLIC, domain: 'https://www.arysec.in', skip: [path.join(PUBLIC, 'academy')] },
+  { label: 'academy', root: path.join(PUBLIC, 'academy'), domain: 'https://academy.arysec.in', skip: [] },
+];
+
 const problems = [];
 const stats = { pages: 0, links: 0, anchors: 0 };
 
-function walk(dir, out) {
+function walk(dir, skip, out) {
   out = out || [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) walk(full, out);
-    else if (entry.name.endsWith('.html')) out.push(full);
+    if (entry.isDirectory()) {
+      if (skip.includes(full)) continue;
+      walk(full, skip, out);
+    } else if (entry.name.endsWith('.html')) {
+      out.push(full);
+    }
   }
   return out;
 }
 
-/** Map a site-absolute href to the file that should serve it. */
-function resolveTarget(href) {
+/** Map a site-absolute href to the file that should serve it, within one site. */
+function resolveTarget(root, href) {
   const clean = href.split('#')[0].split('?')[0];
-  if (clean === '' || clean === '/') return path.join(PUBLIC, 'index.html');
+  if (clean === '' || clean === '/') return path.join(root, 'index.html');
   const rel = clean.replace(/^\//, '');
-  if (/\.[a-z0-9]+$/i.test(rel)) return path.join(PUBLIC, rel);
-  return path.join(PUBLIC, rel.replace(/\/$/, ''), 'index.html');
+  if (/\.[a-z0-9]+$/i.test(rel)) return path.join(root, rel);
+  return path.join(root, rel.replace(/\/$/, ''), 'index.html');
 }
 
 function idsIn(html) {
@@ -47,15 +62,22 @@ function idsIn(html) {
   return ids;
 }
 
-const files = walk(PUBLIC);
 const htmlCache = new Map();
 const readHtml = (file) => {
   if (!htmlCache.has(file)) htmlCache.set(file, fs.readFileSync(file, 'utf8'));
   return htmlCache.get(file);
 };
 
+for (const site of SITES) {
+  checkSite(site);
+}
+
+function checkSite(site) {
+const { root: PUBLIC, domain: DOMAIN, label: LABEL } = site;
+const files = walk(PUBLIC, site.skip);
+
 for (const file of files) {
-  const rel = '/' + path.relative(PUBLIC, file).replace(/\\/g, '/');
+  const rel = `[${LABEL}] /` + path.relative(PUBLIC, file).replace(/\\/g, '/');
   const html = readHtml(file);
   stats.pages++;
 
@@ -151,7 +173,7 @@ for (const file of files) {
       continue;
     }
 
-    const target = resolveTarget(href);
+    const target = resolveTarget(PUBLIC, href);
     if (!fs.existsSync(target)) {
       problems.push(`${rel}: link "${href}" does not resolve (expected ${path.relative(ROOT, target)})`);
       continue;
@@ -168,8 +190,11 @@ for (const file of files) {
 }
 
 // --- required non-HTML output ---
-['sitemap.xml', 'robots.txt', 'site.webmanifest', '404.html', '.well-known/security.txt'].forEach((f) => {
-  if (!fs.existsSync(path.join(PUBLIC, f))) problems.push(`missing required file: ${f}`);
+const required = ['sitemap.xml', 'robots.txt', 'site.webmanifest', '404.html'];
+// security.txt is published once, for the entity, on the main domain.
+if (LABEL === 'main') required.push('.well-known/security.txt');
+required.forEach((f) => {
+  if (!fs.existsSync(path.join(PUBLIC, f))) problems.push(`[${LABEL}] missing required file: ${f}`);
 });
 
 // --- every page appears in the sitemap ---
@@ -178,13 +203,14 @@ for (const file of files) {
   const rel = '/' + path.relative(PUBLIC, file).replace(/\\/g, '/');
   if (rel === '/404.html') continue;
   const url = rel.replace(/index\.html$/, '');
-  if (!sitemap.includes(`<loc>https://www.arysec.in${url}</loc>`)) {
-    problems.push(`sitemap.xml: missing entry for ${url}`);
+  if (!sitemap.includes(`<loc>${DOMAIN}${url}</loc>`)) {
+    problems.push(`[${LABEL}] sitemap.xml: missing entry for ${url}`);
   }
+}
 }
 
 process.stdout.write(
-  `Checked ${stats.pages} pages, ${stats.links} internal links, ${stats.anchors} anchors.\n`
+  `Checked ${SITES.length} sites, ${stats.pages} pages, ${stats.links} internal links, ${stats.anchors} anchors.\n`
 );
 
 if (problems.length) {

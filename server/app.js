@@ -10,6 +10,16 @@ const { securityHeaders, globalLimiter } = require('./middleware/security');
 const { log, hashIp } = require('./lib/logger');
 const apiRoutes = require('./routes/api');
 
+/**
+ * express.static rooted at `root`, active only when `applies(req)` is true.
+ * Wrapping rather than mounting keeps each site's URLs at the root of its own
+ * host, and stops either site's files leaking onto the other's domain.
+ */
+function hostScopedStatic(root, applies, staticOptions) {
+  const serve = express.static(root, staticOptions);
+  return (req, res, next) => (applies(req) ? serve(req, res, next) : next());
+}
+
 function createApp() {
   const app = express();
 
@@ -59,7 +69,44 @@ function createApp() {
     },
   };
 
-  app.use(express.static(config.publicDir, staticOptions));
+  /**
+   * The academy is generated into public/academy/ but is served from the root of
+   * academy.arysec.in. Two middlewares keep those views consistent:
+   *
+   *   1. On an academy host, requests resolve inside public/academy/ first.
+   *   2. On any other host, /academy/... is redirected to the subdomain, so a
+   *      page is never reachable at two addresses and never splits its ranking.
+   *
+   * Both use the same path-resolution guard as the clean-URL handler below: the
+   * candidate is resolved and confirmed to sit inside the served root before any
+   * read, so '..' segments cannot escape it.
+   */
+  const academyRoot = path.join(config.publicDir, config.academyDir);
+  const isAcademyHost = (req) => config.academyHosts.includes(String(req.hostname || '').toLowerCase());
+
+  app.use((req, res, next) => {
+    if (req.path.startsWith('/api/')) return next();
+
+    if (isAcademyHost(req)) {
+      // Never let the academy host reach the parent site's pages by path.
+      if (req.path === '/' + config.academyDir || req.path.startsWith('/' + config.academyDir + '/')) {
+        const rest = req.path.slice(config.academyDir.length + 1) || '/';
+        return res.redirect(301, rest + req.originalUrl.slice(req.path.length));
+      }
+      return next();
+    }
+
+    if (req.path === '/' + config.academyDir || req.path.startsWith('/' + config.academyDir + '/')) {
+      const rest = req.path.slice(config.academyDir.length + 1) || '/';
+      const query = req.originalUrl.slice(req.path.length);
+      return res.redirect(301, config.academyOrigin + rest + query);
+    }
+
+    return next();
+  });
+
+  app.use(hostScopedStatic(academyRoot, isAcademyHost, staticOptions));
+  app.use(hostScopedStatic(config.publicDir, (req) => !isAcademyHost(req), staticOptions));
 
   /**
    * Clean-URL resolution: '/about/' and '/about' both serve public/about/index.html.
@@ -78,9 +125,10 @@ function createApp() {
     if (decoded.includes('\0')) return next();
 
     const relative = decoded.replace(/^\/+/, '').replace(/\/+$/, '');
-    const candidate = path.resolve(config.publicDir, relative, 'index.html');
+    const serveRoot = isAcademyHost(req) ? academyRoot : config.publicDir;
+    const candidate = path.resolve(serveRoot, relative, 'index.html');
 
-    const root = path.resolve(config.publicDir) + path.sep;
+    const root = path.resolve(serveRoot) + path.sep;
     if (!candidate.startsWith(root)) return next();
 
     if (fs.existsSync(candidate)) {
@@ -99,7 +147,7 @@ function createApp() {
 
   // ---- 404 ---------------------------------------------------------------
   app.use((req, res) => {
-    const notFoundPage = path.join(config.publicDir, '404.html');
+    const notFoundPage = path.join(isAcademyHost(req) ? academyRoot : config.publicDir, '404.html');
     res.status(404);
     if (req.accepts('html') && fs.existsSync(notFoundPage)) {
       return res.sendFile(notFoundPage);

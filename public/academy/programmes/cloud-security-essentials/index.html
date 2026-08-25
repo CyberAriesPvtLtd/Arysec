@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Security Essentials Training — AWS, Azure, GCP | Arysec Academy</title>
+  <meta name="description" content="Two-day hands-on cloud security training for AWS, Azure or Google Cloud: identity, network boundaries, storage exposure, logging and the misconfigurations that cause breaches.">
+  <link rel="canonical" href="https://academy.arysec.in/programmes/cloud-security-essentials/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Arysec Academy">
+  <meta property="og:title" content="Cloud Security Essentials Training — AWS, Azure, GCP | Arysec Academy">
+  <meta property="og:description" content="Two-day hands-on cloud security training for AWS, Azure or Google Cloud: identity, network boundaries, storage exposure, logging and the misconfigurations that cause breaches.">
+  <meta property="og:url" content="https://academy.arysec.in/programmes/cloud-security-essentials/">
+  <meta property="og:image" content="https://academy.arysec.in/assets/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Arysec Academy — Cybersecurity Training &amp; Certification">
+  <meta property="og:locale" content="en_IN">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloud Security Essentials Training — AWS, Azure, GCP | Arysec Academy">
+  <meta name="twitter:description" content="Two-day hands-on cloud security training for AWS, Azure or Google Cloud: identity, network boundaries, storage exposure, logging and the misconfigurations that cause breaches.">
+  <meta name="twitter:image" content="https://academy.arysec.in/assets/og-image.png">
+
+  <meta name="theme-color" content="#12100e">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Arysec Academy","alternateName":"Arysec Academy","url":"https://academy.arysec.in/","logo":"https://academy.arysec.in/assets/logo-512.png","image":"https://academy.arysec.in/assets/og-image.png","email":"info@arysec.in","telephone":"+91 90048 57727","description":"Cybersecurity training and certification for organisations: security awareness, phishing simulation drills, secure coding, ISO/IEC 27001 and DPDP Act programmes, and incident response exercises, delivered in-person and online across India.","address":{"@type":"PostalAddress","addressLocality":"Mumbai","addressRegion":"Maharashtra","addressCountry":"IN"},"founder":{"@type":"Person","name":"Unnati Shinde","jobTitle":"Founder \u0026 Managing Partner"},"areaServed":[{"@type":"Country","name":"India"},"Worldwide"],"knowsAbout":["Security awareness training","Phishing simulation","Secure coding","ISO/IEC 27001","Digital Personal Data Protection Act","Incident response exercises"],"parentOrganization":{"@type":"Organization","name":"Arysec Technologies LLP","url":"https://www.arysec.in/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://academy.arysec.in/"},{"@type":"ListItem","position":2,"name":"Programmes","item":"https://academy.arysec.in/programmes/"},{"@type":"ListItem","position":3,"name":"Cloud Security","item":"https://academy.arysec.in/programmes/cloud-security-essentials/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Cloud Security Essentials","description":"Two-day hands-on cloud security training for AWS, Azure or Google Cloud: identity, network boundaries, storage exposure, logging and the misconfigurations that cause breaches.","url":"https://academy.arysec.in/programmes/cloud-security-essentials/","provider":{"@type":"Organization","name":"Arysec Academy","url":"https://academy.arysec.in/"},"educationalLevel":"Engineers and platform teams","teaches":["Identity and Privilege","Storage and Data Exposure","Network Boundaries","Secrets and Keys","Logging and Detection","Guardrails and Drift"],"hasCourseInstance":[{"@type":"CourseInstance","courseMode":["onsite","online"],"courseWorkload":"2 days, per cloud platform","location":{"@type":"Place","address":"Mumbai, Maharashtra, India"}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do delegates need existing cloud experience?","acceptedAnswer":{"@type":"Answer","text":"They need to be comfortable in the console and to have deployed something. This is not an introduction to the cloud — the labs assume you know what a virtual machine and a managed database are, and spend their time on how the security model around them fails."}},{"@type":"Question","name":"Can the labs run in our own accounts?","acceptedAnswer":{"@type":"Answer","text":"We strongly prefer our sandbox. Planting deliberate misconfigurations in your environment creates real risk and real cleanup. What we can do is a separate configuration review of your estate afterwards, which is usually the thing people actually want."}},{"@type":"Question","name":"Does this cover Kubernetes?","acceptedAnswer":{"@type":"Answer","text":"In outline — the managed cluster's identity integration and network policy are covered, because that is where cloud identity meets the cluster. Container and Kubernetes security in depth is a separate two-day track."}},{"@type":"Question","name":"Which is the right platform to start with?","acceptedAnswer":{"@type":"Answer","text":"Whichever holds your production data. If that is genuinely split, start with the one carrying regulated or customer data, since that is where a misconfiguration becomes a notifiable event."}}]}</script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="/" class="brand" aria-label="Arysec Academy — Home">
+        <svg class="brand-mark" viewBox="5 8 110 97" width="42" height="37" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradNav" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f8430c"/><stop offset="1" stop-color="#fb9218"/>
+            </linearGradient>
+          </defs>
+          <path d="M69.03 24.57 L104.98 86.62 Q111 97 99 97 L21 97 Q9 97 15.02 86.62 L50.97 24.57 Q60 9 69.03 24.57 Z" fill="none" stroke="url(#brandGradNav)" stroke-width="15" stroke-linejoin="round"/>
+          <path d="M87.96 86.5 L59.92 38.59 Q57.9 35.13 55.94 38.62 L40.14 66.84 L20.86 77.46 L24.14 84.54 L47.86 75.16 L58.1 56.87 L75.45 86.5 Z" fill="url(#brandGradNav)"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-wordmark-row">
+            <svg class="brand-wordmark" viewBox="0 0 544 100" width="98" height="18" aria-hidden="true" focusable="false"><path d="M0 100 L38 0 L56 0 L94 100 L73 100 L64.6 78 L29.4 78 L21 100 ZM47 31.6 L57.8 60 L36.2 60 Z" fill="currentColor" fill-rule="evenodd"/><path transform="translate(108 0)" d="M0 0 L62 0 L78 16 L78 40 L64 56 L78 100 L56 100 L44 56 L20 56 L20 100 L0 100 ZM20 20 L58 20 L58 36 L20 36 Z" fill="currentColor" fill-rule="evenodd"/><path transform="translate(200 0)" d="M0 0 L22 0 L39 36 L56 0 L78 0 L50 58 L50 100 L28 100 L28 58 Z" fill="currentColor"/><path transform="translate(292 0)" d="M14 0 L76 0 L76 20 L20 20 L20 48 L76 48 L76 86 L62 100 L0 100 L0 80 L56 80 L56 68 L0 68 L0 14 Z" fill="currentColor"/><path transform="translate(382 0)" d="M0 0 L58 0 L72 14 L72 20 L0 20 Z" class="wm-accent" fill="currentColor"/><path transform="translate(382 0)" d="M0 20 L20 20 L20 40 L56 40 L56 58 L20 58 L20 80 L72 80 L72 86 L58 100 L0 100 Z" fill="currentColor"/><path transform="translate(468 0)" d="M14 0 L62 0 L76 14 L76 20 L20 20 L20 80 L76 80 L76 86 L62 100 L14 100 L0 86 L0 14 Z" fill="currentColor"/></svg><span class="brand-sub">Academy</span>
+          </span>
+          <span class="brand-tagline">Assess<span>.</span> Assure<span>.</span> Advance<span>.</span></span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <ul class="nav-list">
+<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+<li class="nav-item has-panel has-mega">
+        <button class="nav-link nav-trigger active" aria-expanded="false" aria-controls="mega-programmes" data-href="/programmes/">Programmes<svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        
+      <div class="mega-panel" id="mega-programmes" hidden>
+        <div class="container mega-inner">
+          <div class="mega-cols">
+          <div class="mega-col">
+            <h4 class="mega-heading">Workforce Awareness</h4>
+            <a class="mega-link" href="/programmes/security-awareness/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 19c.6-3 2.8-5 5.5-5s4.9 2 5.5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="16.5" cy="5.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 9.5c1.8.4 3.4 2 3.9 4.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Security Awareness Training</span>
+                <span class="mega-link-desc">Security Awareness</span>
+              </span>
+            </a>
+<a class="mega-link" href="/programmes/phishing-drills/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5l8-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11.3" cy="10.6" r="2.7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13.4 12.8L15.6 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Phishing Simulation &amp; Drills</span>
+                <span class="mega-link-desc">Phishing Drills</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Certification Tracks</h4>
+            <a class="mega-link" href="/programmes/iso-27001-lead-implementer/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.5l2.4 1.8 3-.2.6 2.9 2.4 1.8-1.3 2.7 1.3 2.7-2.4 1.8-.6 2.9-3-.2L12 20.5l-2.4-1.8-3 .2-.6-2.9L3.6 14.2 4.9 11.5 3.6 8.8l2.4-1.8.6-2.9 3 .2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 11.6l2.1 2.1L15.2 9.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">ISO/IEC 27001 Lead Implementer</span>
+                <span class="mega-link-desc">ISO 27001 Lead Implementer</span>
+              </span>
+            </a>
+<a class="mega-link" href="/programmes/iso-27001-internal-auditor/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6l1 3h4v15H4V6h4l1-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 13l2.5 2.5L16 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">ISO/IEC 27001 Internal Auditor</span>
+                <span class="mega-link-desc">ISO 27001 Internal Auditor</span>
+              </span>
+            </a>
+<a class="mega-link" href="/programmes/dpdp-privacy-essentials/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="9" width="16" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 9V6.5a4 4 0 018 0V9" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="14.5" r="1.6" fill="currentColor"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">DPDP Act &amp; Privacy Essentials</span>
+                <span class="mega-link-desc">DPDP &amp; Privacy</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Technical Skills</h4>
+            <a class="mega-link" href="/programmes/secure-coding/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 4l-3 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Secure Coding for Developers</span>
+                <span class="mega-link-desc">Secure Coding</span>
+              </span>
+            </a>
+<a class="mega-link" href="/programmes/cloud-security-essentials/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18a4.5 4.5 0 01-.6-8.96A6 6 0 0118 8.5 4 4 0 0117.5 18H7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 14.5h4M12 12.8v-1.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Cloud Security Essentials</span>
+                <span class="mega-link-desc">Cloud Security</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-heading">Leadership &amp; Response</h4>
+            <a class="mega-link" href="/programmes/incident-response-tabletop/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3.5M12 3l-2 2M12 3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20a7 7 0 0114 0z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3 20h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 10.5a4 4 0 00-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Incident Response Tabletop Exercises</span>
+                <span class="mega-link-desc">IR Tabletop</span>
+              </span>
+            </a>
+<a class="mega-link" href="/programmes/board-and-leadership/">
+              <span class="mega-link-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 7V5.5A1.5 1.5 0 0110.5 4h3A1.5 1.5 0 0115 5.5V7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18" stroke="currentColor" stroke-width="1.6"/></svg></span>
+              <span class="mega-link-text">
+                <span class="mega-link-title">Cyber Risk for Boards &amp; Leadership</span>
+                <span class="mega-link-desc">Board &amp; Leadership</span>
+              </span>
+            </a>
+          </div>
+          </div>
+          <div class="mega-footer">
+            <a class="text-link" href="/programmes/">View all programmes <span aria-hidden="true">&rarr;</span></a>
+<a class="text-link" href="/for-organisations/">How we deliver <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+      </li>
+<li class="nav-item"><a class="nav-link" href="/certification/">Certification</a></li>
+<li class="nav-item"><a class="nav-link" href="/for-organisations/">For Organisations</a></li>
+<li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+        </ul>
+        <a href="/contact/" class="btn btn-primary btn-nav">Discuss Training</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <a href="/programmes/">Programmes</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <span aria-current="page">Cloud Security</span></nav>
+        <p class="hero-eyebrow">Technical Skills</p>
+        <h1>Most Cloud Breaches Are a Configuration, Not an Exploit</h1>
+        <p class="page-hero-sub">Two days in a sandbox account finding the things that actually cause incidents: over-broad roles, a storage bucket someone opened for a demo, keys in a build log, and logging that was never switched on in the region where it mattered.</p>
+        <div class="hero-actions"><a href="/contact/" class="btn btn-primary">Enquire About This Programme</a><a href="/for-organisations/" class="btn btn-outline">How Delivery Works</a></div>
+        <div class="highlight-row"><div class="highlight">
+      <span class="highlight-value">Sandbox</span>
+      <span class="highlight-label">Real accounts, real misconfigurations</span>
+    </div>
+<div class="highlight">
+      <span class="highlight-value">One platform</span>
+      <span class="highlight-label">AWS, Azure or Google Cloud per cohort</span>
+    </div>
+<div class="highlight">
+      <span class="highlight-value">CIS</span>
+      <span class="highlight-label">Benchmarks used as the hardening baseline</span>
+    </div></div>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container">
+        <div class="chip-row">
+          <span class="chip">Format: Hands-on labs in a sandbox account, live online or on-site</span>
+          <span class="chip">Duration: 2 days, per cloud platform</span>
+          <span class="chip">Audience: Engineers and platform teams</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight-top">
+      <div class="container">
+        <div class="split-grid">
+          <div class="split-main reveal">
+            <span class="service-icon service-icon-lg"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18a4.5 4.5 0 01-.6-8.96A6 6 0 0118 8.5 4 4 0 0117.5 18H7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 14.5h4M12 12.8v-1.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <h2>The Misconfiguration Is the Attack</h2>
+            <p>Cloud incidents rarely start with a novel exploit. They start with an identity that can do more than anyone realised, a storage object made public for a quick demo, or an access key committed to a repository two years ago and never rotated. None of that is exotic, and all of it is findable before an attacker finds it.</p>
+            <p>The course runs in a sandbox account deliberately built with those problems in it. Delegates enumerate permissions the way an attacker would, follow a privilege escalation path, find exposed data, and then close each gap and verify the fix.</p>
+            <p>The second half is about knowing sooner. Logging that is actually enabled everywhere, alerts that fire on the handful of events that matter, and guardrails that stop the misconfiguration being created rather than reporting it a week later.</p>
+            <a href="/contact/" class="text-link">Talk to us about Cloud Security <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <aside class="split-aside">
+            <div class="checklist-panel reveal">
+      <h3>What Your Platform Team Gains</h3>
+      <p class="checklist-intro">The point is a shorter list at the next cloud configuration review, and detection that fires before a customer notices.</p>
+      <ul class="service-list"><li>A hardening baseline for your platform, aligned to the CIS Benchmark</li><li>A least-privilege review method for roles and service identities</li><li>Detection rules for the events that precede most cloud incidents</li><li>A logging configuration covering every region and account in use</li><li>Guardrails as policy, so bad configuration cannot be created</li><li>A key and secret rotation procedure that survives production</li><li>An Arysec Academy certificate on completing the assessed lab</li></ul>
+    </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">Content</p>
+      <h2>Lab Modules</h2>
+      
+    </div>
+        <div class="capability-grid"><div class="capability reveal">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Identity and Privilege</h3>
+        <p>Roles, policies and trust relationships. Enumerating effective permissions, finding escalation paths through pass-role and assume-role chains, and cutting privilege without breaking deployments.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-1">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Storage and Data Exposure</h3>
+        <p>Buckets, blobs, snapshots and managed database endpoints. Finding what is reachable from the internet, what is reachable from any authenticated account, and what encryption actually protects.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-2">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Network Boundaries</h3>
+        <p>Security groups, network security groups and firewall rules, private endpoints, egress control, and the management interfaces that quietly stay open to the world.</p>
+      </div>
+    </div>
+<div class="capability reveal">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Secrets and Keys</h3>
+        <p>Managed secret stores, workload identity instead of long-lived keys, rotation, and finding credentials already leaked into images, build logs and repositories.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-1">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Logging and Detection</h3>
+        <p>Audit logs across every region and subscription, log integrity, retention that meets your obligations, and alerting on the small set of events that reliably precede an incident.</p>
+      </div>
+    </div>
+<div class="capability reveal delay-2">
+      <span class="capability-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Guardrails and Drift</h3>
+        <p>Preventive policy, infrastructure-as-code scanning in the pipeline, and detecting configuration drift when someone fixes production by hand at midnight.</p>
+      </div>
+    </div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">How It Runs</p>
+      <h2>From Scoping to Delivery</h2>
+      <p class="section-sub">How a Cloud Security engagement runs, start to finish.</p>
+    </div>
+        <div class="process-grid"><div class="process-step reveal">
+      <div class="process-num">01</div>
+      <h3>Platform Selection</h3>
+      <p>One cloud per cohort. Multi-cloud teams run consecutive cohorts — a combined session covers three consoles badly rather than one well.</p>
+    </div>
+<div class="process-step reveal delay-1">
+      <div class="process-num">02</div>
+      <h3>Sandbox Provisioning</h3>
+      <p>We provision isolated accounts with the misconfigurations pre-planted, so nothing touches your production estate and everyone starts from the same state.</p>
+    </div>
+<div class="process-step reveal delay-2">
+      <div class="process-num">03</div>
+      <h3>Two Lab Days</h3>
+      <p>Day one attacks and fixes identity, storage and network. Day two builds the detection and guardrails that stop the same problems returning.</p>
+    </div>
+<div class="process-step reveal delay-3">
+      <div class="process-num">04</div>
+      <h3>Baseline Handover</h3>
+      <p>The hardening baseline, detection rules and policy examples are handed over as code, so they can go straight into your own repositories.</p>
+    </div></div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="split-grid split-grid-even">
+          <div>
+            <div class="section-head left reveal">
+      <p class="section-eyebrow">Benefits</p>
+      <h2>What Changes Afterwards</h2>
+      
+    </div>
+            <div class="benefit-stack"><div class="benefit-item reveal">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Fewer Findings at the Next Review</h3><p>Cloud configuration reviews repeat the same findings year after year in most organisations. Teams that have fixed them by hand once stop creating them.</p></div>
+              </div>
+<div class="benefit-item reveal delay-1">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Detection Where There Was None</h3><p>A surprising number of organisations discover during this course that audit logging was never enabled in a region they have been using for two years.</p></div>
+              </div>
+<div class="benefit-item reveal delay-2">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Least Privilege That Ships</h3><p>Privilege reduction usually stalls because nobody knows what will break. The enumeration method taught here makes the change measurable rather than a gamble.</p></div>
+              </div>
+<div class="benefit-item reveal delay-3">
+                <span class="benefit-marker" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 12l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><h3>Guardrails Instead of Nagging</h3><p>Preventive policy in the pipeline removes a whole class of review comments and stops the argument being had again next quarter.</p></div>
+              </div></div>
+          </div>
+          <div class="who-panel reveal delay-1">
+            <h3>Who This Is For</h3>
+            <ul class="service-list"><li>Platform, DevOps and SRE teams who own cloud configuration</li><li>Organisations that have grown a cloud estate faster than their controls</li><li>Security teams needing to review cloud configuration credibly</li><li>Companies preparing for a cloud configuration review or ISO 27001 Annex A 5.23</li></ul>
+            <a href="/contact/" class="btn btn-primary btn-block">Check if this fits your team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-narrow">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">FAQ</p>
+      <h2>Cloud Security — Common Questions</h2>
+      
+    </div>
+        <div class="faq-list"><div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="prog-q-0" aria-expanded="false" aria-controls="prog-a-0">
+          <span>Do delegates need existing cloud experience?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="prog-a-0" role="region" aria-labelledby="prog-q-0">
+        <p>They need to be comfortable in the console and to have deployed something. This is not an introduction to the cloud — the labs assume you know what a virtual machine and a managed database are, and spend their time on how the security model around them fails.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="prog-q-1" aria-expanded="false" aria-controls="prog-a-1">
+          <span>Can the labs run in our own accounts?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="prog-a-1" role="region" aria-labelledby="prog-q-1">
+        <p>We strongly prefer our sandbox. Planting deliberate misconfigurations in your environment creates real risk and real cleanup. What we can do is a separate configuration review of your estate afterwards, which is usually the thing people actually want.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="prog-q-2" aria-expanded="false" aria-controls="prog-a-2">
+          <span>Does this cover Kubernetes?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="prog-a-2" role="region" aria-labelledby="prog-q-2">
+        <p>In outline — the managed cluster&#39;s identity integration and network policy are covered, because that is where cloud identity meets the cluster. Container and Kubernetes security in depth is a separate two-day track.</p>
+      </div>
+    </div>
+<div class="faq-item reveal">
+      <h3 class="faq-heading">
+        <button class="faq-question" id="prog-q-3" aria-expanded="false" aria-controls="prog-a-3">
+          <span>Which is the right platform to start with?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="faq-answer" id="prog-a-3" role="region" aria-labelledby="prog-q-3">
+        <p>Whichever holds your production data. If that is genuinely split, start with the one carrying regulated or customer data, since that is where a misconfiguration becomes a notifiable event.</p>
+      </div>
+    </div></div>
+      </div>
+    </section>
+
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+      <p class="section-eyebrow">Related</p>
+      <h2>Often Run Alongside This</h2>
+      
+    </div>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <a class="service-card-link" href="/programmes/secure-coding/">
+              <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 4l-3 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <h3>Secure Coding for Developers</h3>
+              <p>Developers exploit real vulnerabilities in your language, then fix them and write the test that keeps them fixed.</p>
+              <span class="text-link">Programme detail <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          </article>
+<article class="service-card reveal delay-1">
+            <a class="service-card-link" href="/programmes/incident-response-tabletop/">
+              <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3.5M12 3l-2 2M12 3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20a7 7 0 0114 0z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3 20h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 10.5a4 4 0 00-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <h3>Incident Response Tabletop Exercises</h3>
+              <p>Run your incident response plan against a realistic scenario and find out where it breaks while it is still a rehearsal.</p>
+              <span class="text-link">Programme detail <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          </article>
+<article class="service-card reveal delay-2">
+            <a class="service-card-link" href="/programmes/security-awareness/">
+              <span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 19c.6-3 2.8-5 5.5-5s4.9 2 5.5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="16.5" cy="5.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 9.5c1.8.4 3.4 2 3.9 4.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+              <h3>Security Awareness Training</h3>
+              <p>Behaviour-first awareness training for every employee, with role-specific tracks for finance, HR and support teams.</p>
+              <span class="text-link">Programme detail <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="cta-banner">
+      <div class="container reveal">
+        <h2>Ready to Schedule Cloud Security?</h2>
+        <p>Tell us the audience, the timescale and what prompted the question. We will come back with a scoped cohort or an honest reason not to run one.</p>
+        <div class="cta-actions"><a href="/contact/" class="btn btn-light">Enquire Now</a><a href="mailto:info@arysec.in" class="btn btn-outline">info@arysec.in</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand" aria-label="Arysec Academy — Home">
+        <svg class="brand-mark" viewBox="5 8 110 97" width="42" height="37" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradFoot" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f8430c"/><stop offset="1" stop-color="#fb9218"/>
+            </linearGradient>
+          </defs>
+          <path d="M69.03 24.57 L104.98 86.62 Q111 97 99 97 L21 97 Q9 97 15.02 86.62 L50.97 24.57 Q60 9 69.03 24.57 Z" fill="none" stroke="url(#brandGradFoot)" stroke-width="15" stroke-linejoin="round"/>
+          <path d="M87.96 86.5 L59.92 38.59 Q57.9 35.13 55.94 38.62 L40.14 66.84 L20.86 77.46 L24.14 84.54 L47.86 75.16 L58.1 56.87 L75.45 86.5 Z" fill="url(#brandGradFoot)"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-wordmark-row">
+            <svg class="brand-wordmark" viewBox="0 0 544 100" width="98" height="18" aria-hidden="true" focusable="false"><path d="M0 100 L38 0 L56 0 L94 100 L73 100 L64.6 78 L29.4 78 L21 100 ZM47 31.6 L57.8 60 L36.2 60 Z" fill="currentColor" fill-rule="evenodd"/><path transform="translate(108 0)" d="M0 0 L62 0 L78 16 L78 40 L64 56 L78 100 L56 100 L44 56 L20 56 L20 100 L0 100 ZM20 20 L58 20 L58 36 L20 36 Z" fill="currentColor" fill-rule="evenodd"/><path transform="translate(200 0)" d="M0 0 L22 0 L39 36 L56 0 L78 0 L50 58 L50 100 L28 100 L28 58 Z" fill="currentColor"/><path transform="translate(292 0)" d="M14 0 L76 0 L76 20 L20 20 L20 48 L76 48 L76 86 L62 100 L0 100 L0 80 L56 80 L56 68 L0 68 L0 14 Z" fill="currentColor"/><path transform="translate(382 0)" d="M0 0 L58 0 L72 14 L72 20 L0 20 Z" class="wm-accent" fill="currentColor"/><path transform="translate(382 0)" d="M0 20 L20 20 L20 40 L56 40 L56 58 L20 58 L20 80 L72 80 L72 86 L58 100 L0 100 Z" fill="currentColor"/><path transform="translate(468 0)" d="M14 0 L62 0 L76 14 L76 20 L20 20 L20 80 L76 80 L76 86 L62 100 L14 100 L0 86 L0 14 Z" fill="currentColor"/></svg><span class="brand-sub">Academy</span>
+          </span>
+          <span class="brand-tagline">Assess<span>.</span> Assure<span>.</span> Advance<span>.</span></span>
+        </span>
+          </a>
+          <p class="footer-blurb">Security training that changes what people actually do. Headquartered in Mumbai, delivering across India and worldwide.</p>
+          <div class="footer-contact">
+            <a href="tel:+919004857727"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h4l1.5 5-2.5 2a13 13 0 005 5l2-2.5 5 1.5v4a2 2 0 01-2 2A17 17 0 014 5a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>+91 90048 57727</span></a>
+            <a href="mailto:info@arysec.in"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>info@arysec.in</span></a>
+            <span class="footer-contact-static"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span>Mumbai, Maharashtra, India</span></span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Programmes</h4>
+          <a href="/programmes/security-awareness/">Security Awareness</a>
+<a href="/programmes/phishing-drills/">Phishing Drills</a>
+<a href="/programmes/secure-coding/">Secure Coding</a>
+<a href="/programmes/iso-27001-lead-implementer/">ISO 27001 Lead Implementer</a>
+<a href="/programmes/">All Programmes</a>
+        </div>
+<div class="footer-col">
+          <h4>Academy</h4>
+          <a href="/certification/">Certification</a>
+<a href="/for-organisations/">For Organisations</a>
+<a href="/programmes/incident-response-tabletop/">Incident Response Drills</a>
+<a href="/programmes/dpdp-privacy-essentials/">DPDP &amp; Privacy</a>
+<a href="/contact/">Contact</a>
+        </div>
+<div class="footer-col">
+          <h4>Arysec</h4>
+          <a href="https://www.arysec.in/services/">Consulting &amp; Services</a>
+<a href="https://www.arysec.in/about/">About Arysec</a>
+<a href="https://www.arysec.in/insights/">Insights</a>
+<a href="https://www.arysec.in/careers/">Careers</a>
+<a href="https://www.arysec.in/">arysec.in</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Arysec Academy. All rights reserved.</p>
+        <p class="footer-legal"><a href="https://www.arysec.in/privacy-policy/">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="https://www.arysec.in/terms-of-service/">Terms of Service</a> <span aria-hidden="true">&middot;</span> <a href="https://www.arysec.in/cookie-policy/">Cookie Policy</a> <span aria-hidden="true">&middot;</span> <a href="https://www.arysec.in/responsible-disclosure/">Responsible Disclosure</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie preferences" aria-live="polite" hidden>
+    <div class="cookie-inner">
+      <p>
+        We use strictly necessary cookies to run this site, and optional analytics cookies to understand
+        how it is used. We do not use advertising or cross-site tracking cookies.
+        <a href="https://www.arysec.in/cookie-policy/">Read our Cookie Policy</a>.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-outline btn-sm" data-cookie-choice="necessary">Necessary only</button>
+        <button type="button" class="btn btn-primary btn-sm" data-cookie-choice="all">Accept analytics</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

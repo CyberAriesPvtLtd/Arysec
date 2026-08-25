@@ -280,8 +280,22 @@ a:hover { color: var(--accent-2); }
   padding-left: 0.6rem;
   border-left: 1px solid var(--border-strong);
 }
-.brand-name { font-weight: 800; letter-spacing: 0.17em; color: var(--text-primary); font-size: 1.1rem; }
-.brand-tagline { font-size: 0.5rem; letter-spacing: 0.03em; color: var(--text-muted); font-weight: 500; margin-top: 0.15rem; }
+/* The wordmark is drawn, not set: `color` drives the letterforms through
+   currentColor, and .wm-accent is the orange bar on the "E". */
+.brand-wordmark-row { display: flex; align-items: baseline; gap: 0.45rem; }
+.brand-wordmark { height: 18px; width: auto; color: var(--text-primary); }
+.brand-wordmark .wm-accent { fill: var(--accent); }
+/* Sub-brand label — "Academy" on academy.arysec.in, absent on the main site. */
+.brand-sub {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  align-self: center;
+  padding-bottom: 1px;
+}
+.brand-tagline { font-size: 0.5rem; letter-spacing: 0.03em; color: var(--text-muted); font-weight: 500; margin-top: 0.22rem; }
 .brand-tagline span { color: var(--accent); }
 
 .main-nav { display: flex; align-items: center; gap: 1.4rem; }
@@ -1714,7 +1728,8 @@ body.nav-open .cookie-banner { display: none; }
 
 @media (max-width: 420px) {
   .industry-grid { grid-template-columns: 1fr; }
-  .brand-name { font-size: 1rem; letter-spacing: 0.14em; }
+  .brand-wordmark { height: 16px; }
+  .brand-sub { font-size: 0.62rem; letter-spacing: 0.12em; }
   .brand-tagline { font-size: 0.44rem; letter-spacing: 0.01em; }
 }
 

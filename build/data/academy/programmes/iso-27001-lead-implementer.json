@@ -1,0 +1,143 @@
+{
+  "slug": "iso-27001-lead-implementer",
+  "name": "ISO/IEC 27001 Lead Implementer",
+  "shortName": "ISO 27001 Lead Implementer",
+  "category": "Certification Tracks",
+  "format": "Live online or on-site, cohort of up to 20",
+  "duration": "4 days, plus assessment",
+  "level": "Intermediate — some governance exposure assumed",
+  "metaTitle": "ISO/IEC 27001:2022 Lead Implementer Training",
+  "metaDescription": "Four-day ISO/IEC 27001:2022 Lead Implementer course taught by practitioners: scope, risk assessment, Annex A, internal audit and certification, ending in an assessment.",
+  "cardSummary": "Build and run an ISO 27001 ISMS end to end, taught from real implementations rather than clause recitation.",
+  "heroHeadline": "Run an ISMS, Not Just Pass a Course",
+  "heroSub": "Four days on how ISO/IEC 27001:2022 is actually implemented: scoping decisions that survive an auditor, a risk assessment your board can read, and the evidence trail that gets you through Stage 2 without a scramble.",
+  "highlights": [
+    {
+      "value": "4 days",
+      "label": "Plus a written and applied assessment"
+    },
+    {
+      "value": "2022",
+      "label": "Current Annex A structure and 11 new controls"
+    },
+    {
+      "value": "Practitioner-led",
+      "label": "Taught by people who run implementations"
+    }
+  ],
+  "intro": {
+    "heading": "Taught From Implementations, Not From the Standard",
+    "paragraphs": [
+      "Plenty of courses walk you through the clauses in order. That teaches you what the standard says and leaves you unable to answer the questions that actually decide a certification: what belongs in scope, how much risk assessment is enough, and what evidence a certification body will accept for a control you have implemented differently.",
+      "This track is built around the decisions. Every module starts from a situation — a scope that keeps growing, a risk register nobody maintains, a Statement of Applicability with eleven controls marked not applicable — and works back to what the standard requires and what an auditor will do with it.",
+      "You leave with a working set of artefacts drafted against your own organisation: a scope statement, a risk assessment method, a draft Statement of Applicability, and an internal audit plan. Delegates who complete the applied assessment receive an Arysec Academy certificate recording what was assessed."
+    ]
+  },
+  "outcomes": {
+    "heading": "What Delegates Leave With",
+    "intro": "The applied work is done against your own organisation wherever possible, so the course output is the first draft of your ISMS rather than a worked example about a fictional company.",
+    "items": [
+      "A defensible scope statement and the reasoning behind its boundaries",
+      "A risk assessment method with criteria, scales and acceptance thresholds",
+      "A populated risk register with owners, treatment and target dates",
+      "A draft Statement of Applicability covering all 93 Annex A controls",
+      "A documented information structure that does not collapse under change",
+      "An internal audit programme and a management review agenda",
+      "An Arysec Academy certificate on passing the written and applied assessment"
+    ]
+  },
+  "modules": {
+    "heading": "Course Modules",
+    "items": [
+      {
+        "title": "Scope, Context and Interested Parties",
+        "description": "Clauses 4 and 5. Drawing a boundary that is honest, auditable and small enough to certify, and handling the interfaces and dependencies an auditor will probe."
+      },
+      {
+        "title": "Risk Assessment and Treatment",
+        "description": "Clause 6. Building a method that produces comparable results across assessors, choosing scales that mean something, and writing treatment plans with owners and dates rather than aspirations."
+      },
+      {
+        "title": "Annex A 2022 in Practice",
+        "description": "All 93 controls across the four themes, with focused time on the eleven new ones — threat intelligence, cloud services, ICT readiness, data masking, monitoring, secure coding and the rest."
+      },
+      {
+        "title": "The Statement of Applicability",
+        "description": "Justifying inclusion and exclusion, linking controls to risks, and keeping the SoA in step with reality as controls change during implementation."
+      },
+      {
+        "title": "Operating the ISMS",
+        "description": "Clauses 7 to 10: competence, awareness, documented information, monitoring, internal audit, management review, nonconformity and corrective action as a working cycle rather than a paperwork exercise."
+      },
+      {
+        "title": "Certification and Surveillance",
+        "description": "What Stage 1 and Stage 2 audits actually examine, how findings are graded, what a major nonconformity costs you, and how to prepare for surveillance without an annual panic."
+      }
+    ]
+  },
+  "delivery": [
+    {
+      "title": "Pre-Course Review",
+      "description": "We ask for whatever governance material exists so the applied exercises use your real context. Organisations starting from nothing work through a supplied case study instead."
+    },
+    {
+      "title": "Four Taught Days",
+      "description": "Roughly half instruction and half applied work, in cohorts of up to 20 so exercises can be reviewed individually. Split across two weeks if release time is tight."
+    },
+    {
+      "title": "Assessment",
+      "description": "A written paper on the standard plus an applied submission — a scope statement, risk assessment extract and SoA rationale — marked against a published rubric."
+    },
+    {
+      "title": "Post-Course Support",
+      "description": "Thirty days of email access to the instructor for questions that surface once implementation starts, which is when the real ones appear."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "An Implementation That Starts Immediately",
+      "description": "Delegates go back with drafted artefacts rather than notes, which usually removes the first two months of an implementation."
+    },
+    {
+      "title": "Fewer Findings at Stage 2",
+      "description": "The nonconformities that delay certification cluster around scope, risk method and SoA justification. Those get the most time here for exactly that reason."
+    },
+    {
+      "title": "Internal Capability Instead of Dependency",
+      "description": "An organisation with two trained implementers can maintain its own ISMS between surveillance visits rather than buying consultancy every quarter."
+    },
+    {
+      "title": "A Common Vocabulary",
+      "description": "When IT, legal and operations have all sat the same course, arguments about what the standard requires get much shorter."
+    }
+  ],
+  "whoItsFor": [
+    "Security, IT and compliance staff about to start an ISO 27001 implementation",
+    "Consultants and internal teams supporting certification for the first time",
+    "Organisations transitioning an existing ISMS from the 2013 to the 2022 structure",
+    "Founders and operations leads who will own the ISMS in a smaller company"
+  ],
+  "faqs": [
+    {
+      "question": "Is this an accredited certification?",
+      "answer": "The certificate is issued by Arysec Academy and records the assessment you passed and its scope. It is not issued under an accredited personnel certification scheme, and we will not imply otherwise. Delegates wanting an accredited credential typically sit this course for the practical grounding and then take a scheme exam separately."
+    },
+    {
+      "question": "We are already certified to the 2013 version. Is this relevant?",
+      "answer": "Yes, and the transition is covered directly. The control set is restructured into four themes, eleven controls are new, and the SoA and risk treatment plan both need rework. The course covers what genuinely changed and what only looks like it changed."
+    },
+    {
+      "question": "Do we need this if we are hiring a consultant anyway?",
+      "answer": "It usually pays for itself. The failure mode of consultant-led certification is an ISMS nobody internally understands, which decays the moment the engagement ends. Having your own people able to read the standard makes the consultancy shorter and the result durable."
+    },
+    {
+      "question": "How much preparation is expected?",
+      "answer": "Around two hours of pre-reading, sent a week ahead. If you want the applied work done against your own organisation, someone needs to gather existing policies, an asset list and any prior audit reports before day one."
+    }
+  ],
+  "related": [
+    "iso-27001-internal-auditor",
+    "dpdp-privacy-essentials",
+    "board-and-leadership"
+  ]
+}

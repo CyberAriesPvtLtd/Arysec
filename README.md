@@ -3,10 +3,14 @@
 Corporate website and enquiry backend for **Arysec Technologies LLP**, an IT and information security
 firm headquartered in Mumbai, serving clients across India and international markets.
 
-- **34 pages** — home, 15 service detail pages, solutions, industries, case studies, insights index
-  plus 6 articles, resources, careers, contact, 4 legal documents, and a 404 page
+Two sites are generated from one codebase:
+
+- **www.arysec.in — 36 pages** — home, 15 service detail pages, solutions, industries, case studies,
+  insights index plus 6 articles, resources, careers, contact, 4 legal documents, and a 404 page
+- **academy.arysec.in — 15 pages** — Arysec Academy: home, programmes hub, 9 training programmes,
+  certification, corporate delivery, enquiry, and a 404 page
 - **Static output** — every page is pre-rendered HTML with no client-side framework
-- **Node backend** — handles enquiry, resource-request, careers, and newsletter submissions
+- **Node backend** — handles enquiry, academy, resource-request, careers, and newsletter submissions
 
 ---
 
@@ -25,7 +29,8 @@ Other commands:
 | `npm run build` | Generate `public/` from `build/` |
 | `npm run serve` | Start the server without rebuilding |
 | `npm run dev` | Build and start in development mode (relaxed origin checks, stack traces in logs) |
-| `npm run check` | Build, then verify links, anchors, metadata and CSP hygiene |
+| `npm run check` | Build, then verify links, anchors, metadata and CSP hygiene on both sites |
+| `npm run brand` | Regenerate the logo assets from `build/lib/brand.js` |
 | `npm test` | Run the backend test suite |
 | `npm run submissions` | Read form submissions from the database (see below) |
 
@@ -35,28 +40,48 @@ Other commands:
 
 ```
 build/                     Site generator — the source of truth
-├── config.js              Company details, navigation, service registry, footer
-├── build.js               Loads data, validates it, renders every page into public/
+├── config.js              Main site: company details, navigation, service registry, footer
+├── config.academy.js      Academy site: domain, navigation, programme registry, footer
+├── build.js               Loads data, validates it, renders both sites into public/
 ├── data/
 │   ├── CONTENT-SPEC.md    Authoring rules for all page content
 │   ├── company.js         Values, stats, process, engagement models, general FAQs
 │   ├── services/*.json    One file per service page (15)
-│   └── content/*.json     Legal docs, industries, case studies, careers, articles
+│   ├── content/*.json     Legal docs, industries, case studies, careers, articles
+│   └── academy/
+│       ├── programmes/*.json  One file per training programme (9)
+│       └── content/*.json     Academy home, certification, corporate delivery
 ├── lib/
+│   ├── brand.js           Logo geometry — mark, wordmark and lockups
 │   ├── html.js            HTML escaping and render helpers
 │   ├── icons.js           Inline SVG icon set
 │   └── validate.js        Schema validation for all content data
 ├── templates/
 │   ├── layout.js          Page shell: head, nav, footer, JSON-LD, cookie banner
 │   ├── components.js      Reusable blocks (hero, cards, FAQ, CTA, breadcrumbs…)
-│   └── pages/*.js         One module per page type
-└── static/                CSS, JS and assets copied verbatim into public/
+│   ├── pages/*.js         One module per main-site page type
+│   └── academy/*.js       One module per academy page type
+├── static/                CSS, JS and assets copied into both sites
+└── static-academy/        Academy-only asset overrides (its own social card)
 
 public/                    Generated output — do not edit by hand
+└── academy/               The academy build, served at academy.arysec.in
 server/                    Express backend
-scripts/                   check-links.js, export-submissions.js
+scripts/                   check-links.js, build-brand-assets.js, export-submissions.js
 tests/                     Backend test suite
 ```
+
+### Two sites, one build
+
+The academy is a separate site, not a section: its own domain, navigation,
+sitemap, robots.txt and canonical URLs. It is emitted into `public/academy/` so a
+single deployment can serve both hosts, and the server maps the subdomain onto
+that directory by `Host` header. `/academy/...` on the main domain is redirected
+to the subdomain, so no page is ever reachable at two addresses.
+
+Both sites render through the same `layout.js`, so anything the layout reads —
+`company`, `nav`, `footerColumns`, `legalLinks`, `brand`, `organisation`,
+`catalogue`, `ogImageAlt` — must exist in both config files.
 
 **Content never reaches HTML unescaped.** Data files are authored as plain text; every value passes
 through `esc()` at render time, and `build/lib/validate.js` rejects any content containing HTML tags,
@@ -70,6 +95,10 @@ markdown syntax, or HTML entities before a page is generated.
 - **Adding a service** — add a JSON file to `build/data/services/`, register it in the `services`
   array in `build/config.js`, and pick an icon from `build/lib/icons.js`. The nav, services hub,
   sitemap, and contact-form dropdown all update automatically.
+- **Adding a training programme** — the same, with `build/data/academy/programmes/` and the
+  `programmes` array in `build/config.academy.js`.
+- **The logo** — geometry lives in `build/lib/brand.js`. Edit it there and run `npm run brand`;
+  the static SVGs, the favicon, the app icon and both social cards regenerate from it.
 
 The build fails loudly on malformed content — a missing key, a wrong array length, or an unknown
 related-service slug is a build error, not a broken page.
@@ -78,11 +107,12 @@ related-service slug is a build error, not a broken page.
 
 ## Backend
 
-Four endpoints, all `POST`, all rate-limited:
+Five submission endpoints, all `POST`, all rate-limited:
 
 | Endpoint | Purpose |
 | --- | --- |
 | `/api/contact` | Contact page enquiry form |
+| `/api/academy-enquiry` | Academy training enquiry form |
 | `/api/resource-request` | Resource download requests |
 | `/api/careers` | Job applications (multipart, optional CV upload) |
 | `/api/newsletter` | Newsletter subscription |
@@ -101,7 +131,8 @@ The backend is written to the standard a security firm should hold itself to:
 - **Email header injection** — every value used in a mail header has CR/LF stripped first.
 - **SQL injection** — all queries are prepared statements; no SQL is built from request data.
 - **Path traversal** — the clean-URL handler resolves the candidate path and confirms it is inside
-  `public/` before any filesystem read.
+  the served root before any filesystem read. Each host has its own root, so neither site's files
+  are reachable on the other's domain.
 - **File uploads** — allow-list of PDF/DOC/DOCX by MIME type, 5 MB cap, extension taken from the
   allow-list rather than user input, random filename, magic-byte verification after write, stored
   outside the served directory.

@@ -16,6 +16,7 @@ const fs = require('fs');
 const path = require('path');
 
 const config = require('./config');
+const academyConfig = require('./config.academy');
 const { layout } = require('./templates/layout');
 const { hasIcon } = require('./lib/icons');
 const V = require('./lib/validate');
@@ -34,10 +35,29 @@ const contactPage = require('./templates/pages/contact');
 const legalPage = require('./templates/pages/legal');
 const notFoundPage = require('./templates/pages/notFound');
 
+const academyHome = require('./templates/academy/home');
+const academyProgrammesHub = require('./templates/academy/programmesHub');
+const academyProgramme = require('./templates/academy/programme');
+const academyCertification = require('./templates/academy/certification');
+const academyForOrganisations = require('./templates/academy/forOrganisations');
+const academyContact = require('./templates/academy/contact');
+const academyNotFound = require('./templates/academy/notFound');
+
 const ROOT = path.join(__dirname, '..');
 const DATA = path.join(__dirname, 'data');
 const SRC_STATIC = path.join(__dirname, 'static');
 const OUT = path.join(ROOT, 'public');
+
+/**
+ * The academy is a separate site on academy.arysec.in. It is emitted inside the
+ * main output so a single deployment can serve both, with the server mapping the
+ * subdomain onto this directory by Host header — see server/app.js. Requests for
+ * /academy/ on the main domain are redirected to the subdomain, so no page is
+ * ever reachable at two addresses.
+ */
+const ACADEMY_DIR = 'academy';
+const ACADEMY_OUT = path.join(OUT, ACADEMY_DIR);
+const SRC_STATIC_ACADEMY = path.join(__dirname, 'static-academy');
 
 const LEGAL_DOCS = ['privacy-policy', 'terms-of-service', 'cookie-policy', 'responsible-disclosure'];
 
@@ -117,19 +137,81 @@ function loadData() {
   return { config, services, content };
 }
 
+/** Load and validate the academy's programmes and page content. */
+function loadAcademyData() {
+  const errors = [];
+  const missing = [];
+  const programmes = {};
+  const content = {};
+  const validSlugs = academyConfig.programmes.map((p) => p.slug);
+
+  academyConfig.programmes.forEach((entry) => {
+    const file = path.join(DATA, 'academy', 'programmes', `${entry.slug}.json`);
+    if (!fs.existsSync(file)) {
+      missing.push(path.relative(ROOT, file));
+      return;
+    }
+    const data = readJson(file);
+    errors.push(...V.validateProgramme(data, `academy/programmes/${entry.slug}.json`, validSlugs));
+    if (data.category !== entry.category) {
+      errors.push(
+        `academy/programmes/${entry.slug}.json: category "${data.category}" does not match the registry value "${entry.category}"`
+      );
+    }
+    if (data.slug !== entry.slug) {
+      errors.push(`academy/programmes/${entry.slug}.json: slug field "${data.slug}" does not match the filename`);
+    }
+    if (!hasIcon(entry.icon)) {
+      errors.push(`config.academy.js: programme "${entry.slug}" uses unknown icon "${entry.icon}"`);
+    }
+    programmes[entry.slug] = data;
+  });
+
+  const contentFiles = [
+    { key: 'home', validate: V.validateAcademyHome },
+    { key: 'certification', validate: (d, f) => V.validateAcademyPage(d, f, ['process', 'included', 'honesty']) },
+    {
+      key: 'for-organisations',
+      validate: (d, f) => V.validateAcademyPage(d, f, ['formats', 'tailoring', 'reporting', 'commercials']),
+    },
+  ];
+
+  contentFiles.forEach(({ key, validate }) => {
+    const file = path.join(DATA, 'academy', 'content', `${key}.json`);
+    if (!fs.existsSync(file)) {
+      missing.push(path.relative(ROOT, file));
+      return;
+    }
+    const data = readJson(file);
+    errors.push(...validate(data, `academy/content/${key}.json`));
+    content[key] = data;
+  });
+
+  if (missing.length) {
+    throw new Error(`Missing ${missing.length} academy content file(s):\n  ` + missing.join('\n  '));
+  }
+  if (errors.length) {
+    throw new Error(
+      `Academy content validation failed with ${errors.length} error(s):\n  ` + errors.join('\n  ')
+    );
+  }
+
+  return { config: academyConfig, programmes, content };
+}
+
 // ---------------------------------------------------------------------------
 // Output helpers
 // ---------------------------------------------------------------------------
 
-/** Map a site path to its file on disk: '/about/' -> public/about/index.html */
-function outputFileFor(pagePath) {
-  if (pagePath === '/') return path.join(OUT, 'index.html');
-  if (pagePath.endsWith('.html')) return path.join(OUT, pagePath.replace(/^\//, ''));
-  return path.join(OUT, pagePath.replace(/^\//, '').replace(/\/$/, ''), 'index.html');
+/** Map a site path to its file on disk: '/about/' -> <root>/about/index.html */
+function outputFileFor(root, pagePath) {
+  if (pagePath === '/') return path.join(root, 'index.html');
+  if (pagePath.endsWith('.html')) return path.join(root, pagePath.replace(/^\//, ''));
+  return path.join(root, pagePath.replace(/^\//, '').replace(/\/$/, ''), 'index.html');
 }
 
-function writePage(ctx, page) {
-  const file = outputFileFor(page.path);
+function writePage(root, ctx, page) {
+  const file = outputFileFor(root, page.path);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, layout(ctx, page), 'utf8');
   return file;
@@ -160,17 +242,8 @@ function rimraf(dir) {
 // Non-HTML output
 // ---------------------------------------------------------------------------
 
-function writeSitemap(pages) {
-  const domain = config.company.domain;
-  // Home and the primary conversion pages rank above deep content.
-  const priorityFor = (p) => {
-    if (p === '/') return '1.0';
-    if (['/services/', '/solutions/', '/contact/'].includes(p)) return '0.9';
-    if (p.startsWith('/services/')) return '0.8';
-    if (['/about/', '/industries/', '/case-studies/'].includes(p)) return '0.7';
-    if (p.startsWith('/insights/')) return '0.6';
-    return '0.4';
-  };
+function writeSitemap(root, siteConfig, pages, priorityFor) {
+  const domain = siteConfig.company.domain;
 
   const urls = pages
     .filter((p) => !p.noindex && !p.path.endsWith('.html'))
@@ -183,20 +256,38 @@ function writeSitemap(pages) {
     .join('\n');
 
   fs.writeFileSync(
-    path.join(OUT, 'sitemap.xml'),
+    path.join(root, 'sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`,
     'utf8'
   );
 }
 
-function writeRobots() {
-  const domain = config.company.domain;
+/** Home and the primary conversion pages rank above deep content. */
+function mainPriority(p) {
+  if (p === '/') return '1.0';
+  if (['/services/', '/solutions/', '/contact/'].includes(p)) return '0.9';
+  if (p.startsWith('/services/')) return '0.8';
+  if (['/about/', '/industries/', '/case-studies/'].includes(p)) return '0.7';
+  if (p.startsWith('/insights/')) return '0.6';
+  return '0.4';
+}
+
+function academyPriority(p) {
+  if (p === '/') return '1.0';
+  if (['/programmes/', '/contact/'].includes(p)) return '0.9';
+  if (p.startsWith('/programmes/')) return '0.8';
+  return '0.7';
+}
+
+function writeRobots(root, siteConfig, extraDisallow) {
+  const domain = siteConfig.company.domain;
   fs.writeFileSync(
-    path.join(OUT, 'robots.txt'),
+    path.join(root, 'robots.txt'),
     [
       'User-agent: *',
       'Allow: /',
       'Disallow: /api/',
+      ...(extraDisallow || []).map((d) => `Disallow: ${d}`),
       '',
       `Sitemap: ${domain}/sitemap.xml`,
       '',
@@ -205,14 +296,14 @@ function writeRobots() {
   );
 }
 
-function writeManifest() {
+function writeManifest(root, siteConfig) {
   fs.writeFileSync(
-    path.join(OUT, 'site.webmanifest'),
+    path.join(root, 'site.webmanifest'),
     JSON.stringify(
       {
-        name: config.company.name,
-        short_name: config.company.shortName,
-        description: 'IT and information security services',
+        name: siteConfig.company.name,
+        short_name: siteConfig.company.shortName,
+        description: siteConfig.organisation.description,
         start_url: '/',
         display: 'standalone',
         background_color: '#12100e',
@@ -250,6 +341,7 @@ function writeSecurityTxt() {
 function build() {
   const started = Date.now();
   const ctx = loadData();
+  const academyCtx = loadAcademyData();
 
   rimraf(OUT);
   fs.mkdirSync(OUT, { recursive: true });
@@ -271,26 +363,57 @@ function build() {
     notFoundPage(ctx),
   ];
 
-  // Duplicate paths would silently overwrite each other.
-  const seen = new Set();
-  pages.forEach((p) => {
-    if (seen.has(p.path)) throw new Error(`Duplicate page path: ${p.path}`);
-    seen.add(p.path);
-  });
+  const academyPages = [
+    academyHome(academyCtx),
+    academyProgrammesHub(academyCtx),
+    ...academyConfig.programmes.map((entry) => academyProgramme(academyCtx, entry)),
+    academyCertification(academyCtx),
+    academyForOrganisations(academyCtx),
+    academyContact(academyCtx),
+    academyNotFound(academyCtx),
+  ];
 
-  pages.forEach((p) => writePage(ctx, p));
+  assertUniquePaths(pages, 'main');
+  assertUniquePaths(academyPages, 'academy');
+
+  pages.forEach((p) => writePage(OUT, ctx, p));
 
   const assetCount = copyDir(SRC_STATIC, OUT);
-  writeSitemap(pages);
-  writeRobots();
-  writeManifest();
+  writeSitemap(OUT, config, pages, mainPriority);
+  // The academy lives under /academy/ so one deployment can serve both hosts.
+  // Crawlers reaching it on the main domain are turned away here; visitors are
+  // redirected to the subdomain by the server.
+  writeRobots(OUT, config, ['/' + ACADEMY_DIR + '/']);
+  writeManifest(OUT, config);
   writeSecurityTxt();
+
+  // Academy output. Its pages use root-relative links because they are served
+  // from the root of academy.arysec.in, so it needs its own copy of the static
+  // assets rather than reaching up into the parent site's.
+  fs.mkdirSync(ACADEMY_OUT, { recursive: true });
+  academyPages.forEach((p) => writePage(ACADEMY_OUT, academyCtx, p));
+  const academyAssets =
+    copyDir(SRC_STATIC, ACADEMY_OUT) + copyDir(SRC_STATIC_ACADEMY, ACADEMY_OUT);
+  writeSitemap(ACADEMY_OUT, academyConfig, academyPages, academyPriority);
+  writeRobots(ACADEMY_OUT, academyConfig);
+  writeManifest(ACADEMY_OUT, academyConfig);
 
   const ms = Date.now() - started;
   process.stdout.write(
-    `Built ${pages.length} pages and copied ${assetCount} static files to public/ in ${ms}ms\n`
+    `Built ${pages.length} pages and copied ${assetCount} static files to public/\n` +
+      `Built ${academyPages.length} academy pages and copied ${academyAssets} static files to public/${ACADEMY_DIR}/\n` +
+      `Done in ${ms}ms\n`
   );
-  return pages;
+  return { pages, academyPages };
+}
+
+/** Duplicate paths would silently overwrite each other. */
+function assertUniquePaths(pages, label) {
+  const seen = new Set();
+  pages.forEach((p) => {
+    if (seen.has(p.path)) throw new Error(`Duplicate ${label} page path: ${p.path}`);
+    seen.add(p.path);
+  });
 }
 
 if (require.main === module) {

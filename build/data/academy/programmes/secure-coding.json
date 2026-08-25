@@ -1,0 +1,143 @@
+{
+  "slug": "secure-coding",
+  "name": "Secure Coding for Developers",
+  "shortName": "Secure Coding",
+  "category": "Technical Skills",
+  "format": "Hands-on labs, live online or on-site",
+  "duration": "2 days, language-specific",
+  "level": "Working developers — no security background needed",
+  "metaTitle": "Secure Coding Training for Developers",
+  "metaDescription": "Two-day hands-on secure coding training in your language and framework. Exploit deliberately vulnerable code, fix it, then write the regression test that keeps it fixed.",
+  "cardSummary": "Developers exploit real vulnerabilities in your language, then fix them and write the test that keeps them fixed.",
+  "heroHeadline": "Break It, Fix It, Then Write the Test",
+  "heroSub": "Secure coding sticks when a developer has personally exploited the bug. Two days of labs in your own language and framework, working through the vulnerability classes that actually reach production, ending with fixes and regression tests.",
+  "highlights": [
+    {
+      "value": "70% labs",
+      "label": "Hands-on keyboard, not slides"
+    },
+    {
+      "value": "Your stack",
+      "label": "Java, .NET, Python, Node, Go or PHP"
+    },
+    {
+      "value": "OWASP",
+      "label": "Top 10 plus the API Security Top 10"
+    }
+  ],
+  "intro": {
+    "heading": "A Vulnerability You Have Exploited Is One You Stop Writing",
+    "paragraphs": [
+      "Developers already know SQL injection is bad. What they usually have not done is take a parameterless query, extract a table, and then see how the ORM they use every day quietly reintroduces the same hole when someone builds a dynamic filter. Ten minutes of that changes code review habits more than an hour of guidance.",
+      "Every lab runs in the language and framework your team actually ships. A Spring Boot team works in Spring Boot; a Django team works in Django. The vulnerability classes are the same, but the idioms, the safe APIs and the traps differ, and the traps are the point.",
+      "Each lab has three stages: exploit it, fix it, and write the test that fails on the vulnerable version. That last stage is what turns a training day into something your pipeline keeps enforcing after everyone has gone back to their sprint."
+    ]
+  },
+  "outcomes": {
+    "heading": "What Your Engineering Team Gains",
+    "intro": "The measurable outcome is fewer findings of the same class in the next penetration test, and shorter remediation cycles when findings do appear.",
+    "items": [
+      "Working knowledge of the OWASP Top 10 in your own framework's idioms",
+      "A secure code review checklist tuned to your stack",
+      "Regression tests for each vulnerability class, ready to drop into CI",
+      "Threat modelling light enough to run in a sprint planning session",
+      "Dependency and supply chain hygiene, including lockfiles and provenance",
+      "Secrets handling patterns that survive contact with a real deployment",
+      "An Arysec Academy certificate on completing the assessed lab"
+    ]
+  },
+  "modules": {
+    "heading": "Lab Modules",
+    "items": [
+      {
+        "title": "Injection, Old and New",
+        "description": "SQL, NoSQL, command and template injection. Where ORMs help, where they stop helping, and why string concatenation keeps coming back through dynamic filters and search."
+      },
+      {
+        "title": "Authentication and Session Handling",
+        "description": "Token lifetimes, refresh flows, session fixation, password storage, and the MFA bypasses that come from resets and account recovery rather than from the login form."
+      },
+      {
+        "title": "Access Control",
+        "description": "Broken object-level authorisation — the most common serious API finding by a distance. Enforcing at the data layer instead of the route, and testing for it automatically."
+      },
+      {
+        "title": "API and Integration Risks",
+        "description": "Mass assignment, excessive data exposure, rate limiting, server-side request forgery, and webhook endpoints that trust whatever posts to them."
+      },
+      {
+        "title": "Dependencies and Supply Chain",
+        "description": "Reading advisories without drowning, transitive risk, lockfile discipline, build provenance, and deciding when a CVE actually matters for your usage."
+      },
+      {
+        "title": "Secrets, Config and Deployment",
+        "description": "Keys in repositories and images, environment handling, rotation that does not require downtime, and the logging that quietly writes tokens to disk."
+      }
+    ]
+  },
+  "delivery": [
+    {
+      "title": "Stack Confirmation",
+      "description": "We confirm language, framework and deployment model, and where possible take an anonymised sample of your own code patterns to build labs around."
+    },
+    {
+      "title": "Environment Setup",
+      "description": "Lab environments are provisioned ahead of time and tested. Delegates need a browser and an editor; nothing has to be installed on a locked-down laptop."
+    },
+    {
+      "title": "Two Lab Days",
+      "description": "Short framing, then hands-on work, in cohorts of up to 16 so an instructor can look over a shoulder when someone gets stuck."
+    },
+    {
+      "title": "Take-Home Artefacts",
+      "description": "The review checklist, the regression tests and the lab environment stay available for 30 days so the material can be shared with the wider team."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Cheaper Penetration Tests",
+      "description": "A report full of injection and access control findings costs the same to produce as a clean one, but the remediation cycle is where the money and the delay go."
+    },
+    {
+      "title": "Faster Security Review",
+      "description": "Teams that know what reviewers look for stop submitting pull requests that will bounce, which shortens the loop for everyone."
+    },
+    {
+      "title": "Tests That Outlive the Training",
+      "description": "Regression tests in CI keep enforcing the lesson long after the room has emptied and the team has changed."
+    },
+    {
+      "title": "Evidence for Annex A 8.28",
+      "description": "ISO 27001's secure coding control expects developer competence and defined practices. Attendance records and a published checklist answer it directly."
+    }
+  ],
+  "whoItsFor": [
+    "Product engineering teams shipping customer-facing applications or APIs",
+    "Teams whose last penetration test found the same classes of issue again",
+    "Organisations implementing ISO 27001 Annex A 8.28 or a secure SDLC",
+    "Engineers moving into a security champion role inside their team"
+  ],
+  "faqs": [
+    {
+      "question": "Which languages and frameworks do you cover?",
+      "answer": "Java with Spring, .NET, Python with Django or FastAPI, Node with Express or NestJS, Go, and PHP with Laravel. Mixed-stack teams are usually best split into two cohorts — a single session spread across four languages ends up shallow in all of them."
+    },
+    {
+      "question": "Our developers have no security background. Is that a problem?",
+      "answer": "No, and that is the intended audience. The course assumes you can read and write code in the target language and nothing more. Concepts are introduced through the labs rather than through a security theory session."
+    },
+    {
+      "question": "Can you use our own codebase in the labs?",
+      "answer": "Yes, under NDA, and it makes the training noticeably more effective. We usually take a representative module and build two or three labs around its actual patterns, keeping the rest on our own deliberately vulnerable application."
+    },
+    {
+      "question": "Do you cover AI-assisted coding?",
+      "answer": "It is woven through rather than treated separately. Generated code reproduces the vulnerability patterns in its training data, so the labs include reviewing assistant-written code — which is now where a lot of injection and access control bugs actually enter."
+    }
+  ],
+  "related": [
+    "cloud-security-essentials",
+    "security-awareness",
+    "incident-response-tabletop"
+  ]
+}

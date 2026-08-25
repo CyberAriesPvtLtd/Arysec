@@ -1,0 +1,143 @@
+{
+  "slug": "security-awareness",
+  "name": "Security Awareness Training",
+  "shortName": "Security Awareness",
+  "category": "Workforce Awareness",
+  "format": "Live online or on-site, plus self-paced modules",
+  "duration": "90 minutes onboarding, then quarterly 30-minute refreshers",
+  "level": "Everyone on the payroll",
+  "metaTitle": "Security Awareness Training for Employees",
+  "metaDescription": "Security awareness training built around the attacks your staff actually meet: business email compromise, invoice fraud and MFA fatigue. Live, self-paced, and measured.",
+  "cardSummary": "Behaviour-first awareness training for every employee, with role-specific tracks for finance, HR and support teams.",
+  "heroHeadline": "Training That Changes What People Do at 4pm on a Friday",
+  "heroSub": "Most awareness training is watched, passed and forgotten. Ours is built around the attacks your staff actually receive, uses your own systems and vocabulary in the examples, and is measured against reporting behaviour rather than quiz scores.",
+  "highlights": [
+    {
+      "value": "90 min",
+      "label": "Core session, no all-day workshop"
+    },
+    {
+      "value": "Quarterly",
+      "label": "Short refreshers keep the habit alive"
+    },
+    {
+      "value": "Role-based",
+      "label": "Finance, HR and support get their own tracks"
+    }
+  ],
+  "intro": {
+    "heading": "Awareness Is a Habit, Not a Course",
+    "paragraphs": [
+      "A single annual session does almost nothing. People forget within weeks, and the one attack that matters arrives in the eleventh month. We run a short, concrete onboarding session and then keep the topic alive with 30-minute refreshers tied to what is actually being seen in your inbox and in your sector.",
+      "The content uses your environment. If you run Microsoft 365, the screenshots are Microsoft 365. If your finance team approves payments in a specific tool, the invoice fraud scenario runs through that tool. Generic stock examples are the reason people tune out.",
+      "We measure the thing that matters: whether people report. A workforce that reports a suspicious message in four minutes is worth far more than one that scores 95% on a multiple-choice quiz, and it is the number your incident response process actually depends on."
+    ]
+  },
+  "outcomes": {
+    "heading": "What Your Organisation Ends Up With",
+    "intro": "Awareness training is usually asked about in security questionnaires, insurance renewals and ISO 27001 audits. These are the artefacts that answer those questions.",
+    "items": [
+      "Attendance and completion records per employee, exportable for audit",
+      "A documented annual training plan mapped to ISO 27001 Annex A 6.3",
+      "Role-specific modules for finance, HR, support and engineering",
+      "A short, published reporting procedure staff can follow without thinking",
+      "Baseline and follow-up reporting rates, so change is visible",
+      "Onboarding material new joiners can complete in their first week",
+      "A manager briefing so team leads reinforce the same message"
+    ]
+  },
+  "modules": {
+    "heading": "What the Sessions Cover",
+    "items": [
+      {
+        "title": "Business Email Compromise",
+        "description": "How a supplier payment gets redirected: the compromised mailbox, the quiet mailbox rule, the invoice with one digit changed, and the urgency that stops anyone picking up the phone."
+      },
+      {
+        "title": "Phishing and Pretexting",
+        "description": "Reading a message the way an attacker wrote it. Display-name spoofing, lookalike domains, credential harvesting pages, and the tells that survive when the grammar is perfect."
+      },
+      {
+        "title": "MFA Fatigue and Session Theft",
+        "description": "Why approving a push notification you did not trigger hands over the account, how token theft bypasses MFA entirely, and what to do the moment an unexpected prompt appears."
+      },
+      {
+        "title": "Handling Data Day to Day",
+        "description": "Where customer data is allowed to live, what leaves the building in a spreadsheet, personal cloud storage and messaging apps, and the DPDP obligations that sit behind those rules."
+      },
+      {
+        "title": "Devices, Networks and Working Away",
+        "description": "Screen locking, public Wi-Fi, personal devices touching work accounts, and what to do when a laptop or phone goes missing on a Sunday."
+      },
+      {
+        "title": "Reporting Without Hesitation",
+        "description": "The single most valuable behaviour: how to report, to whom, and the explicit assurance that reporting a false alarm is always the right call and never held against anyone."
+      }
+    ]
+  },
+  "delivery": [
+    {
+      "title": "Scope and Tailor",
+      "description": "We look at your sector, your stack and any recent incidents or near-misses, and rewrite the examples so the session speaks about your organisation rather than a generic one."
+    },
+    {
+      "title": "Baseline",
+      "description": "An optional unannounced phishing simulation before training gives an honest starting point. Without it, improvement is a claim rather than a measurement."
+    },
+    {
+      "title": "Deliver",
+      "description": "Live sessions on-site or online in groups of up to 40, so questions get asked. Self-paced modules cover shift workers, field staff and anyone who missed the live date."
+    },
+    {
+      "title": "Reinforce and Report",
+      "description": "Quarterly refreshers, ongoing simulations, and a management report showing reporting rates, completion and the topics that still need attention."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Fewer Successful Attacks",
+      "description": "The controls that stop business email compromise are mostly human: a phone call to a known number before changing bank details, and a colleague who reports rather than deletes."
+    },
+    {
+      "title": "Faster Incident Detection",
+      "description": "Most breaches are noticed first by an employee. Cutting the time between a suspicious message arriving and someone raising it is the cheapest detection improvement available."
+    },
+    {
+      "title": "Evidence for Auditors and Insurers",
+      "description": "ISO 27001, SOC 2, DPDP readiness and cyber insurance renewals all ask for documented, recurring awareness training with records. You will have them."
+    },
+    {
+      "title": "A Culture People Do Not Resent",
+      "description": "Training that respects people's time and treats them as colleagues rather than the weakest link earns attention. Blame-based programmes teach staff to hide mistakes."
+    }
+  ],
+  "whoItsFor": [
+    "Organisations preparing for ISO 27001, SOC 2 or a DPDP readiness review",
+    "Businesses that have had a near-miss with invoice or payroll fraud",
+    "Fast-growing teams onboarding staff faster than culture spreads",
+    "Anyone whose insurer or enterprise customers now ask for training records"
+  ],
+  "faqs": [
+    {
+      "question": "How is this different from the e-learning platform we already pay for?",
+      "answer": "Most platforms give you a content library and a completion percentage. The gap is relevance and reinforcement: generic modules about a bank you do not use, watched at 2x speed, with no measurement of behaviour. We keep whatever platform you have for delivery and records, and replace the content and the measurement with something tied to your environment."
+    },
+    {
+      "question": "Our staff are not technical. Will they follow it?",
+      "answer": "The session assumes no technical background and uses no jargon that is not explained. It is built for finance, HR, sales and operations teams first; engineers get a separate, deeper track. If a session needs a security background to follow, it has failed."
+    },
+    {
+      "question": "Can you run it in languages other than English?",
+      "answer": "Live sessions are delivered in English and Hindi, and we have run Marathi sessions for operations and facilities teams. Self-paced material is English with the option to caption. Tell us the mix and we will confirm what we can cover."
+    },
+    {
+      "question": "How long before we see a difference?",
+      "answer": "Reporting rates move first, usually within a quarter, because the barrier to reporting drops immediately. Click rates on simulations typically fall over two to three cycles. Anyone promising a single-session transformation is selling attendance, not behaviour."
+    }
+  ],
+  "related": [
+    "phishing-drills",
+    "dpdp-privacy-essentials",
+    "incident-response-tabletop"
+  ]
+}

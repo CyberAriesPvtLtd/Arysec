@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /academy/
 
 Sitemap: https://www.arysec.in/sitemap.xml

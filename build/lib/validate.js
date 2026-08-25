@@ -112,6 +112,119 @@ function validateService(data, file, validSlugs) {
   return errors;
 }
 
+/** Validate one academy programme file. */
+function validateProgramme(data, file, validSlugs) {
+  const errors = [];
+
+  requireKeys(
+    data,
+    [
+      'slug', 'name', 'shortName', 'category', 'format', 'duration', 'level',
+      'metaTitle', 'metaDescription', 'cardSummary', 'heroHeadline', 'heroSub',
+      'highlights', 'intro', 'outcomes', 'modules', 'delivery', 'benefits',
+      'whoItsFor', 'faqs', 'related',
+    ],
+    file,
+    errors
+  );
+
+  if (data.intro) {
+    requireKeys(data.intro, ['heading', 'paragraphs'], file, errors, 'intro');
+    requireCount(data.intro.paragraphs, 3, 'intro.paragraphs', file, errors);
+  }
+  if (data.outcomes) {
+    requireKeys(data.outcomes, ['heading', 'intro', 'items'], file, errors, 'outcomes');
+    requireCount(data.outcomes.items, 7, 'outcomes.items', file, errors);
+  }
+  if (data.modules) {
+    requireKeys(data.modules, ['heading', 'items'], file, errors, 'modules');
+    requireCount(data.modules.items, 6, 'modules.items', file, errors);
+    (data.modules.items || []).forEach((it, i) =>
+      requireKeys(it, ['title', 'description'], file, errors, `modules.items[${i}]`)
+    );
+  }
+
+  requireCount(data.highlights, 3, 'highlights', file, errors);
+  requireCount(data.delivery, 4, 'delivery', file, errors);
+  requireCount(data.benefits, 4, 'benefits', file, errors);
+  requireCount(data.whoItsFor, 4, 'whoItsFor', file, errors);
+  requireCount(data.faqs, 4, 'faqs', file, errors);
+  requireCount(data.related, 3, 'related', file, errors);
+
+  (data.highlights || []).forEach((h, i) =>
+    requireKeys(h, ['value', 'label'], file, errors, `highlights[${i}]`)
+  );
+  (data.delivery || []).forEach((d, i) =>
+    requireKeys(d, ['title', 'description'], file, errors, `delivery[${i}]`)
+  );
+  (data.benefits || []).forEach((b, i) =>
+    requireKeys(b, ['title', 'description'], file, errors, `benefits[${i}]`)
+  );
+  (data.faqs || []).forEach((f, i) =>
+    requireKeys(f, ['question', 'answer'], file, errors, `faqs[${i}]`)
+  );
+
+  (data.related || []).forEach((slug) => {
+    if (!validSlugs.includes(slug)) errors.push(`${file}: related slug "${slug}" is not a known programme`);
+    if (slug === data.slug) errors.push(`${file}: related must not include its own slug`);
+  });
+
+  if (data.metaDescription && data.metaDescription.length > 175) {
+    errors.push(`${file}: metaDescription is ${data.metaDescription.length} chars (max 175)`);
+  }
+
+  checkText(data, file, errors);
+  return errors;
+}
+
+/** Validate the academy home page content file. */
+function validateAcademyHome(data, file) {
+  const errors = [];
+  requireKeys(data, ['hero', 'stats', 'intro', 'phishing', 'delivery', 'audience', 'why', 'cta'], file, errors);
+  if (data.hero) requireKeys(data.hero, ['eyebrow', 'headline', 'headlineAccent', 'sub'], file, errors, 'hero');
+  if (data.intro) {
+    requireKeys(data.intro, ['eyebrow', 'heading', 'paragraphs', 'points'], file, errors, 'intro');
+    requireCount(data.intro.paragraphs, 3, 'intro.paragraphs', file, errors);
+    requireCount(data.intro.points, 4, 'intro.points', file, errors);
+  }
+  if (data.phishing) requireKeys(data.phishing, ['eyebrow', 'heading', 'paragraphs', 'items'], file, errors, 'phishing');
+  if (data.delivery) {
+    requireKeys(data.delivery, ['eyebrow', 'heading', 'sub', 'steps'], file, errors, 'delivery');
+    requireCount(data.delivery.steps, 4, 'delivery.steps', file, errors);
+  }
+  if (data.why) {
+    requireKeys(data.why, ['eyebrow', 'heading', 'sub', 'items'], file, errors, 'why');
+    requireCount(data.why.items, 6, 'why.items', file, errors);
+  }
+  requireCount(data.stats, 4, 'stats', file, errors);
+  checkText(data, file, errors);
+  return errors;
+}
+
+/** Validate an academy section page (certification, for-organisations). */
+function validateAcademyPage(data, file, extraKeys) {
+  const errors = [];
+  requireKeys(
+    data,
+    ['title', 'heroHeadline', 'heroSub', 'metaTitle', 'metaDescription', 'highlights', 'intro', 'faqs'].concat(
+      extraKeys || []
+    ),
+    file,
+    errors
+  );
+  requireCount(data.highlights, 3, 'highlights', file, errors);
+  if (data.intro) requireKeys(data.intro, ['heading', 'paragraphs'], file, errors, 'intro');
+  if (!Array.isArray(data.faqs) || data.faqs.length < 4) {
+    errors.push(`${file}: "faqs" must have at least 4 entries`);
+  }
+  (data.faqs || []).forEach((f, i) => requireKeys(f, ['question', 'answer'], file, errors, `faqs[${i}]`));
+  if (data.metaDescription && data.metaDescription.length > 175) {
+    errors.push(`${file}: metaDescription is ${data.metaDescription.length} chars (max 175)`);
+  }
+  checkText(data, file, errors);
+  return errors;
+}
+
 /** Validate a document-style content file (legal pages, articles). */
 function validateDocument(data, file, extraKeys) {
   const errors = [];
@@ -208,6 +321,9 @@ function validateArticle(data, file) {
 
 module.exports = {
   validateService,
+  validateProgramme,
+  validateAcademyHome,
+  validateAcademyPage,
   validateDocument,
   validateIndustries,
   validateCaseStudies,

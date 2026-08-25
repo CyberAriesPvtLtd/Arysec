@@ -2,27 +2,40 @@
 
 const { esc, escJson, each, join } = require('../lib/html');
 const { icon } = require('../lib/icons');
+const brand = require('../lib/brand');
 
 const CHEVRON =
   '<svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
   '<path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
 const BRAND_MARK = (idSuffix) => `
-        <svg class="brand-mark" viewBox="5 8 110 97" width="42" height="37" aria-hidden="true" focusable="false">
+        <svg class="brand-mark" viewBox="${brand.MARK.viewBox}" width="42" height="37" aria-hidden="true" focusable="false">
           <defs>
             <linearGradient id="brandGrad${idSuffix}" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#f8430c"/><stop offset="1" stop-color="#fb9218"/>
+              <stop offset="0" stop-color="${brand.GRADIENT.from}"/><stop offset="1" stop-color="${brand.GRADIENT.to}"/>
             </linearGradient>
           </defs>
-          <path d="M69.03 24.57 L104.98 86.62 Q111 97 99 97 L21 97 Q9 97 15.02 86.62 L50.97 24.57 Q60 9 69.03 24.57 Z" fill="none" stroke="url(#brandGrad${idSuffix})" stroke-width="15" stroke-linejoin="round"/>
-          <path d="M87.96 86.5 L59.92 38.59 Q57.9 35.13 55.94 38.62 L40.14 66.84 L20.86 77.46 L24.14 84.54 L47.86 75.16 L58.1 56.87 L75.45 86.5 Z" fill="url(#brandGrad${idSuffix})"/>
+          <path d="${brand.MARK.ring}" fill="none" stroke="url(#brandGrad${idSuffix})" stroke-width="${brand.MARK.ringWidth}" stroke-linejoin="round"/>
+          <path d="${brand.MARK.inner}" fill="url(#brandGrad${idSuffix})"/>
         </svg>`;
 
-/** Wordmark and strapline, matching the logo lockup. */
-const BRAND_TEXT = `
+/**
+ * Wordmark and strapline. The letterforms are drawn rather than set in a
+ * typeface, so the lockup is identical to the supplied logo on every device.
+ * `currentColor` and the accent class let the stylesheet theme both parts.
+ */
+const BRAND_TEXT = (config) => `
         <span class="brand-text">
-          <span class="brand-name">ARYSEC</span>
-          <span class="brand-tagline">Assess<span>.</span> Assure<span>.</span> Advance<span>.</span></span>
+          <span class="brand-wordmark-row">
+            <svg class="brand-wordmark" viewBox="${brand.WORDMARK.viewBox}" width="98" height="18" aria-hidden="true" focusable="false">${brand.wordmarkSvg(
+              { accentClass: 'wm-accent', accent: 'currentColor' }
+            )}</svg>${
+              config.brand && config.brand.sublabel
+                ? `<span class="brand-sub">${esc(config.brand.sublabel)}</span>`
+                : ''
+            }
+          </span>
+          <span class="brand-tagline">${brand.STRAPLINE.map((w) => `${w}<span>.</span>`).join(' ')}</span>
         </span>`;
 
 /** True when `href` is the current page or an ancestor section of it. */
@@ -31,16 +44,18 @@ function isActive(href, path) {
   return path === href || path.startsWith(href);
 }
 
-function renderMegaServices(ctx) {
-  const { serviceCategories, services } = ctx.config;
-  const cols = serviceCategories.map((cat) => {
-    const items = services.filter((s) => s.category === cat.name);
+function renderMegaPanel(ctx) {
+  const cfg = ctx.config;
+  const cat = cfg.catalogue;
+  const items = ctx[cat.dataKey];
+  const cols = cfg.serviceCategories.map((group) => {
+    const inGroup = cfg.services.filter((s) => s.category === group.name);
     return `
           <div class="mega-col">
-            <h4 class="mega-heading">${esc(cat.name)}</h4>
-            ${each(items, (s) => {
-              const data = ctx.services[s.slug];
-              return `<a class="mega-link" href="/services/${esc(s.slug)}/">
+            <h4 class="mega-heading">${esc(group.name)}</h4>
+            ${each(inGroup, (s) => {
+              const data = items[s.slug];
+              return `<a class="mega-link" href="${esc(cat.basePath + s.slug)}/">
               <span class="mega-link-icon">${icon(s.icon)}</span>
               <span class="mega-link-text">
                 <span class="mega-link-title">${esc(data.name)}</span>
@@ -52,13 +67,16 @@ function renderMegaServices(ctx) {
   });
 
   return `
-      <div class="mega-panel" id="mega-services" hidden>
+      <div class="mega-panel" id="${esc(cat.panelId)}" hidden>
         <div class="container mega-inner">
           <div class="mega-cols">${join(cols)}
           </div>
           <div class="mega-footer">
-            <a class="text-link" href="/services/">View all services <span aria-hidden="true">&rarr;</span></a>
-            <a class="text-link" href="/solutions/">Packaged solutions <span aria-hidden="true">&rarr;</span></a>
+            ${each(
+              cat.links,
+              (l) =>
+                `<a class="text-link" href="${esc(l.href)}">${esc(l.label)} <span aria-hidden="true">&rarr;</span></a>`
+            )}
           </div>
         </div>
       </div>`;
@@ -71,8 +89,8 @@ function renderNav(ctx, path) {
 
     if (item.mega) {
       return `<li class="nav-item has-panel has-mega">
-        <button class="nav-link nav-trigger${active}" aria-expanded="false" aria-controls="mega-services" data-href="${esc(item.href)}">${esc(item.label)}${CHEVRON}</button>
-        ${renderMegaServices(ctx)}
+        <button class="nav-link nav-trigger${active}" aria-expanded="false" aria-controls="${esc(ctx.config.catalogue.panelId)}" data-href="${esc(item.href)}">${esc(item.label)}${CHEVRON}</button>
+        ${renderMegaPanel(ctx)}
       </li>`;
     }
 
@@ -98,14 +116,14 @@ function renderHeader(ctx, path) {
   return `
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
-      <a href="/" class="brand" aria-label="${esc(c.name)} — Home">${BRAND_MARK('Nav')}${BRAND_TEXT}
+      <a href="/" class="brand" aria-label="${esc(c.name)} — Home">${BRAND_MARK('Nav')}${BRAND_TEXT(ctx.config)}
       </a>
 
       <nav class="main-nav" id="mainNav" aria-label="Primary">
         <ul class="nav-list">
 ${renderNav(ctx, path)}
         </ul>
-        <a href="/contact/" class="btn btn-primary btn-nav">Get a Consultation</a>
+        <a href="${esc(ctx.config.navCta.href)}" class="btn btn-primary btn-nav">${esc(ctx.config.navCta.label)}</a>
       </nav>
 
       <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
@@ -122,7 +140,7 @@ function renderFooter(ctx) {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="/" class="brand" aria-label="${esc(c.name)} — Home">${BRAND_MARK('Foot')}${BRAND_TEXT}
+          <a href="/" class="brand" aria-label="${esc(c.name)} — Home">${BRAND_MARK('Foot')}${BRAND_TEXT(ctx.config)}
           </a>
           <p class="footer-blurb">${esc(c.tagline)} Headquartered in ${esc(c.city)}, delivering across ${esc(c.country)} and worldwide.</p>
           <div class="footer-contact">
@@ -147,13 +165,14 @@ function renderFooter(ctx) {
 }
 
 function renderCookieBanner(ctx) {
+  const cookiePolicy = ctx.config.company.cookiePolicyHref;
   return `
   <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie preferences" aria-live="polite" hidden>
     <div class="cookie-inner">
       <p>
         We use strictly necessary cookies to run this site, and optional analytics cookies to understand
         how it is used. We do not use advertising or cross-site tracking cookies.
-        <a href="/cookie-policy/">Read our Cookie Policy</a>.
+        <a href="${esc(cookiePolicy)}">Read our Cookie Policy</a>.
       </p>
       <div class="cookie-actions">
         <button type="button" class="btn btn-outline btn-sm" data-cookie-choice="necessary">Necessary only</button>
@@ -163,12 +182,13 @@ function renderCookieBanner(ctx) {
   </div>`;
 }
 
-/** Organisation-level JSON-LD, emitted on every page. */
+/** Organisation-level JSON-LD, emitted on every page of whichever site is building. */
 function organisationJsonLd(ctx) {
   const c = ctx.config.company;
-  return {
+  const org = ctx.config.organisation;
+  const block = {
     '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
+    '@type': org.type,
     name: c.name,
     alternateName: c.shortName,
     url: c.domain + '/',
@@ -176,8 +196,7 @@ function organisationJsonLd(ctx) {
     image: c.domain + '/assets/og-image.png',
     email: c.email,
     telephone: c.phoneDisplay,
-    description:
-      'IT and information security firm providing vCISO, DPO as a Service, internal audit, VAPT, ISO 27001 support, managed IT and cloud security.',
+    description: org.description,
     address: {
       '@type': 'PostalAddress',
       addressLocality: c.city,
@@ -186,15 +205,14 @@ function organisationJsonLd(ctx) {
     },
     founder: { '@type': 'Person', name: c.founder, jobTitle: c.founderRole },
     areaServed: [{ '@type': 'Country', name: 'India' }, 'Worldwide'],
-    knowsAbout: [
-      'Information security',
-      'ISO/IEC 27001',
-      'Penetration testing',
-      'Data protection',
-      'Internal audit',
-      'Managed IT services',
-    ],
+    knowsAbout: org.knowsAbout,
   };
+  // A sub-brand names the trading entity it belongs to, so the two sites are
+  // linked for search engines rather than reading as unrelated organisations.
+  if (c.legalName && c.legalName !== c.name) {
+    block.parentOrganization = { '@type': 'Organization', name: c.legalName, url: c.parentSite + '/' };
+  }
+  return block;
 }
 
 /**
@@ -235,7 +253,7 @@ function layout(ctx, page) {
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="${esc(c.name)} — IT &amp; Cybersecurity Services, Mumbai">
+  <meta property="og:image:alt" content="${esc(ctx.config.ogImageAlt)}">
   <meta property="og:locale" content="en_IN">
 ${
   page.article
