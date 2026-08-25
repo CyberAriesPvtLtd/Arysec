@@ -264,6 +264,25 @@ only reachable through the redirect from the main domain.
 
 ---
 
+## 5b. Asset caching
+
+`css/styles.css` and `js/main.js` are content-hashed at build time — the output
+is `styles.<hash>.css` and `main.<hash>.js`, referenced from the always-revalidated
+HTML. A rebuild therefore takes effect the moment the HTML is refetched, and the
+assets themselves are served `immutable` for a year.
+
+This matters: with fixed names, a visitor who had loaded the site kept serving
+the previous stylesheet from their own browser cache for hours after a deploy,
+so a redesign arrived as new markup styled by the old CSS. Do not reintroduce
+fixed names for these two files.
+
+```bash
+curl -s https://www.arysec.in/ | grep -o 'href="/css/[^"]*"'    # a hashed name
+curl -sI https://www.arysec.in/css/styles.<hash>.css | grep -i cache-control
+```
+
+---
+
 ## 6. Updating content
 
 ```bash

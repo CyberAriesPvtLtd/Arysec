@@ -88,6 +88,24 @@ const validContact = () => ({
   website: '',
 });
 
+test('pages reference content-hashed assets, so a rebuild is never served stale', async () => {
+  // Fixed asset names meant a browser kept the previous stylesheet from its own
+  // cache for hours after a deploy — new markup styled by the old CSS.
+  const res = await get('/');
+  assert.equal(res.status, 200);
+  assert.match(res.body, /<link rel="stylesheet" href="\/css\/styles\.[0-9a-f]{8}\.css">/);
+  assert.match(res.body, /<script src="\/js\/main\.[0-9a-f]{8}\.js" defer><\/script>/);
+});
+
+test('a fingerprinted asset is served immutable', async () => {
+  const page = await get('/');
+  const href = page.body.match(/href="(\/css\/styles\.[0-9a-f]{8}\.css)"/)[1];
+  const res = await get(href);
+  assert.equal(res.status, 200);
+  assert.match(res.headers['cache-control'], /immutable/);
+  assert.match(res.body, /--accent: #ff6a18/);
+});
+
 test('the academy host serves the academy site at its root', async () => {
   const res = await get('/', 'academy.arysec.in');
   assert.equal(res.status, 200);

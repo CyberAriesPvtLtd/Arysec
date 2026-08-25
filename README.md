@@ -62,6 +62,7 @@ build/                     Site generator — the source of truth
 │   ├── pages/*.js         One module per main-site page type
 │   └── academy/*.js       One module per academy page type
 ├── static/                CSS, JS and assets copied into both sites
+│                          (styles.css and main.js are content-hashed on build)
 └── static-academy/        Academy-only asset overrides (its own social card)
 
 public/                    Generated output — do not edit by hand
