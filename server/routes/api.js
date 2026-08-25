@@ -172,6 +172,74 @@ router.post('/contact', formLimiter(), originCheck, async (req, res, next) => {
 });
 
 // ---------------------------------------------------------------------------
+// POST /api/academy-enquiry
+// ---------------------------------------------------------------------------
+
+router.post('/academy-enquiry', formLimiter(), originCheck, async (req, res, next) => {
+  try {
+    if (handledAsSpam(req, res, 'academy')) return;
+
+    const { ok, values, errors } = validateFields(req.body, {
+      name: { required: true, type: 'text', min: 2, max: 100 },
+      email: { required: true, type: 'email' },
+      company: { required: false, type: 'text', max: 120 },
+      phone: { required: false, type: 'phone' },
+      programme: { required: false, type: 'text', max: 120 },
+      delegates: { required: false, type: 'text', max: 40 },
+      message: { required: true, type: 'longtext', min: 10, max: 4000 },
+      consent: { required: true, type: 'checkbox' },
+    });
+    if (!ok) return fail(res, errors);
+
+    const programme = values.programme || 'General training enquiry';
+    const meta = requestMeta(req);
+    const result = insertSubmission({
+      kind: 'academy',
+      name: values.name,
+      email: values.email,
+      phone: values.phone,
+      company: values.company,
+      subject: programme,
+      // Delegate count is folded into the message so the stored row keeps the
+      // shared submission shape rather than growing a column for one form.
+      message: values.delegates
+        ? `Approximate delegates: ${values.delegates}\n\n${values.message}`
+        : values.message,
+      consent: values.consent,
+      ...meta,
+    });
+
+    log('info', 'submission.received', { kind: 'academy', id: result.lastInsertRowid, ipHash: meta.ipHash });
+
+    const sent = await sendNotification({
+      to: config.mail.academyTo,
+      subject: `Academy enquiry: ${programme} — ${values.name}`,
+      title: 'New academy training enquiry',
+      replyTo: values.email,
+      fields: {
+        Name: values.name,
+        Email: values.email,
+        Phone: values.phone,
+        Organisation: values.company,
+        Programme: programme,
+        'Approximate delegates': values.delegates,
+        Message: values.message,
+        Received: new Date().toISOString(),
+      },
+    });
+    if (sent) markNotified(result.lastInsertRowid);
+
+    return res.json({
+      ok: true,
+      message:
+        'Thank you — your enquiry has been received. We will come back to you within one business day.',
+    });
+  } catch (err) {
+    return next(err);
+  }
+});
+
+// ---------------------------------------------------------------------------
 // POST /api/resource-request
 // ---------------------------------------------------------------------------
 

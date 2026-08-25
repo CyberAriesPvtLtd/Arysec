@@ -1,0 +1,143 @@
+{
+  "slug": "incident-response-tabletop",
+  "name": "Incident Response Tabletop Exercises",
+  "shortName": "IR Tabletop",
+  "category": "Leadership & Response",
+  "format": "Facilitated exercise, on-site or online",
+  "duration": "Half day per scenario",
+  "level": "Response team, leadership and communications together",
+  "metaTitle": "Incident Response Tabletop Exercises",
+  "metaDescription": "Facilitated cybersecurity tabletop exercises: ransomware, business email compromise and data breach scenarios run against your own plan, with a findings report.",
+  "cardSummary": "Run your incident response plan against a realistic scenario and find out where it breaks while it is still a rehearsal.",
+  "heroHeadline": "Discover the Gaps in the Plan Before the Plan Matters",
+  "heroSub": "A half-day facilitated exercise against your own plan and your own systems. Timed injects, real decision points, and an honest findings report on what worked, what stalled and who nobody could reach at nine on a Saturday night.",
+  "highlights": [
+    {
+      "value": "Half day",
+      "label": "Per scenario, run against your plan"
+    },
+    {
+      "value": "Timed injects",
+      "label": "Pressure, decisions and consequences"
+    },
+    {
+      "value": "Findings report",
+      "label": "Owners and dates, not observations"
+    }
+  ],
+  "intro": {
+    "heading": "Plans Fail on Decisions, Not on Documents",
+    "paragraphs": [
+      "Almost every organisation has an incident response plan. Very few have found out what happens when the person named in it is on leave, when the contact list lives on the file server that is now encrypted, or when legal and communications disagree about what to tell customers while the clock is running.",
+      "A tabletop exercise puts your actual team in a room with a scenario that unfolds over time. Injects arrive on a schedule — a journalist calls, the backup restore fails, a regulator's deadline appears — and the group has to decide, out loud, with the information they actually have.",
+      "The output is not a certificate. It is a findings report listing what broke, ordered by how much it would have cost, with an owner and a date against each item. Organisations that run these twice a year respond measurably faster, because the first thirty minutes have already been rehearsed."
+    ]
+  },
+  "outcomes": {
+    "heading": "What the Exercise Produces",
+    "intro": "Everything is written down as it happens, so the report reflects what the room actually did rather than what people remember doing.",
+    "items": [
+      "A timeline of decisions, delays and the points where the plan stalled",
+      "Gaps in the plan, the contact tree and the escalation thresholds",
+      "Findings ranked by impact, each with a named owner and a target date",
+      "A tested view of who declares an incident and who can authorise spend",
+      "Communications drafts stress-tested against a hostile timeline",
+      "A record of the exercise for auditors, insurers and the board",
+      "A retest scope, so the next exercise measures whether it was fixed"
+    ]
+  },
+  "modules": {
+    "heading": "Scenarios We Run",
+    "items": [
+      {
+        "title": "Ransomware With Exfiltration",
+        "description": "Encryption across file servers and a backup estate, plus a double-extortion demand. Isolation, restore decisions, the ransom conversation, regulator notification and customer messaging."
+      },
+      {
+        "title": "Business Email Compromise",
+        "description": "A finance mailbox is compromised and a supplier payment has already left. Recovery, forensics, insurer and bank contact, and the awkward call to the supplier."
+      },
+      {
+        "title": "Data Breach and DPDP Intimation",
+        "description": "Personal data confirmed exposed. Assessment, the intimation clock, what the notice must contain, and coordinating legal, communications and support under a deadline."
+      },
+      {
+        "title": "Cloud Account Compromise",
+        "description": "A privileged identity is abused in your cloud estate. Containment without destroying evidence, blast radius assessment, and rebuilding trust in the environment."
+      },
+      {
+        "title": "Third-Party and Supply Chain",
+        "description": "A supplier is breached and your data is in scope. Contractual levers, what you can and cannot compel, and communicating about an incident you do not control."
+      },
+      {
+        "title": "Insider Data Removal",
+        "description": "A departing employee takes customer data. Evidence handling, HR and legal coordination, and the difference between a technical response and an employment process."
+      }
+    ]
+  },
+  "delivery": [
+    {
+      "title": "Read the Plan",
+      "description": "We read your incident response plan, contact tree and any prior incident reports before designing the scenario, so the injects hit the assumptions you have actually made."
+    },
+    {
+      "title": "Design the Scenario",
+      "description": "Injects are built around your systems, suppliers and regulatory position. A generic scenario produces generic findings that nobody acts on."
+    },
+    {
+      "title": "Run the Exercise",
+      "description": "Half a day, facilitated, with a scribe recording decisions and timings. Leadership, technical responders, legal and communications all in the same room."
+    },
+    {
+      "title": "Report and Retest",
+      "description": "A findings report inside a week, then a shorter follow-up exercise later in the year that specifically retests what was supposed to have been fixed."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "A Faster First Hour",
+      "description": "The first hour sets the cost of the whole incident. Rehearsing it converts hesitation into a sequence people have already been through once."
+    },
+    {
+      "title": "Decisions Made in Advance",
+      "description": "Whether you would ever pay, who can authorise emergency spend, and when customers get told are all much better decided on a Tuesday afternoon than at midnight."
+    },
+    {
+      "title": "Insurer and Board Assurance",
+      "description": "Cyber insurers increasingly ask whether the plan has been exercised and when. A dated report with tracked findings is a straight answer."
+    },
+    {
+      "title": "Cross-Team Familiarity",
+      "description": "Much of the delay in real incidents comes from people who have never worked together. The exercise is often the first time they meet."
+    }
+  ],
+  "whoItsFor": [
+    "Organisations with an incident response plan that has never been exercised",
+    "Leadership teams who would have to make the call on disclosure or ransom",
+    "Companies whose insurer or enterprise customers ask about exercising",
+    "Security teams preparing for ISO 27001 certification or surveillance"
+  ],
+  "faqs": [
+    {
+      "question": "We do not have an incident response plan yet. Can we still do this?",
+      "answer": "Yes, and it is often the better starting point. Running a scenario with no plan shows exactly which decisions and contacts the plan needs to contain, and the resulting document is grounded in something the team has lived through rather than copied from a template."
+    },
+    {
+      "question": "Who needs to attend?",
+      "answer": "Technical responders, whoever can declare an incident, legal or compliance, communications, and at least one executive who can authorise spend. Leaving leadership out produces a technically interesting exercise that misses the decisions that actually cost money."
+    },
+    {
+      "question": "Is this a live simulation against our systems?",
+      "answer": "No. A tabletop is discussion-based, so nothing touches production and nobody is on call. If you want a technical exercise against live systems, that is a red team or purple team engagement and is scoped through the main Arysec practice."
+    },
+    {
+      "question": "How often should we run one?",
+      "answer": "Twice a year is a reasonable rhythm: a full scenario and a shorter retest. Annually is the minimum worth doing. More often than quarterly and the same people start recognising the pattern rather than the problem."
+    }
+  ],
+  "related": [
+    "board-and-leadership",
+    "phishing-drills",
+    "cloud-security-essentials"
+  ]
+}

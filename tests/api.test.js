@@ -10,6 +10,7 @@ const assert = require('node:assert');
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
+const http = require('node:http');
 
 const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'arysec-test-'));
 process.env.DB_FILE = path.join(tmpDir, 'test.db');
@@ -48,6 +49,33 @@ function post(pathname, body) {
   });
 }
 
+/**
+ * GET without following redirects, optionally under a different Host header.
+ * Uses node:http rather than fetch because Host is a forbidden header for fetch,
+ * and host-based routing is exactly what these tests exercise.
+ */
+function get(pathname, host) {
+  return new Promise((resolve, reject) => {
+    const req = http.request(
+      {
+        host: '127.0.0.1',
+        port: server.address().port,
+        path: pathname,
+        method: 'GET',
+        headers: { Host: host || 'www.arysec.in', Accept: 'text/html' },
+      },
+      (res) => {
+        let body = '';
+        res.setEncoding('utf8');
+        res.on('data', (chunk) => (body += chunk));
+        res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, body }));
+      }
+    );
+    req.on('error', reject);
+    req.end();
+  });
+}
+
 const validContact = () => ({
   name: 'Test Person',
   email: 'test.person@example.com',
@@ -58,6 +86,59 @@ const validContact = () => ({
   consent: 'yes',
   formLoadedAt: String(Date.now() - 20_000),
   website: '',
+});
+
+test('the academy host serves the academy site at its root', async () => {
+  const res = await get('/', 'academy.arysec.in');
+  assert.equal(res.status, 200);
+  assert.match(res.body, /<link rel="canonical" href="https:\/\/academy\.arysec\.in\/">/);
+  assert.match(res.body, /Arysec Academy/);
+});
+
+test('the main host serves the main site at its root', async () => {
+  const res = await get('/');
+  assert.equal(res.status, 200);
+  assert.match(res.body, /<link rel="canonical" href="https:\/\/www\.arysec\.in\/">/);
+});
+
+test('/academy/ on the main host redirects to the subdomain', async () => {
+  const res = await get('/academy/programmes/');
+  assert.equal(res.status, 301);
+  assert.equal(res.headers.location, 'https://academy.arysec.in/programmes/');
+});
+
+test('/academy/ on the academy host redirects to the equivalent root path', async () => {
+  const res = await get('/academy/programmes/', 'academy.arysec.in');
+  assert.equal(res.status, 301);
+  assert.equal(res.headers.location, '/programmes/');
+});
+
+test('a preview host serves the academy in place instead of redirecting away', async () => {
+  // The subdomain does not resolve on a preview deployment or on localhost, so
+  // bouncing to it would make the academy unreviewable there.
+  const res = await get('/academy/programmes/', 'arysec-git-preview.vercel.app');
+  assert.equal(res.status, 200);
+  assert.match(res.body, /Arysec Academy/);
+});
+
+test('the academy host cannot reach the main site by path', async () => {
+  const res = await get('/services/vciso/', 'academy.arysec.in');
+  assert.equal(res.status, 404);
+});
+
+test('the main host cannot reach academy files by path', async () => {
+  const res = await get('/programmes/', 'www.arysec.in');
+  assert.equal(res.status, 404);
+});
+
+test('each host serves its own 404 page', async () => {
+  const academy = await get('/no-such-page/', 'academy.arysec.in');
+  assert.equal(academy.status, 404);
+  assert.match(academy.body, /Academy Home/);
+
+  const main = await get('/no-such-page/');
+  assert.equal(main.status, 404);
+  assert.match(main.body, /All Services/);
 });
 
 test('health endpoint responds', async () => {
@@ -78,6 +159,76 @@ test('valid contact submission is accepted and stored', async () => {
   assert.ok(stored, 'submission should be persisted');
   assert.strictEqual(stored.consent, 1);
   assert.strictEqual(stored.name, 'Test Person');
+});
+
+const validAcademy = () => ({
+  name: 'Training Buyer',
+  email: 'training.buyer@example.com',
+  company: 'Example Ltd',
+  phone: '+91 90048 57727',
+  programme: 'Phishing Simulation & Drills',
+  delegates: '120',
+  message: 'We would like quarterly phishing drills for the whole company, starting next quarter.',
+  consent: 'yes',
+  formLoadedAt: String(Date.now() - 20_000),
+  website: '',
+});
+
+test('valid academy enquiry is accepted and stored under its own kind', async () => {
+  const res = await post('/api/academy-enquiry', validAcademy());
+  assert.equal(res.status, 200);
+  const body = await res.json();
+  assert.equal(body.ok, true);
+
+  const rows = listSubmissions('academy', 10);
+  const row = rows.find((r) => r.email === 'training.buyer@example.com');
+  assert.ok(row, 'academy submission was not stored');
+  assert.equal(row.kind, 'academy');
+  assert.equal(row.subject, 'Phishing Simulation & Drills');
+  assert.match(row.message, /Approximate delegates: 120/);
+});
+
+test('academy enquiry without a programme falls back to a general subject', async () => {
+  const payload = { ...validAcademy(), email: 'no.programme@example.com' };
+  delete payload.programme;
+  delete payload.delegates;
+  const res = await post('/api/academy-enquiry', payload);
+  assert.equal(res.status, 200);
+
+  const row = listSubmissions('academy', 20).find((r) => r.email === 'no.programme@example.com');
+  assert.ok(row);
+  assert.equal(row.subject, 'General training enquiry');
+  // With no delegate count the message is stored exactly as submitted.
+  assert.ok(!row.message.startsWith('Approximate delegates'));
+});
+
+test('academy enquiry rejects a submission without consent', async () => {
+  const payload = { ...validAcademy(), email: 'no.consent@example.com' };
+  delete payload.consent;
+  const res = await post('/api/academy-enquiry', payload);
+  assert.equal(res.status, 400);
+  const body = await res.json();
+  assert.equal(body.ok, false);
+  assert.ok(body.errors.consent);
+});
+
+test('academy enquiry rejects an over-long delegate count', async () => {
+  const res = await post('/api/academy-enquiry', { ...validAcademy(), delegates: 'x'.repeat(200) });
+  assert.equal(res.status, 400);
+  const body = await res.json();
+  assert.ok(body.errors.delegates);
+});
+
+test('academy honeypot submissions get a success response but are not stored', async () => {
+  const before = listSubmissions('academy', 100).length;
+  const res = await post('/api/academy-enquiry', {
+    ...validAcademy(),
+    email: 'academy.bot@example.com',
+    website: 'http://spam.example',
+  });
+  assert.equal(res.status, 200);
+  assert.equal((await res.json()).ok, true);
+  assert.equal(listSubmissions('academy', 100).length, before);
 });
 
 test('contact rejects a missing required field with a per-field error', async () => {

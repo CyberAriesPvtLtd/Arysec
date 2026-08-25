@@ -24,6 +24,44 @@ const company = {
   teamSize: '50+',
   supportHours: '24/7 for retainer & managed clients; Mon–Fri, 09:00–18:00 IST otherwise',
   established: 2026,
+  /** Where the cookie banner links. Absolute on the academy, which has no copy of its own. */
+  cookiePolicyHref: '/cookie-policy/',
+};
+
+/** Sub-label shown after the wordmark in the header lockup. The main site has none. */
+const brand = { sublabel: null };
+
+/** Alt text for the social card. */
+const ogImageAlt = 'Arysec Technologies LLP — IT & Cybersecurity Services, Mumbai';
+
+/** Organisation-level JSON-LD, emitted on every page. */
+const organisation = {
+  type: 'ProfessionalService',
+  description:
+    'IT and information security firm providing vCISO, DPO as a Service, internal audit, VAPT, ' +
+    'ISO 27001 support, managed IT and cloud security.',
+  knowsAbout: [
+    'Information security',
+    'ISO/IEC 27001',
+    'Penetration testing',
+    'Data protection',
+    'Internal audit',
+    'Managed IT services',
+  ],
+};
+
+/**
+ * The catalogue this site puts in its grouped nav panel. Both sites share the
+ * layout, so it needs telling which registry to read and where the pages live.
+ */
+const catalogue = {
+  basePath: '/services/',
+  dataKey: 'services',
+  panelId: 'mega-services',
+  links: [
+    { href: '/services/', label: 'View all services' },
+    { href: '/solutions/', label: 'Packaged solutions' },
+  ],
 };
 
 /** Service categories, in display order. Drives the services hub and the nav mega-menu. */
@@ -116,6 +154,9 @@ const nav = [
   { label: 'Contact', href: '/contact/' },
 ];
 
+/** The primary call to action in the header. */
+const navCta = { href: '/contact/', label: 'Get a Consultation' };
+
 /** Footer link columns. */
 const footerColumns = [
   {
@@ -170,11 +211,16 @@ const frameworks = [
 
 module.exports = {
   company,
+  brand,
+  ogImageAlt,
+  organisation,
+  catalogue,
   serviceCategories,
   services,
   articles,
   articleDates,
   nav,
+  navCta,
   footerColumns,
   legalLinks,
   frameworks,

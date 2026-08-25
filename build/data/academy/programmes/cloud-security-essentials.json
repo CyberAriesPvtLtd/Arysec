@@ -1,0 +1,143 @@
+{
+  "slug": "cloud-security-essentials",
+  "name": "Cloud Security Essentials",
+  "shortName": "Cloud Security",
+  "category": "Technical Skills",
+  "format": "Hands-on labs in a sandbox account, live online or on-site",
+  "duration": "2 days, per cloud platform",
+  "level": "Engineers and platform teams",
+  "metaTitle": "Cloud Security Essentials Training — AWS, Azure, GCP",
+  "metaDescription": "Two-day hands-on cloud security training for AWS, Azure or Google Cloud: identity, network boundaries, storage exposure, logging and the misconfigurations that cause breaches.",
+  "cardSummary": "The identity, storage and logging mistakes behind most cloud incidents, found and fixed in a live sandbox account.",
+  "heroHeadline": "Most Cloud Breaches Are a Configuration, Not an Exploit",
+  "heroSub": "Two days in a sandbox account finding the things that actually cause incidents: over-broad roles, a storage bucket someone opened for a demo, keys in a build log, and logging that was never switched on in the region where it mattered.",
+  "highlights": [
+    {
+      "value": "Sandbox",
+      "label": "Real accounts, real misconfigurations"
+    },
+    {
+      "value": "One platform",
+      "label": "AWS, Azure or Google Cloud per cohort"
+    },
+    {
+      "value": "CIS",
+      "label": "Benchmarks used as the hardening baseline"
+    }
+  ],
+  "intro": {
+    "heading": "The Misconfiguration Is the Attack",
+    "paragraphs": [
+      "Cloud incidents rarely start with a novel exploit. They start with an identity that can do more than anyone realised, a storage object made public for a quick demo, or an access key committed to a repository two years ago and never rotated. None of that is exotic, and all of it is findable before an attacker finds it.",
+      "The course runs in a sandbox account deliberately built with those problems in it. Delegates enumerate permissions the way an attacker would, follow a privilege escalation path, find exposed data, and then close each gap and verify the fix.",
+      "The second half is about knowing sooner. Logging that is actually enabled everywhere, alerts that fire on the handful of events that matter, and guardrails that stop the misconfiguration being created rather than reporting it a week later."
+    ]
+  },
+  "outcomes": {
+    "heading": "What Your Platform Team Gains",
+    "intro": "The point is a shorter list at the next cloud configuration review, and detection that fires before a customer notices.",
+    "items": [
+      "A hardening baseline for your platform, aligned to the CIS Benchmark",
+      "A least-privilege review method for roles and service identities",
+      "Detection rules for the events that precede most cloud incidents",
+      "A logging configuration covering every region and account in use",
+      "Guardrails as policy, so bad configuration cannot be created",
+      "A key and secret rotation procedure that survives production",
+      "An Arysec Academy certificate on completing the assessed lab"
+    ]
+  },
+  "modules": {
+    "heading": "Lab Modules",
+    "items": [
+      {
+        "title": "Identity and Privilege",
+        "description": "Roles, policies and trust relationships. Enumerating effective permissions, finding escalation paths through pass-role and assume-role chains, and cutting privilege without breaking deployments."
+      },
+      {
+        "title": "Storage and Data Exposure",
+        "description": "Buckets, blobs, snapshots and managed database endpoints. Finding what is reachable from the internet, what is reachable from any authenticated account, and what encryption actually protects."
+      },
+      {
+        "title": "Network Boundaries",
+        "description": "Security groups, network security groups and firewall rules, private endpoints, egress control, and the management interfaces that quietly stay open to the world."
+      },
+      {
+        "title": "Secrets and Keys",
+        "description": "Managed secret stores, workload identity instead of long-lived keys, rotation, and finding credentials already leaked into images, build logs and repositories."
+      },
+      {
+        "title": "Logging and Detection",
+        "description": "Audit logs across every region and subscription, log integrity, retention that meets your obligations, and alerting on the small set of events that reliably precede an incident."
+      },
+      {
+        "title": "Guardrails and Drift",
+        "description": "Preventive policy, infrastructure-as-code scanning in the pipeline, and detecting configuration drift when someone fixes production by hand at midnight."
+      }
+    ]
+  },
+  "delivery": [
+    {
+      "title": "Platform Selection",
+      "description": "One cloud per cohort. Multi-cloud teams run consecutive cohorts — a combined session covers three consoles badly rather than one well."
+    },
+    {
+      "title": "Sandbox Provisioning",
+      "description": "We provision isolated accounts with the misconfigurations pre-planted, so nothing touches your production estate and everyone starts from the same state."
+    },
+    {
+      "title": "Two Lab Days",
+      "description": "Day one attacks and fixes identity, storage and network. Day two builds the detection and guardrails that stop the same problems returning."
+    },
+    {
+      "title": "Baseline Handover",
+      "description": "The hardening baseline, detection rules and policy examples are handed over as code, so they can go straight into your own repositories."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Fewer Findings at the Next Review",
+      "description": "Cloud configuration reviews repeat the same findings year after year in most organisations. Teams that have fixed them by hand once stop creating them."
+    },
+    {
+      "title": "Detection Where There Was None",
+      "description": "A surprising number of organisations discover during this course that audit logging was never enabled in a region they have been using for two years."
+    },
+    {
+      "title": "Least Privilege That Ships",
+      "description": "Privilege reduction usually stalls because nobody knows what will break. The enumeration method taught here makes the change measurable rather than a gamble."
+    },
+    {
+      "title": "Guardrails Instead of Nagging",
+      "description": "Preventive policy in the pipeline removes a whole class of review comments and stops the argument being had again next quarter."
+    }
+  ],
+  "whoItsFor": [
+    "Platform, DevOps and SRE teams who own cloud configuration",
+    "Organisations that have grown a cloud estate faster than their controls",
+    "Security teams needing to review cloud configuration credibly",
+    "Companies preparing for a cloud configuration review or ISO 27001 Annex A 5.23"
+  ],
+  "faqs": [
+    {
+      "question": "Do delegates need existing cloud experience?",
+      "answer": "They need to be comfortable in the console and to have deployed something. This is not an introduction to the cloud — the labs assume you know what a virtual machine and a managed database are, and spend their time on how the security model around them fails."
+    },
+    {
+      "question": "Can the labs run in our own accounts?",
+      "answer": "We strongly prefer our sandbox. Planting deliberate misconfigurations in your environment creates real risk and real cleanup. What we can do is a separate configuration review of your estate afterwards, which is usually the thing people actually want."
+    },
+    {
+      "question": "Does this cover Kubernetes?",
+      "answer": "In outline — the managed cluster's identity integration and network policy are covered, because that is where cloud identity meets the cluster. Container and Kubernetes security in depth is a separate two-day track."
+    },
+    {
+      "question": "Which is the right platform to start with?",
+      "answer": "Whichever holds your production data. If that is genuinely split, start with the one carrying regulated or customer data, since that is where a misconfiguration becomes a notifiable event."
+    }
+  ],
+  "related": [
+    "secure-coding",
+    "incident-response-tabletop",
+    "security-awareness"
+  ]
+}

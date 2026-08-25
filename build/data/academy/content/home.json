@@ -1,0 +1,126 @@
+{
+  "hero": {
+    "eyebrow": "Corporate Cybersecurity Training · India & Remote",
+    "headline": "Train the People.",
+    "headlineAccent": "Reduce the Risk.",
+    "sub": "Arysec Academy runs cybersecurity training for organisations: awareness that changes behaviour, phishing drills that measure it, certification tracks your auditor accepts, and exercises that test whether your response plan survives contact with a real morning."
+  },
+  "stats": [
+    { "count": 9, "suffix": "", "label": "Programmes Across Four Tracks" },
+    { "count": 40, "suffix": " max", "label": "Cohort Size, So Questions Get Asked" },
+    { "count": 4, "suffix": "x", "label": "Reinforcement Cycles Per Year" },
+    { "count": 100, "suffix": "%", "label": "Practitioner-Led Delivery" }
+  ],
+  "intro": {
+    "eyebrow": "Why We Built It",
+    "heading": "Training Fails When Nobody Measures Behaviour",
+    "paragraphs": [
+      "Almost every organisation buys security training, and most of it is watched at double speed the week before an audit. Completion percentages go up, an obligation is discharged, and nothing about the way people work actually changes.",
+      "We built the academy because the same gap kept showing up in our consulting work. The control was documented, the training was recorded, and an invoice still got paid to an attacker's account. What was missing was relevance, reinforcement and any measurement of what people did rather than what they clicked through.",
+      "Every programme here is taught by practitioners who do the work — the people running ISO 27001 implementations, penetration tests and incident response for Arysec clients. The examples come from those engagements, and the material changes when what we are seeing changes."
+    ],
+    "points": [
+      {
+        "title": "Built From Real Engagements",
+        "description": "Scenarios and labs come out of live implementations, tests and incidents, not a stock content library refreshed once a year."
+      },
+      {
+        "title": "Measured Against Behaviour",
+        "description": "Reporting rates, time to first report, findings at the next test. Completion percentage is an attendance record, not an outcome."
+      },
+      {
+        "title": "Reinforced, Not Delivered Once",
+        "description": "A long session in April is forgotten by June. Short cycles through the year keep the habit alive when it is needed."
+      },
+      {
+        "title": "Evidence Your Auditor Accepts",
+        "description": "Attendance records, assessment results and programme documentation, structured for ISO 27001, DPDP readiness and insurer questionnaires."
+      }
+    ]
+  },
+  "phishing": {
+    "eyebrow": "Phishing Drills",
+    "heading": "Find Out How Your Staff Respond Before an Attacker Does",
+    "paragraphs": [
+      "A phishing drill is a fire drill. We send controlled, realistic messages using the pretexts your sector is actually seeing, and measure two things: how many people clicked, and how many reported. The second number is the one that decides how a real incident goes.",
+      "Anyone who clicks gets a thirty-second explanation at the moment it matters, never a place on a list. Leadership gets a one-page trend, and the security team gets the detail — including how long it took before the first person raised the alarm."
+    ],
+    "items": [
+      "Pretexts drawn from live campaigns against your sector and region",
+      "Click rate, credential submission and report rate, tracked over time",
+      "Median time to first report — your real detection latency",
+      "Targeted waves for finance, payroll and anyone who can move money",
+      "No captured passwords, no league tables, no blame",
+      "Board-ready reporting after every campaign"
+    ]
+  },
+  "delivery": {
+    "eyebrow": "How It Runs",
+    "heading": "From First Conversation to a Programme That Repeats",
+    "sub": "Most engagements start with a single cohort and grow into an annual plan once the first set of numbers exists.",
+    "steps": [
+      {
+        "title": "Scope",
+        "description": "We look at your sector, your stack, your obligations and any recent near-misses, then recommend the smallest programme that addresses the real exposure."
+      },
+      {
+        "title": "Baseline",
+        "description": "A phishing wave, a skills assessment or a review of your current material gives an honest starting point. Without one, improvement is a claim."
+      },
+      {
+        "title": "Deliver",
+        "description": "Live sessions on-site or online, hands-on labs in provisioned environments, and self-paced modules for shift workers and anyone who missed the date."
+      },
+      {
+        "title": "Reinforce",
+        "description": "Quarterly refreshers, ongoing drills and a management report showing what moved, what did not, and where the next cycle should aim."
+      }
+    ]
+  },
+  "audience": {
+    "eyebrow": "Who We Train",
+    "heading": "Four Tracks, Because One Audience Does Not Exist",
+    "sub": "The finance team and the platform team need different things. Sending both to the same session wastes half the room."
+  },
+  "why": {
+    "eyebrow": "What Makes It Different",
+    "heading": "Practitioner-Led, End to End",
+    "sub": "The academy is part of a working security consultancy, not a content publisher with a training arm.",
+    "items": [
+      {
+        "icon": "shield-search",
+        "title": "Taught by the People Doing the Work",
+        "description": "Your secure coding instructor spent last month writing a penetration test report. The examples in the lab are the findings from it."
+      },
+      {
+        "icon": "target",
+        "title": "Tailored to Your Environment",
+        "description": "Screenshots, pretexts and labs use your systems and your vocabulary. Generic material is the reason people stop paying attention."
+      },
+      {
+        "icon": "clipboard-check",
+        "title": "Assessed, Not Just Attended",
+        "description": "Certification tracks end in a written and applied assessment marked against a published rubric, so the certificate records something."
+      },
+      {
+        "icon": "handshake",
+        "title": "Joined Up With Consulting",
+        "description": "If training uncovers a control problem rather than a knowledge problem, the Arysec practice can fix it — and we will say which one it is."
+      },
+      {
+        "icon": "globe",
+        "title": "Delivered Where You Are",
+        "description": "On-site across India, live online for distributed teams, and self-paced modules for the people a scheduled session never reaches."
+      },
+      {
+        "icon": "book",
+        "title": "Material That Stays Current",
+        "description": "Content is revised when the threat picture or the regulation moves — the DPDP Rules, the 2022 Annex A structure, whatever lands next."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Tell Us Who Needs Training and Why",
+    "text": "A short conversation is usually enough to work out whether you need one cohort, an annual programme, or something other than training altogether."
+  }
+}

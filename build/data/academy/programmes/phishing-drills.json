@@ -1,0 +1,143 @@
+{
+  "slug": "phishing-drills",
+  "name": "Phishing Simulation & Drills",
+  "shortName": "Phishing Drills",
+  "category": "Workforce Awareness",
+  "format": "Managed simulation programme with quarterly campaigns",
+  "duration": "Continuous, with a report after each campaign",
+  "level": "Whole organisation, with targeted waves",
+  "metaTitle": "Phishing Simulation & Drills for Organisations",
+  "metaDescription": "Managed phishing simulation drills using pretexts drawn from live attacks on your sector. Baseline, targeted waves, teachable moments and board-ready reporting.",
+  "cardSummary": "Realistic, safe phishing drills that measure both click rate and report rate, with a teachable moment instead of a telling-off.",
+  "heroHeadline": "Find Out How Your Staff Respond Before an Attacker Does",
+  "heroSub": "We run controlled phishing drills using the pretexts your sector is actually seeing, then turn every click into a 30-second teaching moment. You get a measured baseline, a trend line, and a workforce that reports quickly instead of quietly deleting.",
+  "highlights": [
+    {
+      "value": "Quarterly",
+      "label": "Campaigns, plus ad-hoc waves on request"
+    },
+    {
+      "value": "Click + report",
+      "label": "Both numbers, not just the embarrassing one"
+    },
+    {
+      "value": "No blame",
+      "label": "Teachable moments, never a public list"
+    }
+  ],
+  "intro": {
+    "heading": "A Drill, Not a Trap",
+    "paragraphs": [
+      "A phishing drill is a fire drill. Its purpose is to rehearse a response, find where the process breaks, and fix it before the real thing arrives. It is not there to catch people out, and a programme that produces a shame list will get you accurate numbers exactly once.",
+      "We design each campaign around pretexts drawn from live attacks against organisations like yours: the payroll portal change during appraisal season, the courier delivery note in the run-up to a festival, the document share from a real supplier's compromised mailbox. Difficulty is chosen deliberately, and we tell you in advance what a realistic click rate looks like.",
+      "Every drill measures two numbers. Click rate says how convincing the lure was. Report rate says whether your detection process works — and that is the number that decides how a real incident goes. A team with a 12% click rate and a 60% report rate is in far better shape than one at 4% and 5%."
+    ]
+  },
+  "outcomes": {
+    "heading": "What Each Campaign Produces",
+    "intro": "Every wave ends in a short report written for two audiences: the security owner who needs the detail, and the leadership team who need the trend in one page.",
+    "items": [
+      "Baseline and trend for click rate, credential submission and report rate",
+      "Median time to first report — your real detection latency",
+      "Department and role breakdowns, so training goes where it is needed",
+      "The exact pretexts used, so the results can be read in context",
+      "Teachable-moment landing pages seen by anyone who clicked",
+      "Recommendations split into training, process and technical controls",
+      "An audit-ready record of the programme for ISO 27001 and insurers"
+    ]
+  },
+  "modules": {
+    "heading": "How the Programme Is Built",
+    "items": [
+      {
+        "title": "Threat-Led Pretexts",
+        "description": "Lures are written from current campaigns against your sector and region, not a stock template library. Where you have had a real incident, we rebuild that scenario safely."
+      },
+      {
+        "title": "Graduated Difficulty",
+        "description": "Early waves use recognisable lures to establish a floor. Later waves add lookalike domains, thread hijacking and internal-looking senders, so the trend measures growth rather than luck."
+      },
+      {
+        "title": "Teachable Moments",
+        "description": "Clicking leads to a short page that replays the message and points out the three tells that gave it away. Thirty seconds at the moment of the mistake beats an hour of training in March."
+      },
+      {
+        "title": "Report-Button Testing",
+        "description": "We test the reporting path end to end: does the button exist, where does the message land, who reads it, and how long before someone responds to the person who reported it."
+      },
+      {
+        "title": "Targeted Waves",
+        "description": "Finance, executives and anyone able to move money or change bank details receive tailored scenarios, because that is what a real attacker will do."
+      },
+      {
+        "title": "Safe by Design",
+        "description": "No credentials are captured, no attachments execute anything, results are handled as personal data under a defined retention period, and individual results are never shared as a league table."
+      }
+    ]
+  },
+  "delivery": [
+    {
+      "title": "Agree the Rules",
+      "description": "Scope, exclusions, escalation contacts, what happens if a drill collides with a real incident, and a written no-blame commitment endorsed by leadership before anything is sent."
+    },
+    {
+      "title": "Baseline Wave",
+      "description": "An unannounced campaign at moderate difficulty gives an honest starting point. Announcing it first produces a flattering number that tells you nothing."
+    },
+    {
+      "title": "Train and Reinforce",
+      "description": "Results feed straight into the awareness sessions, so the training answers questions people have just discovered they had."
+    },
+    {
+      "title": "Repeat and Report",
+      "description": "Quarterly waves with rotating pretexts, a report after each, and a rolling twelve-month view for the board or audit committee."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Detection You Can Measure",
+      "description": "Time to first report is the one metric that predicts how a real phishing incident will go. Most organisations have never measured it."
+    },
+    {
+      "title": "Training Aimed Where It Is Needed",
+      "description": "Results show which teams and which pretexts are the actual problem, so the next session is spent on the real gap rather than on general advice."
+    },
+    {
+      "title": "Evidence Enterprise Buyers Ask For",
+      "description": "Security questionnaires increasingly ask whether you run simulated phishing and what your rates are. A twelve-month trend answers it in one line."
+    },
+    {
+      "title": "A Rehearsed Response",
+      "description": "By the time a real campaign lands, the reporting path has been used hundreds of times and the security team has practised triaging it."
+    }
+  ],
+  "whoItsFor": [
+    "Organisations that have never measured how staff respond to a phishing email",
+    "Finance and payroll teams targeted by invoice and bank-detail fraud",
+    "Companies whose insurer or customers ask for simulation results",
+    "Security teams who want training budget aimed at evidence rather than opinion"
+  ],
+  "faqs": [
+    {
+      "question": "Will this damage trust with our staff?",
+      "answer": "It does if it is run as a trap. We insist on a no-blame commitment from leadership, never publish individual results, and make the landing page a short explanation rather than a reprimand. Run that way, drills are generally well received: people would rather find out from us."
+    },
+    {
+      "question": "What click rate should we expect first time?",
+      "answer": "For an organisation with no prior programme, a first unannounced wave at moderate difficulty commonly lands somewhere in the teens to mid twenties, and report rates are usually in single figures. We will tell you before the wave what we expect, so the result is read as a starting point rather than a verdict."
+    },
+    {
+      "question": "Do you capture the passwords people type in?",
+      "answer": "No. Credential pages record that a submission happened and nothing else — no password is transmitted, stored or shown to anyone, including you. Any simulation vendor that offers you captured credentials is creating a liability, not a metric."
+    },
+    {
+      "question": "Can you simulate voice or SMS attacks as well?",
+      "answer": "Yes. Smishing waves run the same way as email. Voice pretexting is scoped separately, with tighter rules of engagement and named participants, because it involves live conversations with your staff rather than a message they can ignore."
+    }
+  ],
+  "related": [
+    "security-awareness",
+    "incident-response-tabletop",
+    "board-and-leadership"
+  ]
+}

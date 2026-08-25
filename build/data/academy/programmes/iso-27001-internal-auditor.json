@@ -1,0 +1,143 @@
+{
+  "slug": "iso-27001-internal-auditor",
+  "name": "ISO/IEC 27001 Internal Auditor",
+  "shortName": "ISO 27001 Internal Auditor",
+  "category": "Certification Tracks",
+  "format": "Live online or on-site, cohort of up to 16",
+  "duration": "2 days, plus assessment",
+  "level": "Intermediate — familiarity with the standard assumed",
+  "metaTitle": "ISO/IEC 27001 Internal Auditor Training",
+  "metaDescription": "Two-day ISO/IEC 27001 internal auditor course: audit programmes, evidence and sampling, interviewing control owners, and writing findings that survive review.",
+  "cardSummary": "Plan, run and report internal audits that find real problems instead of confirming the paperwork exists.",
+  "heroHeadline": "Internal Audits That Find Things",
+  "heroSub": "Clause 9.2 requires internal audit. Done as a tick-box exercise it wastes a week a year and misses everything. This two-day course teaches sampling, evidence and interviewing, so your audits surface the gaps before the certification body does.",
+  "highlights": [
+    {
+      "value": "2 days",
+      "label": "Half of it spent auditing, not listening"
+    },
+    {
+      "value": "Live interviews",
+      "label": "Practised on real control owners"
+    },
+    {
+      "value": "ISO 19011",
+      "label": "Audit method aligned to the guidance"
+    }
+  ],
+  "intro": {
+    "heading": "The Audit Is Only Worth the Evidence Behind It",
+    "paragraphs": [
+      "An internal audit that reviews the policy, notes it exists, and closes the control is worse than no audit at all: it consumes effort and produces false assurance. The skill being taught here is evidence gathering — deciding what would prove the control is operating, sampling well enough to be representative, and following the trail when the first answer does not hold up.",
+      "Most of day two is spent auditing. Delegates plan a short audit, interview a real control owner, gather evidence, and write findings that are then reviewed by the group. Writing a nonconformity that survives challenge from the person being audited is a specific skill and it takes practice.",
+      "The method follows ISO 19011 guidance, but the emphasis throughout is on judgement: how much sampling is enough, when an observation should be raised as a nonconformity, and how to report a systemic problem without turning the report into an accusation."
+    ]
+  },
+  "outcomes": {
+    "heading": "What Delegates Can Do Afterwards",
+    "intro": "The test of this course is whether a delegate can run an audit unsupervised the following month and produce a report the ISMS manager can act on.",
+    "items": [
+      "Build a risk-based annual audit programme covering the whole ISMS",
+      "Write an audit plan and checklist from clauses and Annex A controls",
+      "Sample proportionately and justify the sample size chosen",
+      "Interview control owners so evidence surfaces rather than reassurance",
+      "Grade findings consistently as major, minor or observation",
+      "Write findings with requirement, evidence and impact stated plainly",
+      "An Arysec Academy certificate on passing the assessed audit exercise"
+    ]
+  },
+  "modules": {
+    "heading": "Course Modules",
+    "items": [
+      {
+        "title": "The Audit Programme",
+        "description": "Coverage over a certification cycle, frequency driven by risk and past findings, auditor independence in a small team, and what to do when the only competent auditor owns the control."
+      },
+      {
+        "title": "Planning and Checklists",
+        "description": "Turning a clause or control into questions that produce evidence, agreeing scope and timing with the auditee, and preparing so the interview does not become a document hunt."
+      },
+      {
+        "title": "Evidence and Sampling",
+        "description": "What counts as evidence, how many records to pull, records versus assertions, and recognising the moment an answer has quietly changed the subject."
+      },
+      {
+        "title": "Interviewing",
+        "description": "Open questions, following the trail, staying neutral when the answer is uncomfortable, and separating what the process says from what the person actually did last Tuesday."
+      },
+      {
+        "title": "Findings and Grading",
+        "description": "Major, minor and observation applied consistently. Writing the requirement, the evidence and the impact so a finding is defensible weeks later without you in the room."
+      },
+      {
+        "title": "Reporting and Follow-Up",
+        "description": "Reports management will read, root cause analysis that goes past 'human error', corrective action that addresses the cause, and verifying closure properly."
+      }
+    ]
+  },
+  "delivery": [
+    {
+      "title": "Pre-Course Reading",
+      "description": "A short refresher on the clause structure and Annex A themes so day one starts on audit method rather than on the standard."
+    },
+    {
+      "title": "Day One — Method",
+      "description": "Programme, planning, evidence and sampling, with worked examples drawn from real audits and the findings they produced."
+    },
+    {
+      "title": "Day Two — Practice",
+      "description": "Delegates plan and run a live mini-audit, interview a control owner, and write up findings that the group reviews and challenges."
+    },
+    {
+      "title": "Assessment",
+      "description": "A written paper plus a marked audit write-up: plan, evidence summary and two findings, graded against a published rubric."
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Problems Found Internally First",
+      "description": "Anything your internal audit catches is a correction. The same thing found at Stage 2 or surveillance is a nonconformity with a deadline attached."
+    },
+    {
+      "title": "Clause 9.2 Satisfied Properly",
+      "description": "Certification bodies review internal audit records closely. Competent auditors and consistent findings turn that review into a short conversation."
+    },
+    {
+      "title": "Less Reliance on External Auditors",
+      "description": "Two trained internal auditors can cover an annual programme for a mid-sized ISMS without buying in every cycle."
+    },
+    {
+      "title": "Better Controls, Not Just Better Paperwork",
+      "description": "Auditors trained to look for operating evidence push control owners toward controls that actually run, because that is what gets asked for."
+    }
+  ],
+  "whoItsFor": [
+    "Staff nominated as internal auditors for a new or existing ISMS",
+    "Quality and internal audit teams extending from ISO 9001 into 27001",
+    "ISMS managers who need to review and challenge audit output",
+    "Consultants running internal audits on behalf of clients"
+  ],
+  "faqs": [
+    {
+      "question": "Do delegates need the Lead Implementer course first?",
+      "answer": "Not necessarily, but familiarity with the clause structure and Annex A is assumed. If your delegates have not worked with the standard, run the Lead Implementer track first or ask us about a combined five-day cohort."
+    },
+    {
+      "question": "Can an internal auditor audit their own area?",
+      "answer": "No — clause 9.2 requires objectivity and impartiality. In a small team that gets awkward, and the course covers the practical answers: cross-auditing between functions, reciprocal arrangements with another organisation, or bringing in an external auditor for the areas your people own."
+    },
+    {
+      "question": "Is this enough to audit suppliers as well?",
+      "answer": "The method transfers, and second-party supplier audits are covered in outline. Auditing a supplier adds contractual and commercial dimensions that the course touches on but does not treat in depth."
+    },
+    {
+      "question": "How many auditors should we train?",
+      "answer": "At least two, so independence is possible and one departure does not end your programme. Organisations past roughly 200 people usually want three or four to keep the annual programme manageable alongside day jobs."
+    }
+  ],
+  "related": [
+    "iso-27001-lead-implementer",
+    "dpdp-privacy-essentials",
+    "security-awareness"
+  ]
+}

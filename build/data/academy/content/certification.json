@@ -1,0 +1,90 @@
+{
+  "title": "Certification & Assessment",
+  "heroHeadline": "A Certificate That Records Something",
+  "heroSub": "Our certification tracks end in a written paper and an applied submission, both marked against a published rubric. The certificate names what was assessed, so it means something to the person reading it.",
+  "metaTitle": "Certification & Assessment",
+  "metaDescription": "How Arysec Academy certification works: written and applied assessment, published marking rubrics, verifiable certificates, and what our certificates are not.",
+  "highlights": [
+    {
+      "value": "Two-part",
+      "label": "Written paper plus applied submission"
+    },
+    {
+      "value": "Published",
+      "label": "Marking rubric shared before the course"
+    },
+    {
+      "value": "3 years",
+      "label": "Certificate validity, with a refresh path"
+    }
+  ],
+  "intro": {
+    "heading": "Attendance Is Not an Outcome",
+    "paragraphs": [
+      "Most training certificates record that somebody sat in a room. That is worth very little to a hiring manager, an auditor or the person who has to rely on the skill. Our certification tracks are assessed, and the certificate states what was assessed and how it was marked.",
+      "The assessment has two parts. A written paper checks that the delegate understands the standard, the law or the technique. An applied submission checks that they can produce the artefact — a scope statement, an audit finding, a rights-request workflow, a fixed and tested vulnerability.",
+      "Rubrics are published before the course starts. Nobody should have to guess what a pass looks like, and an instructor should not be able to move the line after the fact."
+    ]
+  },
+  "process": [
+    {
+      "title": "Sit the Course",
+      "description": "Attendance at the full taught programme is required. Assessment-only entry is not offered: the applied work depends on exercises done during the course."
+    },
+    {
+      "title": "Written Paper",
+      "description": "Sat at the end of the taught days, typically 60 to 90 minutes. Scenario questions rather than recall, because reciting a clause number proves nothing."
+    },
+    {
+      "title": "Applied Submission",
+      "description": "Submitted within 21 days. A real artefact built for your own organisation where possible, marked against the published rubric by an instructor who did not teach your cohort."
+    },
+    {
+      "title": "Result and Certificate",
+      "description": "Marked within 10 working days. A pass produces a certificate with a verification code; a referral comes with written feedback and one free resubmission."
+    }
+  ],
+  "included": {
+    "heading": "What the Certificate Records",
+    "intro": "Every certificate is issued to a named individual and carries a verification code your HR team or a client can check with us.",
+    "items": [
+      "The programme name and the version of the standard or law it covered",
+      "The date of the taught course and the date of assessment",
+      "The components assessed — written paper and applied submission",
+      "The rubric version used for marking",
+      "A verification code, checkable by email with us",
+      "An expiry date three years from issue",
+      "The issuing entity, Arysec Academy, part of Arysec Technologies LLP"
+    ]
+  },
+  "honesty": {
+    "heading": "What Our Certificates Are Not",
+    "paragraphs": [
+      "Arysec Academy certificates are issued by us. They are not issued under an accredited personnel certification scheme, and they are not equivalent to credentials from an accreditation body or a scheme owner. We will never imply otherwise, and we would rather lose a sale than let a delegate believe they hold something they do not.",
+      "For most organisations that is fine: the certificate exists to evidence competence internally, to satisfy an auditor asking about training under ISO 27001 Annex A 6.3, and to give the delegate a record of assessed work. If you need an accredited credential for a specific contractual or regulatory reason, tell us at scoping and we will say plainly whether our track is the right preparation or whether you should go elsewhere.",
+      "Several delegates each year use our courses as preparation and then sit a scheme exam separately. That is a perfectly sensible route and we will help you plan it."
+    ]
+  },
+  "faqs": [
+    {
+      "question": "What happens if a delegate does not pass?",
+      "answer": "They receive written feedback against the rubric and one free resubmission within 60 days. If the written paper was the problem, it can be re-sat once at no cost. Persistent failure usually means the wrong course level was chosen, and we will say so and credit the fee against the right one."
+    },
+    {
+      "question": "Can we verify a certificate somebody presents to us?",
+      "answer": "Yes. Every certificate carries a verification code. Email it to us with the holder's name and we will confirm the programme, the date, and whether it is still within its validity period. We will not disclose marks."
+    },
+    {
+      "question": "Why do certificates expire after three years?",
+      "answer": "Because the material moves. The Annex A structure changed in 2022, the DPDP Rules were notified in 2025, and the attack patterns in the awareness and phishing content change every year. A certificate with no expiry is a claim about a version of the world that has already gone."
+    },
+    {
+      "question": "Do you offer assessment for staff who trained elsewhere?",
+      "answer": "No. The applied submission builds directly on exercises from the taught course, so assessing someone who did not attend would be marking work we have no basis to interpret. If your team trained elsewhere and needs assessed evidence, a short bridging cohort is usually the cleanest route."
+    },
+    {
+      "question": "Is there a discount for certifying a whole team?",
+      "answer": "Assessment is included in the programme fee for every delegate on a cohort — there is no separate charge to certify. Cohort pricing is quoted per group rather than per head, so a full cohort is the efficient way to buy it."
+    }
+  ]
+}
