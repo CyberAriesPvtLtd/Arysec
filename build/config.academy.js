@@ -18,7 +18,7 @@ const main = require('./config');
 const company = {
   /**
    * Arysec Academy is its own registered company, not a trading name or
-   * division of Arysec Technologies LLP — confirmed by the site owner. No
+   * division of Arysec Consultancy LLP — confirmed by the site owner. No
    * field on this object may imply otherwise (no legalName pointing at the
    * other entity, no parentOrganization in JSON-LD). Where a fact below is
    * inherited from build/config.js, it is inherited because it was not
@@ -30,24 +30,24 @@ const company = {
   shortName: 'Arysec Academy',
   tagline: 'Security training that changes what people actually do.',
   domain: 'https://academy.arysec.in',
-  /** ASSUMPTION: same phone line as Arysec Technologies LLP. Confirm or replace. */
+  /** ASSUMPTION: same phone line as Arysec Consultancy LLP. Confirm or replace. */
   phoneDisplay: main.company.phoneDisplay,
   phoneHref: main.company.phoneHref,
   /**
    * Enquiries go to the general mailbox until a dedicated training address
    * exists — and that fallback currently delivers Academy's leads into
-   * Arysec Technologies LLP's inbox, which is wrong for a separate company.
+   * Arysec Consultancy LLP's inbox, which is wrong for a separate company.
    * Set MAIL_ACADEMY_TO in the deployment environment to Academy's own
    * mailbox before this matters in production.
    */
   email: main.company.email,
   securityEmail: main.company.securityEmail,
-  /** ASSUMPTION: same city/region/country/address as Arysec Technologies LLP. Confirm or replace. */
+  /** ASSUMPTION: same city/region/country/address as Arysec Consultancy LLP. Confirm or replace. */
   city: main.company.city,
   region: main.company.region,
   country: main.company.country,
   addressLine: main.company.addressLine,
-  /** ASSUMPTION: same founder/director as Arysec Technologies LLP. Confirm or replace. */
+  /** ASSUMPTION: same founder/director as Arysec Consultancy LLP. Confirm or replace. */
   founder: main.company.founder,
   founderRole: main.company.founderRole,
   supportHours: 'Mon–Fri, 09:00–18:00 IST. Cohort support runs for the length of the programme.',
@@ -57,11 +57,11 @@ const company = {
    * a parent company. Never label it as one in copy or structured data.
    */
   affiliateSite: main.company.domain,
-  affiliateName: 'Arysec Technologies LLP',
+  affiliateName: 'Arysec Consultancy LLP',
   /**
    * Academy does not yet have its own Privacy/Terms/Cookie policy, so this
    * points at the affiliate's copy as an interim measure. That document
-   * names Arysec Technologies LLP as the data controller — inaccurate for
+   * names Arysec Consultancy LLP as the data controller — inaccurate for
    * data Academy collects as a separate entity. Needs its own policy, once
    * its registered name and address are confirmed; do not treat this link
    * as a long-term fix.
@@ -177,14 +177,14 @@ const footerColumns = [
     ],
   },
   {
-    // Arysec Technologies LLP is a separate company, not our own — labelled
+    // Arysec Consultancy LLP is a separate company, not our own — labelled
     // per link so this reads as a cross-link to an affiliate, not a section
     // of our own site.
     heading: 'Affiliate',
     links: [
-      { label: 'Arysec Technologies — Security Consulting', href: main.company.domain + '/services/' },
-      { label: 'Arysec Technologies — About', href: main.company.domain + '/about/' },
-      { label: 'Arysec Technologies — Careers', href: main.company.domain + '/careers/' },
+      { label: 'Arysec Consultancy — Security Consulting', href: main.company.domain + '/services/' },
+      { label: 'Arysec Consultancy — About', href: main.company.domain + '/about/' },
+      { label: 'Arysec Consultancy — Careers', href: main.company.domain + '/careers/' },
       { label: 'arysec.in', href: main.company.domain + '/' },
     ],
   },

@@ -2,7 +2,7 @@
   "name": "arysec-website",
   "version": "1.0.0",
   "private": true,
-  "description": "Website and enquiry backend for Arysec Technologies LLP",
+  "description": "Website and enquiry backend for Arysec Consultancy LLP",
   "license": "UNLICENSED",
   "engines": {
     "node": ">=18"

@@ -63,7 +63,7 @@ ${C.ctaBanner({
       {
         '@context': 'https://schema.org',
         '@type': 'ItemList',
-        name: 'Arysec Technologies LLP services',
+        name: 'Arysec Consultancy LLP services',
         itemListElement: ctx.config.services.map((s, i) => ({
           '@type': 'ListItem',
           position: i + 1,

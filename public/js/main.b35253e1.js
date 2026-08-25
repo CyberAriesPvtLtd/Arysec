@@ -1,5 +1,5 @@
 /**
- * Arysec Technologies LLP — site interactions.
+ * Arysec Consultancy LLP — site interactions.
  *
  * No dependencies, no inline script (the site runs under a CSP without
  * 'unsafe-inline'), and every enhancement degrades gracefully: with JavaScript

@@ -95,7 +95,7 @@ ${C.pageHero({
             <div class="form-field form-consent">
               <label class="checkbox-label">
                 <input type="checkbox" id="r-consent" name="consent" value="yes" required>
-                <span>I consent to Arysec Technologies LLP using these details to send the requested resource,
+                <span>I consent to Arysec Consultancy LLP using these details to send the requested resource,
                 as described in the <a href="/privacy-policy/">Privacy Policy</a>. <span class="req" aria-hidden="true">*</span></span>
               </label>
               <span class="field-error" data-error-for="consent"></span>
@@ -153,7 +153,7 @@ ${C.ctaBanner({
     path: '/resources/',
     title: 'Resources, Guides & FAQs',
     description:
-      'Guides, checklists, whitepapers and frequently asked questions on cybersecurity, vCISO, DPO services, ISO 27001 and the DPDP Act from Arysec Technologies LLP.',
+      'Guides, checklists, whitepapers and frequently asked questions on cybersecurity, vCISO, DPO services, ISO 27001 and the DPDP Act from Arysec Consultancy LLP.',
     content,
     jsonLd: [C.breadcrumbJsonLd(company.domain, trail), C.faqJsonLd(co.generalFaqs)],
   };

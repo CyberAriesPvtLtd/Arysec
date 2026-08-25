@@ -1,10 +1,10 @@
-# Arysec Technologies LLP — Content Authoring Spec
+# Arysec Consultancy LLP — Content Authoring Spec
 
 This file is the contract for all generated website content. Every content file must conform to it.
 
 ## The company (facts you may use)
 
-- **Name:** Arysec Technologies LLP
+- **Name:** Arysec Consultancy LLP
 - **Business:** IT and information security services — audits, governance, security operations, and IT
 - **Headquarters:** Mumbai, Maharashtra, India
 - **Reach:** Clients across India and international markets; remote and on-site delivery

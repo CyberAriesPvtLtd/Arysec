@@ -2,7 +2,7 @@
 'use strict';
 
 /**
- * Static site generator for the Arysec Technologies LLP website.
+ * Static site generator for the Arysec Consultancy LLP website.
  *
  * Reads build/config.js plus the authored content under build/data/, validates it,
  * renders every page through the shared layout, and writes a fully static site into

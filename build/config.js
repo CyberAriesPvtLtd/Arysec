@@ -6,7 +6,7 @@
  */
 
 const company = {
-  name: 'Arysec Technologies LLP',
+  name: 'Arysec Consultancy LLP',
   shortName: 'Arysec',
   tagline: 'Reliable IT. Resilient security. Expert support.',
   domain: 'https://www.arysec.in',
@@ -32,7 +32,7 @@ const company = {
 const brand = { sublabel: null };
 
 /** Alt text for the social card. */
-const ogImageAlt = 'Arysec Technologies LLP — IT & Cybersecurity Services, Mumbai';
+const ogImageAlt = 'Arysec Consultancy LLP — IT & Cybersecurity Services, Mumbai';
 
 /** Organisation-level JSON-LD, emitted on every page. */
 const organisation = {

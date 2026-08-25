@@ -52,7 +52,7 @@ ${C.ctaBanner({
     path: '/insights/',
     title: 'Cybersecurity & Compliance Insights',
     description:
-      'Articles from the Arysec Technologies LLP team on ISO 27001, the DPDP Act, penetration testing, ransomware response, cloud misconfiguration, and security leadership.',
+      'Articles from the Arysec Consultancy LLP team on ISO 27001, the DPDP Act, penetration testing, ransomware response, cloud misconfiguration, and security leadership.',
     content,
     jsonLd: [
       C.breadcrumbJsonLd(company.domain, trail),

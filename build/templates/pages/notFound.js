@@ -52,7 +52,7 @@ ${C.ctaBanner({
   return {
     path: '/404.html',
     title: 'Page Not Found',
-    description: 'The page you requested could not be found on the Arysec Technologies LLP website.',
+    description: 'The page you requested could not be found on the Arysec Consultancy LLP website.',
     content,
     noindex: true,
   };

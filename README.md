@@ -1,6 +1,6 @@
-# Arysec Technologies LLP — Website
+# Arysec Consultancy LLP — Website
 
-Corporate website and enquiry backend for **Arysec Technologies LLP**, an IT and information security
+Corporate website and enquiry backend for **Arysec Consultancy LLP**, an IT and information security
 firm headquartered in Mumbai, serving clients across India and international markets.
 
 Two sites are generated from one codebase:

@@ -1,6 +1,6 @@
 # Deployment Guide
 
-Practical steps to get the Arysec Technologies LLP website into production. Assumes Ubuntu/Debian
+Practical steps to get the Arysec Consultancy LLP website into production. Assumes Ubuntu/Debian
 with a domain pointing at the server.
 
 ---
@@ -69,7 +69,7 @@ sudo -u arysec npm test
 
 ```ini
 [Unit]
-Description=Arysec Technologies website
+Description=Arysec Consultancy website
 After=network.target
 
 [Service]

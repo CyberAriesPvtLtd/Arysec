@@ -112,7 +112,7 @@ ${C.pageHero({
             <div class="form-field form-consent">
               <label class="checkbox-label">
                 <input type="checkbox" id="consent" name="consent" value="yes" required>
-                <span>I consent to Arysec Technologies LLP storing and using these details to respond to my
+                <span>I consent to Arysec Consultancy LLP storing and using these details to respond to my
                 enquiry, as described in the <a href="/privacy-policy/">Privacy Policy</a>. <span class="req" aria-hidden="true">*</span></span>
               </label>
               <span class="field-error" data-error-for="consent"></span>
@@ -135,7 +135,7 @@ ${C.ctaBanner({
     path: '/contact/',
     title: 'Contact Us',
     description:
-      'Contact Arysec Technologies LLP — call +91 90048 57727, email info@arysec.in, or send an enquiry. Headquartered in Mumbai, serving clients across India and globally.',
+      'Contact Arysec Consultancy LLP — call +91 90048 57727, email info@arysec.in, or send an enquiry. Headquartered in Mumbai, serving clients across India and globally.',
     content,
     jsonLd: [
       C.breadcrumbJsonLd(company.domain, trail),

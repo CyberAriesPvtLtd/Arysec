@@ -187,7 +187,7 @@ ${C.pageHero({
             <div class="form-field form-consent">
               <label class="checkbox-label">
                 <input type="checkbox" id="c-consent" name="consent" value="yes" required>
-                <span>I consent to Arysec Technologies LLP processing my application data as described in the
+                <span>I consent to Arysec Consultancy LLP processing my application data as described in the
                 <a href="/privacy-policy/">Privacy Policy</a>. <span class="req" aria-hidden="true">*</span></span>
               </label>
               <span class="field-error" data-error-for="consent"></span>

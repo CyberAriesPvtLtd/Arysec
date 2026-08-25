@@ -99,7 +99,7 @@ const config = {
   },
 
   company: {
-    name: 'Arysec Technologies LLP',
+    name: 'Arysec Consultancy LLP',
     email: 'info@arysec.in',
     phone: '+91 90048 57727',
   },

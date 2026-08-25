@@ -52,7 +52,7 @@ ${C.pageHero({
             </div>
             <div class="contact-item">
               <span class="contact-icon">${icon('briefcase')}</span>
-              <div><h2>Consulting</h2><p>Need the control fixed rather than the training delivered? Our affiliate, Arysec Technologies, offers <a href="${esc(
+              <div><h2>Consulting</h2><p>Need the control fixed rather than the training delivered? Our affiliate, Arysec Consultancy, offers <a href="${esc(
                 company.affiliateSite
               )}/services/">security consulting</a>.</p></div>
             </div>
@@ -127,7 +127,7 @@ ${antiSpamFields()}
 ${C.ctaBanner({
   title: 'Not Sure Training Is the Answer?',
   text: 'If the problem is a missing control rather than a knowledge gap, we will say so — and the Arysec consulting practice can pick it up instead.',
-  actions: C.btn(`${company.affiliateSite}/contact/`, 'Arysec Technologies (Consulting)', 'btn-light'),
+  actions: C.btn(`${company.affiliateSite}/contact/`, 'Arysec Consultancy (Consulting)', 'btn-light'),
 })}`;
 
   return {

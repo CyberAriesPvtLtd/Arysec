@@ -179,7 +179,7 @@ ${C.ctaBanner({
     path: '/about/',
     title: 'About Us',
     description:
-      'Led by founder Unnati Shinde, Arysec Technologies LLP is a team of 50+ certified security professionals in Mumbai serving clients across India and globally.',
+      'Led by founder Unnati Shinde, Arysec Consultancy LLP is a team of 50+ certified security professionals in Mumbai serving clients across India and globally.',
     content,
     jsonLd: [
       C.breadcrumbJsonLd(company.domain, trail),

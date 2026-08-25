@@ -207,7 +207,7 @@ function organisationJsonLd(ctx) {
     knowsAbout: org.knowsAbout,
   };
   // Sites may cross-link an affiliate (see company.affiliateSite where set), but
-  // never assert a parentOrganization — Arysec Technologies LLP and Arysec Academy
+  // never assert a parentOrganization — Arysec Consultancy LLP and Arysec Academy
   // are separate registered companies, confirmed by the site owner, and JSON-LD
   // read by search engines and directories must not claim a corporate parent
   // that does not exist.

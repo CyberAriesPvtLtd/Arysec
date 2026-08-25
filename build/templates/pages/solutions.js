@@ -107,7 +107,7 @@ ${C.ctaBanner({
     path: '/solutions/',
     title: 'Security & Compliance Solutions',
     description:
-      'Packaged solutions from Arysec Technologies LLP — vCISO as a Service, DPO as a Service, internal audit, plus ISO 27001, SOC 2, GDPR, DPDP Act, PCI DSS and NIST CSF readiness.',
+      'Packaged solutions from Arysec Consultancy LLP — vCISO as a Service, DPO as a Service, internal audit, plus ISO 27001, SOC 2, GDPR, DPDP Act, PCI DSS and NIST CSF readiness.',
     content,
     jsonLd: [C.breadcrumbJsonLd(company.domain, trail)],
   };
