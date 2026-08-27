@@ -103,7 +103,7 @@ test('a fingerprinted asset is served immutable', async () => {
   const res = await get(href);
   assert.equal(res.status, 200);
   assert.match(res.headers['cache-control'], /immutable/);
-  assert.match(res.body, /--accent: #ff6a18/);
+  assert.match(res.body, /--accent: #b7410e/);
 });
 
 test('visitor measurement loads from our own origin, not a CDN', async () => {

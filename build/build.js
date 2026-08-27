@@ -343,7 +343,7 @@ function writeManifest(root, siteConfig) {
         start_url: '/',
         display: 'standalone',
         background_color: '#12100e',
-        theme_color: '#12100e',
+        theme_color: '#b7410e',
         icons: [{ src: '/assets/favicon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' }],
       },
       null,

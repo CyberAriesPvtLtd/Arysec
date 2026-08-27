@@ -39,13 +39,13 @@
   --bg-card-hover: #241e19;
   --bg-panel: #16120f;
 
-  /* Brand — the orange gradient of the triangular "A" mark. */
-  --accent: #ff6a18;
-  --accent-2: #ffa82e;
-  --accent-deep: #f8430c;
-  --accent-grad: linear-gradient(120deg, #f8430c, #fb9218);
-  /* Ink for text sitting on top of the accent gradient. */
-  --accent-ink: #1f0b02;
+  /* Theme colour — rust, independent of the logo mark's own orange gradient. */
+  --accent: #b7410e;
+  --accent-2: #d2691e;
+  --accent-deep: #7a2d0a;
+  --accent-grad: linear-gradient(120deg, #7a2d0a, #b7410e);
+  /* Rust is darker than the old accent, so text on top of it needs to be light. */
+  --accent-ink: #fff8f2;
 
   --text-primary: #f7f2ee;
   --text-secondary: #c3b8b0;
@@ -53,7 +53,7 @@
 
   --border: rgba(195, 184, 176, 0.14);
   --border-strong: rgba(195, 184, 176, 0.24);
-  --border-accent: rgba(255, 106, 24, 0.38);
+  --border-accent: rgba(183, 65, 14, 0.38);
 
   /* Status colours are held off the brand hue so success and error never
      read as a shade of the accent. */
@@ -132,7 +132,7 @@ a:hover { color: var(--accent-2); }
 }
 
 ::selection {
-  background: rgba(255, 106, 24, 0.34);
+  background: rgba(183, 65, 14, 0.34);
   color: #fff;
 }
 
@@ -192,11 +192,11 @@ a:hover { color: var(--accent-2); }
 .btn-primary {
   background: var(--accent-grad);
   color: var(--accent-ink);
-  box-shadow: 0 6px 22px rgba(255, 106, 24, 0.26);
+  box-shadow: 0 6px 22px rgba(183, 65, 14, 0.26);
 }
 .btn-primary:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(255, 106, 24, 0.4);
+  box-shadow: 0 10px 30px rgba(183, 65, 14, 0.4);
   color: var(--accent-ink);
 }
 
@@ -206,7 +206,7 @@ a:hover { color: var(--accent-2); }
   border-color: var(--border-accent);
 }
 .btn-outline:hover:not(:disabled) {
-  background: rgba(255, 106, 24, 0.08);
+  background: rgba(183, 65, 14, 0.08);
   transform: translateY(-2px);
   color: var(--text-primary);
 }
@@ -322,7 +322,7 @@ a:hover { color: var(--accent-2); }
 }
 .nav-link:hover,
 .nav-link.active,
-.nav-trigger[aria-expanded='true'] { color: var(--text-primary); background: rgba(255, 106, 24, 0.07); }
+.nav-trigger[aria-expanded='true'] { color: var(--text-primary); background: rgba(183, 65, 14, 0.07); }
 
 .nav-chevron { width: 14px; height: 14px; transition: transform var(--transition); }
 .nav-trigger[aria-expanded='true'] .nav-chevron { transform: rotate(180deg); }
@@ -362,7 +362,7 @@ a:hover { color: var(--accent-2); }
   text-decoration: none;
   transition: background var(--transition);
 }
-.mega-link:hover { background: rgba(255, 106, 24, 0.08); }
+.mega-link:hover { background: rgba(183, 65, 14, 0.08); }
 .mega-link-icon { flex: none; color: var(--accent); }
 .mega-link-icon svg { width: 20px; height: 20px; }
 .mega-link-text { display: flex; flex-direction: column; min-width: 0; }
@@ -398,7 +398,7 @@ a:hover { color: var(--accent-2); }
   text-decoration: none;
   transition: background var(--transition);
 }
-.dropdown-link:hover { background: rgba(255, 106, 24, 0.08); }
+.dropdown-link:hover { background: rgba(183, 65, 14, 0.08); }
 .dropdown-link-title { color: var(--text-primary); font-size: 0.9rem; font-weight: 600; }
 .dropdown-link-desc { color: var(--text-muted); font-size: 0.78rem; }
 
@@ -444,8 +444,8 @@ a:hover { color: var(--accent-2); }
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 106, 24, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 106, 24, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(183, 65, 14, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(183, 65, 14, 0.05) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 75%);
@@ -460,7 +460,7 @@ a:hover { color: var(--accent-2); }
 }
 .orb-1 {
   width: 480px; height: 480px;
-  background: radial-gradient(circle, rgba(255, 106, 24, 0.5), transparent 70%);
+  background: radial-gradient(circle, rgba(183, 65, 14, 0.5), transparent 70%);
   top: -8%; right: -6%;
 }
 .orb-2 {
@@ -486,7 +486,7 @@ a:hover { color: var(--accent-2); }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
-  background: rgba(255, 106, 24, 0.06);
+  background: rgba(183, 65, 14, 0.06);
   margin-bottom: 1.4rem;
 }
 
@@ -537,9 +537,9 @@ a:hover { color: var(--accent-2); }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 100% at 50% 0%, rgba(255, 106, 24, 0.14), transparent 65%),
-    linear-gradient(rgba(255, 106, 24, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 106, 24, 0.04) 1px, transparent 1px);
+    radial-gradient(ellipse 60% 100% at 50% 0%, rgba(183, 65, 14, 0.14), transparent 65%),
+    linear-gradient(rgba(183, 65, 14, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(183, 65, 14, 0.04) 1px, transparent 1px);
   background-size: auto, 56px 56px, 56px 56px;
   mask-image: radial-gradient(ellipse 90% 100% at 50% 20%, black 20%, transparent 80%);
   -webkit-mask-image: radial-gradient(ellipse 90% 100% at 50% 20%, black 20%, transparent 80%);
@@ -673,7 +673,7 @@ a:hover { color: var(--accent-2); }
   text-decoration: none;
   transition: border-color var(--transition), color var(--transition), background var(--transition);
 }
-.jump-link:hover { border-color: var(--border-accent); color: var(--text-primary); background: rgba(255, 106, 24, 0.07); }
+.jump-link:hover { border-color: var(--border-accent); color: var(--text-primary); background: rgba(183, 65, 14, 0.07); }
 
 /* --------------------------------------------------------------------------
    7. Grids and cards
@@ -700,7 +700,7 @@ a:hover { color: var(--accent-2); }
   place-items: center;
   width: 46px; height: 46px;
   border-radius: 11px;
-  background: rgba(255, 106, 24, 0.09);
+  background: rgba(183, 65, 14, 0.09);
   border: 1px solid var(--border-accent);
   color: var(--accent);
   margin-bottom: 1rem;
@@ -746,19 +746,19 @@ a:hover { color: var(--accent-2); }
   place-items: center;
   width: 52px; height: 52px;
   border-radius: 12px;
-  background: rgba(255, 106, 24, 0.09);
+  background: rgba(183, 65, 14, 0.09);
   border: 1px solid var(--border-accent);
   color: var(--accent);
   margin-bottom: 1.2rem;
   transition: background var(--transition);
 }
 .service-icon svg { width: 28px; height: 28px; }
-.service-card:hover .service-icon { background: rgba(255, 106, 24, 0.16); }
+.service-card:hover .service-icon { background: rgba(183, 65, 14, 0.16); }
 .service-icon-lg { width: 62px; height: 62px; border-radius: 15px; }
 .service-icon-lg svg { width: 32px; height: 32px; }
 
 .feature-tile {
-  background: linear-gradient(180deg, rgba(255, 106, 24, 0.07), var(--bg-card) 55%);
+  background: linear-gradient(180deg, rgba(183, 65, 14, 0.07), var(--bg-card) 55%);
   border: 1px solid var(--border-accent);
   border-radius: var(--radius);
   transition: transform var(--transition), box-shadow var(--transition);
@@ -819,7 +819,7 @@ a:hover { color: var(--accent-2); }
 .benefit-item p { color: var(--text-secondary); font-size: 0.9rem; }
 
 .who-panel {
-  background: linear-gradient(180deg, rgba(255, 106, 24, 0.07), var(--bg-card) 50%);
+  background: linear-gradient(180deg, rgba(183, 65, 14, 0.07), var(--bg-card) 50%);
   border: 1px solid var(--border-accent);
   border-radius: var(--radius);
   padding: 2rem 1.8rem;
@@ -888,7 +888,7 @@ a:hover { color: var(--accent-2); }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
-  background: rgba(255, 106, 24, 0.09);
+  background: rgba(183, 65, 14, 0.09);
   border: 1px solid var(--border-accent);
   border-radius: 999px;
   padding: 0.3rem 0.85rem;
@@ -919,7 +919,7 @@ a:hover { color: var(--accent-2); }
 .solution-card:hover { transform: translateY(-6px); border-color: var(--border-accent); box-shadow: var(--shadow); }
 .solution-card.featured {
   border-color: var(--border-accent);
-  background: linear-gradient(180deg, rgba(255, 106, 24, 0.07), var(--bg-card) 45%);
+  background: linear-gradient(180deg, rgba(183, 65, 14, 0.07), var(--bg-card) 45%);
 }
 .solution-tag {
   align-self: flex-start;
@@ -928,7 +928,7 @@ a:hover { color: var(--accent-2); }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
-  background: rgba(255, 106, 24, 0.09);
+  background: rgba(183, 65, 14, 0.09);
   border: 1px solid var(--border-accent);
   border-radius: 999px;
   padding: 0.3rem 0.85rem;
@@ -1028,7 +1028,7 @@ a:hover { color: var(--accent-2); }
 .article-time { color: var(--text-muted); font-size: 0.8rem; }
 
 .takeaways {
-  background: linear-gradient(180deg, rgba(255, 106, 24, 0.07), var(--bg-card) 60%);
+  background: linear-gradient(180deg, rgba(183, 65, 14, 0.07), var(--bg-card) 60%);
   border: 1px solid var(--border-accent);
   border-radius: var(--radius);
   padding: 1.8rem;
@@ -1063,7 +1063,7 @@ a:hover { color: var(--accent-2); }
   letter-spacing: 0.11em;
   text-transform: uppercase;
   color: var(--accent);
-  background: rgba(255, 106, 24, 0.09);
+  background: rgba(183, 65, 14, 0.09);
   border: 1px solid var(--border-accent);
   border-radius: 999px;
   padding: 0.26rem 0.75rem;
@@ -1157,7 +1157,7 @@ a:hover { color: var(--accent-2); }
 .founder-portrait {
   aspect-ratio: 1;
   border-radius: var(--radius);
-  background: radial-gradient(circle at 50% 35%, rgba(255, 106, 24, 0.18), transparent 60%), var(--bg-darker);
+  background: radial-gradient(circle at 50% 35%, rgba(183, 65, 14, 0.18), transparent 60%), var(--bg-darker);
   border: 1px solid var(--border-accent);
   display: grid;
   place-items: center;
@@ -1196,7 +1196,7 @@ a:hover { color: var(--accent-2); }
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--text-secondary);
-  background: rgba(255, 106, 24, 0.07);
+  background: rgba(183, 65, 14, 0.07);
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 0.32rem 0.85rem;
@@ -1323,7 +1323,7 @@ a:hover { color: var(--accent-2); }
    -------------------------------------------------------------------------- */
 .cta-banner {
   background:
-    radial-gradient(ellipse 70% 120% at 50% 0%, rgba(255, 106, 24, 0.16), transparent 60%),
+    radial-gradient(ellipse 70% 120% at 50% 0%, rgba(183, 65, 14, 0.16), transparent 60%),
     var(--bg-darker);
   border-block: 1px solid var(--border);
   padding: 5rem 0;
@@ -1368,7 +1368,7 @@ a:hover { color: var(--accent-2); }
   place-items: center;
   width: 46px; height: 46px;
   border-radius: 12px;
-  background: rgba(255, 106, 24, 0.09);
+  background: rgba(183, 65, 14, 0.09);
   border: 1px solid var(--border-accent);
   color: var(--accent);
 }
@@ -1411,7 +1411,7 @@ a:hover { color: var(--accent-2); }
 .form-field textarea { resize: vertical; min-height: 110px; }
 .form-field input[type='file'] { padding: 0.6rem; cursor: pointer; }
 .form-field input[type='file']::file-selector-button {
-  background: rgba(255, 106, 24, 0.1);
+  background: rgba(183, 65, 14, 0.1);
   border: 1px solid var(--border-accent);
   color: var(--text-primary);
   border-radius: 7px;
@@ -1426,7 +1426,7 @@ a:hover { color: var(--accent-2); }
 .form-field textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(255, 106, 24, 0.15);
+  box-shadow: 0 0 0 3px rgba(183, 65, 14, 0.15);
 }
 .form-field input::placeholder,
 .form-field textarea::placeholder { color: var(--text-muted); }
@@ -1451,7 +1451,7 @@ a:hover { color: var(--accent-2); }
   height: 17px;
   min-width: 17px;
   margin-top: 0.2rem;
-  accent-color: #ff6a18;
+  accent-color: var(--accent);
   cursor: pointer;
 }
 

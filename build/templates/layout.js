@@ -266,7 +266,7 @@ ${
   <meta name="twitter:description" content="${esc(page.description)}">
   <meta name="twitter:image" content="${esc(ogImage)}">
 
-  <meta name="theme-color" content="#12100e">
+  <meta name="theme-color" content="#b7410e">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/favicon.svg">
   <link rel="manifest" href="/site.webmanifest">
