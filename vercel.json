@@ -99,14 +99,8 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "academy.arysec.in"
-        }
-      ],
-      "destination": "/academy/$1"
+      "source": "/api/(.*)",
+      "destination": "/api/gateway"
     }
   ]
 }

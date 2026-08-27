@@ -66,8 +66,16 @@ const config = {
     .map((s) => s.trim().toLowerCase())
     .filter(Boolean),
   academyDir: 'academy',
-  uploadDir: process.env.UPLOAD_DIR || path.join(__dirname, 'uploads'),
-  dbFile: process.env.DB_FILE || path.join(__dirname, 'data', 'submissions.db'),
+  /**
+   * Vercel Functions can only write under /tmp, and /tmp is wiped between cold
+   * starts and not shared across concurrent instances — so this keeps the API from
+   * throwing (EROFS) on every submission, but it is not durable storage on Vercel.
+   * Set DB_FILE / UPLOAD_DIR to a real persistent store (a hosted Postgres, Vercel
+   * Blob, S3, etc.) before relying on this for anything beyond "don't crash".
+   */
+  uploadDir: process.env.UPLOAD_DIR || (process.env.VERCEL ? '/tmp/arysec-uploads' : path.join(__dirname, 'uploads')),
+  dbFile:
+    process.env.DB_FILE || (process.env.VERCEL ? '/tmp/arysec-submissions.db' : path.join(__dirname, 'data', 'submissions.db')),
 
   /** Max accepted JSON body. Form payloads are small; anything larger is abuse. */
   jsonLimit: process.env.JSON_LIMIT || '32kb',

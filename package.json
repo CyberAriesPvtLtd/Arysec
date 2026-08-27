@@ -18,6 +18,7 @@
     "brand": "node scripts/build-brand-assets.js"
   },
   "dependencies": {
+    "@vercel/functions": "^3.9.5",
     "better-sqlite3": "^11.7.0",
     "compression": "^1.7.5",
     "dotenv": "^16.4.7",
