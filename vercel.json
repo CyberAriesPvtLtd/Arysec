@@ -1,147 +1,188 @@
 {
-"$schema": "https://openapi.vercel.sh/vercel.json",
+  "$schema": "https://openapi.vercel.sh/vercel.json",
 
-"headers": [
-{
-"source": "/css/(.*)",
-"headers": [
-{
-"key": "Cache-Control",
-"value": "public, max-age=31536000, immutable"
-}
-]
-},
-{
-"source": "/js/(.*)",
-"headers": [
-{
-"key": "Cache-Control",
-"value": "public, max-age=31536000, immutable"
-}
-]
-},
-{
-"source": "/assets/fonts/(.*)",
-"headers": [
-{
-"key": "Cache-Control",
-"value": "public, max-age=31536000, immutable"
-}
-]
-}
-],
+  "headers": [
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
 
-"redirects": [
-{
-"source": "/academy",
-"has": [
-{
-"type": "host",
-"value": "arysec.in"
-}
-],
-"destination": "https://academy.arysec.in/",
-"permanent": true
-},
-{
-"source": "/academy/(.*)",
-"has": [
-{
-"type": "host",
-"value": "arysec.in"
-}
-],
-"destination": "https://academy.arysec.in/$1",
-"permanent": true
-},
-{
-"source": "/academy",
-"has": [
-{
-"type": "host",
-"value": "[www.arysec.in](http://www.arysec.in)"
-}
-],
-"destination": "https://academy.arysec.in/",
-"permanent": true
-},
-{
-"source": "/academy/(.*)",
-"has": [
-{
-"type": "host",
-"value": "[www.arysec.in](http://www.arysec.in)"
-}
-],
-"destination": "https://academy.arysec.in/$1",
-"permanent": true
-}
-],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.academy.arysec.in"
+        }
+      ],
+      "destination": "https://academy.arysec.in/$1",
+      "permanent": true
+    },
 
-"rewrites": [
-{
-"source": "/api/(.*)",
-"destination": "/api/gateway"
-},
-{
-"source": "/",
-"has": [
-{
-"type": "host",
-"value": "academy.arysec.in"
-}
-],
-"destination": "/academy/index.html"
-},
-{
-"source": "/programmes",
-"has": [
-{
-"type": "host",
-"value": "academy.arysec.in"
-}
-],
-"destination": "/academy/programmes/index.html"
-},
-{
-"source": "/programmes/(.*)",
-"has": [
-{
-"type": "host",
-"value": "academy.arysec.in"
-}
-],
-"destination": "/academy/programmes/$1"
-},
-{
-"source": "/certification",
-"has": [
-{
-"type": "host",
-"value": "academy.arysec.in"
-}
-],
-"destination": "/academy/certification/index.html"
-},
-{
-"source": "/for-organisations",
-"has": [
-{
-"type": "host",
-"value": "academy.arysec.in"
-}
-],
-"destination": "/academy/for-organisations/index.html"
-},
-{
-"source": "/contact",
-"has": [
-{
-"type": "host",
-"value": "academy.arysec.in"
-}
-],
-"destination": "/academy/contact/index.html"
-}
-]
+    {
+      "source": "/academy",
+      "has": [
+        {
+          "type": "host",
+          "value": "academy.arysec.in"
+        }
+      ],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/academy/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "academy.arysec.in"
+        }
+      ],
+      "destination": "/$1",
+      "permanent": true
+    },
+
+    {
+      "source": "/academy",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.arysec.in"
+        }
+      ],
+      "destination": "https://academy.arysec.in/",
+      "permanent": true
+    },
+    {
+      "source": "/academy/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.arysec.in"
+        }
+      ],
+      "destination": "https://academy.arysec.in/$1",
+      "permanent": true
+    },
+
+    {
+      "source": "/academy",
+      "has": [
+        {
+          "type": "host",
+          "value": "arysec.in"
+        }
+      ],
+      "destination": "https://academy.arysec.in/",
+      "permanent": true
+    },
+    {
+      "source": "/academy/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "arysec.in"
+        }
+      ],
+      "destination": "https://academy.arysec.in/$1",
+      "permanent": true
+    }
+  ],
+
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/gateway"
+    },
+
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "academy.arysec.in"
+        }
+      ],
+      "destination": "/academy/index.html"
+    },
+
+    {
+      "source": "/programmes",
+      "has": [
+        {
+          "type": "host",
+          "value": "academy.arysec.in"
+        }
+      ],
+      "destination": "/academy/programmes/index.html"
+    },
+    {
+      "source": "/programmes/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "academy.arysec.in"
+        }
+      ],
+      "destination": "/academy/programmes/$1"
+    },
+
+    {
+      "source": "/certification",
+      "has": [
+        {
+          "type": "host",
+          "value": "academy.arysec.in"
+        }
+      ],
+      "destination": "/academy/certification/index.html"
+    },
+
+    {
+      "source": "/for-organisations",
+      "has": [
+        {
+          "type": "host",
+          "value": "academy.arysec.in"
+        }
+      ],
+      "destination": "/academy/for-organisations/index.html"
+    },
+
+    {
+      "source": "/contact",
+      "has": [
+        {
+          "type": "host",
+          "value": "academy.arysec.in"
+        }
+      ],
+      "destination": "/academy/contact/index.html"
+    }
+  ]
 }
