@@ -56,14 +56,14 @@
       "permanent": true
     },
     {
-      "source": "/academy/(.*)",
+      "source": "/academy/:path((?!robots\\.txt|sitemap\\.xml|site\\.webmanifest).*)",
       "has": [
         {
           "type": "host",
           "value": "academy.arysec.in"
         }
       ],
-      "destination": "/$1",
+      "destination": "/:path",
       "permanent": true
     },
 
