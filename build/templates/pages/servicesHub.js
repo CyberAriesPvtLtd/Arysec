@@ -56,7 +56,7 @@ ${C.ctaBanner({
     path: '/services/',
     title: 'IT & Cybersecurity Services | Arysec Consultancy',
     description:
-      'Explore the 15 IT and cybersecurity consulting services delivered by Arysec (CyberAries) from our Mumbai headquarters.',
+      'Explore the 15 IT and cybersecurity consulting services delivered by Arysec Consultancy LLP from our Mumbai headquarters.',
     content,
     jsonLd: [
       C.breadcrumbJsonLd(company.domain, trail),

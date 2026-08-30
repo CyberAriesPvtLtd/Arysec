@@ -23,7 +23,7 @@ module.exports = function homePage(ctx) {
         <p class="hero-eyebrow reveal">Mumbai HQ &middot; Serving India &amp; Global Clients</p>
         <h1 class="reveal delay-1">Secure Technology.<br><span class="text-gradient">Confident Business.</span></h1>
         <p class="hero-sub reveal delay-2">
-          ${esc(company.name)} (operating as the cybersecurity advisory and consulting division of CyberAries Pvt Ltd, commonly known as CyberAries) is an IT and information security firm built around a team of ${esc(company.teamSize)}
+          ${esc(company.name)} is an IT and information security firm built around a team of ${esc(company.teamSize)}
           certified professionals. From virtual CISO leadership and data protection officer services to penetration
           testing, managed IT, and internal audit, we help organisations govern risk, meet regulation, and operate
           without interruption.
@@ -232,9 +232,9 @@ ${C.ctaBanner({
 
   return {
     path: '/',
-    title: `Arysec (CyberAries) | IT & Cybersecurity Services, Mumbai`,
+    title: `Arysec Consultancy LLP | IT & Cybersecurity Services, Mumbai`,
     description:
-      'Arysec (a CyberAries Pvt Ltd brand) is a Mumbai-headquartered IT & cybersecurity consultancy. We deliver vCISO, DPO as a Service, VAPT, and ISO 27001 compliance across India and globally.',
+      'Arysec Consultancy LLP is a premier IT & cybersecurity consultancy in Mumbai. We provide expert vCISO, DPO as a Service, VAPT, and ISO 27001 compliance services.',
     content,
     jsonLd: [
       {
