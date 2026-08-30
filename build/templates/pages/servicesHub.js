@@ -54,9 +54,9 @@ ${C.ctaBanner({
 
   return {
     path: '/services/',
-    title: 'IT & Cybersecurity Services',
+    title: 'IT & Cybersecurity Services | Arysec Consultancy',
     description:
-      'All 15 Arysec services: vCISO, DPO as a Service, internal audit, VAPT, ISO 27001, cloud and network security, incident response, managed IT and development.',
+      'Explore the 15 IT and cybersecurity consulting services delivered by Arysec (CyberAries) from our Mumbai headquarters.',
     content,
     jsonLd: [
       C.breadcrumbJsonLd(company.domain, trail),

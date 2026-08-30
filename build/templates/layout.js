@@ -189,7 +189,7 @@ function organisationJsonLd(ctx) {
     '@context': 'https://schema.org',
     '@type': org.type,
     name: c.name,
-    alternateName: c.shortName,
+    alternateName: [c.shortName, 'CyberAries', 'CyberAries Pvt Ltd', 'Cyber Aries'],
     url: c.domain + '/',
     logo: c.domain + '/assets/logo-512.png',
     image: c.domain + '/assets/og-image.png',

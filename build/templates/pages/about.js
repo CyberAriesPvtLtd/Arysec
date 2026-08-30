@@ -30,7 +30,7 @@ ${C.pageHero({
             <h2>Built to Make Security Practical</h2>
             <p>
               Too many organisations are told what is wrong with their security and left to work out what to do
-              about it. Arysec was formed to close that gap — pairing rigorous assessment with the engineering
+              about it. Arysec (representing the advisory and cybersecurity services of CyberAries Pvt Ltd, commonly known as CyberAries) was formed to close that gap — pairing rigorous assessment with the engineering
               and leadership capacity to actually fix what we find.
             </p>
             <p>
@@ -177,9 +177,9 @@ ${C.ctaBanner({
 
   return {
     path: '/about/',
-    title: 'About Us',
+    title: 'About Us | Arysec (CyberAries)',
     description:
-      'Led by founder Unnati Shinde, Arysec Consultancy LLP is a team of 50+ certified security professionals in Mumbai serving clients across India and globally.',
+      'Learn about Arysec Consultancy LLP (a CyberAries Pvt Ltd brand), a leading IT and cybersecurity consulting firm in Mumbai, led by founder Unnati Shinde.',
     content,
     jsonLd: [
       C.breadcrumbJsonLd(company.domain, trail),
@@ -191,6 +191,7 @@ ${C.ctaBanner({
         mainEntity: {
           '@type': 'Organization',
           name: company.name,
+          alternateName: [company.shortName, 'CyberAries', 'CyberAries Pvt Ltd', 'Cyber Aries'],
           founder: { '@type': 'Person', name: company.founder, jobTitle: company.founderRole },
         },
       },
