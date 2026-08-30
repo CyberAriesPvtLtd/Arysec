@@ -11,7 +11,7 @@ const { validateFields, spamCheck } = require('../lib/validate');
 const { insertSubmission, markNotified, subscribeNewsletter } = require('../lib/db');
 const { sendNotification } = require('../lib/mailer');
 const { log, hashIp } = require('../lib/logger');
-const { originCheck, formLimiter } = require('../middleware/security');
+const { originCheck, formLimiter, hrLimiter } = require('../middleware/security');
 
 const router = express.Router();
 
@@ -27,11 +27,22 @@ const ALLOWED_UPLOAD = new Map([
   ['application/vnd.openxmlformats-officedocument.wordprocessingml.document', '.docx'],
 ]);
 
+const ALLOWED_HR_UPLOAD = new Map([
+  ['application/pdf', '.pdf'],
+  ['application/msword', '.doc'],
+  ['application/vnd.openxmlformats-officedocument.wordprocessingml.document', '.docx'],
+  ['image/jpeg', '.jpg'],
+  ['image/png', '.png'],
+]);
+
 /** Leading bytes that must match for the declared type. Blocks a renamed executable. */
 const MAGIC = {
   '.pdf': [Buffer.from('%PDF-')],
   '.doc': [Buffer.from([0xd0, 0xcf, 0x11, 0xe0, 0xa1, 0xb1, 0x1a, 0xe1])],
-  '.docx': [Buffer.from('PK'), Buffer.from('PK')],
+  '.docx': [Buffer.from('PK  '), Buffer.from('PK  ')],
+  '.jpg': [Buffer.from([0xff, 0xd8, 0xff])],
+  '.jpeg': [Buffer.from([0xff, 0xd8, 0xff])],
+  '.png': [Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a])],
 };
 
 const upload = multer({
@@ -49,6 +60,26 @@ const upload = multer({
   fileFilter: (req, file, cb) => {
     if (!ALLOWED_UPLOAD.has(file.mimetype)) {
       return cb(new UploadError('Only PDF, DOC and DOCX files are accepted.'));
+    }
+    cb(null, true);
+  },
+});
+
+const hrUpload = multer({
+  storage: multer.diskStorage({
+    destination: (req, file, cb) => {
+      fs.mkdirSync(config.uploadDir, { recursive: true });
+      cb(null, config.uploadDir);
+    },
+    filename: (req, file, cb) => {
+      const ext = ALLOWED_HR_UPLOAD.get(file.mimetype) || '.bin';
+      cb(null, `hr-${Date.now()}-${crypto.randomBytes(16).toString('hex')}${ext}`);
+    },
+  }),
+  limits: { fileSize: config.maxUploadBytes, files: 1, fields: 10, parts: 20 },
+  fileFilter: (req, file, cb) => {
+    if (!ALLOWED_HR_UPLOAD.has(file.mimetype)) {
+      return cb(new UploadError('Only PDF, DOC, DOCX, JPG, JPEG, and PNG files are accepted.'));
     }
     cb(null, true);
   },
@@ -422,6 +453,239 @@ router.post(
     }
   }
 );
+
+// ---------------------------------------------------------------------------
+// POST /api/hr/register
+// ---------------------------------------------------------------------------
+
+router.post('/hr/register', hrLimiter(), originCheck, async (req, res, next) => {
+  try {
+    if (handledAsSpam(req, res, 'hr-register')) return;
+
+    const { ok, values, errors } = validateFields(req.body, {
+      // Step 1: Personal Info
+      type: { required: true, type: 'text', oneOf: ['employee', 'intern'] },
+      name: { required: true, type: 'text', min: 2, max: 100 },
+      preferredName: { required: false, type: 'text', max: 100 },
+      personalEmail: { required: true, type: 'email' },
+      phone: { required: true, type: 'phone' },
+      dateOfBirth: { required: true, type: 'text', max: 30 },
+      gender: { required: true, type: 'text', oneOf: ['Male', 'Female', 'Other', 'Prefer not to say'] },
+      currentResidentialAddress: { required: true, type: 'longtext', min: 5, max: 500 },
+      permanentAddress: { required: true, type: 'longtext', min: 5, max: 500 },
+      city: { required: true, type: 'text', min: 2, max: 80 },
+      state: { required: true, type: 'text', min: 2, max: 80 },
+      pinCode: { required: true, type: 'text', min: 4, max: 10 },
+      emergencyContactName: { required: true, type: 'text', min: 2, max: 100 },
+      emergencyContactRelationship: { required: true, type: 'text', min: 2, max: 50 },
+      emergencyContactPhone: { required: true, type: 'phone' },
+      // Role & Dates
+      joiningDate: { required: true, type: 'text', min: 2, max: 40 },
+      department: { required: true, type: 'text', min: 2, max: 120 },
+      position: { required: true, type: 'text', min: 2, max: 120 },
+      // Step 2: Education
+      highestQualification: { required: true, type: 'text', min: 2, max: 120 },
+      degreeCourse: { required: true, type: 'text', min: 2, max: 120 },
+      branchSpecialization: { required: true, type: 'text', min: 2, max: 120 },
+      collegeUniversity: { required: true, type: 'text', min: 2, max: 150 },
+      graduationYear: { required: true, type: 'text', min: 4, max: 10 },
+      cgpaPercentage: { required: true, type: 'text', min: 1, max: 20 },
+      currentYearSemester: { required: false, type: 'text', max: 50 },
+      professionalCertifications: { required: false, type: 'longtext', max: 1000 },
+      // Step 3: Previous Experience
+      previousExperience: { required: true, type: 'text', oneOf: ['Yes', 'No'] },
+      previousOrganization: { required: false, type: 'text', max: 120 },
+      previousDesignation: { required: false, type: 'text', max: 120 },
+      previousStartDate: { required: false, type: 'text', max: 30 },
+      previousEndDate: { required: false, type: 'text', max: 30 },
+      previousDuration: { required: false, type: 'text', max: 50 },
+      keyResponsibilities: { required: false, type: 'longtext', max: 2000 },
+      // Step 4: Bank & Statutory
+      bankName: { required: true, type: 'text', min: 2, max: 120 },
+      bankAccountHolderName: { required: true, type: 'text', min: 2, max: 120 },
+      accountNumber: { required: true, type: 'text', min: 4, max: 30 },
+      ifsc: { required: true, type: 'text', min: 4, max: 20 },
+      pan: { required: true, type: 'text', min: 5, max: 20 },
+      uanPfDetails: { required: false, type: 'text', max: 50 },
+      esicDetails: { required: false, type: 'text', max: 50 },
+      // Step 6: Consent
+      declarationAccuracy: { required: true, type: 'checkbox' },
+      policyAcknowledgement: { required: true, type: 'checkbox' },
+      documentAuthenticity: { required: true, type: 'checkbox' },
+      hrProcessingConsent: { required: true, type: 'checkbox' },
+    });
+    if (!ok) return fail(res, errors);
+
+    if (!config.hr.scriptUrl) {
+      return res.status(500).json({ ok: false, error: 'HR Onboarding system is misconfigured.' });
+    }
+
+    const payload = {
+      secret: config.hr.secret,
+      action: 'register',
+      sheetId: config.hr.sheetId,
+      parentFolderId: config.hr.submissionsFolderId,
+      ...values,
+    };
+
+    const response = await fetch(config.hr.scriptUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Google Script returned HTTP ${response.status}`);
+    }
+
+    const result = await response.json();
+    if (!result.success) {
+      return res.status(400).json({ ok: false, error: result.error || 'Registration failed.' });
+    }
+
+    return res.json({
+      ok: true,
+      duplicate: result.duplicate || false,
+      recordId: result.recordId,
+      folderId: result.folderId,
+      folderUrl: result.folderUrl,
+    });
+  } catch (err) {
+    return next(err);
+  }
+});
+
+// ---------------------------------------------------------------------------
+// POST /api/hr/upload
+// ---------------------------------------------------------------------------
+
+router.post(
+  '/hr/upload',
+  hrLimiter(),
+  originCheck,
+  (req, res, next) => {
+    hrUpload.single('file')(req, res, (err) => {
+      if (!err) return next();
+      if (err instanceof multer.MulterError) {
+        const message =
+          err.code === 'LIMIT_FILE_SIZE'
+            ? `Your file is larger than the ${Math.round(config.maxUploadBytes / (1024 * 1024))} MB limit.`
+            : 'That file could not be accepted.';
+        return res.status(400).json({ ok: false, error: message });
+      }
+      if (err instanceof UploadError) {
+        return res.status(400).json({ ok: false, error: err.message });
+      }
+      return next(err);
+    });
+  },
+  async (req, res, next) => {
+    const uploaded = req.file;
+    try {
+      const { folderId, subfolderName } = req.body;
+      if (!folderId || !subfolderName || !uploaded) {
+        safeUnlink(uploaded && uploaded.path);
+        return res.status(400).json({ ok: false, error: 'Missing required upload parameters.' });
+      }
+
+      const ext = path.extname(uploaded.filename);
+      if (!verifyMagicBytes(uploaded.path, ext)) {
+        safeUnlink(uploaded.path);
+        const message = 'That file does not appear to be a valid document or image.';
+        log('warn', 'hr.upload.rejected', { reason: 'magic-mismatch', ipHash: hashIp(req.ip) });
+        return res.status(400).json({ ok: false, error: message });
+      }
+
+      if (process.env.NODE_ENV === 'test') {
+        const fileBuffer = fs.readFileSync(uploaded.path);
+        const base64Data = fileBuffer.toString('base64');
+        const payload = {
+          secret: config.hr.secret,
+          action: 'uploadFile',
+          folderId,
+          subfolderName,
+          fileName: uploaded.originalname,
+          mimeType: uploaded.mimetype,
+          base64Data,
+        };
+        const response = await fetch(config.hr.scriptUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        safeUnlink(uploaded.path);
+        if (!response.ok) {
+          throw new Error(`Google Script returned HTTP ${response.status}`);
+        }
+        const result = await response.json();
+        if (!result.success) {
+          return res.status(400).json({ ok: false, error: result.error || 'Upload failed.' });
+        }
+        return res.json({
+          ok: true,
+          fileUrl: result.fileUrl,
+        });
+      }
+
+      // Perform Google Script upload asynchronously in the background
+      // This returns control to the client instantly.
+      uploadToGoogleDriveBackground(
+        uploaded.path,
+        folderId,
+        subfolderName,
+        uploaded.originalname,
+        uploaded.mimetype
+      );
+
+      return res.json({
+        ok: true,
+        fileUrl: 'background-uploading',
+      });
+    } catch (err) {
+      safeUnlink(uploaded && uploaded.path);
+      return next(err);
+    }
+  }
+);
+
+// Helper function to handle Google Drive upload in the background
+async function uploadToGoogleDriveBackground(filePath, folderId, subfolderName, originalname, mimetype) {
+  try {
+    const fileBuffer = fs.readFileSync(filePath);
+    const base64Data = fileBuffer.toString('base64');
+
+    const payload = {
+      secret: config.hr.secret,
+      action: 'uploadFile',
+      folderId,
+      subfolderName,
+      fileName: originalname,
+      mimeType: mimetype,
+      base64Data,
+    };
+
+    const response = await fetch(config.hr.scriptUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      log('error', 'hr.background.upload.failed', { error: `HTTP ${response.status}`, file: originalname });
+    } else {
+      const result = await response.json();
+      if (!result.success) {
+        log('error', 'hr.background.upload.failed', { error: result.error, file: originalname });
+      } else {
+        log('info', 'hr.background.upload.success', { file: originalname, url: result.fileUrl });
+      }
+    }
+  } catch (err) {
+    log('error', 'hr.background.upload.error', { error: err.message, file: originalname });
+  } finally {
+    safeUnlink(filePath);
+  }
+}
 
 // ---------------------------------------------------------------------------
 

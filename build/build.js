@@ -33,6 +33,7 @@ const { insightsIndex, articlePage } = require('./templates/pages/insights');
 const resourcesPage = require('./templates/pages/resources');
 const careersPage = require('./templates/pages/careers');
 const contactPage = require('./templates/pages/contact');
+const onboardingPage = require('./templates/pages/onboarding');
 const legalPage = require('./templates/pages/legal');
 const notFoundPage = require('./templates/pages/notFound');
 
@@ -401,6 +402,7 @@ function build() {
     resourcesPage(ctx),
     careersPage(ctx),
     contactPage(ctx),
+    onboardingPage(ctx),
     ...LEGAL_DOCS.map((key) => legalPage(ctx, key, BUILD_DATE)),
     notFoundPage(ctx),
   ];

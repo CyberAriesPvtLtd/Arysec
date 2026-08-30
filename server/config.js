@@ -106,6 +106,13 @@ const config = {
     academyTo: process.env.MAIL_ACADEMY_TO || process.env.MAIL_TO || 'info@arysec.in',
   },
 
+  hr: {
+    secret: process.env.HR_API_SECRET || '',
+    scriptUrl: process.env.HR_GOOGLE_SCRIPT_URL || '',
+    sheetId: process.env.HR_GOOGLE_SHEET_ID || '',
+    submissionsFolderId: process.env.HR_SUBMISSIONS_FOLDER_ID || '',
+  },
+
   company: {
     name: 'Arysec Consultancy LLP',
     email: 'info@arysec.in',

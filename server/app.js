@@ -56,16 +56,16 @@ function createApp() {
     index: false,
     redirect: false,
     setHeaders(res, filePath) {
-      if (filePath.endsWith('.html')) {
-        res.setHeader('Cache-Control', 'no-cache');
+      if (filePath.endsWith('.html') || ((filePath.endsWith('.css') || filePath.endsWith('.js')) && !/\.[0-9a-f]{8}\.(css|js)$/.test(filePath))) {
+        // Prevent aggressive browser caching of unversioned styling and code
+        res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0');
       } else if (/\.woff2?$/.test(filePath)) {
         // Font files never change without a filename change.
         res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
       } else if (/\.[0-9a-f]{8}\.(css|js)$/.test(filePath)) {
-        // Content-hashed by the build: the name changes whenever the bytes do,
-        // so this can be cached indefinitely and a rebuild is still immediate.
+        // Content-hashed by the build
         res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
-      } else if (/\.(css|js|svg|png|jpe?g|webp|ico)$/.test(filePath)) {
+      } else if (/\.(svg|png|jpe?g|webp|ico)$/.test(filePath)) {
         res.setHeader('Cache-Control', 'public, max-age=86400, must-revalidate');
       } else {
         res.setHeader('Cache-Control', 'public, max-age=3600');

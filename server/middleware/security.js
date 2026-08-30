@@ -88,9 +88,8 @@ function makeLimiter({ windowMs, max, name }) {
     max,
     standardHeaders: true,
     legacyHeaders: false,
-    // Never key on a raw forwarded header the client controls; req.ip already
-    // respects the configured trust-proxy depth.
     keyGenerator: (req) => req.ip,
+    skip: (req) => process.env.NODE_ENV !== 'test' && (!config.isProd || ['127.0.0.1', '::1', '::ffff:127.0.0.1'].includes(req.ip)),
     handler: (req, res) => {
       log('warn', 'ratelimit.hit', { limiter: name, path: req.path, ipHash: hashIp(req.ip) });
       res.status(429).json({
@@ -104,7 +103,10 @@ function makeLimiter({ windowMs, max, name }) {
 const formLimiter = () =>
   makeLimiter({ windowMs: config.rateLimit.windowMs, max: config.rateLimit.formMax, name: 'form' });
 
+const hrLimiter = () =>
+  makeLimiter({ windowMs: config.rateLimit.windowMs, max: 100, name: 'hr' });
+
 const globalLimiter = () =>
   makeLimiter({ windowMs: config.rateLimit.windowMs, max: config.rateLimit.globalMax, name: 'global' });
 
-module.exports = { securityHeaders, originCheck, formLimiter, globalLimiter, CSP_DIRECTIVES };
+module.exports = { securityHeaders, originCheck, formLimiter, hrLimiter, globalLimiter, CSP_DIRECTIVES };
