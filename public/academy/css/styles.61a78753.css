@@ -1142,7 +1142,12 @@ a:hover { color: var(--accent-2); }
   margin-bottom: 0.6rem;
 }
 
-/* Founder */
+/* Founder & Leadership Section */
+.leadership-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
 .founder-block {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -1152,6 +1157,10 @@ a:hover { color: var(--accent-2); }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 2.6rem;
+  transition: border-color var(--transition);
+}
+.founder-block:hover {
+  border-color: var(--border-accent);
 }
 .founder-block > * { min-width: 0; }
 .founder-portrait {
@@ -1161,6 +1170,12 @@ a:hover { color: var(--accent-2); }
   border: 1px solid var(--border-accent);
   display: grid;
   place-items: center;
+}
+.founder-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
 }
 .founder-initials {
   font-size: 3.4rem;
@@ -1685,6 +1700,7 @@ body.nav-open .cookie-banner { display: none; }
   .feature-block.reverse .feature-visual,
   .industry-block.reverse .feature-visual { order: 0; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .leadership-list { gap: 2rem; }
   .founder-block { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
   .founder-portrait { max-width: 200px; }
   .role-cols { grid-template-columns: 1fr; gap: 1.4rem; }
@@ -1717,7 +1733,10 @@ body.nav-open .cookie-banner { display: none; }
   .footer-legal { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; }
 
   .contact-form { padding: 1.6rem; }
+  .leadership-list { gap: 1.6rem; }
   .founder-block { padding: 1.5rem; }
+  .founder-portrait { max-width: 160px; }
+  .founder-initials { font-size: 2.8rem; }
   .cookie-banner { padding: 1.1rem 1.2rem; }
   .cookie-actions { width: 100%; }
   .cookie-actions .btn { flex: 1; }

@@ -60,33 +60,69 @@ ${C.pageHero({
 
     <section class="section section-alt">
       <div class="container">
-        ${C.sectionHead({ eyebrow: 'Leadership', title: 'Meet Our Founder' })}
-        <div class="founder-block reveal">
-          <div class="founder-portrait" aria-hidden="true"><span class="founder-initials">US</span></div>
-          <div>
-            <p class="founder-role">${esc(company.founderRole)}</p>
-            <h3>${esc(company.founder)}</h3>
-            <p>
-              ${esc(company.founder)} founded ${esc(company.name)} to make senior security leadership accessible
-              to the organisations that need it most. She has built her career at the intersection of information
-              security, internal audit, and data protection — leading security programmes, standing up compliance
-              functions from the ground up, and advising executive teams and boards on cyber risk.
-            </p>
-            <p>
-              Her experience spans regulated and high-growth environments across financial services, technology,
-              healthcare, and manufacturing, covering ISO 27001 implementation and audit, privacy programmes under
-              the DPDP Act and GDPR, and incident readiness for businesses operating at national and international
-              scale.
-            </p>
-            <p>
-              Under her leadership, Arysec has grown into a practice of more than 50 certified professionals,
-              delivering governance, security, and IT services from ${esc(company.city)} to clients across India
-              and global markets.
-            </p>
-            <blockquote class="founder-quote">
-              Security earns its place when it lets the business move faster, not slower. Our job is to give
-              leaders a clear, honest picture of their risk — and then do the work to reduce it.
-            </blockquote>
+        ${C.sectionHead({ eyebrow: 'Leadership', title: 'Meet Our Leadership' })}
+        <div class="leadership-list">
+          <div class="founder-block reveal">
+            <div class="founder-portrait" aria-hidden="true"><span class="founder-initials">US</span></div>
+            <div>
+              <p class="founder-role">${esc(company.founderRole)}</p>
+              <h3>${esc(company.founder)}</h3>
+              <p>
+                ${esc(company.founder)} founded ${esc(company.name)} to make senior security leadership accessible
+                to the organisations that need it most. She has built her career at the intersection of information
+                security, internal audit, and data protection — leading security programmes, standing up compliance
+                functions from the ground up, and advising executive teams and boards on cyber risk.
+              </p>
+              <p>
+                Her experience spans regulated and high-growth environments across financial services, technology,
+                healthcare, and manufacturing, covering ISO 27001 implementation and audit, privacy programmes under
+                the DPDP Act and GDPR, and incident readiness for businesses operating at national and international
+                scale.
+              </p>
+              <p>
+                Under her leadership, Arysec has grown into a practice of more than 50 certified professionals,
+                delivering governance, security, and IT services from ${esc(company.city)} to clients across India
+                and global markets.
+              </p>
+              <blockquote class="founder-quote">
+                Security earns its place when it lets the business move faster, not slower. Our job is to give
+                leaders a clear, honest picture of their risk — and then do the work to reduce it.
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="founder-block reveal delay-1">
+            <div class="founder-portrait" aria-hidden="true"><span class="founder-initials">TP</span></div>
+            <div>
+              <p class="founder-role">Chief Information Security Officer</p>
+              <h3>Tushar Patil</h3>
+              <p>
+                Tushar Patil directs information security strategy and governance across the firm. His work centres on establishing resilient defence postures, managing operational risk, and safeguarding critical digital assets for organisations navigating complex regulatory environments.
+              </p>
+              <p>
+                He guides security operations, vulnerability management, and incident readiness programmes that protect enterprise technology estates. By translating complex technical threats into clear risk decisions, he helps executive teams maintain strong security governance without compromising business agility.
+              </p>
+              <blockquote class="founder-quote">
+                Effective cybersecurity is built on continuous visibility and practical governance, enabling organisations to protect what matters most while operating with confidence.
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="founder-block reveal delay-2">
+            <div class="founder-portrait" aria-hidden="true"><span class="founder-initials">AT</span></div>
+            <div>
+              <p class="founder-role">Chief Technology Officer</p>
+              <h3>Anshu Tiwari</h3>
+              <p>
+                Anshu Tiwari leads technology strategy and engineering architecture for the firm. He oversees the development of robust technology platforms, modern infrastructure systems, and technical delivery standards that support digital transformation initiatives.
+              </p>
+              <p>
+                His focus includes secure software design, scalable systems engineering, and the seamless integration of modern technologies. Working closely with delivery teams, he ensures technology investments remain reliable, scalable, and closely aligned with organizational objectives.
+              </p>
+              <blockquote class="founder-quote">
+                Modern technology architecture should deliver resilient foundations and seamless execution, turning complex engineering into sustainable business capability.
+              </blockquote>
+            </div>
           </div>
         </div>
       </div>

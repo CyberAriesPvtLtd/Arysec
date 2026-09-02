@@ -161,6 +161,47 @@ module.exports = function academyHome(ctx) {
       </div>
     </section>
 
+    <section class="section">
+      <div class="container">
+        ${C.sectionHead({ eyebrow: 'Leadership', title: 'Meet Our Leadership' })}
+        <div class="leadership-list">
+          <div class="founder-block reveal">
+            <div class="founder-portrait" aria-hidden="true"><span class="founder-initials">AT</span></div>
+            <div>
+              <p class="founder-role">CEO</p>
+              <h3>Anshu Tiwari</h3>
+              <p>
+                Anshu Tiwari serves as Chief Executive Officer of Arysec Academy, leading executive operations and technology education strategy. He oversees the curriculum architecture, instructional delivery platforms, and growth initiatives that position the academy as a trusted learning destination for technical teams and corporate leaders.
+              </p>
+              <p>
+                His focus bridges technical engineering depth with practical pedagogy, ensuring every track reflects realistic threat scenarios and contemporary defensive methods. By aligning coursework with real industry demands, he empowers professionals to build practical skills that immediately strengthen enterprise security posture.
+              </p>
+              <blockquote class="founder-quote">
+                Professional education must reflect the realities of live systems, preparing engineers and leaders to solve complex challenges with precision and speed.
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="founder-block reveal delay-1">
+            <div class="founder-portrait" aria-hidden="true"><span class="founder-initials">US</span></div>
+            <div>
+              <p class="founder-role">Managing Director</p>
+              <h3>Unnati Shinde</h3>
+              <p>
+                Unnati Shinde guides the organizational vision and strategic direction of Arysec Academy. She established the academy to bridge the divide between theoretical compliance concepts and practical operational capability, ensuring that workforce and technical education delivers measurable risk reduction for modern enterprises.
+              </p>
+              <p>
+                Her leadership centres on developing rigorous learning frameworks and expanding institutional reach across India and international markets. Working closely with corporate partners and regulatory bodies, she ensures programmes uphold high instructional standards while adapting to evolving governance requirements.
+              </p>
+              <blockquote class="founder-quote">
+                Meaningful security education transforms awareness into genuine capability, giving teams the clarity and confidence to protect their organizations every day.
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
 ${C.ctaBanner({
   title: d.cta.title,
   text: d.cta.text,

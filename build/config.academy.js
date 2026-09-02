@@ -49,7 +49,7 @@ const company = {
   addressLine: main.company.addressLine,
   /** ASSUMPTION: same founder/director as Arysec Consultancy LLP. Confirm or replace. */
   founder: main.company.founder,
-  founderRole: main.company.founderRole,
+  founderRole: 'Managing Director',
   supportHours: 'Mon–Fri, 09:00–18:00 IST. Cohort support runs for the length of the programme.',
   established: main.company.established,
   /**
