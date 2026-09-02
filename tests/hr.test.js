@@ -137,6 +137,8 @@ test('onboarding registration successfully calls Google Script', async () => {
   assert.equal(receivedPayload.secret, 'test-secret-token-12345');
   assert.equal(receivedPayload.action, 'register');
   assert.equal(receivedPayload.name, 'John Doe');
+  assert.equal(receivedPayload.type, 'employee');
+  assert.equal(receivedPayload.recordType, 'Employee');
 
   const data = await res.json();
   assert.equal(data.ok, true);
@@ -245,3 +247,133 @@ test('onboarding file upload accepts valid files and uploads to script', async (
   assert.equal(data.ok, true);
   assert.equal(data.fileUrl, 'https://drive.google.com/file-456');
 });
+
+test('onboarding registration handles intern classification and casing normalization', async () => {
+  let scriptCalled = false;
+  let receivedPayload = null;
+
+  globalThis.fetch = async (url, options) => {
+    if (url === 'https://script.google.com/macros/s/ABC/exec') {
+      scriptCalled = true;
+      receivedPayload = JSON.parse(options.body);
+      return {
+        ok: true,
+        json: async () => ({
+          success: true,
+          duplicate: false,
+          recordId: 'INT-2026-001',
+          folderId: 'folder-intern-123',
+          folderUrl: 'https://drive.google.com/folder-intern-123',
+        }),
+      };
+    }
+    return originalFetch(url, options);
+  };
+
+  const internReg = validRegistration();
+  internReg.type = 'Intern'; // Test TitleCase input
+  internReg.previousExperience = 'no'; // Test lowercase input
+  internReg.policyAcknowledgement = 'yes';
+  internReg.declarationAccuracy = 'yes';
+  internReg.documentAuthenticity = 'yes';
+  internReg.hrProcessingConsent = 'yes';
+
+  const res = await postJson('/api/hr/register', internReg);
+  assert.equal(res.status, 200);
+  assert.ok(scriptCalled);
+  assert.equal(receivedPayload.type, 'intern');
+  assert.equal(receivedPayload.recordType, 'Intern');
+  assert.equal(receivedPayload.previousExperience, 'No');
+
+  const data = await res.json();
+  assert.equal(data.ok, true);
+  assert.equal(data.recordId, 'INT-2026-001');
+  assert.equal(data.folderId, 'folder-intern-123');
+});
+
+test('onboarding registration rejects missing declarations/consent', async () => {
+  const missingConsent = validRegistration();
+  missingConsent.policyAcknowledgement = false;
+
+  const res = await postJson('/api/hr/register', missingConsent);
+  assert.equal(res.status, 400);
+  const data = await res.json();
+  assert.equal(data.ok, false);
+  assert.ok(data.errors.policyAcknowledgement);
+});
+
+test('onboarding registration enforces strict field format restrictions', async () => {
+  // Test Name with numbers
+  const badName = validRegistration();
+  badName.name = 'John Doe 123';
+  const resName = await postJson('/api/hr/register', badName);
+  assert.equal(resName.status, 400);
+  const dataName = await resName.json();
+  assert.ok(dataName.errors.name);
+
+  // Test Phone with invalid length (not 10 digits)
+  const badPhone = validRegistration();
+  badPhone.phone = '123456';
+  const resPhone = await postJson('/api/hr/register', badPhone);
+  assert.equal(resPhone.status, 400);
+  const dataPhone = await resPhone.json();
+  assert.ok(dataPhone.errors.phone);
+
+  // Test PIN code not 6 digits
+  const badPin = validRegistration();
+  badPin.pinCode = '1234';
+  const resPin = await postJson('/api/hr/register', badPin);
+  assert.equal(resPin.status, 400);
+  const dataPin = await resPin.json();
+  assert.ok(dataPin.errors.pinCode);
+
+  // Test invalid PAN
+  const badPan = validRegistration();
+  badPan.pan = '12345ABCDE';
+  const resPan = await postJson('/api/hr/register', badPan);
+  assert.equal(resPan.status, 400);
+  const dataPan = await resPan.json();
+  assert.ok(dataPan.errors.pan);
+
+  // Test invalid IFSC
+  const badIfsc = validRegistration();
+  badIfsc.ifsc = 'HDFC123';
+  const resIfsc = await postJson('/api/hr/register', badIfsc);
+  assert.equal(resIfsc.status, 400);
+  const dataIfsc = await resIfsc.json();
+  assert.ok(dataIfsc.errors.ifsc);
+
+  // Test invalid Account Number (too short)
+  const badAcc = validRegistration();
+  badAcc.accountNumber = '123';
+  const resAcc = await postJson('/api/hr/register', badAcc);
+  assert.equal(resAcc.status, 400);
+  const dataAcc = await resAcc.json();
+  assert.ok(dataAcc.errors.accountNumber);
+
+  // Test Phone starting with invalid digit (e.g. 1-5)
+  const badPhoneStart = validRegistration();
+  badPhoneStart.phone = '1234567890';
+  const resPhoneStart = await postJson('/api/hr/register', badPhoneStart);
+  assert.equal(resPhoneStart.status, 400);
+  const dataPhoneStart = await resPhoneStart.json();
+  assert.ok(dataPhoneStart.errors.phone);
+
+  // Test City with numbers
+  const badCity = validRegistration();
+  badCity.city = 'Mumbai 400';
+  const resCity = await postJson('/api/hr/register', badCity);
+  assert.equal(resCity.status, 400);
+  const dataCity = await resCity.json();
+  assert.ok(dataCity.errors.city);
+
+  // Test Graduation Year not 4 digits
+  const badGrad = validRegistration();
+  badGrad.graduationYear = '20';
+  const resGrad = await postJson('/api/hr/register', badGrad);
+  assert.equal(resGrad.status, 400);
+  const dataGrad = await resGrad.json();
+  assert.ok(dataGrad.errors.graduationYear);
+});
+
+

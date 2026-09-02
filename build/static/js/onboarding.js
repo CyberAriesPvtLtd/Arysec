@@ -19,18 +19,23 @@ document.addEventListener('DOMContentLoaded', function () {
   const tabEmployee = document.getElementById('tabEmployee');
   const tabIntern = document.getElementById('tabIntern');
   const onboardingType = document.getElementById('onboardingType');
+  const onboardingRecordType = document.getElementById('onboardingRecordType');
 
-  tabEmployee.addEventListener('click', function() {
-    tabEmployee.classList.add('active');
-    tabIntern.classList.remove('active');
-    onboardingType.value = 'employee';
-  });
+  if (tabEmployee && tabIntern) {
+    tabEmployee.addEventListener('click', function() {
+      tabEmployee.classList.add('active');
+      tabIntern.classList.remove('active');
+      if (onboardingType) onboardingType.value = 'employee';
+      if (onboardingRecordType) onboardingRecordType.value = 'Employee';
+    });
 
-  tabIntern.addEventListener('click', function() {
-    tabIntern.classList.add('active');
-    tabEmployee.classList.remove('active');
-    onboardingType.value = 'intern';
-  });
+    tabIntern.addEventListener('click', function() {
+      tabIntern.classList.add('active');
+      tabEmployee.classList.remove('active');
+      if (onboardingType) onboardingType.value = 'intern';
+      if (onboardingRecordType) onboardingRecordType.value = 'Intern';
+    });
+  }
 
   // Handle previousExperience radio toggles
   const expRadios = form.querySelectorAll('input[name="previousExperience"]');
@@ -63,40 +68,202 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  const EMAIL_RE = /^[^\s@<>()[\]\\,;:"]+@[^\s@<>()[\]\\,;:"]+\.[a-z]{2,}$/i;
+  const NAME_RE = /^[A-Za-z\s.'-]+$/;
+  const PIN_RE = /^\d{6}$/;
+  const PAN_RE = /^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$/;
+  const IFSC_RE = /^[A-Za-z]{4}0[A-Za-z0-9]{6}$/;
+  const ACCOUNT_RE = /^\d{9,18}$/;
+  const GRAD_YEAR_RE = /^(19[5-9]\d|20[0-5]\d)$/;
+
+  function validate10DigitPhone(val) {
+    if (!val) return false;
+    const digits = String(val).replace(/\D/g, '');
+    if (digits.length === 10 && /^[6-9]\d{9}$/.test(digits)) return true;
+    if (digits.length === 12 && digits.startsWith('91') && /^[6-9]\d{9}$/.test(digits.slice(2))) return true;
+    if (digits.length === 11 && digits.startsWith('0') && /^[6-9]\d{9}$/.test(digits.slice(1))) return true;
+    return false;
+  }
+
+  // Real-time input formatters and limiters
+  const panInput = document.getElementById('pan');
+  if (panInput) {
+    panInput.addEventListener('input', function() {
+      panInput.value = panInput.value.replace(/[^A-Za-z0-9]/g, '').toUpperCase().slice(0, 10);
+    });
+  }
+  const ifscInput = document.getElementById('ifsc');
+  if (ifscInput) {
+    ifscInput.addEventListener('input', function() {
+      ifscInput.value = ifscInput.value.replace(/[^A-Za-z0-9]/g, '').toUpperCase().slice(0, 11);
+    });
+  }
+  const phoneInput = document.getElementById('phone');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function() {
+      phoneInput.value = phoneInput.value.replace(/\D/g, '').slice(0, 10);
+    });
+  }
+  const emPhoneInput = document.getElementById('emergencyContactPhone');
+  if (emPhoneInput) {
+    emPhoneInput.addEventListener('input', function() {
+      emPhoneInput.value = emPhoneInput.value.replace(/\D/g, '').slice(0, 10);
+    });
+  }
+  const pinInput = document.getElementById('pinCode');
+  if (pinInput) {
+    pinInput.addEventListener('input', function() {
+      pinInput.value = pinInput.value.replace(/\D/g, '').slice(0, 6);
+    });
+  }
+  const accInput = document.getElementById('accountNumber');
+  if (accInput) {
+    accInput.addEventListener('input', function() {
+      accInput.value = accInput.value.replace(/\D/g, '').slice(0, 18);
+    });
+  }
+  const gradInput = document.getElementById('graduationYear');
+  if (gradInput) {
+    gradInput.addEventListener('input', function() {
+      gradInput.value = gradInput.value.replace(/\D/g, '').slice(0, 4);
+    });
+  }
+  const uanInput = document.getElementById('uanPfDetails');
+  if (uanInput) {
+    uanInput.addEventListener('input', function() {
+      uanInput.value = uanInput.value.replace(/\D/g, '').slice(0, 12);
+    });
+  }
+
   // Global Validation Function
   function validateAllFields() {
     let isValid = true;
     let firstErrorEl = null;
 
+    function markError(input, msg) {
+      const fieldName = input.name;
+      const errorSlot = form.querySelector('[data-error-for="' + fieldName + '"]');
+      if (errorSlot) errorSlot.textContent = msg;
+      const wrapper = input.closest('.form-field') || input.closest('.hr-declaration-card');
+      if (wrapper) wrapper.classList.add('has-error');
+      isValid = false;
+      if (!firstErrorEl) firstErrorEl = input;
+    }
+
     form.querySelectorAll('[name]').forEach(input => {
       const fieldName = input.name;
+      if (fieldName === 'website' || fieldName === 'formLoadedAt' || fieldName === 'type' || fieldName === 'recordType') return;
+
       const errorSlot = form.querySelector('[data-error-for="' + fieldName + '"]');
       if (errorSlot) errorSlot.textContent = '';
 
       const wrapper = input.closest('.form-field') || input.closest('.hr-declaration-card');
       if (wrapper) wrapper.classList.remove('has-error');
 
-      if (input.required) {
-        if (input.type === 'file') {
-          if (!fileCache[fieldName]) {
-            if (errorSlot) errorSlot.textContent = 'This file is required.';
-            if (wrapper) wrapper.classList.add('has-error');
-            isValid = false;
-            if (!firstErrorEl) firstErrorEl = input;
-          }
-        } else if (input.type === 'checkbox') {
-          if (!input.checked) {
-            if (errorSlot) errorSlot.textContent = 'This declaration is required.';
-            if (wrapper) wrapper.classList.add('has-error');
-            isValid = false;
-            if (!firstErrorEl) firstErrorEl = input;
-          }
-        } else if (!input.value.trim()) {
-          if (errorSlot) errorSlot.textContent = 'This field is required.';
-          if (wrapper) wrapper.classList.add('has-error');
-          isValid = false;
-          if (!firstErrorEl) firstErrorEl = input;
+      if (input.type === 'file') {
+        if (input.required && !fileCache[fieldName]) {
+          markError(input, 'This file is required.');
         }
+        return;
+      }
+
+      if (input.type === 'checkbox') {
+        if (input.required && !input.checked) {
+          markError(input, 'This declaration is required.');
+        }
+        return;
+      }
+
+      const val = (input.value || '').trim();
+
+      if (input.required && !val) {
+        markError(input, 'This field is required.');
+        return;
+      }
+
+      if (!val) return; // Optional empty field
+
+      // Field-specific restrictions
+      if (['name', 'preferredName', 'emergencyContactName', 'bankAccountHolderName'].includes(fieldName)) {
+        if (!NAME_RE.test(val)) {
+          markError(input, 'Name cannot contain numbers or special characters.');
+          return;
+        }
+      }
+
+      if (['city', 'state'].includes(fieldName)) {
+        if (!NAME_RE.test(val)) {
+          markError(input, 'City/State cannot contain numbers.');
+          return;
+        }
+      }
+
+      if (fieldName === 'emergencyContactRelationship') {
+        if (!NAME_RE.test(val)) {
+          markError(input, 'Relationship cannot contain numbers.');
+          return;
+        }
+      }
+
+      if (['phone', 'emergencyContactPhone'].includes(fieldName)) {
+        if (!validate10DigitPhone(val)) {
+          markError(input, 'Enter a valid 10-digit mobile number.');
+          return;
+        }
+      }
+
+      if (fieldName === 'personalEmail' || input.type === 'email') {
+        if (!EMAIL_RE.test(val)) {
+          markError(input, 'Enter a valid email address.');
+          return;
+        }
+      }
+
+      if (fieldName === 'pinCode') {
+        if (!PIN_RE.test(val)) {
+          markError(input, 'PIN code must be exactly 6 digits.');
+          return;
+        }
+      }
+
+      if (fieldName === 'pan') {
+        if (!PAN_RE.test(val)) {
+          markError(input, 'Enter a valid 10-character PAN (e.g. ABCDE1234F).');
+          return;
+        }
+      }
+
+      if (fieldName === 'ifsc') {
+        if (!IFSC_RE.test(val)) {
+          markError(input, 'Enter a valid 11-character IFSC (e.g. HDFC0000240).');
+          return;
+        }
+      }
+
+      if (fieldName === 'accountNumber') {
+        if (!ACCOUNT_RE.test(val)) {
+          markError(input, 'Account number must be 9 to 18 digits.');
+          return;
+        }
+      }
+
+      if (fieldName === 'graduationYear') {
+        if (!GRAD_YEAR_RE.test(val)) {
+          markError(input, 'Enter a valid 4-digit graduation year.');
+          return;
+        }
+      }
+
+      if (fieldName === 'uanPfDetails' && val) {
+        if (!/^\d{12}$/.test(val)) {
+          markError(input, 'UAN must be a 12-digit number.');
+          return;
+        }
+      }
+
+      if (input.minLength > 0 && val.length < input.minLength) {
+        markError(input, 'Please enter at least ' + input.minLength + ' characters.');
+        return;
       }
     });
 
@@ -215,6 +382,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const submitBtn = document.getElementById('hrSubmitBtn');
     submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
     
     const statusEl = form.querySelector('[data-form-status]');
     if (statusEl) {
@@ -237,8 +405,17 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // Explicitly set the type parameter from hidden tab input value
-    metaPayload.type = onboardingType.value;
+    // Ensure all checkboxes in form are explicitly assigned
+    form.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      if (cb.name) {
+        metaPayload[cb.name] = cb.checked;
+      }
+    });
+
+    // Explicitly set the type and recordType parameters from hidden tab input value
+    const selectedType = onboardingType ? onboardingType.value : 'employee';
+    metaPayload.type = selectedType;
+    metaPayload.recordType = selectedType === 'intern' ? 'Intern' : 'Employee';
 
     // Set radio select
     const expRadio = form.querySelector('input[name="previousExperience"]:checked');
@@ -253,7 +430,25 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(res => {
       try {
         if (res.status !== 200 || !res.data.ok) {
-          throw new Error(res.data.error || 'Server registration failed.');
+          // Highlight returned field errors
+          let firstErrEl = null;
+          if (res.data && res.data.errors && typeof res.data.errors === 'object') {
+            for (const [errField, errMsg] of Object.entries(res.data.errors)) {
+              const errSlot = form.querySelector('[data-error-for="' + errField + '"]');
+              if (errSlot) errSlot.textContent = errMsg;
+              const inputEl = form.querySelector('[name="' + errField + '"]');
+              if (inputEl) {
+                const wrp = inputEl.closest('.form-field') || inputEl.closest('.hr-declaration-card');
+                if (wrp) wrp.classList.add('has-error');
+                if (!firstErrEl) firstErrEl = inputEl;
+              }
+            }
+            if (firstErrEl) {
+              firstErrEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              firstErrEl.focus();
+            }
+          }
+          throw new Error(res.data.error || 'Please correct the highlighted fields and try again.');
         }
 
         const regData = res.data;
@@ -265,10 +460,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const fileFields = Object.keys(fileCache);
         uploadFilesSequential(regData.recordId, regData.folderId, fileFields, 0);
       } catch (innerErr) {
-        console.error("Registration success block error:", innerErr);
-        alert("Registration failed: " + innerErr.message);
+        console.error("Registration error:", innerErr);
         if (statusEl) {
-          statusEl.textContent = 'Error handling response: ' + innerErr.message;
+          statusEl.textContent = innerErr.message;
           statusEl.className = 'form-status is-error';
         }
         submitBtn.disabled = false;
@@ -278,7 +472,6 @@ document.addEventListener('DOMContentLoaded', function () {
     .catch(err => {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Submit Information';
-      alert("Registration Error: " + err.message);
       if (statusEl) {
         statusEl.textContent = err.message || 'Server error. Please verify input details and try again.';
         statusEl.className = 'form-status is-error';

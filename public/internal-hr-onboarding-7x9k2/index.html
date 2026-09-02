@@ -262,6 +262,7 @@
           <form class="contact-form reveal" id="onboardingForm" novalidate>
             <!-- Hidden inputs for tab selection and spam prevention -->
             <input type="hidden" name="type" id="onboardingType" value="employee">
+            <input type="hidden" name="recordType" id="onboardingRecordType" value="Employee">
             <input type="hidden" name="formLoadedAt" value="">
             <div class="hr-hide-placeholder"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
 
@@ -280,12 +281,12 @@
               <div class="form-row">
                 <div class="form-field">
                   <label for="name">Full Name <span class="req" aria-hidden="true">*</span></label>
-                  <input type="text" id="name" name="name" placeholder="First and last name" required maxlength="100" autocomplete="name">
+                  <input type="text" id="name" name="name" placeholder="First and last name" required minlength="2" maxlength="100" pattern="^[A-Za-zs.'-]+$" title="Full name cannot contain numbers" autocomplete="name">
                   <span class="field-error" data-error-for="name"></span>
                 </div>
                 <div class="form-field">
                   <label for="preferredName">Preferred Name</label>
-                  <input type="text" id="preferredName" name="preferredName" placeholder="Name to call you" maxlength="100">
+                  <input type="text" id="preferredName" name="preferredName" placeholder="Name to call you" maxlength="100" pattern="^[A-Za-zs.'-]+$" title="Preferred name cannot contain numbers">
                   <span class="field-error" data-error-for="preferredName"></span>
                 </div>
               </div>
@@ -298,7 +299,7 @@
                 </div>
                 <div class="form-field">
                   <label for="phone">Phone Number <span class="req" aria-hidden="true">*</span></label>
-                  <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required maxlength="32">
+                  <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" required minlength="10" maxlength="10" pattern="^[6-9]d{9}$" inputmode="numeric" title="10-digit mobile number starting with 6, 7, 8, or 9">
                   <span class="field-error" data-error-for="phone"></span>
                 </div>
               </div>
@@ -325,12 +326,12 @@
               <div class="form-row">
                 <div class="form-field">
                   <label for="city">City <span class="req" aria-hidden="true">*</span></label>
-                  <input type="text" id="city" name="city" placeholder="e.g. Mumbai" required maxlength="80">
+                  <input type="text" id="city" name="city" placeholder="e.g. Mumbai" required minlength="2" maxlength="80" pattern="^[A-Za-zs.'-]+$" title="City cannot contain numbers">
                   <span class="field-error" data-error-for="city"></span>
                 </div>
                 <div class="form-field">
                   <label for="state">State <span class="req" aria-hidden="true">*</span></label>
-                  <input type="text" id="state" name="state" placeholder="e.g. Maharashtra" required maxlength="80">
+                  <input type="text" id="state" name="state" placeholder="e.g. Maharashtra" required minlength="2" maxlength="80" pattern="^[A-Za-zs.'-]+$" title="State cannot contain numbers">
                   <span class="field-error" data-error-for="state"></span>
                 </div>
               </div>
@@ -338,7 +339,7 @@
               <div class="form-row hr-form-row-2col">
                 <div class="form-field">
                   <label for="pinCode">PIN Code <span class="req" aria-hidden="true">*</span></label>
-                  <input type="text" id="pinCode" name="pinCode" placeholder="e.g. 400001" required maxlength="10">
+                  <input type="text" id="pinCode" name="pinCode" placeholder="6-digit PIN code" required minlength="6" maxlength="6" pattern="^d{6}$" inputmode="numeric" title="6-digit PIN code">
                   <span class="field-error" data-error-for="pinCode"></span>
                 </div>
                 <div class="form-field hr-hide-placeholder"></div>
@@ -360,12 +361,12 @@
               <div class="form-row">
                 <div class="form-field">
                   <label for="emergencyContactName">Emergency Contact Name <span class="req" aria-hidden="true">*</span></label>
-                  <input type="text" id="emergencyContactName" name="emergencyContactName" placeholder="Contact person name" required maxlength="100">
+                  <input type="text" id="emergencyContactName" name="emergencyContactName" placeholder="Contact person name" required minlength="2" maxlength="100" pattern="^[A-Za-zs.'-]+$" title="Emergency contact name cannot contain numbers">
                   <span class="field-error" data-error-for="emergencyContactName"></span>
                 </div>
                 <div class="form-field">
                   <label for="emergencyContactRelationship">Relationship <span class="req" aria-hidden="true">*</span></label>
-                  <input type="text" id="emergencyContactRelationship" name="emergencyContactRelationship" placeholder="e.g. Father, Mother, Spouse" required maxlength="50">
+                  <input type="text" id="emergencyContactRelationship" name="emergencyContactRelationship" placeholder="e.g. Father, Mother, Spouse" required minlength="2" maxlength="50" pattern="^[A-Za-zs.'-]+$" title="Relationship cannot contain numbers">
                   <span class="field-error" data-error-for="emergencyContactRelationship"></span>
                 </div>
               </div>
@@ -373,7 +374,7 @@
               <div class="form-row hr-form-row-2col">
                 <div class="form-field">
                   <label for="emergencyContactPhone">Emergency Contact Phone <span class="req" aria-hidden="true">*</span></label>
-                  <input type="tel" id="emergencyContactPhone" name="emergencyContactPhone" placeholder="Contact number" required maxlength="32">
+                  <input type="tel" id="emergencyContactPhone" name="emergencyContactPhone" placeholder="10-digit mobile number" required minlength="10" maxlength="10" pattern="^[6-9]d{9}$" inputmode="numeric" title="10-digit mobile number starting with 6, 7, 8, or 9">
                   <span class="field-error" data-error-for="emergencyContactPhone"></span>
                 </div>
                 <div class="form-field hr-hide-placeholder"></div>
@@ -464,7 +465,7 @@
                 </div>
                 <div class="form-field">
                   <label for="graduationYear">Graduation Year <span class="req" aria-hidden="true">*</span></label>
-                  <input type="number" id="graduationYear" name="graduationYear" placeholder="YYYY" required min="1950" max="2100">
+                  <input type="text" id="graduationYear" name="graduationYear" placeholder="YYYY" required minlength="4" maxlength="4" pattern="^(19[5-9]d|20[0-5]d)$" inputmode="numeric" title="4-digit graduation year">
                   <span class="field-error" data-error-for="graduationYear"></span>
                 </div>
               </div>
@@ -566,7 +567,7 @@
               <div class="form-row">
                 <div class="form-field">
                   <label for="bankAccountHolderName">Bank Account Holder Name <span class="req" aria-hidden="true">*</span></label>
-                  <input type="text" id="bankAccountHolderName" name="bankAccountHolderName" placeholder="Name on passbook/cheque" required maxlength="120">
+                  <input type="text" id="bankAccountHolderName" name="bankAccountHolderName" placeholder="Name on passbook/cheque" required minlength="2" maxlength="120" pattern="^[A-Za-zs.'-]+$" title="Account holder name cannot contain numbers">
                   <span class="field-error" data-error-for="bankAccountHolderName"></span>
                 </div>
                 <div class="form-field">
@@ -579,12 +580,12 @@
               <div class="form-row">
                 <div class="form-field">
                   <label for="accountNumber">Account Number <span class="req" aria-hidden="true">*</span></label>
-                  <input type="text" id="accountNumber" name="accountNumber" placeholder="Bank account number" required maxlength="30">
+                  <input type="text" id="accountNumber" name="accountNumber" placeholder="9 to 18 digit account number" required minlength="9" maxlength="18" pattern="^d{9,18}$" inputmode="numeric" title="Bank account number (9 to 18 digits)">
                   <span class="field-error" data-error-for="accountNumber"></span>
                 </div>
                 <div class="form-field">
                   <label for="ifsc">IFSC <span class="req" aria-hidden="true">*</span></label>
-                  <input type="text" id="ifsc" name="ifsc" placeholder="e.g. HDFC0000240" required maxlength="20">
+                  <input type="text" id="ifsc" name="ifsc" placeholder="e.g. HDFC0000240" required minlength="11" maxlength="11" pattern="^[A-Za-z]{4}0[A-Za-z0-9]{6}$" title="11-character IFSC code (e.g. HDFC0000240)" style="text-transform:uppercase">
                   <span class="field-error" data-error-for="ifsc"></span>
                 </div>
               </div>
@@ -592,12 +593,12 @@
               <div class="form-row">
                 <div class="form-field">
                   <label for="pan">PAN <span class="req" aria-hidden="true">*</span></label>
-                  <input type="text" id="pan" name="pan" placeholder="10-digit PAN" required maxlength="20" class="hr-uppercase">
+                  <input type="text" id="pan" name="pan" placeholder="10-digit PAN (e.g. ABCDE1234F)" required minlength="10" maxlength="10" pattern="^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$" title="10-character PAN number" class="hr-uppercase" style="text-transform:uppercase">
                   <span class="field-error" data-error-for="pan"></span>
                 </div>
                 <div class="form-field">
                   <label for="uanPfDetails">UAN / PF Details (if applicable)</label>
-                  <input type="text" id="uanPfDetails" name="uanPfDetails" placeholder="12-digit UAN" maxlength="50">
+                  <input type="text" id="uanPfDetails" name="uanPfDetails" placeholder="12-digit UAN" maxlength="50" pattern="^d{12}$" inputmode="numeric">
                   <span class="field-error" data-error-for="uanPfDetails"></span>
                 </div>
               </div>
@@ -724,7 +725,7 @@
 
               <label class="hr-declaration-card">
                 <input type="checkbox" id="policyAcknowledgement" name="policyAcknowledgement" value="yes" required class="hr-checkbox-input">
-                <span class="hr-decl-text">I acknowledge the applicable Arysec company policies. <span class="req" aria-hidden="true">*</span></span>
+                <span class="hr-decl-text">I acknowledge the applicable Arysec company policies and Code of Conduct. <span class="req" aria-hidden="true">*</span></span>
               </label>
               <span class="field-error hr-decl-error" data-error-for="policyAcknowledgement"></span>
 

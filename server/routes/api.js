@@ -462,23 +462,43 @@ router.post('/hr/register', hrLimiter(), originCheck, async (req, res, next) => 
   try {
     if (handledAsSpam(req, res, 'hr-register')) return;
 
+    if (req.body && typeof req.body === 'object') {
+      if (req.body.type) {
+        req.body.type = String(req.body.type).trim().toLowerCase();
+      } else if (req.body.recordType) {
+        req.body.type = String(req.body.recordType).trim().toLowerCase();
+      }
+      if (req.body.previousExperience) {
+        const pe = String(req.body.previousExperience).trim().toLowerCase();
+        req.body.previousExperience = pe === 'yes' ? 'Yes' : 'No';
+      }
+    }
+
+    const NAME_RE = /^[A-Za-z\s.'-]+$/;
+    const PIN_RE = /^\d{6}$/;
+    const PAN_RE = /^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$/;
+    const IFSC_RE = /^[A-Za-z]{4}0[A-Za-z0-9]{6}$/;
+    const ACCOUNT_RE = /^\d{9,18}$/;
+    const GRAD_YEAR_RE = /^(19[5-9]\d|20[0-5]\d)$/;
+
     const { ok, values, errors } = validateFields(req.body, {
       // Step 1: Personal Info
       type: { required: true, type: 'text', oneOf: ['employee', 'intern'] },
-      name: { required: true, type: 'text', min: 2, max: 100 },
-      preferredName: { required: false, type: 'text', max: 100 },
+      recordType: { required: false, type: 'text' },
+      name: { required: true, type: 'text', min: 2, max: 100, regex: NAME_RE, regexError: 'Name cannot contain numbers.' },
+      preferredName: { required: false, type: 'text', max: 100, regex: NAME_RE, regexError: 'Preferred name cannot contain numbers.' },
       personalEmail: { required: true, type: 'email' },
-      phone: { required: true, type: 'phone' },
+      phone: { required: true, type: 'phone', exact10: true },
       dateOfBirth: { required: true, type: 'text', max: 30 },
       gender: { required: true, type: 'text', oneOf: ['Male', 'Female', 'Other', 'Prefer not to say'] },
       currentResidentialAddress: { required: true, type: 'longtext', min: 5, max: 500 },
       permanentAddress: { required: true, type: 'longtext', min: 5, max: 500 },
-      city: { required: true, type: 'text', min: 2, max: 80 },
-      state: { required: true, type: 'text', min: 2, max: 80 },
-      pinCode: { required: true, type: 'text', min: 4, max: 10 },
-      emergencyContactName: { required: true, type: 'text', min: 2, max: 100 },
-      emergencyContactRelationship: { required: true, type: 'text', min: 2, max: 50 },
-      emergencyContactPhone: { required: true, type: 'phone' },
+      city: { required: true, type: 'text', min: 2, max: 80, regex: NAME_RE, regexError: 'City cannot contain numbers.' },
+      state: { required: true, type: 'text', min: 2, max: 80, regex: NAME_RE, regexError: 'State cannot contain numbers.' },
+      pinCode: { required: true, type: 'text', min: 6, max: 6, regex: PIN_RE, regexError: 'PIN code must be exactly 6 digits.' },
+      emergencyContactName: { required: true, type: 'text', min: 2, max: 100, regex: NAME_RE, regexError: 'Emergency contact name cannot contain numbers.' },
+      emergencyContactRelationship: { required: true, type: 'text', min: 2, max: 50, regex: NAME_RE, regexError: 'Relationship cannot contain numbers.' },
+      emergencyContactPhone: { required: true, type: 'phone', exact10: true },
       // Role & Dates
       joiningDate: { required: true, type: 'text', min: 2, max: 40 },
       department: { required: true, type: 'text', min: 2, max: 120 },
@@ -488,7 +508,7 @@ router.post('/hr/register', hrLimiter(), originCheck, async (req, res, next) => 
       degreeCourse: { required: true, type: 'text', min: 2, max: 120 },
       branchSpecialization: { required: true, type: 'text', min: 2, max: 120 },
       collegeUniversity: { required: true, type: 'text', min: 2, max: 150 },
-      graduationYear: { required: true, type: 'text', min: 4, max: 10 },
+      graduationYear: { required: true, type: 'text', min: 4, max: 4, regex: GRAD_YEAR_RE, regexError: 'Graduation year must be a valid 4-digit year.' },
       cgpaPercentage: { required: true, type: 'text', min: 1, max: 20 },
       currentYearSemester: { required: false, type: 'text', max: 50 },
       professionalCertifications: { required: false, type: 'longtext', max: 1000 },
@@ -502,10 +522,10 @@ router.post('/hr/register', hrLimiter(), originCheck, async (req, res, next) => 
       keyResponsibilities: { required: false, type: 'longtext', max: 2000 },
       // Step 4: Bank & Statutory
       bankName: { required: true, type: 'text', min: 2, max: 120 },
-      bankAccountHolderName: { required: true, type: 'text', min: 2, max: 120 },
-      accountNumber: { required: true, type: 'text', min: 4, max: 30 },
-      ifsc: { required: true, type: 'text', min: 4, max: 20 },
-      pan: { required: true, type: 'text', min: 5, max: 20 },
+      bankAccountHolderName: { required: true, type: 'text', min: 2, max: 120, regex: NAME_RE, regexError: 'Account holder name cannot contain numbers.' },
+      accountNumber: { required: true, type: 'text', min: 9, max: 18, regex: ACCOUNT_RE, regexError: 'Account number must be 9 to 18 digits.' },
+      ifsc: { required: true, type: 'text', min: 11, max: 11, regex: IFSC_RE, regexError: 'IFSC must be a valid 11-character code (e.g. HDFC0000240).' },
+      pan: { required: true, type: 'text', min: 10, max: 10, regex: PAN_RE, regexError: 'PAN must be a valid 10-character code (e.g. ABCDE1234F).' },
       uanPfDetails: { required: false, type: 'text', max: 50 },
       esicDetails: { required: false, type: 'text', max: 50 },
       // Step 6: Consent
@@ -513,6 +533,8 @@ router.post('/hr/register', hrLimiter(), originCheck, async (req, res, next) => 
       policyAcknowledgement: { required: true, type: 'checkbox' },
       documentAuthenticity: { required: true, type: 'checkbox' },
       hrProcessingConsent: { required: true, type: 'checkbox' },
+      codeOfConductAccepted: { required: false, type: 'checkbox' },
+      confirmation: { required: false, type: 'checkbox' },
     });
     if (!ok) return fail(res, errors);
 
@@ -520,12 +542,17 @@ router.post('/hr/register', hrLimiter(), originCheck, async (req, res, next) => 
       return res.status(500).json({ ok: false, error: 'HR Onboarding system is misconfigured.' });
     }
 
+    const classification = values.type === 'intern' ? 'Intern' : 'Employee';
+
     const payload = {
       secret: config.hr.secret,
       action: 'register',
       sheetId: config.hr.sheetId,
       parentFolderId: config.hr.submissionsFolderId,
       ...values,
+      type: values.type,
+      recordType: classification,
+      classification: classification,
     };
 
     const response = await fetch(config.hr.scriptUrl, {
