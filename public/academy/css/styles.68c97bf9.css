@@ -2076,3 +2076,32 @@ body.nav-open .cookie-banner { display: none; }
 .hr-uppercase {
   text-transform: uppercase;
 }
+
+@media (max-width: 768px) {
+  .hr-step-card {
+    padding: 1.5rem 1.2rem;
+    margin-bottom: 1.8rem;
+  }
+  .hr-step-description-wrap {
+    padding-left: 0;
+  }
+  .hr-step-header {
+    margin-bottom: 2rem;
+  }
+  .hr-form-row-2col {
+    grid-template-columns: 1fr;
+  }
+  .hr-type-tabs {
+    width: 100%;
+    justify-content: center;
+  }
+  .hr-tab-btn {
+    flex: 1;
+    text-align: center;
+    padding: 0.6rem 1rem;
+  }
+  .hr-submit-btn-layout {
+    width: 100%;
+    min-width: unset;
+  }
+}

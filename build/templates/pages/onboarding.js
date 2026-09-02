@@ -31,7 +31,7 @@ module.exports = function onboardingPage(ctx) {
         </div>
 
         <div id="onboardingContainer">
-          <form class="contact-form reveal" id="onboardingForm" novalidate>
+          <form class="contact-form" id="onboardingForm" novalidate>
             <!-- Hidden inputs for tab selection and spam prevention -->
             <input type="hidden" name="type" id="onboardingType" value="employee">
             <input type="hidden" name="recordType" id="onboardingRecordType" value="Employee">

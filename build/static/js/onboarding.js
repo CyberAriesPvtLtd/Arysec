@@ -558,7 +558,7 @@ document.addEventListener('DOMContentLoaded', function () {
         throw new Error('onboardingContainer element not found in DOM.');
       }
       container.innerHTML = 
-        '<div class="contact-form reveal hr-success-screen">' +
+        '<div class="contact-form hr-success-screen">' +
           '<div class="hr-success-icon-wrap">' +
             '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
           '</div>' +
@@ -586,7 +586,7 @@ document.addEventListener('DOMContentLoaded', function () {
         throw new Error('onboardingContainer element not found in DOM.');
       }
       container.innerHTML = 
-        '<div class="contact-form reveal hr-success-screen">' +
+        '<div class="contact-form hr-success-screen">' +
           '<div class="hr-duplicate-icon-wrap">' +
             '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>' +
           '</div>' +
