@@ -136,9 +136,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Global Validation Function
+  let clientErrors = [];
   function validateAllFields() {
     let isValid = true;
     let firstErrorEl = null;
+    clientErrors = [];
 
     function markError(input, msg) {
       const fieldName = input.name;
@@ -147,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const wrapper = input.closest('.form-field') || input.closest('.hr-declaration-card');
       if (wrapper) wrapper.classList.add('has-error');
       isValid = false;
+      clientErrors.push(msg);
       if (!firstErrorEl) firstErrorEl = input;
     }
 
@@ -374,7 +377,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!validateAllFields()) {
       const statusEl = form.querySelector('[data-form-status]');
       if (statusEl) {
-        statusEl.textContent = 'Please check the form: fill in all required fields and upload all required documents before submitting.';
+        const detail = clientErrors.length > 0 ? ': ' + clientErrors.slice(0, 3).join(', ') + (clientErrors.length > 3 ? '...' : '') : '';
+        statusEl.textContent = 'Please correct the highlighted fields' + detail;
         statusEl.className = 'form-status is-error';
       }
       return;
@@ -432,8 +436,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (res.status !== 200 || !res.data.ok) {
           // Highlight returned field errors
           let firstErrEl = null;
+          const errorDetails = [];
           if (res.data && res.data.errors && typeof res.data.errors === 'object') {
             for (const [errField, errMsg] of Object.entries(res.data.errors)) {
+              errorDetails.push(errMsg);
               const errSlot = form.querySelector('[data-error-for="' + errField + '"]');
               if (errSlot) errSlot.textContent = errMsg;
               const inputEl = form.querySelector('[name="' + errField + '"]');
@@ -448,7 +454,10 @@ document.addEventListener('DOMContentLoaded', function () {
               firstErrEl.focus();
             }
           }
-          throw new Error(res.data.error || 'Please correct the highlighted fields and try again.');
+          const fullErrMsg = errorDetails.length > 0
+            ? 'Please correct: ' + errorDetails.join(' | ')
+            : (res.data.error || 'Please correct the highlighted fields and try again.');
+          throw new Error(fullErrMsg);
         }
 
         const regData = res.data;
